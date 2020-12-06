@@ -1,2 +1,7 @@
+staging:
+  profile: ~
+  whoami:  asf-staging
+ 
+ 
 publish:
-  whoami: master
+  whoami:  master
