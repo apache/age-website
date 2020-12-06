@@ -1,9 +1,1 @@
 
-# Staging and publishing profile for age-website:
-staging:
-  profile: ~
-  whoami:  master
- 
- 
-publish:
-  whoami:  master
