@@ -1,7 +1,3 @@
-staging:
-  profile: ~
-  whoami:  master
- 
- 
 publish:
-  whoami:  master
+  whoami:   master
+  hostname: http://age.apache.org/
