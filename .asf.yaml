@@ -1,9 +1,9 @@
 github:
   whoami: master
-  target: master
+  target: asf-site
 
 publish:
-  whoami: master
+  whoami: asf-site
 
 github:
   homepage: "https://age.apache.org"
