@@ -1,6 +1,6 @@
 staging:
   profile: ~
-  whoami:  asf-staging
+  whoami:  master
  
  
 publish:
