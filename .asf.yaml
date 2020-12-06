@@ -1,3 +1,9 @@
-github:
-  ghp_branch:  master
-  ghp_path:    /index.html
+
+# Staging and publishing profile for age-website:
+staging:
+  profile: ~
+  whoami:  master
+ 
+ 
+publish:
+  whoami:  master
