@@ -1,0 +1,260 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Installation &mdash; Apache AGE 0.2.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Tables" href="tables.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #FFFFFF" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Apache AGE
+          
+
+          
+            
+            <img src="_static/age_BI.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="cypher-query-language.html">Cypher Query Language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utility-functions.html">Utility Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tables.html">Tables</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation-from-source-code">Installation from Source Code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getting-the-source">Getting The Source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installation-procedure">Installation Procedure</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Apache AGE</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Installation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/installation.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="installation-from-source-code">
+<h2>Installation from Source Code<a class="headerlink" href="#installation-from-source-code" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="requirements">
+<h3>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h3>
+<p>Since Apache AGE is an extension of PostgreSQL, its build system is based on <a class="reference external" href="https://www.postgresql.org/docs/11/extend-pgxs.html">Extension Building Infrastructure</a> that PostgreSQL provides. Therefore, <code class="docutils literal notranslate"><span class="pre">pg_config</span></code> (typically the first one in your <code class="docutils literal notranslate"><span class="pre">PATH</span></code> environment variable) for the PostgreSQL installation is used to build it.</p>
+<blockquote>
+<div><p>Apache AGE 0.2.0 supports PostgreSQL 11.</p>
+</div></blockquote>
+</div>
+<div class="section" id="getting-the-source">
+<h3>Getting The Source<a class="headerlink" href="#getting-the-source" title="Permalink to this headline">¶</a></h3>
+<p>The Apache AGE 0.2.0 sources can be obtained from its GitHub repository: <a class="reference external" href="https://github.com/bitnine-oss/AgensGraph-Extension/releases">bitnine-oss/AgensGraph-Extension/releases</a>.</p>
+</div>
+<div class="section" id="installation-procedure">
+<h3>Installation Procedure<a class="headerlink" href="#installation-procedure" title="Permalink to this headline">¶</a></h3>
+<p>To build and install Apache AGE, run the following command in the source code directory of Apache AGE.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ make install
+</pre></div>
+</div>
+<blockquote>
+<div><p>Since Apache AGE will be installed in the directory of the PostgreSQL installation, proper permissions on the directory are required.</p>
+</div></blockquote>
+<p>Run the following statements in <code class="docutils literal notranslate"><span class="pre">psql</span></code> to create and load Apache AGE in PostgreSQL.</p>
+<div class="highlight-psql notranslate"><div class="highlight"><pre><span></span><span class="gp">=#</span> <span class="k">CREATE</span> <span class="k">EXTENSION</span> <span class="n">age</span><span class="p">;</span> <span class="c1">-- run this statement only once</span>
+<span class="go">CREATE EXTENSION</span>
+<span class="gp">=#</span> <span class="k">LOAD</span> <span class="s1">&#39;age&#39;</span><span class="p">;</span>
+<span class="go">LOAD</span>
+<span class="gp">=#</span> <span class="k">SET</span> <span class="n">search_path</span> <span class="o">=</span> <span class="n">ag_catalog</span><span class="p">,</span> <span class="s s-Name">&quot;$user&quot;</span><span class="p">,</span> <span class="n">public</span><span class="p">;</span>
+<span class="go">SET</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>When Apache AGE is being loaded, it installs <code class="docutils literal notranslate"><span class="pre">post_parse_analyze_hook</span></code>, <code class="docutils literal notranslate"><span class="pre">set_rel_pathlist_hook</span></code>, and <code class="docutils literal notranslate"><span class="pre">object_access_hook</span></code> to analyze and execute Cypher queries.</p>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="tables.html" class="btn btn-neutral float-left" title="Tables" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Bitnine Global, Inc.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
