@@ -115,7 +115,15 @@
 <li class="toctree-l1"><a class="reference internal" href="create.html">CREATE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="set.html">SET</a></li>
 <li class="toctree-l1"><a class="reference internal" href="remove.html">REMOVE</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">DELETE</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">DELETE</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#terminal-delete-clauses">Terminal DELETE clauses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#delete-single-vertex">Delete single vertex</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#delete-all-vertices-and-edges">Delete all vertices and edges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#delete-edges-only">Delete edges only</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#return-a-deleted-vertex">Return a deleted vertex</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Functions</span></p>
 <ul>
@@ -208,6 +216,110 @@
             
   <div class="tex2jax_ignore mathjax_ignore section" id="delete">
 <h1>DELETE<a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h1>
+<p>The DELETE clause is used to delete graph elements—nodes, relationships orpaths.</p>
+<div class="section" id="terminal-delete-clauses">
+<h2>Terminal DELETE clauses<a class="headerlink" href="#terminal-delete-clauses" title="Permalink to this headline">¶</a></h2>
+<p>A delete clause that is not followed by another clause is called a terminal clause. When a cypher query ends with a terminal clause, no results will be returned from the cypher function call. However, the cypher function call still requires a column list definition. When cypher ends with a terminal node, define a single value in the column list definition: no data will be returned in this variable.</p>
+</div>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>For removing properties, see REMOVE.</p>
+<p>You cannot delete a node without also deleting edges that start or end on said vertex. Either explicitly delete the vertices,or use DETACH DELETE.</p>
+</div>
+<div class="section" id="delete-single-vertex">
+<h2>Delete single vertex<a class="headerlink" href="#delete-single-vertex" title="Permalink to this headline">¶</a></h2>
+<p>To delete a vertex, use the DELETE clause.</p>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT * 
+FROM cypher(&#39;graph_name&#39;, $$
+	MATCH (v:Useless)
+	DELETE v
+$$) as (v agtype);
+</pre></div>
+</div>
+<p>Nothing is returned from this query.</p>
+<table>
+  <tr>
+   <td><strong>v</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>(0 rows)
+   </td>
+  </tr>
+</table>
+</div>
+<div class="section" id="delete-all-vertices-and-edges">
+<h2>Delete all vertices and edges<a class="headerlink" href="#delete-all-vertices-and-edges" title="Permalink to this headline">¶</a></h2>
+<p>Running a Match clause will collect all nodes, use the DETACH option to first delete a vertice’s edges then delete the vertex itself.</p>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT * 
+FROM cypher(&#39;graph_name&#39;, $$
+	MATCH (v:Useless)
+	DELETE v
+$$) as (v agtype);
+</pre></div>
+</div>
+<p>Nothing is returned from this query.</p>
+<table>
+  <tr>
+   <td><strong>v</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>(0 rows)
+   </td>
+  </tr>
+</table>
+</div>
+<div class="section" id="delete-edges-only">
+<h2>Delete edges only<a class="headerlink" href="#delete-edges-only" title="Permalink to this headline">¶</a></h2>
+<p>To delete an edge, use the match clause to find your edges, then add the variable to the DELETE.</p>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT * 
+FROM cypher(&#39;graph_name&#39;, $$
+	MATCH (n {name: &#39;Andres&#39;})-[r:KNOWS]-&gt;()
+	DELETE r
+$$) as (v agtype);
+</pre></div>
+</div>
+<p>Nothing is returned from this query.</p>
+<table>
+  <tr>
+   <td><strong>v</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>(0 rows)
+   </td>
+  </tr>
+</table>
+</div>
+<div class="section" id="return-a-deleted-vertex">
+<h2>Return a deleted vertex<a class="headerlink" href="#return-a-deleted-vertex" title="Permalink to this headline">¶</a></h2>
+<p>In AGE, you can return vertices that have been deleted.</p>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
+FROM cypher(&#39;graph_name&#39;, $$
+	MATCH (n {name: &#39;A&#39;})
+	DELETE n
+	RETURN n
+$$) as (a agtype);
+
+</pre></div>
+</div>
+<table>
+  <tr>
+   <td><strong>v</strong>
+   </td>
+  </tr>
+  <tr><td>{"id": 281474976710659, "label": "", "properties": {"name": "A"}}::vertex</td></tr>
+  <tr>
+   <td>(1 rows)
+   </td>
+  </tr>
+</table>
+</div>
 </div>
 
 
