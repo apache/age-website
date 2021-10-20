@@ -1,0 +1,3 @@
+[console_scripts]
+myst-anchors = myst_parser.cli:print_anchors
+

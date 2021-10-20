@@ -1,0 +1,507 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>CREATE &mdash; Apache AGE master documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="SET" href="set.html" />
+    <link rel="prev" title="ORDER BY" href="order_by.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Apache AGE
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/setup.html">Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/graphs.html">Graphs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/cypher.html">The AGE Cypher Query Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/types.html">Data Types - An Introduction to agtype</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/comparability.html">Comparability, Equality, Orderability and Equivalence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/precedence.html">Operator Precedence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/aggregation.html">Aggregation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Clauses</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="match.html">MATCH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="with.html">WITH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="return.html">RETURN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order_by.html">ORDER BY</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">CREATE</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#terminal-create-clauses">Terminal CREATE clauses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-vertices">Create Vertices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-single-vertex">Create single vertex</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-multiple-vertices">Create multiple vertices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-a-vertex-with-a-label">Create a vertex with a label</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-vertex-and-add-labels-and-properties">Create vertex and add labels and properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#return-created-node">Return created node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-edges">Create Edges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-an-edge-between-two-nodes">Create an edge between two nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-an-edge-and-set-properties">Create an edge and set properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-a-full-path">Create a full path</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="set.html">SET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="remove.html">REMOVE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="delete.html">DELETE</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Functions</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../functions/predicate_functions.html">Predicate Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/scalar_functions.html">Scalar Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/list_functions.html">List Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/numeric_functions.html">Numeric Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/logarithmic_functions.html">Logarithmic Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/trigonometric_functions.html">Trigonometric Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/string_functions.html">String Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/aggregate_functions.html">Aggregation Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/user_functions.html">User defined functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">AGE Beyond Cypher</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/advanced_overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/advanced.html">CTE Clause</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/advanced.html#join-clause">Join Clause</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/advanced.html#cypher-in-sql-expressions">Cypher in SQL expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/prepared_statements.html">Prepared Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/plpgsql.html">pl/pgSQL Functions</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Apache AGE</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>CREATE</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/pdpotter/age_docs/blob/master/docs/clauses/create.md" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="tex2jax_ignore mathjax_ignore section" id="create">
+<h1>CREATE<a class="headerlink" href="#create" title="Permalink to this headline">¶</a></h1>
+<p>The CREATE clause is used to create graph vertices and edges.</p>
+<div class="section" id="terminal-create-clauses">
+<h2>Terminal CREATE clauses<a class="headerlink" href="#terminal-create-clauses" title="Permalink to this headline">¶</a></h2>
+<p>A create clause that is not followed by another clause is called a terminal clause. When a cypher query ends with a terminal clause, no results will be returned from the cypher function call. However, the cypher function call still requires a column list definition. When cypher ends with a terminal node, define a single value in the column list definition: no data will be returned in this variable.</p>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT * 
+FROM cypher(&#39;graph_name&#39;, $$
+    CREATE /* Create clause here, no following clause */
+$$) as (a agtype);
+</pre></div>
+</div>
+<table>
+  <tr>
+   <td><strong>a</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>0 row(s) returned
+   </td>
+  </tr>
+</table>
+</div>
+<div class="section" id="create-vertices">
+<h2>Create Vertices<a class="headerlink" href="#create-vertices" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="create-single-vertex">
+<h2>Create single vertex<a class="headerlink" href="#create-single-vertex" title="Permalink to this headline">¶</a></h2>
+<p>Creating a single vertex is done by issuing the following query.</p>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT * 
+FROM cypher(&#39;graph_name&#39;, $$
+    CREATE (n)
+$$) as (v agtype);
+</pre></div>
+</div>
+<p>Nothing is returned from this query.</p>
+<table>
+  <tr>
+   <td><strong>v</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>(0 rows)
+   </td>
+  </tr>
+</table>
+</div>
+<div class="section" id="create-multiple-vertices">
+<h2>Create multiple vertices<a class="headerlink" href="#create-multiple-vertices" title="Permalink to this headline">¶</a></h2>
+<p>Creating multiple vertices is done by separating them with a comma.</p>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT * 
+FROM cypher(&#39;graph_name&#39;, $$
+    CREATE (n), (m)
+$$) as (v agtype);
+</pre></div>
+</div>
+<p>Result</p>
+<table>
+  <tr>
+   <td><strong>a</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>0 row(s) returned
+   </td>
+  </tr>
+</table>
+</div>
+<div class="section" id="create-a-vertex-with-a-label">
+<h2>Create a vertex with a label<a class="headerlink" href="#create-a-vertex-with-a-label" title="Permalink to this headline">¶</a></h2>
+<p>To add a label when creating a vertex, use the syntax below.</p>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT * 
+FROM cypher(&#39;graph_name&#39;, $$
+    CREATE (:Person)
+$$) as (v agtype);
+</pre></div>
+</div>
+<p>Nothing is returned from this query.</p>
+<p>Result</p>
+<table>
+  <tr>
+   <td><strong>v</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>0 row(s) returned
+   </td>
+  </tr>
+</table>
+</div>
+<div class="section" id="create-vertex-and-add-labels-and-properties">
+<h2>Create vertex and add labels and properties<a class="headerlink" href="#create-vertex-and-add-labels-and-properties" title="Permalink to this headline">¶</a></h2>
+<p>When creating a new vertex with labels, you can add properties at the same time.</p>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT * 
+FROM cypher(&#39;graph_name&#39;, $$
+    CREATE (:Person {name: &#39;Andres&#39;, title: &#39;Developer&#39;)
+$$) as (n agtype);
+</pre></div>
+</div>
+<p>Nothing is returned from this query.</p>
+<p>Result</p>
+<table>
+  <tr>
+   <td><strong>n</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>(0 rows)
+   </td>
+  </tr>
+</table>
+</div>
+<div class="section" id="return-created-node">
+<h2>Return created node<a class="headerlink" href="#return-created-node" title="Permalink to this headline">¶</a></h2>
+<p>Creating a single node is done by issuing the following query.</p>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT * 
+FROM cypher(&#39;graph_name&#39;, $$
+    CREATE (a {name: &#39;Andres&#39;)
+    RETURN a
+$$) as (a agtype);
+</pre></div>
+</div>
+<p>The newly-created node is returned.</p>
+<p>Result</p>
+<table>
+  <tr>
+   <td><strong>a</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>{id: 0; label: ‘’; properties: {name: ‘Andres’}}::vertex
+   </td>
+  </tr>
+  <tr>
+   <td>(1 row)
+   </td>
+  </tr>
+</table>
+</div>
+<div class="section" id="create-edges">
+<h2>Create Edges<a class="headerlink" href="#create-edges" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="create-an-edge-between-two-nodes">
+<h2>Create an edge between two nodes<a class="headerlink" href="#create-an-edge-between-two-nodes" title="Permalink to this headline">¶</a></h2>
+<p>To create an edge between two vertices, we first get the two vertices. Once the nodes are loaded, we simply create an edge between them.</p>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT * 
+FROM cypher(&#39;graph_name&#39;, $$
+    MATCH (a:Person), (b:Person)
+    WHERE a.name = &#39;Node A&#39; AND b.name = &#39;Node B&#39;
+    CREATE (a)-[e:RELTYPE]-&gt;(b)
+    RETURN e
+$$) as (e agtype);
+</pre></div>
+</div>
+<p>The created edge is returned by the query.</p>
+<p>Result</p>
+<table>
+  <tr>
+   <td><strong>e</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>{id: 3; startid: 0, endid: 1; label: ‘RELTYPE’; properties: {}}::edge
+   </td>
+  </tr>
+  <tr>
+   <td>(1 row)
+   </td>
+  </tr>
+</table>
+</div>
+<div class="section" id="create-an-edge-and-set-properties">
+<h2>Create an edge and set properties<a class="headerlink" href="#create-an-edge-and-set-properties" title="Permalink to this headline">¶</a></h2>
+<p>Setting properties on edges is done in a similar manner to how it’s done when creating vertices. Note that the values can be any expression.</p>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT * 
+FROM cypher(&#39;graph_name&#39;, $$
+    MATCH (a:Person), (b:Person)
+    WHERE a.name = &#39;Node A&#39; AND b.name = &#39;Node B&#39;
+    CREATE (a)-[e:RELTYPE {name:a.name + &#39;&lt;-&gt;&#39; + b.name}]-&gt;(b)
+    RETURN e
+$$) as (e agtype);
+</pre></div>
+</div>
+<p>The newly-created edge is returned by the example query.</p>
+<p>Result</p>
+<table>
+  <tr>
+   <td><strong>e</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>{id: 3; startid: 0, endid: 1; label: ‘RELTYPE’; properties: {name: ‘Node A&lt;->Node B’}}::edge
+   </td>
+  </tr>
+  <tr>
+   <td>(1 row)
+   </td>
+  </tr>
+</table>
+</div>
+<div class="section" id="create-a-full-path">
+<h2>Create a full path<a class="headerlink" href="#create-a-full-path" title="Permalink to this headline">¶</a></h2>
+<p>v1
+When you use CREATE and a pattern, all parts of the pattern that are not already in scope at this time will be created.</p>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT * 
+FROM cypher(&#39;graph_name&#39;, $$
+    CREATE p = (andres {name:&#39;Andres&#39;})-[:WORKS_AT]-&gt;(neo)&lt;-[:WORKS_AT]-(michael {name:&#39;Michael&#39;})
+    RETURN p
+$$) as (p agtype);
+</pre></div>
+</div>
+<p>This query creates three nodes and two relationships in one go, assigns it to a path variable, and returns it.</p>
+<p>Result</p>
+<table>
+	<tr>
+		<td><strong>p</strong></td>
+	</tr>
+	<tr>
+		<td>
+			[{id:0; label: ‘’; properties:{name:’Andres’}}::vertex, <br>{id: 3; startid: 0, endid: 1; label: ‘WORKS_AT’; properties: {}}::edge, <br>{id:1; label: ‘’; properties: {}}::vertex,<br>{id: 3; startid: 2, endid: 1; label: ‘WORKS_AT’; properties: {}}::edge,<br>{id:2; label: ‘’; properties: {name:’Michael’}}::vertex]::path
+               </td>
+	</tr>
+	<tr>
+		<td>(1 row)
+		</td>
+	</tr>
+</table>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="set.html" class="btn btn-neutral float-right" title="SET" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="order_by.html" class="btn btn-neutral float-left" title="ORDER BY" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Apache AGE.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
