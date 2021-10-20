@@ -118,6 +118,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#set-a-property">Set a property</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#return-created-vertex">Return created vertex</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#remove-a-property">Remove a property</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#set-multiple-properties-using-one-set-clause">Set multiple properties using one SET clause</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="remove.html">REMOVE</a></li>
@@ -293,6 +294,35 @@ $$) as (v agtype);
   </tr>
   <tr>
    <td>{id: 3; label: ‘Person’; properties: {surname:"Taylor", age:36, hungry:true}}::vertex
+   </td>
+  </tr>
+  <tr>
+   <td>(1 row)
+   </td>
+  </tr>
+</table>
+</div>
+<div class="section" id="set-multiple-properties-using-one-set-clause">
+<h2>Set multiple properties using one SET clause<a class="headerlink" href="#set-multiple-properties-using-one-set-clause" title="Permalink to this headline">¶</a></h2>
+<p>If you want to set multiple properties in one go, simply separate them with a comma.</p>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT * 
+FROM cypher(&#39;graph_name&#39;, $$
+MATCH (v {name: &#39;Andres&#39;})
+SET v.position = &#39;Developer&#39;, v.surname = &#39;Taylor&#39;
+RETURN v
+$$) as (v agtype);
+</pre></div>
+</div>
+<p>Result</p>
+<table>
+  <tr>
+   <td><strong>v</strong>
+   </td>
+  </tr>
+  <tr>
+   <td> {"id": 281474976710661, "label": "", "properties": {"name": "Andres", "surname": "Taylor", "position": "Developer"}}:
+:vertex
    </td>
   </tr>
   <tr>

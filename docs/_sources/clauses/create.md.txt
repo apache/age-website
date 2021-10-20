@@ -31,9 +31,7 @@ $$) as (a agtype);
 </table>
 
 
-
 ## Create Vertices
-
 
 ## Create single vertex
 

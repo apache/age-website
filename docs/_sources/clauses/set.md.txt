@@ -119,3 +119,40 @@ Result
 </table>
 
 
+## Set multiple properties using one SET clause
+
+If you want to set multiple properties in one go, simply separate them with a comma.
+
+Query
+
+
+```
+SELECT * 
+FROM cypher('graph_name', $$
+MATCH (v {name: 'Andres'})
+SET v.position = 'Developer', v.surname = 'Taylor'
+RETURN v
+$$) as (v agtype);
+```
+
+
+Result
+
+<table>
+  <tr>
+   <td><strong>v</strong>
+   </td>
+  </tr>
+  <tr>
+   <td> {"id": 281474976710661, "label": "", "properties": {"name": "Andres", "surname": "Taylor", "position": "Developer"}}:
+:vertex
+   </td>
+  </tr>
+  <tr>
+   <td>(1 row)
+   </td>
+  </tr>
+</table>
+
+
+
