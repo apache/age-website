@@ -108,7 +108,10 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="match.html">MATCH</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">WITH</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#filter-on-results">Filter on results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#filter-on-aggregate-function-results">Filter on aggregate function results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sort-results-before-using-collect-on-them">Sort results before using collect on them</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#limit-branching-of-a-path-search">Limit branching of a path search</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="return.html">RETURN</a></li>
@@ -209,36 +212,113 @@
             
   <div class="tex2jax_ignore mathjax_ignore section" id="with">
 <h1>WITH<a class="headerlink" href="#with" title="Permalink to this headline">¶</a></h1>
-<p>Introduction</p>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>Using WITH, you can manipulate the output before it is passed on to the following query parts. The manipulations can be of the shape and/or number of entries in the result set.</p>
 <p>WITH can also, like RETURN, alias expressions that are introduced into the results using the aliases as the binding name.</p>
 <p>WITH is also used to separate the reading of the graph from updating of the graph. Every part of a query must be either read-only or write-only. When going from a writing part to a reading part, the switch can be done with an optional WITH clause.</p>
-<div class="section" id="filter-on-results">
-<h2>Filter on results<a class="headerlink" href="#filter-on-results" title="Permalink to this headline">¶</a></h2>
-<p>Results passed through a WITH clause can be filtered on.</p>
+</div>
+<div class="section" id="filter-on-aggregate-function-results">
+<h2>Filter on aggregate function results<a class="headerlink" href="#filter-on-aggregate-function-results" title="Permalink to this headline">¶</a></h2>
+<p>Aggregated results have to pass through a WITH clause to be able to filter on.</p>
 <p>Query</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
 FROM cypher(&#39;graph_name&#39;, $$
-MATCH (david {name: &#39;David&#39;})-[:FRIEND]-(otherPerson)
-WITH otherPerson.name as name, otherPerson.age as age, otherPerson.freetonight as free_tonight
-WHERE age &gt; 21 and free_tonight = TRUE
-RETURN name
+	MATCH (david {name: &#39;David&#39;})-[]-(otherPerson)-[]-&gt;()
+	WITH otherPerson, count(*) AS foaf
+	WHERE foaf &gt; 1RETURN otherPerson.name
+	RETURN otherPerson.name
 $$) as (name agtype);
 </pre></div>
 </div>
 <p>The name of the person connected to ‘David’ with the at least more than one outgoing relationship will be returned by the query.</p>
 <p>Result</p>
 <table>
+  <thead>
   <tr>
    <td>name
    </td>
   </tr>
+  </thead>
+  <tbody>
+  <tr>
+   <td>"Anders"
+   </td>
+  </tr>
+  </tbody>
+  <tr>
+   <td>1 row
+   </td>
+  </tr>
+</table>
+</div>
+<div class="section" id="sort-results-before-using-collect-on-them">
+<h2>Sort results before using collect on them<a class="headerlink" href="#sort-results-before-using-collect-on-them" title="Permalink to this headline">¶</a></h2>
+<p>You can sort your results before passing them to collect, thus sorting the resulting list.</p>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
+FROM cypher(&#39;graph_name&#39;, $$
+	MATCH (n)WITH n
+	ORDER BY n.name DESC LIMIT 3
+	RETURN collect(n.name)
+$$) as (names agtype);
+</pre></div>
+</div>
+<p>A list of the names of people in reverse order, limited to 3, is returned in a list.</p>
+<p>Result</p>
+<table>
+  <thead>
+  <tr>
+   <td>names
+   </td>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+   <td>["Emil","David","Ceasar"]
+   </td>
+  </tr>
+  </tbody>
+  <tr>
+   <td>1 row
+   </td>
+  </tr>
+</table>
+</div>
+<div class="section" id="limit-branching-of-a-path-search">
+<h2>Limit branching of a path search<a class="headerlink" href="#limit-branching-of-a-path-search" title="Permalink to this headline">¶</a></h2>
+<p>You can match paths, limit to a certain number, and then match again using those paths as a base,as well as any number of similar limited searches.</p>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
+FROM cypher(&#39;graph_name&#39;, $$
+	MATCH (n {name: &#39;Anders&#39;})-[]-(m)WITH m
+	ORDER BY m.name DESC LIMIT 1
+	MATCH (m)-[]-(o)
+	RETURN o.name
+$$) as (name agtype);
+</pre></div>
+</div>
+<p>Starting at ‘Anders’, find all matching nodes, order by name descending and get the top result, thenfind all the nodes connected to that top result, and return their names.</p>
+<p>Result</p>
+<table>
+  <thead>
+  <tr>
+   <td>name
+   </td>
+  </tr>
+  </thead>
+  <tbody>
   <tr>
    <td>"Anders"
    </td>
   </tr>
   <tr>
-   <td>1 row
+   <td>"Bossman"
+   </td>
+  </tr>
+  </tbody>
+  <tr>
+   <td>2 rows
    </td>
   </tr>
 </table>
