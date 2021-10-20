@@ -245,16 +245,15 @@
   <tr>
    <td>parameters
    </td>
-   <td>An optional map of parameters used for stored procedure. Default is NULL. See 
-<p><a href="#heading=h.8ys790864f8o">Stored Procedures</a> for details</p>
+   <td>An optional map of parameters used for Prepared Statements. Default is NULL. 
    </td>
   </tr>
 </table>
 <p>Considerations:</p>
 <ul class="simple">
 <li><p>If a Cypher query does not return results, a record definition still needs to be defined.</p></li>
+<li><p>The parameter map can only be used with <a class="reference internal" href="../advanced/prepared_statements.html"><span class="doc std std-doc">Prepared Statements</span></a>. An error will be thrown otherwise.</p></li>
 </ul>
-<p><a class="reference external" href="#heading=h.vo9azwq6syoh">Example</a>.</p>
 <p>Query:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT * FROM cypher(&#39;graph_name&#39;, $$ 
 /* Cypher Query Here */ 
@@ -264,8 +263,7 @@ $$) AS (result1 agtype, result2 agtype);
 </div>
 <div class="section" id="cypher-in-an-expression">
 <h2>Cypher in an Expression<a class="headerlink" href="#cypher-in-an-expression" title="Permalink to this headline">¶</a></h2>
-<p>Cypher may not be used as part of an expression, use a subquery instead. See</p>
-<p><a class="reference external" href="#heading=h.2hqh54e4zcgm">Advanced Cypher Queries</a> for information about how to use Cypher queries with Expressions</p>
+<p>Cypher may not be used as part of an expression, use a subquery instead. See <a class="reference external" href="../advanced/advanced.html#cypher-in-sql-expressions">Advanced Cypher Queries</a> for information about how to use Cypher queries with Expressions</p>
 </div>
 <div class="section" id="select-clause">
 <h2>SELECT Clause<a class="headerlink" href="#select-clause" title="Permalink to this headline">¶</a></h2>
