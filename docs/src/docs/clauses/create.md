@@ -30,9 +30,6 @@ $$) as (a agtype);
   </tr>
 </table>
 
-
-## Create Vertices
-
 ## Create single vertex
 
 Creating a single vertex is done by issuing the following query.
@@ -196,11 +193,6 @@ Result
    </td>
   </tr>
 </table>
-
-
-
-## Create Edges
-
 
 ## Create an edge between two nodes
 
