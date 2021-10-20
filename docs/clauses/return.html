@@ -112,6 +112,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#return-nodes">Return nodes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#return-edges">Return edges</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#return-property">Return property</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#return-all-elements">Return all elements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#variable-with-uncommon-characters">Variable with uncommon characters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#aliasing-a-field">Aliasing a field</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#optional-properties">Optional properties</a></li>
@@ -297,6 +298,54 @@ $$) as (name agtype);
   </tr>
   <tr>
    <td>(1 row)
+   </td>
+  </tr>
+</table>
+</div>
+<div class="section" id="return-all-elements">
+<h2>Return all elements<a class="headerlink" href="#return-all-elements" title="Permalink to this headline">¶</a></h2>
+<p>When you want to return all vertices, edges and paths found in a query, you can use the * symbol.</p>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
+FROM cypher(&#39;graph_name&#39;, $$
+	MATCH (a {name: &#39;A&#39;})-[r]-&gt;(b)
+	RETURN *
+$$) as (a agtype, b agtype, r agtype);
+</pre></div>
+</div>
+<p>This returns the two vertices, and the edge used in the query.</p>
+<p>Result</p>
+<table>
+  <thead>
+  <tr>
+   <td><strong>a</strong></td>
+   <td><strong>b</strong></td>
+   <td><strong>r</strong></td>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+   <td>{"id": 281474976710659, "label": "", "properties": {"age": 55, "name": "A", "happy": "Yes!"}}::vertex 
+   </td>
+   <td>
+{"id": 1125899906842625, "label": "BLOCKS", "end_id": 281474976710660, "start_id": 281474976710659, "properties": {}}::edge
+   </td>
+   <td>
+{"id": 281474976710660, "label": "", "properties": {"name": "B"}}::vertex
+   </td>
+  </tr>
+  <tr>
+   <td>{"id": 281474976710659, "label": "", "properties": {"age": 55, "name": "A", "happy": "Yes!"}}::vertex 
+   </td>
+   <td>
+{"id": 1407374883553281, "label": "KNOWS", "end_id": 281474976710660, "start_id": 281474976710659, "properties": {}}::edge
+   </td>
+   <td>
+{"id": 281474976710660, "label": "", "properties": {"name": "B"}}::vertex
+   </td>
+  </tr>
+  <tbody>
+   <td>(2 rows)
    </td>
   </tr>
 </table>
