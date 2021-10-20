@@ -1,16 +1,3 @@
-<!-- TOC -->
-
-- [Clauses](#clauses)
-    - [MATCH](#match)
-    - [WITH](#with)
-    - [RETURN](#return)
-    - [ORDER BY](#order-by)
-    - [WHERE](#where)
-    - [CREATE](#create)
-    - [SET](#set)
-    - [REMOVE](#remove)
-<!-- /TOC -->
-
 # MATCH
 
 The MATCH clause allows you to specify the patterns Cypher will search for in the database. This is the primary way of getting data into the current set of bindings. It is worth reading up more on the specification of the patterns themselves in Patterns.
