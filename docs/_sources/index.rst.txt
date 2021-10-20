@@ -23,6 +23,7 @@ Apache AGE's documentation
    clauses/with
    clauses/return
    clauses/order_by
+   clauses/skip
    clauses/limit
    clauses/create
    clauses/set

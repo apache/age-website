@@ -51,3 +51,45 @@ Result
    </td>
   </tr>
 </table>
+
+## Using an expression with LIMIT to return a subset of the rows
+
+Limit accepts any expression that evaluates to a positive integer as long as it is not referring to any external variables:
+
+Query
+
+
+```
+SELECT *
+FROM cypher('graph_name', $$
+	MATCH (n)
+	RETURN n.name
+	ORDER BY n.name
+	LIMIT toInteger(3 * rand()) + 1
+$$) as (names agtype);
+
+```
+
+Returns one to three top items.
+
+Result
+
+
+<table>
+  <thead>
+   <td><strong>names</strong>
+   </td>
+  <thead>
+  <tr>
+   <td>"A"
+   </td>
+  </tr>
+  <tr>
+   <td>"B"
+   </td>
+  </tr>
+  <tr>
+   <td>2 rows
+   </td>
+  </tr>
+</table>
