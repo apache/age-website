@@ -1,2 +1,2 @@
-venv/
-docs/.doctrees/
+build/html
+venv
