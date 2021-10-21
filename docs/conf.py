@@ -64,8 +64,8 @@ html_favicon = 'images/favicon.ico'
 
 html_context = {
     'display_github': True,
-    'github_user': 'pdpotter',
-    'github_repo': 'age_docs',
+    'github_user': 'apache',
+    'github_repo': 'incubator-age-website',
     'github_version': 'master',
     'conf_py_path': '/docs/',
     'navigation_depth': 2
