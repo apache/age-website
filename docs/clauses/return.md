@@ -115,6 +115,58 @@ Result
 </table>
 
 
+## Return all elements
+
+When you want to return all vertices, edges and paths found in a query, you can use the * symbol.
+
+Query
+
+```
+SELECT *
+FROM cypher('graph_name', $$
+	MATCH (a {name: 'A'})-[r]->(b)
+	RETURN *
+$$) as (a agtype, b agtype, r agtype);
+```
+
+
+This returns the two vertices, and the edge used in the query.
+
+Result
+<table>
+  <thead>
+  <tr>
+   <td><strong>a</strong></td>
+   <td><strong>b</strong></td>
+   <td><strong>r</strong></td>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+   <td>{"id": 281474976710659, "label": "", "properties": {"age": 55, "name": "A", "happy": "Yes!"}}::vertex 
+   </td>
+   <td>
+{"id": 1125899906842625, "label": "BLOCKS", "end_id": 281474976710660, "start_id": 281474976710659, "properties": {}}::edge
+   </td>
+   <td>
+{"id": 281474976710660, "label": "", "properties": {"name": "B"}}::vertex
+   </td>
+  </tr>
+  <tr>
+   <td>{"id": 281474976710659, "label": "", "properties": {"age": 55, "name": "A", "happy": "Yes!"}}::vertex 
+   </td>
+   <td>
+{"id": 1407374883553281, "label": "KNOWS", "end_id": 281474976710660, "start_id": 281474976710659, "properties": {}}::edge
+   </td>
+   <td>
+{"id": 281474976710660, "label": "", "properties": {"name": "B"}}::vertex
+   </td>
+  </tr>
+  <tbody>
+   <td>(2 rows)
+   </td>
+  </tr>
+</table>
 
 ## Variable with uncommon characters
 
