@@ -42,23 +42,15 @@ Arguments:
   <tr>
    <td>parameters
    </td>
-   <td>An optional map of parameters used for stored procedure. Default is NULL. See 
-
-
-<a href="#heading=h.8ys790864f8o">Stored Procedures</a> for details 
+   <td>An optional map of parameters used for Prepared Statements. Default is NULL. 
    </td>
   </tr>
 </table>
 
 
 Considerations:
-
-
-
 * If a Cypher query does not return results, a record definition still needs to be defined. 
-
-
-[Example](#heading=h.vo9azwq6syoh).
+* The parameter map can only be used with [Prepared Statements](../advanced/prepared_statements). An error will be thrown otherwise.
 
 Query:
 
@@ -69,15 +61,9 @@ SELECT * FROM cypher('graph_name', $$
 $$) AS (result1 agtype, result2 agtype);
 ```
 
-
-
 ## Cypher in an Expression
 
-Cypher may not be used as part of an expression, use a subquery instead. See 
-
-
-
-[Advanced Cypher Queries](#heading=h.2hqh54e4zcgm) for information about how to use Cypher queries with Expressions
+Cypher may not be used as part of an expression, use a subquery instead. See [Advanced Cypher Queries](../advanced/advanced.html#cypher-in-sql-expressions) for information about how to use Cypher queries with Expressions
 
 
 ## SELECT Clause
