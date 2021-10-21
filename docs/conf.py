@@ -22,7 +22,7 @@ copyright = '2021, Apache AGE'
 author = 'Apache AGE'
 
 # The full version, including alpha/beta/rc tags
-release = 'v0.6.0'
+release = 'master'
 
 
 # -- General configuration ---------------------------------------------------
@@ -66,8 +66,9 @@ html_context = {
     'display_github': True,
     'github_user': 'pdpotter',
     'github_repo': 'age_docs',
-    'github_version': 'v0.6.0',
+    'github_version': 'master',
     'conf_py_path': '/docs/',
+    'navigation_depth': 2
 }
 
 # -- Multiversion options ----------------------------------------------------
@@ -78,3 +79,8 @@ smv_branch_whitelist = r'^(?!gh-pages).*$'
 smv_remote_whitelist = r'^.*$'
 smv_released_pattern = r'^remotes/.*$'
 smv_prefer_remote_refs = True
+
+
+def setup(app):
+    app.add_css_file('css/custom.css')  # may also be an URL
+
