@@ -1,6 +1,6 @@
 
 
-# CTE Clause
+# Using Cypher in a CTE Expression
 
 There are no restrictions to using Cypher with CTEs. 
 
@@ -55,7 +55,7 @@ Results:
 
 
 
-# Join Clause
+# Using Cypher in a Join expression
 
 A Cypher query can be part of a JOIN clause.
 
