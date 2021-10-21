@@ -3,7 +3,7 @@
 
 ## min()
 
-min() returns the minimum value in a set of values. \
+min() returns the minimum value in a set of values.
 
 
 Syntax: `min(expression)`
@@ -555,18 +555,14 @@ Arguments:
 
 
 Considerations:
-
-
-
 * count(*) includes records returning null.
 * count(expr) ignores null values.
 * count(null) returns 0.
 * Using count(*) to return the number of nodes
 * count(*) can be used to return the number of nodes; for example, the number of nodes connected to some node n.
 
+
 Query
-
-
 ```
 SELECT *
 FROM cypher('graph_name', $$
@@ -575,12 +571,9 @@ FROM cypher('graph_name', $$
 $$ as (age agtype, number_of_people agtype);
 ```
 
-
 The labels and age property of the start node n and the number of nodes related to n are returned.
 
 Result:
-
-
 <table>
   <tr>
    <td>age
@@ -604,8 +597,6 @@ Result:
 Using count(*) to group and count relationship typescount(*) can be used to group relationship types and return the number.
 
 Query
-
-
 ```
 SELECT *
 FROM cypher('graph_name', $$
@@ -715,6 +706,44 @@ Result:
   </tr>
 </table>
 
+
+### Counting with and without duplicates
+
+In this example we are trying to find all our friends of friends, and count them:
+* The first aggregate function, count(DISTINCT friend_of_friend), will only count a friend_of_friend once, as DISTINCT removes the duplicates.
+* The second aggregate function, count(friend_of_friend), will consider the same friend_of_friend multiple times.
+
+Query
+```
+SELECT *
+FROM cypher('graph_name', $$
+	MATCH (me:Person)-[]->(friend:Person)-[]->(friend_of_friend:Person)
+	WHERE me.name = 'A'
+	RETURN count(DISTINCT friend_of_friend), count(friend_of_friend)
+$$) as (friend_of_friends_distinct agtype, friend_of_friends agtype);
+```
+
+Both B and C know D and thus D will get counted twice when not using DISTINCT
+
+Result:
+<table>
+  <tr>
+   <td>friend_of_friends_distinct
+   </td>
+   <td>friend_of_friends
+   </td>
+  </tr>
+  <tr>
+   <td>1
+   </td>
+   <td>2
+   </td>
+  </tr>
+  <tr>
+   <td>1 row
+   </td>
+  </tr>
+</table>
 
 
 ## avg()
