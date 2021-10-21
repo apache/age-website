@@ -139,6 +139,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#count">count()</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#using-count-expression-to-return-the-number-of-values">Using count(expression) to return the number of values</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#counting-non-null-values">Counting non-null values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#counting-with-and-without-duplicates">Counting with and without duplicates</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#avg">avg()</a></li>
@@ -229,7 +230,7 @@
 <h1>Aggregation Functions<a class="headerlink" href="#aggregation-functions" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="min">
 <h2>min()<a class="headerlink" href="#min" title="Permalink to this headline">¶</a></h2>
-<p>min() returns the minimum value in a set of values. \</p>
+<p>min() returns the minimum value in a set of values.</p>
 <p>Syntax: <code class="docutils literal notranslate"><span class="pre">min(expression)</span></code></p>
 <p>Returns:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="nb">property</span> <span class="nb">type</span><span class="p">,</span> <span class="ow">or</span> <span class="n">a</span> <span class="nb">list</span><span class="p">,</span> <span class="n">depending</span> <span class="n">on</span> <span class="n">the</span> <span class="n">values</span> <span class="n">returned</span> <span class="n">by</span> <span class="n">expression</span><span class="o">.</span>
@@ -746,6 +747,43 @@ $$) as (count agtype);
   </tr>
   <tr>
    <td>1 row(s) returned
+   </td>
+  </tr>
+</table>
+</div>
+<div class="section" id="counting-with-and-without-duplicates">
+<h3>Counting with and without duplicates<a class="headerlink" href="#counting-with-and-without-duplicates" title="Permalink to this headline">¶</a></h3>
+<p>In this example we are trying to find all our friends of friends, and count them:</p>
+<ul class="simple">
+<li><p>The first aggregate function, count(DISTINCT friend_of_friend), will only count a friend_of_friend once, as DISTINCT removes the duplicates.</p></li>
+<li><p>The second aggregate function, count(friend_of_friend), will consider the same friend_of_friend multiple times.</p></li>
+</ul>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
+FROM cypher(&#39;graph_name&#39;, $$
+	MATCH (me:Person)-[]-&gt;(friend:Person)-[]-&gt;(friend_of_friend:Person)
+	WHERE me.name = &#39;A&#39;
+	RETURN count(DISTINCT friend_of_friend), count(friend_of_friend)
+$$) as (friend_of_friends_distinct agtype, friend_of_friends agtype);
+</pre></div>
+</div>
+<p>Both B and C know D and thus D will get counted twice when not using DISTINCT</p>
+<p>Result:</p>
+<table>
+  <tr>
+   <td>friend_of_friends_distinct
+   </td>
+   <td>friend_of_friends
+   </td>
+  </tr>
+  <tr>
+   <td>1
+   </td>
+   <td>2
+   </td>
+  </tr>
+  <tr>
+   <td>1 row
    </td>
   </tr>
 </table>
