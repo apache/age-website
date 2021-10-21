@@ -127,6 +127,7 @@
 <li class="toctree-l1"><a class="reference internal" href="trigonometric_functions.html">Trigonometric Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="string_functions.html">String Functions</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Aggregation Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#data-setup">Data Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#min">min()</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#using-min-with-lists">Using min() with Lists</a></li>
 </ul>
@@ -228,7 +229,29 @@
             
   <div class="tex2jax_ignore mathjax_ignore section" id="aggregation-functions">
 <h1>Aggregation Functions<a class="headerlink" href="#aggregation-functions" title="Permalink to this headline">¶</a></h1>
-<p><a href="../scripts/functions/aggregation_setup.sql">Data Setup Script</a></p>
+<p>Functions that activate <span class="xref myst">auto aggregation</span>.</p>
+<div class="section" id="data-setup">
+<h2>Data Setup<a class="headerlink" href="#data-setup" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>LOAD &#39;age&#39;;
+SET search_path TO ag_catalog;
+
+SELECT create_graph(&#39;graph_name&#39;);
+
+SELECT * FROM cypher(&#39;graph_name&#39;, $$
+	CREATE (a:Person {name: &#39;A&#39;, age: 13}),
+	(b:Person {name: &#39;B&#39;, age: 33, eyes: &quot;blue&quot;}),
+	(c:Person {name: &#39;C&#39;, age: 44, eyes: &quot;blue&quot;}),
+	(d1:Person {name: &#39;D&#39;, eyes: &quot;brown&quot;}),
+	(d2:Person {name: &#39;D&#39;}),
+	(a)-[:KNOWS]-&gt;(b),
+	(a)-[:KNOWS]-&gt;(c),
+	(a)-[:KNOWS]-&gt;(d1),
+	(b)-[:KNOWS]-&gt;(d2),
+	(c)-[:KNOWS]-&gt;(d2)
+$$) as (a agtype);
+</pre></div>
+</div>
+</div>
 <div class="section" id="min">
 <h2>min()<a class="headerlink" href="#min" title="Permalink to this headline">¶</a></h2>
 <p>min() returns the minimum value in a set of values.</p>
