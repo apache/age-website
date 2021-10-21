@@ -1,0 +1,1229 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Data Types - An Introduction to agtype &mdash; Apache AGE master documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Comparability, Equality, Orderability and Equivalence" href="comparability.html" />
+    <link rel="prev" title="The AGE Cypher Query Format" href="cypher.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Apache AGE
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graphs.html">Graphs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cypher.html">The AGE Cypher Query Format</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Data Types - An Introduction to agtype</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#simple-data-types">Simple Data Types</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#null">Null</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#agtype-null-vs-postgres-null">Agtype NULL vs Postgres NULL</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#integer">Integer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#float">Float</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#numeric">Numeric</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#bool">Bool</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#string">String</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#composite-data-types">Composite Data Types</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#list">List</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#lists-in-general">Lists in general</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#null-in-a-list">NULL in a List</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#access-individual-elements">Access Individual Elements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#map-elements-in-lists">Map Elements in Lists</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#accessing-map-elements-in-lists">Accessing Map Elements in Lists</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#negative-index-access">Negative Index Access</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#index-ranges">Index Ranges</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#negative-index-ranges">Negative Index Ranges</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#positive-slices">Positive Slices</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#negative-slices">Negative Slices</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#map">Map</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#literal-maps-with-simple-data-types">Literal Maps with Simple Data Types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#literal-maps-with-composite-data-types">Literal Maps with Composite Data Types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#property-access-of-a-map">Property Access of a map</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#accessing-list-elements-in-maps">Accessing List Elements in Maps</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#simple-entities">Simple Entities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#graphid">GraphId</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#labels">Labels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#properties">Properties</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#vertex">Vertex</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#type-casting-a-map-to-a-vertex">Type Casting a Map to a Vertex</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#edge">Edge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#type-casting-a-map-to-an-edge">Type Casting a Map to an Edge</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#composite-entities">Composite Entities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#path">Path</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#type-casting-a-list-to-a-path">Type Casting a List to a Path</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="comparability.html">Comparability, Equality, Orderability and Equivalence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="precedence.html">Operator Precedence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregation.html">Aggregation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Clauses</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/match.html">MATCH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/with.html">WITH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/return.html">RETURN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/order_by.html">ORDER BY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/limit.html">LIMIT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/create.html">CREATE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/set.html">SET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/remove.html">REMOVE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/delete.html">DELETE</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Functions</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../functions/predicate_functions.html">Predicate Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/scalar_functions.html">Scalar Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/list_functions.html">List Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/numeric_functions.html">Numeric Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/logarithmic_functions.html">Logarithmic Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/trigonometric_functions.html">Trigonometric Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/string_functions.html">String Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/aggregate_functions.html">Aggregation Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/user_functions.html">User defined functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">AGE Beyond Cypher</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/advanced_overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/advanced.html">CTE Clause</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/advanced.html#join-clause">Join Clause</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/advanced.html#cypher-in-sql-expressions">Cypher in SQL expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/prepared_statements.html">Prepared Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/plpgsql.html">pl/pgSQL Functions</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Apache AGE</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Data Types - An Introduction to agtype</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/pdpotter/age_docs/blob/master/docs/intro/types.md" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="tex2jax_ignore mathjax_ignore section" id="data-types-an-introduction-to-agtype">
+<h1>Data Types - An Introduction to agtype<a class="headerlink" href="#data-types-an-introduction-to-agtype" title="Permalink to this headline">¶</a></h1>
+<p>AGE uses a custom data type called agtype, which is the only data type returned by AGE. Agtype is a superset of Json and a custom implementation of JsonB.</p>
+<div class="section" id="simple-data-types">
+<h2>Simple Data Types<a class="headerlink" href="#simple-data-types" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="null">
+<h3>Null<a class="headerlink" href="#null" title="Permalink to this headline">¶</a></h3>
+<p>In Cypher, null is used to represent missing or undefined values. Conceptually, null means ‘a missing unknown value’ and it is treated somewhat differently from other values. For example getting a property from a vertex that does not have said property produces null. Most expressions that take null as input will produce null. This includes boolean expressions that are used as predicates in the WHERE clause. In this case, anything that is not true is interpreted as being false. null is not equal to null. Not knowing two values does not imply that they are the same value. So the expression null = null yields null and not true.</p>
+<p>Input/Output Format</p>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
+FROM cypher(&#39;graph_name&#39;, $$
+    RETURN NULL
+$$) AS (null_result agtype);
+</pre></div>
+</div>
+<p>A null will appear as an empty space.</p>
+<p>Result:</p>
+<table>
+  <tr>
+   <td>null_result
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <br>
+   </td>
+  </tr>
+  <tr>
+   <td>(1 row)
+   </td>
+  </tr>
+</table>
+<div class="section" id="agtype-null-vs-postgres-null">
+<h4>Agtype NULL vs Postgres NULL<a class="headerlink" href="#agtype-null-vs-postgres-null" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+<div class="section" id="integer">
+<h3>Integer<a class="headerlink" href="#integer" title="Permalink to this headline">¶</a></h3>
+<p>The integer type stores whole numbers, i.e. numbers without fractional components. Integer data type is a 64-bit field that stores values from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807. Attempts to store values outside this range will result in an error.</p>
+<p>The type integer is the common choice, as it offers the best balance between range, storage size, and performance. The smallint type is generally used only if disk space is at a premium. The bigint type is designed to be used when the range of the integer type is insufficient.</p>
+<p>Input/Output Format</p>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
+FROM cypher(&#39;graph_name&#39;, $$
+    RETURN 1
+$$) AS (int_result agtype);
+</pre></div>
+</div>
+<p>Result:</p>
+<table>
+  <tr>
+   <td>int_result
+   </td>
+  </tr>
+  <tr>
+   <td>1
+   </td>
+  </tr>
+  <tr>
+   <td>(1 row)
+   </td>
+  </tr>
+</table>
+</div>
+<div class="section" id="float">
+<h3>Float<a class="headerlink" href="#float" title="Permalink to this headline">¶</a></h3>
+<p>The data type float is an inexact, variable-precision numeric type, conforming to the IEEE-754 Standard.</p>
+<p>Inexact means that some values cannot be converted exactly to the internal format and are stored as approximations, so that storing and retrieving a value might show slight discrepancies. Managing these errors and how they propagate through calculations is the subject of an entire branch of mathematics and computer science and will not be discussed here, except for the following points:</p>
+<ul class="simple">
+<li><p>If you require exact storage and calculations (such as for monetary amounts), use the numeric type instead.</p></li>
+<li><p>If you want to do complicated calculations with these types for anything important, especially if you rely on certain behavior in boundary cases (infinity, underflow), you should evaluate the implementation carefully.</p></li>
+<li><p>Comparing two floating-point values for equality might not always work as expected.</p></li>
+</ul>
+<p>Values that are too large or too small will cause an error. Rounding might take place if the precision of an input number is too high. Numbers too close to zero that are not representable as distinct from zero will cause an underflow error.</p>
+<p>In addition to ordinary numeric values, the floating-point types have several special values:</p>
+<ul class="simple">
+<li><p>Infinity</p></li>
+<li><p>-Infinity</p></li>
+<li><p>NaN</p></li>
+</ul>
+<p>These represent the IEEE 754 special values “infinity”, “negative infinity”, and “not-a-number”, respectively. When writing these values as constants in a Cypher command, you must put quotes around them and typecast them, for example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SET</span> <span class="n">x</span><span class="o">.</span><span class="n">float_value</span> <span class="o">=</span> <span class="s1">&#39;-Infinity&#39;</span><span class="p">::</span><span class="nb">float</span>
+</pre></div>
+</div>
+<p>On input, these strings are recognized in a case-insensitive manner.</p>
+<p><em>Note
+IEEE754 specifies that NaN should not compare equal to any other floating-point value (including NaN). However, in order to allow floats to be sorted correctly, AGE evaluates ‘NaN’::float = ‘NaN’::float to true. See the section Comparability and Equality for more details.</em></p>
+<!-- changed 'NaN':float to Nan::float -->
+<p>Input/Output Format:</p>
+<p>To use a float, denote a decimal value.</p>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
+FROM cypher(&#39;graph_name&#39;, $$
+    RETURN 1.0
+$$) AS (float_result agtype);
+</pre></div>
+</div>
+<p>Result:</p>
+<table>
+  <tr>
+   <td>float_result
+   </td>
+  </tr>
+  <tr>
+   <td>1.0
+   </td>
+  </tr>
+  <tr>
+   <td>(1 row)
+   </td>
+  </tr>
+</table>
+</div>
+<div class="section" id="numeric">
+<h3>Numeric<a class="headerlink" href="#numeric" title="Permalink to this headline">¶</a></h3>
+<p>The type numeric can store numbers with a very large number of digits. It is especially recommended for storing monetary amounts and other quantities where exactness is required. Calculations with numeric values yield exact results where possible, e.g., addition, subtraction, multiplication. However, calculations on numeric values are very slow compared to the integer types, or to the floating-point type.</p>
+<p>We use the following terms below: The <em>precision</em> of a numeric is the total count of significant digits in the whole number, that is, the number of digits to both sides of the decimal point. The <em>scale</em> of a numeric is the count of decimal digits in the fractional part, to the right of the decimal point. So the number 23.5141 has a precision of 6 and a scale of 4. Integers can be considered to have a scale of zero.</p>
+<p>Without any precision or scale creates a column in which numeric values of any precision and scale can be stored, up to the implementation limit on precision. <!-- fix above sentence --> A column of this kind will not coerce input values to any particular scale, whereas numeric columns with a declared scale will coerce input values to that scale. (The SQL standard requires a default scale of 0, i.e., coercion to integer precision. We find this a bit useless. If you’re concerned about portability, always specify the precision and scale explicitly.)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">_Note</span>
+<span class="n">The</span> <span class="n">maximum</span> <span class="n">allowed</span> <span class="n">precision</span> <span class="n">when</span> <span class="n">explicitly</span> <span class="n">specified</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">type</span> <span class="n">declaration</span> <span class="ow">is</span> <span class="mi">1000</span><span class="p">;</span> <span class="n">NUMERIC</span> <span class="n">without</span> <span class="n">a</span> <span class="n">specified</span> <span class="n">precision</span> <span class="ow">is</span> <span class="n">subject</span> <span class="n">to</span> <span class="n">the</span> <span class="n">limits</span> <span class="n">described</span> <span class="ow">in</span> <span class="n">Table</span> <span class="mf">8.2</span><span class="o">.</span><span class="n">_</span>
+
+</pre></div>
+</div>
+<p>If the scale of a value to be stored is greater than the declared scale of the column, the system will round the value to the specified number of fractional digits. Then, if the number of digits to the left of the decimal point exceeds the declared precision minus the declared scale, an error is raised.</p>
+<p>Numeric values are physically stored without any extra leading or trailing zeroes. Thus, the declared precision and scale of a column are maximums, not fixed allocations. (In this sense the numeric type is more akin to varchar(<em>n</em>) than to char(<em>n</em>).) The actual storage requirement is two bytes for each group of four decimal digits, plus three to eight bytes overhead.</p>
+<p>In addition to ordinary numeric values, the numeric type allows the special value NaN, meaning “not-a-number”. Any operation on NaN yields another NaN. When writing this value as a constant in an SQL command, you must put quotes around it, for example UPDATE table SET x = ‘NaN’.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">_Note</span>
+<span class="n">In</span> <span class="n">most</span> <span class="n">implementations</span> <span class="n">of</span> <span class="n">the</span> <span class="s2">&quot;not-a-number&quot;</span> <span class="n">concept</span><span class="p">,</span> <span class="n">NaN</span> <span class="ow">is</span> <span class="n">considered</span> <span class="ow">not</span> <span class="n">equal</span> <span class="n">to</span> <span class="nb">any</span> <span class="n">other</span> <span class="n">numeric</span> <span class="n">value</span> <span class="p">(</span><span class="n">including</span> <span class="n">NaN</span><span class="p">)</span><span class="o">.</span> <span class="n">However</span><span class="p">,</span> <span class="ow">in</span> <span class="n">order</span> <span class="n">to</span> <span class="n">allow</span> <span class="n">floats</span> <span class="n">to</span> <span class="n">be</span> <span class="nb">sorted</span> <span class="n">correctly</span><span class="p">,</span> <span class="n">AGE</span> <span class="n">evaluates</span> <span class="s1">&#39;NaN&#39;</span><span class="p">::</span><span class="n">numeric</span> <span class="o">=</span> <span class="s1">&#39;NaN&#39;</span><span class="p">:</span><span class="n">numeric</span> <span class="n">to</span> <span class="n">true</span><span class="o">.</span> <span class="n">See</span> <span class="n">the</span> <span class="n">section</span> <span class="n">Comparability</span> <span class="ow">and</span> <span class="n">Equality</span> <span class="k">for</span> <span class="n">more</span> <span class="n">details</span><span class="o">.</span><span class="n">_</span>
+
+</pre></div>
+</div>
+<p>When rounding values, the numeric type rounds ties away from zero, while (on most machines) the real and double precision types round ties to the nearest even number. For example:</p>
+<p>Input/Output Format:</p>
+<p>When creating a numeric data type, the ‘::numeric’ data annotation is required.</p>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
+FROM cypher(&#39;graph_name&#39;, $$
+    RETURN 1.0::numeric
+$$) AS (numeric_result agtype);
+</pre></div>
+</div>
+<p>Result:</p>
+<table>
+  <tr>
+   <td>numeric_result
+   </td>
+  </tr>
+  <tr>
+   <td>1.0::numeric
+   </td>
+  </tr>
+  <tr>
+   <td>(1 row)
+   </td>
+  </tr>
+</table>
+<div class="section" id="bool">
+<h4>Bool<a class="headerlink" href="#bool" title="Permalink to this headline">¶</a></h4>
+<p>AGE provides the standard Cypher type boolean. The boolean type can have several states: “true”, “false”, and a third state, “unknown”, which is represented by the Agtype null value.</p>
+<p>Boolean constants can be represented in Cypher queries by the keywords TRUE, FALSE, and NULL.</p>
+<p>Note that the parser automatically understands that TRUE and FALSE are of type boolean, but this is not so for NULL because that can have any type. So in some contexts you might have to cast NULL to boolean explicitly, for example NULL::boolean. Conversely, the cast can be omitted from a string-literal Boolean value in contexts where the parser can deduce that the literal must be of type boolean.</p>
+<p>Input/Output Format</p>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
+FROM cypher(&#39;graph_name&#39;, $$
+    RETURN TRUE
+$$) AS (boolean_result agtype);
+</pre></div>
+</div>
+<p>Unlike Postgres, AGE’s boolean outputs as the full word, ie. true and false as opposed to t and f.</p>
+<p>Result:</p>
+<table>
+  <tr>
+   <td>boolean_result
+   </td>
+  </tr>
+  <tr>
+   <td>true
+   </td>
+  </tr>
+  <tr>
+   <td>(1 row)
+   </td>
+  </tr>
+</table>
+</div>
+</div>
+<div class="section" id="string">
+<h3>String<a class="headerlink" href="#string" title="Permalink to this headline">¶</a></h3>
+<p>Agtype strings String literals can contain the following escape sequences:</p>
+<table>
+  <tr>
+   <td>Escape Sequence
+   </td>
+   <td>Character
+   </td>
+  </tr>
+  <tr>
+   <td>\t
+   </td>
+   <td>Tab
+   </td>
+  </tr>
+  <tr>
+   <td>\b
+   </td>
+   <td>Backspace
+   </td>
+  </tr>
+  <tr>
+   <td>\n
+   </td>
+   <td>Newline
+   </td>
+  </tr>
+  <tr>
+   <td>\r
+   </td>
+   <td>Carriage Return
+   </td>
+  </tr>
+  <tr>
+   <td>\f
+   </td>
+   <td>Form Feed
+   </td>
+  </tr>
+  <tr>
+   <td>\’
+   </td>
+   <td>Single Quote
+   </td>
+  </tr>
+  <tr>
+   <td>\”
+   </td>
+   <td>Double Quote
+   </td>
+  </tr>
+  <tr>
+   <td>\\
+   </td>
+   <td>Backslash
+   </td>
+  </tr>
+  <tr>
+   <td>\uXXXX
+   </td>
+   <td>Unicode UTF-16 code point (4 hex digits must follow the \u)
+   </td>
+  </tr>
+</table>
+<p>Input/Output Format</p>
+<p>Use single (‘) quotes to identify a string. The output will use double (“) quotes.</p>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
+FROM cypher(&#39;graph_name&#39;, $$
+    RETURN &#39;This is a string&#39;
+$$) AS (string_result agtype);
+</pre></div>
+</div>
+<p>Result:</p>
+<table>
+  <tr>
+   <td>string_result
+   </td>
+  </tr>
+  <tr>
+   <td>“This is a string”
+   </td>
+  </tr>
+  <tr>
+   <td>(1 row)
+   </td>
+  </tr>
+</table>
+</div>
+</div>
+<div class="section" id="composite-data-types">
+<h2>Composite Data Types<a class="headerlink" href="#composite-data-types" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="list">
+<h3>List<a class="headerlink" href="#list" title="Permalink to this headline">¶</a></h3>
+<p>All examples will use the</p>
+<p id="gdcalert1" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: undefined internal link (link text: "WITH"). Did you generate a TOC? </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert2">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+<p><a class="reference external" href="#heading=h.61g87t1b908v">WITH</a> clause and</p>
+<p id="gdcalert2" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: undefined internal link (link text: "RETURN"). Did you generate a TOC? </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+<p><a class="reference external" href="#heading=h.a8dh3jonzaxn">RETURN</a> clause.</p>
+<div class="section" id="lists-in-general">
+<h4>Lists in general<a class="headerlink" href="#lists-in-general" title="Permalink to this headline">¶</a></h4>
+<p>A literal list is created by using brackets and separating the elements in the list with commas.</p>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
+FROM cypher(&#39;graph_name&#39;, $$
+    WITH [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as lst
+    RETURN lst
+$$) AS (lst agtype);
+</pre></div>
+</div>
+<p>Result:</p>
+<table>
+  <tr>
+   <td>lst
+   </td>
+  </tr>
+  <tr>
+   <td>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+   </td>
+  </tr>
+  <tr>
+   <td>(1 row)
+   </td>
+  </tr>
+</table>
+</div>
+<div class="section" id="null-in-a-list">
+<h4>NULL in a List<a class="headerlink" href="#null-in-a-list" title="Permalink to this headline">¶</a></h4>
+<p>A list can hold the value null, unlike when a null is an independent value, it will appear as the word ‘null’ in a list</p>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
+FROM cypher(&#39;graph_name&#39;, $$
+    WITH [null] as lst
+    RETURN lst
+$$) AS (lst agtype);
+</pre></div>
+</div>
+<p>Result:</p>
+<table>
+  <tr>
+   <td>lst
+   </td>
+  </tr>
+  <tr>
+   <td>[null]
+   </td>
+  </tr>
+  <tr>
+   <td>(1 row)
+   </td>
+  </tr>
+</table>
+</div>
+<div class="section" id="access-individual-elements">
+<h4>Access Individual Elements<a class="headerlink" href="#access-individual-elements" title="Permalink to this headline">¶</a></h4>
+<p>To access individual elements in the list, we use the square brackets again. This will extract from the start index and up to but not including the end index.</p>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
+FROM cypher(&#39;graph_name&#39;, $$
+    WITH [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as lst
+    RETURN lst[3]
+$$) AS (element agtype);
+</pre></div>
+</div>
+<p>Result:</p>
+<table>
+  <tr>
+   <td>element
+   </td>
+  </tr>
+  <tr>
+   <td>3
+   </td>
+  </tr>
+  <tr>
+   <td>(1 row)
+   </td>
+  </tr>
+</table>
+</div>
+<div class="section" id="map-elements-in-lists">
+<h4>Map Elements in Lists<a class="headerlink" href="#map-elements-in-lists" title="Permalink to this headline">¶</a></h4>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
+FROM cypher(&#39;graph_name&#39;, $$
+   WITH [0, {key: &#39;key_value&#39;}, 2, 3, 4, 5, 6, 7, 8, 9, 10] as lst
+    RETURN lst
+$$) AS (map_value agtype);
+</pre></div>
+</div>
+<p>Result:</p>
+<table>
+  <tr>
+   <td>map_value
+   </td>
+  </tr>
+  <tr>
+   <td>[0, {"key": "key_value"}, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+   </td>
+  </tr>
+  <tr>
+   <td>(1 row)
+   </td>
+  </tr>
+</table>
+</div>
+<div class="section" id="accessing-map-elements-in-lists">
+<h4>Accessing Map Elements in Lists<a class="headerlink" href="#accessing-map-elements-in-lists" title="Permalink to this headline">¶</a></h4>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
+FROM cypher(&#39;graph_name&#39;, $$
+   WITH [0, {key: &#39;key_value&#39;}, 2, 3, 4, 5, 6, 7, 8, 9, 10] as lst
+    RETURN lst[1].key
+$$) AS (map_value agtype);
+</pre></div>
+</div>
+<p>Result:</p>
+<table>
+  <tr>
+   <td>map_value
+   </td>
+  </tr>
+  <tr>
+   <td>“key_value”
+   </td>
+  </tr>
+  <tr>
+   <td>(1 row)
+   </td>
+  </tr>
+</table>
+</div>
+<div class="section" id="negative-index-access">
+<h4>Negative Index Access<a class="headerlink" href="#negative-index-access" title="Permalink to this headline">¶</a></h4>
+<p>You can also use negative numbers, to start from the end of the list instead.</p>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
+FROM cypher(&#39;graph_name&#39;, $$
+    WITH [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as lst
+    RETURN lst[-3]
+$$) AS (element agtype);
+</pre></div>
+</div>
+<p>Result:</p>
+<table>
+  <tr>
+   <td>element
+   </td>
+  </tr>
+  <tr>
+   <td>8
+   </td>
+  </tr>
+  <tr>
+   <td>(1 row)
+   </td>
+  </tr>
+</table>
+</div>
+<div class="section" id="index-ranges">
+<h4>Index Ranges<a class="headerlink" href="#index-ranges" title="Permalink to this headline">¶</a></h4>
+<p>Finally, you can use ranges inside the brackets to return ranges of the list.</p>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
+FROM cypher(&#39;graph_name&#39;, $$
+    WITH [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as lst
+    RETURN lst[0..3]
+$$) AS (element agtype);
+</pre></div>
+</div>
+<p>Result:</p>
+<table>
+  <tr>
+   <td>element
+   </td>
+  </tr>
+  <tr>
+   <td>[0, 1, 2]
+   </td>
+  </tr>
+  <tr>
+   <td>(1 row)
+   </td>
+  </tr>
+</table>
+</div>
+<div class="section" id="negative-index-ranges">
+<h4>Negative Index Ranges<a class="headerlink" href="#negative-index-ranges" title="Permalink to this headline">¶</a></h4>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
+FROM cypher(&#39;graph_name&#39;, $$
+    WITH [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as lst
+    RETURN lst[0..-5]
+$$) AS (lst agtype);
+</pre></div>
+</div>
+<p>Result:</p>
+<table>
+  <tr>
+   <td>lst
+   </td>
+  </tr>
+  <tr>
+   <td>[0, 1, 2, 3, 4, 5]
+   </td>
+  </tr>
+  <tr>
+   <td>(1 row)
+   </td>
+  </tr>
+</table>
+</div>
+<div class="section" id="positive-slices">
+<h4>Positive Slices<a class="headerlink" href="#positive-slices" title="Permalink to this headline">¶</a></h4>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
+FROM cypher(&#39;graph_name&#39;, $$
+    WITH [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as lst
+    RETURN lst[..4]
+$$) AS (lst agtype);
+</pre></div>
+</div>
+<p>Result:</p>
+<table>
+  <tr>
+   <td>lst
+   </td>
+  </tr>
+  <tr>
+   <td>[0, 1, 2, 3]
+   </td>
+  </tr>
+  <tr>
+   <td>(1 row)
+   </td>
+  </tr>
+</table>
+</div>
+<div class="section" id="negative-slices">
+<h4>Negative Slices<a class="headerlink" href="#negative-slices" title="Permalink to this headline">¶</a></h4>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
+FROM cypher(&#39;graph_name&#39;, $$
+    WITH [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as lst
+    RETURN lst[-5..]
+$$) AS (lst agtype);
+</pre></div>
+</div>
+<p>Result:</p>
+<table>
+  <tr>
+   <td>lst
+   </td>
+  </tr>
+  <tr>
+   <td>[6, 7, 8, 9, 10]
+   </td>
+  </tr>
+  <tr>
+   <td>(1 row)
+   </td>
+  </tr>
+</table>
+<p>Out-of-bound slices are simply truncated, but out-of-bound single elements return null.</p>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
+FROM cypher(&#39;graph_name&#39;, $$
+    WITH [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as lst
+    RETURN lst[15]
+$$) AS (element agtype);
+</pre></div>
+</div>
+<p>Result:</p>
+<table>
+  <tr>
+   <td>element
+   </td>
+  </tr>
+  <tr>
+   <td>[0, 1, 2, 3]
+   </td>
+  </tr>
+  <tr>
+   <td>(1 row)
+   </td>
+  </tr>
+</table>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
+FROM cypher(&#39;graph_name&#39;, $$
+    WITH [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as lst
+    RETURN lst[5..15]
+$$) AS (element agtype);
+</pre></div>
+</div>
+<p>Result:</p>
+<table>
+  <tr>
+   <td>element
+   </td>
+  </tr>
+  <tr>
+   <td>[5, 6, 7, 8, 9, 10]
+   </td>
+  </tr>
+  <tr>
+   <td>(1 row)
+   </td>
+  </tr>
+</table>
+</div>
+</div>
+<div class="section" id="map">
+<h3>Map<a class="headerlink" href="#map" title="Permalink to this headline">¶</a></h3>
+<p>Maps can be constructed using Cypher.</p>
+<div class="section" id="literal-maps-with-simple-data-types">
+<h4>Literal Maps with Simple Data Types<a class="headerlink" href="#literal-maps-with-simple-data-types" title="Permalink to this headline">¶</a></h4>
+<p>You can construct a simple map with simple agtypes</p>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
+FROM cypher(&#39;graph_name&#39;, $$
+    WITH {int_key: 1, float_key: 1.0, numeric_key: 1::numeric, bool_key: true, string_key: &#39;Value&#39;} as m
+    RETURN m
+$$) AS (m agtype);
+</pre></div>
+</div>
+<p>Result:</p>
+<table>
+  <tr>
+   <td>m
+   </td>
+  </tr>
+  <tr>
+   <td>{"int_key": 1, "bool_key": true, "float_key": 1.0, "string_key": "Value", "numeric_key": 1::numeric}
+   </td>
+  </tr>
+  <tr>
+   <td>(1 row)
+   </td>
+  </tr>
+</table>
+</div>
+<div class="section" id="literal-maps-with-composite-data-types">
+<h4>Literal Maps with Composite Data Types<a class="headerlink" href="#literal-maps-with-composite-data-types" title="Permalink to this headline">¶</a></h4>
+<p>A map can also contain Composite Data Types, i.e. lists and other maps.</p>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
+FROM cypher(&#39;graph_name&#39;, $$
+    WITH {listKey: [{inner: &#39;Map1&#39;}, {inner: &#39;Map2&#39;}], mapKey: {i: 0}} as m
+    RETURN m
+$$) AS (m agtype);
+</pre></div>
+</div>
+<p>Result:</p>
+<table>
+  <tr>
+   <td>m
+   </td>
+  </tr>
+  <tr>
+   <td>{"mapKey": {"i": 0}, "listKey": [{"inner": "Map1"}, {"inner": "Map2"}]}
+   </td>
+  </tr>
+  <tr>
+   <td>(1 row)
+   </td>
+  </tr>
+</table>
+</div>
+<div class="section" id="property-access-of-a-map">
+<h4>Property Access of a map<a class="headerlink" href="#property-access-of-a-map" title="Permalink to this headline">¶</a></h4>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
+FROM cypher(&#39;graph_name&#39;, $$
+    WITH {int_key: 1, float_key: 1.0, numeric_key: 1::numeric, bool_key: true, string_key: &#39;Value&#39;} as m
+    RETURN m.int_key
+$$) AS (int_key agtype);
+</pre></div>
+</div>
+<p>Result:</p>
+<table>
+  <tr>
+   <td>int_key
+   </td>
+  </tr>
+  <tr>
+   <td>1
+   </td>
+  </tr>
+  <tr>
+   <td>(1 row)
+   </td>
+  </tr>
+</table>
+</div>
+<div class="section" id="accessing-list-elements-in-maps">
+<h4>Accessing List Elements in Maps<a class="headerlink" href="#accessing-list-elements-in-maps" title="Permalink to this headline">¶</a></h4>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
+FROM cypher(&#39;graph_name&#39;, $$
+    WITH {listKey: [{inner: &#39;Map1&#39;}, {inner: &#39;Map2&#39;}], mapKey: {i: 0}} as m
+    RETURN m.listKey[0]
+$$) AS (m agtype);
+</pre></div>
+</div>
+<p>Result:</p>
+<table>
+  <tr>
+   <td>m
+   </td>
+  </tr>
+  <tr>
+   <td>{"inner": "Map1"}
+   </td>
+  </tr>
+  <tr>
+   <td>(1 row)
+   </td>
+  </tr>
+</table>
+</div>
+</div>
+</div>
+<div class="section" id="simple-entities">
+<h2>Simple Entities<a class="headerlink" href="#simple-entities" title="Permalink to this headline">¶</a></h2>
+<p>An entity has a unique, comparable identity which defines whether or not two entities are equal.</p>
+<p>An entity is assigned a set of properties, each of which are uniquely identified in the set by the irrespective property keys.</p>
+<div class="section" id="graphid">
+<h3>GraphId<a class="headerlink" href="#graphid" title="Permalink to this headline">¶</a></h3>
+<p>Simple entities are assigned a unique graphid. A graphid is a unique composition of the entity’s label id and a unique sequence assigned to each label. Note that there will be overlap in ids when comparing entities from different graphs.</p>
+</div>
+<div class="section" id="labels">
+<h3>Labels<a class="headerlink" href="#labels" title="Permalink to this headline">¶</a></h3>
+<p>A label is an identifier that classifies vertices and edges into certain categories.</p>
+<ul class="simple">
+<li><p>Edges are required to have a label, but vertices do not.</p></li>
+<li><p>The names of labels between vertices and edges cannot overlap.</p></li>
+</ul>
+<p>See</p>
+<p id="gdcalert3" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: undefined internal link (link text: "CREATE"). Did you generate a TOC? </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert4">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+<p><a class="reference external" href="#heading=h.vo9azwq6syoh">CREATE</a> clause for information about how to make entities with labels.</p>
+</div>
+<div class="section" id="properties">
+<h3>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h3>
+<p>Both vertices and edges may have properties. Properties are attribute values, and each attribute name should be defined only as a string type.</p>
+</div>
+</div>
+<div class="section" id="vertex">
+<h2>Vertex<a class="headerlink" href="#vertex" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>A vertex is the basic entity of the graph, with the unique attribute of being able to exist in and ofitself.</p></li>
+<li><p>A vertex may be assigned a label.</p></li>
+<li><p>A vertex  may have zero or more outgoing edges.</p></li>
+<li><p>A vertex may have zero or more incoming edges.</p></li>
+</ul>
+<p>Data Format:</p>
+<table>
+  <tr>
+   <td><strong>Attribute Name</strong>
+   </td>
+   <td><strong>Description</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Id
+   </td>
+   <td>graphid for this vertex
+   </td>
+  </tr>
+  <tr>
+   <td>label
+   </td>
+   <td>Name of the label this vertex has
+   </td>
+  </tr>
+  <tr>
+   <td>properties
+   </td>
+   <td>Properties associated with this vertex
+   </td>
+  </tr>
+</table>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nb">id</span><span class="p">:</span><span class="mi">1</span><span class="p">;</span> <span class="n">label</span><span class="p">:</span> <span class="s1">&#39;label_name&#39;</span><span class="p">;</span> <span class="n">properties</span><span class="p">:</span> <span class="p">{</span><span class="n">prop1</span><span class="p">:</span> <span class="n">value1</span><span class="p">,</span> <span class="n">prop2</span><span class="p">:</span> <span class="n">value2</span><span class="p">}}::</span><span class="n">vertex</span>
+</pre></div>
+</div>
+<div class="section" id="type-casting-a-map-to-a-vertex">
+<h3>Type Casting a Map to a Vertex<a class="headerlink" href="#type-casting-a-map-to-a-vertex" title="Permalink to this headline">¶</a></h3>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
+FROM cypher(&#39;graph_name&#39;, $$
+	WITH {id: 0, label: &quot;label_name&quot;, properties: {i: 0}}::vertex as v
+	RETURN v
+$$) AS (v agtype);
+</pre></div>
+</div>
+<p>Result:</p>
+<table>
+  <tr>
+   <td>v
+   </td>
+  </tr>
+  <tr>
+   <td>{"id": 0, "label": "label_name", "properties": {"i": 0}}::vertex
+   </td>
+  </tr>
+  <tr>
+   <td>(1 row)
+   </td>
+  </tr>
+</table>
+</div>
+</div>
+<div class="section" id="edge">
+<h2>Edge<a class="headerlink" href="#edge" title="Permalink to this headline">¶</a></h2>
+<p>An edge is an entity that encodes a directed connection between exactly two nodes, thesource node and the target node. An outgoing edge is a directed relationship from the point of view of its source node. An incoming edge is a directed relationship from the point of view of its target node. An edge is assigned exactly one edge type.</p>
+<p>Data Format</p>
+<table>
+  <tr>
+   <td><strong>Attribute Name</strong>
+   </td>
+   <td><strong>Description</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>id
+   </td>
+   <td>graphid for this edge
+   </td>
+  </tr>
+  <tr>
+   <td>startid
+   </td>
+   <td>graphid for the incoming edge
+   </td>
+  </tr>
+  <tr>
+   <td>endid
+   </td>
+   <td>graphid for the outgoing edge
+   </td>
+  </tr>
+  <tr>
+   <td>label
+   </td>
+   <td>Name of the label this edge has
+   </td>
+  </tr>
+  <tr>
+   <td>properties
+   </td>
+   <td>Properties associated with this edge 
+   </td>
+  </tr>
+</table>
+<p>Output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nb">id</span><span class="p">:</span> <span class="mi">3</span><span class="p">;</span> <span class="n">startid</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span> <span class="n">endid</span><span class="p">:</span> <span class="mi">2</span><span class="p">;</span> <span class="n">label</span><span class="p">:</span> <span class="s1">&#39;edge_label&#39;</span> <span class="n">properties</span><span class="p">{</span><span class="n">prop1</span><span class="p">:</span> <span class="n">value1</span><span class="p">,</span> <span class="n">prop2</span><span class="p">:</span> <span class="n">value2</span><span class="p">}}::</span><span class="n">edge</span>
+</pre></div>
+</div>
+<div class="section" id="type-casting-a-map-to-an-edge">
+<h3>Type Casting a Map to an Edge<a class="headerlink" href="#type-casting-a-map-to-an-edge" title="Permalink to this headline">¶</a></h3>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
+FROM cypher(&#39;graph_name&#39;, $$
+	WITH {id: 2, start_id: 0, end_id: 1, label: &quot;label_name&quot;, properties: {i: 0}}::edge as e
+	RETURN e
+$$) AS (e agtype);
+</pre></div>
+</div>
+<p>Result:</p>
+<table>
+  <tr>
+   <td>v
+   </td>
+  </tr>
+  <tr>
+   <td>{"id": 2, "label": "label_name", "end_id": 1, "start_id": 0, "properties": {"i": 0}}::edge
+   </td>
+  </tr>
+  <tr>
+   <td>(1 row)
+   </td>
+  </tr>
+</table>
+</div>
+</div>
+<div class="section" id="composite-entities">
+<h2>Composite Entities<a class="headerlink" href="#composite-entities" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="path">
+<h3>Path<a class="headerlink" href="#path" title="Permalink to this headline">¶</a></h3>
+<p>A path is a series of alternating vertices and edges. A path must start with a vertex, and have at least one edge.</p>
+<div class="section" id="type-casting-a-list-to-a-path">
+<h4>Type Casting a List to a Path<a class="headerlink" href="#type-casting-a-list-to-a-path" title="Permalink to this headline">¶</a></h4>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
+FROM cypher(&#39;graph_name&#39;, $$
+	WITH [{id: 0, label: &quot;label_name_1&quot;, properties: {i: 0}}::vertex,
+            {id: 2, start_id: 0, end_id: 1, label: &quot;edge_label&quot;, properties: {i: 0}}::edge,
+           {id: 1, label: &quot;label_name_2&quot;, properties: {}}::vertex
+           ]::path as p
+	RETURN p
+$$) AS (p agtype);
+</pre></div>
+</div>
+<p>The result is formatted to improve readability</p>
+<p>Result:</p>
+<table>
+   <tr>
+      <td>p
+      </td>
+   </tr>
+   <tr>
+      <td>[{"id": 0, "label": "label_name_1", "properties": {"i": 0}}::vertex, {"id": 2, "label": "edge_label", "end_id": 1, "start_id": 0, "properties": {"i": 0}}::edge, <br> {"id": 1, "label": "label_name_2", "properties": {}}::vertex]::path
+      </td>
+   </tr>
+   <tr>
+      <td>(1 row)
+      </td>
+   </tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="comparability.html" class="btn btn-neutral float-right" title="Comparability, Equality, Orderability and Equivalence" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="cypher.html" class="btn btn-neutral float-left" title="The AGE Cypher Query Format" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Apache AGE.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
