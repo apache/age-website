@@ -52,3 +52,5 @@ Apache AGE's documentation
    advanced/advanced
    advanced/prepared_statements
    advanced/plpgsql
+   advanced/sql_in_cypher
+

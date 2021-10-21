@@ -44,6 +44,7 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="SQL In Cypher" href="sql_in_cypher.html" />
     <link rel="prev" title="Prepared Statements" href="prepared_statements.html" /> 
 </head>
 
@@ -131,17 +132,18 @@
 <p class="caption" role="heading"><span class="caption-text">AGE Beyond Cypher</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="advanced_overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="advanced.html">CTE Clause</a></li>
-<li class="toctree-l1"><a class="reference internal" href="advanced.html#join-clause">Join Clause</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">Using Cypher in a CTE Expression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html#using-cypher-in-a-join-expression">Using Cypher in a Join expression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advanced.html#cypher-in-sql-expressions">Cypher in SQL expressions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="prepared_statements.html">Prepared Statements</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">PL/pgSQL Functions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#basic-pl-pgsql">Basic PL/pgSQL</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#returning-scalar-data">Returning scalar data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#returning-srf-data">Returning SRF data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#void-pl-pgsql">Void PL/pgSQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#scalar-function">Scalar Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#srf-function">SRF Function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#dynamic-cypher">Dynamic Cypher</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="sql_in_cypher.html">SQL In Cypher</a></li>
 </ul>
 
             
@@ -214,14 +216,14 @@
   <div class="tex2jax_ignore mathjax_ignore section" id="pl-pgsql-functions">
 <h1>PL/pgSQL Functions<a class="headerlink" href="#pl-pgsql-functions" title="Permalink to this headline">¶</a></h1>
 <p>Cypher commands can be run in <a class="reference external" href="https://www.postgresql.org/docs/11/plpgsql-overview.html">PL/pgSQL</a> functions without restriction.</p>
-<div class="section" id="basic-pl-pgsql">
-<h2>Basic PL/pgSQL<a class="headerlink" href="#basic-pl-pgsql" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="void-pl-pgsql">
+<h2>Void PL/pgSQL<a class="headerlink" href="#void-pl-pgsql" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="returning-scalar-data">
-<h2>Returning scalar data<a class="headerlink" href="#returning-scalar-data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="scalar-function">
+<h2>Scalar Function<a class="headerlink" href="#scalar-function" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="returning-srf-data">
-<h2>Returning SRF data<a class="headerlink" href="#returning-srf-data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="srf-function">
+<h2>SRF Function<a class="headerlink" href="#srf-function" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="dynamic-cypher">
 <h2>Dynamic Cypher<a class="headerlink" href="#dynamic-cypher" title="Permalink to this headline">¶</a></h2>
@@ -234,6 +236,7 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="sql_in_cypher.html" class="btn btn-neutral float-right" title="SQL In Cypher" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="prepared_statements.html" class="btn btn-neutral float-left" title="Prepared Statements" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
