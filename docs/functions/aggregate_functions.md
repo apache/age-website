@@ -1,5 +1,6 @@
 # Aggregation Functions
 
+<a href="../scripts/functions/aggregation_setup.sql">Data Setup Script</a>
 
 ## min()
 
@@ -65,7 +66,7 @@ Result:
    </td>
   </tr>
   <tr>
-   <td>21
+   <td>2123e1af756543542064ae0d07792be90176b311be
    </td>
   </tr>
   <tr>
