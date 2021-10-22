@@ -12,7 +12,7 @@ Apache AGE's documentation
    intro/cypher
    intro/types
    intro/comparability
-   intro/precedence
+   intro/operators
    intro/aggregation
 
 .. toctree::
