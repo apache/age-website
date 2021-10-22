@@ -1,6 +1,6 @@
 # Aggregation Functions
 
-Functions that activate [auto aggregation](../intro/aggregation.html#).
+Functions that activate [auto aggregation](../intro/aggregation#).
 
 ## Data Setup
 ```
