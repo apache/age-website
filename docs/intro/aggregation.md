@@ -3,7 +3,7 @@
 
 ## Introduction 
 
-Generally an aggregation aggr(expr) processes all matching rows for each aggregation key found in an incoming record (keys are compared using [equivalence](./comparability.html#)).
+Generally an aggregation aggr(expr) processes all matching rows for each aggregation key found in an incoming record (keys are compared using [equivalence](../intro/comparability.html#)).
 
 In a regular aggregation (i.e. of the form aggr(expr)), the list of aggregated values is the list of candidate values with all null values removed from it.
 
@@ -261,11 +261,13 @@ Results
 
 If the grouping key is considered unecessary for the query output, the aggregation can be done in a WITH clause then passing information to the RETURN clause.
 
+```
 SELECT * FROM cypher('graph_name', $$
 	MATCH (x:L)
 	WITH count(*) + count(*) + x.a + x.b + x.c as column, x
 	RETURN column
 $$) as (a agtype);
+```
 
 Results
 <table>
