@@ -244,27 +244,19 @@
 <p>The openCypher specification features four distinct concepts related to equality and ordering:</p>
 <div class="section" id="comparability">
 <h3>Comparability<a class="headerlink" href="#comparability" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Comparability is used by the inequality operators (&gt;, &amp;lt;, &gt;=, &amp;lt;=), and defines the underlying semantics of how to compare two values.
-</pre></div>
-</div>
+<p>Comparability is used by the inequality operators (&gt;, &lt;, &gt;=, &lt;=), and defines the underlying semantics of how to compare two values.</p>
 </div>
 <div class="section" id="equality">
 <h3>Equality<a class="headerlink" href="#equality" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Equality is used by the equality operators (=, &amp;lt;&gt;), and the list membership operator (IN). It defines the underlying semantics to determine if two values are the same in these contexts. Equality is also used implicitly by literal maps in node and relationship patterns, since such literal maps are merely a shorthand notation for equality predicates.
-</pre></div>
-</div>
+<p>Equality is used by the equality operators (=, &lt;&gt;), and the list membership operator (IN). It defines the underlying semantics to determine if two values are the same in these contexts. Equality is also used implicitly by literal maps in node and relationship patterns, since such literal maps are merely a shorthand notation for equality predicates.</p>
 </div>
 <div class="section" id="orderability">
 <h3>Orderability<a class="headerlink" href="#orderability" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Orderability is used by the ORDER BY clause, and defines the underlying semantics of how to order values.
-</pre></div>
-</div>
+<p>Orderability is used by the ORDER BY clause, and defines the underlying semantics of how to order values.</p>
 </div>
 <div class="section" id="equivalence">
 <h3>Equivalence<a class="headerlink" href="#equivalence" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Equivalence is used by the DISTINCT modifier and by grouping in projection clauses (WITH,RETURN), and defines the underlying semantics to determine if two values are the same in these contexts.
-</pre></div>
-</div>
+<p>Equivalence is used by the DISTINCT modifier and by grouping in projection clauses (WITH,RETURN), and defines the underlying semantics to determine if two values are the same in these contexts.</p>
 </div>
 </div>
 <div class="section" id="comparability-and-equality">
@@ -327,25 +319,21 @@
 </li>
 </ul>
 <p>Entities</p>
-<ul>
-<li><p>Vertices</p>
 <ul class="simple">
+<li><p>Vertices</p>
+<ul>
 <li><p>The comparison order for vertices is based on the assigned graphid.</p></li>
 </ul>
 </li>
 <li><p>Edges</p>
-<ul class="simple">
+<ul>
 <li><p>The comparison order for edges is based on the assigned graphid.</p></li>
 </ul>
 </li>
 <li><p>Paths</p>
 <ul>
 <li><p>Paths are compared as if they were a list of alternating nodes and relationships of the path from the start node to the end node. For example, given nodes n1, n2, n3, and relationships r1and r2, and given that n1 &lt; n2 &lt; n3 and r1 &lt; r2, then the path p1 from n1 to n3 via r1 would be less than the path p2 to n1 from n2 via r2.</p></li>
-<li><p>Expressed in terms of lists:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</li>
+<li><p>Expressed in terms of lists:</p></li>
 </ul>
 </li>
 </ul>
