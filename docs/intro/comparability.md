@@ -8,15 +8,11 @@ AGE already has good semantics for equality within the primitive types (booleans
 * ORDER BY will not fail if the values passed to it have different types.
 
 The underlying conceptual model is complex and sometimes inconsistent. This leads to an unclear relationship between comparison operators, equality, grouping, and ORDER BY:
-
-
-
 * Comparability and orderability are aligned with each other consistently, as all types can be ordered and compared.
 * The difference between equality and equivalence, as exposed by IN, =, DISTINCT, and grouping, in AGE is limited to testing two instances of the value null to each other
     * In equality, null = null is null.
     * In equivalence, used by DISTINCT and when grouping values, two null values are always treated as being the same value.
     * However, equality treats null values differently if they are an element of a list or a map value.
-
 
 ## Concepts
 
@@ -25,22 +21,22 @@ The openCypher specification features four distinct concepts related to equality
 
 ### Comparability
 
-    Comparability is used by the inequality operators (>, &lt;, >=, &lt;=), and defines the underlying semantics of how to compare two values.
+Comparability is used by the inequality operators (>, &lt;, >=, &lt;=), and defines the underlying semantics of how to compare two values.
 
 
 ### Equality
 
-    Equality is used by the equality operators (=, &lt;>), and the list membership operator (IN). It defines the underlying semantics to determine if two values are the same in these contexts. Equality is also used implicitly by literal maps in node and relationship patterns, since such literal maps are merely a shorthand notation for equality predicates.
+Equality is used by the equality operators (=, &lt;>), and the list membership operator (IN). It defines the underlying semantics to determine if two values are the same in these contexts. Equality is also used implicitly by literal maps in node and relationship patterns, since such literal maps are merely a shorthand notation for equality predicates.
 
 
 ### Orderability
 
-    Orderability is used by the ORDER BY clause, and defines the underlying semantics of how to order values.
+Orderability is used by the ORDER BY clause, and defines the underlying semantics of how to order values.
 
 
 ### Equivalence
 
-    Equivalence is used by the DISTINCT modifier and by grouping in projection clauses (WITH,RETURN), and defines the underlying semantics to determine if two values are the same in these contexts.
+Equivalence is used by the DISTINCT modifier and by grouping in projection clauses (WITH,RETURN), and defines the underlying semantics to determine if two values are the same in these contexts.
 
 ## Comparability and equality
 
@@ -52,8 +48,6 @@ Unfortunately, it may not be possible to implement separate comparison operators
 ### Comparability
 
 Comparability is defined between any pair of values, as specified below.
-
-
 
 * Numbers 
     * Numbers of different types (excluding NaN values and the Infinities) are compared to each other as if both numbers would have been coerced to arbitrary precision big decimals(currently outside the Cypher type system) before comparing them with each other numerically in ascending order.
@@ -83,9 +77,6 @@ Comparability is defined between any pair of values, as specified below.
     * Comparison to any value that is not also a regular map follows the rules of orderability.
 
 Entities
-
-
-
 * Vertices
     * The comparison order for vertices is based on the assigned graphid.
 * Edges
@@ -93,8 +84,6 @@ Entities
 * Paths
     * Paths are compared as if they were a list of alternating nodes and relationships of the path from the start node to the end node. For example, given nodes n1, n2, n3, and relationships r1and r2, and given that n1 &lt; n2 &lt; n3 and r1 &lt; r2, then the path p1 from n1 to n3 via r1 would be less than the path p2 to n1 from n2 via r2. 
     * Expressed in terms of lists: 
-
-        ```
 ```
 p1 < p2
 <=> [n1, r1, n3] < [n1, r2, n2]
@@ -104,8 +93,6 @@ p1 < p2
 <=> true || (false && false)
 <=> true
 ```
-
-
     * Comparison to any value that is not also a path will return false.
 * NULL
     * null is incomparable with any other value (including other null values.)
@@ -114,8 +101,6 @@ p1 < p2
 ## Orderability Between different Agtypes
 
 The ordering of different Agtype, when using &lt;, &lt;=, >, >= from smallest value to largest value is: 
-
-
 
 1. Edge
 2. Path
