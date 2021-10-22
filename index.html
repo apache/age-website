@@ -38,29 +38,25 @@
         </p>
 
         <p class="sidebar--section">
-          <span class="emph">DOCUMENTATION - To be updated</span> <br />
-          <!-- <span id="sidebar-installing" class="sidebar-item"> <a class="sidebar-link" href="#" onclick="handleClick(this)">Installing AGE</a></span> <br /> -->
-          <!-- <span id="sidebar-gettingstarted" class="sidebar-item"> <a class="sidebar-link" href="#" onclick="handleClick(this)">Getting Started</a></span> <br /> -->
-          <!-- <span id="sidebar-ageworks" class="sidebar-item"> <a class="sidebar-link" href="#" onclick="handleClick(this)">How AGE Works</a></span> <br /> -->
-          <!-- <span id="sidebar-docs" class="sidebar-item"> <a target="_blank" class="sidebar-link" href="docs/">Release Docs</a></span> <br /> -->
-          <span id="sidebar-guide" class="sidebar-item"> <a target="_blank" class="sidebar-link" href="docs/Apache_AGE_Guide.pdf">AGE Guide (PDF) - To be updated </a></span> <br />
+          <span class="emph">DOCUMENTATION</span> <br />
+          <a target="_blank" class="sidebar-link external-link" href="docs/master/index.html">Documentation</a> <br />
         </p>
 
         <p class="sidebar--section">
           <span class="emph">CONTRIBUTION</span> <br />
-          <span id="sidebar-contribute" class="sidebar-item"> <a class="sidebar-link" href="#" onclick="handleClick(this)">How to Contribute</a></span> <br />          
-          <span id="sidebar-devguidelines" class="sidebar-item"> <a class="sidebar-link" href="#" onclick="handleClick(this)">Developer Guidelines</a></span> <br />          
+          <span id="sidebar-contribute" class="sidebar-item"> <a class="sidebar-link" href="#" onclick="handleClick(this)">How to Contribute</a></span> <br />
+          <span id="sidebar-devguidelines" class="sidebar-item"> <a class="sidebar-link" href="#" onclick="handleClick(this)">Developer Guidelines</a></span> <br />
         </p>
 
 
        <p class="sidebar--section">
           <span class="emph">DOWNLOAD</span> <br />
-          <a class="sidebar-link external-link" target="_blank" href="https://archive.apache.org/dist/incubator/age/0.5.0.rc0/apache-age-0.5.0-incubating-src.tar.gz">Download Apache AGE 0.5.0</a> 
-          <br/>  
-          <a class="sidebar-link external-link" target="_blank" href="https://archive.apache.org/dist/incubator/age/0.4.0.rc0/apache-age-0.4.0-incubating-src.tar.gz">Download Apache AGE 0.4.0</a> 
-          <br/>  
-          <a class="sidebar-link external-link" target="_blank" href="https://archive.apache.org/dist/incubator/age/0.3.0.rc0/apache-age-0.3.0-incubating.tar.gz ">Download Apache AGE 0.3.0</a> 
-          <br/>  
+          <a class="sidebar-link external-link" target="_blank" href="https://archive.apache.org/dist/incubator/age/0.5.0.rc0/apache-age-0.5.0-incubating-src.tar.gz">Download Apache AGE 0.5.0</a>
+          <br/>
+          <a class="sidebar-link external-link" target="_blank" href="https://archive.apache.org/dist/incubator/age/0.4.0.rc0/apache-age-0.4.0-incubating-src.tar.gz">Download Apache AGE 0.4.0</a>
+          <br/>
+          <a class="sidebar-link external-link" target="_blank" href="https://archive.apache.org/dist/incubator/age/0.3.0.rc0/apache-age-0.3.0-incubating.tar.gz ">Download Apache AGE 0.3.0</a>
+          <br/>
         </p>
 
 
@@ -69,8 +65,8 @@
 
         <p class="sidebar--section">
           <span class="emph">COMMUNITY</span> <br />
-          <span id="sidebar-team" class="sidebar-item"> <a class="sidebar-link" href="#" onclick="handleClick(this)">Team</a></span> <br />          
-          <span id="sidebar-mailinglists" class="sidebar-item"> <a class="sidebar-link" href="#" onclick="handleClick(this)">Mailing Lists</a></span> <br />          
+          <span id="sidebar-team" class="sidebar-item"> <a class="sidebar-link" href="#" onclick="handleClick(this)">Team</a></span> <br />
+          <span id="sidebar-mailinglists" class="sidebar-item"> <a class="sidebar-link" href="#" onclick="handleClick(this)">Mailing Lists</a></span> <br />
           <a class="sidebar-link external-link" target="_blank" href="https://issues.apache.org/jira/projects/AGE/issues">JIRA Issues</a> <br />
           <a class="sidebar-link external-link" target="_blank" href="https://github.com/apache/incubator-age">Github</a> <br />
           <a class="sidebar-link external-link" target="_blank" href="https://www.linkedin.com/groups/12556308/">Special Interest Group (available soon)</a> <br />
@@ -86,9 +82,9 @@
       </div>
 
       <div class="main">
-        <!-- 
+        <!--
           *
-          * AGE 
+          * AGE
           *
         -->
         <div class="main-item main--selected" id="main-overview">
@@ -100,13 +96,13 @@
               so that users can use standard ANSI SQL along with openCypher, the Graph query language.
             </p>
             <p>
-              Below is a brief overview of the AGE architecture in relation to the PostgreSQL architecture and backend. 
+              Below is a brief overview of the AGE architecture in relation to the PostgreSQL architecture and backend.
             Every component runs on the PostgreSQL transaction cache layer and storage layer.
             <img src="assets/images/ageworks.png">
             </p>
 
             <div class="heading"><h2>Features</h2></div>
-            <ul>              
+            <ul>
               <li>AGE is currently being developed for the PostgreSQL 11 release and will support PostgreSQL 12 and 13 in 2021 and all the future releases of PostgreSQL.  </li>
               <li>AGE supports the openCypher graph query language and label hierarchy.</li>
               <li>AGE enables querying multiple graphs at the same time. This will allow a user to query two or more graphs at once with cypher, decide how to merge them and get the desired query outputs.</li>
@@ -284,9 +280,9 @@
           </div>
         </div>
 
-        <!-- 
+        <!--
           *
-          * DOCUMENTATION 
+          * DOCUMENTATION
           *
         -->
         <div class="main-item" id="main-installing">
@@ -305,7 +301,7 @@
 
             <div class="code">$ sudo apt-get install bison build-essential flex postgresql-server-dev-11</div>
 
-            The build process will attempt to use the first path in the PATH environment variable when installing AGE. 
+            The build process will attempt to use the first path in the PATH environment variable when installing AGE.
             If the <span class="inline-code">pg_config</span> path if located there, run the following
             command in the source code directory of Apache AGE to build and install the extension.
 
@@ -320,9 +316,9 @@
 
             <div class="code">=# CREATE EXTENSION age; -- run this statement only once
 CREATE EXTENSION
-=# LOAD 'age'; 
-LOAD 
-=# SET search_path = ag_catalog, "$user", public; 
+=# LOAD 'age';
+LOAD
+=# SET search_path = ag_catalog, "$user", public;
 SET
             </div>
           </div>
@@ -338,7 +334,7 @@ CREATE EXTENSION age;
 LOAD 'age';
 SET search_path = ag_catalog, "$user", public;
             </div>
-            
+
             <div class="heading"><h2>Using AGE</h2></div>
             First you will need to create a graph:
 
@@ -358,9 +354,9 @@ $$) as (a agtype);
 
             <div class="code">
 SELECT * from cypher('my_graph_name', $$
-  CREATE (a:Part {part_num: '123'}), 
-        (b:Part {part_num: '345'}), 
-        (c:Part {part_num: '456'}), 
+  CREATE (a:Part {part_num: '123'}),
+        (b:Part {part_num: '345'}),
+        (c:Part {part_num: '456'}),
         (d:Part {part_num: '789'})
 $$) as (a agtype);
 
@@ -403,7 +399,7 @@ a
             </div>
 
             Next we can return the path we just created (results have been formatted for readability):
-            
+
             <div class="code">
 SELECT * from cypher('age', $$
   MATCH p=(a)-[]-(b)
@@ -468,81 +464,81 @@ $$) as (a agtype);
 
           </div>
         </div>
-<!-- 
+<!--
         <div class="main-item" id="main-ageworks">
           <div class="heading"><h1>How AGE Works</h1></div>
           <div class="main-body">
-            Here is the brief overview of the AGE architecture in which some are related to the PostgreSQL architecture and backend. 
+            Here is the brief overview of the AGE architecture in which some are related to the PostgreSQL architecture and backend.
             Every component runs on the PostgreSQL transaction cache layer and storage layer.
             <img src="assets/images/ageworks.png">
           </div>
         </div> -->
 
-         <!-- 
+         <!--
           *
-          * CONTRIBUTION 
+          * CONTRIBUTION
           *
         -->
         <div class="main-item" id="main-contribute">
           <div class="heading"><h1>How to contribute</h1></div>
           <div class="main-body">
-            There are multiple ways you can contribute to the project. And help is always welcome! All details can be 
+            There are multiple ways you can contribute to the project. And help is always welcome! All details can be
             found on the contributing page. Keep reading for a quick overview!
-  
+
             <div class="heading"><h2>Becoming a Committer</h2></div>
             If you are interested in the project and looking for ways to help, consult the list of tasks in JIRA, or ask the mailing list.
-  
-  
+
+
             <div class="heading"><h2>Contributing by Helping Other Users</h2></div>
-            A great way to contribute to AGE is to help answer user questions on the mailing list or on StackOverflow. 
+            A great way to contribute to AGE is to help answer user questions on the mailing list or on StackOverflow.
             There are always many new AGE users; taking a few minutes to help answer a question is a very valuable community service.
             <br>
-            Contributors should subscribe to this list and follow it to keep up to date on what's happening in AGE. Answering 
+            Contributors should subscribe to this list and follow it to keep up to date on what's happening in AGE. Answering
             questions is an excellent and visible way to help the community, which also demonstrates your expertise.
-  
-  
+
+
             <div class="heading"><h2>Contributing by Reviewing Changes</h2></div>
-            Changes to AGE source code are proposed, reviewed, and committed via Github pull requests (described in 
-            <span id="inline_contribure-devguidelines"> <a href="#" onclick="handleClick(this)">Developer Guidelines</a></span>). 
-            Anyone can view and comment on active changes here. Reviewing others' changes is a good way to learn how the change process works 
-            and gain exposure to activity in various parts of the code. You can help by reviewing the changes and asking questions 
+            Changes to AGE source code are proposed, reviewed, and committed via Github pull requests (described in
+            <span id="inline_contribure-devguidelines"> <a href="#" onclick="handleClick(this)">Developer Guidelines</a></span>).
+            Anyone can view and comment on active changes here. Reviewing others' changes is a good way to learn how the change process works
+            and gain exposure to activity in various parts of the code. You can help by reviewing the changes and asking questions
             or pointing out issues as simple as typos or small issues of style.
-  
-  
+
+
             <div class="heading"><h2>Contributing Documentation Changes</h2></div>
-            To propose a change to release documentation (that is, docs that appear <a href="docs/">here</a>), 
-            edit the Markdown source files in AGE's <span class="inline-code">doc/</span> 
-            <a class="external-link" href="https://github.com/apache/incubator-age/tree/master/doc">directory on GitHub</a>. 
-            Instructions for building the documentation can be found 
-            <span id="inline_contribure-devguidelines"> <a href="#createdocs" onclick="handleClick(this)">here</a></span>. 
-            The process to propose a doc change is otherwise the same as the 
+            To propose a change to release documentation (that is, docs that appear <a href="docs/">here</a>),
+            edit the Markdown source files in AGE's <span class="inline-code">doc/</span>
+            <a class="external-link" href="https://github.com/apache/incubator-age/tree/master/doc">directory on GitHub</a>.
+            Instructions for building the documentation can be found
+            <span id="inline_contribure-devguidelines"> <a href="#createdocs" onclick="handleClick(this)">here</a></span>.
+            The process to propose a doc change is otherwise the same as the
             process for proposing code changes below.
-  
-  
+
+
             <div class="heading"><h2>Contributing Bug Reports</h2></div>
-            Ideally, bug reports are accompanied by a proposed code change to fix the bug. This isn't always possible, as those who discover a 
+            Ideally, bug reports are accompanied by a proposed code change to fix the bug. This isn't always possible, as those who discover a
             bug may not have the experience to fix it. A bug may be reported by creating a JIRA issue but without creating a pull request.
             <br>
-            Bug reports are only useful, however, if they include enough information to understand, isolate and ideally reproduce the bug. 
-            Simply encountering an error does not mean a bug should be reported; search JIRA and inquire on the AGE user / dev mailing 
+            Bug reports are only useful, however, if they include enough information to understand, isolate and ideally reproduce the bug.
+            Simply encountering an error does not mean a bug should be reported; search JIRA and inquire on the AGE user / dev mailing
             lists first. Unreproducible bugs, or simple error reports, may be closed.
             <br>
-            The more context the reporter can give about a bug, the better, such as: how the bug was introduced, by which 
-            commit, etc. It assists the committers in the decision process on how far the bug fix should be backported, 
+            The more context the reporter can give about a bug, the better, such as: how the bug was introduced, by which
+            commit, etc. It assists the committers in the decision process on how far the bug fix should be backported,
             when the pull request is merged. The pull request to fix the bug should narrow down the problem to the root cause.
             <br>
-            Data correctness/data loss bugs are very serious. Make sure the corresponding bug report JIRA issue is labeled 
-            as correctness or data-loss. Please send an email to <a href="mailto:dev@age.apache.org">dev@age.apache.org</a> after submitting 
+            Data correctness/data loss bugs are very serious. Make sure the corresponding bug report JIRA issue is labeled
+            as correctness or data-loss. Please send an email to <a href="mailto:dev@age.apache.org">dev@age.apache.org</a> after submitting
             the bug report, to quickly draw attention to the issue.
             <br>
-            Performance issues are classified as bugs. The pull request to fix a performance bug must provide a benchmark 
+            Performance issues are classified as bugs. The pull request to fix a performance bug must provide a benchmark
             to prove the problem is indeed fixed.
 
-  
+
             <div class="heading"><h2>Contributing to JIRA Maintenance</h2></div>
-            Most contributors can directly resolve JIRA issues. Use judgment in determining whether you are confident the issue should be 
+            Most contributors can directly resolve JIRA issues. Use judgment in determining whether you are confident the issue should be
             resolved (although changes can be easily undone).
-            <br> 
+            <br>
             When resolving JIRA tickets, please observe the following conventions:
             <ul>
               <li>
@@ -603,9 +599,9 @@ $$) as (a agtype);
                   <li>Use the search box below</li>
                   <li><input class="search" id="jira-search" placeholder="search term"><button class="search external-link" id="jira-submit" onclick="handleJiraSearch()">Search</button></li>
                 </ol>
-                
+
               </li>
-            </ol> 
+            </ol>
             If a logically similar issue already exists, then contribute to the discussion on the existing JIRA ticket and pull request, instead of creating a new ticket and PR.
           </div>
         </div>
@@ -627,7 +623,7 @@ $$) as (a agtype);
               <li> 	Create .patch file(s) of the commit(s).
               <ul><li>Use <span class="inline-code">git format-patch</span> command. </li></ul></li>
               <li> 	Send the .patch file(s) to the reviewer.
-                <ul> 	
+                <ul>
                   <li>The title of the email must be "[Review] [JIRA Ticket Name Here] summary-of-the-issue"
                     <br>(e.g. [Review] [JIRA Ticket Name] Support changing graph name)
                     <ul><li>If the commit is not for any issues on JIRA, omit " [JIRA Ticket Name Here]". OR make a JIRA ticket</li></ul>
@@ -636,9 +632,9 @@ $$) as (a agtype);
                     <div class="codebox">
 Commit bef50e5d86d45707806f5733695a229f3e295b1a
 [one blank line]
-Description 
+Description
                     </div>
-                 
+
                     <ul>
                       <li>
                         The first line is the hash code of the base commit, NOT the commit you've created.
@@ -672,11 +668,11 @@ Description
             <a id="merge"></a>
             <div class="heading"><h2>How to Merge a Pull Request</h2></div>
             <p class="emph">Single Commit for a Single Task</p>
-            
+
               In this case, the commit will be merged into the master branch with the following process.
               <br>
-              <ol> 	
-                <li> 	
+              <ol>
+                <li>
                   Change the current working branch to the local master branch by running the following command.
                   <div class="code">$ git checkout master </div>
                 </li>
@@ -699,21 +695,21 @@ Description
                 <div class="code">$ git merge </div> </li>
               </ol>
               <p class="emph">Multiple Commits for a Single Task</p>
-              
+
                 Keeping Commit History <br>
-                Sometimes, having logically separated, multiple commits for a single task helps developers to grasp the logical process of the work that had been done for the task. 
+                Sometimes, having logically separated, multiple commits for a single task helps developers to grasp the logical process of the work that had been done for the task.
                 If the commits are merged with fast-forward strategy, the commits will not be grouped together. Therefore, to group the commits, create an explicit merge commit.
                 <br>
                 In this case, the commits will be merged into the master branch with the same process above except the last step (step 7).
                 <br>
-                For the last step, the local task branch will be merged into the local master branch with an explicit merge commit by running the following command. 
+                For the last step, the local task branch will be merged into the local master branch with an explicit merge commit by running the following command.
                 If you omit --no-ff option, the command will do fast-forward merge instead.
 
                 <div class="code">$ git merge --no-ff</div>
 
-                The above process will result, for example, the following commit history. (This is captured from apache/incubator-age.) There is an explicit merge commit, 
+                The above process will result, for example, the following commit history. (This is captured from apache/incubator-age.) There is an explicit merge commit,
                 69f3b32. Each explicit merge commit groups related commits.
-                <div class="code codebox"> 	
+                <div class="code codebox">
 * 9779a0b Implement property and element access operators
 *   69f3b32 Implement + (concatenating strings) operator
 |\
@@ -729,7 +725,7 @@ Description
             <!-- BEGIN STYLE GUIDE -->
             <a id="style"></a>
             <div class="heading"><h2>Code Style Guide</h2></div>
-            For a full list of coding style guidelines, please refer to the style setup in the 
+            For a full list of coding style guidelines, please refer to the style setup in the
             <a href="https://github.com/bitnine-oss/agensgraph-ext/blob/master/clang-format.5">clang-format.5</a> in the AGE git repository.
 
             <div class="heading"><h3>Indentation</h3></div>
@@ -781,7 +777,7 @@ else if (y is true)
 {
     we do b
 }
-else 
+else
 {
     we do c
     we do d
@@ -841,8 +837,8 @@ void f(void)
             <div class="heading"><h3>Macros, Enums, and RTL</h3></div>
             Don't align bodies of macros.
 
-            <ul><li>If names are changed or new entries are added, it may produces 
-              unnecessary diffs and this makes it harder for you to find lines that are 
+            <ul><li>If names are changed or new entries are added, it may produces
+              unnecessary diffs and this makes it harder for you to find lines that are
               actually modified</li></ul>
             <div class="code codebox">
 //do this
@@ -855,8 +851,8 @@ void f(void)
             </div>
             When you write a macro that spans multiple lines, don't align \ character.
 
-            <ul> 	
-              <li>If bodies of macros are modified, it may produce unnecessary diffs and 
+            <ul>
+              <li>If bodies of macros are modified, it may produce unnecessary diffs and
                 this makes it harder for you to find lines that are actually modified.</li>
               <li>It is harder for you to find lines that are actually modified. </li>
             </ul>
@@ -881,14 +877,14 @@ void f(void)
             For newlines, only \n is allowed, not \r\n and \r.
 
             <div class="heading"><h3>Conditions</h3></div>
-            If a pointer variable (including List *) is used as a condition, which means that it is 
-            evaluated as true/false value, use it AS-IS. Do not perform explicit comparison with 
+            If a pointer variable (including List *) is used as a condition, which means that it is
+            evaluated as true/false value, use it AS-IS. Do not perform explicit comparison with
             NULL (or NIL). For negation, put ! before it.
 
             <div class="heading"><h3>Rules for ereport()</h3></div>
             An error message that is passed to <span class="inline-code">errmsg()</span> starts with a lower case letter.
             <br>
-            An error detail/hint message that is passed to <span class="inline-code">errdetail()/errhint()</span> starts 
+            An error detail/hint message that is passed to <span class="inline-code">errdetail()/errhint()</span> starts
             with an upper case letter.
 
             <!-- END CODING STYLE -->
@@ -903,7 +899,7 @@ void f(void)
               <li>Type <span class="inline-code">make html</span></li>
               <li>The documents are in <span class="inline-code">_build/html</span></li>
             </ul>
-            An example of the commands on Ubuntu follow: 
+            An example of the commands on Ubuntu follow:
             <div class="code">
 sudo apt install python3 python3-sphinx
 pip3 install sphinx_rtd_theme
@@ -914,9 +910,9 @@ make html
           </div>
         </div>
 
-        <!-- 
+        <!--
           *
-          * COMMUNITY 
+          * COMMUNITY
           *
         -->
         <div class="main-item" id="main-mailinglists">
@@ -927,19 +923,19 @@ make html
             <ul>
               <li>
                 Visit <a target="_blank" class="external-link" href="https://lists.apache.org/list.html?commits@age.apache.org">
-                  Commits</a> 
+                  Commits</a>
                   or <a class="mail-link" href="mailto:commits-subscribe@age.apache.org">subscribe</a>
                   for people following commits to the project.
               </li>
               <li>
                 Visit <a target="_blank" class="external-link" href="https://lists.apache.org/list.html?dev@age.apache.org">
-                  Developer</a> 
+                  Developer</a>
                   or <a class="mail-link" href="mailto:dev-subscribe@age.apache.org">subscribe</a>
                   for developers wanting to commit code to the project.
               </li>
               <li>
                 Visit <a target="_blank" class="external-link" href="https://lists.apache.org/list.html?users@age.apache.org">
-                  Users</a> 
+                  Users</a>
                   or <a class="mail-link" href="mailto:users-subscribe@age.apache.org">subscribe</a>
                   for users wanting to learn more about the project.
               </li>
