@@ -128,22 +128,22 @@
 <li class="toctree-l1"><a class="reference internal" href="string_functions.html">String Functions</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Aggregation Functions</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#data-setup">Data Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#min">min()</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#min">min</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#using-min-with-lists">Using min() with Lists</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#max">max()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#stdev">stDev()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#stdevp">stDevP()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#percentilecont">percentileCont()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#percentiledisc">percentileDisc()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#count">count()</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#max">max</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#stdev">stDev</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#stdevp">stDevP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#percentilecont">percentileCont</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#percentiledisc">percentileDisc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#count">count</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#using-count-expression-to-return-the-number-of-values">Using count(expression) to return the number of values</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#counting-non-null-values">Counting non-null values</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#counting-with-and-without-duplicates">Counting with and without duplicates</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#avg">avg()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#avg">avg</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#sum">sum</a></li>
 </ul>
 </li>
@@ -253,7 +253,7 @@ $$) as (a agtype);
 </div>
 </div>
 <div class="section" id="min">
-<h2>min()<a class="headerlink" href="#min" title="Permalink to this headline">¶</a></h2>
+<h2>min<a class="headerlink" href="#min" title="Permalink to this headline">¶</a></h2>
 <p>min() returns the minimum value in a set of values.</p>
 <p>Syntax: <code class="docutils literal notranslate"><span class="pre">min(expression)</span></code></p>
 <p>Returns:</p>
@@ -349,7 +349,7 @@ $$) as (min_val agtype);
 </div>
 </div>
 <div class="section" id="max">
-<h2>max()<a class="headerlink" href="#max" title="Permalink to this headline">¶</a></h2>
+<h2>max<a class="headerlink" href="#max" title="Permalink to this headline">¶</a></h2>
 <p>max() returns the maximum value in a set of values.</p>
 <p>Syntax: <code class="docutils literal notranslate"><span class="pre">max(expression)</span></code></p>
 <p>Returns:</p>
@@ -404,7 +404,7 @@ $$) as (max_age agtype);
 </table>
 </div>
 <div class="section" id="stdev">
-<h2>stDev()<a class="headerlink" href="#stdev" title="Permalink to this headline">¶</a></h2>
+<h2>stDev<a class="headerlink" href="#stdev" title="Permalink to this headline">¶</a></h2>
 <p>stDev() returns the standard deviation for the given value over a group. It uses a standard two-pass method, with N - 1 as the denominator, and should be used when taking a sample of the population for an unbiased estimate. When the standard variation of the entire population is being calculated, stdDevP should be used.</p>
 <p>Syntax: <code class="docutils literal notranslate"><span class="pre">stDev(expression)</span></code></p>
 <p>Returns:</p>
@@ -457,7 +457,7 @@ $$) as (stdev_age agtype);
 </table>
 </div>
 <div class="section" id="stdevp">
-<h2>stDevP()<a class="headerlink" href="#stdevp" title="Permalink to this headline">¶</a></h2>
+<h2>stDevP<a class="headerlink" href="#stdevp" title="Permalink to this headline">¶</a></h2>
 <p>stDevP() returns the standard deviation for the given value over a group. It uses a standard two-pass method, with N as the denominator, and should be used when calculating the standard deviation for an entire population. When the standard variation of only a sample of the population is being calculated, stDev should be used.</p>
 <p>Syntax: <code class="docutils literal notranslate"><span class="pre">stDevP(expression)</span></code></p>
 <p>Returns:</p>
@@ -510,7 +510,7 @@ $$ as (stdevp_age agtype);
 </table>
 </div>
 <div class="section" id="percentilecont">
-<h2>percentileCont()<a class="headerlink" href="#percentilecont" title="Permalink to this headline">¶</a></h2>
+<h2>percentileCont<a class="headerlink" href="#percentilecont" title="Permalink to this headline">¶</a></h2>
 <p>percentileCont() returns the percentile of the given value over a group, with a percentile from 0.0 to 1.0. It uses a linear interpolation method, calculating a weighted average between two values if the desired percentile lies between them. For nearest values using a rounding method, see percentileDisc.</p>
 <p>Syntax: <code class="docutils literal notranslate"><span class="pre">percentileCont(expression,</span> <span class="pre">percentile)</span></code></p>
 <p>Returns:</p>
@@ -569,7 +569,7 @@ $$ as (percentile_cont_age agtype);
 </table>
 </div>
 <div class="section" id="percentiledisc">
-<h2>percentileDisc()<a class="headerlink" href="#percentiledisc" title="Permalink to this headline">¶</a></h2>
+<h2>percentileDisc<a class="headerlink" href="#percentiledisc" title="Permalink to this headline">¶</a></h2>
 <p>percentileDisc() returns the percentile of the given value over a group, with a percentile from 0.0to 1.0. It uses a rounding method and calculates the nearest value to the percentile. For interpolated values, see percentileCont.</p>
 <p>Syntax: <code class="docutils literal notranslate"><span class="pre">percentileDisc(expression,</span> <span class="pre">percentile)</span></code></p>
 <p>Returns:</p>
@@ -628,7 +628,7 @@ $$ as (percentile_disc_age agtype);
 </table>
 </div>
 <div class="section" id="count">
-<h2>count()<a class="headerlink" href="#count" title="Permalink to this headline">¶</a></h2>
+<h2>count<a class="headerlink" href="#count" title="Permalink to this headline">¶</a></h2>
 <p>count() returns the number of values or records, and appears in two variants:</p>
 <ul class="simple">
 <li><p>count(*) returns the number of matching records</p></li>
@@ -814,7 +814,7 @@ $$) as (friend_of_friends_distinct agtype, friend_of_friends agtype);
 </div>
 </div>
 <div class="section" id="avg">
-<h2>avg()<a class="headerlink" href="#avg" title="Permalink to this headline">¶</a></h2>
+<h2>avg<a class="headerlink" href="#avg" title="Permalink to this headline">¶</a></h2>
 <p>avg() returns the average of a set of numeric values.</p>
 <p>Syntax: <code class="docutils literal notranslate"><span class="pre">avg(expression)</span></code></p>
 <p>Returns:</p>

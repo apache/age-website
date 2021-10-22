@@ -126,18 +126,18 @@
 <li class="toctree-l1"><a class="reference internal" href="logarithmic_functions.html">Logarithmic Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="trigonometric_functions.html">Trigonometric Functions</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">String Functions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#replace">replace()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#split">split()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#left">left()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#right">right()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#substring">substring()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#rtrim">rTrim()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#ltrim">lTrim()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#trim">trim()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#replace">replace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#split">split</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#left">left</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#right">right</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#substring">substring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rtrim">rTrim</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ltrim">lTrim</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trim">trim</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#tolower">toLower</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#toupper">toUpper()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#reverse">reverse()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#tostring">toString()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#toupper">toUpper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reverse">reverse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tostring">toString</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="aggregate_functions.html">Aggregation Functions</a></li>
@@ -224,7 +224,7 @@
   <div class="tex2jax_ignore mathjax_ignore section" id="string-functions">
 <h1>String Functions<a class="headerlink" href="#string-functions" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="replace">
-<h2>replace()<a class="headerlink" href="#replace" title="Permalink to this headline">¶</a></h2>
+<h2>replace<a class="headerlink" href="#replace" title="Permalink to this headline">¶</a></h2>
 <p>replace() returns a string in which all occurrences of a specified string in the original string have been replaced by another (specified) string.</p>
 <p>Syntax: **<code>replace(original, search, replace)</code></strong></p>
 <p>Returns:</p>
@@ -291,7 +291,7 @@ $$) as (str_array agtype);
 </table>
 </div>
 <div class="section" id="split">
-<h2>split()<a class="headerlink" href="#split" title="Permalink to this headline">¶</a></h2>
+<h2>split<a class="headerlink" href="#split" title="Permalink to this headline">¶</a></h2>
 <p>split() returns a list of strings resulting from the splitting of the original string around matches of the given delimiter.</p>
 <p>Syntax: <code class="docutils literal notranslate"><span class="pre">split(original,</span> <span class="pre">split_delimiter)</span></code></p>
 <p>Returns:</p>
@@ -347,7 +347,7 @@ $$) as (split_list agtype);
 </table>
 </div>
 <div class="section" id="left">
-<h2>left()<a class="headerlink" href="#left" title="Permalink to this headline">¶</a></h2>
+<h2>left<a class="headerlink" href="#left" title="Permalink to this headline">¶</a></h2>
 <p>left() returns a string containing the specified number of leftmost characters of the original string.</p>
 <p>Syntax: <code class="docutils literal notranslate"><span class="pre">left(original,</span> <span class="pre">length)</span></code></p>
 <p>Returns:</p>
@@ -406,7 +406,7 @@ $$) as (new_str agtype);
 </table>
 </div>
 <div class="section" id="right">
-<h2>right()<a class="headerlink" href="#right" title="Permalink to this headline">¶</a></h2>
+<h2>right<a class="headerlink" href="#right" title="Permalink to this headline">¶</a></h2>
 <p>right() returns a string containing the specified number of rightmost characters of the original string.</p>
 <p>Syntax: <code class="docutils literal notranslate"><span class="pre">right(original,</span> <span class="pre">length)</span></code></p>
 <p>Returns:</p>
@@ -465,7 +465,7 @@ $$) as (new_str agtype);
 </table>
 </div>
 <div class="section" id="substring">
-<h2>substring()<a class="headerlink" href="#substring" title="Permalink to this headline">¶</a></h2>
+<h2>substring<a class="headerlink" href="#substring" title="Permalink to this headline">¶</a></h2>
 <p>substring() returns a substring of the original string, beginning with a 0-based index start and length.</p>
 <p>Syntax: <code>substring(original, <strong>start</strong> [, <strong>length</strong>])</code></p>
 <p>Returns:</p>
@@ -536,7 +536,7 @@ $$) as (sub_str1 agtype, sub_str2 agtype);
 </table>
 </div>
 <div class="section" id="rtrim">
-<h2>rTrim()<a class="headerlink" href="#rtrim" title="Permalink to this headline">¶</a></h2>
+<h2>rTrim<a class="headerlink" href="#rtrim" title="Permalink to this headline">¶</a></h2>
 <p>rTrim() returns the original string with trailing whitespace removed.</p>
 <p>Syntax: rTrim(original)</p>
 <p>Returns:</p>
@@ -586,7 +586,7 @@ $$) as (trimmed_str agtype);
 </table>
 </div>
 <div class="section" id="ltrim">
-<h2>lTrim()<a class="headerlink" href="#ltrim" title="Permalink to this headline">¶</a></h2>
+<h2>lTrim<a class="headerlink" href="#ltrim" title="Permalink to this headline">¶</a></h2>
 <p>lTrim() returns the original string with trailing whitespace removed.</p>
 <p>Syntax: <code class="docutils literal notranslate"><span class="pre">lTrim(original)</span></code></p>
 <p>Returns:</p>
@@ -636,7 +636,7 @@ $$) as (trimmed_str agtype);
 </table>
 </div>
 <div class="section" id="trim">
-<h2>trim()<a class="headerlink" href="#trim" title="Permalink to this headline">¶</a></h2>
+<h2>trim<a class="headerlink" href="#trim" title="Permalink to this headline">¶</a></h2>
 <p>trim() returns the original string with leading and trailing whitespace removed.</p>
 <p>Syntax: <code class="docutils literal notranslate"><span class="pre">trim(original)</span></code></p>
 <p>Returns:</p>
@@ -736,7 +736,7 @@ $$) as (lower_str agtype);
 </table>
 </div>
 <div class="section" id="toupper">
-<h2>toUpper()<a class="headerlink" href="#toupper" title="Permalink to this headline">¶</a></h2>
+<h2>toUpper<a class="headerlink" href="#toupper" title="Permalink to this headline">¶</a></h2>
 <p>toUpper() returns the original string in lowercase.</p>
 <p>Syntax: <code class="docutils literal notranslate"><span class="pre">toUpper(original)</span></code></p>
 <p>Returns:</p>
@@ -786,7 +786,7 @@ $$) as (upper_str agtype);
 </table>
 </div>
 <div class="section" id="reverse">
-<h2>reverse()<a class="headerlink" href="#reverse" title="Permalink to this headline">¶</a></h2>
+<h2>reverse<a class="headerlink" href="#reverse" title="Permalink to this headline">¶</a></h2>
 <p>reverse() returns a string in which the order of all characters in the original string have been reversed.</p>
 <p>Syntax: <code class="docutils literal notranslate"><span class="pre">reverse(original)</span></code></p>
 <p>Returns:</p>
@@ -836,7 +836,7 @@ $$) as (upper_str agtype);
 </table>
 </div>
 <div class="section" id="tostring">
-<h2>toString()<a class="headerlink" href="#tostring" title="Permalink to this headline">¶</a></h2>
+<h2>toString<a class="headerlink" href="#tostring" title="Permalink to this headline">¶</a></h2>
 <p>toString() converts an integer, float or boolean value to a string.</p>
 <p>Syntax:<code class="docutils literal notranslate"><span class="pre">toString(expression)</span></code></p>
 <p>Returns:</p>
