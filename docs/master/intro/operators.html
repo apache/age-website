@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Operator Precedence &mdash; Apache AGE master documentation</title>
+  <title>Operators &mdash; Apache AGE master documentation</title>
   
 
   
@@ -43,7 +43,9 @@
 
     
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Aggregation" href="aggregation.html" />
+    <link rel="prev" title="Comparability, Equality, Orderability and Equivalence" href="comparability.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -92,14 +94,33 @@
             
             
               <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="setup.html">Setup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="graphs.html">Graphs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cypher.html">The AGE Cypher Query Format</a></li>
 <li class="toctree-l1"><a class="reference internal" href="types.html">Data Types - An Introduction to agtype</a></li>
 <li class="toctree-l1"><a class="reference internal" href="comparability.html">Comparability, Equality, Orderability and Equivalence</a></li>
-<li class="toctree-l1"><a class="reference internal" href="operators.html">Operators</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Operators</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#string-specific-comparison-operators">String Specific Comparison Operators</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#data-setup">Data Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#starts-with">Starts With</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#contains">Contains</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ends-with">Ends With</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#regular-expressions">Regular Expressions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#basic-string-matching">Basic String Matching</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#case-insensitive-search">Case insensitive search</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-wildcard">The . Wildcard</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id1">The * Wildcard</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-operator">The + Operator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-and-wildcards-together">The . and * wildcards together</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#operator-precedence">Operator Precedence</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="aggregation.html">Aggregation</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Clauses</span></p>
@@ -184,14 +205,14 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Operator Precedence</li>
+      <li>Operators</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
             
-              <a href="https://github.com/apache/incubator-age-website/blob/master/docs/intro/precedence.md" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/apache/incubator-age-website/blob/master/docs/intro/operators.md" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -205,8 +226,270 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="tex2jax_ignore mathjax_ignore section" id="operator-precedence">
-<h1>Operator Precedence<a class="headerlink" href="#operator-precedence" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="operators">
+<h1>Operators<a class="headerlink" href="#operators" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="string-specific-comparison-operators">
+<h2>String Specific Comparison Operators<a class="headerlink" href="#string-specific-comparison-operators" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="data-setup">
+<h3>Data Setup<a class="headerlink" href="#data-setup" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT * FROM cypher(&#39;graph_name&#39;, $$
+CREATE (:Person {name: &#39;John&#39;}),
+       (:Person {name: &#39;Jeff&#39;}),
+       (:Person {name: &#39;Joan&#39;}),
+       (:Person {name: &#39;Bill&#39;})
+$$) AS (result agtype);
+</pre></div>
+</div>
+</div>
+<div class="section" id="starts-with">
+<h3>Starts With<a class="headerlink" href="#starts-with" title="Permalink to this headline">¶</a></h3>
+<p>Performs case-sensitive prefix searching on strings.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT * FROM cypher(&#39;graph_name&#39;, $$
+	MATCH (v:Person)
+	WHERE v.name STARTS WITH &quot;J&quot;
+	RETURN v.name
+$$) AS (names agtype);
+</pre></div>
+</div>
+<p>Results</p>
+<table>
+  <thead>
+  <tr>
+   <td>names</td>
+  </tr>
+  </thead>
+  <tr>
+   <td>"John"</td>
+  </tr>
+  <tr>
+   <td>"Jeff"</td>
+  </tr>
+  <tr>
+   <td>"Joan"</td>
+  </tr>
+  <tr>
+   <td colspan="1">3 rows</td>
+  </tr>
+</table>
+</div>
+<div class="section" id="contains">
+<h3>Contains<a class="headerlink" href="#contains" title="Permalink to this headline">¶</a></h3>
+<p>Performs case-sensitive inclusion searching in strings.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT * FROM cypher(&#39;graph_name&#39;, $$
+	MATCH (v:Person)
+	WHERE v.name CONTAINS &quot;o&quot;
+	RETURN v.name
+$$) AS (names agtype);
+</pre></div>
+</div>
+<p>Results</p>
+<table>
+  <thead>
+  <tr>
+   <td>names</td>
+  </tr>
+  </thead>
+  <tr>
+   <td>"John</td>
+  </tr>
+  <tr>
+   <td>"Joan</td>
+  </tr>
+  <tr>
+   <td colspan="1">2 rows</td>
+  </tr>
+</table>
+</div>
+<div class="section" id="ends-with">
+<h3>Ends With<a class="headerlink" href="#ends-with" title="Permalink to this headline">¶</a></h3>
+<p>Performs case-sensitive suffix searching on strings.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT * FROM cypher(&#39;graph_name&#39;, $$
+	MATCH (v:Person)
+	WHERE v.name ENDS WITH &quot;n&quot;
+	RETURN v.name
+$$) AS (names agtype);
+</pre></div>
+</div>
+<p>Results</p>
+<table>
+  <thead>
+  <tr>
+   <td>names</td>
+  </tr>
+  </thead>
+  <tr>
+   <td>"John"</td>
+  </tr>
+  <tr>
+   <td>"Joan"</td>
+  </tr>
+  <tr>
+   <td colspan="1">2 rows</td>
+  </tr>
+</table>
+</div>
+<div class="section" id="regular-expressions">
+<h3>Regular Expressions<a class="headerlink" href="#regular-expressions" title="Permalink to this headline">¶</a></h3>
+<p>AGE supports the use of <a class="reference external" href="https://www.postgresql.org/docs/11/functions-matching.html#FUNCTIONS-POSIX-REGEXP">POSIX regular expressions</a> using the =~ operator. By default =~ is case sensitve.</p>
+<div class="section" id="basic-string-matching">
+<h4>Basic String Matching<a class="headerlink" href="#basic-string-matching" title="Permalink to this headline">¶</a></h4>
+<p>The =~ operator when no special characters are give, act like the = operator.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT * FROM cypher(&#39;graph_name&#39;, $$
+	MATCH (v:Person)
+	WHERE v.name =~ &#39;John&#39;
+	RETURN v.name
+$$) AS (names agtype);
+</pre></div>
+</div>
+<p>Results</p>
+<table>
+  <thead>
+  <tr>
+   <td>names</td>
+  </tr>
+  </thead>
+  <tr>
+   <td>"John"</td>
+  </tr>
+  <tr>
+   <td colspan="1">1 rows</td>
+  </tr>
+</table>
+</div>
+<div class="section" id="case-insensitive-search">
+<h4>Case insensitive search<a class="headerlink" href="#case-insensitive-search" title="Permalink to this headline">¶</a></h4>
+<p>Adding (?i) at the beginning of the striong will make the comparison case insensitive</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT * FROM cypher(&#39;graph_name&#39;, $$
+	MATCH (v:Person)
+	WHERE v.name =~ &#39;(?i)JoHn&#39;
+	RETURN v.name
+$$) AS (names agtype);
+</pre></div>
+</div>
+<table>
+  <thead>
+  <tr>
+   <td>names</td>
+  </tr>
+  </thead>
+  <tr>
+   <td>"John"</td>
+  </tr>
+  <tr>
+   <td colspan="1">1 rows</td>
+  </tr>
+</table>
+</div>
+<div class="section" id="the-wildcard">
+<h4>The . Wildcard<a class="headerlink" href="#the-wildcard" title="Permalink to this headline">¶</a></h4>
+<p>The . operator acts as a wildcard to match any single character.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT * FROM cypher(&#39;graph_name&#39;, $$
+	MATCH (v:Person)
+	WHERE v.name =~ &#39;Jo.n&#39;
+	RETURN v.name
+$$) AS (names agtype);
+</pre></div>
+</div>
+<table>
+  <thead>
+  <tr>
+   <td>names</td>
+  </tr>
+  </thead>
+  <tr>
+   <td>"John"</td>
+  </tr>
+  <tr>
+   <td>"Joan"</td>
+  </tr>
+  <tr>
+   <td colspan="1">2 rows</td>
+  </tr>
+</table>
+</div>
+<div class="section" id="id1">
+<h4>The * Wildcard<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<p>The * wildcard after a character will match to 0 or more of the previous character</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT * FROM cypher(&#39;graph_name&#39;, $$
+	MATCH (v:Person)
+	WHERE v.name =~ &#39;Johz*n&#39;
+	RETURN v.name
+$$) AS (names agtype);
+</pre></div>
+</div>
+<table>
+  <thead>
+  <tr>
+   <td>names</td>
+  </tr>
+  </thead>
+  <tr>
+   <td>"John"</td>
+  </tr>
+  <tr>
+   <td colspan="1">1 rows</td>
+  </tr>
+</table>
+</div>
+<div class="section" id="the-operator">
+<h4>The + Operator<a class="headerlink" href="#the-operator" title="Permalink to this headline">¶</a></h4>
+<p>The + operator matches to 1 or more the previous character.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT * FROM cypher(&#39;graph_name&#39;, $$
+	MATCH (v:Person)
+	WHERE v.name =~ &#39;Bil+&#39;
+	RETURN v.name
+$$) AS (names agtype);
+</pre></div>
+</div>
+<p>Results</p>
+<table>
+  <thead>
+  <tr>
+   <td>names</td>
+  </tr>
+  </thead>
+  <tr>
+   <td>"Bill"</td>
+  </tr>
+  <tr>
+   <td colspan="1">1 row</td>
+  </tr>
+</table>
+</div>
+<div class="section" id="the-and-wildcards-together">
+<h4>The . and * wildcards together<a class="headerlink" href="#the-and-wildcards-together" title="Permalink to this headline">¶</a></h4>
+<p>You can use the . and * wildcards together to represent the rest of a string.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT * FROM cypher(&#39;graph_name&#39;, $$
+	MATCH (v:Person)
+	WHERE v.name =~ &#39;J.*&#39;
+	RETURN v.name
+$$) AS (names agtype);
+</pre></div>
+</div>
+<table>
+  <thead>
+  <tr>
+   <td>names</td>
+  </tr>
+  </thead>
+  <tr>
+   <td>"John"</td>
+  </tr>
+  <tr>
+   <td>"Jeff"</td>
+  </tr>
+  <tr>
+   <td>"Joan"</td>
+  </tr>
+  <tr>
+   <td colspan="1">2 rows</td>
+  </tr>
+</table>
+</div>
+</div>
+</div>
+<div class="section" id="operator-precedence">
+<h2>Operator Precedence<a class="headerlink" href="#operator-precedence" title="Permalink to this headline">¶</a></h2>
 <p>Operator precedence in AGE is shown below:</p>
 <table>
   <tr>
@@ -363,12 +646,17 @@
   </tr>
 </table>
 </div>
+</div>
 
 
            </div>
            
           </div>
           <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="aggregation.html" class="btn btn-neutral float-right" title="Aggregation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="comparability.html" class="btn btn-neutral float-left" title="Comparability, Equality, Orderability and Equivalence" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
 
   <hr/>
 
@@ -404,7 +692,7 @@
   <div class="rst-other-versions">
     <dl>
       <dt>Versions</dt>
-      <dd><a href="precedence.html">master</a></dd>
+      <dd><a href="operators.html">master</a></dd>
     </dl>
   </div>
 </div>

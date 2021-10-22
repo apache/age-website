@@ -35,7 +35,7 @@ Operator precedence in AGE is shown below:
    </td>
   </tr>
   <tr>
-   <td rowspan="3" >3
+   <td rowspan="4" >3
    </td>
    <td>STARTS WITH
    </td>
@@ -52,6 +52,12 @@ Operator precedence in AGE is shown below:
    <td>CONTAINS
    </td>
    <td>Case-sensitive inclusion searching on strings
+   </td>
+  </tr>
+  <tr>
+   <td>=~
+   </td>
+   <td>Regular expression string matching
    </td>
   </tr>
   <tr>
