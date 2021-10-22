@@ -1,7 +1,7 @@
 # Scalar Functions 
 
 
-## id()
+## id
 
 id() returns the id of a vertex or edge.
 
@@ -80,7 +80,7 @@ Results
 
 
 
-## start_id()
+## start_id
 
 start_id() returns the id of the vertex that is the starting vertex for the edge.
 
@@ -159,7 +159,7 @@ Results
 
 
 
-## end_id()
+## end_id
 
 end_id() returns the id of the vertex that is the ending vertex for the edge.
 
@@ -236,7 +236,7 @@ Results
 
 
 
-## type()
+## type
 
 type() returns the string representation of the edge type
 
@@ -307,7 +307,7 @@ Results
 
 
 
-## properties()
+## properties
 
 Returns an agtype map containing all the properties of a vertex or edge. If the argument is already a map, it is returned unchanged.
 
@@ -374,7 +374,7 @@ Results:
 
 
 
-## head()
+## head
 
 returns the first element in an agtype list.
 
@@ -453,7 +453,7 @@ Result:
 
 
 
-## last()
+## last
 
 returns the last element in an agtype list.
 
@@ -532,7 +532,7 @@ Result:
 
 
 
-## length() 
+## length
 
 length() returns the length of a path.
 
@@ -610,7 +610,7 @@ Results:
 
 
 
-## size()
+## size
 
 size() returns the length of a list.
 
@@ -682,7 +682,7 @@ Results:
 
 
 
-## startNode()
+## startNode
 
 startNode() returns the start node of an edge.
 
@@ -757,7 +757,7 @@ Result
 
 
 
-## endNode()
+## endNode
 
 endNode() returns the start node of an edge.
 
@@ -832,7 +832,7 @@ Result
 
 
 
-## timestamp()
+## timestamp
 
 timestamp() returns the difference, measured in milliseconds, between the current time and midnight, January 1, 1970 UTC.
 
@@ -885,7 +885,7 @@ Results:
 
 
 
-## toBoolean()
+## toBoolean
 
 toBoolean() converts a string value to a boolean value.
 
@@ -961,7 +961,7 @@ Result:
 
 
 
-## toFloat()
+## toFloat
 
 toFloat() converts an integer or string value to a floating point number.
 
@@ -1029,7 +1029,7 @@ Result:
 
 
 
-## toInteger()
+## toInteger
 
 toInteger() converts a floating point or string value to an integer value.
 
@@ -1105,7 +1105,7 @@ Result:
 
 
 
-## coalesce()
+## coalesce
 
 coalesce() returns the first non-null value in the given list of expressions.
 
@@ -1155,9 +1155,6 @@ WHERE a.name = 'Alice'
 RETURN coalesce(a.hairColor, a.eyes), a.hair_color, a.eyes
 $$) as (color agtype, hair_color agtype, eyes agtype);
 ```
-
-
-Table 105. 
 
 Result
 

@@ -23,7 +23,7 @@ SELECT * FROM cypher('graph_name', $$
 $$) as (a agtype);
 ```
 
-## min()
+## min
 
 min() returns the minimum value in a set of values.
 
@@ -154,7 +154,7 @@ Result:
 
 
 
-## max()
+## max
 
 max() returns the maximum value in a set of values.
 
@@ -230,7 +230,7 @@ Result:
 
 
 
-## stDev()
+## stDev
 
 stDev() returns the standard deviation for the given value over a group. It uses a standard two-pass method, with N - 1 as the denominator, and should be used when taking a sample of the population for an unbiased estimate. When the standard variation of the entire population is being calculated, stdDevP should be used.
 
@@ -304,7 +304,7 @@ Result:
 
 
 
-## stDevP()
+## stDevP
 
 stDevP() returns the standard deviation for the given value over a group. It uses a standard two-pass method, with N as the denominator, and should be used when calculating the standard deviation for an entire population. When the standard variation of only a sample of the population is being calculated, stDev should be used.
 
@@ -378,7 +378,7 @@ Result:
 
 
 
-## percentileCont()
+## percentileCont
 
 percentileCont() returns the percentile of the given value over a group, with a percentile from 0.0 to 1.0. It uses a linear interpolation method, calculating a weighted average between two values if the desired percentile lies between them. For nearest values using a rounding method, see percentileDisc.
 
@@ -458,7 +458,7 @@ Result:
 
 
 
-## percentileDisc()
+## percentileDisc
 
 percentileDisc() returns the percentile of the given value over a group, with a percentile from 0.0to 1.0. It uses a rounding method and calculates the nearest value to the percentile. For interpolated values, see percentileCont.
 
@@ -538,7 +538,7 @@ Result:
 
 
 
-## count()
+## count
 
 count() returns the number of values or records, and appears in two variants:
 
@@ -768,7 +768,7 @@ Result:
 </table>
 
 
-## avg()
+## avg
 
 avg() returns the average of a set of numeric values.
 

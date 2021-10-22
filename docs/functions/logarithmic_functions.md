@@ -1,7 +1,7 @@
 # Logarithmic Functions
 
 
-## e()
+## e
 
 e() returns the base of the natural logarithm, e.
 
@@ -46,7 +46,7 @@ Results
 
 
 
-## sqrt()
+## sqrt
 
 sqrt() returns the square root of a number.
 
@@ -91,7 +91,7 @@ Results
 
 
 
-## exp()
+## exp
 
 exp() returns e^n, where e is the base of the natural logarithm, and n is the value of the argument expression.
 
@@ -163,7 +163,7 @@ Result:
 
 
 
-## log()
+## log
 
 log() returns the natural logarithm of a number.
 
@@ -236,7 +236,7 @@ Result:
 
 
 
-## log10()
+## log10
 
 log10() returns the common logarithm (base 10) of a number.
 

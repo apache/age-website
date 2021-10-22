@@ -1,7 +1,7 @@
 # String Functions
 
 
-## replace()
+## replace
 
 replace() returns a string in which all occurrences of a specified string in the original string have been replaced by another (specified) string.
 
@@ -91,7 +91,7 @@ Result:
 
 
 
-## split()
+## split
 
 split() returns a list of strings resulting from the splitting of the original string around matches of the given delimiter.
 
@@ -167,7 +167,7 @@ Result:
 
 
 
-## left()
+## left
 
 left() returns a string containing the specified number of leftmost characters of the original string.
 
@@ -246,7 +246,7 @@ Result:
 
 
 
-## right()
+## right
 
 right() returns a string containing the specified number of rightmost characters of the original string.
 
@@ -325,7 +325,7 @@ Result:
 
 
 
-## substring()
+## substring
 
 substring() returns a substring of the original string, beginning with a 0-based index start and length.
 
@@ -416,7 +416,7 @@ Result:
 
 
 
-## rTrim()
+## rTrim
 
 rTrim() returns the original string with trailing whitespace removed.
 
@@ -486,7 +486,7 @@ Result:
 
 
 
-## lTrim()
+## lTrim
 
 lTrim() returns the original string with trailing whitespace removed.
 
@@ -556,7 +556,7 @@ Result:
 
 
 
-## trim()
+## trim
 
 trim() returns the original string with leading and trailing whitespace removed.
 
@@ -696,7 +696,7 @@ Result:
 
 
 
-## toUpper()
+## toUpper
 
 toUpper() returns the original string in lowercase.
 
@@ -766,7 +766,7 @@ Result:
 
 
 
-## reverse()
+## reverse
 
 reverse() returns a string in which the order of all characters in the original string have been reversed.
 
@@ -836,7 +836,7 @@ Result:
 
 
 
-## toString()
+## toString
 
 toString() converts an integer, float or boolean value to a string.
 

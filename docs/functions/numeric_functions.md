@@ -1,7 +1,7 @@
 # Numeric Functions
 
 
-## rand()
+## rand
 
 rand() returns a random floating point number in the range from 0 (inclusive) to 1 (exclusive); i.e.[0,1). The numbers returned follow an approximate uniform distribution.
 
@@ -48,7 +48,7 @@ Result:
 
 
 
-## abs()
+## abs
 
 abs() returns the absolute value of the given number.
 
@@ -130,7 +130,7 @@ Result:
 
 
 
-## ceil()
+## ceil
 
 ceil() returns the smallest floating point number that is greater than or equal to the given number and equal to a mathematical integer.
 
@@ -202,7 +202,7 @@ Result:
 
 
 
-## floor()
+## floor
 
 floor() returns the greatest floating point number that is less than or equal to the given number and equal to a mathematical integer.
 
@@ -276,7 +276,7 @@ Result:
 
 
 
-## round()
+## round
 
 round() returns the value of the given number rounded to the nearest integer.
 
@@ -350,7 +350,7 @@ Result:
 
 
 
-## sign()
+## sign
 
 sign() returns the signum of the given number: 0 if the number is 0, -1 for any negative number, and 1 for any positive number
 

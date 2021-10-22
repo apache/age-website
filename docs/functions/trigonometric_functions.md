@@ -1,7 +1,7 @@
 # Trigonometric Functions
 
 
-## degrees()
+## degrees
 
 degrees() converts radians to degrees.
 
@@ -73,7 +73,7 @@ Results:
 
 
 
-## radians()
+## radians
 
 radians() converts radians to degrees.
 
@@ -145,7 +145,7 @@ Results:
 
 
 
-## pi()
+## pi
 
 pi() returns the mathematical constant pi.
 
@@ -192,7 +192,7 @@ Result:
 
 
 
-## sin()
+## sin
 
 sin() returns the sine of a number.
 
@@ -264,7 +264,7 @@ Results:
 
 
 
-## cos()
+## cos
 
 cos() returns the cosine of a number.
 
@@ -336,7 +336,7 @@ Results:
 
 
 
-## tan()
+## tan
 
 tan() returns the tangent of a number.
 
@@ -408,7 +408,7 @@ Results:
 
 
 
-## asin()
+## asin
 
 asin() returns the arcsine of a number.
 
@@ -481,7 +481,7 @@ Results:
 
 
 
-## acos()
+## acos
 
 acos() returns the arccosine of a number.
 
@@ -554,7 +554,7 @@ Results:
 
 
 
-## atan()
+## atan
 
 atan() returns the arctangent of a number.
 
@@ -626,7 +626,7 @@ Results:
 
 
 
-## atan2()
+## atan2
 
 atan2() returns the arctangent2 of a set of coordinates in radians.
 
