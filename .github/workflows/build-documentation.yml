@@ -37,6 +37,8 @@ jobs:
 
       - run: sphinx-multiversion docs build/html
 
+      - run: cp ./index.html ./build/html
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
