@@ -121,7 +121,14 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="predicate_functions.html">Predicate Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scalar_functions.html">Scalar Functions</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">List Functions</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">List Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#data-setup">Data Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#keys">keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#range">range</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#labels">labels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#relationships">relationships</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="numeric_functions.html">Numeric Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="logarithmic_functions.html">Logarithmic Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="trigonometric_functions.html">Trigonometric Functions</a></li>
@@ -209,6 +216,241 @@
             
   <div class="tex2jax_ignore mathjax_ignore section" id="list-functions">
 <h1>List Functions<a class="headerlink" href="#list-functions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="data-setup">
+<h2>Data Setup<a class="headerlink" href="#data-setup" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT * from cypher(&#39;graph_name&#39;, $$
+CREATE (A:Person {name: &#39;Alice&#39;, age: 38, eyes: &#39;brown&#39;}),
+	(B:Person {name: &#39;Bob&#39;, age: 25, eyes: &#39;blue&#39;}),
+	(C:Person {name: &#39;Charlie&#39;, age: 53, eyes: &#39;green&#39;}),
+	(D:Person {name: &#39;Daniel&#39;, age: 54, eyes: &#39;brown&#39;}),
+	(E:Person {name: &#39;Eskil&#39;, age: 41, eyes: &#39;blue&#39;, array: [&#39;one&#39;, &#39;two&#39;, &#39;three&#39;]}),
+	(A)-[:KNOWS]-&gt;(B),
+	(A)-[:KNOWS]-&gt;(C),
+	(B)-[:KNOWS]-&gt;(D),
+	(C)-[:KNOWS]-&gt;(D),
+	(B)-[:KNOWS]-&gt;(E)
+$$) as (result agtype);
+</pre></div>
+</div>
+</div>
+<div class="section" id="keys">
+<h2>keys<a class="headerlink" href="#keys" title="Permalink to this headline">¶</a></h2>
+<p>keys returns a list containing the string representations for all the property names of a vertex, edge, or map.</p>
+<p>Syntax:<code class="docutils literal notranslate"><span class="pre">keys(expression)</span></code></p>
+<p>Returns:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">An</span> <span class="n">Agtype</span> <span class="nb">list</span> <span class="n">containing</span> <span class="n">string</span> <span class="n">agtype</span> <span class="n">elements</span>
+</pre></div>
+</div>
+<p>Arguments:</p>
+<table>
+  <tr>
+   <td>Name
+   </td>
+   <td>Description
+   </td>
+  </tr>
+  <tr>
+   <td>path
+   </td>
+   <td>An expression that returns a vertex, edge, or map.
+   </td>
+  </tr>
+</table>
+<p>Considerations:</p>
+<ul class="simple">
+<li><p>keys(null) returns null.</p></li>
+</ul>
+<p>Query:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT * from cypher(&#39;graph_name&#39;, $$
+	MATCH (a)
+	WHERE a.name = &#39;Alice&#39;
+	RETURN keys(a)
+$$) as (result agtype);
+</pre></div>
+</div>
+<p>A list containing the names of all the properties on the vertex bound to a is returned.</p>
+<p>Result:</p>
+<table>
+  <tr>
+   <td>keys
+   </td>
+  </tr>
+  <tr>
+   <td>["age", "eyes", "name"]</td>
+  </tr>
+  <tr>
+   <td colspan="1" >1 rows
+   </td>
+  </tr>
+</table>
+</div>
+<div class="section" id="range">
+<h2>range<a class="headerlink" href="#range" title="Permalink to this headline">¶</a></h2>
+<p>range() returns a list comprising all integer values within a range bounded by a start value start and end value end, where the difference step between any two consecutive values is constant; i.e. an arithmetic progression. The range is  inclusive, and the arithmetic progression will therefore always contain start and—depending on the values of start, step and end—end.</p>
+<p>Syntax:<code class="docutils literal notranslate"><span class="pre">range(start,</span> <span class="pre">end</span> <span class="pre">[,</span> <span class="pre">step])</span></code></p>
+<p>Returns:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">An</span> <span class="n">Agtype</span> <span class="nb">list</span> <span class="n">containing</span> <span class="n">edge</span> <span class="n">entities</span>
+</pre></div>
+</div>
+<p>Arguments:</p>
+<table>
+  <tr>
+   <td>Name
+   </td>
+   <td>Description
+   </td>
+  </tr>
+  <tr>
+   <td>start
+   </td>
+   <td>An expression that returns an integer value.
+   </td>
+  </tr>
+  <tr>
+   <td>end
+   </td>
+   <td>An expression that returns an integer value.
+   </td>
+  </tr>
+  <tr>
+   <td>step
+   </td>
+   <td>A numeric expression defining the differencebetween any two consecutive values, with adefault of 1.
+   </td>
+  </tr>
+</table>
+<p>Query:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
+FROM cypher(&#39;graph_name&#39;, $$
+	RETURN range(0, 10), range(2, 18, 3)
+$$) as (no_step agtype, step agtype);
+</pre></div>
+</div>
+<p>Two lists of numbers in the given ranges are returned.</p>
+<p>Result:</p>
+<table>
+  <tr>
+   <td>no_step
+   </td>
+   <td>step
+   </td>
+  </tr>
+  <tr>
+   <td>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</td>
+   <td>[2, 5, 8, 11, 14, 17]</td>
+  </tr>
+  <tr>
+   <td colspan="1" >1 row
+   </td>
+  </tr>
+</table>
+</div>
+<div class="section" id="labels">
+<h2>labels<a class="headerlink" href="#labels" title="Permalink to this headline">¶</a></h2>
+<p>labels returns a list containing the string representations for all the labels of a node.</p>
+<p>Syntax:<code class="docutils literal notranslate"><span class="pre">labels(vertex)</span></code></p>
+<p>Returns:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">An</span> <span class="n">Agtype</span> <span class="nb">list</span> <span class="n">containing</span> <span class="n">String</span> <span class="n">elements</span>
+</pre></div>
+</div>
+<p>Arguments:</p>
+<table>
+  <tr>
+   <td>Name
+   </td>
+   <td>Description
+   </td>
+  </tr>
+  <tr>
+   <td>vertex
+   </td>
+   <td>An expression that returns a single vertex.
+   </td>
+  </tr>
+</table>
+<p>Considerations:</p>
+<ul class="simple">
+<li><p>labels(null) returns null.</p></li>
+</ul>
+<p>Query:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
+FROM cypher(&#39;graph_name&#39;, $$
+	MATCH (a)
+	WHERE a.name = &#39;Alice&#39;
+	RETURN labels(a)
+$$) as (edges agtype);
+</pre></div>
+</div>
+<p>A list containing all the labels of the node bound to a is returned.</p>
+<p>Result:</p>
+<table>
+  <tr>
+   <td>edges
+   </td>
+  </tr>
+  <tr>
+   <td>["Person"]
+   </td>
+  </tr>
+  <tr>
+   <td colspan="3" >1 row
+   </td>
+  </tr>
+</table>
+</div>
+<div class="section" id="relationships">
+<h2>relationships<a class="headerlink" href="#relationships" title="Permalink to this headline">¶</a></h2>
+<p>relationships() returns a list containing all the relationships in a path.</p>
+<p>Syntax:<code class="docutils literal notranslate"><span class="pre">relationships(path)</span></code></p>
+<p>Returns:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">An</span> <span class="n">Agtype</span> <span class="nb">list</span> <span class="n">containing</span> <span class="n">edge</span> <span class="n">entities</span>
+</pre></div>
+</div>
+<p>Arguments:</p>
+<table>
+  <tr>
+   <td>Name
+   </td>
+   <td>Description
+   </td>
+  </tr>
+  <tr>
+   <td>path
+   </td>
+   <td>An expression that returns an Agtype path.
+   </td>
+  </tr>
+</table>
+<p>Considerations:</p>
+<ul class="simple">
+<li><p>relationships(null) returns null.</p></li>
+</ul>
+<p>Query:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
+FROM cypher(&#39;graph_name&#39;, $$
+	MATCH p = (a)-[]-&gt;(b)-[]-&gt;(c)
+	WHERE a.name = &#39;Alice&#39; AND c.name = &#39;Eskil&#39;
+	RETURN relationships(p)
+$$) as (edges agtype);
+</pre></div>
+</div>
+<p>A list containing all the edges in the path p is returned.</p>
+<p>Result:</p>
+<table>
+  <tr>
+   <td>edges
+   </td>
+  </tr>
+  <tr>
+   <td>[{"id": 1125899906842640, "label": "KNOWS", "end_id": 844424930131989, "start_id": 844424930131988, "properties": {}}::edge, {"id": 1125899906842644, "label": "KNOWS", "end_id": 844424930131992, "start_id": 844424930131989, "properties": {}}::edge]
+   </td>
+  </tr>
+  <tr>
+   <td colspan="3" >1 row
+   </td>
+  </tr>
+</table>
+</div>
 </div>
 
 
