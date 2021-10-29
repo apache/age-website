@@ -10,6 +10,9 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Install Latex and dvisvgm
+        run: sudo apt-get install -y texlive-latex-base texlive-latex-extra texlive-extra-utils
+
       - name: Setup Python
         uses: actions/setup-python@v2
         with:

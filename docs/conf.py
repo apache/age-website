@@ -34,6 +34,7 @@ extensions = [
     'sphinx_rtd_theme',
     'sphinx_multiversion',
     'myst_parser',
+    'sphinx.ext.imgmath',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -79,6 +80,10 @@ smv_branch_whitelist = r'^(?!gh-pages).*$'
 smv_remote_whitelist = r'^.*$'
 smv_released_pattern = r'^remotes/.*$'
 smv_prefer_remote_refs = True
+
+# -- imgmath options ---------------------------------------------------------
+imgmath_image_format = 'svg'
+imgmath_use_preview = True
 
 
 def setup(app):

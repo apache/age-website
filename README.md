@@ -8,10 +8,10 @@
 
 ## Build the documentation locally (first time)
 
-* Install requirements
+* Install requirements (the latex and dvisvgm commands are required to display math)
 
 ```shell
-sudo apt install python3 virtualenv
+sudo apt install python3 virtualenv texlive-latex-base texlive-latex-extra texlive-extra-utils
 ```
 
 * Clone this repository
