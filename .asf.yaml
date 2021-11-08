@@ -1,9 +1,0 @@
-github:
-  whoami: master
-  target: master
-
-publish:
-  whoami: master
-
-github:
-  homepage: "https://age.apache.org"
