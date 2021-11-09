@@ -62,7 +62,7 @@
 
         <p class="sidebar--section">
           <span class="emph">COMMUNITY</span> <br />
-          <span id="sidebar-team" class="sidebar-item"> <a class="sidebar-link" href="#" onclick="handleClick(this)">Team</a></span> <br />
+          <span id="sidebar-maturity" class="sidebar-item"> <a class="sidebar-link" href="#" onclick="handleClick(this)">Apache AGE Maturity Assessment</a></span> <br />
           <span id="sidebar-mailinglists" class="sidebar-item"> <a class="sidebar-link" href="#" onclick="handleClick(this)">Mailing Lists</a></span> <br />
           <a class="sidebar-link external-link" target="_blank" href="https://issues.apache.org/jira/projects/AGE/issues">JIRA Issues</a> <br />
           <a class="sidebar-link external-link" target="_blank" href="https://github.com/apache/incubator-age">Github</a> <br />
@@ -80,6 +80,7 @@
           <a class="sidebar-link external-link" target="_blank" href="https://www.apache.org/foundation/thanks.html">Thanks</a> <br />
         </p>
       </div>
+
 
       <div class="main">
         <!--
@@ -256,7 +257,7 @@
                 </tr>
                 <tr>
                   <td class="tblhead">Release Date (Planned)</td>
-                  <td>Internal release: 2021-SEP-10, Apache release: 2021-OCT </td>
+                  <td>Internal release: 2021-NOV-10, Apache release: 2021-NOV </td>
                 </tr>
                 <tr>
                   <td class="tblhead">Release Notes</td>
@@ -580,7 +581,7 @@ $$) as (a agtype);
             <ol>
               <li><span class="emph">Basic:</span>
                 <ol>
-                  <li>Visit <a class="external-link" target="_blank" href="https://issues.apache.org/jira/projects/AGE/issues">AGE JIRA</a></li>
+                  <li>Visit <a class="external-link" target="_blank" href="https://issues.apache.org/jira/projects/AGE2/issues/">AGE JIRA</a></li>
                   <li>Type query into search box in top right (beware this will return results from all projects)</li>
                 </ol>
               </li>
@@ -1003,59 +1004,222 @@ make html
           </div>
         </div>
 
-        <div class="main-item" id="main-team">
-          <div class="heading"><h1>Apache AGE Team Members</h1></div>
+
+
+
+
+        <div class="main-item" id="main-maturity">
+          <div class="heading"><h1>Apache AGE Maturity Assessment</h1></div>
           <div class="main-body">
-            <div class="heading center"><h2>✪ Mentors ✪</h2></div>
-            <table class="center">
-              <thead>
-                <tr><th scope="col">Name</th><th scope="col">Email</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>Raphael Bircher</td>	<td>rbircher at apache dot org</td></tr>
-                <tr><td>Von Gosling</td>	<td>vongosling at apache dot org</td></tr>
-                <tr><td>Jim Jagielski</td>	<td>jim at apache dot org </td></tr>
-                <tr><td>Kevin Ratnasekera</td>	<td>kevin at agsft dot com</td></tr>
-                <tr><td>Felix Cheung</td> <td></td></tr>
-                <tr><td>Juan Pan</td> <td></td></tr>
-                <tr><td>Justin Mclean</td> <td></td></tr>
-              </tbody>
-            </table>
-            <div class="heading center"><h2>✰ Committers ✰</h2></div>
-            <table class="center">
-              <thead>
-                <tr><th scope="col">Name</th><th scope="col">Email</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>John Gemignani</td>	<td>john dot gemignani at bitnine dot net</td></tr>
-                <tr><td>Josh Innis</td>	<td>josh dot innis at bitnine dot net</td></tr>
-                <tr><td>Eya Badal</td> <td>eya dot abdisho at bitnine dot net</td></tr>
-                <tr><td>Dehowe Feng</td> <td></td></tr>
-              </tbody>
-            </table>
 
 
-            <div class="heading center"><h3>✧ Contributors (only some listed here) ✧</h3></div>
-            <table class="center">
-              <thead>
-                <tr><th scope="col">Name</th><th scope="col">Email</th></tr>
-              </thead>
+
+<div class="heading"><h2>Overview</h2></div>
+            This is an assessment of the Apache AGE podling’s maturity, meant to help inform the decision (of the mentors, community, Incubator PMC and ASF Board of Directors) to graduate it as a top-level Apache project.
+            <br>
+            It is based on the <a href="https://community.apache.org/apache-way/apache-project-maturity-model.html">ASF project maturity model</a> 
+  
+  
+            <div class="heading"><h2>Status of this document</h2></div>
+            All open items are updated with the latest status.  
+
+  
+            <div class="heading"><h2>Maturity model assessment</h2></div>
+            Mentors and community members are encouraged to comment on it, the following table summarizes project’s self-assessment against the Apache Maturity Model.
+
+            <table style="width:100%;text-align:left;background-color:lightblue;">
               <tbody>
-                <tr><td>Ghassan Al-Noubani</td> <td>g.noubani at qbs dot jo</td></tr>
-                <tr><td>Jasper Blues</td>	<td>jasper at liberation dash data dot com</td></tr>
-                <tr><td>Donghu Kim</td><td>donghu dot kim at oracle dot com</td></tr>
-                <tr><td>Myeongseok Kwak</td> <td></td></tr>
-                <tr><td>Andrew Ko</td> <td> andrew dot ko at agedb dot io</td></tr>
-                <tr><td>Mason Sharp</td>	<td>mason dot sharp at gmail dot com</td></tr>
-                <tr><td>Muhammad Shoaib</td> <td>Muhammad dot Shoaib at uni dot lu</td></tr>
-                <tr><td>Nick Sorrell</td> <td>nick at canvouch dot com</td></tr>
-                <tr><td>Junseok Yang</td>	<td></td></tr>
-              </tbody>
-            </table>
+                <tr>
+                  <td style="width:15%;"><b>Category</b></td>
+                  <td style="width:40%;"><b>Description</b></td>
+                  <td style="background-color:yellowgreen;width:45%;"><b>AGE self asssessment</b></td>
+                </tr>
+                <tr>
+                  <td style="width:15%;">Code CD10</td>
+                  <td style="width:40%;">The project produces Open Source software for distribution to the public, at no charge.</td>
+                  <td style="background-color:yellowgreen;width:45%;">YES. The project source code is licensed under the Apache License, version 2.0.</td>
+                </tr>
+                <tr>
+                  <td style="width:15%;">Code CD20</td>
+                  <td style="width:40%;">Anyone can easily discover and access the project's code.</td>
+                  <td style="background-color:yellowgreen;width:45%;">YES. Linked from the website, available via git.apache.org and GitHub at https://github.com/apache/incubator-age</td>
+                </tr>
+                <tr>
+                  <td style="width:15%;">Code CD30</td>
+                  <td style="width:40%;">Anyone using standard, widely-available tools, can build the code in a reproducible way.</td>
+                  <td style="background-color:yellowgreen;width:45%;">YES. Anyone with a standard OS can build the AGE extension from the code at the GitHub repo.</td>
+                </tr>
+                <tr>
+                  <td style="width:15%;">Code CD40</td>
+                  <td style="width:40%;">The full history of the project's code is available via a source code control system, in a way that allows anyone to recreate any released version.</td>
+                  <td style="background-color:yellowgreen;width:45%;">YES. Releases are cut from Main repository at https://github.com/apache/incubator-age  All releases are tagged.</td>
+                </tr>
+                <tr>
+                  <td style="width:15%;">Code CD50</td>
+                  <td style="width:40%;">The source code control system establishes the provenance of each line of code in a reliable way, based on strong authentication of the committer. When third parties contribute code, commit messages provide reliable information about the code provenance.</td>
+                  <td style="background-color:yellowgreen;width:45%;">YES. The project GitHub repository, managed by Apache Infra, ensures provenance of each line of code to a committer. Third party contributions are accepted in accordance with the Contribution Guide only.</td>
+                </tr>
+                <tr>
+                  <td style="width:15%;">Licenses and Copyright LC10</td>
+                  <td style="width:40%;">The Apache License, version 2.0, covers the released code.</td>
+                  <td style="background-color:yellowgreen;width:45%;">YES. Source distributions clearly state license. Convenience binaries clearly state license.</td>
+                </tr>
+                <tr>
+                  <td style="width:15%;">Licenses and Copyright LC20</td>
+                  <td style="width:40%;">Libraries that are mandatory dependencies of the project's code do not create more restrictions than the Apache License does.</td>
+                  <td style="background-color:yellowgreen;width:45%;">YES. The list of mandatory dependencies have been reviewed to contain approved licenses only. See below.</td>
+                </tr>
+                <tr>
+                  <td style="width:15%;">Licenses and Copyright LC30</td>
+                  <td style="width:40%;">The libraries mentioned in LC20 are available as Open Source software.</td>
+                  <td style="background-color:yellowgreen;width:45%;">YES. All mandatory dependencies are available as open source software. See below.</td>
+                </tr>
+                <tr>
+                  <td style="width:15%;">Licenses and Copyright LC40</td>
+                  <td style="width:40%;">Committers are bound by an Individual Contributor Agreement (the "Apache iCLA") that defines which code they may commit and how they need to identify code that is not their own.</td>
+                  <td style="background-color:yellowgreen;width:45%;">YES. The project uses a repository managed by Apache Infra -- write access requires an Apache account, which requires an ICLA on file.</td>
+                </tr>
+                <tr>
+                  <td style="width:15%;">Licenses and Copyright LC50</td>
+                  <td style="width:40%;">The project clearly defines and documents the copyright ownership of everything that the project produces.</td>
+                  <td style="background-color:yellowgreen;width:45%;">YES. All files in the source repository have appropriate headers (see below).Even further, Software Grant Agreements for the initial donations and Corporate CLAs have been filed.</td>
+                </tr>
+                <tr>
+                  <td style="width:15%;">Releases RE10</td>
+                  <td style="width:40%;">Releases consist of source code, distributed using standard and open archive formats that are expected to stay readable in the long term.</td>
+                  <td style="background-color:yellowgreen;width:45%;">YES. Source releases are distributed via dist.apache.org and linked from the website.</td>
+                </tr>
+                <tr>
+                  <td style="width:15%;">Releases RE20</td>
+                  <td style="width:40%;">The project's PMC (Project Management Committee, see CS10) approves each software release in order to make the release an act of the Foundation.</td>
+                  <td style="background-color:yellowgreen;width:45%;">YES. All incubating releases have been unanimously approved by the AGE community and the Incubator, all with at least 3 (P)PMC votes.</td>
+                </tr>
+                <tr>
+                  <td style="width:15%;">Releases RE30</td>
+                  <td style="width:40%;">Releases are signed and/or distributed along with digests that anyone can reliably use to validate the downloaded archives.</td>
+                  <td style="background-color:yellowgreen;width:45%;">YES. All releases are signed, and the KEYS file is provided on dist.apache.org.</td>
+                </tr>
+                <tr>
+                  <td style="width:15%;">Releases RE40</td>
+                  <td style="width:40%;">The project can distribute convenience binaries alongside source code, but they are not Apache Releases, they are provided with no guarantee.</td>
+                  <td style="background-color:yellowgreen;width:45%;">YES. AGE provides docker files for convenience with the installation and drivers for users to connect to the project.</td>
+                </tr>
+                <tr>
+                  <td style="width:15%;">Releases RE50</td>
+                  <td style="width:40%;">The project documents a repeatable release process so that someone new to the project can independently generate the complete set of artifacts required for a release.</td>
+                  <td style="background-color:yellowgreen;width:45%;">YES. Release guide is available describing the entire process. The AGE releases have been performed by different people.</td>
+                </tr>
+                <tr>
+                  <td style="width:15%;">Quality QU10</td>
+                  <td style="width:40%;">The project is open and honest about the quality of its code. Various levels of quality and maturity for various modules are natural and acceptable as long as they are clearly communicated.</td>
+                  <td style="background-color:yellowgreen;width:45%;">YES. The project records all bugs in the Apache’s JIRA issue tracker.</td>
+                </tr>
+                <tr>
+                  <td style="width:15%;">Quality QU20</td>
+                  <td style="width:40%;">The project puts a very high priority on producing secure software.</td>
+                  <td style="background-color:yellowgreen;width:45%;">YES. Security issues are treated with the highest priority, according to the CVE/Security Advisory procedure. We lean on the data redundancy, authentication and security features provided by postgres.</td>
+                </tr>
+                <tr>
+                  <td style="width:15%;">Quality QU30</td>
+                  <td style="width:40%;">The project provides a well-documented, secure and private channel to report security issues, along with a documented way of responding to them.</td>
+                  <td style="background-color:yellowgreen;width:45%;">YES. Website provides a security page: https://age.apache.org/security.html</td>
+                </tr>
+                <tr>
+                  <td style="width:15%;">Quality QU40</td>
+                  <td style="width:40%;">The project puts a high priority on backwards compatibility and aims to document any incompatible changes and provide tools and documentation to help users transition to new features.</td>
+                  <td style="background-color:yellowgreen;width:45%;">YES. Each release contains a “What’s new” on the website containing the release notes (extracted for Jira). The project aims to make no backward incompatible changes within a given major version.</td>
+                </tr>
+                <tr>
+                  <td style="width:15%;">Quality QU50</td>
+                  <td style="width:40%;">The project strives to respond to documented bug reports in a timely manner.</td>
+                  <td style="background-color:yellowgreen;width:45%;">YES. The project has resolved >150 issues during incubation.</td>
+                </tr>
+                <tr>
+                  <td style="width:15%;">Community CO10</td>
+                  <td style="width:40%;">The project has a well-known homepage that points to all the information required to operate according to this maturity model.</td>
+                  <td style="background-color:yellowgreen;width:45%;">YES. The project website has a description of the project with technical details, and how to contribute. Several issues ahve been flagged as "good first issue"  also available at https://github.com/apache/incubator-age/contribute</td>
+                </tr>
+                <tr>
+                  <td style="width:15%;">Community CO20</td>
+                  <td style="width:40%;">The community welcomes contributions from anyone who acts in good faith and in a respectful manner, and who adds value to the project.</td>
+                  <td style="background-color:yellowgreen;width:45%;">YES. It’s part of the contribution guide and the current committers are really keen to welcome contributions.</td>
+                </tr>
+                <tr>
+                  <td style="width:15%;">Community CO30</td>
+                  <td style="width:40%;">Contributions include source code, documentation, constructive bug reports, constructive discussions, marketing and generally anything that adds value to the project.</td>
+                  <td style="background-color:yellowgreen;width:45%;">YES. The contribution guide refers to non source code contribution, like documentation.</td>
+                </tr>
+                <tr>
+                  <td style="width:15%;">Community CO40</td>
+                  <td style="width:40%;">The community strives to be meritocratic and gives more rights and responsibilities to contributors who, over time, add value to the project.</td>
+                  <td style="background-color:yellowgreen;width:45%;">YES. The community has elected 4 new committers during incubation, based on meritocracy.</td>
+                </tr>
+                <tr>
+                  <td style="width:15%;">Community CO50</td>
+                  <td style="width:40%;">The project documents how contributors can earn more rights such as commit access or decision power, and applies these principles consistently.</td>
+                  <td style="background-color:yellowgreen;width:45%;">YES. The criteria is documented in the contribution guide.</td>
+                </tr>
+                <tr>
+                  <td style="width:15%;">Community CO60</td>
+                  <td style="width:40%;">The community operates based on consensus of its members (see CS10) who have decision power. Dictators, benevolent or not, are not welcome in Apache projects.</td>
+                  <td style="background-color:yellowgreen;width:45%;">YES. The project works to build consensus. All votes have been unanimous todate</td>
+                </tr>
+                <tr>
+                  <td style="width:15%;">Community CO70</td>
+                  <td style="width:40%;">The project strives to answer user questions in a timely manner.</td>
+                  <td style="background-color:yellowgreen;width:45%;">YES. The project typically provides detailed answers to user questions within a few hours via dev@ mailing list and users@ mailing list.</td>
+                </tr>
+                <tr>
+                  <td style="width:15%;">Community consensus CS10</td>
+                  <td style="width:40%;">The project maintains a public list of its contributors who have decision power. The project's PMC (Project Management Committee) consists of those contributors.</td>
+                  <td style="background-color:yellowgreen;width:45%;">YES. The website contains the list of committers and PPMC members.</td>
+                </tr>
+                <tr>
+                  <td style="width:15%;">Community consensus CS20</td>
+                  <td style="width:40%;">Decisions require a consensus among PMC members and are documented on the project's main communications channel. The PMC takes community opinions into account, but the PMC has the final word.</td>
+                  <td style="background-color:yellowgreen;width:45%;">YES. The project has been making important decisions on the project mailing lists. Vast majority of, if not all, decisions have had a consensus without any PPMC action needed. We are working on making it better.</td>
+                </tr>
+                <tr>
+                  <td style="width:15%;">Community consensus CS30</td>
+                  <td style="width:40%;">The project uses documented voting rules to build consensus when discussion is not sufficient.</td>
+                  <td style="background-color:yellowgreen;width:45%;">YES. The project uses the standard ASF voting rules. Voting rules are clearly stated before the voting starts for each individual vote.</td>
+                </tr>
+                <tr>
+                  <td style="width:15%;">Community consensus CS40</td>
+                  <td style="width:40%;">In Apache projects, vetoes are only valid for code commits. The person exercising the veto must justify it with a technical explanation, as per the Apache voting rules defined in CS30.</td>
+                  <td style="background-color:yellowgreen;width:45%;">YES. The project hasn't used a veto at any point and relies on robust code reviews.</td>
+                </tr>
+                <tr>
+                  <td style="width:15%;">Community consensus CS50</td>
+                  <td style="width:40%;">All "important" discussions happen asynchronously in written form on the project's main communications channel. Offline, face-to-face or private discussions 11 that affect the project are also documented on that channel.</td>
+                  <td style="background-color:yellowgreen;width:45%;">YES. The project has been making important decisions on the project mailing lists. Minor decisions may occasionally happen during code reviews, which are also asynchronous and in written form. We're working to improve in this area.</td>
+                </tr>
+                <tr>
+                  <td style="width:15%;">Independence IN10</td>
+                  <td style="width:40%;">The project is independent from any corporate or organizational influence.</td>
+                  <td style="background-color:yellowgreen;width:45%;">YES. While one particular organisation is keenly interested in the development of AGE the community is autonomous in product design and development</td>
+                </tr>
+                <tr>
+                  <td style="width:15%;">Independence IN20</td>
+                  <td style="width:40%;">Contributors act as themselves, not as representatives of a corporation or organization.</td>
+                  <td style="background-color:yellowgreen;width:45%;">YES. The committers and contributors act on their own initiative without representing a corporation or organization. Many contributors are employees of a single company who has interest in the success of AGE but there are many entirely independent contributors.</td>
+                </tr>
+
+
+
+
+
+
+</tbody>
+   </table>
 
           </div>
         </div>
-      </div>
+  </div>
+   
+
+
+
 
     </div>
     <div class="footer">
