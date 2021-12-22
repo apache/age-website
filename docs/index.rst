@@ -54,3 +54,9 @@ Apache AGE's documentation
    advanced/plpgsql
    advanced/sql_in_cypher
 
+.. toctree::
+   :caption: Contributing
+   :maxdepth: 1
+
+   contributing/run_tests
+
