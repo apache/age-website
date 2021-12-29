@@ -50,7 +50,7 @@
           <span id="sidebar-contribute" class="sidebar-item"> <a class="sidebar-link" href="#" onclick="handleClick(this)">How to Contribute</a></span> <br />
           <span id="sidebar-devguidelines" class="sidebar-item"> <a class="sidebar-link" href="#" onclick="handleClick(this)">Developer Guidelines</a></span> <br />
 
-          <span id="sidebar-releaseprocess" class="sidebar-item"> <a class="sidebar-link" href="https://drive.google.com/file/d/1zvAESVg7fRdSsxUuuOc3rHMkHcaOF28j/view?usp=sharing" onclick="handleClick(this)">Release Process</a></span> <br />
+          <span id="sidebar-releaseprocess" class="sidebar-item"> <a class="sidebar-link" href="#" onclick="handleClick(this)">Release Process</a></span> <br />
         </p>
 
    <span id="sidebar-versions" class="sidebar-item"> <a class="sidebar-link" href="#" onclick="handleClick(this)">Releases</a></span> <br />
@@ -621,6 +621,275 @@ $$) as (a agtype);
           </div>
         </div>
 
+        <div class="main-item" id="main-releaseprocess">
+          <div class="heading"><h1>Creating a release</h1></div>
+          <div class="main-body">
+          This document includes the steps needed to be taken by the release manager to create a successful release candidate.
+          <div class="heading"><h2>Update the Postgres version extension</h2></div>
+          Update the version numbers in the AGE source code, so Postgres can identify which version number of AGE it is using. 
+          The extension number in Postgres and Apache releases are synchronized.  
+          <br><br>
+          Files to update:
+          <br><br>
+          Step 1 - Rename CREATE EXTENSION script name:
+          <br>
+          Rename age--Y.Y.Y.sql to age--X.X.X.sql
+          <br><br>
+          Step 2 - Update Makefile:
+          <br>
+          Update line 62 in Makefile from: DATA = age--Y.Y.Y.sql to: DATA age--X.X.X.sql  
+          <br><br>
+          Step 3 - Update age.control:
+          <br>
+          Update line 18 in age.control from default_version = 'Y.Y.Y' to: default_version = 'X.X.X'
+          <br><br>
+          Step 4 Add Release Notes:
+          <br>
+          Update RELEASE with X.X.X release notes
+          <br><br>
+          Step 5 update documentation:
+          <br>
+          update line 46 in doc/conf.py:
+          <br>
+          from:
+          <br>
+          release = u'Y.Y.Y'
+          <br>
+          to:
+          <br>
+          release = u'X.X.X'
+          <br><br>
+          <div class="heading"><h2>Creating a release branch</h2></div>
+          The first step is to create a new release branch. The branch must follow the following naming pattern release/X.X.X where X.X.X is the release version number.
+          In this example upstream is the apache/incubator-age github repository.
+          <br>
+          git branch release/X.X.X upstream/master
+          <br>
+          git checkout release/X.X.X
+          <br>
+          git push upstream release/X.X.X:release/X.X.X
+          <br><br>
+          <div class="heading"><h2>Creating the release artifacts</h2></div>
+          Checkout the tag to a clean folder to avoid files that are ignored by git and remove the git folder. 
+          Next up is creating the tar.gz file
+          <br>
+          git clone --depth 1 --branch X.X.X-rcX
+          <br>
+          https://github.com/apache/incubator-age.git apache-age-X.X.Xincubating
+          <br>
+          rm -rf apache-age-X.X.X-incubating/.git
+          <br>
+          tar -czvf apache-age-X.X.X-incubating-src.tar.gz apache-ageX.X.X-incubating
+          <br><br>
+          <div class="heading"><h2>Sign the artifacts</h2></div>
+          This part assumes you already have created and registered keys to sign the artifacts, for more information on creating and adding your keys see here
+          <br>
+          gpg --armor --default-key username@apache.org --output apacheage-X.X.X-incubating-src.tar.gz.asc --detach-sig apache-ageX.X.X-incubating-src.tar.gz
+          <br>
+          sha512sum apache-age-X.X.X-incubating-src.tar.gz > apache-ageX.X.X-incubating-src.tar.gz.sha512
+          <br><br>
+          # Validate
+          <br>
+          gpg --verify apache-age-X.X.X-incubating-src.tar.gz.asc
+          <br>
+          sha512sum -c apache-age-X.X.X-incubating-src.tar.gz.sha512
+          <br><br>
+          <div class="heading"><h2>Staging the files</h2></div>          
+          First step is to check out the SVN directory, and create a new directory
+          <br>
+          svn co https://dist.apache.org/repos/dist/dev/incubator/age
+          <br>
+          age_release
+          <br>
+          cd age_release
+          <br>
+          svn mkdir apache-age-x.x.x-incubating-rcx
+          <br>
+          Now copy over the following files in this new directory
+          <br>
+          apache-age-X.X.X-incubating-src.tar.gz.sha512
+          <br>
+          apache-age-X.X.X-incubating-src.tar.gz.asc
+          <br>
+          apache-age-X.X.X-incubating-src.tar.gz 
+          <br><br>
+          Add and commit the files to svn
+          <br>
+          svn add *
+          <br>
+          svn status
+          <br> 
+          svn commit -m 'Add release files for Apache age X.XX-rcX'
+          <br>
+          Check if the files are uploaded here
+          <br><br>
+          <div class="heading"><h2>Send a mail to dev list to announce new release candidate</h2></div>
+          Mail Template
+          <br>
+          Subject: [VOTE] Release Apache age (incubating) X.X.X-rcX
+          <br>
+          TO: dev@age.apache.org
+          <br><br>
+          Hi All,
+          <br><br>
+          [ INCLUDE SOME TEXT ]
+          <br><br>
+          Build instructions can be found in the README included.
+          <br><br>
+          The tag to be voted on is X.X.X-rcX [REPLACE TAG] (commit[COMMIT HASH]): 
+          <br>
+          [ URL TO TAG COMMIT ]
+          <br>
+          The release files, including signatures, digests, etc. can be found at:
+          <br>
+          [ INCLUDE URL TO DIST RC FOLDER ]
+          <br>
+          https://dist.apache.org/repos/dist/dev/incubator/age/apacheage-X.X.X-incubating-rcX/
+          <br><br>
+          The SHA512 Checksum for these artifacts is:
+          <br>
+          [ INCLUDE CHECKSUM FROM SHA512 FILE ]
+          <br><br>
+          Release artifacts are signed with the following key:
+          <br>
+          [ ADD URL TO YOUR KEY ON A PUBLIC KEYSERVER ]
+          <br><br>
+          For more information about the contents of this release, see:
+          <br>
+          [ ADD URL TO RELEASE IN JIRA ]
+          <br><br>
+          Please vote on releasing this package as Apache AGE (incubating) X.XX!
+          <br><br>
+          The vote is open for 72 hours and passes if a majority of at least 3 +1 PMC votes are cast.
+          <br><br>
+          [ ] +1 Release this package as Apache age (incubating) X.XX
+          <br>
+          [ ] +0 No opinion
+          <br>
+          [ ] -1 Do not release this package because ...
+          <br><br>
+          Best Regards,
+          <br>
+          [ YOUR NAME ]
+          <br><br>
+          <div class="heading"><h2>Send a result mail to the dev mailing list</h2></div>
+          Subject: [RESULT] [VOTE] Release Apache age (incubating) X.XXrcX
+          <br>
+          TO: dev@age.apache.org
+          <br><br>
+          Hello Team,
+          <br><br>
+          The vote to release Apache age (incubating) X.X.X - RCX has passed/failed. 
+          <br><br> 
+          +1 (binding)
+          <br>
+          +1 (non-binding)
+          <br>
+          +0
+          <br>
+          -1 (binding)
+          <br>
+          -1 (non-binding)
+          <br><br>
+          Thank you for reviewing this release candidate.
+          <br>
+          Cheers,
+          <br>
+          [ YOUR NAME ]
+          <br><br>
+          <div class="heading"><h2>While in incubator</h2></div>
+          <br>
+          <div class="heading"><h2>Send a mail to the general incubator list</h2></div>
+          The mail to the IPMC is almost identical to our vote mail, a few extra details are added:
+          <br>
+          -  Vote and Result mail thread
+          <br>
+          Subject: [VOTE] Release Apache age (incubating) X.XX-rcX
+          <br>
+          TO: general@incubator.apache.org
+          <br><br>
+          Hi All,
+          <br><br>
+          [ INCLUDE SOME TEXT ]
+          <br><br>        
+          Build instructions can be found in the README included.
+          <br>
+          age community vote and result threads:
+          <br><br>
+          Vote:
+          <br>
+          [ URL TO VOTE FROM https://lists.apache.org/list.html?dev@age.apache.org ]
+          <br>
+          Result:
+          <br>
+          [ URL TO VOTE RESULT FROM https://lists.apache.org/list.html?dev@age.apache.org ]
+          <br>
+          The tag to be voted on is X.X.X-rcX [REPLACE TAG] (commit[COMMIT HASH]):
+          <br>
+          [URL TO TAG COMMIT]
+          <br><br>
+          The release files, including signatures, digests, etc. can be found at:
+          <br>
+          [ INCLUDE URL TO DIST RC FOLDER ]
+          <br>
+          https://dist.apache.org/repos/dist/dev/incubator/age/apacheage-X.X.X-incubating-rcX/
+          <br><br>
+          The SHA512 Checksum for these artifacts is:
+          <br>
+          [ INCLUDE CHECKSUM FROM SHA512 file ]
+          <br><br>
+          Release artifacts are signed with the following key:
+          <br>
+          [ ADD URL TO YOUR KEY ON A PUBLIC KEYSERVER ]
+          <br><br>
+          For more information about the contents of this release, see:
+          <br>
+          [ ADD URL TO RELEASE IN JIRA ]
+          <br><br>
+          Please vote on releasing this package as Apache age (incubating) X.X.X!
+          <br><br>
+          The vote is open for 72 hours and passes if a majority of at least 3 +1 PMC votes are cast.
+          <br>
+          [ ] +1 Release this package as Apache age (incubating) X.XX
+          <br>
+          [ ] +0 No opinion
+          <br>
+          [ ] -1 Do not release this package because ...
+          <br><br>
+          Best Regards,
+          <br>
+          [ YOUR NAME ]
+          <div class="heading"><h2>Creating a key</h2></div>
+          To generate and publish a key follow these steps, it is recommended to use your apache email as key alias.
+          <br>
+          gpg --gen-key
+          <br>
+          gpg -k [username]@apache.org
+          <br>
+          # get the ID for your key
+          <br>
+          gpg --send-keys --keyserver php.mit.edu [KEY ID]
+          <br>
+          gpg --send-keys --keyserver keyserver.ubuntu.com [KEY ID]
+          <br><br>
+          Next step is to add your key to the key file in the Apache SVN repository.
+          <br>
+          svn co https://dist.apache.org/repos/dist/dev/incubator/age
+          <br>
+          age_release
+          <br>
+          cd age_release
+          <br>
+          gpg --list-sigs [KEY ID] >> KEYS
+          <br>
+          gpg --armor --export [KEY ID] >> KEYS
+          <br>
+          svn commit -m "added new public key to KEYS file"
+            
+          </div>
+        </div>
+        
+            
         <div class="main-item" id="main-devguidelines">
           <div class="heading"><h1>Developer Guidelines</h1></div>
           <div class="main-body">
@@ -929,7 +1198,7 @@ make html
 
 
  <div class="main-item" id="main-members">
-          <div class="heading"><h1>Apache AGE Versions</h1></div>
+          <div class="heading"><h1>Apache AGE Members</h1></div>
           <div class="main-body">
             <div class="heading center"><h2></h2></div>
             <table class="center">
@@ -994,7 +1263,7 @@ make html
 
               <tr>
                   <td>Andrew Ko</a></td> 
-                 <td> andrew.ko@agedb.io
+                 <td> youngseung.andrew@gmail.com
                   </td>
                 </tr>
                
