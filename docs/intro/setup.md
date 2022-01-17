@@ -68,3 +68,17 @@ We recommend adding ag_catalog to your search_path to simplify your queries. The
 ```postgresql
 SET search_path = ag_catalog, "$user", public;
 ```
+
+### Optional: allow non-superusers to use Apache AGE
+
+* Non-superusers can only apply LOAD to library files located in `$libdir/plugins/` (see <https://www.postgresql.org/docs/11/sql-load.html>). A symlink can be created to allow non-superusers to LOAD the Apache AGE library:
+
+```console
+sudo ln -s /usr/lib/postgresql/11/lib/age.so /usr/lib/postgresql/11/lib/plugins/age.so
+```
+
+* In order to use Apache AGE, users need `USAGE` privileges on the `ag_catalog` schema (example for user `db_user`):
+
+```postgresql
+GRANT USAGE ON SCHEMA ag_catalog TO db_user;
+```
