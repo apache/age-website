@@ -375,4 +375,41 @@ Returns the movie 'Charlie Sheen' acted in and its director.
   </tr>
 </table>
 
+### Edges in Depth
+
+#### Variable Length Edges
+
+When the connection between two vertices is of variable length, the list of edges that form the connection can be returned using the following connection.
+
+Query
+
+
+```
+SELECT * FROM cypher('graph_name', $$
+    MATCH p = (actor {name: 'Willam Defoe'})-[:ACTED_IN*2]-(co_actor)
+    RETURN relationships(p)
+$$) as (r agtype);
+```
+
+
+Returns the list of edges, including the one that Willam Defoe acted in and the two spidermens he worked with.
+
+
+<table>
+  <tr>
+   <td><strong>r</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>[{id: 0; label:"ACTED_IN"; properties: {role: "Green Goblin"}}::edge, {id: 1; label: "ACTED_IN; properties: {role: "Spiderman", actor: "Toby Maguire}}::edge]
+   </td>
+   <td>[{id: 0; label:"ACTED_IN"; properties: {role: "Green Goblin"}}::edge, {id: 2; label: "ACTED_IN; properties: {role: "Spiderman", actor: "Andrew Garfield"}}::edge]
+   </td>
+   </td>
+  </tr>
+  <tr>
+   <td colspan="2" >2 row(s) returned
+   </td>
+  </tr>
+</table>
 
