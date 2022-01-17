@@ -55,7 +55,7 @@ SELECT * FROM get_all_actor_names();
 Results
 <table>
   <tr>
-   <td><strong>title</strong>
+   <td><strong>actor</strong>
    </td>
   </tr>
   <tr>
@@ -81,3 +81,65 @@ Developer's Note:
 
 It's recommended that the LOAD 'age' command and setting the search_path in the function declaration, to ensure the CREATE FUNCTION command works consistently.
 ```
+
+## Dynamic Cypher
+
+
+```
+CREATE OR REPLACE FUNCTION get_actors_who_played_role(role agtype)
+RETURNS TABLE(actor agtype, movie agtype)
+LANGUAGE plpgsql
+AS $function$
+DECLARE sql VARCHAR;
+BEGIN
+        load 'age';
+        SET search_path TO ag_catalog;
+
+        sql := format('
+		SELECT *
+		FROM cypher(''imdb'', $$
+			MATCH (actor)-[:acted_in {role: %s}]->(movie:movie)
+			RETURN actor.name, movie.title
+		$$) AS (actor agtype, movie agtype);
+	', role);
+
+        RETURN QUERY EXECUTE sql;
+
+END
+$function$;
+```
+
+```
+SELECT * FROM get_actors_who_played_role('"Peter Parker"');
+```
+
+
+Results
+<table>
+  <tr>
+   <td><strong>actor</strong></td>
+   <td><strong>movie</strong></td>
+  </tr>
+  <tr>
+   <td>"Toby Maguire"</td>
+   <td>"Spiderman"</td>
+  </tr>
+  <tr>
+   <td>"Toby Maguire"</td>
+   <td>"Spiderman: No Way Home"</td>
+  </tr>
+  <tr>
+   <td>"Tom Holland"</td>
+   <td>"Spiderman: No Way Home"</td>
+  </tr>
+  <tr>
+   <td>"Tom Holland"</td>
+   <td>"Spiderman: Homecoming"</td>
+  </tr>
+  <tr>
+   <td>4 row(s) returned
+   </td>
+  </tr>
+</table>
+
+
