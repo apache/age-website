@@ -210,8 +210,33 @@
   <div class="tex2jax_ignore mathjax_ignore section" id="pl-pgsql-functions">
 <h1>PL/pgSQL Functions<a class="headerlink" href="#pl-pgsql-functions" title="Permalink to this headline">¶</a></h1>
 <p>Cypher commands can be run in <a class="reference external" href="https://www.postgresql.org/docs/11/plpgsql-overview.html">PL/pgSQL</a> functions without restriction.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>CREATE FUNCTION get_all_vertices()
-RETURNS TABLE(vertex ag_catalog.agtype)
+<p>Data Setup</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
+FROM cypher(&#39;imdb&#39;, $$
+	CREATE (toby:actor {name: &#39;Toby Maguire&#39;}),
+		(tom:actor {name: &#39;Tom Holland&#39;}),
+		(willam:actor {name: &#39;Willam Dafoe&#39;}),
+		(robert:actor {name: &#39;Robert Downey Jr&#39;}),
+		(spiderman:movie {title: &#39;Spiderman&#39;}),
+		(no_way_home:movie {title: &#39;Spiderman: No Way Home&#39;}),
+		(homecoming:movie {title: &#39;Spiderman: Homecoming&#39;}),
+		(ironman:movie {title: &#39;Ironman&#39;}),
+		(tropic_thunder:movie {title: &#39;Tropic Thunder&#39;}),
+		(toby)-[:acted_in {role: &#39;Peter Parker&#39;, alter_ego: &#39;Spiderman&#39;}]-&gt;(spiderman),
+		(willam)-[:acted_in {role: &#39;Norman Osborn&#39;, alter_ego: &#39;Green Goblin&#39;}]-&gt;(spiderman),
+		(toby)-[:acted_in {role: &#39;Toby Maguire&#39;}]-&gt;(tropic_thunder),
+		(robert)-[:acted_in {role: &#39;Kirk Lazarus&#39;}]-&gt;(tropic_thunder),
+		(robert)-[:acted_in {role: &#39;Tony Stark&#39;, alter_ego: &#39;Ironman&#39;}]-&gt;(homecoming),
+		(tom)-[:acted_in {role: &#39;Peter Parker&#39;, alter_ego: &#39;Spiderman&#39;}]-&gt;(homecoming),
+		(tom)-[:acted_in {role: &#39;Peter Parker&#39;, alter_ego: &#39;Spiderman&#39;}]-&gt;(no_way_home),
+		(toby)-[:acted_in {role: &#39;Peter Parker&#39;, alter_ego: &#39;Spiderman&#39;}]-&gt;(no_way_home),
+		(willam)-[:acted_in {role: &#39;Norman Osborn&#39;, alter_ego: &#39;Green Goblin&#39;}]-&gt;(no_way_home)
+$$) AS (a agtype);
+</pre></div>
+</div>
+<p>Function Creation</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>CREATE OR REPLACE FUNCTION get_all_actor_names()
+RETURNS TABLE(actor agtype)
 LANGUAGE plpgsql
 AS $BODY$
 BEGIN
@@ -220,14 +245,41 @@ BEGIN
 
     RETURN QUERY 
     SELECT * 
-    FROM ag_catalog.cypher(&#39;graph_name&#39;, $$
-        MATCH (v)
-        RETURN v
-    $$) AS (a ag_catalog.agtype);
+    FROM ag_catalog.cypher(&#39;imdb&#39;, $$
+        MATCH (v:actor)
+        RETURN v.name
+    $$) AS (a agtype);
 END
 $BODY$;
 </pre></div>
 </div>
+<p>Query:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">get_all_actor_names</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>Results</p>
+<table>
+  <tr>
+   <td><strong>title</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>"Toby Maguire"</td>
+  </tr>
+  <tr>
+   <td>"Tom Holland"</td>
+  </tr>
+  <tr>
+   <td>"Willam Dafoe"</td>
+  </tr>
+  <tr>
+   <td>"Robert Downey Jr"</td>
+  </tr>
+  <tr>
+   <td>4 row(s) returned
+   </td>
+  </tr>
+</table>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Developer</span><span class="s1">&#39;s Note:</span>
 
 <span class="n">It</span><span class="s1">&#39;s recommended that the LOAD &#39;</span><span class="n">age</span><span class="s1">&#39; command and setting the search_path in the function declaration, to ensure the CREATE FUNCTION command works consistently.</span>
