@@ -136,13 +136,7 @@
 <li class="toctree-l1"><a class="reference internal" href="advanced.html#using-cypher-in-a-join-expression">Using Cypher in a Join expression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advanced.html#cypher-in-sql-expressions">Cypher in SQL expressions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="prepared_statements.html">Prepared Statements</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">PL/pgSQL Functions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#void-pl-pgsql">Void PL/pgSQL</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#scalar-function">Scalar Function</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#srf-function">SRF Function</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#dynamic-cypher">Dynamic Cypher</a></li>
-</ul>
-</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">PL/pgSQL Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sql_in_cypher.html">SQL In Cypher</a></li>
 </ul>
 
@@ -216,17 +210,28 @@
   <div class="tex2jax_ignore mathjax_ignore section" id="pl-pgsql-functions">
 <h1>PL/pgSQL Functions<a class="headerlink" href="#pl-pgsql-functions" title="Permalink to this headline">¶</a></h1>
 <p>Cypher commands can be run in <a class="reference external" href="https://www.postgresql.org/docs/11/plpgsql-overview.html">PL/pgSQL</a> functions without restriction.</p>
-<div class="section" id="void-pl-pgsql">
-<h2>Void PL/pgSQL<a class="headerlink" href="#void-pl-pgsql" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>CREATE FUNCTION get_all_vertices()
+RETURNS TABLE(vertex ag_catalog.agtype)
+LANGUAGE plpgsql
+AS $BODY$
+BEGIN
+    LOAD &#39;age&#39;;
+    SET search_path TO ag_catalog;
+
+    RETURN QUERY 
+    SELECT * 
+    FROM ag_catalog.cypher(&#39;graph_name&#39;, $$
+        MATCH (v)
+        RETURN v
+    $$) AS (a ag_catalog.agtype);
+END
+$BODY$;
+</pre></div>
 </div>
-<div class="section" id="scalar-function">
-<h2>Scalar Function<a class="headerlink" href="#scalar-function" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="srf-function">
-<h2>SRF Function<a class="headerlink" href="#srf-function" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="dynamic-cypher">
-<h2>Dynamic Cypher<a class="headerlink" href="#dynamic-cypher" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Developer</span><span class="s1">&#39;s Note:</span>
+
+<span class="n">It</span><span class="s1">&#39;s recommended that the LOAD &#39;</span><span class="n">age</span><span class="s1">&#39; command and setting the search_path in the function declaration, to ensure the CREATE FUNCTION command works consistently.</span>
+</pre></div>
 </div>
 </div>
 
