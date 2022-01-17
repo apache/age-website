@@ -112,6 +112,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#post-installation">Post Installation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#per-installation-instructions">Per Installation Instructions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#per-session-instructions">Per Session Instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#optional-allow-non-superusers-to-use-apache-age">Optional: allow non-superusers to use Apache AGE</a></li>
 </ul>
 </li>
 </ul>
@@ -289,6 +290,21 @@ Building AGE from source depends on the following Linux libraries (Ubuntu packag
 </div>
 <p>We recommend adding ag_catalog to your search_path to simplify your queries. The rest of this document will assume you have done so. If you do not, remember to add ‘ag_catalog’ to your cypher query function calls.</p>
 <div class="highlight-postgresql notranslate"><div class="highlight"><pre><span></span><span class="k">SET</span> <span class="n">search_path</span> <span class="o">=</span> <span class="n">ag_catalog</span><span class="p">,</span> <span class="s s-Name">&quot;$user&quot;</span><span class="p">,</span> <span class="n">public</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="optional-allow-non-superusers-to-use-apache-age">
+<h3>Optional: allow non-superusers to use Apache AGE<a class="headerlink" href="#optional-allow-non-superusers-to-use-apache-age" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Non-superusers can only apply LOAD to library files located in <code class="docutils literal notranslate"><span class="pre">$libdir/plugins/</span></code> (see <a class="reference external" href="https://www.postgresql.org/docs/11/sql-load.html">https://www.postgresql.org/docs/11/sql-load.html</a>). A symlink can be created to allow non-superusers to LOAD the Apache AGE library:</p></li>
+</ul>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo ln -s /usr/lib/postgresql/11/lib/age.so /usr/lib/postgresql/11/lib/plugins/age.so</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>In order to use Apache AGE, users need <code class="docutils literal notranslate"><span class="pre">USAGE</span></code> privileges on the <code class="docutils literal notranslate"><span class="pre">ag_catalog</span></code> schema (example for user <code class="docutils literal notranslate"><span class="pre">db_user</span></code>):</p></li>
+</ul>
+<div class="highlight-postgresql notranslate"><div class="highlight"><pre><span></span><span class="k">GRANT</span> <span class="n">USAGE</span> <span class="k">ON</span> <span class="k">SCHEMA</span> <span class="n">ag_catalog</span> <span class="k">TO</span> <span class="n">db_user</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>

@@ -74,4 +74,36 @@ Results:
 </table>
 
 
-## Exists(Pattern) TODO
+## Exists(Path)
+
+EXISTS(path) returns true if for the given path, there already exists the given path.
+
+```
+SELECT *
+FROM cypher('graph_name', $$
+     MATCH (n)
+     WHERE exists(n)-[]-(name: 'Willem Defoe')
+     RETURN n.full_name
+$$) as (full_name agtype);
+```
+
+Results:
+<table>
+  <tr>
+   <td>full_name
+   </td>
+  </tr>
+  <tr>
+   <td>‘Toby Maguire'
+   </td>
+  </tr>
+  <tr>
+   <td>‘Tom Holland’
+   </td>
+  </tr>
+  <tr>
+   <td colspan="2" >2 row(s) returned
+   </td>
+  </tr>
+</table>
+

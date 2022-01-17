@@ -121,7 +121,7 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Predicate Functions</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#exists-property">Exists(Property)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#exists-pattern-todo">Exists(Pattern) TODO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exists-path">Exists(Path)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="scalar_functions.html">Scalar Functions</a></li>
@@ -270,8 +270,36 @@ $$) as (first_name agtype, last_name agtype);
   </tr>
 </table>
 </div>
-<div class="section" id="exists-pattern-todo">
-<h2>Exists(Pattern) TODO<a class="headerlink" href="#exists-pattern-todo" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exists-path">
+<h2>Exists(Path)<a class="headerlink" href="#exists-path" title="Permalink to this headline">¶</a></h2>
+<p>EXISTS(path) returns true if for the given path, there already exists the given path.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
+FROM cypher(&#39;graph_name&#39;, $$
+     MATCH (n)
+     WHERE exists(n)-[]-(name: &#39;Willem Defoe&#39;)
+     RETURN n.full_name
+$$) as (full_name agtype);
+</pre></div>
+</div>
+<p>Results:</p>
+<table>
+  <tr>
+   <td>full_name
+   </td>
+  </tr>
+  <tr>
+   <td>‘Toby Maguire'
+   </td>
+  </tr>
+  <tr>
+   <td>‘Tom Holland’
+   </td>
+  </tr>
+  <tr>
+   <td colspan="2" >2 row(s) returned
+   </td>
+  </tr>
+</table>
 </div>
 </div>
 

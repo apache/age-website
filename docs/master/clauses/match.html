@@ -120,6 +120,10 @@
 <li class="toctree-l3"><a class="reference internal" href="#match-on-edge-type">Match on edge type</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#match-on-edge-type-and-use-a-variable">Match on edge type and use a variable</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#multiple-edges">Multiple Edges</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#edges-in-depth">Edges in Depth</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#variable-length-edges">Variable Length Edges</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -516,6 +520,38 @@ $$) as (title agtype, name agtype);
    </td>
   </tr>
 </table>
+</div>
+<div class="section" id="edges-in-depth">
+<h3>Edges in Depth<a class="headerlink" href="#edges-in-depth" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="variable-length-edges">
+<h4>Variable Length Edges<a class="headerlink" href="#variable-length-edges" title="Permalink to this headline">¶</a></h4>
+<p>When the connection between two vertices is of variable length, the list of edges that form the connection can be returned using the following connection.</p>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT * FROM cypher(&#39;graph_name&#39;, $$
+    MATCH p = (actor {name: &#39;Willam Defoe&#39;})-[:ACTED_IN*2]-(co_actor)
+    RETURN relationships(p)
+$$) as (r agtype);
+</pre></div>
+</div>
+<p>Returns the list of edges, including the one that Willam Defoe acted in and the two spidermens he worked with.</p>
+<table>
+  <tr>
+   <td><strong>r</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>[{id: 0; label:"ACTED_IN"; properties: {role: "Green Goblin"}}::edge, {id: 1; label: "ACTED_IN; properties: {role: "Spiderman", actor: "Toby Maguire}}::edge]
+   </td>
+   <td>[{id: 0; label:"ACTED_IN"; properties: {role: "Green Goblin"}}::edge, {id: 2; label: "ACTED_IN; properties: {role: "Spiderman", actor: "Andrew Garfield"}}::edge]
+   </td>
+   </td>
+  </tr>
+  <tr>
+   <td colspan="2" >2 row(s) returned
+   </td>
+  </tr>
+</table>
+</div>
 </div>
 </div>
 </div>
