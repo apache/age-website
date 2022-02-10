@@ -120,7 +120,11 @@
 <li class="toctree-l3"><a class="reference internal" href="#match-on-edge-type">Match on edge type</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#match-on-edge-type-and-use-a-variable">Match on edge type and use a variable</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#multiple-edges">Multiple Edges</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#variable-length-edges">Variable Length Edges</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#variable-length-edges">Variable Length Edges</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example">Example</a></li>
 </ul>
 </li>
 </ul>
@@ -518,9 +522,46 @@ $$) as (title agtype, name agtype);
   </tr>
 </table>
 </div>
+</div>
 <div class="section" id="variable-length-edges">
-<h3>Variable Length Edges<a class="headerlink" href="#variable-length-edges" title="Permalink to this headline">¶</a></h3>
+<h2>Variable Length Edges<a class="headerlink" href="#variable-length-edges" title="Permalink to this headline">¶</a></h2>
 <p>When the connection between two vertices is of variable length, the list of edges that form the connection can be returned using the following connection.</p>
+<div class="section" id="introduction">
+<h3>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h3>
+<p>Rather than describing a long path using a sequence of many vertex and edge descriptions in a pattern, many edges (and the intermediate vertices) can be described by specifying a length in the edge description of a pattern.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">u</span><span class="p">)</span><span class="o">-</span><span class="p">[</span><span class="o">*</span><span class="mi">2</span><span class="p">]</span><span class="o">-&gt;</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Which describes a right directed path of three vertices and two edges can be rewritten to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">u</span><span class="p">)</span><span class="o">-</span><span class="p">[]</span><span class="o">-&gt;</span><span class="p">()</span><span class="o">-</span><span class="p">[]</span><span class="o">-&gt;</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A range lengths can also be given:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">u</span><span class="p">)</span><span class="o">-</span><span class="p">[</span><span class="o">*</span><span class="mf">3..5</span><span class="p">]</span><span class="o">-&gt;</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Which is equivalent to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">u</span><span class="p">)</span><span class="o">-</span><span class="p">[]</span><span class="o">-&gt;</span><span class="p">()</span><span class="o">-</span><span class="p">[]</span><span class="o">-&gt;</span><span class="p">()</span><span class="o">-</span><span class="p">[]</span><span class="o">-&gt;</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="ow">and</span>
+<span class="p">(</span><span class="n">u</span><span class="p">)</span><span class="o">-</span><span class="p">[]</span><span class="o">-&gt;</span><span class="p">()</span><span class="o">-</span><span class="p">[]</span><span class="o">-&gt;</span><span class="p">()</span><span class="o">-</span><span class="p">[]</span><span class="o">-&gt;</span><span class="p">()</span><span class="o">-</span><span class="p">[]</span><span class="o">-&gt;</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="ow">and</span>
+<span class="p">(</span><span class="n">u</span><span class="p">)</span><span class="o">-</span><span class="p">[]</span><span class="o">-&gt;</span><span class="p">()</span><span class="o">-</span><span class="p">[]</span><span class="o">-&gt;</span><span class="p">()</span><span class="o">-</span><span class="p">[]</span><span class="o">-&gt;</span><span class="p">()</span><span class="o">-</span><span class="p">[]</span><span class="o">-&gt;</span><span class="p">()</span><span class="o">-</span><span class="p">[]</span><span class="o">-&gt;</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The previous example provided gave the edge both an lower and upper bound for the number of edges (and vertices) between u and v. Either one or both of these binding values can be excluded</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">u</span><span class="p">)</span><span class="o">-</span><span class="p">[</span><span class="o">*</span><span class="mf">3.</span><span class="o">.</span><span class="p">]</span><span class="o">-&gt;</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Returns all paths between u and v that have three or more edges included.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">u</span><span class="p">)</span><span class="o">-</span><span class="p">[</span><span class="o">*.</span><span class="mf">.5</span><span class="p">]</span><span class="o">-&gt;</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Returns all paths between u and v that have 5 or fewer edges included.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">u</span><span class="p">)</span><span class="o">-</span><span class="p">[</span><span class="o">*</span><span class="p">]</span><span class="o">-&gt;</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Returns all paths between u and v</p>
+</div>
+<div class="section" id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
 <p>Query</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT * FROM cypher(&#39;graph_name&#39;, $$
     MATCH p = (actor {name: &#39;Willam Defoe&#39;})-[:ACTED_IN*2]-(co_actor)

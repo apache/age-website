@@ -376,9 +376,63 @@ Returns the movie 'Charlie Sheen' acted in and its director.
 </table>
 
 
-### Variable Length Edges
+## Variable Length Edges
 
 When the connection between two vertices is of variable length, the list of edges that form the connection can be returned using the following connection.
+
+### Introduction
+
+Rather than describing a long path using a sequence of many vertex and edge descriptions in a pattern, many edges (and the intermediate vertices) can be described by specifying a length in the edge description of a pattern.
+
+```
+(u)-[*2]->(v)
+```
+
+Which describes a right directed path of three vertices and two edges can be rewritten to:
+
+```
+(u)-[]->()-[]->(v)
+```
+
+A range lengths can also be given:
+
+
+```
+(u)-[*3..5]->(v)
+```
+
+Which is equivalent to:
+
+```
+(u)-[]->()-[]->()-[]->(v) and
+(u)-[]->()-[]->()-[]->()-[]->(v) and
+(u)-[]->()-[]->()-[]->()-[]->()-[]->(v)
+```
+
+The previous example provided gave the edge both an lower and upper bound for the number of edges (and vertices) between u and v. Either one or both of these binding values can be excluded
+
+
+```
+(u)-[*3..]->(v)
+```
+
+Returns all paths between u and v that have three or more edges included.
+
+```
+(u)-[*..5]->(v)
+```
+
+Returns all paths between u and v that have 5 or fewer edges included.
+
+```
+(u)-[*]->(v)
+```
+
+Returns all paths between u and v
+
+
+### Example
+
 
 Query
 
