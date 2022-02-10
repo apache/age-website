@@ -375,9 +375,8 @@ Returns the movie 'Charlie Sheen' acted in and its director.
   </tr>
 </table>
 
-### Edges in Depth
 
-#### Variable Length Edges
+### Variable Length Edges
 
 When the connection between two vertices is of variable length, the list of edges that form the connection can be returned using the following connection.
 
@@ -403,6 +402,8 @@ Returns the list of edges, including the one that Willam Defoe acted in and the 
   <tr>
    <td>[{id: 0; label:"ACTED_IN"; properties: {role: "Green Goblin"}}::edge, {id: 1; label: "ACTED_IN; properties: {role: "Spiderman", actor: "Toby Maguire}}::edge]
    </td>
+  </tr>
+  <tr>
    <td>[{id: 0; label:"ACTED_IN"; properties: {role: "Green Goblin"}}::edge, {id: 2; label: "ACTED_IN; properties: {role: "Spiderman", actor: "Andrew Garfield"}}::edge]
    </td>
    </td>
