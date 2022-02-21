@@ -257,7 +257,7 @@ $$) as (v agtype);
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT * 
 FROM cypher(&#39;graph_name&#39;, $$
 	MATCH (v:Useless)
-	DELETE v
+	DETACH DELETE v
 $$) as (v agtype);
 </pre></div>
 </div>

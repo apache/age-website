@@ -55,7 +55,7 @@ Query
 SELECT * 
 FROM cypher('graph_name', $$
 	MATCH (v:Useless)
-	DELETE v
+	DETACH DELETE v
 $$) as (v agtype);
 ```
 
