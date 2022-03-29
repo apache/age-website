@@ -104,7 +104,6 @@
 <li class="toctree-l1"><a class="reference internal" href="operators.html">Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="aggregation.html">Aggregation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Importing graph from files</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#getting-from-the-current-branch">Getting from the current branch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#load-graph-functions">Load Graph functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#explanation-about-the-csv-format">Explanation about the CSV format</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#example-sql-script">Example SQL script</a><ul>
@@ -230,11 +229,12 @@
 <li><p>the structure of CSV files that load functions as input, do and do not.</p></li>
 <li><p>A simple source code example to load countries and cities from the files.</p></li>
 </ul>
-<div class="section" id="getting-from-the-current-branch">
-<h2>Getting from the current branch<a class="headerlink" href="#getting-from-the-current-branch" title="Permalink to this headline">¶</a></h2>
-<p>The current implementation is available on the fork I have created and currently have not been merged with the main master branch. You can download the fork from the following. Please make sure that you download <code class="docutils literal notranslate"><span class="pre">create-graph-from-files-b1</span></code> branch and not some other branch as this has been specifically prepared for you.</p>
-<p>https://github.com/muhammadshoaib/incubator-age/tree/create-graph-from-files-b1</p>
-</div>
+<p>User can load graph in two steps</p>
+<ul class="simple">
+<li><p>Load Vetices in the first step</p></li>
+<li><p>Load Edges in the second step</p></li>
+</ul>
+<p><strong>User msut create graph and labels before loading data from files</strong></p>
 <div class="section" id="load-graph-functions">
 <h2>Load Graph functions<a class="headerlink" href="#load-graph-functions" title="Permalink to this headline">¶</a></h2>
 <p>Following are the details about the functions to create vertices and edges from the file.</p>
