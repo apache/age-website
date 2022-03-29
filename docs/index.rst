@@ -14,6 +14,7 @@ Apache AGE's documentation
    intro/comparability
    intro/operators
    intro/aggregation
+   intro/agload
 
 .. toctree::
    :caption: Clauses
