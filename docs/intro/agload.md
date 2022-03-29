@@ -5,10 +5,12 @@ You can use the following instructions to create a graph from the files. This do
 - the structure of CSV files that load functions as input, do and do not. 
 - A simple source code example to load countries and cities from the files. 
 
-## Getting from the current branch 
-The current implementation is available on the fork I have created and currently have not been merged with the main master branch. You can download the fork from the following. Please make sure that you download `create-graph-from-files-b1` branch and not some other branch as this has been specifically prepared for you. 
 
-https://github.com/muhammadshoaib/incubator-age/tree/create-graph-from-files-b1
+User can load graph in two steps 
+- Load Vetices in the first step
+- Load Edges in the second step
+
+**User msut create graph and labels before loading data from files**
 
 ## Load Graph functions 
 Following are the details about the functions to create vertices and edges from the file. 
