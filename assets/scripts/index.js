@@ -45,3 +45,12 @@ var handleJiraSearch = function () {
   let searchTerms = document.getElementById("jira-search").value;
   window.open(`https://issues.apache.org/jira/browse/AGE-1?jql=(project%3DAGE)%20and%20text%20~%20%22${searchTerms}%22`, "_blank");
 }
+
+window.onload = function() {
+  let url = new URL(location.href);
+  let goto = url.searchParams.get("l");
+  let el = document.getElementById(`sidebar-${goto}`);
+  if (el) {
+    handleClick(el.firstChild);
+  }
+}
