@@ -1,7 +1,15 @@
 var handleClick = function (el) {
   decorateSidebar(el);
   showMainContent(el);
+  updateLocation(el);
   if (menuIsVisible()) handleMenuClick();
+}
+
+var updateLocation = function (el) {
+  let loc = el.parentElement.id.split("-")[1];
+  if (loc) {
+    window.history.pushState(loc, '', `?l=${loc}`);
+  }
 }
 
 var decorateSidebar = function (el) {
