@@ -1,0 +1,579 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>RETURN &mdash; Apache AGE master documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ORDER BY" href="order_by.html" />
+    <link rel="prev" title="WITH" href="with.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Apache AGE
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/setup.html">Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/graphs.html">Graphs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/cypher.html">The AGE Cypher Query Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/types.html">Data Types - An Introduction to agtype</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/comparability.html">Comparability, Equality, Orderability and Equivalence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/operators.html">Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/aggregation.html">Aggregation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/agload.html">Importing graph from files</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Clauses</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="match.html">MATCH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="with.html">WITH</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">RETURN</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#return-nodes">Return nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#return-edges">Return edges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#return-property">Return property</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#return-all-elements">Return all elements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#variable-with-uncommon-characters">Variable with uncommon characters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#aliasing-a-field">Aliasing a field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#optional-properties">Optional properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#other-expressions">Other expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#unique-results">Unique results</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="order_by.html">ORDER BY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skip.html">SKIP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limit.html">LIMIT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="create.html">CREATE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="set.html">SET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="remove.html">REMOVE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="delete.html">DELETE</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Functions</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../functions/predicate_functions.html">Predicate Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/scalar_functions.html">Scalar Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/list_functions.html">List Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/numeric_functions.html">Numeric Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/logarithmic_functions.html">Logarithmic Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/trigonometric_functions.html">Trigonometric Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/string_functions.html">String Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/aggregate_functions.html">Aggregation Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/user_functions.html">User defined functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">AGE Beyond Cypher</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/advanced_overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/advanced.html">Using Cypher in a CTE Expression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/advanced.html#using-cypher-in-a-join-expression">Using Cypher in a Join expression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/advanced.html#cypher-in-sql-expressions">Cypher in SQL expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/prepared_statements.html">Prepared Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/plpgsql.html">PL/pgSQL Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/sql_in_cypher.html">SQL In Cypher</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/run_tests.html">Run the test suite</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Apache AGE</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>RETURN</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/apache/incubator-age-website/blob/master/docs/clauses/return.md" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="tex2jax_ignore mathjax_ignore section" id="return">
+<h1>RETURN<a class="headerlink" href="#return" title="Permalink to this headline">¶</a></h1>
+<p>In the RETURN part of your query, you define which parts of the pattern you are interested in. It can be nodes, relationships, or properties on these.</p>
+<div class="section" id="return-nodes">
+<h2>Return nodes<a class="headerlink" href="#return-nodes" title="Permalink to this headline">¶</a></h2>
+<p>To return a node, list it in the RETURN statement.</p>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
+FROM cypher(&#39;graph_name&#39;, $$
+    MATCH (n {name: &#39;B&#39;})
+    RETURN n
+$$) as (n agtype);
+</pre></div>
+</div>
+<p>The example will return the node.</p>
+<p>Result</p>
+<table>
+  <tr>
+   <td><strong>n</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>{id: 0; label: ‘’ properties: {name: ‘B’}}::vertex
+   </td>
+  </tr>
+  <tr>
+   <td>(1 row)
+   </td>
+  </tr>
+</table>
+</div>
+<div class="section" id="return-edges">
+<h2>Return edges<a class="headerlink" href="#return-edges" title="Permalink to this headline">¶</a></h2>
+<p>To return n edge, just include it in the RETURN list.</p>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
+FROM cypher(&#39;graph_name&#39;, $$
+    MATCH (n)-[r:KNOWS]-&gt;()
+    WHERE n.name = &#39;A&#39;
+    RETURN r
+$$) as (r agtype);
+</pre></div>
+</div>
+<p>The relationship is returned by the example.</p>
+<table>
+  <tr>
+   <td><strong>r</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>{id: 2; startid: 0; endid: 1; label: ‘KNOWS’ properties: {}}::edge
+   </td>
+  </tr>
+  <tr>
+   <td>(1 row)
+   </td>
+  </tr>
+</table>
+</div>
+<div class="section" id="return-property">
+<h2>Return property<a class="headerlink" href="#return-property" title="Permalink to this headline">¶</a></h2>
+<p>To return a property, use the dot separator, like this:</p>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
+FROM cypher(&#39;graph_name&#39;, $$
+    MATCH (n {name: &#39;A&#39;})
+    RETURN n.name
+$$) as (name agtype);
+</pre></div>
+</div>
+<p>The value of the property name gets returned.</p>
+<p>Result</p>
+<table>
+  <tr>
+   <td><strong>name</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>‘A’
+   </td>
+  </tr>
+  <tr>
+   <td>(1 row)
+   </td>
+  </tr>
+</table>
+</div>
+<div class="section" id="return-all-elements">
+<h2>Return all elements<a class="headerlink" href="#return-all-elements" title="Permalink to this headline">¶</a></h2>
+<p>When you want to return all vertices, edges and paths found in a query, you can use the * symbol.</p>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
+FROM cypher(&#39;graph_name&#39;, $$
+	MATCH (a {name: &#39;A&#39;})-[r]-&gt;(b)
+	RETURN *
+$$) as (a agtype, b agtype, r agtype);
+</pre></div>
+</div>
+<p>This returns the two vertices, and the edge used in the query.</p>
+<p>Result</p>
+<table>
+  <thead>
+  <tr>
+   <td><strong>a</strong></td>
+   <td><strong>b</strong></td>
+   <td><strong>r</strong></td>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+   <td>{"id": 281474976710659, "label": "", "properties": {"age": 55, "name": "A", "happy": "Yes!"}}::vertex 
+   </td>
+   <td>
+{"id": 1125899906842625, "label": "BLOCKS", "end_id": 281474976710660, "start_id": 281474976710659, "properties": {}}::edge
+   </td>
+   <td>
+{"id": 281474976710660, "label": "", "properties": {"name": "B"}}::vertex
+   </td>
+  </tr>
+  <tr>
+   <td>{"id": 281474976710659, "label": "", "properties": {"age": 55, "name": "A", "happy": "Yes!"}}::vertex 
+   </td>
+   <td>
+{"id": 1407374883553281, "label": "KNOWS", "end_id": 281474976710660, "start_id": 281474976710659, "properties": {}}::edge
+   </td>
+   <td>
+{"id": 281474976710660, "label": "", "properties": {"name": "B"}}::vertex
+   </td>
+  </tr>
+  <tbody>
+   <td>(2 rows)
+   </td>
+  </tr>
+</table>
+</div>
+<div class="section" id="variable-with-uncommon-characters">
+<h2>Variable with uncommon characters<a class="headerlink" href="#variable-with-uncommon-characters" title="Permalink to this headline">¶</a></h2>
+<p>To introduce a placeholder that is made up of characters that are not contained in the English alphabet, you can use the ` to enclose the variable, like this:</p>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
+FROM cypher(&#39;graph_name&#39;, $$
+    MATCH (`This isn\&#39;t a common variable`)
+    WHERE `This isn\&#39;t a common variable`.name = &#39;A&#39;
+    RETURN `This isn\&#39;t a common variable`.happy
+$$) as (happy agtype);
+</pre></div>
+</div>
+<p>The node with name “A” is returned.</p>
+<p>Result</p>
+<table>
+  <tr>
+   <td><strong>happy</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>"Yes!"
+   </td>
+  </tr>
+  <tr>
+   <td>(1 row)
+   </td>
+  </tr>
+</table>
+</div>
+<div class="section" id="aliasing-a-field">
+<h2>Aliasing a field<a class="headerlink" href="#aliasing-a-field" title="Permalink to this headline">¶</a></h2>
+<p>If the name of the field should be different from the expression used, you can rename it by changing the name in the column list definition.</p>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
+FROM cypher(&#39;graph_name&#39;, $$
+    MATCH (n {name: &#39;A&#39;})
+    RETURN n.name
+$$) as (objects_name agtype);
+</pre></div>
+</div>
+<p>Returns the age property of a node, but renames the field.</p>
+<p>Result</p>
+<table>
+  <tr>
+   <td><strong>objects_name</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>‘A’
+   </td>
+  </tr>
+  <tr>
+   <td>(1 row)
+   </td>
+  </tr>
+</table>
+</div>
+<div class="section" id="optional-properties">
+<h2>Optional properties<a class="headerlink" href="#optional-properties" title="Permalink to this headline">¶</a></h2>
+<p>If a property might or might not be there, you can still select it as usual. It will be treated as null if it is missing.</p>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
+FROM cypher(&#39;graph_name&#39;, $$
+    MATCH (n)
+    RETURN n.age
+$$) as (age agtype);
+</pre></div>
+</div>
+<p>This example returns the age when the node has that property, or null if the property is not there.</p>
+<p>Result</p>
+<table>
+  <tr>
+   <td><strong>age</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>55
+   </td>
+  </tr>
+  <tr>
+   <td>NULL
+   </td>
+  </tr>
+  <tr>
+   <td>(2 rows)
+   </td>
+  </tr>
+</table>
+</div>
+<div class="section" id="other-expressions">
+<h2>Other expressions<a class="headerlink" href="#other-expressions" title="Permalink to this headline">¶</a></h2>
+<p>Any expression can be used as a return item—literals, predicates, properties, functions, and everything else.</p>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
+FROM cypher(&#39;graph_name&#39;, $$
+    MATCH (a)
+    RETURN a.age &gt; 30, &#39;I&#39;m a literal&#39;, id(a)
+$$) as (older_than_30 agtype, literal agtype, id agtype);
+</pre></div>
+</div>
+<p>Returns a predicate, a literal and function call with a pattern expression parameter.</p>
+<p>Result</p>
+<table>
+  <tr>
+   <td><strong>older_than_30</strong>
+   </td>
+   <td><strong>literal</strong>
+   </td>
+   <td><strong>id</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>true
+   </td>
+   <td>‘I’m a literal’
+   </td>
+   <td>1
+   </td>
+  </tr>
+  <tr>
+   <td colspan="3" >(1 row)
+   </td>
+  </tr>
+</table>
+</div>
+<div class="section" id="unique-results">
+<h2>Unique results<a class="headerlink" href="#unique-results" title="Permalink to this headline">¶</a></h2>
+<p>DISTINCT retrieves only unique records depending on the fields that have been selected to output.</p>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
+FROM cypher(&#39;graph_name&#39;, $$
+MATCH (a {name: &#39;A&#39;})-[]-&gt;(b)
+RETURN DISTINCT b
+$$) as (b agtype);
+</pre></div>
+</div>
+<p>The node named “B” is returned by the query, but only once.</p>
+<p>Result</p>
+<table>
+  <tr>
+   <td><strong>b</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>{id: 1; label: ‘’ properties: {name: ‘B’}}::vertex
+   </td>
+  </tr>
+  <tr>
+   <td>(1 row)
+   </td>
+  </tr>
+</table>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="order_by.html" class="btn btn-neutral float-right" title="ORDER BY" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="with.html" class="btn btn-neutral float-left" title="WITH" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Apache AGE.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: discussions-36-1
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      <dd><a href="return.html">discussions-36-1</a></dd>
+      <dd><a href="../../master/index.html">master</a></dd>
+      <dd><a href="../../v0.6.0/index.html">v0.6.0</a></dd>
+    </dl>
+  </div>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
