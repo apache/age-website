@@ -2,7 +2,7 @@
 
 # Using Cypher in a CTE Expression
 
-There are no restrictions to using Cypher with CTEs. 
+There are no restrictions to using Cypher with CTEs ([Common Table Expressions](https://www.postgresql.org/docs/current/queries-with.html)).
 
 Query:
 
