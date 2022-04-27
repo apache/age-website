@@ -756,7 +756,7 @@ Result:
    </td>
   </tr>
   <tr>
-   <td>[0, 1, 2, 3]
+   <td>
    </td>
   </tr>
   <tr>
