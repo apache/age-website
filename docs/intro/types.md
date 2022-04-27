@@ -1059,7 +1059,7 @@ Result:
 
 ## Edge
 
-An edge is an entity that encodes a directed connection between exactly two nodes, thesource node and the target node. An outgoing edge is a directed relationship from the point of view of its source node. An incoming edge is a directed relationship from the point of view of its target node. An edge is assigned exactly one edge type.
+An edge is an entity that encodes a directed connection between exactly two nodes, the source node and the target node. An outgoing edge is a directed relationship from the point of view of its source node. An incoming edge is a directed relationship from the point of view of its target node. An edge is assigned exactly one edge type.
 
 Data Format
 
