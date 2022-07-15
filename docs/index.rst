@@ -27,9 +27,10 @@ Apache AGE's documentation
    clauses/skip
    clauses/limit
    clauses/create
+   clauses/delete
    clauses/set
    clauses/remove
-   clauses/delete
+   clauses/merge
 
 .. toctree::
    :caption: Functions
