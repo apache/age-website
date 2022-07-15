@@ -35,31 +35,31 @@ Returns all the vertices in the database.
    </td>
   </tr>
   <tr>
-   <td>{id: 0; label: ‘Person’; properties{name: ‘Charlie Sheen’}}::vertex
+   <td>{id: 0; label: ‘Person’; properties: {name: ‘Charlie Sheen’}}::vertex
    </td>
   </tr>
   <tr>
-   <td>{id: 1; label: ‘Person’; properties{name: ‘Martin Sheen’}}::vertex
+   <td>{id: 1; label: ‘Person’; properties: {name: ‘Martin Sheen’}}::vertex
    </td>
   </tr>
   <tr>
-   <td>{id: 2; label: ‘Person’; properties{name: ‘Michael  Douglas’}}::vertex
+   <td>{id: 2; label: ‘Person’; properties: {name: ‘Michael  Douglas’}}::vertex
    </td>
   </tr>
   <tr>
-   <td>{id: 3; label: ‘Person’; properties{name: ‘Oliver Stone’}}::vertex
+   <td>{id: 3; label: ‘Person’; properties: {name: ‘Oliver Stone’}}::vertex
    </td>
   </tr>
   <tr>
-   <td>{id: 4; label: ‘Person’; properties{name: ‘Rob Reiner’}}::vertex
+   <td>{id: 4; label: ‘Person’; properties: {name: ‘Rob Reiner’}}::vertex
    </td>
   </tr>
   <tr>
-   <td>{id: 5; label: ‘Movie’; properties{name: ‘Wall Street’}}::vertex
+   <td>{id: 5; label: ‘Movie’; properties: {name: ‘Wall Street’}}::vertex
    </td>
   </tr>
   <tr>
-   <td>{id: 6; label: ‘Movie’; properties{title: ‘The American President’}}::vertex
+   <td>{id: 6; label: ‘Movie’; properties: {title: ‘The American President’}}::vertex
    </td>
   </tr>
   <tr>
