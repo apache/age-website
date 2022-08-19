@@ -7,6 +7,10 @@ require v16.16.0
 ```
 yarn install or npm install
 yarn run start or npm run start
+
+or 
+
+yarn run serve or npm run serve
 ```
 
 web site : visit please http://localhost:8000/
