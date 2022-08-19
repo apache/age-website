@@ -1,0 +1,109 @@
+@import '../../common/variable.scss';
+
+.root {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(47%, auto));
+  grid-column-gap: 3.125rem;
+  grid-row-gap: 1.125rem;
+  padding: 1rem;
+  .Section1,
+  .Section2 {
+    height: auto;
+    width: 100%;
+    min-height: 32.5rem;
+    max-width: 31.25rem;
+    // border: solid 0.0625rem black;
+  }
+  .Section1 {
+    display: flex;
+    flex-direction: column;
+    .Section1Wrap {
+      flex: 1;
+      display: flex;
+      align-items: center;
+    }
+    .StorageImg {
+      text-align: center;
+      padding-left: 5.625rem;
+    }
+    .Vertical button:first-child {
+      transform: rotate(0.75turn);
+      width: 22rem;
+    }
+    .Vertical {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 5.625rem;
+    }
+    .Horizon {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      height: 100%;
+      flex: 1;
+    }
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      text-align: left !important;
+      min-height: 3.25rem;
+      width: 100%;
+      /* UI Properties */
+      width: 100%;
+      background: #ffffff 0% 0% no-repeat padding-box;
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+    }
+    button:hover {
+      cursor: pointer;
+      border: 2px solid $primayrColor !important;
+      box-shadow: $shodow !important;
+    }
+  }
+  .Section2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    p {
+      display: flex;
+      align-items: center;
+      text-align: left !important;
+      padding: 20px 20px 20px 0px;
+      margin: 0;
+      height: max-content;
+      min-height: 5rem;
+      /* UI Properties */
+      width: 100%;
+      background: #ffffff 0% 0% no-repeat padding-box;
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      i {
+        font-style: normal;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #767676;
+        margin: 0.5rem;
+        border-radius: 16px;
+        min-width: 24px;
+        min-height: 24px;
+        color: #ffffff;
+        font-size: 0.75rem;
+      }
+      span {
+        flex: 1;
+      }
+    }
+  }
+}
+.Toggle {
+  border: 2px solid $primayrColor !important;
+  box-shadow: $shodow !important;
+}

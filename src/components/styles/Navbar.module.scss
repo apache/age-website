@@ -1,0 +1,292 @@
+@import '../../common/variable.scss';
+
+.root {
+  height: $navHeight;
+  box-shadow: 0px 3px 6px #00000029;
+  width: 100vw;
+  position: fixed;
+  z-index: 99;
+  background-color: #181631;
+}
+.Nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  .Logo {
+    img {
+      max-width: 6.5625rem;
+    }
+  }
+  .Menu {
+    flex: 1;
+    ul {
+      background-color: #181631;
+      li {
+        color: #8b8399;
+      }
+      .ant-menu-submenu-title:hover {
+        color: #fff !important;
+      }
+    }
+  }
+  .HamburgerMenu {
+    width: 100%;
+    .InlineMenu {
+      position: absolute;
+      top: 5rem;
+      left: 0;
+    }
+    ul {
+      background-color: #181631;
+      li {
+        color: #fff;
+        span {
+          a {
+            color: #fff;
+          }
+        }
+      }
+      i {
+        color: #fff !important;
+      }
+    }
+  }
+  .MenuToggle {
+    align-items: center;
+    height: 100%;
+    .Toggle {
+      background-color: #ffffff00;
+      border: none;
+      color: #fff;
+      font-size: 1.5rem;
+    }
+    .Toggle:hover {
+      color: $primayrColor;
+      font-weight: bold;
+    }
+    .Toggled {
+      color: $primayrColor;
+      font-weight: bold;
+    }
+  }
+  .Left {
+    width: 100%;
+    max-width: 21.25rem;
+  }
+  .Right {
+    width: 100%;  
+    max-width: 21.25rem;
+    text-align: left;
+    align-items: center;
+    img {
+      width: 32px;
+      height: 32px;
+    }
+    span {
+      font-size: 2.5rem;
+      font-weight: 500;
+      color: #fff;
+      margin-right: 2rem;
+      margin-left: 2rem;
+    }
+    .Download {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      padding: 0.625rem;
+      font: $h4;
+      height: 2.5rem;
+      /* UI Properties */
+      background: transparent linear-gradient(90deg, #143a84 0%, #d30d52 100%)
+        0% 0% no-repeat padding-box;
+      border-radius: 16px;
+    }
+  }
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  /* Styles */
+  .Left {
+    text-align: left;
+  }
+  .Menu {
+    display: none;
+  }
+  .HamburgerMenu {
+    display: flex;
+  }
+  .MenuToggle {
+    display: flex;
+  }
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width: 321px) {
+  /* Styles */
+  .Left {
+    text-align: left;
+  }
+  .Menu {
+    display: none;
+  }
+  .HamburgerMenu {
+    display: flex;
+  }
+  .MenuToggle {
+    display: flex;
+  }
+  .Right {
+    display: none;
+  }
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: 320px) {
+  /* Styles */
+  .Left {
+    text-align: left;
+  }
+  .Menu {
+    display: none;
+  }
+  .HamburgerMenu {
+    display: flex;
+  }
+  .MenuToggle {
+    display: flex;
+  }
+  .Right {
+    display: none;
+  }
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* Styles */
+  .Left {
+    text-align: left;
+  }
+  .Menu {
+    display: none;
+  }
+  .HamburgerMenu {
+    display: flex;
+  }
+  .MenuToggle {
+    display: flex;
+  }
+  .Right {
+    display: none;
+  }
+}
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  /* Styles */
+  .Left {
+    text-align: left;
+  }
+  .Menu {
+    display: none;
+  }
+  .HamburgerMenu {
+    display: flex;
+  }
+  .MenuToggle {
+    display: flex;
+  }
+  .Right {
+    display: none;
+  }
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  /* Styles */
+  .Left {
+    text-align: left;
+  }
+  .Menu {
+    display: none;
+  }
+  .HamburgerMenu {
+    display: flex;
+  }
+  .MenuToggle {
+    display: flex;
+  }
+  .Right {
+    display: none;
+  }
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 1024px) {
+  /* Styles */
+  .Left {
+    text-align: right;
+  }
+  .Menu {
+    display: flex;
+  }
+  .HamburgerMenu {
+    display: none;
+  }
+  .MenuToggle {
+    display: none;
+  }
+  .Right {
+    display: flex;
+  }
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 1224px) {
+  /* Styles */
+  .Left {
+    text-align: right;
+  }
+  .Menu {
+    display: flex;
+  }
+  .HamburgerMenu {
+    display: none;
+  }
+  .MenuToggle {
+    display: none;
+  }
+  .Right {
+    display: flex;
+  }
+}
+
+/* Large screens ----------- */
+@media only screen and (min-width: 1824px) {
+  /* Styles */
+  .Left {
+    text-align: right;
+  }
+  .Menu {
+    display: flex;
+  }
+  .HamburgerMenu {
+    display: none;
+  }
+  .MenuToggle {
+    display: none;
+  }
+  .Right {
+    display: flex;
+  }
+}
+
+/* iPhone 4 and high pixel ratio devices ----------- */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (min-device-pixel-ratio: 1.5) {
+  /* Styles */
+}

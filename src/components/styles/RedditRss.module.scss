@@ -1,0 +1,76 @@
+@import '../../common/variable.scss';
+
+.root {
+  margin: 0 auto;
+  max-width: $conWidth;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: $shodow;
+  .Header {
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1.125rem;
+    border-bottom: solid 1px #70707050;
+    font: $h6;
+  }
+  .Footer {
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 4.875rem;
+    border-top: solid 1px #70707050;
+    text-align: right;
+    font: $h4;
+    a {
+      text-decoration: underline !important;
+      padding: 0rem 1rem;
+    }
+  }
+  .Container {
+    padding: 0 2.5rem;
+    height: 514px;
+    overflow-y: scroll;
+    background-color: #f7f3fe;
+  }
+}
+.Item {
+  margin: 1rem;
+  padding: 1.5rem 0.5rem;
+  border: solid 1px $textColor;
+  border-radius: 12px;
+  border: none;
+  box-shadow: $shodow2;
+  min-height: 7.5rem;
+  height: auto;
+  background-color: #fff;
+  .Title {
+    font: $h4;
+    padding-left: 0.5rem;
+  }
+  .Contents {
+    margin-left: 1rem;
+  }
+  .Date {
+    padding-left: 1rem;
+    font-size: 0.875rem;
+  }
+  p {
+    margin: 0;
+  }
+  span {
+    display: inline-block;
+    float: right;
+    margin: 0rem 0.2rem;
+    display: inline-block;
+    a {
+      background-color: $secondColor;
+      color: #fff;
+      padding: 0.25rem;
+      height: 1rem;
+      border-radius: 6px;
+    }
+  }
+}

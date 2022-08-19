@@ -1,0 +1,6 @@
+@import '../../common/variable.scss';
+
+.contents {
+  padding-top: $navHeight;
+  min-height: calc(100vh - 340px);
+}

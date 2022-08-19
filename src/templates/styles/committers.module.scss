@@ -1,0 +1,60 @@
+@import '../../common/variable.scss';
+
+.root {
+  padding: 2.5rem 0 4.875rem;
+  max-width: $conWidth;
+  margin: 0 auto;
+  // 제목
+  h1 {
+    font: $h1;
+    color: $textPrimary;
+    text-align: center;
+    margin-top: 5rem;
+    margin-bottom: 6.25rem;
+  }
+}
+.Youtube {
+  max-width: $conWidth;
+  height: 60vw;
+  max-height: 41.5rem;
+  background-color: $bgColor;
+  text-align: center;
+}
+.CommitersContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(17.5rem, 1fr));
+  grid-row-gap: 1.25rem;
+  justify-items: center;
+  .Committer {
+    width: 17.5rem;
+    height: 17.5rem;
+    padding: 1.25rem;
+    border: 1px solid #bfbfbf;
+    border-radius: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    p:nth-child(1) {
+      div {
+        width: 5rem;
+        height: 5rem;
+        border-radius: 5rem;
+        border: solid 1px black;
+        overflow: hidden;
+      }
+    }
+    p:nth-child(2) {
+      font: $h5;
+      font-weight: bold !important;
+    }
+    p:nth-child(3) {
+      font: $h6;
+    }
+    p:nth-child(4) {
+      img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+}

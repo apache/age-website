@@ -1,0 +1,72 @@
+@import '../../common/variable.scss';
+
+.root {   
+  // 제목
+  h1 {
+    font: $h1;
+    color: $textPrimary;
+  }
+  // 본문
+  p {
+    font: $h6;
+    color: $textColor;
+  }
+  li {
+    font: $h6;
+    color: $textColor;
+  }
+  span {
+    font: $h6;
+    color: $textColor;
+  }  
+  padding: 2.5rem 2rem 4.875rem;
+  max-width: $conWidth;
+  margin: 0 auto;
+}
+
+// overview banner 
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-repeat: repeat-x;
+  background-size: cover;
+  background-position: center;
+  // background-color: #E6E3F6;
+  min-height: 18.125rem;
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+  .bannerContent {
+    h1 {
+      font: $landing;
+      color: $textPrimary;
+    }
+  }
+}
+
+.bannerContent {
+  a {
+    font: $h6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    margin: 0 0.625rem;
+    padding: 0.5rem;
+    text-align: center;
+    vertical-align: middle;
+    width: 11.25rem;
+    height: 2.5rem;
+    /* UI Properties */
+    border: 0.125rem solid $textPrimary;
+    border-radius: 1.8125rem;
+    opacity: 1;
+    background-color: #fff;
+    color: $textPrimary;
+  }
+  a:hover {
+    background-color: $textPrimary;
+    color: #fff;
+  }
+}

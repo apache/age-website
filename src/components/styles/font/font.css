@@ -1,0 +1,33 @@
+@font-face {
+  font-family: 'Mark Pro';
+  src: url('MarkPro-Regular.eot');
+  src: url('MarkPro-Regular.eot?#iefix') format('embedded-opentype'),
+      url('MarkPro-Regular.woff2') format('woff2'),
+      url('MarkPro-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mark Pro';
+  src: url('MarkPro-Bold.eot');
+  src: url('MarkPro-Bold.eot?#iefix') format('embedded-opentype'),
+      url('MarkPro-Bold.woff2') format('woff2'),
+      url('MarkPro-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mark Pro';
+  src: url('MarkPro-Medium.eot');
+  src: url('MarkPro-Medium.eot?#iefix') format('embedded-opentype'),
+      url('MarkPro-Medium.woff2') format('woff2'),
+      url('MarkPro-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+

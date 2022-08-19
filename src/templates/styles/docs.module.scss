@@ -1,0 +1,67 @@
+@import '../../common/variable.scss';
+
+.root {
+  /** -----------------docs common style----------------- **/
+  padding: 2.5rem 2rem 4.875rem;
+  max-width: $conWidth;
+  margin: 0 auto;
+  // 제목
+  h1 {
+    font: $h1;
+    color: $textPrimary;
+    text-align: center;
+    margin-top: 1.25rem;
+    margin-bottom: 5rem;
+  }
+  // 본문
+  p {
+    font: $h6;
+    color: $textColor;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    // 링크
+    a {
+      display: inline-table;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;    
+    }
+  }
+  li {
+    font: $h6;
+    color: $textColor;
+  }
+  span {
+    font: $h6;
+    color: $textColor;
+  }  
+  // table
+  table {
+    width: 100%;
+    margin: 0 auto;
+    thead {
+      tr:first-child {
+        border-top: solid 4px $textColor;
+      }
+    }
+    tbody {
+      tr:last-child {
+        border-bottom: solid 4px $shyTextColor;
+      }
+    }
+    tr {
+      height: 3.125rem;
+      border-bottom: solid 1px $shyTextColor;
+    }
+    th {
+      text-align: center;
+      font: $h4;
+      color: $textPrimary;
+      background-color: $bgColor;
+    }
+    td {
+      font: $h5;
+      text-align: center;
+    }
+  }
+}

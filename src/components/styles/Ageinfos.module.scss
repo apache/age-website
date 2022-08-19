@@ -1,0 +1,36 @@
+@import '../../common//variable.scss';
+
+.root {
+  margin: 2.75rem auto 0 auto;
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1170px;
+  min-height: 250px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  /* UI Properties */
+  background: #873df2 0% 0% no-repeat padding-box;
+  box-shadow: 0px 0px 24px #ffffff29;
+  border: 4px solid #cfb3ff;
+  border-radius: 139px;
+  opacity: 1;
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 23.75rem;
+    text-align: center;
+    color: #fff;
+  }
+  .Count {
+    font-size: 100px;
+    font-weight: bold;
+  }
+  .Label {
+    font: $h4;
+    font-weight: bold;
+  }
+}

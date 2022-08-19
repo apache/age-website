@@ -1,0 +1,51 @@
+.root {
+  padding: 1rem;
+  min-height: 21.25rem;
+}
+
+.Sitemap {
+  padding-top: 2rem;
+  margin: 0 auto;
+  max-width: 85.75rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  flex-wrap: wrap;  
+  color: #8b8399 !important;
+  a {
+    color: #8b8399;
+  }
+  .Item {
+    // ul
+    padding: 0;
+    width: 100%;
+    max-width: 16rem;
+    list-style: none;
+    li:first-child {
+      font-weight: bold;
+      font-size: 1.25rem;
+    }
+    li {    
+      margin-bottom: 1.25rem;  
+      a {
+        font-size: 1rem;
+        font-weight: 500;
+      }
+    }
+  }
+}
+.Social {
+  padding: 2.5rem 4rem 0;
+  border-top: solid 1px #8b8399;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .Links {
+    a {
+      margin-right: 1rem;
+    }
+  }
+  p {
+    font-size: 16px;
+    display: inline-block;
+  }
+}

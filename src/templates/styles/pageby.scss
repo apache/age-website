@@ -1,0 +1,124 @@
+@import '../../common//variable.scss';
+
+/** -----------------page by style----------------- **/
+//http://{domain}/overview
+.Overview {
+  .Databases {
+    p {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      img {
+        width: auto;
+      }
+    }
+  }
+}
+.OverviewLink {
+  margin-top: .625rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+// http://{domain}/release-notes
+.ReleaseBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+  min-height: 29.75rem;
+  border: solid 1px $shyTextColor;
+  border-radius: 6px;
+  padding: 1.75rem 5rem;
+  margin-top: 5rem;
+  h2 {
+    font: $h4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  p {
+    font: $h6;
+  }
+  section:nth-child(2) {
+    h2 {
+      white-space: nowrap;
+    }
+  }
+}
+.ReleaseBox:hover {
+  border: 4px solid #e6e3f6;
+  box-shadow: $shodow;
+}
+
+// http://{domain}/joinus
+.JoinUsAGE {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  align-items: center;
+  grid-column-gap: 5rem;
+  grid-row-gap: 10rem;
+}
+
+//http://{domain}/contribution/how
+.HowToContirbute {
+  h1 {
+    text-align: left;
+    margin-bottom: 1.75rem;
+  }
+  h2 {
+    margin-top: 5rem;
+    font: $h3;
+    color: $textPrimary;
+    text-align: left;
+  }
+}
+
+//http://{domail}/contribution/guide
+.DeveloperGuidelines {
+  h1 {
+    text-align: left;
+    margin-bottom: 1.75rem;
+  }
+  h2 {
+    margin-top: 5rem;
+    font: $h3;
+    color: $textPrimary;
+    text-align: left;
+  }
+  pre {
+    padding: 1rem;
+    background-color: $bgColor;
+    border-radius: 0.75rem;
+  }
+  code {
+    background-color: $bgColor;
+  }
+}
+
+//http://{domail}/contribution/requirements
+.Requirements {
+  h1 {
+    text-align: left;
+    margin-bottom: 1.75rem;
+  }
+}
+
+//http://{domail}/contribution/process
+.ReleaseProcess {
+  h1 {
+    text-align: left;
+    margin-bottom: 1.75rem;
+  }
+  h2 {
+    font: $h3;
+    color: $textPrimary;
+    text-align: left;
+  }
+  .ReleaseProcessBox {
+    margin-top: 1rem;
+    padding: 1rem;
+    border: solid 1px $shyTextColor;
+    border-radius: 6px;
+  }
+}

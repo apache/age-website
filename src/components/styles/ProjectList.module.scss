@@ -1,0 +1,34 @@
+@import '../../common/variable.scss';
+
+.cardRoot {
+  margin: 0 auto;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(380px, auto));
+  grid-row-gap: 2.5rem;
+  list-style: none;
+  padding: 0;
+  width: auto;
+  //1644 * 766
+  max-width: 102.75rem;
+  max-height: 47.875rem;
+  overflow-y: scroll;
+}
+.MoreBtn {
+  cursor: pointer;
+  margin-top: 3.75rem;
+  width: 140px;
+  height: 60px;
+  /* UI Properties */
+  background: $secondColor;
+  border-radius: 40px;
+  opacity: 1;
+  font: $h4;
+  color: #fff;
+  border: none;
+}
+.MoreBtn:hover {
+  background-color: #fff;
+  color: $primayrColor;
+}
