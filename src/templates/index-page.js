@@ -40,20 +40,8 @@ export const IndexPageTemplate = ({
           content={bannerContents}
         />
       </div>
+     
       <section style={{backgroundImage: `url(${bg02})`, backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}}>
-        <div className={styles.content}>
-          <h2>Welcome To The AGE Community</h2>
-          <p>
-            Apache AGE is a continuously developed solution by a progressive
-            community. <br /> We're always looking for contributors who are
-            willing to learn and grow with us. <br /> If you are looking for an
-            opportunity to grow and experience progressive insights this is the
-            place for you!
-          </p>
-          <Ageinfos />
-        </div>
-      </section>
-      <section style={{backgroundImage: `url(${bg03})`, backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}}>
         <div className={styles.content}>
           <h2>AGE Projects</h2>
           <p>
@@ -64,14 +52,14 @@ export const IndexPageTemplate = ({
           <ProjectList />
         </div>
       </section>
-      <section style={{backgroundImage: `url(${bg04})`, backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}}>
+      <section style={{backgroundImage: `url(${bg03})`, backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}}>
         <div className={styles.content}>
           <h2>AGE Forum</h2>
           <p>Learn Apache AGE with code examples, resources, and other developers' inquiries and experiences from the developer community.</p>
         </div>
         <RedditRss />
       </section>
-      <section style={{backgroundImage: `url(${bg05})`, backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}}>
+      <section style={{backgroundImage: `url(${bg04})`, backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}}>
         <div className={styles.content}>
           <h2>Message From AGE Team</h2>
           <div className={styles.Youtube}>
@@ -85,6 +73,19 @@ export const IndexPageTemplate = ({
               allowfullscreen
             ></iframe>
           </div>
+        </div>
+      </section>
+      <section style={{backgroundImage: `url(${bg05})`, backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}}>
+        <div className={styles.content}>
+          <h2>Welcome To The AGE Community</h2>
+          <p>
+            Apache AGE is a continuously developed solution by a progressive
+            community. <br /> We're always looking for contributors who are
+            willing to learn and grow with us. <br /> If you are looking for an
+            opportunity to grow and experience progressive insights this is the
+            place for you!
+          </p>
+          <Ageinfos />
         </div>
       </section>
       <section style={{backgroundImage: `url(${bg06})`, backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}}>
