@@ -23,10 +23,10 @@ const Navbar = () => {
             mode="horizontal"
             style={{ width: '100%', justifyContent: 'center' }}
           >
-            <Menu.SubMenu title="Apahce AGE">
+            <Menu.SubMenu title="Apache AGE">
               <Menu.Item>
                 <Link className="navbar-item" to="/overview">
-                  OverView
+                  Overview
                 </Link>
               </Menu.Item>
               <Menu.Item>
@@ -76,9 +76,9 @@ const Navbar = () => {
             </Menu.SubMenu>
             <Menu.SubMenu title="Documentation">
               <Menu.Item>
-                <Link className="navbar-item" to="/age-manual">
+                <a href="/age-manual/index.html" className="navbar-item" >
                   Apache AGE Manual
-                </Link>
+                </a>
               </Menu.Item>
             </Menu.SubMenu>
           </Menu>
@@ -92,10 +92,10 @@ const Navbar = () => {
             }}
             mode="inline"
           >
-            <Menu.SubMenu title="Apahce AGE">
+            <Menu.SubMenu title="Apache AGE">
               <Menu.Item>
                 <Link className="navbar-item" to="/overview">
-                  OverView
+                  Overview
                 </Link>
               </Menu.Item>
               <Menu.Item>
@@ -145,9 +145,12 @@ const Navbar = () => {
             </Menu.SubMenu>
             <Menu.SubMenu title="Documentation">
               <Menu.Item>
-                <Link className="navbar-item" to="/age-manual">
+                {/* <Link className="navbar-item" to="/age-manual">
                   Apache AGE Manual
-                </Link>
+                </Link> */}
+                <a href="/age-manual/index.html" className="navbar-item" >
+                  Apache AGE Manual
+                </a>                
               </Menu.Item>
             </Menu.SubMenu>
           </Menu>

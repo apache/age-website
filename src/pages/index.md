@@ -1,9 +1,9 @@
 ---
 templateKey: index-page
-title: Apahce AGE
+title: Apache AGE
 bannerImg: /img/img-landing01.png
 bannerContents: >-
-  <h1 class="bannerHeader"><span>Apahce AGE  :</span> <br/> Graph model on
+  <h1 class="bannerHeader"><span>Apache AGE  :</span> <br/> Graph model on
   PostgreSQL</h1>
 
 
