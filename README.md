@@ -1,18 +1,45 @@
 # This is Apach web site ver 2.0 
+# how to start
 
-## how to start
 
-require v16.16.0
+## 1. build documentation
+### Envirement Setting
 
-```
-yarn install or npm install
-yarn run start or npm run start
+> ```virtualenv -p python3 venv```
 
-or 
+### Activate the virtual environment
 
-yarn run serve or npm run serve
-```
+> ```source venv/bin/activate```
 
-web site : visit please http://localhost:8000/
+### Install the python requirements
 
-admin(Content Management System) : http://localhost:8000/admin
+> ```pip install -r requirements.txt```
+
+### build
+
+> ```sphinx-multiversion docs static/age-manual/```
+
+
+## 2. gatsby website develop mode
+
+### require node v16.16.0
+
+> ```
+> yarn install or npm install
+> yarn run start or npm run start
+> 
+> or 
+> 
+> yarn run serve or npm run serve
+> ```
+
+### web site : visit please http://localhost:8000/
+
+### admin(Content Management System) : http://localhost:8000/admin
+
+
+## 3. build & deploy
+
+> ```
+> yarn run deploy or npm run deploy
+> ```
