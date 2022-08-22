@@ -127,14 +127,14 @@ const Footer = class extends React.Component {
           className={`${styles.Social} Social`}
         >
           <div className={`${styles.Links} FooterLinks`}>
-            <a title="Github" href="https://github.com/" target={'_blank'}>
+            <a title="Github" href="https://github.com/apache/age" target={'_blank'}>
               <img
                 src={landingYn ? icoGithubLd : icoGithub}
                 alt="Facebook"
                 style={{ width: '2.5em', height: '2.5em' }}
               />
             </a>
-            <a title="twitter" href="https://twitter.com" target={'_blank'}>
+            <a title="twitter" href="https://twitter.com/apache_age?ref_src=twsrc%5Etfw" target={'_blank'}>
               <img
                 className="fas fa-lg"
                 src={landingYn ? icoTwitterLd : icoTwitter}
@@ -142,7 +142,7 @@ const Footer = class extends React.Component {
                 style={{ width: '2.5em', height: '2.5em' }}
               />
             </a>
-            <a title="LinkedIn" href="https://linkedin.com/" target={'_blank'}>
+            <a title="LinkedIn" href="https://www.linkedin.com/showcase/apache-age/" target={'_blank'}>
               <img
                 src={landingYn ? icoLinkedinLd : icoLinkedin}
                 alt="LinkedIn"
