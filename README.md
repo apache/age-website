@@ -3,7 +3,7 @@
 
 
 ## 1. build documentation
-### Envirement Setting
+### Environment Setting
 
 > ```virtualenv -p python3 venv```
 
