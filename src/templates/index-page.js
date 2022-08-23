@@ -42,6 +42,9 @@ export const IndexPageTemplate = ({
       </div>
      
       <section style={{backgroundImage: `url(${bg02})`, backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}}>
+        {/* TBD */}
+      </section>
+      <section style={{backgroundImage: `url(${bg03})`, backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}}>
         <div className={styles.content}>
           <h2>AGE Projects</h2>
           <p>
@@ -51,16 +54,19 @@ export const IndexPageTemplate = ({
           </p>
           <ProjectList />
         </div>
+        
       </section>
-      <section style={{backgroundImage: `url(${bg03})`, backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}}>
+      <section style={{backgroundImage: `url(${bg04})`, backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}}>
+        
         <div className={styles.content}>
           <h2>AGE Forum</h2>
           <p>Learn Apache AGE with code examples, resources, and other developers' inquiries and experiences from the developer community.</p>
         </div>
         <RedditRss />
+
       </section>
-      <section style={{backgroundImage: `url(${bg04})`, backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}}>
-        <div className={styles.content}>
+      <section style={{backgroundImage: `url(${bg05})`, backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}}>
+      <div className={styles.content}>
           <h2>Message From AGE Team</h2>
           <div className={styles.Youtube}>
             <iframe
@@ -74,9 +80,10 @@ export const IndexPageTemplate = ({
             ></iframe>
           </div>
         </div>
+        
       </section>
-      <section style={{backgroundImage: `url(${bg05})`, backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}}>
-        <div className={styles.content}>
+      <section style={{backgroundImage: `url(${bg06})`, backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}}>
+      <div className={styles.content}>
           <h2>Welcome To The AGE Community</h2>
           <p>
             Apache AGE is a continuously developed solution by a progressive
@@ -87,9 +94,10 @@ export const IndexPageTemplate = ({
           </p>
           <Ageinfos />
         </div>
+        
       </section>
-      <section style={{backgroundImage: `url(${bg06})`, backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}}>
-        <div className={styles.content}>
+      <section>
+      <div className={styles.content}>
           <div className={styles.Subscribe}>
             <img src={landingMailImg} alt="mail-image"></img>
           </div>
@@ -111,8 +119,17 @@ export const IndexPageTemplate = ({
             >
               Developer
             </a>
+            <a
+              target="_blank"
+              href="https://lists.apache.org/list.html?commits@age.apache.org"
+            >
+              Commits
+            </a>
+            
             <a href="mailto:users-subscribe@age.apache.org">Subscribe</a>
             <a href="mailto:dev-subscribe@age.apache.org">Subscribe</a>
+            <a href="mailto:commits-subscribe@age.apache.org">Subscribe</a>
+
           </div>
         </div>
       </section>
