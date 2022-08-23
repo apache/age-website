@@ -30,7 +30,7 @@ const ProjectDetail = (props) => {
           <p className={styles.title}>{project.title}</p>
           <p className={styles.desc}>{project.shortDescription}</p>
         </div>
-        <a class={styles.link} href={project.url} target="_blank">
+        <a className={styles.link} href={project.url} target="_blank">
           View Details
         </a>
       </div>
