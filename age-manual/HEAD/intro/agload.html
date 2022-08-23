@@ -1,0 +1,478 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Importing graph from files &mdash; Apache AGE master documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="MATCH" href="../clauses/match.html" />
+    <link rel="prev" title="Aggregation" href="aggregation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Apache AGE
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graphs.html">Graphs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cypher.html">The AGE Cypher Query Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types.html">Data Types - An Introduction to agtype</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comparability.html">Comparability, Equality, Orderability and Equivalence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operators.html">Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregation.html">Aggregation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Importing graph from files</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#load-graph-functions">Load Graph functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#explanation-about-the-csv-format">Explanation about the CSV format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-sql-script">Example SQL script</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#creating-vertices-without-id-field-in-the-file">Creating vertices without id field in the file.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Clauses</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/match.html">MATCH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/with.html">WITH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/return.html">RETURN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/order_by.html">ORDER BY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/skip.html">SKIP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/limit.html">LIMIT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/create.html">CREATE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/delete.html">DELETE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/set.html">SET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/remove.html">REMOVE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/merge.html">MERGE</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Functions</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../functions/predicate_functions.html">Predicate Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/scalar_functions.html">Scalar Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/list_functions.html">List Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/numeric_functions.html">Numeric Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/logarithmic_functions.html">Logarithmic Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/trigonometric_functions.html">Trigonometric Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/string_functions.html">String Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/aggregate_functions.html">Aggregation Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/user_functions.html">User defined functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">AGE Beyond Cypher</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/advanced_overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/advanced.html">Using Cypher in a CTE Expression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/advanced.html#using-cypher-in-a-join-expression">Using Cypher in a Join expression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/advanced.html#cypher-in-sql-expressions">Cypher in SQL expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/prepared_statements.html">Prepared Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/plpgsql.html">PL/pgSQL Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/sql_in_cypher.html">SQL In Cypher</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/run_tests.html">Run the test suite</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Apache AGE</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Importing graph from files</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/apache/incubator-age-website/blob/master/docs/intro/agload.md" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="tex2jax_ignore mathjax_ignore section" id="importing-graph-from-files">
+<h1>Importing graph from files<a class="headerlink" href="#importing-graph-from-files" title="Permalink to this headline">¶</a></h1>
+<p>You can use the following instructions to create a graph from the files. This document explains</p>
+<ul class="simple">
+<li><p>information about the current branch that includes the functions to load graphs from files</p></li>
+<li><p>explanation of the functions that enable the creation of graphs from files</p></li>
+<li><p>the structure of CSV files that load functions as input, do and do not.</p></li>
+<li><p>A simple source code example to load countries and cities from the files.</p></li>
+</ul>
+<p>User can load graph in two steps</p>
+<ul class="simple">
+<li><p>Load Vetices in the first step</p></li>
+<li><p>Load Edges in the second step</p></li>
+</ul>
+<p><strong>User msut create graph and labels before loading data from files</strong></p>
+<div class="section" id="load-graph-functions">
+<h2>Load Graph functions<a class="headerlink" href="#load-graph-functions" title="Permalink to this headline">¶</a></h2>
+<p>Following are the details about the functions to create vertices and edges from the file.</p>
+<p>function <code class="docutils literal notranslate"><span class="pre">load_labels_from_file</span></code> is used to load vertices from the CSV files.</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="n">load_labels_from_file</span><span class="p">(</span><span class="s1">&#39;&lt;graph name&gt;&#39;</span><span class="p">,</span> 
+                      <span class="s1">&#39;&lt;label name&gt;&#39;</span><span class="p">,</span>
+                      <span class="s1">&#39;&lt;file path&gt;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>By adding the fourth parameter user can exclude the id field. *** Use this when there is no id field in the file***</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="n">load_labels_from_file</span><span class="p">(</span><span class="s1">&#39;&lt;graph name&gt;&#39;</span><span class="p">,</span> 
+                      <span class="s1">&#39;&lt;label name&gt;&#39;</span><span class="p">,</span>
+                      <span class="s1">&#39;&lt;file path&gt;&#39;</span><span class="p">,</span> 
+                      <span class="k">false</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Function <code class="docutils literal notranslate"><span class="pre">load_edges_from_file</span></code> can be used to load properties from the CSV file. Please see the file structure in the following.</p>
+<p>Note: make sure that ids in the edge file are identical to ones that are in vertices files.</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="n">oad_edges_from_file</span><span class="p">(</span><span class="s1">&#39;&lt;graph name&gt;&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;&lt;label name&gt;&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;&lt;file path&gt;&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="explanation-about-the-csv-format">
+<h2>Explanation about the CSV format<a class="headerlink" href="#explanation-about-the-csv-format" title="Permalink to this headline">¶</a></h2>
+<p>Following is the explanation about the structure for CSV files for vertices and edges.</p>
+<ul class="simple">
+<li><p>A CSV file for nodes shall be formatted aw following;</p></li>
+</ul>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>field name</p></th>
+<th class="head"><p>Field description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>id</p></td>
+<td><p>it shall be the first column of the file and all values shall be a positive integer. This is an optional field when <code class="docutils literal notranslate"><span class="pre">id_field_exists</span></code> is <em><strong>false</strong></em>. However, it should be present when <code class="docutils literal notranslate"><span class="pre">id_field_exists</span></code> is <em><strong>not</strong></em> set to false.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Properties</p></td>
+<td><p>all other columns contains the properties for the nodes. Header row shall contain the name of property</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>Similarly, a CSV file for edges shall be formatted as follows</p></li>
+</ul>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>field name</p></th>
+<th class="head"><p>Field description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>start_id</p></td>
+<td><p>node id of the node from where the edge is stated. This id shall be present in nodes.csv file.</p></td>
+</tr>
+<tr class="row-odd"><td><p>start_vertex_type</p></td>
+<td><p>class of the node</p></td>
+</tr>
+<tr class="row-even"><td><p>end_id</p></td>
+<td><p>end id of the node at which the edge shall be terminated</p></td>
+</tr>
+<tr class="row-odd"><td><p>end_vertex_type</p></td>
+<td><p>Class of the node</p></td>
+</tr>
+<tr class="row-even"><td><p>properties</p></td>
+<td><p>properties of the edge. the header shall contain the property name</p></td>
+</tr>
+</tbody>
+</table>
+<p>example files can be viewed at <code class="docutils literal notranslate"><span class="pre">regress/age_load/data</span></code></p>
+</div>
+<div class="section" id="example-sql-script">
+<h2>Example SQL script<a class="headerlink" href="#example-sql-script" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Load and create graph</p></li>
+</ul>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">LOAD</span> <span class="s1">&#39;age&#39;</span><span class="p">;</span>
+
+<span class="k">SET</span> <span class="n">search_path</span> <span class="k">TO</span> <span class="n">ag_catalog</span><span class="p">;</span>
+<span class="k">SELECT</span> <span class="n">create_graph</span><span class="p">(</span><span class="s1">&#39;agload_test_graph&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Create label <code class="docutils literal notranslate"><span class="pre">country</span></code> and load vertices from csv file. *** Note this CSV file has id field ***</p></li>
+</ul>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">create_vlabel</span><span class="p">(</span><span class="s1">&#39;agload_test_graph&#39;</span><span class="p">,</span><span class="s1">&#39;Country&#39;</span><span class="p">);</span>
+<span class="k">SELECT</span> <span class="n">load_labels_from_file</span><span class="p">(</span><span class="s1">&#39;agload_test_graph&#39;</span><span class="p">,</span>
+                             <span class="s1">&#39;Country&#39;</span><span class="p">,</span>
+                             <span class="s1">&#39;age_load/countries.csv&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Create label <code class="docutils literal notranslate"><span class="pre">City</span></code> and load vertices from csv file. *** Note this CSV file has id field ***</p></li>
+</ul>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">create_vlabel</span><span class="p">(</span><span class="s1">&#39;agload_test_graph&#39;</span><span class="p">,</span><span class="s1">&#39;City&#39;</span><span class="p">);</span>
+<span class="k">SELECT</span> <span class="n">load_labels_from_file</span><span class="p">(</span><span class="s1">&#39;agload_test_graph&#39;</span><span class="p">,</span>
+                             <span class="s1">&#39;City&#39;</span><span class="p">,</span> 
+                             <span class="s1">&#39;age_load/cities.csv&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Create label <code class="docutils literal notranslate"><span class="pre">has_city</span></code> and load edges from csv file.</p></li>
+</ul>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">create_elabel</span><span class="p">(</span><span class="s1">&#39;agload_test_graph&#39;</span><span class="p">,</span><span class="s1">&#39;has_city&#39;</span><span class="p">);</span>
+<span class="k">SELECT</span> <span class="n">load_edges_from_file</span><span class="p">(</span><span class="s1">&#39;agload_test_graph&#39;</span><span class="p">,</span> <span class="s1">&#39;has_city&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;age_load/edges.csv&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>check if the graph has been loaded properly</p></li>
+</ul>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span>SELECT table_catalog, table_schema, table_name, table_type
+FROM information_schema.tables
+WHERE table_schema = &#39;agload_test_graph&#39;;
+
+SELECT COUNT(*) FROM agload_test_graph.&quot;Country&quot;;
+SELECT COUNT(*) FROM agload_test_graph.&quot;City&quot;;
+SELECT COUNT(*) FROM agload_test_graph.&quot;has_city&quot;;
+
+SELECT COUNT(*) FROM cypher(&#39;agload_test_graph&#39;, $$MATCH(n) RETURN n$$) as (n agtype);
+SELECT COUNT(*) FROM cypher(&#39;agload_test_graph&#39;, $$MATCH (a)-[e]-&gt;(b) RETURN e$$) as (n agtype);
+</pre></div>
+</div>
+<div class="section" id="creating-vertices-without-id-field-in-the-file">
+<h3>Creating vertices without id field in the file.<a class="headerlink" href="#creating-vertices-without-id-field-in-the-file" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Create label <code class="docutils literal notranslate"><span class="pre">country</span></code> and load vertices from csv file. *** Note this CSV file has no id field ***</p></li>
+</ul>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">create_vlabel</span><span class="p">(</span><span class="s1">&#39;agload_test_graph&#39;</span><span class="p">,</span><span class="s1">&#39;Country2&#39;</span><span class="p">);</span>
+<span class="k">SELECT</span> <span class="n">load_labels_from_file</span><span class="p">(</span><span class="s1">&#39;agload_test_graph&#39;</span><span class="p">,</span>
+                             <span class="s1">&#39;Country2&#39;</span><span class="p">,</span>
+                             <span class="s1">&#39;age_load/countries.csv&#39;</span><span class="p">,</span> 
+                             <span class="k">false</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Create label <code class="docutils literal notranslate"><span class="pre">City</span></code> and load vertices from csv file. *** Note this CSV file has id field ***</p></li>
+</ul>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">create_vlabel</span><span class="p">(</span><span class="s1">&#39;agload_test_graph&#39;</span><span class="p">,</span><span class="s1">&#39;City2&#39;</span><span class="p">);</span>
+<span class="k">SELECT</span> <span class="n">load_labels_from_file</span><span class="p">(</span><span class="s1">&#39;agload_test_graph&#39;</span><span class="p">,</span>
+                             <span class="s1">&#39;City2&#39;</span><span class="p">,</span>
+                             <span class="s1">&#39;age_load/cities.csv&#39;</span><span class="p">,</span> 
+                             <span class="k">false</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>check if the graph has been loaded properly and perform difference analysis between ids created automatically and picked from the files.</p></li>
+<li><p>labels <code class="docutils literal notranslate"><span class="pre">country</span></code> and <code class="docutils literal notranslate"><span class="pre">city</span></code> were created with id field in the file</p></li>
+<li><p>labels <code class="docutils literal notranslate"><span class="pre">country2</span></code> and <code class="docutils literal notranslate"><span class="pre">city2</span></code> were created with no id field in the file.</p></li>
+</ul>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span>SELECT COUNT(*) FROM agload_test_graph.&quot;Country2&quot;;
+SELECT COUNT(*) FROM agload_test_graph.&quot;City2&quot;;
+
+SELECT id FROM agload_test_graph.&quot;Country&quot; LIMIT 10;
+SELECT id FROM agload_test_graph.&quot;Country2&quot; LIMIT 10;
+
+SELECT * FROM cypher(&#39;agload_test_graph&#39;, $$MATCH(n:Country {iso2 : &#39;BE&#39;})
+    RETURN id(n), n.name, n.iso2 $$) as (&quot;id(n)&quot; agtype, &quot;n.name&quot; agtype, &quot;n.iso2&quot; agtype);
+SELECT * FROM cypher(&#39;agload_test_graph&#39;, $$MATCH(n:Country2 {iso2 : &#39;BE&#39;})
+    RETURN id(n), n.name, n.iso2 $$) as (&quot;id(n)&quot; agtype, &quot;n.name&quot; agtype, &quot;n.iso2&quot; agtype);
+
+SELECT * FROM cypher(&#39;agload_test_graph&#39;, $$MATCH(n:Country {iso2 : &#39;AT&#39;})
+    RETURN id(n), n.name, n.iso2 $$) as (&quot;id(n)&quot; agtype, &quot;n.name&quot; agtype, &quot;n.iso2&quot; agtype);
+SELECT * FROM cypher(&#39;agload_test_graph&#39;, $$MATCH(n:Country2 {iso2 : &#39;AT&#39;})
+    RETURN id(n), n.name, n.iso2 $$) as (&quot;id(n)&quot; agtype, &quot;n.name&quot; agtype, &quot;n.iso2&quot; agtype);
+
+SELECT drop_graph(&#39;agload_test_graph&#39;, true);
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../clauses/match.html" class="btn btn-neutral float-right" title="MATCH" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="aggregation.html" class="btn btn-neutral float-left" title="Aggregation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Apache AGE.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: HEAD
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      <dd><a href="agload.html">HEAD</a></dd>
+      <dd><a href="../../master/index.html">master</a></dd>
+      <dd><a href="../../v0.6.0/index.html">v0.6.0</a></dd>
+    </dl>
+  </div>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
