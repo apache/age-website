@@ -5,11 +5,7 @@ import * as styles from './styles/ProjectList.module.scss';
 // component
 import ProjectDetail from './ProjectDetail';
 import { Spin } from 'antd';
-<<<<<<< HEAD
-import PerfectScrollbar from 'react-perfect-scrollbar'
-=======
 import PerfectScrollbar from 'react-perfect-scrollbar';
->>>>>>> dc69bcac756793c261388774daf4baed19da6e1f
 import 'react-perfect-scrollbar/dist/css/styles.css';
 
 const ProjectList = ({ mode }) => {
