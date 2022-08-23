@@ -31,7 +31,7 @@ const ProjectDetail = (props) => {
           <p class={styles.desc}>{project.shortDescription}</p>
         </div>
         <a class={styles.link} href={project.url} target="_blank">
-          View Detail
+          View Details
         </a>
       </div>
     );

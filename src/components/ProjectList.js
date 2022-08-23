@@ -5,6 +5,8 @@ import * as styles from './styles/ProjectList.module.scss';
 // component
 import ProjectDetail from './ProjectDetail';
 import { Spin } from 'antd';
+import PerfectScrollbar from 'react-perfect-scrollbar'
+import 'react-perfect-scrollbar/dist/css/styles.css';
 
 const ProjectList = ({ mode }) => {
   const [projects, setProjects] = useState([]);
@@ -37,13 +39,15 @@ const ProjectList = ({ mode }) => {
           <Spin></Spin>
         </p>
       ) : (
-        <ul className={styles.cardRoot}>
-          {projects?.map((item) => (
-            <li>
-              <ProjectDetail project={item.project} mode="card" />
-            </li>
-          ))}
-        </ul>
+        <PerfectScrollbar  >
+          <ul className={styles.cardRoot}>
+            {projects?.map((item) => (
+              <li>
+                <ProjectDetail project={item.project} mode="card" />
+              </li>
+            ))}
+          </ul>
+        </PerfectScrollbar>
       )}
       {isAddLoading ? (
         <p style={{ textAlign: 'center' }}>
@@ -52,13 +56,18 @@ const ProjectList = ({ mode }) => {
       ) : (
         <></>
       )}
-      <p style={{ textAlign: 'center' }}>
-        {pageInfo?.hasNextPage ? (
-          <button className={styles.MoreBtn} onClick={() => moreProject()}>More</button>
-        ) : (
-          <></>
-        )}
-      </p>
+      <ul className={styles.buttonGroup}>
+        <p style={{ textAlign: 'center' }}>
+          {pageInfo?.hasNextPage ? (
+            <button className={styles.MoreBtn} onClick={() => moreProject()}>More</button>
+          ) : (
+            <></>
+          )}
+        </p>
+        <p style={{ textAlign: 'center' }}>
+          <button className={styles.MoreBtn} >Guideline</button>
+        </p>
+      </ul>
     </>
   );
 };

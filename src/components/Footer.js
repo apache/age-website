@@ -158,9 +158,9 @@ const Footer = class extends React.Component {
             </a>
           </div>
           <p>
-            Copyright © AgeDB, Inc. 2021-2022. Apache, Apache AGE, AGE, and
-            associated open source project names are trademarks of the Apache
-            Software Foundation
+            Copyright © 2022 The Apache Software Foundation.<br></br>
+            The Apache Software Foundation Apache AGE, AGE, Apache, the Apache feather, 
+            and the Apache AGE project logo are either registered trademarks or trademarks of the Apache Software Foundation.
           </p>
         </div>
       </footer>
