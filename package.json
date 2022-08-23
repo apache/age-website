@@ -55,14 +55,13 @@
     "gatsby"
   ],
   "license": "(MIT OR Apache-2.0)",
-  "homepage": "https://shinhanbyeol.github.io/age-community",
   "main": "n/a",
   "scripts": {
     "clean": "gatsby clean",
     "start": "yarn run develop",
     "build": "yarn run clean && gatsby build",
     "develop": "yarn run clean && gatsby develop",
-    "deploy": "yarn run clean && gatsby build --prefix-paths && gh-pages -d public -b asf-site-new",
+    "deploy": "yarn run clean && gatsby build --prefix-paths && cp .asf.yaml ./public  && gh-pages -d public -b asf-staging",
     "serve": "gatsby serve -p 80",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
     "test": "echo \"Error: no test specified\" && exit 1"
