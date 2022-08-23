@@ -1,7 +1,7 @@
 backend:
   name: github
-  repo: shinhanbyeol/age-community
-  branch: static
+  repo: apache/age-website
+  branch: new-web
   commit_messages:
     create: "Create {{collection}} “{{slug}}”"
     update: "Update {{collection}} “{{slug}}”"
