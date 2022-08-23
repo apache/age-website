@@ -18,6 +18,21 @@ import * as styles from './styles/Layout.module.scss';
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();
+
+  const injectGA = () => {
+
+    if (typeof window == 'undefined') {
+      return;
+    }
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      window.dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+  
+    gtag('config', 'G-VPCE2QF63F');
+  };
+
   return (
     <MainContext.Consumer>
       {(mainContex) => (
@@ -26,7 +41,11 @@ const TemplateWrapper = ({ children }) => {
             <html lang="en" />
             <title>{title}</title>
             <meta name="description" content={description} />
-
+            {/* Global site tag (gtag.js) - Google Analytics */}
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-VPCE2QF63F" />
+            <script>
+                {injectGA()}
+            </script>
             <link
               rel="apple-touch-icon"
               sizes="180x180"

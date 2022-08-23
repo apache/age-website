@@ -34,11 +34,13 @@ const ProjectList = ({ mode }) => {
 
   return (
     <>
+
       {isLoading ? (
         <p style={{ textAlign: 'center' }}>
           <Spin></Spin>
         </p>
       ) : (
+
         <PerfectScrollbar  >
           <ul className={styles.cardRoot}>
             {projects?.map((item) => (
@@ -48,6 +50,7 @@ const ProjectList = ({ mode }) => {
             ))}
           </ul>
         </PerfectScrollbar>
+
       )}
       {isAddLoading ? (
         <p style={{ textAlign: 'center' }}>
@@ -56,18 +59,28 @@ const ProjectList = ({ mode }) => {
       ) : (
         <></>
       )}
-      <ul className={styles.buttonGroup}>
-        <p style={{ textAlign: 'center' }}>
-          {pageInfo?.hasNextPage ? (
-            <button className={styles.MoreBtn} onClick={() => moreProject()}>More</button>
-          ) : (
-            <></>
-          )}
-        </p>
-        <p style={{ textAlign: 'center' }}>
+    <ul className={styles.buttonGroup}>
+      <p style={{ textAlign: 'center' }}>
+        {/* {pageInfo?.hasNextPage ? (
+          <button className={styles.MoreBtn} onClick={() => moreProject()}>More</button>
+        ) : (
+          <></>
+        )} */}
+        {
+          (() => {
+            if (pageInfo?.hasNextPage && projects.length < 16) 
+              return (<button className={styles.MoreBtn} onClick={() => moreProject()}>More</button>);
+            else if (projects.length == 16) 
+              return (<button className={styles.MoreBtn} onClick={() => window.location.href = "https://github.com/shinhanbyeol?tab=projects&type=new" }>Projects</button>);
+            else 
+              return (<></>);
+          })()
+        }
+      </p>
+      <p style={{ textAlign: 'center' }}>
           <button className={styles.MoreBtn} >Guideline</button>
         </p>
-      </ul>
+    </ul>
     </>
   );
 };
