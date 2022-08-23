@@ -76,7 +76,7 @@ const Navbar = () => {
             </Menu.SubMenu>
             <Menu.SubMenu title="Documentation">
               <Menu.Item>
-                <a href="/age-manual/index.html" className="navbar-item" >
+                <a href="/docs/" className="navbar-item" >
                   Apache AGE Manual
                 </a>
               </Menu.Item>
