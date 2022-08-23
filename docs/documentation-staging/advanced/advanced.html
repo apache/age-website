@@ -1,0 +1,556 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Using Cypher in a CTE Expression &mdash; Apache AGE master documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Prepared Statements" href="prepared_statements.html" />
+    <link rel="prev" title="Overview" href="advanced_overview.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Apache AGE
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/setup.html">Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/graphs.html">Graphs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/cypher.html">The AGE Cypher Query Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/types.html">Data Types - An Introduction to agtype</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/comparability.html">Comparability, Equality, Orderability and Equivalence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/operators.html">Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/aggregation.html">Aggregation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/agload.html">Importing graph from files</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Clauses</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/match.html">MATCH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/with.html">WITH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/return.html">RETURN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/order_by.html">ORDER BY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/skip.html">SKIP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/limit.html">LIMIT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/create.html">CREATE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/delete.html">DELETE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/set.html">SET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/remove.html">REMOVE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/merge.html">MERGE</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Functions</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../functions/predicate_functions.html">Predicate Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/scalar_functions.html">Scalar Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/list_functions.html">List Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/numeric_functions.html">Numeric Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/logarithmic_functions.html">Logarithmic Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/trigonometric_functions.html">Trigonometric Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/string_functions.html">String Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/aggregate_functions.html">Aggregation Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/user_functions.html">User defined functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">AGE Beyond Cypher</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="advanced_overview.html">Overview</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Using Cypher in a CTE Expression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#using-cypher-in-a-join-expression">Using Cypher in a Join expression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#cypher-in-sql-expressions">Cypher in SQL expressions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#using-cypher-with">Using Cypher with ‘=’</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#working-with-postgres-s-in-clause">Working with Postgres’s IN Clause</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#working-with-postgres-exists-clause">Working with Postgres EXISTS Clause</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#querying-multiple-graphs">Querying Multiple Graphs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="prepared_statements.html">Prepared Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plpgsql.html">PL/pgSQL Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sql_in_cypher.html">SQL In Cypher</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/run_tests.html">Run the test suite</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Apache AGE</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Using Cypher in a CTE Expression</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/apache/incubator-age-website/blob/master/docs/advanced/advanced.md" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="tex2jax_ignore mathjax_ignore section" id="using-cypher-in-a-cte-expression">
+<h1>Using Cypher in a CTE Expression<a class="headerlink" href="#using-cypher-in-a-cte-expression" title="Permalink to this headline">¶</a></h1>
+<p>There are no restrictions to using Cypher with CTEs (<a class="reference external" href="https://www.postgresql.org/docs/current/queries-with.html">Common Table Expressions</a>).</p>
+<p>Query:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>WITH graph_query as (
+    SELECT *
+        FROM cypher(&#39;graph_name&#39;, $$
+        MATCH (n)
+        RETURN n.name, n.age
+    $$) as (name agtype, age agtype)
+)
+SELECT * FROM graph_query;
+</pre></div>
+</div>
+<p>Results:</p>
+<table>
+  <tr>
+   <td><strong>name</strong>
+   </td>
+   <td><strong>age</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>‘Andres’
+   </td>
+   <td>36
+   </td>
+  </tr>
+  <tr>
+   <td>‘Tobias’
+   </td>
+   <td>25
+   </td>
+  </tr>
+  <tr>
+   <td>‘Peter’
+   </td>
+   <td>35
+   </td>
+  </tr>
+  <tr>
+   <td colspan="2" >3 row(s) returned
+   </td>
+  </tr>
+</table>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="using-cypher-in-a-join-expression">
+<h1>Using Cypher in a Join expression<a class="headerlink" href="#using-cypher-in-a-join-expression" title="Permalink to this headline">¶</a></h1>
+<p>A Cypher query can be part of a JOIN clause.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Developers</span> <span class="n">Note</span>
+<span class="n">Cypher</span> <span class="n">queries</span> <span class="n">using</span> <span class="n">the</span> <span class="n">CREATE</span><span class="p">,</span> <span class="n">SET</span><span class="p">,</span> <span class="n">REMOVE</span> <span class="n">clauses</span> <span class="n">cannot</span> <span class="n">be</span> <span class="n">used</span> <span class="ow">in</span> <span class="n">sql</span> <span class="n">queries</span> <span class="k">with</span> <span class="n">Joins</span><span class="p">,</span> <span class="k">as</span> <span class="n">they</span> <span class="n">affect</span> <span class="n">the</span> <span class="n">Postgres</span> <span class="n">transaction</span> <span class="n">system</span><span class="o">.</span> <span class="n">One</span> <span class="n">possible</span> <span class="n">solution</span> <span class="ow">is</span> <span class="n">to</span> <span class="n">protect</span> <span class="n">the</span> <span class="n">query</span> <span class="k">with</span> <span class="n">CTEs</span><span class="o">.</span> <span class="n">See</span> <span class="n">the</span> <span class="n">subsection</span> <span class="n">Using</span> <span class="n">CTEs</span> <span class="k">with</span> <span class="n">CREATE</span><span class="p">,</span> <span class="n">REMOVE</span><span class="p">,</span> <span class="ow">and</span> <span class="n">SET</span> <span class="k">for</span> <span class="n">a</span> <span class="n">solution</span> <span class="n">to</span> <span class="n">this</span> <span class="n">problem</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Query:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT id, 
+    graph_query.name = t.name as names_match,
+    graph_query.age = t.age as ages_match
+FROM schema_name.sql_person AS t
+JOIN cypher(&#39;graph_name&#39;, $$
+        MATCH (n:Person)
+        RETURN n.name, n.age, id(n)
+$$) as graph_query(name agtype, age agtype, id agtype)
+ON t.person_id = graph_query.id
+</pre></div>
+</div>
+<p>Results:</p>
+<table>
+  <tr>
+   <td><strong>id</strong>
+   </td>
+   <td><strong>names_match</strong>
+   </td>
+   <td><strong>ages_match</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>1
+   </td>
+   <td>True
+   </td>
+   <td>True
+   </td>
+  </tr>
+  <tr>
+   <td>2
+   </td>
+   <td>False
+   </td>
+   <td>True
+   </td>
+  </tr>
+  <tr>
+   <td>3
+   </td>
+   <td>True
+   </td>
+   <td>False
+   </td>
+  </tr>
+  <tr>
+   <td colspan="3" >3 row(s) returned
+   </td>
+  </tr>
+</table>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="cypher-in-sql-expressions">
+<h1>Cypher in SQL expressions<a class="headerlink" href="#cypher-in-sql-expressions" title="Permalink to this headline">¶</a></h1>
+<p>Cypher cannot be used in an expression, the query must exists in the FROM clause of a query. However, if the cypher query is placed in a Subquery, it will behave as any SQL style query.</p>
+<div class="section" id="using-cypher-with">
+<h2>Using Cypher with ‘=’<a class="headerlink" href="#using-cypher-with" title="Permalink to this headline">¶</a></h2>
+<p>When writing a cypher query that is known to return 1 column and 1 row, the ‘=’ comparison operator may be used.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT t.name FROM schema_name.sql_person AS t
+where t.name = (
+    SELECT a
+    FROM cypher(&#39;graph_name&#39;, $$
+    	  MATCH (v)
+        RETURN v.name
+    $$) as (name varchar(50))
+    ORDER BY name
+    LIMIT 1);
+</pre></div>
+</div>
+<p>Results:</p>
+<table>
+  <tr>
+   <td><strong>name</strong>
+   </td>
+   <td><strong>age</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>‘Andres’
+   </td>
+   <td>36
+   </td>
+  </tr>
+  <tr>
+   <td colspan="2" >3 row(s) returned
+   </td>
+  </tr>
+</table>
+</div>
+<div class="section" id="working-with-postgres-s-in-clause">
+<h2>Working with Postgres’s IN Clause<a class="headerlink" href="#working-with-postgres-s-in-clause" title="Permalink to this headline">¶</a></h2>
+<p>When writing a cypher query that is known to return 1 column, but may have multiple rows. The IN operator may be used.</p>
+<p>Query:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT t.name, t.age FROM schema_name.sql_person as t 
+where t.name in (
+    SELECT *
+    FROM cypher(&#39;graph_name&#39;, $$
+        MATCH (v:Person)
+        RETURN v.name 
+    $$) as (a agtype));
+</pre></div>
+</div>
+<p>Results:</p>
+<table>
+  <tr>
+   <td><strong>name</strong>
+   </td>
+   <td><strong>age</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>‘Andres’
+   </td>
+   <td>36
+   </td>
+  </tr>
+  <tr>
+   <td>‘Tobias’
+   </td>
+   <td>25
+   </td>
+  </tr>
+  <tr>
+   <td>‘Peter’
+   </td>
+   <td>35
+   </td>
+  </tr>
+  <tr>
+   <td colspan="2" >3 row(s) returned
+   </td>
+  </tr>
+</table>
+</div>
+<div class="section" id="working-with-postgres-exists-clause">
+<h2>Working with Postgres EXISTS Clause<a class="headerlink" href="#working-with-postgres-exists-clause" title="Permalink to this headline">¶</a></h2>
+<p>When writing a cypher query that may have more than 1 column and row returned. The EXISTS operator may be used.</p>
+<p>Query:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT t.name, t.age
+FROM schema_name.sql_person as t
+WHERE EXISTS (
+    SELECT *
+    FROM cypher(&#39;graph_name&#39;, $$
+	  MATCH (v:Person)
+        RETURN v.name, v.age
+    $$) as (name agtype, age agtype)
+    WHERE name = t.name AND age = t.age
+);
+</pre></div>
+</div>
+<p>Results:</p>
+<table>
+  <tr>
+   <td><strong>name</strong>
+   </td>
+   <td><strong>age</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>‘Andres’
+   </td>
+   <td>36
+   </td>
+  </tr>
+  <tr>
+   <td>‘Tobias’
+   </td>
+   <td>25
+   </td>
+  </tr>
+  <tr>
+   <td colspan="2" >3 row(s) returned
+   </td>
+  </tr>
+</table>
+</div>
+<div class="section" id="querying-multiple-graphs">
+<h2>Querying Multiple Graphs<a class="headerlink" href="#querying-multiple-graphs" title="Permalink to this headline">¶</a></h2>
+<p>There is no restriction to the number of graphs an SQL statement can query. Allowing users to query more than one graph at the same time.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT graph_1.name, graph_1.age, graph_2.license_number
+FROM cypher(&#39;graph_1&#39;, $$
+    MATCH (v:Person)
+    RETURN v.name, v.age
+$$) as graph_1(col_1 agtype, col_2 agtype, col_3 agtype)
+JOIN cypher(&#39;graph_2&#39;, $$
+    MATCH (v:Doctor)
+    RETURN v.name, v.license_number
+$$) as graph_2(name agtype, license_number agtype)
+ON graph_1.name = graph_2.name
+</pre></div>
+</div>
+<p>Results:</p>
+<table>
+  <tr>
+   <td><strong>name</strong>
+   </td>
+   <td><strong>age</strong>
+   </td>
+   <td><strong>license_number</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>‘Andres’
+   </td>
+   <td>36
+   </td>
+   <td>1234567890
+   </td>
+  </tr>
+  <tr>
+   <td colspan="3" >3 row(s) returned
+   </td>
+  </tr>
+</table>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="prepared_statements.html" class="btn btn-neutral float-right" title="Prepared Statements" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="advanced_overview.html" class="btn btn-neutral float-left" title="Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Apache AGE.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: documentation-staging
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      <dd><a href="advanced.html">documentation-staging</a></dd>
+      <dd><a href="../../master/index.html">master</a></dd>
+      <dd><a href="../../new-web/index.html">new-web</a></dd>
+      <dd><a href="../../v0.6.0/index.html">v0.6.0</a></dd>
+    </dl>
+  </div>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
