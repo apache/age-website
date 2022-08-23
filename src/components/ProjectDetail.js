@@ -24,11 +24,11 @@ const ProjectDetail = (props) => {
     return (
       <div className={styles.root}>
         <div>
-          <p class={styles.update}>
+          <p className={styles.update}>
             update on {projectDateMaker(project.updatedAt)}
           </p>
-          <p class={styles.title}>{project.title}</p>
-          <p class={styles.desc}>{project.shortDescription}</p>
+          <p className={styles.title}>{project.title}</p>
+          <p className={styles.desc}>{project.shortDescription}</p>
         </div>
         <a class={styles.link} href={project.url} target="_blank">
           View Details

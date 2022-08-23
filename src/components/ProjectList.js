@@ -5,7 +5,11 @@ import * as styles from './styles/ProjectList.module.scss';
 // component
 import ProjectDetail from './ProjectDetail';
 import { Spin } from 'antd';
+<<<<<<< HEAD
 import PerfectScrollbar from 'react-perfect-scrollbar'
+=======
+import PerfectScrollbar from 'react-perfect-scrollbar';
+>>>>>>> dc69bcac756793c261388774daf4baed19da6e1f
 import 'react-perfect-scrollbar/dist/css/styles.css';
 
 const ProjectList = ({ mode }) => {
@@ -39,7 +43,7 @@ const ProjectList = ({ mode }) => {
           <Spin></Spin>
         </p>
       ) : (
-        <PerfectScrollbar  >
+        <PerfectScrollbar>
           <ul className={styles.cardRoot}>
             {projects?.map((item) => (
               <li>
@@ -57,15 +61,34 @@ const ProjectList = ({ mode }) => {
         <></>
       )}
       <ul className={styles.buttonGroup}>
-        <p style={{ textAlign: 'center' }}>
-          {pageInfo?.hasNextPage ? (
-            <button className={styles.MoreBtn} onClick={() => moreProject()}>More</button>
-          ) : (
-            <></>
-          )}
+        <p style={{ textAlign: 'center' }}>        
+          {(() => {
+            if (pageInfo?.hasNextPage && projects.length < 16)
+              return (
+                <button
+                  className={styles.MoreBtn}
+                  onClick={() => moreProject()}
+                >
+                  More
+                </button>
+              );
+            else if (projects.length == 16)
+              return (
+                <button
+                  className={styles.MoreBtn}
+                  onClick={() =>
+                    (window.location.href =
+                      'https://github.com/shinhanbyeol?tab=projects&type=new')
+                  }
+                >
+                  Projects
+                </button>
+              );
+            else return <></>;
+          })()}
         </p>
         <p style={{ textAlign: 'center' }}>
-          <button className={styles.MoreBtn} >Guideline</button>
+          <button className={styles.MoreBtn}>Guideline</button>
         </p>
       </ul>
     </>
