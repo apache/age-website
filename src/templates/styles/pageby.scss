@@ -57,7 +57,23 @@
   grid-template-columns: 1fr 4fr;
   align-items: center;
   grid-column-gap: 5rem;
-  grid-row-gap: 10rem;
+  grid-row-gap: 6rem;
+  border: 1px solid black;
+  border-radius: 2rem;
+  padding: 5rem;
+}   
+.JoinUsAGE p {
+  padding-left: 1rem;
+}
+.subTitle{
+  display: flex; 
+  align-content: center; 
+  justify-content: center; 
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  position: relative;
+  top: -3rem;
 }
 
 //http://{domain}/contribution/how
