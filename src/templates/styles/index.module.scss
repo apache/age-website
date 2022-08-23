@@ -24,6 +24,7 @@
         text-align: center;
         font-size: 1.25rem;
         color: #fff;
+        margin-bottom: 5rem;
       }
       // youtube
       .Youtube {
@@ -43,10 +44,11 @@
       // Subscribe Link
       .SubscribeLink {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-row-gap: 2.5rem;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-row-gap: 1rem;
+        grid-column-gap: 2.5rem;
         justify-items: center;
-        max-width: 36rem;
+        max-width: 50rem;
         margin: 0 auto;
         a {
           display: flex;
@@ -68,10 +70,18 @@
           color: #fff;
         }
         a:nth-child(3) {
+          background-color: #C4A3FD;
+          color: #fff;
+        }
+        a:nth-child(4) {
           background-color: #fff;
           color: $secondColor;
         }
-        a:nth-child(4) {
+        a:nth-child(5) {
+          background-color: #fff;
+          color: $secondColor;
+        }
+        a:nth-child(6) {
           background-color: #fff;
           color: $secondColor;
         }
