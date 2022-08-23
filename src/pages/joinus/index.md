@@ -43,7 +43,7 @@ Join the official Apache AGE user and developer mailing lists. You can get user 
 
 <a href="user@age.apache.org">user@age.apache.org</a> is for usage questions, help, and announcements.
 <a href="dev@age.apache.org">dev@age.apache.org</a> is for people who want to contribute code to AGE.
-<a href="commits-subscribe@age.apache.org">commits-subscribe@age.apache.org</a> is for people who want to contribute code to AGE.
+<a href="commits-subscribe@age.apache.org">commits-subscribe@age.apache.org</a> is for people to follow commits to the project.
 </div>
 
 <div>
