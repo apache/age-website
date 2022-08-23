@@ -39,7 +39,8 @@
     height: 64px;
     margin-bottom: 44px;
     white-space: normal;
-    overflow-y: scroll;
+    overflow-y: auto;
+    word-break: break-word;
   }
   .link {
     display: flex;

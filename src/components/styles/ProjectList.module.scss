@@ -13,7 +13,8 @@
   //1644 * 766
   max-width: 102.75rem;
   max-height: 47.875rem;
-  overflow-y: scroll;
+  margin-bottom: 5rem;
+  // overflow-y: scroll;
 }
 .MoreBtn {
   cursor: pointer;
@@ -31,4 +32,14 @@
 .MoreBtn:hover {
   background-color: #fff;
   color: $primayrColor;
+}
+.buttonGroup{
+  display: flex; 
+  flex-direction: row;
+  align-content: center; 
+  justify-content: center; 
+  align-items: center;
+  margin: 0px;
+  padding: 0;
+  column-gap: 2.5rem;
 }
