@@ -1,0 +1,393 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>MERGE &mdash; Apache AGE master documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Predicate Functions" href="../functions/predicate_functions.html" />
+    <link rel="prev" title="REMOVE" href="remove.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Apache AGE
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/setup.html">Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/graphs.html">Graphs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/cypher.html">The AGE Cypher Query Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/types.html">Data Types - An Introduction to agtype</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/comparability.html">Comparability, Equality, Orderability and Equivalence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/operators.html">Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/aggregation.html">Aggregation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/agload.html">Importing graph from files</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Clauses</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="match.html">MATCH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="with.html">WITH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="return.html">RETURN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order_by.html">ORDER BY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skip.html">SKIP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limit.html">LIMIT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="create.html">CREATE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="delete.html">DELETE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="set.html">SET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="remove.html">REMOVE</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">MERGE</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#data-setup">Data Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#merge-nodes">Merge Nodes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#merge-a-node-with-a-label">Merge a Node with a Label</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#merge-single-vertex-with-properties">Merge Single Vertex with Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#merge-a-single-vertex-specifying-both-label-and-property">Merge a Single Vertex Specifying Both Label and Property</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Functions</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../functions/predicate_functions.html">Predicate Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/scalar_functions.html">Scalar Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/list_functions.html">List Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/numeric_functions.html">Numeric Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/logarithmic_functions.html">Logarithmic Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/trigonometric_functions.html">Trigonometric Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/string_functions.html">String Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/aggregate_functions.html">Aggregation Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/user_functions.html">User defined functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">AGE Beyond Cypher</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/advanced_overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/advanced.html">Using Cypher in a CTE Expression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/advanced.html#using-cypher-in-a-join-expression">Using Cypher in a Join expression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/advanced.html#cypher-in-sql-expressions">Cypher in SQL expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/prepared_statements.html">Prepared Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/plpgsql.html">PL/pgSQL Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/sql_in_cypher.html">SQL In Cypher</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/run_tests.html">Run the test suite</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Apache AGE</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>MERGE</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/apache/incubator-age-website/blob/master/docs/clauses/merge.md" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="tex2jax_ignore mathjax_ignore section" id="merge">
+<h1>MERGE<a class="headerlink" href="#merge" title="Permalink to this headline">¶</a></h1>
+<p>The MERGE clause ensures that a pattern exists in the graph. Either the pattern already exists, or it needs to be created.</p>
+<p>MERGE either matches existing nodes, or creates new data. It’s a combination of MATCH and CREATE.</p>
+<p>For example, you can specify that the graph must contain a node for a user with a certain name. If there isn’t a node with the correct name, a new node will be created and its name property set. When using MERGE on full patterns, the behavior is that either the whole pattern matches, or the whole pattern is created. MERGE will not partially use existing patterns. If partial matches are needed, this can be accomplished by splitting a pattern up into multiple MERGE clauses.</p>
+<p>As with MATCH, MERGE can match multiple occurrences of a pattern. If there are multiple matches, they will all be passed on to later stages of the query.</p>
+<div class="section" id="data-setup">
+<h2>Data Setup<a class="headerlink" href="#data-setup" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT * from cypher(&#39;graph_name&#39;, $$
+CREATE (A:Person {name: &quot;Charlie Sheen&quot;, bornIn: &quot;New York&quot;}),
+    (B:Person {name: &quot;Michael Douglas&quot;, bornIn: &quot;New Jersey&quot;}),
+    (C:Person {name: &quot;Rob Reiner&quot;, bornIn: &quot;New York&quot;}),
+    (D:Person {name: &quot;Oliver Stone&quot;, bornIn: &quot;New York&quot;}),
+    (E:Person {name: &quot;Martin Sheen&quot;, bornIn: &quot;Ohio&quot;})
+
+$$) as (result agtype);
+</pre></div>
+</div>
+</div>
+<div class="section" id="merge-nodes">
+<h2>Merge Nodes<a class="headerlink" href="#merge-nodes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="merge-a-node-with-a-label">
+<h3>Merge a Node with a Label<a class="headerlink" href="#merge-a-node-with-a-label" title="Permalink to this headline">¶</a></h3>
+<p>By just specifying a pattern with a single vertex and no labels, all vertices in the graph will be returned.</p>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT * FROM cypher(&#39;graph_name&#39;, $$
+MERGE (v:Critic)
+RETURN v
+$$) as (v agtype);
+</pre></div>
+</div>
+<p>If there exists a vertex with the label ‘Critic’ the vertex will be returns. If the vertex will be created and returned.</p>
+<table>
+  <tr>
+   <td><strong>v</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>{id: 0; label: ‘Critic’: properties:{}}::vertex
+   </td>
+  </tr>
+  <tr>
+   <td>1 row(s) returned
+   </td>
+  </tr>
+</table>
+</div>
+<div class="section" id="merge-single-vertex-with-properties">
+<h3>Merge Single Vertex with Properties<a class="headerlink" href="#merge-single-vertex-with-properties" title="Permalink to this headline">¶</a></h3>
+<p>Merging a vertex node with properties where not all properties match any existing vertex.</p>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT * FROM cypher(&#39;graph_name&#39;, $$
+MERGE (charlie {name: &#39;Charlie Sheen&#39;, age: 10})
+RETURN charlie
+$$) as (v agtype);
+</pre></div>
+</div>
+<p>If there exists a vertex with the label ‘Critic’ the vertex will be returns. If the vertex will be created and returned.</p>
+<table>
+  <tr>
+   <td><strong>v</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>{id: 0; label: ‘Actor’: properties:{name: 'Charlie Sheen', age: 10}}::vertex
+   </td>
+  </tr>
+  <tr>
+   <td>1 row(s) returned
+   </td>
+  </tr>
+</table>
+<p>A new vertex with the name ‘Charlie Sheen’ will be created if not all properties exist with a single vertex. If a vertex does exist that will be returned instead.</p>
+</div>
+<div class="section" id="merge-a-single-vertex-specifying-both-label-and-property">
+<h3>Merge a Single Vertex Specifying Both Label and Property<a class="headerlink" href="#merge-a-single-vertex-specifying-both-label-and-property" title="Permalink to this headline">¶</a></h3>
+<p>Merging a vertex where both label and property constraints match an existing vertex.</p>
+<p>Query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT * FROM cypher(&#39;graph_name&#39;, $$
+MERGE (michael:Person {name: &#39;Michael Douglas&#39;})
+RETURN michael.name, michael.bornIn
+$$) as (Name agtype, BornIn agtype);
+</pre></div>
+</div>
+<p>‘Michael Douglas’ will match the existing vertex and the vertex’s name and bornIn properties returned.</p>
+<table>
+  <tr>
+   <td><strong>Name</strong></td>
+   <td><strong>BornIn</strong></td>
+  </tr>
+  <tr>
+   <td>"Michael Douglas"</td>
+   <td>"New Jersey"</td>
+  </tr>
+  <tr>
+   <td>1 row(s) returned</td>
+  </tr>
+</table>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../functions/predicate_functions.html" class="btn btn-neutral float-right" title="Predicate Functions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="remove.html" class="btn btn-neutral float-left" title="REMOVE" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Apache AGE.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: new-web
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      <dd><a href="../../HEAD/index.html">HEAD</a></dd>
+      <dd><a href="../../documentation-staging/index.html">documentation-staging</a></dd>
+      <dd><a href="../../manual-link/index.html">manual-link</a></dd>
+      <dd><a href="../../master/index.html">master</a></dd>
+      <dd><a href="merge.html">new-web</a></dd>
+      <dd><a href="../../v0.6.0/index.html">v0.6.0</a></dd>
+    </dl>
+  </div>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
