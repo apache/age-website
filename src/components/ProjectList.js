@@ -34,11 +34,13 @@ const ProjectList = ({ mode }) => {
 
   return (
     <>
+
       {isLoading ? (
         <p style={{ textAlign: 'center' }}>
           <Spin></Spin>
         </p>
       ) : (
+
         <PerfectScrollbar>
           <ul className={styles.cardRoot}>
             {projects?.map((item) => (
@@ -48,6 +50,7 @@ const ProjectList = ({ mode }) => {
             ))}
           </ul>
         </PerfectScrollbar>
+
       )}
       {isAddLoading ? (
         <p style={{ textAlign: 'center' }}>
@@ -57,7 +60,7 @@ const ProjectList = ({ mode }) => {
         <></>
       )}
       <ul className={styles.buttonGroup}>
-        <p style={{ textAlign: 'center' }}>        
+        <p style={{ textAlign: 'center' }}>
           {(() => {
             if (pageInfo?.hasNextPage && projects.length < 16)
               return (
@@ -73,8 +76,8 @@ const ProjectList = ({ mode }) => {
                 <button
                   className={styles.MoreBtn}
                   onClick={() =>
-                    (window.location.href =
-                      'https://github.com/shinhanbyeol?tab=projects&type=new')
+                  (window.location.href =
+                    'https://github.com/shinhanbyeol?tab=projects&type=new')
                   }
                 >
                   Projects
