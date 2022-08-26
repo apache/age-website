@@ -57,7 +57,7 @@ const Navbar = () => {
                 </Link>
               </Menu.Item>
               <Menu.Item>
-                <Link className="navbar-item" target='_blank' to="https://www.github.com">
+                <Link className="navbar-item" target='_blank' to="https://github.com/apache/age/projects">
                   AGE Project
                 </Link>
               </Menu.Item>
