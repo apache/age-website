@@ -98,14 +98,14 @@
               width: 100%;
               font: normal normal bold 20px/28px Mark Pro;
               letter-spacing: 0.6px;
-              color: #472E77;
+              color: #eee;
             }
             div:nth-child(n+3):nth-child(-n+4) {
               width: 100%;
               padding: 0% 10%;
               font: normal normal normal 16px/20px Mark Pro;
               letter-spacing: 0px;
-              color: #472E77;
+              color: #eee;
             }
           }
           
@@ -162,10 +162,10 @@
           text-align: center;
           width: 12.5rem;
           height: 2.5rem;
-          font: $h4;
+          font: normal normal 500 1.125rem Mark Pro;
           border: solid 2px #fff;
           border-radius: 40px;
-          margin-bottom: 3rem;
+          margin-bottom: 1rem;
         }
         a:nth-child(1) {
           background-color: #896AC5;
