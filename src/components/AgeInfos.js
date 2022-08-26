@@ -18,8 +18,9 @@ const Ageinfos = () => {
         {isLoading ? <Spin /> : <></>}
         <span className={styles.Count}>{ageInfo.startCount}</span>
         <br />
-        <span className={styles.Label}>Star</span>
+        <span className={styles.Label}>✭ Star</span>
       </div>
+      <div></div>
       <div>
         {isLoading ? <Spin /> : <></>}
         <span className={styles.Count}>{ageInfo.memberCount} +</span>

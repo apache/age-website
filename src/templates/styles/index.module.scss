@@ -11,6 +11,107 @@
   section {
     width: 100%;
     padding: 3.75rem 1rem !important;
+    .topContent{
+      display: flex; 
+      align-content: center; 
+      justify-content: center; 
+      align-items: center;
+      position: relative;
+      flex-direction: column;
+      top: -7rem;
+      padding: 0 10%;
+      .card {
+        display: flex; 
+        align-content: center; 
+        justify-content: space-around; 
+        align-items: center;
+        position: relative;
+        flex-direction: row;
+        border: 0.0625rem solid white;
+        background-color: white;
+        height: max-content;
+        border-radius: 10px;
+        width: 100%;
+        flex-wrap: wrap;
+        text-align: left;
+        padding: 2rem;
+
+        .cardContent {
+          padding: 3rem 3rem 2rem 0;
+          color: black;
+          font: normal normal normal 20px/30px Mark Pro;
+
+        }
+        .cardLeft {
+          font: normal normal 500 30px/59px Mark Pro;
+          color: #913EF2;
+          text-transform: capitalize;
+          flex: 1 1 40%;
+          padding: 0 0 0 3rem;
+
+        }
+        .verticalLine{
+          border-left: 1px solid #d1d1d1;
+          height: 19rem;
+          position: relative;
+          top: 3rem;
+        }
+        .cardRight {
+          font: normal normal 500 30px/59px Mark Pro;
+          color: #913EF2;
+          text-transform: capitalize;
+          flex: 1 1 40%;
+          padding: 0 0 0 3rem;
+        }
+      }
+      .keyFeatures {
+        width: 100%;
+        h2 {
+          font: $h1;
+          color: #fff;
+          text-align: center;
+          margin: 5rem 0;
+        }
+        .keyFeaturesImgContainer {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+          grid-row-gap: 1rem;
+          justify-items: center;
+          margin: 0 auto;
+          width: auto;
+          grid-template-columns: repeat(auto-fill, minmax(25%, auto));
+          @media screen and (max-width: 80rem) {
+            grid-template-columns: repeat(auto-fill, minmax(50%, auto));
+          }
+
+          div {
+            text-align: center;
+            img {
+              width: 13.5rem;
+              height: 13.5rem;
+              padding: 10%;
+            }
+            div {
+              padding: 5% 0;
+            }
+            div:nth-child(n+1):nth-child(-n+2) {
+              width: 100%;
+              font: normal normal bold 20px/28px Mark Pro;
+              letter-spacing: 0.6px;
+              color: #472E77;
+            }
+            div:nth-child(n+3):nth-child(-n+4) {
+              width: 100%;
+              padding: 0% 10%;
+              font: normal normal normal 16px/20px Mark Pro;
+              letter-spacing: 0px;
+              color: #472E77;
+            }
+          }
+          
+        }
+      }
+    }
     .content {
       width: 100%;
       max-width: $landingConWidth;
@@ -46,31 +147,36 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-row-gap: 1rem;
-        grid-column-gap: 6.25rem;
         justify-items: center;
-        max-width: 50rem;
         margin: 0 auto;
+        width: auto;
+        grid-template-columns: repeat(auto-fill, minmax(33%, auto));
+        padding: 0px 10%;
+        @media screen and (max-width: 48rem) {
+          grid-template-columns: repeat(auto-fill, minmax(100%, auto));
+        }
         a {
           display: flex;
           align-items: center;
           justify-content: center;
           text-align: center;
           width: 12.5rem;
-          height: 3.75rem;
+          height: 2.5rem;
           font: $h4;
           border: solid 2px #fff;
           border-radius: 40px;
+          margin-bottom: 3rem;
         }
         a:nth-child(1) {
-          background-color: #C4A3FD;
+          background-color: #896AC5;
           color: #fff;
         }
         a:nth-child(2) {
-          background-color: #C4A3FD;
-          color: #fff;
+          background-color: #fff;
+          color: $secondColor;
         }
         a:nth-child(3) {
-          background-color: #C4A3FD;
+          background-color: #896AC5;
           color: #fff;
         }
         a:nth-child(4) {
@@ -78,17 +184,22 @@
           color: $secondColor;
         }
         a:nth-child(5) {
-          background-color: #fff;
-          color: $secondColor;
+          background-color: #896AC5;
+          color: #fff;
         }
         a:nth-child(6) {
           background-color: #fff;
           color: $secondColor;
         }
-        a:hover {
-          background-color: $primayrColor;
-          color: #fff;
+        a:nth-child(odd):hover {
+          background-color: white;
+          color: black;
         }
+        a:nth-child(even):hover {
+          background-color: #472E77;
+          color: #b28af8;
+        }
+        
       }
     }
     padding: 3.375rem 0rem;
@@ -98,6 +209,9 @@
   }
   section:nth-child(even) {
     background-color: $secondColor;
+  }
+  section:nth-last-child(1) {
+    background: linear-gradient(#913EF2, #7d43bd);
   }
 }
 
@@ -115,6 +229,7 @@
     margin: 0 auto;
     padding-top: 6.25rem;
     padding-bottom: 4.375rem;
+    padding: 2%;
     white-space: wrap;
     h1 {
       span {
@@ -126,13 +241,13 @@
     }
     div {
       margin-top: 0.875rem;
-      margin-bottom: 3.5rem;
+      margin-bottom: 8rem;
       font-size: 1.25rem;
       color: #fff;
       max-width: 43.125rem;
     }
     a {
-      font: $h4;
+      font: $h5;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -149,6 +264,7 @@
       opacity: 1;
       background-color: $secondColor;
       color: #fff;
+      height: 2.5rem;
     }
     a:hover {
       background-color: $primayrColor;

@@ -19,21 +19,41 @@
     padding: 0.5rem;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
     height: 4.875rem;
     border-top: solid 1px #70707050;
     text-align: right;
-    font: $h4;
+    font: $h5;
     a {
       text-decoration: underline !important;
       padding: 0rem 1rem;
     }
   }
   .Container {
-    padding: 0 2.5rem;
+    padding: 0rem;
     height: 514px;
     overflow-y: scroll;
     background-color: #f7f3fe;
+    .joinButtonContainer {
+      display: flex;
+      justify-content: center;
+      margin: 2rem;
+      height: 2.5rem;
+      
+      /* UI Properties */
+    
+      .joinButton {
+        background: #ddc7ff;
+        cursor: pointer;
+        border-radius: 40px;
+        opacity: 1;
+        font: $h6;
+        color: #873df2;
+        border: none;
+        padding: 0 2rem;
+
+      }
+    }
   }
 }
 .Item {

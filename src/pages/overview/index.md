@@ -3,44 +3,29 @@ templateKey: overview-page
 path: /about
 bannerImg: /img/banner-overview.jpg
 bannerContents: "# AGE (A Graph Extension)"
-title: What is AGE?
+title: What is Apache AGE®?
 subcon: >-
   <br /><br />
 
 
-  # Features
-
-
-  * AGE is currently being developed for the PostgreSQL 11 release and will support PostgreSQL 12 and 13 in Q3 and PostgreSQL 14 in Q4 2022. 
-
-  * AGE supports the openCypher graph query language and label hierarchy. 
-
-  * AGE enables querying multiple graphs at the same time. This will allow a user to query two or more graphs at once with cypher, decide how to merge them, and get the desired query outputs. 
-
-  * AGE will be enhanced with an aim to support all of the key features of AgensGraph (PostgreSQL fork extended with graph DB functionality).
-
-
-  <div class="OverviewLink">
-
-
-  [View Code](https://github.com/apache/age) [Download](/download)
-
-
-  </div>
-
-
   <br /><br />
 
 
-  # AGE Viewer
+  # What is Apachge AGE® Viewer?
 
 
-  Apache AGE® Viewer is a graph visualization tool, for Apache AGE.
+  Apache AGE® Viewer is a user interface for Apache AGE® to provide visualization and exploration of data. 
 
 
-  * This is a visualization tool. After AGE Extension Installation You can use this tool to use the visualization features. 
+  It provides a simple web visualization tool for users to enter complex graph queries and explore the results in graph and table forms. 
 
-  * Follow the instructions on the link to run it. Under Connect to Database, select database type as "Apache AGE"
+
+  Apache AGE® Viewer is enhanced to proceed with large graph data and discover the insights through various graph algorithms. 
+
+
+  Apache AGE® Viewer will become a graph data administration and development platform for Apache AGE® to support multiple relational databases.
+
+
 
 
   <div class="OverviewLink">
@@ -50,6 +35,10 @@ subcon: >-
 
 
   </div>
+
+
+  # Key Features
+
 ---
 **Apache AGE®** is a PostgreSQL extension that provides graph database functionality. The goal of Apache AGE is to enable users of Postgres to use graph query modeling in unison with Postgres’ existing relational model.
 

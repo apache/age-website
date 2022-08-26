@@ -5,122 +5,122 @@ pmcTitle: Project Management Committee (PMC)
 nonpmcTitle: Committers (Not including PMC members)
 pmc:
   - name: 'Dehowe Feng'
-    avatar: /img/logo-large-mariadb.jpg /img/logo-large-mariadb.jpg
+    avatar: /img/comittee/DehoweFeng.jpg
     githubName: 'dehowef'
-    githubLink: ''
+    githubLink: 'https://github.com/dehowef'
   - name: 'Kevin Ratnasekera'
-    avatar: /img/logo-large-mariadb.jpg
+    avatar: /img/comittee/KevinRatnasekera.jpg
     githubName: 'djkevincr'
-    githubLink: ''
+    githubLink: 'https://github.com/dehowef'
   - name: 'Alex Kwak'
-    avatar: /img/logo-large-mariadb.jpg
+    avatar: /img/comittee/AlexKwak.jpg
     githubName: 'emotionbug'
-    githubLink: ''
+    githubLink: 'https://github.com/emotionbug'
   - name: 'Eya Badal'
-    avatar: /img/logo-large-mariadb.jpg
+    avatar: /img/comittee/EyaBadal.jpg
     githubName: 'eyab'
-    githubLink: ''
+    githubLink: 'https://github.com/eyab'
   - name: 'Felix Cheung'
-    avatar: /img/logo-large-mariadb.jpg
+    avatar: /img/comittee/FelixCheung.png
     githubName: 'felixcheung'
-    githubLink: ''
+    githubLink: 'https://github.com/felixcheung'
   - name: 'Jasper Blues'
-    avatar: /img/logo-large-mariadb.jpg
+    avatar: /img/comittee/JasperBlues.jpg
     githubName: 'Jasper Blues'
-    githubLink: ''
+    githubLink: 'https://github.com/jasperblues'
   - name: 'John Gemignani'
-    avatar: /img/logo-large-mariadb.jpg
+    avatar: /img/comittee/JohnGemignani.jpg
     githubName: 'John Gemignani'
-    githubLink: ''
+    githubLink: 'https://github.com/JohnGemignani'
   - name: 'Josh Innis'
-    avatar: /img/logo-large-mariadb.jpg
+    avatar: /img/comittee/JoshInnis.png
     githubName: 'Josh Innis'
-    githubLink: ''
+    githubLink: 'https://github.com/JoshInnis'
   - name: 'Juan Pan'
-    avatar: /img/logo-large-mariadb.jpg
-    githubName: 'Juan Pan'
-    githubLink: ''
+    avatar: /img/comittee/TristaPan.jpg
+    githubName: 'tristaZero'
+    githubLink: 'https://github.com/tristaZero'
   - name: 'Pieterjan De Potter'
-    avatar: /img/logo-large-mariadb.jpg
+    avatar: /img/comittee/PieterjanDePotter.jpg
     githubName: 'Pieterjan De Potter'
-    githubLink: ''
+    githubLink: 'https://github.com/pdpotter'
   - name: 'Nick Sorrell'
-    avatar: /img/logo-large-mariadb.jpg
+    avatar: /img/comittee/NickSorrell.png
     githubName: 'Nick Sorrell'
-    githubLink: ''
+    githubLink: 'https://github.com/sorrell'
   - name: 'Von Gosling'
-    avatar: /img/logo-large-mariadb.jpg
+    avatar: /img/comittee/vongosling.jpg
     githubName: 'Von gosling'
-    githubLink: '' 
+    githubLink: 'https://github.com/vongosling' 
 nonpmc:
   - name: 'Kokou Afidegnon'
-    avatar: /img/logo-large-mariadb.jpg
+    avatar: /img/comittee/KOKOUAFIDEGNON.png
     githubName: 'afidegnum'
-    githubLink: ''
+    githubLink: 'https://github.com/afidegnum'
   - name: 'Andrew Ko'
-    avatar: /img/logo-large-mariadb.jpg
+    avatar: /img/comittee/AndrewKo.png
     githubName: 'aked21'
-    githubLink: ''
+    githubLink: 'https://github.com/aked21'
   - name: 'Dehowe Feng'
-    avatar: /img/logo-large-mariadb.jpg
+    avatar: /img/comittee/DehoweFeng.jpg
     githubName: 'dehowef'
-    githubLink: ''
+    githubLink: 'https://github.com/dehowef'
   - name: 'Kevin Ratnasekera'
-    avatar: /img/logo-large-mariadb.jpg
+    avatar: /img/comittee/KevinRatnasekera.jpg
     githubName: 'djkevincr'
-    githubLink: ''
+    githubLink: 'https://github.com/djkevincr'
   - name: 'Alex Kwak'
-    avatar: /img/logo-large-mariadb.jpg
+    avatar: /img/comittee/AlexKwak.jpg
     githubName: 'emotionbug'
-    githubLink: ''
+    githubLink: 'https://github.com/emotionbug'
   - name: 'Eya Badal'
-    avatar: /img/logo-large-mariadb.jpg
+    avatar: /img/comittee/EyaBadal.jpg
     githubName: 'eyab'
-    githubLink: ''
+    githubLink: 'https://github.com/eyab'
   - name: 'Felix Cheung'
-    avatar: /img/logo-large-mariadb.jpg
+    avatar: /img/comittee/FelixCheung.png
     githubName: 'felixcheung'
-    githubLink: ''
+    githubLink: 'https://github.com/felixcheung'
   - name: 'David Shin'
-    avatar: /img/logo-large-mariadb.jpg
+    avatar: /img/comittee/HanbyeolShin.jpg
     githubName: 'shinhanbyeol'
-    githubLink: ''
+    githubLink: 'https://github.com/shinhanbyeol'
   - name: 'Jasper Blues'
-    avatar: /img/logo-large-mariadb.jpg
+    avatar: /img/comittee/JasperBlues.jpg
     githubName: 'jasperblues'
-    githubLink: ''    
+    githubLink: 'https://github.com/jasperblues'    
   - name: 'John Gemignani'
-    avatar: /img/logo-large-mariadb.jpg
+    avatar: /img/comittee/JohnGemignani.jpg
     githubName: 'JohnGemignani'
-    githubLink: ''
+    githubLink: 'https://github.com/JohnGemignani'
   - name: 'Josh Innis'
-    avatar: /img/logo-large-mariadb.jpg
+    avatar: /img/comittee/JoshInnis.png
     githubName: 'JoshInnis'
-    githubLink: ''
+    githubLink: 'https://github.com/JoshInnis'
   - name: 'Juan Pan'
-    avatar: /img/logo-large-mariadb.jpg
+    avatar: /img/comittee/TristaPan.jpg
     githubName: 'tristaZero'
-    githubLink: ''
+    githubLink: 'https://github.com/tristaZero'
   - name: 'Pieterjan De Potter'
-    avatar: /img/logo-large-mariadb.jpg
+    avatar: /img/comittee/PieterjanDePotter.jpg
     githubName: 'pdpotter'
-    githubLink: ''
+    githubLink: 'https://github.com/pdpotter'
   - name: 'Muhammad Shoaib'
-    avatar: /img/logo-large-mariadb.jpg
+    avatar: /img/comittee/Shoaib.jpg
     githubName: 'muhammadshoaib'
-    githubLink: ''    
+    githubLink: 'https://github.com/muhammadshoaib'    
   - name: 'Nick Sorrell'
-    avatar: /img/logo-large-mariadb.jpg
+    avatar: /img/comittee/NickSorrell.png
     githubName: 'sorrell'
-    githubLink: ''    
+    githubLink: 'https://github.com/sorrell'    
   - name: 'Vuong Quoc Viet'
-    avatar: /img/logo-large-mariadb.jpg
+    avatar: /img/comittee/QuocVietVuong.jpg
     githubName: 'quocvietvuong'
-    githubLink: ''    
+    githubLink: 'https://github.com/quocvietvuong'    
   - name: 'Von Gosling'
-    avatar: /img/logo-large-mariadb.jpg
+    avatar: /img/comittee/vongosling.jpg
     githubName: 'vongosling'
-    githubLink: ''    
+    githubLink: 'https://github.com/vongosling'    
 ---
 
 ## 안녕하세요

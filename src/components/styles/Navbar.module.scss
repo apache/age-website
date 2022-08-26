@@ -74,7 +74,7 @@
   }
   .Left {
     width: 100%;
-    max-width: 21.25rem;
+    max-width: 15.25rem;
   }
   .Right {
     width: 100%;  
@@ -104,6 +104,10 @@
       background: transparent linear-gradient(90deg, #143a84 0%, #d30d52 100%)
         0% 0% no-repeat padding-box;
       border-radius: 16px;
+    }
+    .Download:hover {
+      color: #FFFFFF;
+      opacity: 0.5;
     }
   }
 }
@@ -250,6 +254,27 @@
   /* Styles */
   .Left {
     text-align: right;
+  }
+  .Menu {
+    display: flex;
+  }
+  .HamburgerMenu {
+    display: none;
+  }
+  .MenuToggle {
+    display: none;
+  }
+  .Right {
+    display: flex;
+  }
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 1280px) {
+  /* Styles */
+  .Left {
+    text-align: right;
+    max-width: 8.25rem;
   }
   .Menu {
     display: flex;
