@@ -7,6 +7,7 @@ async function getRedditDataSetter(stateSetter) {
     .get('https://apacheage.shop:3999/api/v1/reddit/rss')
     .then((res) => {
       stateSetter(res.data.list);
+      return true;
     })
     .catch(() => {
       console.error('error');

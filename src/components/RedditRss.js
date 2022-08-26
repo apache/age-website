@@ -11,16 +11,14 @@ const RedditRss = () => {
   const loadReddit = () => {
     setLoaindgYn(true);
     redditManager.getRedditDataSetter(setRedditRss)
+    .then((res) => setLoaindgYn(!res));
+
   }
   const [redditRss, setRedditRss] = useState([]);
 
   useEffect(() => {
     loadReddit();
   }, []);
-  useEffect(() => {
-    redditRss?.forEach((item) => {});
-    setLoaindgYn(false)
-  }, [redditRss]);
 
   const htmlParser = (string) => {
     string = String(string).replaceAll('&lt;', '<');
@@ -57,7 +55,13 @@ const RedditRss = () => {
     <div className={styles.root}>
       <div className={styles.Header}></div>
       <div className={styles.Container}>
-        <RssItems />
+        {isLoading ? (
+            <p style={{ margin:'1rem'}}>
+              <Spin></Spin>
+            </p>
+          ) : (
+            <RssItems />
+        )}
         <div className={styles.joinButtonContainer}>
           <button className={styles.joinButton}  onClick={() =>
             (window.location.href =
