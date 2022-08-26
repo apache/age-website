@@ -8,6 +8,10 @@ import Content, { HTMLContent } from '../components/Content';
 import * as styles from './styles/overview.module.scss';
 // page by style
 import './styles/pageby.scss';
+import keyFeaturesImg01 from '../../static/img/keyfeature01-wt.png';
+import keyFeaturesImg02 from '../../static/img/keyfeature02-wt.png';
+import keyFeaturesImg03 from '../../static/img/keyfeature03-wt.png';
+import keyFeaturesImg04 from '../../static/img/keyfeature04-wt.png';
 
 // eslint-disable-next-line
 export const OverviewTemplate = ({
@@ -39,6 +43,30 @@ export const OverviewTemplate = ({
         <PageContent className="Overview" content={content} />
         <HowToAge />
         <PageContent className={styles.bannerContent} content={subcontent} />
+        <div className={styles.keyFeatures}>
+            <div className={styles.keyFeaturesImgContainer}>
+              <div>
+                <img src={keyFeaturesImg01}></img>
+                <div>Graph Database Plugin For Postgre SQL</div>
+                <div>Allow The Access To Query And Visualize Graph Data From A Postgresql Compatible Relational Database.</div>
+              </div>
+              <div>
+                <img src={keyFeaturesImg02}></img>
+                <div>Hybrid Queries (Opencypher And SQL)</div>
+                <div>Hybrid Query Technology Simultaneously Performs The Queries For Relational Data And Graph Data</div>
+              </div>
+              <div>
+                <img src={keyFeaturesImg03}></img>
+                <div>Fast Graph Query Processing</div>
+                <div>Achieve Both Fast Indexing And Efficient Query Processing.</div>
+              </div>
+              <div>
+                <img src={keyFeaturesImg04}></img>
+                <div>Graph Visualization And Analytics</div>
+                <div>Provides The Visualization Of Graph And Relational Data For Easier, Enhanced Understanding And Analyzing Of Data</div>
+              </div>
+            </div>
+          </div>
       </section>
     </>
   );

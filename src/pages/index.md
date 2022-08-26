@@ -9,8 +9,6 @@ bannerContents: >-
 
   <div class="bannerDesc">
 
-  Apache AGE is a PostgreSQL extension that provides graph database functionality. The goal of Apache AGE is to enable users of Postgres to use graph query modeling in unison with Postgres’ existing relational model.
-
   </div>
 
 

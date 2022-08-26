@@ -80,7 +80,7 @@ const ProjectList = ({ mode }) => {
                     'https://github.com/shinhanbyeol?tab=projects&type=new')
                   }
                 >
-                  Projects
+                  View on GitHub
                 </button>
               );
             else return <></>;

@@ -6,10 +6,10 @@ import icoTwitter from '../img/social/icon-Pagetwitter.png';
 import icoLinkedin from '../img/social/icon-Pagelinkedin.png';
 import icoYoutube from '../img/social/icon-Pageyoutube.png';
 
-import icoGithubLd from '../img/social/icon-github.png';
-import icoTwitterLd from '../img/social/icon-twitter.png';
-import icoLinkedinLd from '../img/social/icon-linkedin.png';
-import icoYoutubeLd from '../img/social/icon-youtube.png';
+import icoGithubLd from '../../static/img/icon-github.png';
+import icoTwitterLd from '../../static/img/icon-twitter.png';
+import icoLinkedinLd from '../../static/img/icon-linkedin.png';
+import icoYoutubeLd from '../../static/img/icon-youtube.png';
 // styles
 import * as styles from './styles/Footer.module.scss';
 import './styles/footer.css';

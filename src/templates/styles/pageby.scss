@@ -17,6 +17,7 @@
 }
 .OverviewLink {
   margin-top: .625rem;
+  margin-bottom: 5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,6 +62,11 @@
   border: 1px solid black;
   border-radius: 2rem;
   padding: 5rem;
+  @media screen and (max-width: 80rem) {
+    grid-column-gap : 1rem;
+    padding: 1rem;
+  }
+  
 }   
 .JoinUsAGE p {
   padding-left: 1rem;
