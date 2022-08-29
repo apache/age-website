@@ -98,16 +98,18 @@
       align-items: center;
       color: #fff;
       padding: 0.625rem;
-      font: $h4;
+      font: $h5;
       height: 2.5rem;
       /* UI Properties */
       background: transparent linear-gradient(90deg, #143a84 0%, #d30d52 100%)
         0% 0% no-repeat padding-box;
       border-radius: 16px;
+      opacity: 0.5;
     }
     .Download:hover {
       color: #FFFFFF;
-      opacity: 0.5;
+      opacity: 1;
+      border: 1px solid white;
     }
   }
 }

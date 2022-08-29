@@ -7,11 +7,6 @@ bannerContents: >-
   PostgreSQL</h1>
 
 
-  <div class="bannerDesc">
-
-  </div>
-
-
   <a class="bannerLink bnLk1" href="#">Learn More</a>
 
   <a class="bannerLink bnLk2" href="#">Ask Forum</a>

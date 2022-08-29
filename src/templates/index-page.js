@@ -47,7 +47,7 @@ export const IndexPageTemplate = ({
         />
       </div>
      
-      <section style={{backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}}>
+      <section style={{backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}} className={styles.topSection}>
         <div className={styles.topContent}>
           <div className={styles.card}>
             <div className={styles.cardLeft}>
@@ -77,22 +77,22 @@ export const IndexPageTemplate = ({
             <div className={styles.keyFeaturesImgContainer}>
               <div>
                 <img src={keyFeaturesImg01}></img>
-                <div>Graph Database Plugin For Postgre SQL</div>
+                <div>Graph Database Plugin<br></br> For Postgre SQL</div>
                 <div>Allow The Access To Query And Visualize Graph Data From A Postgresql Compatible Relational Database.</div>
               </div>
               <div>
                 <img src={keyFeaturesImg02}></img>
-                <div>Hybrid Queries (Opencypher And SQL)</div>
+                <div>Hybrid Queries<br></br> (Opencypher And SQL)</div>
                 <div>Hybrid Query Technology Simultaneously Performs The Queries For Relational Data And Graph Data</div>
               </div>
               <div>
                 <img src={keyFeaturesImg03}></img>
-                <div>Fast Graph Query Processing</div>
+                <div>Fast Graph Query <br></br>Processing</div>
                 <div>Achieve Both Fast Indexing And Efficient Query Processing.</div>
               </div>
               <div>
                 <img src={keyFeaturesImg04}></img>
-                <div>Graph Visualization And Analytics</div>
+                <div>Graph Visualization <br></br> And Analytics</div>
                 <div>Provides The Visualization Of Graph And Relational Data For Easier, Enhanced Understanding And Analyzing Of Data</div>
               </div>
             </div>
@@ -104,8 +104,11 @@ export const IndexPageTemplate = ({
           <h2>AGE Projects</h2>
           <p>
             Everyone is welcome to join and contribute to Apache AGE Project,
-            not only with code contributions. <br /> You can learn more about
-            Apache AGE by working with other developers.
+            not only with code contributions. <br /> 
+            You can learn more about
+            Apache AGE by working with other developers.  <br />
+            You can find out more information on how to join the projects by the following&nbsp;
+            <a>Guideline.</a>
           </p>
           <ProjectList />
         </div>

@@ -12,13 +12,11 @@
   width: auto;
   //1644 * 766
   max-width: 102.75rem;
-  max-height: 47.875rem;
-  margin-bottom: 5rem;
+  margin-bottom: 4rem;
   // overflow-y: scroll;
 }
 .MoreBtn {
   cursor: pointer;
-  margin-top: 3.75rem;
   width: 13rem;
   height: 2.5rem;
   /* UI Properties */
@@ -28,6 +26,14 @@
   font: $h5;
   color: #fff;
   border: none;
+}
+.MoreBtn a {
+  background: $secondColor;
+  color: #fff;
+}
+.MoreBtn a:hover {
+  background-color: #fff;
+  color: $primayrColor;
 }
 .MoreBtn:hover {
   background-color: #fff;
