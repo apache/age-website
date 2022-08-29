@@ -82,7 +82,7 @@ export const IndexPageTemplate = ({
               </div>
               <div>
                 <img src={keyFeaturesImg02}></img>
-                <div>Hybrid Queries<br></br> (Opencypher And SQL)</div>
+                <div>Hybrid Queries<br></br> (OpenCypher And SQL)</div>
                 <div>Hybrid Query Technology Simultaneously Performs The Queries For Relational Data And Graph Data</div>
               </div>
               <div>

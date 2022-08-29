@@ -47,22 +47,22 @@ export const OverviewTemplate = ({
             <div className={styles.keyFeaturesImgContainer}>
               <div>
                 <img src={keyFeaturesImg01}></img>
-                <div>Graph Database Plugin For Postgre SQL</div>
+                <div>Graph Database Plugin<br></br> For Postgre SQL</div>
                 <div>Allow The Access To Query And Visualize Graph Data From A Postgresql Compatible Relational Database.</div>
               </div>
               <div>
                 <img src={keyFeaturesImg02}></img>
-                <div>Hybrid Queries (Opencypher And SQL)</div>
+                <div>Hybrid Queries<br></br> (OpenCypher And SQL)</div>
                 <div>Hybrid Query Technology Simultaneously Performs The Queries For Relational Data And Graph Data</div>
               </div>
               <div>
                 <img src={keyFeaturesImg03}></img>
-                <div>Fast Graph Query Processing</div>
+                <div>Fast Graph Query <br></br>Processing</div>
                 <div>Achieve Both Fast Indexing And Efficient Query Processing.</div>
               </div>
               <div>
                 <img src={keyFeaturesImg04}></img>
-                <div>Graph Visualization And Analytics</div>
+                <div>Graph Visualization <br></br> And Analytics</div>
                 <div>Provides The Visualization Of Graph And Relational Data For Easier, Enhanced Understanding And Analyzing Of Data</div>
               </div>
             </div>

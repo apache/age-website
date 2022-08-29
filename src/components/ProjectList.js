@@ -76,9 +76,9 @@ const ProjectList = ({ mode }) => {
                 <button
                   className={styles.MoreBtn}
                   onClick={() =>
-                    (window.location.href =
-                      'https://github.com/shinhanbyeol?tab=projects&type=new')
-                    }
+                  (window.open("about:blank").location.href = 
+                    'https://github.com/shinhanbyeol?tab=projects&type=new')
+                  }
                 >
                   View on GitHub
                 </button>
