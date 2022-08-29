@@ -15,6 +15,7 @@ import '../components/styles/font/font.css';
 import './styles/media.scss';
 // styles
 import * as styles from './styles/Layout.module.scss';
+import favicon from '../../static/img/agedb-favicon.png';
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();
@@ -40,6 +41,7 @@ const TemplateWrapper = ({ children }) => {
           <Helmet>
             <html lang="en" />
             <title>{title}</title>
+            <link rel="icon" href={favicon} />
             <meta name="description" content={description} />
             {/* Global site tag (gtag.js) - Google Analytics */}
             <script async src="https://www.googletagmanager.com/gtag/js?id=G-VPCE2QF63F" />

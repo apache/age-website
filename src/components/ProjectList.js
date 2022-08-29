@@ -76,9 +76,9 @@ const ProjectList = ({ mode }) => {
                 <button
                   className={styles.MoreBtn}
                   onClick={() =>
-                  (window.location.href =
-                    'https://github.com/shinhanbyeol?tab=projects&type=new')
-                  }
+                    (window.location.href =
+                      'https://github.com/shinhanbyeol?tab=projects&type=new')
+                    }
                 >
                   View on GitHub
                 </button>
@@ -86,9 +86,7 @@ const ProjectList = ({ mode }) => {
             else return <></>;
           })()}
         </p>
-        <p style={{ textAlign: 'center' }}>
-          <button className={styles.MoreBtn}>Guideline</button>
-        </p>
+       
       </ul>
     </>
   );

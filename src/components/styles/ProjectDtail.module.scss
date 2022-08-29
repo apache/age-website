@@ -1,8 +1,8 @@
 @import '../../common/variable.scss';
 
 .root {
-  width: 360px;
-  height: 330px;
+  width: 22.5rem;
+  height: 16.375rem;
   /* UI Properties */
   background: #ffffff 0% 0% no-repeat padding-box;
   border: 1px solid #e0e0e0;
@@ -13,21 +13,25 @@
   align-items: center;
   div {
     width: 100%;
-    padding: 66px 30px 0px;
+    padding: 20px 20px 0px;
   }
   p {
     margin: 0;
     padding: 0;
     width: 100%;
-    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
     color: $primayrColor;
   }
   .title {
     font-weight: bold;
     font-size: 24px;
-    margin-bottom: 1.875rem;
+    margin-bottom: 1rem;
+    height: 80px;
+
   }
   .update {
     font-weight: normal;
@@ -36,22 +40,24 @@
   .desc {
     font-weight: normal;
     font-size: 16px;
-    height: 64px;
-    margin-bottom: 44px;
-    white-space: normal;
-    overflow-y: auto;
-    word-break: break-word;
+    height: 55px;
+    margin-bottom: 1rem;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
   .link {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 5rem;
+    height: 3rem;
     /* UI Properties */
     background-color: $thirdColor;
     color: #fff;
     border-radius: 0px 0px 30px 30px;
+    font-size: 1.3rem;
   }
   .link:hover {
     background-color: $primayrColor;
@@ -60,11 +66,11 @@
 }
 .root:hover {
   width: 356px;
-  height: 326px;
+  height: 280px;
   overflow: hidden;
   div {
     background-color: $secondColor;
-    padding: 62px 26px 0px;
+    padding: 20px 20px 0px;
     p {
       color: #fff;
     }
@@ -73,15 +79,16 @@
     background-color: #fff;
     color: $secondColor;
     cursor: pointer;
-    font-size: 1.75rem;
+    font-size: 1.3rem;
+    font-weight: bold;
   }
   border: 4px solid #fff;
   box-shadow: $shodow;
 }
 
 .rootToggle {
-  width: 356px;
-  height: 326px;
+  width: 22.5rem;
+  height: 16.375rem;
   padding: 62px 26px 0px;
   border: 4px solid $primayrColor;
   box-shadow: $shodow;

@@ -8,17 +8,21 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  .topSection{
+    padding-bottom: 0px !important;
+  }
   section {
     width: 100%;
     padding: 3.75rem 1rem !important;
+
     .topContent{
       display: flex; 
       align-content: center; 
       justify-content: center; 
       align-items: center;
-      position: relative;
+
+
       flex-direction: column;
-      top: -7rem;
       padding: 0 10%;
       .card {
         display: flex; 
@@ -35,6 +39,8 @@
         flex-wrap: wrap;
         text-align: left;
         padding: 2rem;
+        position: relative;
+        top: -8rem;
 
         .cardContent {
           padding: 3rem 3rem 2rem 0;
@@ -66,11 +72,13 @@
       }
       .keyFeatures {
         width: 100%;
+        position: relative;
+        top: -6rem;
         h2 {
           font: $h1;
           color: #fff;
           text-align: center;
-          margin: 5rem 0;
+          margin: 1rem  0 3rem 0;
         }
         .keyFeaturesImgContainer {
           display: grid;
@@ -87,16 +95,16 @@
           div {
             text-align: center;
             img {
-              width: 13.5rem;
-              height: 13.5rem;
-              padding: 10%;
+              width: 16.5rem;
+              height: 16.5rem;
+              padding: 5%;
             }
             div {
-              padding: 5% 0;
+              padding: 0 0 10% 0;
             }
             div:nth-child(n+1):nth-child(-n+2) {
               width: 100%;
-              font: normal normal bold 20px/28px Mark Pro;
+              font: normal normal bold 22px/28px Mark Pro;
               letter-spacing: 0.6px;
               color: #eee;
             }
@@ -126,10 +134,15 @@
         font-size: 1.25rem;
         color: #fff;
         margin-bottom: 3.75rem;
+        > a {
+          color: white;
+          text-decoration: underline;
+        }
       }
+     
       // youtube
       .Youtube {
-        max-width: 80rem;
+        max-width: 73.75rem;
         margin: 0 auto;
       }
       // Subscribe mail image
@@ -223,7 +236,7 @@
   min-height: 27.5rem;
   height: 100%;
   width: 100%;
-  padding: 1rem 1rem 5rem;
+  padding: 1rem 1rem 15rem;
   .bannerContent {
     max-width: $landingConWidth;
     margin: 0 auto;
@@ -252,7 +265,7 @@
       justify-content: center;
       align-items: center;
       float: left;
-      margin: 0 0.625rem;
+      margin: 2rem 0.625rem;
       padding: 0.5rem;
       text-align: center;
       vertical-align: middle;

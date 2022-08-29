@@ -28,7 +28,9 @@ const ProjectDetail = (props) => {
             update on {projectDateMaker(project.updatedAt)}
           </p>
           <p className={styles.title}>{project.title}</p>
-          <p className={styles.desc}>{project.shortDescription}</p>
+          <p className={styles.desc}>
+            {(project.shortDescription) == undefined ? "No description" : project.shortDescription }
+          </p>
         </div>
         <a className={styles.link} href={project.url} target="_blank">
           View Details
