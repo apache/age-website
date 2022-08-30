@@ -52,4 +52,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: asf-staging
           publish_dir: ./build/html
-          destination_dir: docs          
+          destination_dir: age-manual          
