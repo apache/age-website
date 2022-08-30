@@ -12,7 +12,7 @@ import icoLinkedinLd from '../../static/img/icon-linkedin.png';
 import icoYoutubeLd from '../../static/img/icon-youtube.png';
 // styles
 import * as styles from './styles/Footer.module.scss';
-import './styles/footer.css';
+// import './styles/footer.css';
 
 const Footer = class extends React.Component {
   componentDidMount() {
@@ -129,7 +129,7 @@ const Footer = class extends React.Component {
           <div className={`${styles.Links} FooterLinks`}>
             <a title="Github" href="https://github.com/" target={'_blank'}>
               <img
-                src={landingYn ? icoGithubLd : icoGithub}
+                src={icoGithubLd}
                 alt="Facebook"
                 style={{ width: '2.5em', height: '2.5em' }}
               />
@@ -137,21 +137,21 @@ const Footer = class extends React.Component {
             <a title="twitter" href="https://twitter.com" target={'_blank'}>
               <img
                 className="fas fa-lg"
-                src={landingYn ? icoTwitterLd : icoTwitter}
+                src={icoTwitterLd}
                 alt="Twitter"
                 style={{ width: '2.5em', height: '2.5em' }}
               />
             </a>
             <a title="LinkedIn" href="https://linkedin.com/" target={'_blank'}>
               <img
-                src={landingYn ? icoLinkedinLd : icoLinkedin}
+                src={icoLinkedinLd}
                 alt="LinkedIn"
                 style={{ width: '2.5em', height: '2.5em' }}
               />
             </a>
             <a title="Youtube" href="https://Youtube.com" target={'_blank'}>
               <img
-                src={landingYn ? icoYoutubeLd : icoYoutube}
+                src={icoYoutubeLd}
                 alt="Youtube"
                 style={{ width: '2.5em', height: '2.5em' }}
               />

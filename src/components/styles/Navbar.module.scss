@@ -6,7 +6,7 @@
   width: 100vw;
   position: fixed;
   z-index: 99;
-  background-color: #181631;
+  background-color: white;
 }
 .Nav {
   display: flex;
@@ -20,13 +20,15 @@
       max-width: 6.5625rem;
     }
   }
+
   .Menu {
     flex: 1;
     ul {
-      background-color: #181631;
+      background-color: white;
       li {
         color: #8b8399;
       }
+
       .ant-menu-submenu-title:hover {
         color: #fff !important;
       }
@@ -36,7 +38,7 @@
     width: 100%;
     .InlineMenu {
       position: absolute;
-      top: 5rem;
+      top: 3.7rem;
       left: 0;
     }
     ul {
@@ -96,18 +98,19 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      color: #fff;
+      color: $primayrColor;
       padding: 0.625rem;
       font: $h5;
       height: 2.5rem;
       /* UI Properties */
-      background: transparent linear-gradient(90deg, #143a84 0%, #d30d52 100%)
-        0% 0% no-repeat padding-box;
+      background: white;
       border-radius: 16px;
       opacity: 0.5;
+      border: 1px solid $primayrColor;
     }
     .Download:hover {
-      color: #FFFFFF;
+      color: white;
+      background: $primayrColor;
       opacity: 1;
       border: 1px solid white;
     }

@@ -4,7 +4,7 @@
   // 제목
   h1 {
     font: $h1;
-    color: $textPrimary;
+    color: $primayrColor;
   }
   // 본문
   p {
@@ -19,7 +19,7 @@
     font: $h6;
     color: $textColor;
   }  
-  padding: 2.5rem 2rem 4.875rem;
+  padding: 0rem 2rem 4.875rem;
   max-width: $conWidth;
   margin: 0 auto;
 }
@@ -40,7 +40,7 @@
   .bannerContent {
     h1 {
       font: $landing;
-      color: $textPrimary;
+      color: $primayrColor;
     }
   }
 }
@@ -59,14 +59,14 @@
     width: 11.25rem;
     height: 2.5rem;
     /* UI Properties */
-    border: 0.125rem solid $textPrimary;
+    border: 0.125rem solid $primayrColor;
     border-radius: 1.8125rem;
     opacity: 1;
     background-color: #fff;
-    color: $textPrimary;
+    color: $primayrColor;
   }
   a:hover {
-    background-color: $textPrimary;
+    background-color: $primayrColor;
     color: #fff;
   }
 
@@ -94,8 +94,8 @@
     div {
       text-align: center;
       img {
-        width: 16.5rem;
-        height: 16.5rem;
+        width: 100%;
+        height: auto;
         padding: 10%;
       }
       div {
@@ -103,14 +103,14 @@
       }
       div:nth-child(n+1):nth-child(-n+2) {
         width: 100%;
-        font: normal normal bold 20px/28px Mark Pro;
+        font: normal normal bold 1.25rem/1.75rem Mark Pro;
         letter-spacing: 0.6px;
         color: #472E77;
       }
       div:nth-child(n+3):nth-child(-n+4) {
         width: 100%;
         padding: 0% 10%;
-        font: normal normal normal 16px/20px Mark Pro;
+        font: normal normal normal 1rem/1.25rem Mark Pro;
         letter-spacing: 0px;
         color: #472E77;
       }

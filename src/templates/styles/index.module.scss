@@ -20,10 +20,8 @@
       align-content: center; 
       justify-content: center; 
       align-items: center;
-
-
       flex-direction: column;
-      padding: 0 10%;
+      padding: 0 5%;
       .card {
         display: flex; 
         align-content: center; 
@@ -41,16 +39,17 @@
         padding: 2rem;
         position: relative;
         top: -8rem;
+        box-shadow: 0rem 0.75rem 1.5rem #00000029;
 
         .cardContent {
           padding: 3rem 3rem 2rem 0;
           color: black;
-          font: normal normal normal 20px/30px Mark Pro;
+          font: normal normal normal 1.25rem/1.875rem Mark Pro;
 
         }
         .cardLeft {
-          font: normal normal 500 30px/59px Mark Pro;
-          color: #913EF2;
+          font: normal normal 500 1.875rem/3.6875rem Mark Pro;
+          color: $primayrColor;
           text-transform: capitalize;
           flex: 1 1 40%;
           padding: 0 0 0 3rem;
@@ -63,8 +62,8 @@
           top: 3rem;
         }
         .cardRight {
-          font: normal normal 500 30px/59px Mark Pro;
-          color: #913EF2;
+          font: normal normal 500 1.875rem/3.6875rem Mark Pro;
+          color: $primayrColor;
           text-transform: capitalize;
           flex: 1 1 40%;
           padding: 0 0 0 3rem;
@@ -78,7 +77,7 @@
           font: $h1;
           color: #fff;
           text-align: center;
-          margin: 1rem  0 3rem 0;
+          margin: 1rem 0 1rem 0;
         }
         .keyFeaturesImgContainer {
           display: grid;
@@ -95,25 +94,25 @@
           div {
             text-align: center;
             img {
-              width: 16.5rem;
-              height: 16.5rem;
-              padding: 5%;
+              width: 100%;
+              height: auto;
+              padding: 5% 20%;
             }
             div {
               padding: 0 0 10% 0;
             }
             div:nth-child(n+1):nth-child(-n+2) {
               width: 100%;
-              font: normal normal bold 22px/28px Mark Pro;
+              font: normal normal bold 1.375rem/1.75rem Mark Pro;
               letter-spacing: 0.6px;
-              color: #eee;
+              color: $textColor;
             }
             div:nth-child(n+3):nth-child(-n+4) {
               width: 100%;
               padding: 0% 10%;
-              font: normal normal normal 16px/20px Mark Pro;
+              font: normal normal normal 1rem/1.25rem Mark Pro;
               letter-spacing: 0px;
-              color: #eee;
+              color: $textColor;
             }
           }
           
@@ -126,14 +125,14 @@
       margin: 0 auto;
       > h2 {
         font: $h1;
-        color: #fff;
+        color: $primayrColor;
         text-align: center;
       }
       > p {
         text-align: center;
         font-size: 1.25rem;
-        color: #fff;
-        margin-bottom: 3.75rem;
+        color: $textColor;
+        margin-bottom: 1.75rem;
         > a {
           color: white;
           text-decoration: underline;
@@ -143,7 +142,22 @@
       // youtube
       .Youtube {
         max-width: 73.75rem;
+        overflow: hidden;
+        position: relative;
+        width:100%;
         margin: 0 auto;
+        iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .Youtube::after {
+        padding-top: 56.25%;
+        display: block;
+        content: '';
       }
       // Subscribe mail image
       .Subscribe {
@@ -179,38 +193,15 @@
           border: solid 2px #fff;
           border-radius: 40px;
           margin-bottom: 1rem;
-        }
-        a:nth-child(1) {
-          background-color: #896AC5;
-          color: #fff;
-        }
-        a:nth-child(2) {
-          background-color: #fff;
-          color: $secondColor;
-        }
-        a:nth-child(3) {
-          background-color: #896AC5;
-          color: #fff;
-        }
-        a:nth-child(4) {
-          background-color: #fff;
-          color: $secondColor;
-        }
-        a:nth-child(5) {
-          background-color: #896AC5;
-          color: #fff;
-        }
-        a:nth-child(6) {
-          background-color: #fff;
-          color: $secondColor;
-        }
-        a:nth-child(odd):hover {
+          color: $primayrColor;
           background-color: white;
-          color: black;
         }
-        a:nth-child(even):hover {
-          background-color: #472E77;
-          color: #b28af8;
+        a:hover {
+          background-color: $primayrColor;
+          color: white;
+        }
+        a:nth-child(even) {
+          border: 1px solid $primayrColor;
         }
         
       }
@@ -218,13 +209,10 @@
     padding: 3.375rem 0rem;
   }
   section:nth-child(odd) {
-    background-color: #913ef2;
+    background-color: $thirdColor;
   }
   section:nth-child(even) {
-    background-color: $secondColor;
-  }
-  section:nth-last-child(1) {
-    background: linear-gradient(#913EF2, #7d43bd);
+    background-color: white;
   }
 }
 
@@ -236,7 +224,7 @@
   min-height: 27.5rem;
   height: 100%;
   width: 100%;
-  padding: 1rem 1rem 15rem;
+  padding: 1rem 1rem 10rem;
   .bannerContent {
     max-width: $landingConWidth;
     margin: 0 auto;

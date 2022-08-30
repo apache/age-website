@@ -5,7 +5,6 @@
   height: 16.375rem;
   /* UI Properties */
   background: #ffffff 0% 0% no-repeat padding-box;
-  border: 1px solid #e0e0e0;
   border-radius: 30px;
   opacity: 1;
   display: flex;
@@ -14,6 +13,7 @@
   div {
     width: 100%;
     padding: 20px 20px 0px;
+    max-height: 13.9375rem;
   }
   p {
     margin: 0;
@@ -28,7 +28,7 @@
   }
   .title {
     font-weight: bold;
-    font-size: 24px;
+    font-size: 1.3rem;
     margin-bottom: 1rem;
     height: 80px;
 
@@ -54,7 +54,7 @@
     width: 100%;
     height: 3rem;
     /* UI Properties */
-    background-color: $thirdColor;
+    background-color: $primayrColor;
     color: #fff;
     border-radius: 0px 0px 30px 30px;
     font-size: 1.3rem;
@@ -82,7 +82,6 @@
     font-size: 1.3rem;
     font-weight: bold;
   }
-  border: 4px solid #fff;
   box-shadow: $shodow;
 }
 
