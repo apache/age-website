@@ -1,11 +1,10 @@
 name: Build documentation
 
-#on: push
-on: [push, pull_request]
+on: push
 
 jobs:
   deploy:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
         with:
