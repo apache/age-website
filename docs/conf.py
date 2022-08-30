@@ -76,7 +76,8 @@ html_context = {
 
 # Don't include tags
 smv_tag_whitelist = None
-smv_branch_whitelist = r'^(?!gh-pages).*$'
+# Selected branches: master and branches with semantic versioning preceded by 'v'
+smv_branch_whitelist = r'^(master|v[0-9]+[.][0-9]+[.][0-9]+)$'
 smv_remote_whitelist = r'^.*$'
 smv_released_pattern = r'^remotes/.*$'
 smv_prefer_remote_refs = True
