@@ -1,7 +1,6 @@
 name: Build documentation
 
 on: push
-#on: [push, pull_request]
 
 jobs:
   deploy:
@@ -38,12 +37,10 @@ jobs:
 
       - run: cp ./index.html ./build/html
 
-       - name: Deploy
+      - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: [asf-site]
+          publish_branch: asf-site
           publish_dir: ./build/html
           destination_dir: docs
-
-
