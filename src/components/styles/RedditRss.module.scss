@@ -25,6 +25,7 @@
     text-align: right;
     font: $h5;
     a {
+      color: $primayrColor;
       text-decoration: underline !important;
       padding: 0rem 1rem;
     }
@@ -33,7 +34,7 @@
     padding: 0rem;
     height: 514px;
     overflow-y: scroll;
-    background-color: #f7f3fe;
+    background-color: $thirdColor;
     .joinButton {
       display: block;
       margin: 0 auto;
@@ -41,12 +42,12 @@
       margin-bottom:  1.25rem;
       width: 12.75rem;
       height: 2.125rem;
-      background: #ddc7ff;
+      background: $primayrColor;
       cursor: pointer;
       border-radius: 40px;
       opacity: 1;
       font: $h6;
-      color: #873df2;
+      color: white;
       border: none;
       padding: 0 2rem;
     }

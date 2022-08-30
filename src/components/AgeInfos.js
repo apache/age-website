@@ -23,7 +23,7 @@ const Ageinfos = () => {
       <div></div>
       <div>
         {isLoading ? <Spin /> : <></>}
-        <a href='/team' className={styles.Count}>{ageInfo.memberCount} +</a>
+        <a href='/team' className={styles.Count}>{ageInfo.memberCount}+</a>
         <br />
         <span className={styles.Label}>Team Members</span>
       </div>

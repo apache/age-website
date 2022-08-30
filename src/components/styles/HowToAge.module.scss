@@ -18,6 +18,13 @@
   .Section1 {
     display: flex;
     flex-direction: column;
+    background-color: #F8F8F8;
+    padding: 2rem;
+    span {
+      margin: 0 auto;
+      color: $primayrColor;
+      font-size: 1.875rem;
+    }
     .Section1Wrap {
       flex: 1;
       display: flex;
@@ -71,6 +78,8 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    margin-top: 3rem;
+
     p {
       display: flex;
       align-items: center;

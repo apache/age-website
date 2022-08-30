@@ -63,7 +63,8 @@ const RedditRss = () => {
         <button
           className={styles.joinButton}
           onClick={() =>
-            (window.location.href = 'https://www.reddit.com/r/apacheage/')
+          (window.open("about:blank").location.href = 
+            'https://www.reddit.com/r/apacheage/')
           }
         >
           Join the Forum

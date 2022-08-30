@@ -5,14 +5,14 @@
   display: grid;
   align-items: center;
   justify-items: center;
-  grid-template-columns: repeat(auto-fill, minmax(380px, auto));
-  grid-row-gap: 2.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(23.75rem, auto));
+  grid-row-gap: 1.5rem;
   list-style: none;
   padding: 0;
   width: auto;
   //1644 * 766
   max-width: 102.75rem;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   // overflow-y: scroll;
 }
 .MoreBtn {
@@ -20,24 +20,16 @@
   width: 13rem;
   height: 2.5rem;
   /* UI Properties */
-  background: $secondColor;
+  background: white;
   border-radius: 40px;
   opacity: 1;
   font: $h5;
-  color: #fff;
-  border: none;
-}
-.MoreBtn a {
-  background: $secondColor;
-  color: #fff;
-}
-.MoreBtn a:hover {
-  background-color: #fff;
   color: $primayrColor;
+  border: 1px solid $primayrColor;
 }
 .MoreBtn:hover {
-  background-color: #fff;
-  color: $primayrColor;
+  background: $primayrColor;
+  color: white;
 }
 .buttonGroup{
   display: flex; 

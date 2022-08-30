@@ -7,10 +7,13 @@
   // 제목
   h1 {
     font: $h1;
-    color: $textPrimary;
+    color: $primayrColor;
     text-align: center;
+    margin-bottom: 5rem;
     margin-top: 5rem;
-    margin-bottom: 6.25rem;
+  }
+  h1:nth-child(1) {
+    margin-top: 0px;
   }
 }
 .Youtube {
