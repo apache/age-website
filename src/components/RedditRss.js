@@ -10,10 +10,10 @@ const RedditRss = () => {
 
   const loadReddit = () => {
     setLoaindgYn(true);
-    redditManager.getRedditDataSetter(setRedditRss)
-    .then((res) => setLoaindgYn(!res));
-
-  }
+    redditManager
+      .getRedditDataSetter(setRedditRss)
+      .then((res) => setLoaindgYn(!res));
+  };
   const [redditRss, setRedditRss] = useState([]);
 
   useEffect(() => {
@@ -46,9 +46,7 @@ const RedditRss = () => {
         content={item.content[0]['_']}
         updated={item.updated[0]}
       />
-    ))
-
-
+    ));
   }, [redditRss]);
 
   return (
@@ -56,30 +54,29 @@ const RedditRss = () => {
       <div className={styles.Header}></div>
       <div className={styles.Container}>
         {isLoading ? (
-            <p style={{ margin:'1rem'}}>
-              <Spin></Spin>
-            </p>
-          ) : (
-            <RssItems />
+          <p style={{ margin: '1rem' }}>
+            <Spin></Spin>
+          </p>
+        ) : (
+          <RssItems />
         )}
-        <div className={styles.joinButtonContainer}>
-          <button className={styles.joinButton}  onClick={() =>
-            (window.location.href =
-              'https://www.reddit.com/r/apacheage/')
-            }>Join the Forum</button>
-        </div>
+        <button
+          className={styles.joinButton}
+          onClick={() =>
+            (window.location.href = 'https://www.reddit.com/r/apacheage/')
+          }
+        >
+          Join the Forum
+        </button>
       </div>
       <div className={styles.Footer}>
         <div>
-
           {isLoading ? (
-            <p style={{ margin:'1rem'}}>
+            <p style={{ margin: '1rem' }}>
               <Spin></Spin>
             </p>
           ) : (
-            <a onClick={loadReddit}>
-              Refresh
-            </a>
+            <a onClick={loadReddit}>Refresh</a>
           )}
         </div>
         <a target="_blank" href="https://www.reddit.com/r/apacheage/">
