@@ -1,7 +1,7 @@
 name: Build documentation
 
-#on: push
-on: [push, pull_request]
+on: push
+#on: [push, pull_request]
 
 jobs:
   deploy:
@@ -46,7 +46,7 @@ jobs:
           publish_dir: ./build/html
           destination_dir: docs
 
-      - name: Deploy
+      - name: Deploy2
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
