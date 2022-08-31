@@ -16,7 +16,7 @@ const ProjectList = ({ mode }) => {
 
   useEffect(() => {
     projectManager
-      .getProjectListStateSetter(setProjects, setPageInfo)
+      .getProjectListStateSetter(setProjects, setPageInfo, 'age-viewer')
       .then((res) => setLoaindgYn(!res));
   }, []);
 
@@ -27,7 +27,8 @@ const ProjectList = ({ mode }) => {
         projects,
         pageInfo.endCursor,
         setProjects,
-        setPageInfo
+        setPageInfo,
+        'age-viewer'
       )
       .then((res) => setAddLoaindgYn(!res));
   }, [pageInfo, projects]);
@@ -42,8 +43,14 @@ const ProjectList = ({ mode }) => {
       ) : (
 
         <PerfectScrollbar>
+{
+//console.log('AgeProjectList projects')
+//projects.length
+}  
+
           <ul className={styles.cardRoot}>
             {projects?.map((item) => (
+              
               <li>
                 <ProjectDetail project={item.project} mode="card" />
               </li>
@@ -62,7 +69,9 @@ const ProjectList = ({ mode }) => {
       <ul className={styles.buttonGroup}>
         <p style={{ textAlign: 'center' }}>
           {(() => {
-            if (pageInfo?.hasNextPage && projects.length < 16)
+//console.log('AgeProjectList pageInfo')             
+//console.log(pageInfo.totalCount)            
+            if (pageInfo?.hasNextPage && projects.length < 12)
               return (
                 <button
                   className={styles.MoreBtn}
@@ -71,13 +80,13 @@ const ProjectList = ({ mode }) => {
                   More
                 </button>
               );
-            else if (projects.length == 16)
+            else if (projects.length == 12 || !pageInfo?.hasNextPage)
               return (
                 <button
                   className={styles.MoreBtn}
                   onClick={() =>
                   (window.open("about:blank").location.href = 
-                    'https://github.com/apache/age-website/projects')
+                    'https://github.com/apache/age-viewer/projects')
                   }
                 >
                   View on GitHub

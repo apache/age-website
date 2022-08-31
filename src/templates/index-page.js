@@ -5,7 +5,8 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Content, { HTMLContent } from '../components/Content';
 import Ageinfos from '../components/AgeInfos';
-import ProjectList from '../components/ProjectList';
+import AgeProjectList from '../components/AgeProjectList';
+import AgeViewerProjectList from '../components/AgeViewerProjectList';
 import RedditRss from '../components/RedditRss';
 // style
 import * as styles from './styles/index.module.scss';
@@ -110,10 +111,20 @@ export const IndexPageTemplate = ({
             You can find out more information on how to join the projects by the following&nbsp;
             <a>Guideline.</a>
           </p>
-          <ProjectList />
+          <AgeProjectList />
         </div>
         
       </section>
+
+      <section style={{backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}}>
+        <div className={styles.content}>
+          <h2>AGE Viewer Projects</h2>
+          <p></p>
+          <AgeViewerProjectList />
+        </div>
+        
+      </section>
+
       <section style={{backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}}>
         
         <div className={styles.content}>
