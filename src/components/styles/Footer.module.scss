@@ -1,6 +1,8 @@
+@import '../../common/variable.scss';
 .root {
   padding: 1rem;
   min-height: 21.25rem;
+  background-color: $thirdColor
 }
 
 .Sitemap {
@@ -33,6 +35,7 @@
     width: 100%;
     max-width: 16rem;
     list-style: none;
+    color: $textColor;
     li:first-child {
       font-weight: bold;
       font-size: 1.25rem;
@@ -40,6 +43,7 @@
     li {    
       margin-bottom: 1.25rem;  
       a {
+        color: black;
         font-size: 1rem;
         font-weight: 500;
       }
@@ -59,9 +63,17 @@
     a {
       padding: 1rem;
     }
+    a img {
+      transition: all 0.2s linear;
+    }
+    a:hover img {
+      transform: scale(1.2);
+    }
+    
   }
   p {
     font-size: 14px;
     display: inline-block;
+    color: $textColor;
   }
 }

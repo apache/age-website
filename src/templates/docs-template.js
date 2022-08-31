@@ -10,10 +10,14 @@ import './styles/pageby.scss';
 // eslint-disable-next-line
 export const DocsTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content;
-
   return (
     <section className={styles.root}>
-      <h1>{title}</h1>
+      {
+        title === null ?
+        "" 
+        :
+        <h1>{title}</h1>
+      }
       <PageContent className="content" content={content} />
     </section>
   );

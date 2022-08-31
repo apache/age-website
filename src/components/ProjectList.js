@@ -77,7 +77,7 @@ const ProjectList = ({ mode }) => {
                   className={styles.MoreBtn}
                   onClick={() =>
                   (window.open("about:blank").location.href = 
-                    'https://github.com/shinhanbyeol?tab=projects&type=new')
+                    'https://github.com/apache/age-website/projects')
                   }
                 >
                   View on GitHub

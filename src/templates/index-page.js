@@ -128,8 +128,6 @@ export const IndexPageTemplate = ({
         <h2>Message From AGE Team</h2>
         <div className={styles.Youtube}>
           <iframe
-            width="100%"
-            height="720"
             //src="https://www.youtube.com/embed/qC_3F4Gaipk"
             src="https://www.youtube.com/embed/MAjVnPvWVhg"
             title="YouTube video player"

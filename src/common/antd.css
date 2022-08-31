@@ -6561,6 +6561,11 @@ a.ant-btn-sm {
     padding 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .ant-menu-title-content {
+  color: #8B8399;
+  transition: color 0.3s;
+}
+.ant-menu-title-content:hover {
+  color: black;
   transition: color 0.3s;
 }
 .ant-menu-item a {
@@ -6611,7 +6616,7 @@ a.ant-btn-sm {
   color: #fff;
 }
 .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
-  background-color: #808080; 
+  background-color: white; 
 }
 
 .ant-menu-inline,
@@ -6744,12 +6749,17 @@ a.ant-btn-sm {
   transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .ant-menu-submenu-popup > .ant-menu {
-  background-color: #181631;
+  background-color: #ffffff;
   border-radius: 0px 0px 16px 16px;
   font-size: 1.25rem;
 }
 .ant-menu-submenu-popup > .ant-menu .ant-menu-item a { 
-  color: #fff;
+  color: black;
+}
+.ant-menu-submenu-popup > .ant-menu .ant-menu-item a:hover { 
+  color: #B8145A;
+  font-weight: bold;
+  transition: none;
 }
 /* .ant-menu-submenu-popup > .ant-menu .ant-menu-item a:hover { 
   color: #873DF2;

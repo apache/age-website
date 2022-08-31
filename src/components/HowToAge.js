@@ -12,6 +12,7 @@ const HowToAge = () => {
   return (
     <div className={styles.root}>
       <div className={styles.Section1}>
+      <span>AGE Architecture</span>
         <div className={styles.Section1Wrap}>
           <div className={styles.Vertical}>
             <button

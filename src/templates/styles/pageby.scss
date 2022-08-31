@@ -59,9 +59,10 @@
   align-items: center;
   grid-column-gap: 5rem;
   grid-row-gap: 6rem;
-  border: 1px solid black;
+  border: 1px solid #BFBFBF;
   border-radius: 2rem;
   padding: 5rem;
+  box-shadow: 0rem 0.1875rem 0.375rem #00000029;
   @media screen and (max-width: 80rem) {
     grid-column-gap : 1rem;
     padding: 1rem;
@@ -70,6 +71,10 @@
 }   
 .JoinUsAGE p {
   padding-left: 1rem;
+}
+.JoinUsAGE a {
+  color: $primayrColor;
+  text-decoration: underline;
 }
 .subTitle{
   display: flex; 
@@ -87,25 +92,32 @@
   h1 {
     text-align: left;
     margin-bottom: 1.75rem;
+    color: $primayrColor;
   }
   h2 {
     margin-top: 5rem;
     font: $h3;
-    color: $textPrimary;
+    color: $primayrColor;
     text-align: left;
+    color: $primayrColor;
   }
 }
 
 //http://{domail}/contribution/guide
 .DeveloperGuidelines {
+  a {
+    color: $primayrColor;
+    text-decoration: underline;
+  }  
   h1 {
     text-align: left;
     margin-bottom: 1.75rem;
+    color: $primayrColor;
   }
   h2 {
     margin-top: 5rem;
     font: $h3;
-    color: $textPrimary;
+    color: $primayrColor;
     text-align: left;
   }
   pre {
@@ -128,13 +140,18 @@
 
 //http://{domail}/contribution/process
 .ReleaseProcess {
+  a {
+    color: $primayrColor;
+    text-decoration: underline;
+  }
   h1 {
     text-align: left;
     margin-bottom: 1.75rem;
+    color: $primayrColor;
   }
   h2 {
     font: $h3;
-    color: $textPrimary;
+    color: $primayrColor;
     text-align: left;
   }
   .ReleaseProcessBox {

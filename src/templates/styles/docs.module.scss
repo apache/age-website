@@ -8,7 +8,7 @@
   // 제목
   h1 {
     font: $h1;
-    color: $textPrimary;
+    color: $primayrColor;
     text-align: center;
     margin-top: 1.25rem;
     margin-bottom: 5rem;
@@ -37,6 +37,13 @@
   }  
   // table
   table {
+    a {
+      color: $primayrColor;
+      text-decoration: underline;
+    }
+    a:hover {
+      color: $primayrColor;
+    }
     width: 100%;
     margin: 0 auto;
     thead {
@@ -56,7 +63,7 @@
     th {
       text-align: center;
       font: $h4;
-      color: $textPrimary;
+      color: $primayrColor;
       background-color: $bgColor;
     }
     td {
