@@ -113,16 +113,12 @@ export const IndexPageTemplate = ({
           </p>
           <AgeProjectList />
         </div>
-        
-      </section>
-
-      <section style={{backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}}>
+        <hr style={{border: 'solid 1px #ffffff', margin: '2rem 0'}}/>
         <div className={styles.content}>
           <h2>AGE Viewer Projects</h2>
           <p></p>
           <AgeViewerProjectList />
         </div>
-        
       </section>
 
       <section style={{backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}}>
