@@ -1,25 +1,6 @@
 # This is Apach web site ver 2.0!
 
-# how to start
-
-
-## 1. build documentation
-### Environment Setting
-
-> ```virtualenv -p python3 venv```
-
-### Activate the virtual environment
-
-> ```source venv/bin/activate```
-
-### Install the python requirements
-
-> ```pip install -r requirements.txt```
-
-### build
-
-> ```sphinx-multiversion docs static/age-manual/```
-
+# how to develop & deploy
 
 ## 2. gatsby website develop mode
 
@@ -34,9 +15,16 @@
 > yarn run serve or npm run serve
 > ```
 
-### web site : visit please http://localhost:8000/
+### local web site: visit please http://localhost:8000/
 
-### admin(Content Management System) : http://localhost:8000/admin
+### admin(Netlify Content Management System) : http://localhost:8000/admin
+  
+> ⚠️ Only forked branch repositories are allowed on the Administration page.
+> 1. To use the Administration page, first fork this repository first
+> 2. Please allow permission requests for your repository from the Netlify app
+> 3. In the ``/static/admin/config.yml`` file, please change the ``repo`` to your repository address
+> 4. When you are done, pull request to new-web.
+
 
 
 ## 3. build & deploy
