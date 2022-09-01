@@ -13,7 +13,7 @@ export const CommittersTemplatePage = ({
   nonpmcTitle,
   pmc,
   nonpmc,
-  content,
+  video,
   contentComponent,
 }) => {
   const PageContent = contentComponent || Content;
@@ -26,7 +26,7 @@ export const CommittersTemplatePage = ({
       return (
         <div className={styles.Committer}>
           <p className={styles.Aavatar}>
-            <div >
+            <div>
               <img src={avatarImg} art="profile image"></img>
             </div>
           </p>
@@ -48,7 +48,16 @@ export const CommittersTemplatePage = ({
       <h1>{pmcTitle}</h1>
       <CommitersList list={pmc} />
       <h1>Welcome to AGE</h1>
-      <div className={styles.Youtube}>youtube</div>
+      <div className={styles.Youtube}>
+        <iframe
+          //src="https://www.youtube.com/embed/qC_3F4Gaipk"
+          src={video}
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
       <h1>{nonpmcTitle}</h1>
       <CommitersList list={nonpmc} />
       {/* <PageContent className="content" content={content} /> */}
@@ -61,7 +70,7 @@ CommittersTemplatePage.propTypes = {
   nonpmcTitle: PropTypes.string,
   pmc: PropTypes.array,
   nonpmc: PropTypes.array,
-  content: PropTypes.string,
+  video: PropTypes.string,
   contentComponent: PropTypes.func,
 };
 
@@ -75,7 +84,7 @@ const CommittersPage = ({ data }) => {
         nonpmcTitle={post.frontmatter.nonpmcTitle}
         pmc={post.frontmatter.pmc}
         nonpmc={post.frontmatter.nonpmc}
-        content={post.html}
+        video={post.frontmatter.video}
         contentComponent={HTMLContent}
       />
     </Layout>
@@ -95,6 +104,7 @@ export const aboutPageQuery = graphql`
       frontmatter {
         pmcTitle
         nonpmcTitle
+        video
         pmc {
           name
           avatar {

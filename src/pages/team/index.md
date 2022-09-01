@@ -3,6 +3,7 @@ templateKey: committers-page
 path: /committers
 pmcTitle: Project Management Committee (PMC)
 nonpmcTitle: Committers (Not including PMC members)
+video: https://www.youtube.com/embed/MAjVnPvWVhg
 pmc:
   - name: 'Dehowe Feng'
     avatar: /img/DehoweFeng.jpg
@@ -11,7 +12,7 @@ pmc:
   - name: 'Kevin Ratnasekera'
     avatar: /img/KevinRatnasekera.jpg
     githubName: 'djkevincr'
-    githubLink: 'https://github.com/dehowef'
+    githubLink: 'https://github.com/djkevincr'
   - name: 'Alex Kwak'
     avatar: /img/AlexKwak.jpg
     githubName: 'emotionbug'
@@ -122,5 +123,3 @@ nonpmc:
     githubName: 'vongosling'
     githubLink: 'https://github.com/vongosling'    
 ---
-
-## 안녕하세요
