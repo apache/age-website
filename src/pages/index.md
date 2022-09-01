@@ -11,4 +11,3 @@ bannerContents: >-
 
   <a class="bannerLink bnLk2" href="#">Ask Forum</a>
 ---
-...
