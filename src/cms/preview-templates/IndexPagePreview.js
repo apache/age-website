@@ -8,8 +8,7 @@ const IndexPagePreview = ({ entry, getAsset, widgetFor }) => {
     return (
       <IndexPageTemplate
         bannerImg={data.bannerImg}        
-        bannerContents={widgetFor('bannerContents')}
-        html={widgetFor('body')}
+        bannerContents={widgetFor('bannerContents')}        
       />
     )
   } else {
