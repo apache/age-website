@@ -35,11 +35,6 @@ const Navbar = () => {
                 </Link>
               </Menu.Item>
               <Menu.Item>
-                <Link className="navbar-item" to="/download">
-                  Download
-                </Link>
-              </Menu.Item>
-              <Menu.Item>
                 <Link className="navbar-item" to="/release-notes">
                   Release Notes
                 </Link>
@@ -114,11 +109,6 @@ const Navbar = () => {
                 </Link>
               </Menu.Item>
               <Menu.Item>
-                <Link className="navbar-item" to="/download">
-                  Download
-                </Link>
-              </Menu.Item>
-              <Menu.Item>
                 <Link className="navbar-item" to="/release-notes">
                   Release Notes
                 </Link>
@@ -128,6 +118,16 @@ const Navbar = () => {
               <Menu.Item>
                 <Link className="navbar-item" to="/joinus">
                   Join AGE Community
+                </Link>
+              </Menu.Item>
+              <Menu.Item>
+                <Link className="navbar-item" target='_blank' to="https://www.reddit.com/r/apacheage/">
+                  AGE Forum
+                </Link>
+              </Menu.Item>
+              <Menu.Item>
+                <Link className="navbar-item" target='_blank' to="https://github.com/apache/age/projects">
+                  AGE Project
                 </Link>
               </Menu.Item>
             </Menu.SubMenu>

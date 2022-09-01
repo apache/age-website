@@ -5,7 +5,8 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Content, { HTMLContent } from '../components/Content';
 import Ageinfos from '../components/AgeInfos';
-import ProjectList from '../components/ProjectList';
+import AgeProjectList from '../components/AgeProjectList';
+import AgeViewerProjectList from '../components/AgeViewerProjectList';
 import RedditRss from '../components/RedditRss';
 // style
 import * as styles from './styles/index.module.scss';
@@ -63,7 +64,7 @@ export const IndexPageTemplate = ({
             <div className={styles.verticalLine}>
             </div>
             <div className={styles.cardRight}>
-              What Is <b>Apache AGE® Viewer</b> ?
+              What Is Apache AGE® Viewer ?
               <div className={styles.cardContent}>
               <b>Apache AGE® Viewer</b> is a user interface for Apache AGE® to provide visualization and exploration of data. <br></br><br></br>
               It provides a simple web visualization tool for users to enter complex graph queries and explore the results in graph and table forms. <br></br><br></br>
@@ -77,23 +78,23 @@ export const IndexPageTemplate = ({
             <div className={styles.keyFeaturesImgContainer}>
               <div>
                 <img src={keyFeaturesImg01}></img>
-                <div>Graph Database Plugin<br></br> For Postgre SQL</div>
-                <div>Allow The Access To Query And Visualize Graph Data From A Postgresql Compatible Relational Database.</div>
+                <div>Graph Database Plugin<br></br> For PostgreSQL</div>
+                <div>Allow the access to query and visualize graph data from a PostgreSQL compatible relational database.</div>
               </div>
               <div>
                 <img src={keyFeaturesImg02}></img>
                 <div>Hybrid Queries<br></br> (OpenCypher And SQL)</div>
-                <div>Hybrid Query Technology Simultaneously Performs The Queries For Relational Data And Graph Data</div>
+                <div>Hybrid query technology simultaneously performs the queries for relational data and graph data</div>
               </div>
               <div>
                 <img src={keyFeaturesImg03}></img>
                 <div>Fast Graph Query <br></br>Processing</div>
-                <div>Achieve Both Fast Indexing And Efficient Query Processing.</div>
+                <div>Achieve both fast indexing and efficient query processing.</div>
               </div>
               <div>
                 <img src={keyFeaturesImg04}></img>
                 <div>Graph Visualization <br></br> And Analytics</div>
-                <div>Provides The Visualization Of Graph And Relational Data For Easier, Enhanced Understanding And Analyzing Of Data</div>
+                <div>Provides the visualization of graph and relational data for easier, enhanced understanding and analyzing of data</div>
               </div>
             </div>
           </div>
@@ -107,13 +108,17 @@ export const IndexPageTemplate = ({
             not only with code contributions. <br /> 
             You can learn more about
             Apache AGE by working with other developers.  <br />
-            You can find out more information on how to join the projects by the following&nbsp;
-            <a>Guideline.</a>
           </p>
-          <ProjectList />
+          <AgeProjectList />
         </div>
-        
+        <hr style={{border: 'solid 1px #ffffff', margin: '2rem 0'}}/>
+        <div className={styles.content}>
+          <h2>AGE Viewer Projects</h2>
+          <p></p>
+          <AgeViewerProjectList />
+        </div>
       </section>
+
       <section style={{backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}}>
         
         <div className={styles.content}>
@@ -128,12 +133,11 @@ export const IndexPageTemplate = ({
         <h2>Message From AGE Team</h2>
         <div className={styles.Youtube}>
           <iframe
-            //src="https://www.youtube.com/embed/qC_3F4Gaipk"
-            src="https://www.youtube.com/embed/MAjVnPvWVhg"
+            src="https://www.youtube.com/embed/w8ixRk9YXJo"
             title="YouTube video player"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
+            allowFullScreen
           ></iframe>
         </div>
       </div>

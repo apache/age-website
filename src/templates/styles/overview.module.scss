@@ -87,7 +87,7 @@
     margin: 0 auto;
     width: auto;
     grid-template-columns: repeat(auto-fill, minmax(25%, auto));
-    @media screen and (max-width: 80rem) {
+    @media screen and (max-width: 48rem) {
       grid-template-columns: repeat(auto-fill, minmax(50%, auto));
     }
 
@@ -100,19 +100,19 @@
       }
       div {
         padding: 5% 0;
+        width: 100%;
+        text-transform: none;
+        color: $textColor;
       }
       div:nth-child(n+1):nth-child(-n+2) {
-        width: 100%;
         font: normal normal bold 1.25rem/1.75rem Mark Pro;
         letter-spacing: 0.6px;
-        color: #472E77;
       }
       div:nth-child(n+3):nth-child(-n+4) {
         width: 100%;
         padding: 0% 10%;
         font: normal normal normal 1rem/1.25rem Mark Pro;
         letter-spacing: 0px;
-        color: #472E77;
       }
     }
     

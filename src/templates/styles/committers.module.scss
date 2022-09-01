@@ -16,12 +16,25 @@
     margin-top: 0px;
   }
 }
+// youtube
 .Youtube {
-  max-width: $conWidth;
-  height: 60vw;
-  max-height: 41.5rem;
-  background-color: $bgColor;
-  text-align: center;
+  max-width: 73.75rem;
+  overflow: hidden;
+  position: relative;
+  width:100%;
+  margin: 0 auto;
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+.Youtube::after {
+  padding-top: 56.25%;
+  display: block;
+  content: '';
 }
 .CommitersContainer {
   display: grid;
@@ -37,6 +50,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    .githubLink:hover {
+      transform: scale(1.2);
+    }
     p:nth-child(1) {
       div {
         width: 5rem;

@@ -42,9 +42,11 @@ const RedditRss = () => {
   const RssItems = useCallback(() => {
     return redditRss?.map((item) => (
       <RssItem
+        key={item.id}
         title={item?.title[0]}
         content={item.content[0]['_']}
-        updated={item.updated[0]}
+        updated={item.updated[0]
+        }
       />
     ));
   }, [redditRss]);
@@ -81,7 +83,7 @@ const RedditRss = () => {
           )}
         </div>
         <a target="_blank" href="https://www.reddit.com/r/apacheage/">
-          View on r/apacheage
+          View on AGE Forum
         </a>
       </div>
     </div>

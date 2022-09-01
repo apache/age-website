@@ -16,7 +16,7 @@ const ProjectList = ({ mode }) => {
 
   useEffect(() => {
     projectManager
-      .getProjectListStateSetter(setProjects, setPageInfo)
+      .getProjectListStateSetter(setProjects, setPageInfo, 'age')
       .then((res) => setLoaindgYn(!res));
   }, []);
 
@@ -28,6 +28,7 @@ const ProjectList = ({ mode }) => {
         pageInfo.endCursor,
         setProjects,
         setPageInfo
+        , 'age'
       )
       .then((res) => setAddLoaindgYn(!res));
   }, [pageInfo, projects]);
@@ -40,17 +41,15 @@ const ProjectList = ({ mode }) => {
           <Spin></Spin>
         </p>
       ) : (
-
         <PerfectScrollbar>
           <ul className={styles.cardRoot}>
             {projects?.map((item) => (
-              <li>
+              <li key={item.project.id}>
                 <ProjectDetail project={item.project} mode="card" />
               </li>
             ))}
           </ul>
         </PerfectScrollbar>
-
       )}
       {isAddLoading ? (
         <p style={{ textAlign: 'center' }}>
@@ -62,7 +61,9 @@ const ProjectList = ({ mode }) => {
       <ul className={styles.buttonGroup}>
         <p style={{ textAlign: 'center' }}>
           {(() => {
-            if (pageInfo?.hasNextPage && projects.length < 16)
+//console.log('AgeProjectList pageInfo')             
+//console.log(pageInfo.totalCount)            
+            if (pageInfo?.hasNextPage && projects.length < 12)
               return (
                 <button
                   className={styles.MoreBtn}
@@ -71,13 +72,13 @@ const ProjectList = ({ mode }) => {
                   More
                 </button>
               );
-            else if (projects.length == 16)
+            else if (projects.length == 12 || !pageInfo?.hasNextPage)
               return (
                 <button
                   className={styles.MoreBtn}
                   onClick={() =>
                   (window.open("about:blank").location.href = 
-                    'https://github.com/apache/age-website/projects')
+                    'https://github.com/apache/age/projects')
                   }
                 >
                   View on GitHub

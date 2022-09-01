@@ -53,12 +53,12 @@ const Footer = class extends React.Component {
               <a href="/joinus">Join AGE Community</a>
             </li>
             <li>
-              <a href="https://www.reddit.com/r/apacheage/" target={'_blank'}>
+              <a href="https://www.reddit.com/r/apacheage/" target='_blank'>
                 AGE Forum
               </a>
             </li>
             <li>
-              <a href="#">AGE Project</a>
+              <a href="https://github.com/apache/age/projects" target='_blank'>AGE Project</a>
             </li>
           </ul>
           <ul className={`${styles.Item} Item`}>
@@ -127,14 +127,14 @@ const Footer = class extends React.Component {
           className={`${styles.Social} Social`}
         >
           <div className={`${styles.Links} FooterLinks`}>
-            <a title="Github" href="https://github.com/" target={'_blank'}>
+            <a title="Github" href="https://github.com/apache/age" target={'_blank'}>
               <img
                 src={icoGithubLd}
                 alt="Facebook"
                 style={{ width: '2.5em', height: '2.5em' }}
               />
             </a>
-            <a title="twitter" href="https://twitter.com" target={'_blank'}>
+            <a title="twitter" href="https://twitter.com/apache_age?lang=en" target={'_blank'}>
               <img
                 className="fas fa-lg"
                 src={icoTwitterLd}
@@ -142,14 +142,14 @@ const Footer = class extends React.Component {
                 style={{ width: '2.5em', height: '2.5em' }}
               />
             </a>
-            <a title="LinkedIn" href="https://linkedin.com/" target={'_blank'}>
+            <a title="LinkedIn" href="https://www.linkedin.com/showcase/71336827/admin/" target={'_blank'}>
               <img
                 src={icoLinkedinLd}
                 alt="LinkedIn"
                 style={{ width: '2.5em', height: '2.5em' }}
               />
             </a>
-            <a title="Youtube" href="https://Youtube.com" target={'_blank'}>
+            <a title="Youtube" href="https://youtu.be/qC_3F4Gaipk" target={'_blank'}>
               <img
                 src={icoYoutubeLd}
                 alt="Youtube"

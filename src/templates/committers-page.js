@@ -34,7 +34,7 @@ export const CommittersTemplatePage = ({
           <p className={`${styles.GithubName}`}>{item.githubName}</p>
           <p className={`${styles.GithubProfile}`}>
             <a href={item.githubLink} target="_blank">
-              <img src={iconGithub} alt="github profile link"></img>
+              <img src={iconGithub} className={styles.githubLink}  alt="github profile link"></img>
             </a>
           </p>
         </div>
@@ -48,7 +48,15 @@ export const CommittersTemplatePage = ({
       <h1>{pmcTitle}</h1>
       <CommitersList list={pmc} />
       <h1>Welcome to AGE</h1>
-      <div className={styles.Youtube}>youtube</div>
+      <div className={styles.Youtube}>
+          <iframe
+            src="https://www.youtube.com/embed/YE7nnImntTs"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+       </div>
       <h1>{nonpmcTitle}</h1>
       <CommitersList list={nonpmc} />
       {/* <PageContent className="content" content={content} /> */}

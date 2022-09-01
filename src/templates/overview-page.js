@@ -45,25 +45,25 @@ export const OverviewTemplate = ({
         <PageContent className={styles.bannerContent} content={subcontent} />
         <div className={styles.keyFeatures}>
             <div className={styles.keyFeaturesImgContainer}>
-              <div>
+            <div>
                 <img src={keyFeaturesImg01}></img>
-                <div>Graph Database Plugin<br></br> For Postgre SQL</div>
-                <div>Allow The Access To Query And Visualize Graph Data From A Postgresql Compatible Relational Database.</div>
+                <div>Graph Database Plugin<br></br> For PostgreSQL</div>
+                <div>Allow the access to query and visualize graph data from a PostgreSQL compatible relational database.</div>
               </div>
               <div>
                 <img src={keyFeaturesImg02}></img>
                 <div>Hybrid Queries<br></br> (OpenCypher And SQL)</div>
-                <div>Hybrid Query Technology Simultaneously Performs The Queries For Relational Data And Graph Data</div>
+                <div>Hybrid query technology simultaneously performs the queries for relational data and graph data</div>
               </div>
               <div>
                 <img src={keyFeaturesImg03}></img>
                 <div>Fast Graph Query <br></br>Processing</div>
-                <div>Achieve Both Fast Indexing And Efficient Query Processing.</div>
+                <div>Achieve both fast indexing and efficient query processing.</div>
               </div>
               <div>
                 <img src={keyFeaturesImg04}></img>
                 <div>Graph Visualization <br></br> And Analytics</div>
-                <div>Provides The Visualization Of Graph And Relational Data For Easier, Enhanced Understanding And Analyzing Of Data</div>
+                <div>Provides the visualization of graph and relational data for easier, enhanced understanding and analyzing of data</div>
               </div>
             </div>
           </div>
