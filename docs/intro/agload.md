@@ -45,7 +45,7 @@ oad_edges_from_file('<graph name>',
 ## Explanation about the CSV format
 Following is the explanation about the structure for CSV files for vertices and edges.
 
-- A CSV file for nodes shall be formatted aw following; 
+- A CSV file for nodes shall be formatted as following; 
 
 | field name | Field description                                            |
 | ---------- | ------------------------------------------------------------ |
