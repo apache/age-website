@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: apache/age-website
+  repo: (your-github)/age-website
   branch: new-web
   commit_messages:
     create: "Create {{collection}} “{{slug}}”"
@@ -14,26 +14,6 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "src/pages/blog"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - {
-          label: "Template Key",
-          name: "templateKey",
-          widget: "hidden",
-          default: "blog-post",
-        }
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Description", name: "description", widget: "text" }
-      - { label: "Featured Post", name: "featuredpost", widget: "boolean" }
-      - { label: "Featured Image", name: "featuredimage", widget: image }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Tags", name: "tags", widget: "list" }
-
   - name: "pages"
     label: "Pages"
     files:
@@ -50,8 +30,7 @@ collections:
             }
           - { label: "Ttile", name: 'title' }          
           - { label: "Banner Image", name: 'bannerImg', widget: image }
-          - { label: "Banner Contents", name: 'bannerContents', widget: "markdown"}
-          - { label: "Body", name: "body", widget: "markdown" }
+          - { label: "Banner Contents", name: 'bannerContents', widget: "markdown"}          
       # Overview page
       - file: "src/pages/overview/index.md"
         label: "Overview"
@@ -107,6 +86,7 @@ collections:
           }
           - { label: "PMC Title", name: "pmcTitle", widget: "string" }  
           - { label: "Committer Title", name: "nonpmcTitle", widget: "string" }  
+          - { label: "Youtube link", name: "video", widget: "string" }  
           - {
             label: PMC-Commiters,
             name: pmc,
@@ -131,126 +111,93 @@ collections:
                 { label: Github Link, name: githubLink, widget: string },
               ],
           }
-      - file: "src/pages/about/index.md"
-        label: "About"
-        name: "about"
+      
+      # Join AGE Community 
+      - file: "src/pages/joinus/index.md"
+        label: "Join AGE Community"
+        name: "joinus"
         fields:
           - {
               label: "Template Key",
               name: "templateKey",
               widget: "hidden",
-              default: "about-page",
+              default: "docs-template",
             }
-          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Title", name: "title", widget: "string" }  
           - { label: "Body", name: "body", widget: "markdown" }
-      - file: "src/pages/products/index.md"
-        label: "Products Page"
-        name: "products"
+
+      # How to contribute
+      - file: "src/pages/contribution/how.md"
+        label: "How to contribute"
+        name: "how"
         fields:
           - {
               label: "Template Key",
               name: "templateKey",
               widget: "hidden",
-              default: "product-page",
+              default: "docs-template",
             }
-          - { label: Title, name: title, widget: string }
-          - { label: Image, name: image, widget: image }
-          - { label: Heading, name: heading, widget: string }
-          - { label: Description, name: description, widget: string }
+          - { label: "Title", name: "title", widget: "string" }  
+          - { label: "Body", name: "body", widget: "markdown" }
+      
+      # Developer Guidelines
+      - file: "src/pages/contribution/guide.md"
+        label: "Developer Guidelines"
+        name: "guide"
+        fields:
           - {
-              label: Intro,
-              name: intro,
-              widget: object,
-              fields:
-                [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: text },
-                  {
-                    label: Blurbs,
-                    name: blurbs,
-                    widget: list,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Text, name: text, widget: text },
-                      ],
-                  },
-                ],
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "docs-template",
             }
+          - { label: "Title", name: "title", widget: "string" }  
+          - { label: "Body", name: "body", widget: "markdown" }
+      
+      # Committer Requirements
+      - file: "src/pages/contribution/requirements.md"
+        label: "Committer Requirements"
+        name: "requirements"
+        fields:
           - {
-              label: Main,
-              name: main,
-              widget: object,
-              fields:
-                [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: text },
-                  {
-                    label: Image1,
-                    name: image1,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
-                  },
-                  {
-                    label: Image2,
-                    name: image2,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
-                  },
-                  {
-                    label: Image3,
-                    name: image3,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
-                  },
-                ],
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "docs-template",
             }
+          - { label: "Title", name: "title", widget: "string" }  
+          - { label: "Body", name: "body", widget: "markdown" }
+      
+      # Release Process
+      - file: "src/pages/contribution/process.md"
+        label: "Release Process"
+        name: "process"
+        fields:
           - {
-              label: Testimonials,
-              name: testimonials,
-              widget: list,
-              fields:
-                [
-                  { label: Quote, name: quote, widget: string },
-                  { label: Author, name: author, widget: string },
-                ],
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "docs-template",
             }
-          - { label: Full_image, name: full_image, widget: image }
-          - {
-              label: Pricing,
-              name: pricing,
-              widget: object,
-              fields:
-                [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: string },
-                  {
-                    label: Plans,
-                    name: plans,
-                    widget: list,
-                    fields:
-                      [
-                        { label: Plan, name: plan, widget: string },
-                        { label: Price, name: price, widget: string },
-                        {
-                          label: Description,
-                          name: description,
-                          widget: string,
-                        },
-                        { label: Items, name: items, widget: list },
-                      ],
-                  },
-                ],
-            }
+          - { label: "Title", name: "title", widget: "string" }  
+          - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "blog"
+    label: "Blog"
+    folder: "src/pages/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "blog-post",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Featured Post", name: "featuredpost", widget: "boolean" }
+      - { label: "Featured Image", name: "featuredimage", widget: image }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Tags", name: "tags", widget: "list" }
