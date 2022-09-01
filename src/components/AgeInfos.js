@@ -17,14 +17,12 @@ const Ageinfos = () => {
       <div>
         {isLoading ? <Spin /> : <></>}
         <a target="_blank" href='https://github.com/apache/age/stargazers' className={styles.Count}>{ageInfo.startCount}</a>
-        <br />
         <span className={styles.Label}>✭ Star</span>
       </div>
       <div></div>
       <div>
         {isLoading ? <Spin /> : <></>}
         <a href='/team' className={styles.Count}>{ageInfo.memberCount}+</a>
-        <br />
         <span className={styles.Label}>Team Members</span>
       </div>
     </div>

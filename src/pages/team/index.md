@@ -3,7 +3,7 @@ templateKey: committers-page
 path: /committers
 pmcTitle: Project Management Committee (PMC)
 nonpmcTitle: Committers (Not including PMC members)
-video: https://www.youtube.com/embed/MAjVnPvWVhg
+video: https://www.youtube.com/embed/YE7nnImntTs
 pmc:
   - name: 'Dehowe Feng'
     avatar: /img/DehoweFeng.jpg

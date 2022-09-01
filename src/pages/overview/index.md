@@ -11,7 +11,7 @@ subcon: >-
   <br /><br />
 
 
-  # What is Apachge AGE® Viewer?
+  # What is Apache AGE® Viewer?
 
 
   Apache AGE® Viewer is a user interface for Apache AGE® to provide visualization and exploration of data. 
@@ -29,11 +29,8 @@ subcon: >-
 
 
   <div class="OverviewLink">
-
-
-  [View Code](https://github.com/apache/age-viewer) [Download](https://github.com/apache/age-viewer/releases)
-
-
+    <a href="https://github.com/apache/age-viewer" target="_blank">View Code</a> 
+    <a href="https://github.com/apache/age-viewer/releases" target="_blank">Download</a>
   </div>
 
 

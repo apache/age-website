@@ -34,7 +34,7 @@ export const CommittersTemplatePage = ({
           <p className={`${styles.GithubName}`}>{item.githubName}</p>
           <p className={`${styles.GithubProfile}`}>
             <a href={item.githubLink} target="_blank">
-              <img src={iconGithub} alt="github profile link"></img>
+              <img src={iconGithub} className={styles.githubLink}  alt="github profile link"></img>
             </a>
           </p>
         </div>

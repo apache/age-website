@@ -10,7 +10,10 @@
   margin: 0 auto;
   max-width: 85.75rem;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
+  @media only screen and (max-width: 1024px) {
+    grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
+  }
   flex-wrap: wrap;  
   color: #8b8399 !important;
   a {
@@ -31,7 +34,7 @@
   .Item {
     // ul
     padding: 0;
-    padding-left: 30%;
+    padding-left: 20%;
     width: 100%;
     max-width: 16rem;
     list-style: none;

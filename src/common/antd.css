@@ -144,7 +144,7 @@ sup {
   top: -0.5em;
 }
 a {
-  color: #873DF2;
+  color: #9F1A61;
   text-decoration: none;
   background-color: transparent;
   outline: none;
@@ -153,10 +153,10 @@ a {
   -webkit-text-decoration-skip: objects;
 }
 a:hover {
-  color: #40a9ff;
+  color: #B8145A;
 }
 a:active {
-  color: #096dd9;
+  color: #B8145A;
 }
 a:active,
 a:hover {
@@ -313,11 +313,11 @@ mark {
 }
 ::-moz-selection {
   color: #fff;
-  background: #873DF2;
+  background: #9F1A61;
 }
 ::selection {
   color: #fff;
-  background: #873DF2;
+  background: #9F1A61;
 }
 .clearfix::before {
   display: table;
@@ -6561,12 +6561,12 @@ a.ant-btn-sm {
     padding 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .ant-menu-title-content {
-  color: #8B8399;
+  color: black;
   transition: color 0.3s;
 }
 .ant-menu-title-content:hover {
-  color: black;
-  transition: color 0.3s;
+  color: #B8145A;
+  transition: color 0.1s;
 }
 .ant-menu-item a {
   color: rgba(0, 0, 0, 0.85);

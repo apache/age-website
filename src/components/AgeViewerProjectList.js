@@ -43,15 +43,9 @@ const ProjectList = ({ mode }) => {
       ) : (
 
         <PerfectScrollbar>
-{
-//console.log('AgeProjectList projects')
-//projects.length
-}  
-
           <ul className={styles.cardRoot}>
             {projects?.map((item) => (
-              
-              <li>
+              <li key={item.project.id}>
                 <ProjectDetail project={item.project} mode="card" />
               </li>
             ))}

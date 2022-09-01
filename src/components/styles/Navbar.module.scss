@@ -98,21 +98,18 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      color: $primayrColor;
+      color: white;
       padding: 0.625rem;
       font: $h5;
       height: 2.5rem;
       /* UI Properties */
-      background: white;
+      background: $primayrColor;
       border-radius: 16px;
-      opacity: 0.5;
       border: 1px solid $primayrColor;
     }
     .Download:hover {
       color: white;
-      background: $primayrColor;
-      opacity: 1;
-      border: 1px solid white;
+      transform: scale(1.1);
     }
   }
 }
