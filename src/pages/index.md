@@ -1,7 +1,7 @@
 ---
 templateKey: index-page
 title: Apache AGE
-bannerImg: /img/img-landing01.png
+bannerImg: /img/landing-banner.jpg
 bannerContents: >-
   <h1 class="bannerHeader"><span>Apache AGE  :</span> <br/> Graph model on
   PostgreSQL</h1>
@@ -11,3 +11,4 @@ bannerContents: >-
 
   <a class="bannerLink bnLk2" href="#">Ask Forum</a>
 ---
+...
