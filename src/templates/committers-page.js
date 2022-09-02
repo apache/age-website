@@ -18,8 +18,8 @@ export const CommittersTemplatePage = ({
 }) => {
   const PageContent = contentComponent || Content;
 
-  const CommitersList = ({ list }) => {
-    const Commiters = list?.map((item) => {
+  const CommitersList = ({ list, pmcYn }) => {
+    const Commiters = list?.map((item, index) => {
       const avatarImg =
         item.avatar?.childImageSharp?.gatsbyImageData.images.fallback.src ||
         item.avatar;
@@ -29,12 +29,30 @@ export const CommittersTemplatePage = ({
             <div>
               <img src={avatarImg} art="profile image"></img>
             </div>
+            {index === 0 && pmcYn ? (
+              <p
+                style={{
+                  textAlign: 'center',
+                  fontWeight: 'bold',
+                  marginBottom: '-18px',
+                  fontSize: '14px',
+                }}
+              >
+                ✨Chair✨
+              </p>
+            ) : (
+              <></>
+            )}
           </p>
           <p className={`${styles.Name} CommitterName`}>{item.name}</p>
           <p className={`${styles.GithubName}`}>{item.githubName}</p>
           <p className={`${styles.GithubProfile}`}>
             <a href={item.githubLink} target="_blank">
-              <img src={iconGithub} className={styles.githubLink}  alt="github profile link"></img>
+              <img
+                src={iconGithub}
+                className={styles.githubLink}
+                alt="github profile link"
+              ></img>
             </a>
           </p>
         </div>
@@ -46,7 +64,7 @@ export const CommittersTemplatePage = ({
   return (
     <section className={styles.root}>
       <h1>{pmcTitle}</h1>
-      <CommitersList list={pmc} />
+      <CommitersList list={pmc} pmcYn={true} />
       <h1>Welcome to AGE</h1>
       <div className={styles.Youtube}>
         <iframe
@@ -59,7 +77,7 @@ export const CommittersTemplatePage = ({
         ></iframe>
       </div>
       <h1>{nonpmcTitle}</h1>
-      <CommitersList list={nonpmc} />
+      <CommitersList list={nonpmc} pmcYn={false} />
       {/* <PageContent className="content" content={content} /> */}
     </section>
   );
