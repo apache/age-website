@@ -62,6 +62,12 @@
         border: solid 1px black;
         overflow: hidden;
       }
+      p {        
+          text-align: center;
+          font-weight: bold;
+          margin-bottom: -1.125rem;
+          font-size: .875rem;
+      }
     }
     p:nth-child(2) {
       font: $h5;

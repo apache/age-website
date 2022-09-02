@@ -25,19 +25,12 @@ export const CommittersTemplatePage = ({
         item.avatar;
       return (
         <div className={styles.Committer}>
-          <p className={styles.Aavatar}>
+          <p>
             <div>
               <img src={avatarImg} art="profile image"></img>
             </div>
             {index === 0 && pmcYn ? (
-              <p
-                style={{
-                  textAlign: 'center',
-                  fontWeight: 'bold',
-                  marginBottom: '-18px',
-                  fontSize: '14px',
-                }}
-              >
+              <p>
                 ✨Chair✨
               </p>
             ) : (
