@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkapahce_age_project=self.webpackChunkapahce_age_project||[]).push([[561],{6349:function(e,a,t){t.r(a);var n=t(7294),c=t(8108);a.default=function(){return n.createElement(c.Z,null,n.createElement("section",{className:"section"},n.createElement("div",{className:"container"},n.createElement("div",{className:"content"},n.createElement("h1",null,"Thank you!"),n.createElement("p",null,"This is a custom thank you page for form submissions")))))}}}]);
-//# sourceMappingURL=component---src-pages-contact-thanks-js-716d56ac518cd2f72a15.js.map
