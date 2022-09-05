@@ -61,8 +61,6 @@ const ProjectList = ({ mode }) => {
       <ul className={styles.buttonGroup}>
         <p style={{ textAlign: 'center' }}>
           {(() => {
-//console.log('AgeProjectList pageInfo')             
-//console.log(pageInfo.totalCount)            
             if (pageInfo?.hasNextPage && projects.length < 12)
               return (
                 <button

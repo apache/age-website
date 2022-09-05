@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react';
+import { notification } from 'antd';
 import PropTypes from 'prop-types';
 import * as styles from './styles/ProjectDtail.module.scss';
 
@@ -6,11 +7,18 @@ const ProjectDetail = (props) => {
   const [project] = useState({ ...props?.project });
   const [mode] = useState({ ...props?.mod });
 
-  useEffect(() => {}, []);
+  useEffect(() => { }, []);
 
   const card = useCallback(() => {
     return <div></div>;
   }, [project]);
+
+  const openNotification = () => {
+    notification.open({
+      message: 'To be available soon',      
+      placement: 'top'
+    });
+  };
 
   const projectDateMaker = (dateString) => {
     const stringArr = dateString.split('T');
@@ -29,12 +37,19 @@ const ProjectDetail = (props) => {
           </p>
           <p className={styles.title}>{project.title}</p>
           <p className={styles.desc}>
-            {(project.shortDescription) == undefined ? "No description" : project.shortDescription }
+            {(project.shortDescription) == undefined ? "No description" : project.shortDescription}
           </p>
         </div>
-        <a className={styles.link} href={project.url} target="_blank">
-          View Details
-        </a>
+        {project.public ?
+          <a className={styles.link} href={project.url} target="_blank">
+            View Details
+          </a> :
+          <a className={styles.link} onClick={(e) => {
+            e.preventDefault();
+            openNotification();
+          }}>
+            To be Available...
+          </a>}
       </div>
     );
   }, [project]);
