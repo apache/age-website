@@ -12,9 +12,9 @@ title:
 
 Committers should have a decent amount, of continuous engagement and contributions (fixing bugs, writing documentation, answering community questions) to AGE either by contributing on GitHub Repos, documentation and mailing list, etc.
 
-+3 months with light activity and engagement.\
-+2 months of medium activity and engagement.\
-+1 month with solid activity and engagement.
++5 months with light activity and engagement.\
++4 months of medium activity and engagement.\
++3 month with solid activity and engagement.
 
 
 ## 2-Quality of contributions:
