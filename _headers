@@ -27,23 +27,15 @@
   Cache-Control: public, max-age=31536000, immutable
 /component---src-pages-blog-index-js-ebeaa4997d7f85bd4ced.js
   Cache-Control: public, max-age=31536000, immutable
-/component---src-pages-contact-examples-js-4c7fb8fe626f521edf08.js
-  Cache-Control: public, max-age=31536000, immutable
-/component---src-pages-contact-file-upload-js-4052e831a57eff5b8154.js
-  Cache-Control: public, max-age=31536000, immutable
-/component---src-pages-contact-index-js-8baadd9e54cc9e206eb3.js
-  Cache-Control: public, max-age=31536000, immutable
-/component---src-pages-contact-thanks-js-530a8215b78df796d50f.js
-  Cache-Control: public, max-age=31536000, immutable
 /component---src-pages-tags-index-js-d9ccd7b1e41b12d91907.js
   Cache-Control: public, max-age=31536000, immutable
-/webpack-runtime-9f0b640ed8e9de3fe2db.js
+/webpack-runtime-935ecd0ee8af063f2b1a.js
   Cache-Control: public, max-age=31536000, immutable
 /framework-8ec24d0ce0fdc0c7308a.js
   Cache-Control: public, max-age=31536000, immutable
 /532a2f07-505d533adaa8ead4429b.js
   Cache-Control: public, max-age=31536000, immutable
-/app-f805b4fa5c95e52791e8.js
+/app-56f779c2897eae5fc4ba.js
   Cache-Control: public, max-age=31536000, immutable
 /static/*
   Cache-Control: public, max-age=31536000, immutable
