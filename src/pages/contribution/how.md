@@ -5,7 +5,7 @@ title:
 ---
 <div class="HowToContirbute">
 
-# How to contribute
+# How to Contribute
 There are multiple ways you can contribute to the project. And help is always welcome! All details can be found on the contributing page. Keep reading for a quick overview!
 
 ## Becoming a Committer
