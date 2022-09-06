@@ -1,0 +1,203 @@
+backend:
+  name: github
+  repo: (your-github)/age-website
+  branch: new-web
+  commit_messages:
+    create: "Create {{collection}} “{{slug}}”"
+    update: "Update {{collection}} “{{slug}}”"
+    delete: "Delete {{collection}} “{{slug}}”"
+    uploadMedia: "[skip ci] Upload “{{path}}”"
+    deleteMedia: "[skip ci] Delete “{{path}}”"
+
+local_backend: true
+media_folder: static/img
+public_folder: /img
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      # Landing page
+      - file: "src/pages/index.md"
+        label: "Landing Page"
+        name: "index"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "index-page",
+            }
+          - { label: "Ttile", name: 'title' }          
+          - { label: "Banner Image", name: 'bannerImg', widget: image }
+          - { label: "Banner Contents", name: 'bannerContents', widget: "markdown"}          
+      # Overview page
+      - file: "src/pages/overview/index.md"
+        label: "Overview"
+        name: "overview"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "overview-page",
+            }
+          - { label: "Banner image", name: "bannerImg", widget: image }  
+          - { label: "Banner Cotents", name: "bannerContents", widget: markdown }  
+          - { label: "Title", name: "title", widget: "string" }  
+          - { label: "Body", name: "body", widget: "markdown" }
+          - { label: "Body2", name: "subcon", widget: "markdown" }
+      # Download page
+      - file: "src/pages/download/index.md"
+        label: "Download"
+        name: "download"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "docs-template",
+            }
+          - { label: "Title", name: "title", widget: "string" }  
+          - { label: "Body", name: "body", widget: "markdown" }
+      # Release note page
+      - file: "src/pages/release-notes/index.md"
+        label: "Release Note"
+        name: "release"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "docs-template",
+            }
+          - { label: "Title", name: "title", widget: "string" }  
+          - { label: "Body", name: "body", widget: "markdown" }
+      # Commiters
+      - file: "src/pages/team/index.md"
+        label: "Team"
+        name: "team"
+        fields: 
+          - {
+            label: "Template Key",
+            name: "templateKey",
+            widget: "hidden",
+            default: "committers-template",
+          }
+          - { label: "PMC Title", name: "pmcTitle", widget: "string" }  
+          - { label: "Committer Title", name: "nonpmcTitle", widget: "string" }  
+          - { label: "Youtube link", name: "video", widget: "string" }  
+          - {
+            label: PMC-Commiters,
+            name: pmc,
+            widget: list,
+            fields:
+              [
+                { label: Name, name: name, widget: string },
+                { label: Avatar, name: avatar, widget: image },
+                { label: Github Name, name: githubName, widget: string },
+                { label: Github Link, name: githubLink, widget: string },
+              ],
+          }
+          - {
+            label: Commiters,
+            name: nonpmc,
+            widget: list,
+            fields:
+              [
+                { label: Name, name: name, widget: string },
+                { label: Avatar, name: avatar, widget: image },
+                { label: Github Name, name: githubName, widget: string },
+                { label: Github Link, name: githubLink, widget: string },
+              ],
+          }
+      
+      # Join AGE Community 
+      - file: "src/pages/joinus/index.md"
+        label: "Join AGE Community"
+        name: "joinus"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "docs-template",
+            }
+          - { label: "Title", name: "title", widget: "string" }  
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      # How to contribute
+      - file: "src/pages/contribution/how.md"
+        label: "How to contribute"
+        name: "how"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "docs-template",
+            }
+          - { label: "Title", name: "title", widget: "string" }  
+          - { label: "Body", name: "body", widget: "markdown" }
+      
+      # Developer Guidelines
+      - file: "src/pages/contribution/guide.md"
+        label: "Developer Guidelines"
+        name: "guide"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "docs-template",
+            }
+          - { label: "Title", name: "title", widget: "string" }  
+          - { label: "Body", name: "body", widget: "markdown" }
+      
+      # Committer Requirements
+      - file: "src/pages/contribution/requirements.md"
+        label: "Committer Requirements"
+        name: "requirements"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "docs-template",
+            }
+          - { label: "Title", name: "title", widget: "string" }  
+          - { label: "Body", name: "body", widget: "markdown" }
+      
+      # Release Process
+      - file: "src/pages/contribution/process.md"
+        label: "Release Process"
+        name: "process"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "docs-template",
+            }
+          - { label: "Title", name: "title", widget: "string" }  
+          - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "blog"
+    label: "Blog"
+    folder: "src/pages/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "blog-post",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Featured Post", name: "featuredpost", widget: "boolean" }
+      - { label: "Featured Image", name: "featuredimage", widget: image }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Tags", name: "tags", widget: "list" }
