@@ -128,19 +128,19 @@ export const IndexPageTemplate = ({
         <RedditRss />
 
       </section>
-      <section style={{backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}}>
-      <div className={styles.content}>
-        <h2>Message From AGE Team</h2>
-        <div className={styles.Youtube}>
-          <iframe
-            src="https://www.youtube.com/embed/w8ixRk9YXJo"
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
-        </div>
-      </div>
+      <section style={{backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}} hidden >
+        {/* <div className={styles.content}>
+          <h2>Message From AGE Team</h2>
+          <div className={styles.Youtube}>
+            <iframe
+              src="https://www.youtube.com/embed/w8ixRk9YXJo"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div> */}
       </section>
       <section style={{backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}}>
       <div className={styles.content}>

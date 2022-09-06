@@ -58,7 +58,7 @@ export const CommittersTemplatePage = ({
     <section className={styles.root}>
       <h1>{pmcTitle}</h1>
       <CommitersList list={pmc} pmcYn={true} />
-      <h1>Welcome to AGE</h1>
+      {/* <h1>Welcome to AGE</h1>
       <div className={styles.Youtube}>
         <iframe
           //src="https://www.youtube.com/embed/qC_3F4Gaipk"
@@ -68,7 +68,7 @@ export const CommittersTemplatePage = ({
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
         ></iframe>
-      </div>
+      </div> */}
       <h1>{nonpmcTitle}</h1>
       <CommitersList list={nonpmc} pmcYn={false} />
       {/* <PageContent className="content" content={content} /> */}
