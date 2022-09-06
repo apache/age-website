@@ -15,7 +15,7 @@ Table of Contents
 - [Coding Style Guide](#code-style-guilde)
 - [Creating Documentation](#creating-documentation)
 
-<h2 id="code-review-process">Code Review Process</h2>
+<h2 id="code-review-process">Code Review Process (To be updated)</h2>
 
 - Make a commit (or multiple commits) on your local branch.
 - Create .patch file(s) of the commit(s).
