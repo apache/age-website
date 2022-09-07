@@ -4,11 +4,11 @@
 
 ### Releases
 
-The releases and release notes can be found at <https://github.com/apache/incubator-age/releases>
+The releases and release notes can be found at <https://github.com/apache/age/releases>
 
 ### Source code
 
-The source code can be found at <https://github.com/apache/incubator-age>
+The source code can be found at <https://github.com/apache/age>
 
 ## Pre-Installation
 
