@@ -70,7 +70,7 @@ const ProjectList = ({ mode }) => {
                   More
                 </button>
               );
-            else if (projects.length == 12 || !pageInfo?.hasNextPage)
+            else if (projects?.length == 12 || !pageInfo?.hasNextPage)
               return (
                 <button
                   className={styles.MoreBtn}
