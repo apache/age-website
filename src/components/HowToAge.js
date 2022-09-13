@@ -12,7 +12,7 @@ const HowToAge = () => {
   return (
     <div className={styles.root}>
       <div className={styles.Section1}>
-      <span>AGE Architecture</span>
+        <span>AGE Architecture</span>
         <div className={styles.Section1Wrap}>
           <div className={styles.Vertical}>
             <button
@@ -67,19 +67,16 @@ const HowToAge = () => {
         <p className={toggle === '1' ? styles.Toggle : ''}>
           <i>1</i>
           <span>
-            Pares Cypher queries by a function call tha uses a parser followong
-            the openCypher specification
+            Parses Cypher queries embedded in  cypher function calls. Here we implement the grammar for openCypher.
           </span>
         </p>
         <p className={toggle === '2' ? styles.Toggle : ''}>
           <i>2</i>
-          Teansforms a Cypher query into a Query tree that will be attached as a
-          subquery node.
+          Transforms a Cypher query into a Query tree that will be attached as a subquery node.
         </p>
         <p className={toggle === '3' ? styles.Toggle : ''}>
           <i>3</i>
-          Understands some graph operations and produces plan nodes that are
-          related to graph operation.
+          Understands some graph operations and produces plan nodes that are related to graph operations.
         </p>
         <p className={toggle === '4' ? styles.Toggle : ''}>
           <i>4</i>
@@ -87,8 +84,7 @@ const HowToAge = () => {
         </p>
         <p className={toggle === '5' ? styles.Toggle : ''}>
           <i>5</i>
-          Cypher aueries work with Postgre' existing fully transaction system
-          (ACID).
+          Cypher queries work with Postgres existing fully transactional system (ACID).
         </p>
       </div>
     </div>

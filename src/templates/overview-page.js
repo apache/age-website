@@ -31,7 +31,7 @@ export const OverviewTemplate = ({
     <>
       <div
         className={styles.banner}
-        // style={{ backgroundImage: `url(${bannerSrc})` }} remove image
+      // style={{ backgroundImage: `url(${bannerSrc})` }} remove image
       >
         <PageContent
           className={styles.bannerContent}
@@ -44,29 +44,33 @@ export const OverviewTemplate = ({
         <HowToAge />
         <PageContent className={styles.bannerContent} content={subcontent} />
         <div className={styles.keyFeatures}>
-            <div className={styles.keyFeaturesImgContainer}>
+          <div className={styles.keyFeaturesImgContainer}>
             <div>
-                <img src={keyFeaturesImg01}></img>
-                <div>Graph Database Plugin<br></br> For PostgreSQL</div>
-                <div>Allow the access to query and visualize graph data from a PostgreSQL compatible relational database.</div>
-              </div>
+              <img src={keyFeaturesImg01}></img>
+              <div>Graph Database Plugin<br></br> for PostgreSQL</div>
               <div>
-                <img src={keyFeaturesImg02}></img>
-                <div>Hybrid Queries<br></br> (OpenCypher And SQL)</div>
-                <div>Hybrid query technology simultaneously performs the queries for relational data and graph data</div>
+                Gain access to query and visualize graph data in a PostgreSQL compatible relational databases
               </div>
+            </div>
+            <div>
+              <img src={keyFeaturesImg02}></img>
+              <div>Hybrid Queries<br></br> (OpenCypher And SQL)</div>
+              <div>Hybrid query technology simultaneously performs the queries for relational data and graph data</div>
+            </div>
+            <div>
+              <img src={keyFeaturesImg03}></img>
+              <div>Fast Graph Query <br></br>Processing</div>
+              <div>Achieve both fast indexing and efficient query processing.</div>
+            </div>
+            <div>
+              <img src={keyFeaturesImg04}></img>
+              <div>Graph Visualization <br></br> and Analytics</div>
               <div>
-                <img src={keyFeaturesImg03}></img>
-                <div>Fast Graph Query <br></br>Processing</div>
-                <div>Achieve both fast indexing and efficient query processing.</div>
-              </div>
-              <div>
-                <img src={keyFeaturesImg04}></img>
-                <div>Graph Visualization <br></br> And Analytics</div>
-                <div>Provides the visualization of graph and relational data for easier, enhanced understanding and analyzing of data</div>
+                Provides visualization of graph and relational data for clearer understanding of data
               </div>
             </div>
           </div>
+        </div>
       </section>
     </>
   );

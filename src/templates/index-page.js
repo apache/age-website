@@ -47,18 +47,19 @@ export const IndexPageTemplate = ({
           content={bannerContents}
         />
       </div>
-     
-      <section style={{backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}} className={styles.topSection}>
+
+      <section style={{ backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat' }} className={styles.topSection}>
         <div className={styles.topContent}>
           <div className={styles.card}>
             <div className={styles.cardLeft}>
               What Is Apache AGE® ?<br></br>
               <div className={styles.cardContent}>
                 <b>Apache AGE®</b> is a PostgreSQL extension that provides graph database functionality. <br></br><br></br>
-                The goal of <b>Apache AGE®</b> is to provide graph data processing and analytics capability to all relational databases. <br></br><br></br>
-                <b>Apache AGE®</b> enables the users of PostgreSQL to use graph query modeling in unison with PostgreSQL's existing relational database.<br></br><br></br>
-                Users can read and write graph data such as nodes and edges, as well as use various algorithms such as variable length edge traversal to analyze data.
-                
+                The goal of <b>Apache AGE®</b> is to provide graph data processing and analytics capability to all relational databases.
+                <br></br><br></br>
+                Through Apache AGE, PostgreSQL users will gain access to graph query modeling within the existing relational database.
+                <br></br><br></br>
+                Users can read and write graph data in nodes and edges. They can also use various algorithms such as variable length and edge traversal when analyzing data.
               </div>
             </div>
             <div className={styles.verticalLine}>
@@ -66,10 +67,13 @@ export const IndexPageTemplate = ({
             <div className={styles.cardRight}>
               What Is Apache AGE® Viewer ?
               <div className={styles.cardContent}>
-              <b>Apache AGE® Viewer</b> is a user interface for Apache AGE® to provide visualization and exploration of data. <br></br><br></br>
-              It provides a simple web visualization tool for users to enter complex graph queries and explore the results in graph and table forms. <br></br><br></br>
-              <b>Apache AGE® Viewer</b> is enhanced to proceed with large graph data and discover the insights through various graph algorithms. <br></br><br></br>
-              <b>Apache AGE® Viewer</b> will become a graph data administration and development platform for Apache AGE® to support multiple relational databases.
+                <b>Apache AGE® Viewer</b> is a web user interface for Apache AGE that provides data visualization and exploration.
+                <br></br><br></br>
+                Users can enter complex graph queries and explore the results expressed in graph and table data.
+                <br></br><br></br>
+                <b>Apache AGE® Viewer</b> handles large graph data. Users will be able to discover meaningful insights with the help of various graph algorithms.
+                <br></br><br></br>
+                <b>Apache AGE® Viewer</b> will serve as a central graph data management & development platform for Apache AGE, a graph extension which will support all relational databases in the future.
               </div>
             </div>
           </div>
@@ -78,8 +82,10 @@ export const IndexPageTemplate = ({
             <div className={styles.keyFeaturesImgContainer}>
               <div>
                 <img src={keyFeaturesImg01}></img>
-                <div>Graph Database Plugin<br></br> For PostgreSQL</div>
-                <div>Allow the access to query and visualize graph data from a PostgreSQL compatible relational database.</div>
+                <div>Graph Database Plugin<br></br> for PostgreSQL</div>
+                <div>
+                  Gain access to query and visualize graph data in a PostgreSQL compatible relational databases
+                </div>
               </div>
               <div>
                 <img src={keyFeaturesImg02}></img>
@@ -93,25 +99,27 @@ export const IndexPageTemplate = ({
               </div>
               <div>
                 <img src={keyFeaturesImg04}></img>
-                <div>Graph Visualization <br></br> And Analytics</div>
-                <div>Provides the visualization of graph and relational data for easier, enhanced understanding and analyzing of data</div>
+                <div>Graph Visualization <br></br> and Analytics</div>
+                <div>
+                  Provides visualization of graph and relational data for clearer understanding of data
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section style={{backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}}>
+      <section style={{ backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat' }}>
         <div className={styles.content}>
           <h2>AGE Projects</h2>
           <p>
             Everyone is welcome to join and contribute to Apache AGE Project,
-            not only with code contributions. <br /> 
+            not only with code contributions. <br />
             You can learn more about
             Apache AGE by working with other developers.  <br />
           </p>
           <AgeProjectList />
         </div>
-        <hr style={{border: 'solid 1px #ffffff', margin: '2rem 0'}}/>
+        <hr style={{ border: 'solid 1px #ffffff', margin: '2rem 0' }} />
         <div className={styles.content}>
           <h2>AGE Viewer Projects</h2>
           <p></p>
@@ -119,16 +127,16 @@ export const IndexPageTemplate = ({
         </div>
       </section>
 
-      <section style={{backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}}>
-        
+      <section style={{ backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat' }}>
+
         <div className={styles.content}>
           <h2>AGE Forum</h2>
-          <p>Learn Apache AGE with code examples, resources, and other developers' inquiries and experiences from the developer community.</p>
+          <p>Want to know more about Apache AGE? Got inquiries regarding the project? Come to the AGE forum and let’s have a chat!</p>
         </div>
         <RedditRss />
 
       </section>
-      <section style={{backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}} hidden >
+      <section style={{ backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat' }} hidden >
         {/* <div className={styles.content}>
           <h2>Message From AGE Team</h2>
           <div className={styles.Youtube}>
@@ -142,22 +150,20 @@ export const IndexPageTemplate = ({
           </div>
         </div> */}
       </section>
-      <section style={{backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}}>
-      <div className={styles.content}>
+      <section style={{ backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat' }}>
+        <div className={styles.content}>
           <h2>Welcome To The AGE Community</h2>
           <p>
-            Apache AGE is a continuously developed solution by a progressive
-            community. <br /> We're always looking for contributors who are
-            willing to learn and grow with us. <br /> If you are looking for an
-            opportunity to grow and experience progressive insights this is the
-            place for you!
+            Apache AGE is a continuously developing solution thanks to a progressive community.<br />
+            We are always looking for aspiring contributors who are willing to learn and grow with us.<br />
+            If you are looking for an opportunity to grow and experience progressinve insights, this is the place for you!
           </p>
           <Ageinfos />
         </div>
-        
+
       </section>
       <section>
-      <div className={styles.content}>
+        <div className={styles.content}>
           <div className={styles.Subscribe}>
             <img src={landingMailImg} alt="mail-image"></img>
           </div>
