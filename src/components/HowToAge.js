@@ -21,7 +21,7 @@ const HowToAge = () => {
               onClick={() => onToggle(5)}
               onMouseEnter={() => onToggle(5)}
             >
-              Transaction / Cashe Layer
+              Transaction / Cache Layer
             </button>
           </div>
           <div className={styles.Horizon}>

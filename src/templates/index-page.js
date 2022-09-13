@@ -156,7 +156,7 @@ export const IndexPageTemplate = ({
           <p>
             Apache AGE is a continuously developing solution thanks to a progressive community.<br />
             We are always looking for aspiring contributors who are willing to learn and grow with us.<br />
-            If you are looking for an opportunity to grow and experience progressive insights로, this is the place for you!
+            If you are looking for an opportunity to grow and experience progressive insights, this is the place for you!
           </p>
           <Ageinfos />
         </div>

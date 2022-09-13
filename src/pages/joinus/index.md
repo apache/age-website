@@ -4,7 +4,7 @@ path: /joinus
 title: Join AGE Community!
 ---
 
-<div class="subTitle">
+<div class="subTitle" style="text-align:center;">
   We are so glad you considering to be a part of the AGE community. Below are some pathways you can follow to help you get started.
   <br><br>
   These are the recommended paths to progression that will help you reach your objectives. 
