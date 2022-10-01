@@ -37,7 +37,7 @@ sudo apt-get install build-essential libreadline-dev zlib1g-dev flex bison
 
 Clone the github repo into any directory
 
-Run the pg_config utility and check the version of PostgreSQL, currently only PostgreSQL versions 11 & 12 are supported. If you have any other version of postgres, you will need to install PostgreSQL version 11 & 12. Follow <## Setting up multiple versions of PostgreSQL>
+Run the pg_config utility and check the version of PostgreSQL, currently only PostgreSQL versions 11 & 12 are supported. If you have any other version of postgres, you will need to install PostgreSQL version 11 & 12. Follow Setting up multiple versions of PostgreSQL
 ```console
 pg_config
 ```
@@ -64,10 +64,10 @@ Use the pg_config to check if it points to the intended version of PostgreSQL, i
 sudo vi /usr/bin/pg_config
 ```
 
-By default PGBINROOT is set to /usr/lib/postsgresql , the directory which contains all the postgres versions. Change this to /usr/lib/postgresql/<\intended version of postgres>
+By default PGBINROOT is set to /usr/lib/postsgresql , the directory which contains all the postgres versions. Change this to /usr/lib/postgresql/[intended version of postgres]
 
 Check the PostgreSQL conf file of your PostgreSQL version to figure out which port its running on. 
-The conf file is generally located in /etc/postgresql/<\version>/main
+The conf file is generally located in /etc/postgresql/[intended version of postgres]/main
 
 ```console
 vi /etc/postgresql/11/main/postgresql.conf
