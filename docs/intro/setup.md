@@ -6,7 +6,9 @@
 
 The releases and release notes can be found at <https://github.com/apache/incubator-age/releases>
 
-### Source code
+
+
+## Installing via Source code
 
 The source code can be found at <https://github.com/apache/incubator-age>
 
@@ -33,6 +35,8 @@ dnf install gcc glibc bison flex readline readline-devel zlib zlib-devel
 sudo apt-get install build-essential libreadline-dev zlib1g-dev flex bison
 ```
 
+
+
 ## Installation
 
 The build process will attempt to use the first path in the PATH environment variable when installing AGE. If the pg_config path is located there, run the following command in the source code directory of Apache AGE to build and install the extension.
@@ -46,6 +50,35 @@ If the path to your Postgres installation is not in the PATH variable, add the p
 ```console
 make PG_CONFIG=/path/to/postgres/bin/pg_config install
 ```
+
+
+
+## Installing via docker image
+
+
+
+### Get the docker image
+
+```bash
+docker pull apache/age
+```
+
+
+
+### In terminal
+
+```dockerfile
+docker run \
+    --name myPostgresDb  \
+    -p 5455:5432 \
+    -e POSTGRES_USER=postgresUser \
+    -e POSTGRES_PASSWORD=postgresPW \
+    -e POSTGRES_DB=postgresDB \
+    -d \
+    apache/age
+```
+
+
 
 ## Post Installation
 
