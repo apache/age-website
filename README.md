@@ -6,74 +6,120 @@
 * `vX.Y.Z` Branches contain the source code of the documentation of releases.
 * The `asf-site` branch contains the static webpage code, as well as the build static version of the documenation (in the `docs` folder). The `docs` folder should not be manually updated.
 
-## Build the documentation locally (first time)
+## Build the documentation locally (One time setup)
 
-* Install requirements (the latex and dvisvgm commands are required to display math)
+This guide will be help in setting up the requirements to build documentation. 
 
-```shell
-sudo apt install python3 virtualenv texlive-latex-base texlive-latex-extra texlive-extra-utils
+### Step 1: Add the deadsnakes PPA to system's source list
+
+```bash
+sudo apt update
+sudo add-apt-repository ppa:deadsnakes/ppa
 ```
 
-* Clone this repository
-* Navigate to the root of the repository
-* Create a python virtual environment
+
+
+### Step 2: Install requirements 
+
+(the latex and dvisvgm commands are required to display math)
 
 ```shell
-virtualenv -p python3 venv
+sudo apt install texlive-latex-base texlive-latex-extra texlive-extra-utils python3.9 python3.9-venv software-properties-common
 ```
 
-* Activate the virtual environment
+
+
+### Step 3: Clone this repository
+
+```bash
+git clone https://github.com/apache/age-website.git
+```
+
+
+
+### Step 4: Navigate to the root of the repository
+
+```bash
+cd age-website
+```
+
+
+
+### Step 5: Create a python virtual environment
+
+```shell
+virtualenv -p python3.9 venv
+```
+
+
+
+### Step 6: Activate the virtual environment
 
 ```shell
 source venv/bin/activate
 ```
 
-* Install the python requirements
+
+
+### Step 7: Install the python requirements
 
 ```shell
 pip install -r requirements.txt
 ```
 
-* Build the documentation
-  * From :warning: remote branches
 
-    ```shell
-    sphinx-multiversion docs build/html
-    ```
 
-    The documentation should now be in the `build/html` folder, with a subfolder per remote branch (version).
+### Step 8: Build the documentation
 
-  * From the current folder
+* From :warning: remote branches
 
-    ```shell
-    sphinx-build docs build/html/current
-    ```
+  ```shell
+  sphinx-multiversion docs build/html
+  ```
 
-    The documentation for the current local branch should now be in the `build/html/current` folder (no subfolders).
+  The documentation should now be in the `build/html` folder, with a subfolder per remote branch (version).
 
-## Build documentation locally (after initial setup)
+* From the current folder
 
-* Navigate to the root of the repository
+  ```shell
+  sphinx-build docs build/html/current
+  ```
 
-* Activate the virtual environment if not yet active
+  The documentation for the current local branch should now be in the `build/html/current` folder (no subfolders).
+
+
+
+## Re-build documentation 
+
+**Assuming initial setup is already done successfully**. Now it is time to make some changes to the documentation. 
+
+
+
+### Step 1: Activate the virtual environment
 
 ```shell
 source venv/bin/activate
 ```
 
-* Build the documentation
-  * From :warning: remote branches
 
-    ```shell
-    sphinx-multiversion docs build/html
-    ```
 
-    The documentation should now be in the `build/html` folder, with a subfolder per remote branch (version).
+### Step 2: Build the documentation
 
-  * From the current folder
+* From :warning: remote branches
 
-    ```shell
-    sphinx-build docs build/html/current
-    ```
+  ```shell
+  sphinx-multiversion docs build/html
+  ```
 
-    The updated documentation for the current local branch should now be in the `build/html/current` folder (no subfolders).
+  The documentation should now be in the `build/html` folder, with a subfolder per remote branch (version).
+
+* From the current folder
+
+  ```shell
+  sphinx-build docs build/html/current
+  ```
+
+  The documentation for the current local branch should now be in the `build/html/current` folder (no subfolders).
+
+
+
