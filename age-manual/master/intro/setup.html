@@ -109,6 +109,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setting-up-multiple-versions-of-postgresql">Setting up multiple versions of PostgreSQL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#post-installation">Post Installation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#per-installation-instructions">Per Installation Instructions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#per-session-instructions">Per Session Instructions</a></li>
@@ -271,12 +272,41 @@ Building AGE from source depends on the following Linux libraries (Ubuntu packag
 </div>
 <div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>Clone the github repo into any directory</p>
+<p>Run the pg_config utility and check the version of PostgreSQL, currently only PostgreSQL versions 11 &amp; 12 are supported. If you have any other version of postgres, you will need to install PostgreSQL version 11 &amp; 12. Follow Setting up multiple versions of PostgreSQL</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pg_config</span>
+</pre></div>
+</div>
 <p>The build process will attempt to use the first path in the PATH environment variable when installing AGE. If the pg_config path is located there, run the following command in the source code directory of Apache AGE to build and install the extension.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">make install</span>
 </pre></div>
 </div>
 <p>If the path to your Postgres installation is not in the PATH variable, add the path in the arguments:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">make PG_CONFIG=/path/to/postgres/bin/pg_config install</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="setting-up-multiple-versions-of-postgresql">
+<h2>Setting up multiple versions of PostgreSQL<a class="headerlink" href="#setting-up-multiple-versions-of-postgresql" title="Permalink to this headline">¶</a></h2>
+<p>Install the intended version of PostgreSQL (11 or 12).</p>
+<p>Use the pg_config to check if it points to the intended version of PostgreSQL, if it does we will have to PGBINROOT. Open /usr/bin/pg_config in write mode (might require root previllages) and edit the PGBINROOT value</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo vi /usr/bin/pg_config</span>
+</pre></div>
+</div>
+<p>By default PGBINROOT is set to /usr/lib/postsgresql , the directory which contains all the postgres versions. Change this to /usr/lib/postgresql/[intended version of postgres]</p>
+<p>Check the PostgreSQL conf file of your PostgreSQL version to figure out which port its running on.
+The conf file is generally located in /etc/postgresql/[intended version of postgres]/main</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">vi /etc/postgresql/11/main/postgresql.conf</span>
+</pre></div>
+</div>
+<p>Check the PORT the particular version of PostgreSQL runs on by default.</p>
+<p>Restart PostgreSQL</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo service postgresql restart</span>
+</pre></div>
+</div>
+<p>Change user to postgres connect to the PostgreSQL server</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo su - postgres</span>
+<span class="go">psql --port PORT</span>
 </pre></div>
 </div>
 </div>
@@ -362,6 +392,7 @@ Building AGE from source depends on the following Linux libraries (Ubuntu packag
     <dl>
       <dt>Versions</dt>
       <dd><a href="setup.html">master</a></dd>
+      <dd><a href="../../v0.6.0/index.html">v0.6.0</a></dd>
     </dl>
   </div>
 </div>
