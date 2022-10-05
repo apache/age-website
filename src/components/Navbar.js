@@ -47,12 +47,20 @@ const Navbar = () => {
                 </Link>
               </Menu.Item>
               <Menu.Item>
-                <Link className="navbar-item" target='_blank' to="https://www.reddit.com/r/apacheage/">
+                <Link
+                  className="navbar-item"
+                  target="_blank"
+                  to="https://www.reddit.com/r/apacheage/"
+                >
                   AGE Forum
                 </Link>
               </Menu.Item>
               <Menu.Item>
-                <Link className="navbar-item" target='_blank' to="https://github.com/apache/age/projects">
+                <Link
+                  className="navbar-item"
+                  target="_blank"
+                  to="https://github.com/apache/age/projects"
+                >
                   AGE Project
                 </Link>
               </Menu.Item>
@@ -60,12 +68,17 @@ const Navbar = () => {
             <Menu.SubMenu title="Contribution">
               <Menu.Item>
                 <Link className="navbar-item" to="/contribution/how">
-                  How to contribute
+                  Ways to contribute
                 </Link>
               </Menu.Item>
               <Menu.Item>
                 <Link className="navbar-item" to="/contribution/guide">
                   Developer Guideline
+                </Link>
+              </Menu.Item>
+              <Menu.Item>
+                <Link className="navbar-item" to="/contribution/volunteers">
+                  Volunteer Guideline
                 </Link>
               </Menu.Item>
               <Menu.Item>
@@ -121,12 +134,20 @@ const Navbar = () => {
                 </Link>
               </Menu.Item>
               <Menu.Item>
-                <Link className="navbar-item" target='_blank' to="https://www.reddit.com/r/apacheage/">
+                <Link
+                  className="navbar-item"
+                  target="_blank"
+                  to="https://www.reddit.com/r/apacheage/"
+                >
                   AGE Forum
                 </Link>
               </Menu.Item>
               <Menu.Item>
-                <Link className="navbar-item" target='_blank' to="https://github.com/apache/age/projects">
+                <Link
+                  className="navbar-item"
+                  target="_blank"
+                  to="https://github.com/apache/age/projects"
+                >
                   AGE Project
                 </Link>
               </Menu.Item>
@@ -134,12 +155,17 @@ const Navbar = () => {
             <Menu.SubMenu title="Contribution">
               <Menu.Item>
                 <Link className="navbar-item" to="/contribution/how">
-                  How to contribute
+                  Ways to contribute
                 </Link>
               </Menu.Item>
               <Menu.Item>
                 <Link className="navbar-item" to="/contribution/guide">
                   Developer Guideline
+                </Link>
+              </Menu.Item>
+              <Menu.Item>
+                <Link className="navbar-item" to="/contribution/volunteers">
+                  Volunteer Guideline
                 </Link>
               </Menu.Item>
               <Menu.Item>

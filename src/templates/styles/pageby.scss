@@ -162,6 +162,27 @@
   }
 }
 
+//http://{domail}/contribution/volunteers
+.VolunteerGuidelines {
+  strong {
+    font-size: 1.5rem;
+    color: #9F1A61;
+  }
+  table {
+    th, td {
+      background-color:  white;
+      text-align: left;
+    }
+  }
+  .sign-chair {
+    font-family: serif;    
+    padding-right: 1rem;
+    text-align: right;
+    font-style: italic;
+    color: black !important;
+  }
+}
+
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   /* Styles */

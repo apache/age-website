@@ -3,12 +3,12 @@
 .root {
   margin: 2.75rem auto 0 auto;
   padding: 1rem;
-  display: flex;
-  flex-wrap: nowrap;
+  display: grid;
+  grid-template-columns: 1fr 0fr 1fr;
   max-width: 73.125rem;
   min-height: 15.625rem;
   align-items: center;
-  justify-content: space-around;
+  justify-items: center;
   width: 100%;
   height: 100%;
   /* UI Properties */
@@ -16,30 +16,53 @@
   border: 0.25rem solid $primayrColor;
   border-radius: 15.625rem;
   opacity: 1;
-  box-shadow: 0rem 0rem 1.5rem #CF0E5330;
+  box-shadow: 0rem 0rem 1.5rem #cf0e5330;
+  a {
+    line-height: 1.2;
+  }
   a:hover {
     color: $secondColor;
   }
-  div {
+  .Stars {
+    width: 100%;
+    p {
+      margin: 0 0 0 0;
+      text-align: center;
+      font: $h4;
+    }
+  }
+  .Contributors {
+    width: 100%;
+    p {
+      margin: 1rem 0 0 0;
+      text-align: center;
+      font: $h4;
+    }
+  }
+  .Section {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    width: 23.75rem;
+    justify-content: space-around;
+    width: 100%;
     text-align: center;
     color: $primayrColor;
+    flex-grow: 1;
+    div {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+    }
   }
-  div:nth-child(2) {
-    border: 1px solid;
+  .Separator {
+    border: 1px solid #cf0e53;
     width: 1px;
     height: 10rem;
   }
-  
-
   .Count {
     font-size: 6.25rem;
     font-weight: bold;
     color: $primayrColor;
-
   }
   .Label {
     font: $h4;
@@ -47,5 +70,20 @@
       font: $h5;
     }
     font-weight: bold;
+  }
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (max-device-width: 834px) {
+  /* Styles */
+  .root {
+    border-radius: 4.625rem;
+    grid-template-columns: 1fr;
+    .Section {
+      width: 100%;
+    }
+  }
+  .Separator {
+    display: none;
   }
 }
