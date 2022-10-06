@@ -1,79 +1,39 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>Aggregation Functions &mdash; Apache AGE master documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-
-  
-  
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-  
-
-  
-  
-
-  
-
-  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="User defined functions" href="user_functions.html" />
     <link rel="prev" title="String Functions" href="string_functions.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> Apache AGE
-          
-
-          
-            
             <img src="../_static/logo.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -81,18 +41,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../intro/overview.html">Overview</a></li>
@@ -166,78 +115,35 @@
 <li class="toctree-l1"><a class="reference internal" href="../contributing/run_tests.html">Run the test suite</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Apache AGE</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
       <li>Aggregation Functions</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
-            
               <a href="https://github.com/apache/incubator-age-website/blob/master/docs/functions/aggregate_functions.md" class="fa fa-github"> Edit on GitHub</a>
-            
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="tex2jax_ignore mathjax_ignore section" id="aggregation-functions">
-<h1>Aggregation Functions<a class="headerlink" href="#aggregation-functions" title="Permalink to this headline">¶</a></h1>
+             
+  <section id="aggregation-functions">
+<h1>Aggregation Functions<a class="headerlink" href="#aggregation-functions" title="Permalink to this heading"></a></h1>
 <p>Functions that activate <span class="xref myst">auto aggregation</span>.</p>
-<div class="section" id="data-setup">
-<h2>Data Setup<a class="headerlink" href="#data-setup" title="Permalink to this headline">¶</a></h2>
+<section id="data-setup">
+<h2>Data Setup<a class="headerlink" href="#data-setup" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>LOAD &#39;age&#39;;
 SET search_path TO ag_catalog;
 
@@ -257,9 +163,9 @@ SELECT * FROM cypher(&#39;graph_name&#39;, $$
 $$) as (a agtype);
 </pre></div>
 </div>
-</div>
-<div class="section" id="min">
-<h2>min<a class="headerlink" href="#min" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="min">
+<h2>min<a class="headerlink" href="#min" title="Permalink to this heading"></a></h2>
 <p>min() returns the minimum value in a set of values.</p>
 <p>Syntax: <code class="docutils literal notranslate"><span class="pre">min(expression)</span></code></p>
 <p>Returns:</p>
@@ -311,8 +217,8 @@ $$) as (min_age agtype);
    </td>
   </tr>
 </table>
-<div class="section" id="using-min-with-lists">
-<h3>Using min() with Lists<a class="headerlink" href="#using-min-with-lists" title="Permalink to this headline">¶</a></h3>
+<section id="using-min-with-lists">
+<h3>Using min() with Lists<a class="headerlink" href="#using-min-with-lists" title="Permalink to this heading"></a></h3>
 <p>Data Setup:</p>
 <p>To clarify the following example, assume the next three commands are run first:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT * FROM cypher(&#39;graph_name&#39;, $$ 
@@ -352,10 +258,10 @@ $$) as (min_val agtype);
    </td>
   </tr>
 </table>
-</div>
-</div>
-<div class="section" id="max">
-<h2>max<a class="headerlink" href="#max" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="max">
+<h2>max<a class="headerlink" href="#max" title="Permalink to this heading"></a></h2>
 <p>max() returns the maximum value in a set of values.</p>
 <p>Syntax: <code class="docutils literal notranslate"><span class="pre">max(expression)</span></code></p>
 <p>Returns:</p>
@@ -408,9 +314,9 @@ $$) as (max_age agtype);
    </td>
   </tr>
 </table>
-</div>
-<div class="section" id="stdev">
-<h2>stDev<a class="headerlink" href="#stdev" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="stdev">
+<h2>stDev<a class="headerlink" href="#stdev" title="Permalink to this heading"></a></h2>
 <p>stDev() returns the standard deviation for the given value over a group. It uses a standard two-pass method, with N - 1 as the denominator, and should be used when taking a sample of the population for an unbiased estimate. When the standard variation of the entire population is being calculated, stdDevP should be used.</p>
 <p>Syntax: <code class="docutils literal notranslate"><span class="pre">stDev(expression)</span></code></p>
 <p>Returns:</p>
@@ -461,9 +367,9 @@ $$) as (stdev_age agtype);
    </td>
   </tr>
 </table>
-</div>
-<div class="section" id="stdevp">
-<h2>stDevP<a class="headerlink" href="#stdevp" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="stdevp">
+<h2>stDevP<a class="headerlink" href="#stdevp" title="Permalink to this heading"></a></h2>
 <p>stDevP() returns the standard deviation for the given value over a group. It uses a standard two-pass method, with N as the denominator, and should be used when calculating the standard deviation for an entire population. When the standard variation of only a sample of the population is being calculated, stDev should be used.</p>
 <p>Syntax: <code class="docutils literal notranslate"><span class="pre">stDevP(expression)</span></code></p>
 <p>Returns:</p>
@@ -514,9 +420,9 @@ $$ as (stdevp_age agtype);
    </td>
   </tr>
 </table>
-</div>
-<div class="section" id="percentilecont">
-<h2>percentileCont<a class="headerlink" href="#percentilecont" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="percentilecont">
+<h2>percentileCont<a class="headerlink" href="#percentilecont" title="Permalink to this heading"></a></h2>
 <p>percentileCont() returns the percentile of the given value over a group, with a percentile from 0.0 to 1.0. It uses a linear interpolation method, calculating a weighted average between two values if the desired percentile lies between them. For nearest values using a rounding method, see percentileDisc.</p>
 <p>Syntax: <code class="docutils literal notranslate"><span class="pre">percentileCont(expression,</span> <span class="pre">percentile)</span></code></p>
 <p>Returns:</p>
@@ -573,9 +479,9 @@ $$ as (percentile_cont_age agtype);
    </td>
   </tr>
 </table>
-</div>
-<div class="section" id="percentiledisc">
-<h2>percentileDisc<a class="headerlink" href="#percentiledisc" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="percentiledisc">
+<h2>percentileDisc<a class="headerlink" href="#percentiledisc" title="Permalink to this heading"></a></h2>
 <p>percentileDisc() returns the percentile of the given value over a group, with a percentile from 0.0to 1.0. It uses a rounding method and calculates the nearest value to the percentile. For interpolated values, see percentileCont.</p>
 <p>Syntax: <code class="docutils literal notranslate"><span class="pre">percentileDisc(expression,</span> <span class="pre">percentile)</span></code></p>
 <p>Returns:</p>
@@ -632,9 +538,9 @@ $$ as (percentile_disc_age agtype);
    </td>
   </tr>
 </table>
-</div>
-<div class="section" id="count">
-<h2>count<a class="headerlink" href="#count" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="count">
+<h2>count<a class="headerlink" href="#count" title="Permalink to this heading"></a></h2>
 <p>count() returns the number of values or records, and appears in two variants:</p>
 <ul class="simple">
 <li><p>count(*) returns the number of matching records</p></li>
@@ -725,8 +631,8 @@ $$ as (label agtype, count agtype);
    </td>
   </tr>
 </table>
-<div class="section" id="using-count-expression-to-return-the-number-of-values">
-<h3>Using count(expression) to return the number of values<a class="headerlink" href="#using-count-expression-to-return-the-number-of-values" title="Permalink to this headline">¶</a></h3>
+<section id="using-count-expression-to-return-the-number-of-values">
+<h3>Using count(expression) to return the number of values<a class="headerlink" href="#using-count-expression-to-return-the-number-of-values" title="Permalink to this heading"></a></h3>
 <p>Instead of simply returning the number of records with count(*), it may be more useful to return the actual number of values returned by an expression.</p>
 <p>Query</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
@@ -752,9 +658,9 @@ $$) as (count agtype);
    </td>
   </tr>
 </table>
-</div>
-<div class="section" id="counting-non-null-values">
-<h3>Counting non-null values<a class="headerlink" href="#counting-non-null-values" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="counting-non-null-values">
+<h3>Counting non-null values<a class="headerlink" href="#counting-non-null-values" title="Permalink to this heading"></a></h3>
 <p>count(expression) can be used to return the number of non-null values returned by the expression.</p>
 <p>Query</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
@@ -780,9 +686,9 @@ $$) as (count agtype);
    </td>
   </tr>
 </table>
-</div>
-<div class="section" id="counting-with-and-without-duplicates">
-<h3>Counting with and without duplicates<a class="headerlink" href="#counting-with-and-without-duplicates" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="counting-with-and-without-duplicates">
+<h3>Counting with and without duplicates<a class="headerlink" href="#counting-with-and-without-duplicates" title="Permalink to this heading"></a></h3>
 <p>In this example we are trying to find all our friends of friends, and count them:</p>
 <ul class="simple">
 <li><p>The first aggregate function, count(DISTINCT friend_of_friend), will only count a friend_of_friend once, as DISTINCT removes the duplicates.</p></li>
@@ -817,10 +723,10 @@ $$) as (friend_of_friends_distinct agtype, friend_of_friends agtype);
    </td>
   </tr>
 </table>
-</div>
-</div>
-<div class="section" id="avg">
-<h2>avg<a class="headerlink" href="#avg" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="avg">
+<h2>avg<a class="headerlink" href="#avg" title="Permalink to this heading"></a></h2>
 <p>avg() returns the average of a set of numeric values.</p>
 <p>Syntax: <code class="docutils literal notranslate"><span class="pre">avg(expression)</span></code></p>
 <p>Returns:</p>
@@ -871,9 +777,9 @@ $$) as (avg_age agtype);
    </td>
   </tr>
 </table>
-</div>
-<div class="section" id="sum">
-<h2>sum<a class="headerlink" href="#sum" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="sum">
+<h2>sum<a class="headerlink" href="#sum" title="Permalink to this heading"></a></h2>
 <p>sum() returns the sum of a set of numeric values.</p>
 <p>Syntax: <code class="docutils literal notranslate"><span class="pre">sum(expression)</span></code></p>
 <p>Returns:</p>
@@ -924,42 +830,32 @@ $$ as (total_age agtype);
    </td>
   </tr>
 </table>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="user_functions.html" class="btn btn-neutral float-right" title="User defined functions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="string_functions.html" class="btn btn-neutral float-left" title="String Functions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="user_functions.html" class="btn btn-neutral float-right" title="User defined functions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2021, Apache AGE.
-
-    </p>
+    <p>&#169; Copyright 2021, Apache AGE.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
   
 <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
@@ -972,20 +868,14 @@ $$ as (total_age agtype);
     <dl>
       <dt>Versions</dt>
       <dd><a href="aggregate_functions.html">master</a></dd>
+      <dd><a href="../../v0.6.0/index.html">v0.6.0</a></dd>
     </dl>
   </div>
-</div>
-
-  <script type="text/javascript">
+</div><script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
