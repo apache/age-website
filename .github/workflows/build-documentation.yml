@@ -43,7 +43,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: asf-site
           publish_dir: ./build/html
-          destination_dir: docs
+          destination_dir: age-manual
 
       - name: Deploy-asf-staging
         uses: peaceiris/actions-gh-pages@v3
