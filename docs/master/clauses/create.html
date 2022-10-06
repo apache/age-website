@@ -1,79 +1,39 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>CREATE &mdash; Apache AGE master documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-
-  
-  
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-  
-
-  
-  
-
-  
-
-  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="DELETE" href="delete.html" />
     <link rel="prev" title="LIMIT" href="limit.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> Apache AGE
-          
-
-          
-            
             <img src="../_static/logo.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -81,18 +41,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../intro/overview.html">Overview</a></li>
@@ -157,78 +106,35 @@
 <li class="toctree-l1"><a class="reference internal" href="../contributing/run_tests.html">Run the test suite</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Apache AGE</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
       <li>CREATE</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
-            
               <a href="https://github.com/apache/incubator-age-website/blob/master/docs/clauses/create.md" class="fa fa-github"> Edit on GitHub</a>
-            
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="tex2jax_ignore mathjax_ignore section" id="create">
-<h1>CREATE<a class="headerlink" href="#create" title="Permalink to this headline">¶</a></h1>
+             
+  <section id="create">
+<h1>CREATE<a class="headerlink" href="#create" title="Permalink to this heading"></a></h1>
 <p>The CREATE clause is used to create graph vertices and edges.</p>
-<div class="section" id="terminal-create-clauses">
-<h2>Terminal CREATE clauses<a class="headerlink" href="#terminal-create-clauses" title="Permalink to this headline">¶</a></h2>
+<section id="terminal-create-clauses">
+<h2>Terminal CREATE clauses<a class="headerlink" href="#terminal-create-clauses" title="Permalink to this heading"></a></h2>
 <p>A create clause that is not followed by another clause is called a terminal clause. When a cypher query ends with a terminal clause, no results will be returned from the cypher function call. However, the cypher function call still requires a column list definition. When cypher ends with a terminal node, define a single value in the column list definition: no data will be returned in this variable.</p>
 <p>Query</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT * 
@@ -247,9 +153,9 @@ $$) as (a agtype);
    </td>
   </tr>
 </table>
-</div>
-<div class="section" id="create-single-vertex">
-<h2>Create single vertex<a class="headerlink" href="#create-single-vertex" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="create-single-vertex">
+<h2>Create single vertex<a class="headerlink" href="#create-single-vertex" title="Permalink to this heading"></a></h2>
 <p>Creating a single vertex is done by issuing the following query.</p>
 <p>Query</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT * 
@@ -269,9 +175,9 @@ $$) as (v agtype);
    </td>
   </tr>
 </table>
-</div>
-<div class="section" id="create-multiple-vertices">
-<h2>Create multiple vertices<a class="headerlink" href="#create-multiple-vertices" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="create-multiple-vertices">
+<h2>Create multiple vertices<a class="headerlink" href="#create-multiple-vertices" title="Permalink to this heading"></a></h2>
 <p>Creating multiple vertices is done by separating them with a comma.</p>
 <p>Query</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT * 
@@ -291,9 +197,9 @@ $$) as (v agtype);
    </td>
   </tr>
 </table>
-</div>
-<div class="section" id="create-a-vertex-with-a-label">
-<h2>Create a vertex with a label<a class="headerlink" href="#create-a-vertex-with-a-label" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="create-a-vertex-with-a-label">
+<h2>Create a vertex with a label<a class="headerlink" href="#create-a-vertex-with-a-label" title="Permalink to this heading"></a></h2>
 <p>To add a label when creating a vertex, use the syntax below.</p>
 <p>Query</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT * 
@@ -314,9 +220,9 @@ $$) as (v agtype);
    </td>
   </tr>
 </table>
-</div>
-<div class="section" id="create-vertex-and-add-labels-and-properties">
-<h2>Create vertex and add labels and properties<a class="headerlink" href="#create-vertex-and-add-labels-and-properties" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="create-vertex-and-add-labels-and-properties">
+<h2>Create vertex and add labels and properties<a class="headerlink" href="#create-vertex-and-add-labels-and-properties" title="Permalink to this heading"></a></h2>
 <p>When creating a new vertex with labels, you can add properties at the same time.</p>
 <p>Query</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT * 
@@ -337,9 +243,9 @@ $$) as (n agtype);
    </td>
   </tr>
 </table>
-</div>
-<div class="section" id="return-created-node">
-<h2>Return created node<a class="headerlink" href="#return-created-node" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="return-created-node">
+<h2>Return created node<a class="headerlink" href="#return-created-node" title="Permalink to this heading"></a></h2>
 <p>Creating a single node is done by issuing the following query.</p>
 <p>Query</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT * 
@@ -365,9 +271,9 @@ $$) as (a agtype);
    </td>
   </tr>
 </table>
-</div>
-<div class="section" id="create-an-edge-between-two-nodes">
-<h2>Create an edge between two nodes<a class="headerlink" href="#create-an-edge-between-two-nodes" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="create-an-edge-between-two-nodes">
+<h2>Create an edge between two nodes<a class="headerlink" href="#create-an-edge-between-two-nodes" title="Permalink to this heading"></a></h2>
 <p>To create an edge between two vertices, we first get the two vertices. Once the nodes are loaded, we simply create an edge between them.</p>
 <p>Query</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT * 
@@ -395,9 +301,9 @@ $$) as (e agtype);
    </td>
   </tr>
 </table>
-</div>
-<div class="section" id="create-an-edge-and-set-properties">
-<h2>Create an edge and set properties<a class="headerlink" href="#create-an-edge-and-set-properties" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="create-an-edge-and-set-properties">
+<h2>Create an edge and set properties<a class="headerlink" href="#create-an-edge-and-set-properties" title="Permalink to this heading"></a></h2>
 <p>Setting properties on edges is done in a similar manner to how it’s done when creating vertices. Note that the values can be any expression.</p>
 <p>Query</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT * 
@@ -425,9 +331,9 @@ $$) as (e agtype);
    </td>
   </tr>
 </table>
-</div>
-<div class="section" id="create-a-full-path">
-<h2>Create a full path<a class="headerlink" href="#create-a-full-path" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="create-a-full-path">
+<h2>Create a full path<a class="headerlink" href="#create-a-full-path" title="Permalink to this heading"></a></h2>
 <p>v1
 When you use CREATE and a pattern, all parts of the pattern that are not already in scope at this time will be created.</p>
 <p>Query</p>
@@ -454,42 +360,32 @@ $$) as (p agtype);
 		</td>
 	</tr>
 </table>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="delete.html" class="btn btn-neutral float-right" title="DELETE" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="limit.html" class="btn btn-neutral float-left" title="LIMIT" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="delete.html" class="btn btn-neutral float-right" title="DELETE" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2021, Apache AGE.
-
-    </p>
+    <p>&#169; Copyright 2021, Apache AGE.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
   
 <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
@@ -505,18 +401,11 @@ $$) as (p agtype);
       <dd><a href="../../v0.6.0/index.html">v0.6.0</a></dd>
     </dl>
   </div>
-</div>
-
-  <script type="text/javascript">
+</div><script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
