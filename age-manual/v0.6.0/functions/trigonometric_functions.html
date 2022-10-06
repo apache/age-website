@@ -1,79 +1,39 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>Trigonometric Functions &mdash; Apache AGE master documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-
-  
-  
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-  
-
-  
-  
-
-  
-
-  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="String Functions" href="string_functions.html" />
     <link rel="prev" title="Logarithmic Functions" href="logarithmic_functions.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> Apache AGE
-          
-
-          
-            
             <img src="../_static/logo.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -81,18 +41,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../intro/overview.html">Overview</a></li>
@@ -152,77 +101,34 @@
 <li class="toctree-l1"><a class="reference internal" href="../advanced/sql_in_cypher.html">SQL In Cypher</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Apache AGE</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
       <li>Trigonometric Functions</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
-            
               <a href="https://github.com/apache/incubator-age-website/blob/master/docs/functions/trigonometric_functions.md" class="fa fa-github"> Edit on GitHub</a>
-            
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="tex2jax_ignore mathjax_ignore section" id="trigonometric-functions">
-<h1>Trigonometric Functions<a class="headerlink" href="#trigonometric-functions" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="degrees">
-<h2>degrees<a class="headerlink" href="#degrees" title="Permalink to this headline">¶</a></h2>
+             
+  <section id="trigonometric-functions">
+<h1>Trigonometric Functions<a class="headerlink" href="#trigonometric-functions" title="Permalink to this heading"></a></h1>
+<section id="degrees">
+<h2>degrees<a class="headerlink" href="#degrees" title="Permalink to this heading"></a></h2>
 <p>degrees() converts radians to degrees.</p>
 <p>Syntax:<code class="docutils literal notranslate"><span class="pre">degrees(expression)</span></code></p>
 <p>Returns:</p>
@@ -271,9 +177,9 @@ $$) as (deg agtype);
    </td>
   </tr>
 </table>
-</div>
-<div class="section" id="radians">
-<h2>radians<a class="headerlink" href="#radians" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="radians">
+<h2>radians<a class="headerlink" href="#radians" title="Permalink to this heading"></a></h2>
 <p>radians() converts radians to degrees.</p>
 <p>Syntax:<code class="docutils literal notranslate"><span class="pre">radians(expression)</span></code></p>
 <p>Returns:</p>
@@ -322,9 +228,9 @@ $$) as (rad agtype);
    </td>
   </tr>
 </table>
-</div>
-<div class="section" id="pi">
-<h2>pi<a class="headerlink" href="#pi" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="pi">
+<h2>pi<a class="headerlink" href="#pi" title="Permalink to this heading"></a></h2>
 <p>pi() returns the mathematical constant pi.</p>
 <p>Syntax: <code class="docutils literal notranslate"><span class="pre">pi()</span></code></p>
 <p>Returns:</p>
@@ -354,9 +260,9 @@ $$) as (p agtype);
    </td>
   </tr>
 </table>
-</div>
-<div class="section" id="sin">
-<h2>sin<a class="headerlink" href="#sin" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="sin">
+<h2>sin<a class="headerlink" href="#sin" title="Permalink to this heading"></a></h2>
 <p>sin() returns the sine of a number.</p>
 <p>Syntax:<code class="docutils literal notranslate"><span class="pre">sin(expression)</span></code></p>
 <p>Returns:</p>
@@ -405,9 +311,9 @@ $$) as (s agtype);
    </td>
   </tr>
 </table>
-</div>
-<div class="section" id="cos">
-<h2>cos<a class="headerlink" href="#cos" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="cos">
+<h2>cos<a class="headerlink" href="#cos" title="Permalink to this heading"></a></h2>
 <p>cos() returns the cosine of a number.</p>
 <p>Syntax: <code class="docutils literal notranslate"><span class="pre">cos(expression)</span></code></p>
 <p>Returns:</p>
@@ -456,9 +362,9 @@ $$) as (c agtype);
    </td>
   </tr>
 </table>
-</div>
-<div class="section" id="tan">
-<h2>tan<a class="headerlink" href="#tan" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tan">
+<h2>tan<a class="headerlink" href="#tan" title="Permalink to this heading"></a></h2>
 <p>tan() returns the tangent of a number.</p>
 <p>Syntax: <code class="docutils literal notranslate"><span class="pre">tan(expression)</span></code></p>
 <p>Returns:</p>
@@ -507,9 +413,9 @@ $$) as (t agtype);
    </td>
   </tr>
 </table>
-</div>
-<div class="section" id="asin">
-<h2>asin<a class="headerlink" href="#asin" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="asin">
+<h2>asin<a class="headerlink" href="#asin" title="Permalink to this heading"></a></h2>
 <p>asin() returns the arcsine of a number.</p>
 <p>Syntax:<code class="docutils literal notranslate"><span class="pre">asin(expression)</span></code></p>
 <p>Returns:</p>
@@ -559,9 +465,9 @@ $$) as (s agtype);
    </td>
   </tr>
 </table>
-</div>
-<div class="section" id="acos">
-<h2>acos<a class="headerlink" href="#acos" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="acos">
+<h2>acos<a class="headerlink" href="#acos" title="Permalink to this heading"></a></h2>
 <p>acos() returns the arccosine of a number.</p>
 <p>Syntax:<code class="docutils literal notranslate"><span class="pre">acos(expression)</span></code></p>
 <p>Returns:</p>
@@ -611,9 +517,9 @@ $$) as (arc_c agtype);
    </td>
   </tr>
 </table>
-</div>
-<div class="section" id="atan">
-<h2>atan<a class="headerlink" href="#atan" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="atan">
+<h2>atan<a class="headerlink" href="#atan" title="Permalink to this heading"></a></h2>
 <p>atan() returns the arctangent of a number.</p>
 <p>Syntax:<code class="docutils literal notranslate"><span class="pre">atan(expression)</span></code></p>
 <p>Returns:</p>
@@ -662,9 +568,9 @@ $$) as (arc_t agtype);
    </td>
   </tr>
 </table>
-</div>
-<div class="section" id="atan2">
-<h2>atan2<a class="headerlink" href="#atan2" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="atan2">
+<h2>atan2<a class="headerlink" href="#atan2" title="Permalink to this heading"></a></h2>
 <p>atan2() returns the arctangent2 of a set of coordinates in radians.</p>
 <p>Syntax: <code class="docutils literal notranslate"><span class="pre">atan2(expression1,</span> <span class="pre">expression2)</span></code></p>
 <p>Returns:</p>
@@ -719,42 +625,32 @@ $$) as (arc_t2 agtype);
    </td>
   </tr>
 </table>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="string_functions.html" class="btn btn-neutral float-right" title="String Functions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="logarithmic_functions.html" class="btn btn-neutral float-left" title="Logarithmic Functions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="string_functions.html" class="btn btn-neutral float-right" title="String Functions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2021, Apache AGE.
-
-    </p>
+    <p>&#169; Copyright 2021, Apache AGE.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
   
 <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
@@ -770,18 +666,11 @@ $$) as (arc_t2 agtype);
       <dd><a href="trigonometric_functions.html">v0.6.0</a></dd>
     </dl>
   </div>
-</div>
-
-  <script type="text/javascript">
+</div><script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

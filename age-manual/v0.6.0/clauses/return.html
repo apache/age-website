@@ -1,79 +1,39 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>RETURN &mdash; Apache AGE master documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-
-  
-  
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-  
-
-  
-  
-
-  
-
-  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="ORDER BY" href="order_by.html" />
     <link rel="prev" title="WITH" href="with.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> Apache AGE
-          
-
-          
-            
             <img src="../_static/logo.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -81,18 +41,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../intro/overview.html">Overview</a></li>
@@ -151,78 +100,35 @@
 <li class="toctree-l1"><a class="reference internal" href="../advanced/sql_in_cypher.html">SQL In Cypher</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Apache AGE</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
       <li>RETURN</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
-            
               <a href="https://github.com/apache/incubator-age-website/blob/master/docs/clauses/return.md" class="fa fa-github"> Edit on GitHub</a>
-            
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="tex2jax_ignore mathjax_ignore section" id="return">
-<h1>RETURN<a class="headerlink" href="#return" title="Permalink to this headline">¶</a></h1>
+             
+  <section id="return">
+<h1>RETURN<a class="headerlink" href="#return" title="Permalink to this heading"></a></h1>
 <p>In the RETURN part of your query, you define which parts of the pattern you are interested in. It can be nodes, relationships, or properties on these.</p>
-<div class="section" id="return-nodes">
-<h2>Return nodes<a class="headerlink" href="#return-nodes" title="Permalink to this headline">¶</a></h2>
+<section id="return-nodes">
+<h2>Return nodes<a class="headerlink" href="#return-nodes" title="Permalink to this heading"></a></h2>
 <p>To return a node, list it in the RETURN statement.</p>
 <p>Query</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
@@ -248,9 +154,9 @@ $$) as (n agtype);
    </td>
   </tr>
 </table>
-</div>
-<div class="section" id="return-edges">
-<h2>Return edges<a class="headerlink" href="#return-edges" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="return-edges">
+<h2>Return edges<a class="headerlink" href="#return-edges" title="Permalink to this heading"></a></h2>
 <p>To return n edge, just include it in the RETURN list.</p>
 <p>Query</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
@@ -276,9 +182,9 @@ $$) as (r agtype);
    </td>
   </tr>
 </table>
-</div>
-<div class="section" id="return-property">
-<h2>Return property<a class="headerlink" href="#return-property" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="return-property">
+<h2>Return property<a class="headerlink" href="#return-property" title="Permalink to this heading"></a></h2>
 <p>To return a property, use the dot separator, like this:</p>
 <p>Query</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
@@ -304,9 +210,9 @@ $$) as (name agtype);
    </td>
   </tr>
 </table>
-</div>
-<div class="section" id="return-all-elements">
-<h2>Return all elements<a class="headerlink" href="#return-all-elements" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="return-all-elements">
+<h2>Return all elements<a class="headerlink" href="#return-all-elements" title="Permalink to this heading"></a></h2>
 <p>When you want to return all vertices, edges and paths found in a query, you can use the * symbol.</p>
 <p>Query</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
@@ -352,9 +258,9 @@ $$) as (a agtype, b agtype, r agtype);
    </td>
   </tr>
 </table>
-</div>
-<div class="section" id="variable-with-uncommon-characters">
-<h2>Variable with uncommon characters<a class="headerlink" href="#variable-with-uncommon-characters" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="variable-with-uncommon-characters">
+<h2>Variable with uncommon characters<a class="headerlink" href="#variable-with-uncommon-characters" title="Permalink to this heading"></a></h2>
 <p>To introduce a placeholder that is made up of characters that are not contained in the English alphabet, you can use the ` to enclose the variable, like this:</p>
 <p>Query</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
@@ -381,9 +287,9 @@ $$) as (happy agtype);
    </td>
   </tr>
 </table>
-</div>
-<div class="section" id="aliasing-a-field">
-<h2>Aliasing a field<a class="headerlink" href="#aliasing-a-field" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="aliasing-a-field">
+<h2>Aliasing a field<a class="headerlink" href="#aliasing-a-field" title="Permalink to this heading"></a></h2>
 <p>If the name of the field should be different from the expression used, you can rename it by changing the name in the column list definition.</p>
 <p>Query</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
@@ -409,9 +315,9 @@ $$) as (objects_name agtype);
    </td>
   </tr>
 </table>
-</div>
-<div class="section" id="optional-properties">
-<h2>Optional properties<a class="headerlink" href="#optional-properties" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="optional-properties">
+<h2>Optional properties<a class="headerlink" href="#optional-properties" title="Permalink to this heading"></a></h2>
 <p>If a property might or might not be there, you can still select it as usual. It will be treated as null if it is missing.</p>
 <p>Query</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
@@ -441,9 +347,9 @@ $$) as (age agtype);
    </td>
   </tr>
 </table>
-</div>
-<div class="section" id="other-expressions">
-<h2>Other expressions<a class="headerlink" href="#other-expressions" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="other-expressions">
+<h2>Other expressions<a class="headerlink" href="#other-expressions" title="Permalink to this heading"></a></h2>
 <p>Any expression can be used as a return item—literals, predicates, properties, functions, and everything else.</p>
 <p>Query</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
@@ -477,9 +383,9 @@ $$) as (older_than_30 agtype, literal agtype, id agtype);
    </td>
   </tr>
 </table>
-</div>
-<div class="section" id="unique-results">
-<h2>Unique results<a class="headerlink" href="#unique-results" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="unique-results">
+<h2>Unique results<a class="headerlink" href="#unique-results" title="Permalink to this heading"></a></h2>
 <p>DISTINCT retrieves only unique records depending on the fields that have been selected to output.</p>
 <p>Query</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
@@ -505,42 +411,32 @@ $$) as (b agtype);
    </td>
   </tr>
 </table>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="order_by.html" class="btn btn-neutral float-right" title="ORDER BY" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="with.html" class="btn btn-neutral float-left" title="WITH" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="order_by.html" class="btn btn-neutral float-right" title="ORDER BY" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2021, Apache AGE.
-
-    </p>
+    <p>&#169; Copyright 2021, Apache AGE.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
   
 <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
@@ -556,18 +452,11 @@ $$) as (b agtype);
       <dd><a href="return.html">v0.6.0</a></dd>
     </dl>
   </div>
-</div>
-
-  <script type="text/javascript">
+</div><script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

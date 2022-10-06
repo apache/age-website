@@ -1,79 +1,39 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>Using Cypher in a CTE Expression &mdash; Apache AGE master documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-
-  
-  
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-  
-
-  
-  
-
-  
-
-  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Prepared Statements" href="prepared_statements.html" />
     <link rel="prev" title="Overview" href="advanced_overview.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> Apache AGE
-          
-
-          
-            
             <img src="../_static/logo.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -81,18 +41,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../intro/overview.html">Overview</a></li>
@@ -146,75 +95,32 @@
 <li class="toctree-l1"><a class="reference internal" href="sql_in_cypher.html">SQL In Cypher</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Apache AGE</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
       <li>Using Cypher in a CTE Expression</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
-            
               <a href="https://github.com/apache/incubator-age-website/blob/master/docs/advanced/advanced.md" class="fa fa-github"> Edit on GitHub</a>
-            
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="tex2jax_ignore mathjax_ignore section" id="using-cypher-in-a-cte-expression">
-<h1>Using Cypher in a CTE Expression<a class="headerlink" href="#using-cypher-in-a-cte-expression" title="Permalink to this headline">¶</a></h1>
+             
+  <section id="using-cypher-in-a-cte-expression">
+<h1>Using Cypher in a CTE Expression<a class="headerlink" href="#using-cypher-in-a-cte-expression" title="Permalink to this heading"></a></h1>
 <p>There are no restrictions to using Cypher with CTEs.</p>
 <p>Query:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>WITH graph_query as (
@@ -258,9 +164,9 @@ SELECT * FROM graph_query;
    </td>
   </tr>
 </table>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="using-cypher-in-a-join-expression">
-<h1>Using Cypher in a Join expression<a class="headerlink" href="#using-cypher-in-a-join-expression" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="using-cypher-in-a-join-expression">
+<h1>Using Cypher in a Join expression<a class="headerlink" href="#using-cypher-in-a-join-expression" title="Permalink to this heading"></a></h1>
 <p>A Cypher query can be part of a JOIN clause.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Developers</span> <span class="n">Note</span>
 <span class="n">Cypher</span> <span class="n">queries</span> <span class="n">using</span> <span class="n">the</span> <span class="n">CREATE</span><span class="p">,</span> <span class="n">SET</span><span class="p">,</span> <span class="n">REMOVE</span> <span class="n">clauses</span> <span class="n">cannot</span> <span class="n">be</span> <span class="n">used</span> <span class="ow">in</span> <span class="n">sql</span> <span class="n">queries</span> <span class="k">with</span> <span class="n">Joins</span><span class="p">,</span> <span class="k">as</span> <span class="n">they</span> <span class="n">affect</span> <span class="n">the</span> <span class="n">Postgres</span> <span class="n">transaction</span> <span class="n">system</span><span class="o">.</span> <span class="n">One</span> <span class="n">possible</span> <span class="n">solution</span> <span class="ow">is</span> <span class="n">to</span> <span class="n">protect</span> <span class="n">the</span> <span class="n">query</span> <span class="k">with</span> <span class="n">CTEs</span><span class="o">.</span> <span class="n">See</span> <span class="n">the</span> <span class="n">subsection</span> <span class="n">Using</span> <span class="n">CTEs</span> <span class="k">with</span> <span class="n">CREATE</span><span class="p">,</span> <span class="n">REMOVE</span><span class="p">,</span> <span class="ow">and</span> <span class="n">SET</span> <span class="k">for</span> <span class="n">a</span> <span class="n">solution</span> <span class="n">to</span> <span class="n">this</span> <span class="n">problem</span><span class="o">.</span>
@@ -317,12 +223,12 @@ ON t.person_id = graph_query.id
    </td>
   </tr>
 </table>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="cypher-in-sql-expressions">
-<h1>Cypher in SQL expressions<a class="headerlink" href="#cypher-in-sql-expressions" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="cypher-in-sql-expressions">
+<h1>Cypher in SQL expressions<a class="headerlink" href="#cypher-in-sql-expressions" title="Permalink to this heading"></a></h1>
 <p>Cypher cannot be used in an expression, the query must exists in the FROM clause of a query. However, if the cypher query is placed in a Subquery, it will behave as any SQL style query.</p>
-<div class="section" id="using-cypher-with">
-<h2>Using Cypher with ‘=’<a class="headerlink" href="#using-cypher-with" title="Permalink to this headline">¶</a></h2>
+<section id="using-cypher-with">
+<h2>Using Cypher with ‘=’<a class="headerlink" href="#using-cypher-with" title="Permalink to this heading"></a></h2>
 <p>When writing a cypher query that is known to return 1 column and 1 row, the ‘=’ comparison operator may be used.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT t.name FROM schema_name.sql_person AS t
 where t.name = (
@@ -354,9 +260,9 @@ where t.name = (
    </td>
   </tr>
 </table>
-</div>
-<div class="section" id="working-with-postgres-s-in-clause">
-<h2>Working with Postgres’s IN Clause<a class="headerlink" href="#working-with-postgres-s-in-clause" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="working-with-postgres-s-in-clause">
+<h2>Working with Postgres’s IN Clause<a class="headerlink" href="#working-with-postgres-s-in-clause" title="Permalink to this heading"></a></h2>
 <p>When writing a cypher query that is known to return 1 column, but may have multiple rows. The IN operator may be used.</p>
 <p>Query:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT t.name, t.age FROM schema_name.sql_person as t 
@@ -399,9 +305,9 @@ where t.name in (
    </td>
   </tr>
 </table>
-</div>
-<div class="section" id="working-with-postgres-exists-clause">
-<h2>Working with Postgres EXISTS Clause<a class="headerlink" href="#working-with-postgres-exists-clause" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="working-with-postgres-exists-clause">
+<h2>Working with Postgres EXISTS Clause<a class="headerlink" href="#working-with-postgres-exists-clause" title="Permalink to this heading"></a></h2>
 <p>When writing a cypher query that may have more than 1 column and row returned. The EXISTS operator may be used.</p>
 <p>Query:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT t.name, t.age
@@ -441,9 +347,9 @@ WHERE EXISTS (
    </td>
   </tr>
 </table>
-</div>
-<div class="section" id="querying-multiple-graphs">
-<h2>Querying Multiple Graphs<a class="headerlink" href="#querying-multiple-graphs" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="querying-multiple-graphs">
+<h2>Querying Multiple Graphs<a class="headerlink" href="#querying-multiple-graphs" title="Permalink to this heading"></a></h2>
 <p>There is no restriction to the number of graphs an SQL statement can query. Allowing users to query more than one graph at the same time.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT graph_1.name, graph_1.age, graph_2.license_number
 FROM cypher(&#39;graph_1&#39;, $$
@@ -480,42 +386,32 @@ ON graph_1.name = graph_2.name
    </td>
   </tr>
 </table>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="prepared_statements.html" class="btn btn-neutral float-right" title="Prepared Statements" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="advanced_overview.html" class="btn btn-neutral float-left" title="Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="prepared_statements.html" class="btn btn-neutral float-right" title="Prepared Statements" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2021, Apache AGE.
-
-    </p>
+    <p>&#169; Copyright 2021, Apache AGE.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
   
 <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
@@ -531,18 +427,11 @@ ON graph_1.name = graph_2.name
       <dd><a href="advanced.html">v0.6.0</a></dd>
     </dl>
   </div>
-</div>
-
-  <script type="text/javascript">
+</div><script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

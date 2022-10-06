@@ -1,79 +1,39 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>ORDER BY &mdash; Apache AGE master documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-
-  
-  
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-  
-
-  
-  
-
-  
-
-  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="SKIP" href="skip.html" />
     <link rel="prev" title="RETURN" href="return.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> Apache AGE
-          
-
-          
-            
             <img src="../_static/logo.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -81,18 +41,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../intro/overview.html">Overview</a></li>
@@ -147,84 +96,41 @@
 <li class="toctree-l1"><a class="reference internal" href="../advanced/sql_in_cypher.html">SQL In Cypher</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Apache AGE</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
       <li>ORDER BY</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
-            
               <a href="https://github.com/apache/incubator-age-website/blob/master/docs/clauses/order_by.md" class="fa fa-github"> Edit on GitHub</a>
-            
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="tex2jax_ignore mathjax_ignore section" id="order-by">
-<h1>ORDER BY<a class="headerlink" href="#order-by" title="Permalink to this headline">¶</a></h1>
+             
+  <section id="order-by">
+<h1>ORDER BY<a class="headerlink" href="#order-by" title="Permalink to this heading"></a></h1>
 <p>ORDER BY is a sub-clause following WITH, and it specifies that the output should be sorted and how.</p>
-<div class="section" id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h2>
 <p>Note that you cannot sort on nodes or relationships, just on properties on these. ORDER BY relies on comparisons to sort the output, see Ordering and comparison of values.</p>
 <p>In terms of scope of variables, ORDER BY follows special rules, depending on if the projecting RETURN or WITH clause is either aggregating or DISTINCT. If it is an aggregating or DISTINCT projection, only the variables available in the projection are available. If the projection does not alter the output cardinality (which aggregation and DISTINCT do), variables available from before the projecting clause are also available. When the projection clause shadows already existing variables, only the new variables are available.</p>
 <p>Lastly, it is not allowed to use aggregating expressions in the ORDER BY sub-clause if they are not also listed in the projecting clause. This last rule is to make sure that ORDER BY does not change the results, only the order of them.</p>
-</div>
-<div class="section" id="order-nodes-by-property">
-<h2>Order nodes by property<a class="headerlink" href="#order-nodes-by-property" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="order-nodes-by-property">
+<h2>Order nodes by property<a class="headerlink" href="#order-nodes-by-property" title="Permalink to this heading"></a></h2>
 <p>ORDER BY is used to sort the output.</p>
 <p>Query</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
@@ -268,9 +174,9 @@ $$) as (name agtype, age agtype);
    </td>
   </tr>
 </table>
-</div>
-<div class="section" id="order-nodes-by-multiple-properties">
-<h2>Order nodes by multiple properties<a class="headerlink" href="#order-nodes-by-multiple-properties" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="order-nodes-by-multiple-properties">
+<h2>Order nodes by multiple properties<a class="headerlink" href="#order-nodes-by-multiple-properties" title="Permalink to this heading"></a></h2>
 <p>You can order by multiple properties by stating each variable in the ORDER BY clause. Cypher will sort the result by the first variable listed, and for equal values, go to the next property in the ORDER BY clause, and so on.</p>
 <p>Query</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
@@ -314,9 +220,9 @@ $$) as (name agtype, age agtype);
    </td>
   </tr>
 </table>
-</div>
-<div class="section" id="order-nodes-in-descending-order">
-<h2>Order nodes in descending order<a class="headerlink" href="#order-nodes-in-descending-order" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="order-nodes-in-descending-order">
+<h2>Order nodes in descending order<a class="headerlink" href="#order-nodes-in-descending-order" title="Permalink to this heading"></a></h2>
 <p>By adding DESC[ENDING] after the variable to sort on, the sort will be done in reverse order.</p>
 <p>Query</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
@@ -360,9 +266,9 @@ $$) as (name agtype, age agtype);
    </td>
   </tr>
 </table>
-</div>
-<div class="section" id="ordering-null">
-<h2>Ordering null<a class="headerlink" href="#ordering-null" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="ordering-null">
+<h2>Ordering null<a class="headerlink" href="#ordering-null" title="Permalink to this heading"></a></h2>
 <p>When sorting the result set, null will always come at the end of the result set for ascending sorting,and first when doing descending sort.</p>
 <p>Query</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
@@ -414,42 +320,32 @@ $$) as (name agtype, age agtype, height agtype);
    </td>
   </tr>
 </table>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="skip.html" class="btn btn-neutral float-right" title="SKIP" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="return.html" class="btn btn-neutral float-left" title="RETURN" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="skip.html" class="btn btn-neutral float-right" title="SKIP" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2021, Apache AGE.
-
-    </p>
+    <p>&#169; Copyright 2021, Apache AGE.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
   
 <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
@@ -465,18 +361,11 @@ $$) as (name agtype, age agtype, height agtype);
       <dd><a href="order_by.html">v0.6.0</a></dd>
     </dl>
   </div>
-</div>
-
-  <script type="text/javascript">
+</div><script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
