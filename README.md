@@ -8,10 +8,15 @@
 
 ## Build the documentation locally (first time)
 
+```shell
+sudo apt update
+sudo add-apt-repository ppa:deadsnakes/ppa
+```
+
 * Install requirements (the latex and dvisvgm commands are required to display math)
 
 ```shell
-sudo apt install python3 virtualenv texlive-latex-base texlive-latex-extra texlive-extra-utils
+sudo apt install texlive-latex-base texlive-latex-extra texlive-extra-utils python3.9 python3.9-venv software-properties-common
 ```
 
 * Clone this repository
@@ -19,7 +24,7 @@ sudo apt install python3 virtualenv texlive-latex-base texlive-latex-extra texli
 * Create a python virtual environment
 
 ```shell
-virtualenv -p python3 venv
+virtualenv -p python3.9 venv
 ```
 
 * Activate the virtual environment
