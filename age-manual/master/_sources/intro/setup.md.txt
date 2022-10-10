@@ -4,11 +4,11 @@
 
 ### Releases
 
-The releases and release notes can be found at <https://github.com/apache/incubator-age/releases>
+The releases and release notes can be found at <https://github.com/apache/age/releases>
 
 ### Source code
 
-The source code can be found at <https://github.com/apache/incubator-age>
+The source code can be found at <https://github.com/apache/age>
 
 ## Pre-Installation
 
@@ -66,7 +66,7 @@ sudo vi /usr/bin/pg_config
 
 By default PGBINROOT is set to /usr/lib/postsgresql , the directory which contains all the postgres versions. Change this to /usr/lib/postgresql/[intended version of postgres]
 
-Check the PostgreSQL conf file of your PostgreSQL version to figure out which port its running on. 
+Check the PostgreSQL conf file of your PostgreSQL version to figure out which port its running on.
 The conf file is generally located in /etc/postgresql/[intended version of postgres]/main
 
 ```console
@@ -75,7 +75,7 @@ vi /etc/postgresql/11/main/postgresql.conf
 
 Check the PORT the particular version of PostgreSQL runs on by default.
 
-Restart PostgreSQL 
+Restart PostgreSQL
 
 ```console
 sudo service postgresql restart
