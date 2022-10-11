@@ -59,6 +59,11 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#setting-up-multiple-versions-of-postgresql">Setting up multiple versions of PostgreSQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-via-docker-image">Installing via docker image</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#get-the-docker-image">Get the docker image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#on-the-terminal">On the terminal</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#post-installation">Post Installation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#per-installation-instructions">Per Installation Instructions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#per-session-instructions">Per Session Instructions</a></li>
@@ -216,6 +221,49 @@ The conf file is generally located in /etc/postgresql/[intended version of postg
 </pre></div>
 </div>
 </section>
+<section id="installing-via-docker-image">
+<h2>Installing via docker image<a class="headerlink" href="#installing-via-docker-image" title="Permalink to this heading"></a></h2>
+<section id="get-the-docker-image">
+<h3>Get the docker image<a class="headerlink" href="#get-the-docker-image" title="Permalink to this heading"></a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>docker pull apache/age
+</pre></div>
+</div>
+</section>
+<section id="on-the-terminal">
+<h3>On the terminal<a class="headerlink" href="#on-the-terminal" title="Permalink to this heading"></a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>docker run <span class="se">\</span>
+    --name myPostgresDb  <span class="se">\</span>
+    -p <span class="m">5455</span>:5432 <span class="se">\</span>
+    -e <span class="nv">POSTGRES_USER</span><span class="o">=</span>postgresUser <span class="se">\</span>
+    -e <span class="nv">POSTGRES_PASSWORD</span><span class="o">=</span>postgresPW <span class="se">\</span>
+    -e <span class="nv">POSTGRES_DB</span><span class="o">=</span>postgresDB <span class="se">\</span>
+    -d <span class="se">\</span>
+    apache/age
+</pre></div>
+</div>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Docker variables</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--name</span> </code></p></td>
+<td><p>Assign a name to the container</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-p</span></code></p></td>
+<td><p>Publish a container’s port(s) to the host</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-e</span></code></p></td>
+<td><p>Set environment variables</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-d</span></code></p></td>
+<td><p>Run container in background and print container ID</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
 <section id="post-installation">
 <h2>Post Installation<a class="headerlink" href="#post-installation" title="Permalink to this heading"></a></h2>
 <section id="per-installation-instructions">
@@ -288,6 +336,7 @@ The conf file is generally located in /etc/postgresql/[intended version of postg
     <dl>
       <dt>Versions</dt>
       <dd><a href="setup.html">master</a></dd>
+      <dd><a href="../../v0.6.0/index.html">v0.6.0</a></dd>
     </dl>
   </div>
 </div><script>
