@@ -33,7 +33,7 @@ jobs:
         publish_dir: ./public
         destination_dir: ./
     
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2
       with:
           ref: master
 
