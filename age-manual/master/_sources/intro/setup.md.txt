@@ -87,6 +87,40 @@ sudo su - postgres
 psql --port PORT
 ```
 
+
+
+## Installing via docker image
+
+### Get the docker image
+
+```shell
+docker pull apache/age
+```
+
+### On the terminal
+
+```shell
+docker run \
+    --name myPostgresDb  \
+    -p 5455:5432 \
+    -e POSTGRES_USER=postgresUser \
+    -e POSTGRES_PASSWORD=postgresPW \
+    -e POSTGRES_DB=postgresDB \
+    -d \
+    apache/age
+```
+
+
+
+| Docker variables | Description                                        |
+| ---------------- | -------------------------------------------------- |
+| `--name `        | Assign a name to the container                     |
+| `-p`             | Publish a container's port(s) to the host          |
+| `-e`             | Set environment variables                          |
+| `-d`             | Run container in background and print container ID |
+
+
+
 ## Post Installation
 
 ### Per Installation Instructions
