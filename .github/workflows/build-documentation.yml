@@ -33,22 +33,14 @@ jobs:
       - name: Install dependencies
         run: python3 -m pip install -r ./requirements.txt
 
-      - run: sphinx-multiversion docs build/html
+      - run: sphinx-build docs build/html/current
 
-      - run: cp ./index.html ./build/html
-
-      - name: Deploy-asf-site
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: asf-site
-          publish_dir: ./build/html
-          destination_dir: age-manual
+      - run: cp ./index.html ./build/html/current
 
       - name: Deploy-asf-staging
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: asf-staging
-          publish_dir: ./build/html
-          destination_dir: age-manual          
+          publish_dir: ./build/html/current
+          destination_dir: age-dev-manual    
