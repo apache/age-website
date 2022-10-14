@@ -155,7 +155,7 @@ The at points where the differences do matter, the NodeTag can be checked and th
 			result = transformColumnRef(pstate, (FuncCall *) node);
 			break;
 		case T_A_Const:
-			result = (Node *) make_const(pstate, (A_Const *) expr);
+			result = (Node *) make_const(pstate, (A_Const *) node);
 			break;
 ``` 
 
