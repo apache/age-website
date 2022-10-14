@@ -7,3 +7,10 @@ Apache AGE's documentation
    :maxdepth: 1
 
    intro/overview
+
+
+.. toctree::                                                                     
+   :caption: Postgres Internals                                                     
+   :maxdepth: 1                                                                  
+                                                                                 
+   postgres/query_processing 
