@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Node (The Default Postgres Data Structure) &mdash; Apache AGE master documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Postgres Query Processing Stages" href="query_processing.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Apache AGE
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/overview.html">Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Postgres Internals</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="query_processing.html">Postgres Query Processing Stages</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Node (The Default Postgres Data Structure)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-a-pointer">What is a Pointer?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-a-struct">What is a Struct?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pointers-to-structs">Pointers to Structs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#void-pointers-and-pointer-casting">Void Pointers and Pointer Casting</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#how-postgres-uses-structs-and-pointers">How Postgres Uses Structs and Pointers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#extensible-nodes">Extensible Nodes</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Apache AGE</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Node (The Default Postgres Data Structure)</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/apache/age-website/blob/master/docs/postgres/node.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="node-the-default-postgres-data-structure">
+<h1>Node (The Default Postgres Data Structure)<a class="headerlink" href="#node-the-default-postgres-data-structure" title="Permalink to this heading"></a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<p>Postgres has a default struct that it uses for throughout most of its query processing engine, <a src='https://github.com/postgres/postgres/blob/master/src/include/nodes/nodes.h#L105'>Node</a>. The Node struct is defined as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">typedef</span> <span class="n">struct</span> <span class="n">Node</span>
+<span class="p">{</span>
+    <span class="n">NodeTag</span> <span class="nb">type</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">Node</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The stuct Node and Postgres as a whole take advantage of pointers and how C allocates memory to implement as pseudo inheritance system similar to high level languages such as C++, Java, etc.</p>
+<p><b>NOTE:</b> This is not a datatype that someone using Postgres needs to be concerned about, only someone working with Postgres Internals. Postgres datatypes and the Datum data type will be discussed later.</p>
+</section>
+<section id="what-is-a-pointer">
+<h2>What is a Pointer?<a class="headerlink" href="#what-is-a-pointer" title="Permalink to this heading"></a></h2>
+<p>Unlike a variable a pointer stores the memory address of a variable. In other words, it tells you where in memory something is located. Its a pretty simple concept, that holds a lot of complexity and power within it.</p>
+<p>For a full tutorial of pointers you can <a src ='https://www.youtube.com/watch?v=zuegQmMdy8M&ab_channel=freeCodeCamp.org'>watch this tutorial.</a></p>
+<p>For our purposes, the important thing to note about pointers is. All pointers are the same: a 4 byte integer.</p>
+<p>You can denote pointers of different types such as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="o">*</span><span class="n">int_ptr</span><span class="p">;</span>
+<span class="n">char</span> <span class="o">*</span><span class="n">string_ptr</span><span class="p">;</span>
+<span class="n">myStruct</span> <span class="o">*</span><span class="n">struct_ptr</span><span class="p">;</span>
+<span class="n">void</span> <span class="o">*</span><span class="n">void_ptr</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>All of these pointers as far a the hardware and memory is concerned are the same: they are 4 byte integer.</p>
+</section>
+<section id="what-is-a-struct">
+<h2>What is a Struct?<a class="headerlink" href="#what-is-a-struct" title="Permalink to this heading"></a></h2>
+<p>A struct is a composite data type that defines a physically group list of variables in one name in a <b>continous</b> block of memory.</p>
+<p>If we have a struct defined as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">typedef</span> <span class="n">struct</span> <span class="n">myStruct</span>                                                              
+<span class="p">{</span>                                                                                
+    <span class="nb">int</span> <span class="n">var1</span><span class="p">;</span>
+    <span class="nb">float</span> <span class="n">var2</span><span class="p">;</span>
+    <span class="n">char</span> <span class="n">var3</span><span class="p">;</span>                                                                
+<span class="p">}</span> <span class="n">myStruct</span><span class="p">;</span>                                                                          
+</pre></div>
+</div>
+<p>When we allocate room for that struct, a set amount of bytes for the struct will be found in memory and allocated. In our above example, on most modern systems: 4 bytes for var1, 4 bytes for var2 and 1 byte for var3 resulting in 9 bytes total being allocated for the struct, and they will be allocated in the order that they are defined above.</p>
+<p>for a further tutorial of structs please review this <a src='https://www.simplilearn.com/tutorials/c-tutorial/structure-in-c'>tutorial.</a></p>
+</section>
+<section id="pointers-to-structs">
+<h2>Pointers to Structs<a class="headerlink" href="#pointers-to-structs" title="Permalink to this heading"></a></h2>
+<p>When you create a pointer to a struct, what is contained in the pointer is the address of the first byte of the struct. When accessing an element in a struct with a pointer, such as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">myStruct</span> <span class="o">*</span><span class="nb">str</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="n">sizeof</span><span class="p">(</span><span class="n">myStruct</span><span class="p">));</span>                                        
+<span class="nb">str</span><span class="o">-&gt;</span><span class="n">var2</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>                                                                 
+</pre></div>
+</div>
+<p>The address of the pointer is offset by the distance that var2 is from the start of the struct. In this case, is adress of the pointer + 4 bytes, to bypass the int field in the struct.</p>
+<section id="void-pointers-and-pointer-casting">
+<h3>Void Pointers and Pointer Casting<a class="headerlink" href="#void-pointers-and-pointer-casting" title="Permalink to this heading"></a></h3>
+<p>One of the more unique features that C offers is the void pointer. This offers programmers the ability to pass around pointers without care for the type.</p>
+<p>This pointer knows the address in memory that something is located, but it doesn’t know what is located there, so:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span> <span class="n">myFunction</span><span class="p">(</span><span class="n">void</span> <span class="o">*</span><span class="n">ptr</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">ptr</span><span class="o">-&gt;</span><span class="n">var1</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>                                                                            
+</pre></div>
+</div>
+<p>Will throw an error. However, you can cast the void pointer to the pointer of another type.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span> <span class="n">myFunction</span><span class="p">(</span><span class="n">void</span> <span class="o">*</span><span class="n">ptr</span><span class="p">)</span>                                                                          <span class="p">{</span>                                                                                
+    <span class="n">myStruct</span> <span class="o">*</span><span class="nb">str</span> <span class="o">=</span> <span class="p">(</span><span class="n">myStruct</span> <span class="o">*</span><span class="p">)</span><span class="n">ptr</span><span class="p">;</span>
+    <span class="nb">str</span><span class="o">-&gt;</span><span class="n">var1</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>                                                               
+<span class="p">}</span>                                                                                
+</pre></div>
+</div>
+<p>Will work. This opens opportunity for developers to create functions that are more versitile that if the developer needs know exactly what something was pointing to and code for all situations. However, developers need to be careful with this feature because it allows for some very strange behavior if the developer does not use them carefully.</p>
+<p>Postgres has designed a way to use the power of void pointers, but with certain precautions that make them safer to use.</p>
+</section>
+</section>
+<section id="how-postgres-uses-structs-and-pointers">
+<h2>How Postgres Uses Structs and Pointers<a class="headerlink" href="#how-postgres-uses-structs-and-pointers" title="Permalink to this heading"></a></h2>
+<p>Void pointers assume nothing about what the pointer is referencing. The Node struct on the other hand know about one field the <a src='https://github.com/postgres/postgres/blob/REL_11_17/src/include/nodes/nodes.h#L26'>enum NodeType</a>. Nearly all the postgres data structures used in the query processing engine start with this field.</p>
+<p>For example, here is the data structure that represents a fucntion call in the parser phase:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">typedef</span> <span class="n">struct</span> <span class="n">FuncCall</span>
+<span class="p">{</span>
+	<span class="n">NodeTag</span>		<span class="nb">type</span><span class="p">;</span>
+	<span class="n">List</span>	   <span class="o">*</span><span class="n">funcname</span><span class="p">;</span>		<span class="o">/*</span> <span class="n">qualified</span> <span class="n">name</span> <span class="n">of</span> <span class="n">function</span> <span class="o">*/</span>
+	<span class="n">List</span>	   <span class="o">*</span><span class="n">args</span><span class="p">;</span>			<span class="o">/*</span> <span class="n">the</span> <span class="n">arguments</span> <span class="p">(</span><span class="nb">list</span> <span class="n">of</span> <span class="n">exprs</span><span class="p">)</span> <span class="o">*/</span>
+	<span class="n">List</span>	   <span class="o">*</span><span class="n">agg_order</span><span class="p">;</span>		<span class="o">/*</span> <span class="n">ORDER</span> <span class="n">BY</span> <span class="p">(</span><span class="nb">list</span> <span class="n">of</span> <span class="n">SortBy</span><span class="p">)</span> <span class="o">*/</span>
+	<span class="n">Node</span>	   <span class="o">*</span><span class="n">agg_filter</span><span class="p">;</span>		<span class="o">/*</span> <span class="n">FILTER</span> <span class="n">clause</span><span class="p">,</span> <span class="k">if</span> <span class="nb">any</span> <span class="o">*/</span>
+	<span class="n">struct</span> <span class="n">WindowDef</span> <span class="o">*</span><span class="n">over</span><span class="p">;</span>		<span class="o">/*</span> <span class="n">OVER</span> <span class="n">clause</span><span class="p">,</span> <span class="k">if</span> <span class="nb">any</span> <span class="o">*/</span>
+	<span class="nb">bool</span>		<span class="n">agg_within_group</span><span class="p">;</span>	<span class="o">/*</span> <span class="n">ORDER</span> <span class="n">BY</span> <span class="n">appeared</span> <span class="ow">in</span> <span class="n">WITHIN</span> <span class="n">GROUP</span> <span class="o">*/</span>
+	<span class="nb">bool</span>		<span class="n">agg_star</span><span class="p">;</span>		<span class="o">/*</span> <span class="n">argument</span> <span class="n">was</span> <span class="n">really</span> <span class="s1">&#39;*&#39;</span> <span class="o">*/</span>
+	<span class="nb">bool</span>		<span class="n">agg_distinct</span><span class="p">;</span>	<span class="o">/*</span> <span class="n">arguments</span> <span class="n">were</span> <span class="n">labeled</span> <span class="n">DISTINCT</span> <span class="o">*/</span>
+	<span class="nb">bool</span>		<span class="n">func_variadic</span><span class="p">;</span>	<span class="o">/*</span> <span class="n">last</span> <span class="n">argument</span> <span class="n">was</span> <span class="n">labeled</span> <span class="n">VARIADIC</span> <span class="o">*/</span>
+	<span class="n">CoercionForm</span> <span class="n">funcformat</span><span class="p">;</span>	<span class="o">/*</span> <span class="n">how</span> <span class="n">to</span> <span class="n">display</span> <span class="n">this</span> <span class="n">node</span> <span class="o">*/</span>
+	<span class="nb">int</span>			<span class="n">location</span><span class="p">;</span>		<span class="o">/*</span> <span class="n">token</span> <span class="n">location</span><span class="p">,</span> <span class="ow">or</span> <span class="o">-</span><span class="mi">1</span> <span class="k">if</span> <span class="n">unknown</span> <span class="o">*/</span>
+<span class="p">}</span> <span class="n">FuncCall</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>and here is the data structure that represents a constant in the parser phase.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">typedef</span> <span class="n">struct</span> <span class="n">A_Const</span>
+<span class="p">{</span>
+	<span class="n">NodeTag</span>		<span class="nb">type</span><span class="p">;</span>
+	<span class="n">union</span> <span class="n">ValUnion</span> <span class="n">val</span><span class="p">;</span>
+	<span class="nb">bool</span>		<span class="n">isnull</span><span class="p">;</span>			<span class="o">/*</span> <span class="n">SQL</span> <span class="n">NULL</span> <span class="n">constant</span> <span class="o">*/</span>
+	<span class="nb">int</span>			<span class="n">location</span><span class="p">;</span>		<span class="o">/*</span> <span class="n">token</span> <span class="n">location</span><span class="p">,</span> <span class="ow">or</span> <span class="o">-</span><span class="mi">1</span> <span class="k">if</span> <span class="n">unknown</span> <span class="o">*/</span>
+<span class="p">}</span> <span class="n">A_Const</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Given that each other these things a function can appear in a large combination of ways:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="mi">1</span><span class="p">,</span> <span class="n">function_call</span><span class="p">();</span>
+<span class="o">--</span><span class="n">OR</span>
+<span class="n">SELECT</span> <span class="n">function_call</span><span class="p">(),</span> <span class="mi">1</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Many parts of the code don’t need to know the specifics, but since each start with NodeTag, these functions can pass Node to each other and not have to care about the details it isn’t concerned with.</p>
+<p>For example the transformExpr function, which is what converts nodes such as these from parser nodes to their analyze node couterparts:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">extern</span> <span class="n">Node</span> <span class="o">*</span><span class="n">transformExpr</span><span class="p">(</span><span class="n">ParseState</span> <span class="o">*</span><span class="n">pstate</span><span class="p">,</span> <span class="n">Node</span> <span class="o">*</span><span class="n">expr</span><span class="p">,</span> <span class="n">ParseExprKind</span> <span class="n">exprKind</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Can be used in a generic way, reducing the number of permutations of a function that needs to be created, when something is similar but not exact.</p>
+<p>The at points where the differences do matter, the NodeTag can be checked and the correct logic can be run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>	<span class="n">switch</span> <span class="p">(</span><span class="n">nodeTag</span><span class="p">(</span><span class="n">node</span><span class="p">))</span>
+	<span class="p">{</span>
+		<span class="k">case</span> <span class="n">T_FuncCall</span><span class="p">:</span>
+			<span class="n">result</span> <span class="o">=</span> <span class="n">transformColumnRef</span><span class="p">(</span><span class="n">pstate</span><span class="p">,</span> <span class="p">(</span><span class="n">FuncCall</span> <span class="o">*</span><span class="p">)</span> <span class="n">node</span><span class="p">);</span>
+			<span class="k">break</span><span class="p">;</span>
+		<span class="k">case</span> <span class="n">T_A_Const</span><span class="p">:</span>
+			<span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="n">Node</span> <span class="o">*</span><span class="p">)</span> <span class="n">make_const</span><span class="p">(</span><span class="n">pstate</span><span class="p">,</span> <span class="p">(</span><span class="n">A_Const</span> <span class="o">*</span><span class="p">)</span> <span class="n">expr</span><span class="p">);</span>
+			<span class="k">break</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="extensible-nodes">
+<h2>Extensible Nodes<a class="headerlink" href="#extensible-nodes" title="Permalink to this heading"></a></h2>
+<p>Postgres offers a unique node in its system, <a src='https://github.com/postgres/postgres/blob/master/src/include/nodes/extensible.h#L32'>ExtensibleNode</a>. With this node we can add extra nodes to Postgres via extensions that age can pass around in the Postgres system.</p>
+<p>AGE’s custom nodes that utilize this feature can be found <a src='https://github.com/apache/age/blob/master/src/include/nodes/cypher_nodes.h'>here</a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="query_processing.html" class="btn btn-neutral float-left" title="Postgres Query Processing Stages" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Apache AGE.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
