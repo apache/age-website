@@ -11,6 +11,8 @@ Apache AGE's documentation
 
 .. toctree::                                                                     
    :caption: Postgres Internals                                                     
-   :maxdepth: 1                                                                  
-                                                                                 
+   :maxdepth: 1
+
    postgres/query_processing 
+   postgres/node
+
