@@ -90,7 +90,7 @@
 <h1>Node (The Default Postgres Data Structure)<a class="headerlink" href="#node-the-default-postgres-data-structure" title="Permalink to this heading"></a></h1>
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
-<p>Postgres has a default struct that it uses for throughout most of its query processing engine, <a src='https://github.com/postgres/postgres/blob/master/src/include/nodes/nodes.h#L105'>Node</a>. The Node struct is defined as follows:</p>
+<p>Postgres has a default struct that it uses for throughout most of its query processing engine, <a href='https://github.com/postgres/postgres/blob/master/src/include/nodes/nodes.h#L105'>Node</a>. The Node struct is defined as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">typedef</span> <span class="n">struct</span> <span class="n">Node</span>
 <span class="p">{</span>
     <span class="n">NodeTag</span> <span class="nb">type</span><span class="p">;</span>
@@ -103,7 +103,7 @@
 <section id="what-is-a-pointer">
 <h2>What is a Pointer?<a class="headerlink" href="#what-is-a-pointer" title="Permalink to this heading"></a></h2>
 <p>Unlike a variable a pointer stores the memory address of a variable. In other words, it tells you where in memory something is located. Its a pretty simple concept, that holds a lot of complexity and power within it.</p>
-<p>For a full tutorial of pointers you can <a src ='https://www.youtube.com/watch?v=zuegQmMdy8M&ab_channel=freeCodeCamp.org'>watch this tutorial.</a></p>
+<p>For a full tutorial of pointers you can <a href='https://www.youtube.com/watch?v=zuegQmMdy8M&ab_channel=freeCodeCamp.org'>watch this tutorial.</a></p>
 <p>For our purposes, the important thing to note about pointers is. All pointers are the same: a 4 byte integer.</p>
 <p>You can denote pointers of different types such as:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="o">*</span><span class="n">int_ptr</span><span class="p">;</span>
@@ -127,7 +127,7 @@
 </pre></div>
 </div>
 <p>When we allocate room for that struct, a set amount of bytes for the struct will be found in memory and allocated. In our above example, on most modern systems: 4 bytes for var1, 4 bytes for var2 and 1 byte for var3 resulting in 9 bytes total being allocated for the struct, and they will be allocated in the order that they are defined above.</p>
-<p>for a further tutorial of structs please review this <a src='https://www.simplilearn.com/tutorials/c-tutorial/structure-in-c'>tutorial.</a></p>
+<p>for a further tutorial of structs please review this <a href='https://www.simplilearn.com/tutorials/c-tutorial/structure-in-c'>tutorial.</a></p>
 </section>
 <section id="pointers-to-structs">
 <h2>Pointers to Structs<a class="headerlink" href="#pointers-to-structs" title="Permalink to this heading"></a></h2>
@@ -160,7 +160,7 @@
 </section>
 <section id="how-postgres-uses-structs-and-pointers">
 <h2>How Postgres Uses Structs and Pointers<a class="headerlink" href="#how-postgres-uses-structs-and-pointers" title="Permalink to this heading"></a></h2>
-<p>Void pointers assume nothing about what the pointer is referencing. The Node struct on the other hand know about one field the <a src='https://github.com/postgres/postgres/blob/REL_11_17/src/include/nodes/nodes.h#L26'>enum NodeType</a>. Nearly all the postgres data structures used in the query processing engine start with this field.</p>
+<p>Void pointers assume nothing about what the pointer is referencing. The Node struct on the other hand know about one field the <a href='https://github.com/postgres/postgres/blob/REL_11_17/src/include/nodes/nodes.h#L26'>enum NodeType</a>. Nearly all the postgres data structures used in the query processing engine start with this field.</p>
 <p>For example, here is the data structure that represents a fucntion call in the parser phase:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">typedef</span> <span class="n">struct</span> <span class="n">FuncCall</span>
 <span class="p">{</span>
@@ -215,8 +215,8 @@
 </section>
 <section id="extensible-nodes">
 <h2>Extensible Nodes<a class="headerlink" href="#extensible-nodes" title="Permalink to this heading"></a></h2>
-<p>Postgres offers a unique node in its system, <a src='https://github.com/postgres/postgres/blob/master/src/include/nodes/extensible.h#L32'>ExtensibleNode</a>. With this node we can add extra nodes to Postgres via extensions that age can pass around in the Postgres system.</p>
-<p>AGE’s custom nodes that utilize this feature can be found <a src='https://github.com/apache/age/blob/master/src/include/nodes/cypher_nodes.h'>here</a>.</p>
+<p>Postgres offers a unique node in its system, <a href='https://github.com/postgres/postgres/blob/master/src/include/nodes/extensible.h#L32'>ExtensibleNode</a>. With this node we can add extra nodes to Postgres via extensions that age can pass around in the Postgres system.</p>
+<p>AGE’s custom nodes that utilize this feature can be found <a href='https://github.com/apache/age/blob/master/src/include/nodes/cypher_nodes.h'>here</a>.</p>
 </section>
 </section>
 

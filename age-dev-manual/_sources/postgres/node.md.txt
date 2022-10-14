@@ -2,7 +2,7 @@
 
 ## Overview
 
-Postgres has a default struct that it uses for throughout most of its query processing engine, <a src='https://github.com/postgres/postgres/blob/master/src/include/nodes/nodes.h#L105'>Node</a>. The Node struct is defined as follows:
+Postgres has a default struct that it uses for throughout most of its query processing engine, <a href='https://github.com/postgres/postgres/blob/master/src/include/nodes/nodes.h#L105'>Node</a>. The Node struct is defined as follows:
 
 ```
 typedef struct Node
@@ -19,7 +19,7 @@ The stuct Node and Postgres as a whole take advantage of pointers and how C allo
                                                                                  
 Unlike a variable a pointer stores the memory address of a variable. In other words, it tells you where in memory something is located. Its a pretty simple concept, that holds a lot of complexity and power within it.
 
-For a full tutorial of pointers you can <a src ='https://www.youtube.com/watch?v=zuegQmMdy8M&ab_channel=freeCodeCamp.org'>watch this tutorial.</a>
+For a full tutorial of pointers you can <a href='https://www.youtube.com/watch?v=zuegQmMdy8M&ab_channel=freeCodeCamp.org'>watch this tutorial.</a>
 
 For our purposes, the important thing to note about pointers is. All pointers are the same: a 4 byte integer.
 
@@ -51,7 +51,7 @@ typedef struct myStruct
 When we allocate room for that struct, a set amount of bytes for the struct will be found in memory and allocated. In our above example, on most modern systems: 4 bytes for var1, 4 bytes for var2 and 1 byte for var3 resulting in 9 bytes total being allocated for the struct, and they will be allocated in the order that they are defined above.
 
 
-for a further tutorial of structs please review this <a src='https://www.simplilearn.com/tutorials/c-tutorial/structure-in-c'>tutorial.</a>
+for a further tutorial of structs please review this <a href='https://www.simplilearn.com/tutorials/c-tutorial/structure-in-c'>tutorial.</a>
 
 ## Pointers to Structs
 
@@ -93,7 +93,7 @@ Postgres has designed a way to use the power of void pointers, but with certain 
 
 ## How Postgres Uses Structs and Pointers  
 
-Void pointers assume nothing about what the pointer is referencing. The Node struct on the other hand know about one field the <a src='https://github.com/postgres/postgres/blob/REL_11_17/src/include/nodes/nodes.h#L26'>enum NodeType</a>. Nearly all the postgres data structures used in the query processing engine start with this field.
+Void pointers assume nothing about what the pointer is referencing. The Node struct on the other hand know about one field the <a href='https://github.com/postgres/postgres/blob/REL_11_17/src/include/nodes/nodes.h#L26'>enum NodeType</a>. Nearly all the postgres data structures used in the query processing engine start with this field.
 
 For example, here is the data structure that represents a fucntion call in the parser phase:
 
@@ -161,6 +161,6 @@ The at points where the differences do matter, the NodeTag can be checked and th
 
 ## Extensible Nodes
 
-Postgres offers a unique node in its system, <a src='https://github.com/postgres/postgres/blob/master/src/include/nodes/extensible.h#L32'>ExtensibleNode</a>. With this node we can add extra nodes to Postgres via extensions that age can pass around in the Postgres system.
+Postgres offers a unique node in its system, <a href='https://github.com/postgres/postgres/blob/master/src/include/nodes/extensible.h#L32'>ExtensibleNode</a>. With this node we can add extra nodes to Postgres via extensions that age can pass around in the Postgres system.
 
-AGE's custom nodes that utilize this feature can be found <a src='https://github.com/apache/age/blob/master/src/include/nodes/cypher_nodes.h'>here</a>.
+AGE's custom nodes that utilize this feature can be found <a href='https://github.com/apache/age/blob/master/src/include/nodes/cypher_nodes.h'>here</a>.
