@@ -152,7 +152,7 @@ The at points where the differences do matter, the NodeTag can be checked and th
 	switch (nodeTag(node))
 	{
 		case T_FuncCall:
-			result = transformColumnRef(pstate, (FuncCall *) node);
+			result = transformFuncCallRef(pstate, (FuncCall *) node);
 			break;
 		case T_A_Const:
 			result = (Node *) make_const(pstate, (A_Const *) node);
