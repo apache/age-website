@@ -1,8 +1,8 @@
 {
-  "name": "apahce-age-project",
-  "description": "apahce age project web site",
+  "name": "apache/age-website",
+  "description": "apache age project web site",
   "version": "1.0.0",
-  "author": "apahce age team",
+  "author": "apache age team",
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@giscus/react": "^2.2.0",
