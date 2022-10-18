@@ -7,7 +7,6 @@ title: Downloads
 | ------------------ | -------------------- |
 | [Download Apache AGE 1.1.0 ➚](https://dlcdn.apache.org/age/1.1.0/apache-age-1.1.0-src.tar.gz) | [CheckSum ➚](https://dlcdn.apache.org/age/1.1.0/apache-age-1.1.0-src.tar.gz.sha512) & [Signature ➚](https://dlcdn.apache.org/age/1.1.0/apache-age-1.1.0-src.tar.gz.asc) |
 | [Download Apache AGE 1.0.0 ➚](https://archive.apache.org/dist/incubator/age/1.0.0/apache-age-1.0.0-incubating-src.tar.gz) | [CheckSum ➚](https://archive.apache.org/dist/incubator/age/1.0.0/apache-age-1.0.0-incubating-src.tar.gz.sha512) & [Signature ➚](https://archive.apache.org/dist/incubator/age/1.0.0/apache-age-1.0.0-incubating-src.tar.gz.asc) |
-|  |  |
 
 <br/><br/>
 
