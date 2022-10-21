@@ -14,7 +14,8 @@
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  width: 100%;
+  max-width: 64rem;
+  margin: 0 auto;
   .Logo {
     img {
       max-width: 6.5625rem;
@@ -76,11 +77,11 @@
     }
   }
   .Left {
-    width: 100%;
+    // width: 100%;
     max-width: 15.25rem;
   }
   .Right {
-    width: 100%;
+    // width: 100%;
     max-width: 21.25rem;
     text-align: left;
     align-items: center;

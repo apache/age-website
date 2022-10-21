@@ -7,7 +7,7 @@ name: build gatsby
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     strategy:
       matrix:
@@ -32,7 +32,7 @@ jobs:
         publish_branch: asf-site
         publish_dir: ./public
         destination_dir: ./
-
+        
     - name: Checkout master branch
       uses: actions/checkout@v3
       with:
@@ -40,7 +40,7 @@ jobs:
 
     - name: Fetch all branches
       run: git fetch --all
-
+      
     - name: Setup Python
       uses: actions/setup-python@v2
       with:

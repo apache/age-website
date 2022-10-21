@@ -7,29 +7,24 @@ title: Release Notes
 
 <section>
 
-## v1.3.0-incubating (official Apache incubator release) ✅
+## Apache AGE v1.1.0 ✅
 
 Release Date\
-2022-APR-21\
+11 Aug 2022\
 Release Notes
 
 </section>
 
 <section>
 
-## <https://github.com/apache/incubator-age/releases/tag/v1.0.0-rc1>
-
-Key Improvements
+## <https://github.com/apache/age/releases/tag/v1.1.0-rc0>
 
 </section>
 
 <section>
 
-■ Production level usage in various graph-oriented data operations
-
-■ Improved performance and stability
-
-■ Various tools for enhanced usability
+Key Improvement(s)
+- Greatly Improved graph data querying performance
 
 </section>
 
@@ -39,61 +34,25 @@ Key Improvements
 
 <section>
 
-## v1.0.0-incubating (official Apache incubator release) ✅
+## Apache AGE v1.0.0 ✅
 
 Release Date\
-2022-APR-21\
+31 Mar 2022\
 Release Notes
 
 </section>
 
 <section>
 
-## <https://github.com/apache/incubator-age/releases/tag/v1.0.0-rc1>
-
-Key Improvements
+## <https://github.com/apache/age/releases/tag/v1.0.0-rc1>
 
 </section>
 
 <section>
 
-■ Production level usage in various graph-oriented data operations
-
-■ Improved performance and stability
-
-■ Various tools for enhanced usability
-
-</section>
-
-</div>
-
-<div class="ReleaseBox">
-
-<section>
-
-## v1.0.0-incubating (official Apache incubator release) ✅
-
-Release Date\
-2022-APR-21\
-Release Notes
-
-</section>
-
-<section>
-
-## <https://github.com/apache/incubator-age/releases/tag/v1.0.0-rc1>
-
-Key Improvements
-
-</section>
-
-<section>
-
-■ Production level usage in various graph-oriented data operations
-
-■ Improved performance and stability
-
-■ Various tools for enhanced usability
+Key Improvement(s)
+- Improved performance and stability
+- Enhanced usability tools
 
 </section>
 

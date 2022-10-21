@@ -71,7 +71,7 @@ Follow <a href="https://twitter.com/apache_age?s=20&t=7Hu8Txk4vjvuEp-ryakacg">@A
 
 <div>
 
-## LinkdIn
+## LinkedIn
 
 Follow the <a href="https://www.linkedin.com/showcase/apache-age/?viewAsMember=true">Apache AGE</a> account for the newest information/ or events on the project and community.
 
