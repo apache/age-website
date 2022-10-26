@@ -7,7 +7,7 @@ Apache AGE's documentation
    :maxdepth: 1
 
    intro/overview
-
+   intro/setup
 
 .. toctree::                                                                     
    :caption: Postgres Internals                                                     
