@@ -2,9 +2,6 @@
 
 ## Getting AGE
 
-### Releases
-
-The releases and release notes can be found at <https://github.com/apache/age/releases>
 
 ### Source code
 
@@ -62,7 +59,7 @@ sudo apt install postgresql-12
 
 ### Installation
 
-Clone the <a href='https://github.com/apache/age'>github repository</a> or <a href='https://github.com/apache/age/releases'>download an official release</a>
+Clone the <a href='https://github.com/apache/age'>github repository</a>
 
 Run the pg_config utility and check the version of PostgreSQL, currently only PostgreSQL versions 11 & 12 are supported. If you have any other version of postgres, you will need to install PostgreSQL version 11 & 12. Follow Setting up multiple versions of PostgreSQL
 ```console
@@ -122,40 +119,6 @@ After the installation, open a connection to a running instance of your database
 ```postgresql
 CREATE EXTENSION age;
 ```
-
-## Installing via docker image
-
-### Get the docker image
-
-```shell
-docker pull apache/age
-```
-
-### On the terminal
-
-```shell
-docker run \
-    --name myPostgresDb  \
-    -p 5455:5432 \
-    -e POSTGRES_USER=postgresUser \
-    -e POSTGRES_PASSWORD=postgresPW \
-    -e POSTGRES_DB=postgresDB \
-    -d \
-    apache/age
-```
-
-
-
-| Docker variables | Description                                        |
-| ---------------- | -------------------------------------------------- |
-| `--name `        | Assign a name to the container                     |
-| `-p`             | Publish a container's port(s) to the host          |
-| `-e`             | Set environment variables                          |
-| `-d`             | Run container in background and print container ID |
-
-
-
-## Post Installation
 
 ### Per Session Instructions
 
