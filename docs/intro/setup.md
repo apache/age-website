@@ -49,8 +49,15 @@ You can use a package management that your OS provides to download AGE.
 
 #### Ubuntu
 
+##### Postgres 11
+
 ```
 sudo apt install postgresql-server-dev-11
+```
+
+##### Postgres 12
+```
+sudo apt install postgresql-12
 ```
 
 ### Installation
