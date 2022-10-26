@@ -10,32 +10,52 @@ The releases and release notes can be found at <https://github.com/apache/age/re
 
 The source code can be found at <https://github.com/apache/age>
 
-## Pre-Installation
+## Installing From Source Code
+
+### Pre-Installation
 
 Install the following essential libraries according to each OS.
 Building AGE from source depends on the following Linux libraries (Ubuntu package names shown below):
 
-### CentOS
+#### CentOS
 
 ```console
 yum install gcc glibc glib-common readline readline-devel zlib zlib-devel flex bison
 ```
 
-### Fedora
+#### Fedora
 
 ```console
 dnf install gcc glibc bison flex readline readline-devel zlib zlib-devel
 ```
 
-### Ubuntu
+#### Ubuntu
 
 ```console
 sudo apt-get install build-essential libreadline-dev zlib1g-dev flex bison
 ```
 
-## Installation
+### Install Postgres
 
-Clone the github repo into any directory
+You will need to install a AGE compatible version of Postgres, for now AGE only supports Postgres 11 and 12.
+
+#### Install From Source Code
+
+You can <a href='https://www.postgresql.org/download/'>download the Postgres source code</a> and install your own instance of Postgres. You can read instructions on how to install from <a href='https://www.postgresql.org/docs/11/installation.html'>source code on the offical Postgres Website</a>
+
+#### Install From a Package Manager
+
+You can use a package management that your OS provides to download AGE.
+
+#### Ubuntu
+
+```
+sudo apt install postgresql-server-dev-11
+```
+
+### Installation
+
+Clone the <a href='https://github.com/apache/age'>github repository</a> or <a href='https://github.com/apache/age/releases'>download an official release</a>
 
 Run the pg_config utility and check the version of PostgreSQL, currently only PostgreSQL versions 11 & 12 are supported. If you have any other version of postgres, you will need to install PostgreSQL version 11 & 12. Follow Setting up multiple versions of PostgreSQL
 ```console
@@ -54,7 +74,7 @@ If the path to your Postgres installation is not in the PATH variable, add the p
 make PG_CONFIG=/path/to/postgres/bin/pg_config install
 ```
 
-## Setting up multiple versions of PostgreSQL
+#### Setting up multiple versions of PostgreSQL
 
 Install the intended version of PostgreSQL (11 or 12).
 
@@ -87,7 +107,14 @@ sudo su - postgres
 psql --port PORT
 ```
 
+### Post Installation AGE Setup
 
+
+After the installation, open a connection to a running instance of your database and run the CREATE EXTENSION command to have AGE be installed on the server.
+
+```postgresql
+CREATE EXTENSION age;
+```
 
 ## Installing via docker image
 
@@ -123,15 +150,9 @@ docker run \
 
 ## Post Installation
 
-### Per Installation Instructions
-
-After the installation, run the CREATE EXTENSION command to have AGE be installed on the server.
-
-```postgresql
-CREATE EXTENSION age;
-```
-
 ### Per Session Instructions
+
+For every connection of AGE you start you will need to load the AGE extension.
 
 ```postgresql
 LOAD 'age';
