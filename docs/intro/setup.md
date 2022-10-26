@@ -81,39 +81,6 @@ If the path to your Postgres installation is not in the PATH variable, add the p
 make PG_CONFIG=/path/to/postgres/bin/pg_config install
 ```
 
-#### Setting up multiple versions of PostgreSQL
-
-Install the intended version of PostgreSQL (11 or 12).
-
-Use the pg_config to check if it points to the intended version of PostgreSQL, if it does we will have to PGBINROOT. Open /usr/bin/pg_config in write mode (might require root previllages) and edit the PGBINROOT value
-
-```console
-sudo vi /usr/bin/pg_config
-```
-
-By default PGBINROOT is set to /usr/lib/postsgresql , the directory which contains all the postgres versions. Change this to /usr/lib/postgresql/[intended version of postgres]
-
-Check the PostgreSQL conf file of your PostgreSQL version to figure out which port its running on.
-The conf file is generally located in /etc/postgresql/[intended version of postgres]/main
-
-```console
-vi /etc/postgresql/11/main/postgresql.conf
-```
-
-Check the PORT the particular version of PostgreSQL runs on by default.
-
-Restart PostgreSQL
-
-```console
-sudo service postgresql restart
-```
-Change user to postgres connect to the PostgreSQL server
-
-```console
-sudo su - postgres
-psql --port PORT
-```
-
 ### Post Installation AGE Setup
 
 
@@ -144,15 +111,12 @@ docker run \
     apache/age
 ```
 
-
-
 | Docker variables | Description                                        |
 | ---------------- | -------------------------------------------------- |
 | `--name `        | Assign a name to the container                     |
 | `-p`             | Publish a container's port(s) to the host          |
 | `-e`             | Set environment variables                          |
 | `-d`             | Run container in background and print container ID |
-
 
 
 ## Post Installation
@@ -171,7 +135,7 @@ We recommend adding ag_catalog to your search_path to simplify your queries. The
 SET search_path = ag_catalog, "$user", public;
 ```
 
-### Optional: allow non-superusers to use Apache AGE
+### Allow non-superusers to use Apache AGE
 
 * Non-superusers can only apply LOAD to library files located in `$libdir/plugins/` (see <https://www.postgresql.org/docs/11/sql-load.html>). A symlink can be created to allow non-superusers to LOAD the Apache AGE library:
 
