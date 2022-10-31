@@ -15,4 +15,4 @@ Apache AGE's documentation
 
    postgres/query_processing 
    postgres/node
-
+   postgres/pg_function_info
