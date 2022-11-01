@@ -19,7 +19,7 @@ title: Join AGE Community!
 
 ## Generate a discussion & Fix a bug
 
-Ask your AGE questions, open various types of discussions, and share your ideas in <a href="https://www.reddit.com/r/apacheage/">AGE Forum</a> or <a href="https://github.com/apache/age">Github</a> / <a href="https://stackoverflow.com">StackOverflow</a> using the [apache-age] tag.
+Ask your AGE-related questions, open various types of discussions, and share your ideas in <a href="https://discord.com/invite/NMsBs9X8Ss/">AGE Discord</a>, <a href="https://www.reddit.com/r/apacheage/">Reddit</a>, <a href="https://github.com/apache/age">GitHub</a>, and/or <a href="https://stackoverflow.com">StackOverflow</a> using the [apache-age] tag.
 
 </div>
 
@@ -31,7 +31,7 @@ Ask your AGE questions, open various types of discussions, and share your ideas 
 
 ## Participate in AGE Project
 
-A great way to contribute is being a member of the <a href="https://github.com/apache/age/projects?type=new">AGE Project</a> or AGE Viewer Project.
+A great way to contribute is being a member of the <a href="https://github.com/apache/age/projects?type=new">AGE Project</a> or <a href="https://github.com/apache/age-viewer/projects?query=is%3Aopen">AGE Viewer Project</a>.
 <br>
 This is a good opportunity to meet other developers and share helpful insights and opinions by working together.
 
@@ -61,7 +61,7 @@ Join the official Apache AGE user and developer mailing lists. You can get user 
 
 ## Twitter account
 
-Follow <a href="https://twitter.com/apache_age?s=20&t=7Hu8Txk4vjvuEp-ryakacg">@ApacheAGE</a> on Twitter for the most recent news on the project and community!
+Follow <a href="https://twitter.com/apache_age?s=20&t=7Hu8Txk4vjvuEp-ryakacg">@apache_age</a> on Twitter for the most recent news on the project and community!
 
 </div>
 
@@ -73,7 +73,7 @@ Follow <a href="https://twitter.com/apache_age?s=20&t=7Hu8Txk4vjvuEp-ryakacg">@A
 
 ## LinkedIn
 
-Follow the <a href="https://www.linkedin.com/showcase/apache-age/?viewAsMember=true">Apache AGE</a> account for the newest information/ or events on the project and community.
+Follow the <a href="https://www.linkedin.com/showcase/apache-age/?viewAsMember=true">Apache AGE</a> account for the newest information or events on the project and community.
 
 </div>
 
