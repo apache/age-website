@@ -14,7 +14,7 @@ A great way to contribute to AGE is to help answering questions from other commu
 Contributors should subscribe to the mailing lists and/or join the Apache AGE Reddit community (r/apacheage) to keep up to date on what's happening in AGE. Answering questions is an excellent and visible way to help the community, which also demonstrates your expertise.
 
 ## Contributing by Reviewing Changes
-Changes to AGE source code are proposed, reviewed, and committed via Github pull requests (described in Developer Guideline). Anyone can view and comment on active changes here. Reviewing others' changes is a good way to learn how the change process works and gain exposure to activity in various parts of the code. You can help by reviewing the changes and asking questions or pointing out issues as simple as typos or small issues of style.
+Changes to AGE source code are proposed, reviewed, and committed via Github pull requests (described in Code Convention). Anyone can view and comment on active changes here. Reviewing others' changes is a good way to learn how the change process works and gain exposure to activity in various parts of the code. You can help by reviewing the changes and asking questions or pointing out issues as simple as typos or small issues of style.
 
 ## Contributing Documentation Changes
 You can propose changes to technical writings such as Apache AGE Manual, edit the Markdown source files for the Apache AGE website pages. 

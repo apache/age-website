@@ -50,6 +50,15 @@ const Navbar = () => {
                 <Link
                   className="navbar-item"
                   target="_blank"
+                  to="https://discord.com/invite/NMsBs9X8Ss/"
+                >
+                  AGE_Discord
+                </Link>
+              </Menu.Item>
+              <Menu.Item>
+                <Link
+                  className="navbar-item"
+                  target="_blank"
                   to="https://www.reddit.com/r/apacheage/"
                 >
                   AGE Forum
@@ -64,6 +73,15 @@ const Navbar = () => {
                   AGE Project
                 </Link>
               </Menu.Item>
+              <Menu.Item>
+                <Link
+                  className="navbar-item"
+                  target="_blank"
+                  to="https://github.com/apache/age-viewer/projects"
+                >
+                  AGE Viewer Project
+                </Link>
+              </Menu.Item>
             </Menu.SubMenu>
             <Menu.SubMenu title="Contribution">
               <Menu.Item>
@@ -73,7 +91,7 @@ const Navbar = () => {
               </Menu.Item>
               <Menu.Item>
                 <Link className="navbar-item" to="/contribution/guide">
-                  Developer Guideline
+                  Code Convention
                 </Link>
               </Menu.Item>
               <Menu.Item>
@@ -94,8 +112,28 @@ const Navbar = () => {
             </Menu.SubMenu>
             <Menu.SubMenu title="Documentation">
               <Menu.Item>
-                <a href="/age-manual/master/index.html" className="navbar-item">
-                  Apache AGE Manual
+                <a href="https://age.apache.org/age-manual/master/intro/overview.html" target="_blank" className="navbar-item">
+                  Introduction
+                </a>
+              </Menu.Item>
+              <Menu.Item>
+                <a href="https://age.apache.org/age-manual/master/clauses/match.html" target="_blank" className="navbar-item">
+                  Clauses
+                </a>
+              </Menu.Item>
+              <Menu.Item>
+                <a href="https://age.apache.org/age-manual/master/functions/predicate_functions.html" target="_blank" className="navbar-item">
+                  Functions
+                </a>
+              </Menu.Item>
+              <Menu.Item>
+                <a href="https://age.apache.org/age-manual/master/advanced/advanced_overview.html" target="_blank" className="navbar-item">
+                  AGE Beyond Cypher
+                </a>
+              </Menu.Item>
+              <Menu.Item>
+                <a href="https://age.apache.org/age-manual/master/contributing/run_tests.html" target="_blank" className="navbar-item">
+                  Contributing
                 </a>
               </Menu.Item>
             </Menu.SubMenu>
@@ -137,6 +175,15 @@ const Navbar = () => {
                 <Link
                   className="navbar-item"
                   target="_blank"
+                  to="https://discord.com/invite/NMsBs9X8Ss/"
+                >
+                  AGE_Discord
+                </Link>
+              </Menu.Item>
+              <Menu.Item>
+                <Link
+                  className="navbar-item"
+                  target="_blank"
                   to="https://www.reddit.com/r/apacheage/"
                 >
                   AGE Forum
@@ -151,6 +198,15 @@ const Navbar = () => {
                   AGE Project
                 </Link>
               </Menu.Item>
+              <Menu.Item>
+                <Link
+                  className="navbar-item"
+                  target="_blank"
+                  to="https://github.com/apache/age-viewer/projects"
+                >
+                  AGE Viewer Project
+                </Link>
+              </Menu.Item>
             </Menu.SubMenu>
             <Menu.SubMenu title="Contribution">
               <Menu.Item>
@@ -160,7 +216,7 @@ const Navbar = () => {
               </Menu.Item>
               <Menu.Item>
                 <Link className="navbar-item" to="/contribution/guide">
-                  Developer Guideline
+                  Code Convention
                 </Link>
               </Menu.Item>
               <Menu.Item>
@@ -181,11 +237,28 @@ const Navbar = () => {
             </Menu.SubMenu>
             <Menu.SubMenu title="Documentation">
               <Menu.Item>
-                {/* <Link className="navbar-item" to="/age-manual">
-                  Apache AGE Manual
-                </Link> */}
-                <a href="/age-manual/master/index.html" className="navbar-item">
-                  Apache AGE Manual
+                <a href="https://age.apache.org/age-manual/master/intro/overview.html" target="_blank" className="navbar-item">
+                  Introduction
+                </a>
+              </Menu.Item>
+              <Menu.Item>
+                <a href="https://age.apache.org/age-manual/master/clauses/match.html" target="_blank" className="navbar-item">
+                  Clauses
+                </a>
+              </Menu.Item>
+              <Menu.Item>
+                <a href="https://age.apache.org/age-manual/master/functions/predicate_functions.html" target="_blank" className="navbar-item">
+                  Functions
+                </a>
+              </Menu.Item>
+              <Menu.Item>
+                <a href="https://age.apache.org/age-manual/master/advanced/advanced_overview.html" target="_blank" className="navbar-item">
+                  AGE Beyond Cypher
+                </a>
+              </Menu.Item>
+              <Menu.Item>
+                <a href="https://age.apache.org/age-manual/master/contributing/run_tests.html" target="_blank" className="navbar-item">
+                  Contributing
                 </a>
               </Menu.Item>
             </Menu.SubMenu>
@@ -198,9 +271,8 @@ const Navbar = () => {
         </div>
         <div className={styles.MenuToggle}>
           <button
-            className={`${styles.Toggle} ${
-              menuToggle === 'toggled' ? styles.Toggled : ''
-            }`}
+            className={`${styles.Toggle} ${menuToggle === 'toggled' ? styles.Toggled : ''
+              }`}
             onClick={() => {
               const state = menuToggle === 'toggled' ? 'untogle' : 'toggled';
               setMenuToggle(state);

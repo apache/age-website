@@ -77,6 +77,20 @@ export const IndexPageTemplate = ({
               </div>
             </div>
           </div>
+          <section className={styles.videos}>
+            <div className={styles.content}>
+              <h2>Installation Guide</h2>
+              <div className={styles.Youtube}>
+                <iframe
+                  src="https://www.youtube.com/embed/Vt06H5RARcs"
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </div>
+          </section>
           <div className={styles.keyFeatures}>
             <h2>Key Features</h2>
             <div className={styles.keyFeaturesImgContainer}>
@@ -127,13 +141,13 @@ export const IndexPageTemplate = ({
         </div>
       </section>
 
-      <section style={{ backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat' }}>
+      <section style={{ backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat', display: 'none' }}>
 
-        <div className={styles.content}>
+        {/* <div className={styles.content}>
           <h2>AGE Forum</h2>
           <p>Want to know more about Apache AGE? Got inquiries regarding the project? Come to the AGE forum and let’s have a chat!</p>
         </div>
-        <RedditRss />
+        <RedditRss /> */}
 
       </section>
       <section style={{ backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat' }} hidden >

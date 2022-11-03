@@ -26,7 +26,7 @@
         display: flex; 
         align-content: center; 
         justify-content: space-around; 
-        align-items: center;
+        align-items: flex-start;
         position: relative;
         flex-direction: row;
         border: 0.0625rem solid white;
@@ -38,7 +38,7 @@
         text-align: left;
         padding: 2rem;
         position: relative;
-        top: -8rem;
+        margin-top: -8rem;
         box-shadow: 0rem 0.75rem 1.5rem #00000029;
 
         .cardContent {
@@ -69,10 +69,14 @@
           padding: 0 0 0 3rem;
         }
       }
+      .videos {        
+        width: 100%;        
+        text-align: center;
+      }
       .keyFeatures {
         width: 100%;
         position: relative;
-        top: -6rem;
+        padding: 0 0 3rem;
         h2 {
           font: $h1;
           color: $primayrColor;

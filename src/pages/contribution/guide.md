@@ -6,7 +6,7 @@ title:
 
 <div class="DeveloperGuidelines">
 
-# Developer Guidelines
+# Code Convention
 
 Table of Contents
 

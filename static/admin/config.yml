@@ -140,9 +140,9 @@ collections:
           - { label: "Title", name: "title", widget: "string" }  
           - { label: "Body", name: "body", widget: "markdown" }
       
-      # Developer Guidelines
+      # Code Convention
       - file: "src/pages/contribution/guide.md"
-        label: "Developer Guidelines"
+        label: "Code Convention"
         name: "guide"
         fields:
           - {

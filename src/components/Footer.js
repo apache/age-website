@@ -10,6 +10,7 @@ import icoGithubLd from '../../static/img/icon-github.png';
 import icoTwitterLd from '../../static/img/icon-twitter.png';
 import icoLinkedinLd from '../../static/img/icon-linkedin.png';
 import icoYoutubeLd from '../../static/img/icon-youtube.png';
+import icoYoutubeLd from '../../static/img/icon-discord.png';
 // styles
 import * as styles from './styles/Footer.module.scss';
 // import './styles/footer.css';
@@ -67,7 +68,7 @@ const Footer = class extends React.Component {
               <a href="/contribution/how">How to contribute</a>
             </li>
             <li>
-              <a href="/contribution/guide">Developer Guideline</a>
+              <a href="/contribution/guide">Code Convention</a>
             </li>
             <li>
               <a href="/contribution/requirements">Committer Requirements</a>
