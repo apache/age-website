@@ -10,7 +10,8 @@ import icoGithubLd from '../../static/img/icon-github.png';
 import icoTwitterLd from '../../static/img/icon-twitter.png';
 import icoLinkedinLd from '../../static/img/icon-linkedin.png';
 import icoYoutubeLd from '../../static/img/icon-youtube.png';
-import icoYoutubeLd from '../../static/img/icon-discord.png';
+
+
 // styles
 import * as styles from './styles/Footer.module.scss';
 // import './styles/footer.css';
