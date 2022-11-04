@@ -141,18 +141,6 @@ export const IndexPageTemplate = ({
           <AgeViewerProjectList />
         </div>
       </section>
-
-      <section style={{ backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat' }}>
-        <div className={styles.content}>
-          <h2>AGE Forum</h2>
-            <a href="https://discord.com/invite/NMsBs9X8Ss" target="_blank">
-              <div className={styles.inviteDiscord}>
-                <img src={ageLogo} alt="Discord Invite Link" />
-              </div>          
-            </a>
-          <h3>Want to know more about Apache AGE? Got inquiries regarding the project? Come to the AGE forum and let’s have a chat!</h3>
-        </div>
-      </section>
       {/* <section style={{ backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat' }} hidden > */}
         {/* <div className={styles.content}>
           <h2>Message From AGE Team</h2>
@@ -177,9 +165,19 @@ export const IndexPageTemplate = ({
           </p>
           <Ageinfos />
         </div>
-
       </section>
-      <section hidden/>
+      <section style={{ backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat' }}>
+        <div className={styles.content}>
+          <h2>Forum</h2>
+            <a href="https://discord.com/invite/NMsBs9X8Ss" target="_blank">
+              <div className={styles.inviteDiscord}>
+                <img src={ageLogo} alt="Discord Invite Link" />
+              </div>          
+            </a>
+          <h3>Got any questions about the project? Join us in Discord and let's chat!</h3>
+        </div>
+      </section>
+      <section hidden></section>
       <section>
         <div className={styles.content}>
           <div className={styles.Subscribe}>
