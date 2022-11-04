@@ -168,7 +168,7 @@ export const IndexPageTemplate = ({
       </section>
       <section style={{ backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat' }}>
         <div className={styles.content}>
-          <h2>Forum</h2>
+          <h2>Join AGE Discord</h2>
             <a href="https://discord.com/invite/NMsBs9X8Ss" target="_blank">
               <div className={styles.inviteDiscord}>
                 <img src={ageLogo} alt="Discord Invite Link" />
