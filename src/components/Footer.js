@@ -10,6 +10,7 @@ import icoGithubLd from '../../static/img/icon-github.png';
 import icoTwitterLd from '../../static/img/icon-twitter.png';
 import icoLinkedinLd from '../../static/img/icon-linkedin.png';
 import icoYoutubeLd from '../../static/img/icon-youtube.png';
+import icoDiscordLd from '../../static/img/icon-discord.png';
 
 
 // styles
@@ -155,6 +156,13 @@ const Footer = class extends React.Component {
               <img
                 src={icoYoutubeLd}
                 alt="Youtube"
+                style={{ width: '2.5em', height: '2.5em' }}
+              />
+            </a>
+            <a title="Discord" href="https://discord.com/invite/NMsBs9X8Ss" target={'_blank'}>
+              <img
+                src={icoDiscordLd}
+                alt="Discord"
                 style={{ width: '2.5em', height: '2.5em' }}
               />
             </a>

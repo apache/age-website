@@ -17,6 +17,7 @@ import bg03 from '../../static/img/IMG-BG03.jpg';
 import bg04 from '../../static/img/IMG-BG04.jpg';
 import bg05 from '../../static/img/IMG-BG05.jpg';
 import bg06 from '../../static/img/IMG-BG06.jpg';
+import ageLogo from '../../static/img/logo.png';
 
 import keyFeaturesImg01 from '../../static/img/keyfeature01.png';
 import keyFeaturesImg02 from '../../static/img/keyfeature02.png';
@@ -140,17 +141,7 @@ export const IndexPageTemplate = ({
           <AgeViewerProjectList />
         </div>
       </section>
-
-      <section style={{ backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat', display: 'none' }}>
-
-        {/* <div className={styles.content}>
-          <h2>AGE Forum</h2>
-          <p>Want to know more about Apache AGE? Got inquiries regarding the project? Come to the AGE forum and let’s have a chat!</p>
-        </div>
-        <RedditRss /> */}
-
-      </section>
-      <section style={{ backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat' }} hidden >
+      {/* <section style={{ backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat' }} hidden > */}
         {/* <div className={styles.content}>
           <h2>Message From AGE Team</h2>
           <div className={styles.Youtube}>
@@ -163,7 +154,7 @@ export const IndexPageTemplate = ({
             ></iframe>
           </div>
         </div> */}
-      </section>
+      {/* </section> */}
       <section style={{ backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat' }}>
         <div className={styles.content}>
           <h2>Welcome to the AGE Community</h2>
@@ -174,8 +165,19 @@ export const IndexPageTemplate = ({
           </p>
           <Ageinfos />
         </div>
-
       </section>
+      <section style={{ backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat' }}>
+        <div className={styles.content}>
+          <h2>Join AGE Discord</h2>
+            <a href="https://discord.com/invite/NMsBs9X8Ss" target="_blank">
+              <div className={styles.inviteDiscord}>
+                <img src={ageLogo} alt="Discord Invite Link" />
+              </div>          
+            </a>
+          <h3>Got any questions about the project? Join us in Discord and let's chat!</h3>
+        </div>
+      </section>
+      <section hidden></section>
       <section>
         <div className={styles.content}>
           <div className={styles.Subscribe}>

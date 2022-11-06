@@ -132,6 +132,11 @@
         color: $primayrColor;
         text-align: center;
       }
+      > h3 {
+        font: $h4;
+        color: $primayrColor;
+        text-align: center;
+      }
       > p {
         text-align: center;
         font-size: 1.25rem;
@@ -162,6 +167,26 @@
         padding-top: 56.25%;
         display: block;
         content: '';
+      }
+      // invite discord
+      .inviteDiscord {
+        display: flex;
+        max-width: 30rem;
+        height: 16.25rem;
+        background-image: url('/img/discord-invite.jpg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: #404EEE;
+        border-radius: 16px;
+        margin: 0 auto;
+        align-items: center;        
+        justify-content: center;
+        img {
+          width: 140px;          
+          margin-top: -150px;
+        }
+        margin-bottom: 2.625rem;
       }
       // Subscribe mail image
       .Subscribe {
