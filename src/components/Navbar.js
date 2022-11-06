@@ -52,7 +52,7 @@ const Navbar = () => {
                   target="_blank"
                   to="https://discord.com/invite/NMsBs9X8Ss/"
                 >
-                  AGE_Discord
+                  AGE Discord
                 </Link>
               </Menu.Item>
               <Menu.Item>
@@ -177,7 +177,7 @@ const Navbar = () => {
                   target="_blank"
                   to="https://discord.com/invite/NMsBs9X8Ss/"
                 >
-                  AGE_Discord
+                  AGE Discord
                 </Link>
               </Menu.Item>
               <Menu.Item>
