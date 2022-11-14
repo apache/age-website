@@ -41,8 +41,8 @@ $$) as (grouping_key agtype, count agtype);
 
 <table>
   <tr>
+   <td>grouping_key</td>
    <td>count</td>
-   <td>key</td>
   </tr>
   <tr>
    <td>"A"</td>

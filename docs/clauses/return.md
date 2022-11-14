@@ -126,7 +126,7 @@ SELECT *
 FROM cypher('graph_name', $$
 	MATCH (a {name: 'A'})-[r]->(b)
 	RETURN *
-$$) as (a agtype, b agtype, r agtype);
+$$) as (a agtype, r agtype, b agtype);
 ```
 
 
@@ -137,8 +137,8 @@ Result
   <thead>
   <tr>
    <td><strong>a</strong></td>
-   <td><strong>b</strong></td>
    <td><strong>r</strong></td>
+   <td><strong>b</strong></td>
   </tr>
   </thead>
   <tbody>
@@ -163,7 +163,7 @@ Result
    </td>
   </tr>
   <tbody>
-   <td>(2 rows)
+   <td colspan="3">(2 rows)
    </td>
   </tr>
 </table>

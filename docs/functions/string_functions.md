@@ -5,7 +5,7 @@
 
 replace() returns a string in which all occurrences of a specified string in the original string have been replaced by another (specified) string.
 
-Syntax: **<code>replace(original, search, replace)</code></strong>
+Syntax: `replace(original, search, replace)`
 
 Returns:
 
@@ -329,7 +329,7 @@ Result:
 
 substring() returns a substring of the original string, beginning with a 0-based index start and length.
 
-Syntax: <code>substring(original, <strong>start</strong> [, <strong>length</strong>])</code>
+Syntax: `substring(original, `**`start`** `[, `**`length`**`])`
 
 Returns:
 
@@ -420,7 +420,7 @@ Result:
 
 rTrim() returns the original string with trailing whitespace removed.
 
-Syntax: rTrim(original)
+Syntax: `rTrim(original)`
 
 Returns:
 
@@ -488,7 +488,7 @@ Result:
 
 ## lTrim
 
-lTrim() returns the original string with trailing whitespace removed.
+lTrim() returns the original string with leading whitespace removed.
 
 Syntax: `lTrim(original)`
 

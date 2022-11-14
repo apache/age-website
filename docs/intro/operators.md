@@ -141,7 +141,7 @@ Results
 
 #### Case insensitive search
 
-Adding (?i) at the beginning of the striong will make the comparison case insensitive
+Adding (?i) at the beginning of the string will make the comparison case insensitive
 
 ```
 SELECT * FROM cypher('graph_name', $$
@@ -277,7 +277,7 @@ $$) AS (names agtype);
    <td>"Joan"</td>
   </tr>
   <tr>
-   <td colspan="1">2 rows</td>
+   <td colspan="1">3 rows</td>
   </tr>
 </table>
 

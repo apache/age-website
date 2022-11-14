@@ -350,7 +350,7 @@ SELECT *
 FROM cypher('graph_name', $$
     CREATE (p:Person {name: 'Stefan', city: 'Berlin'})
     RETURN properties(p)
-$$) as (type agtype);
+$$) as (properties agtype);
 ```
 
 

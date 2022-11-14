@@ -87,7 +87,7 @@ Result:
    </td>
   </tr>
   <tr>
-   <td>2123e1af756543542064ae0d07792be90176b311be
+   <td>13
    </td>
   </tr>
   <tr>
@@ -115,7 +115,7 @@ SELECT * FROM cypher('graph_name', $$
 $$) as (result agtype);
 
 SELECT * FROM cypher('graph_name', $$ 
-    CREATE (:min_test {val:['a', 'b', 23]})
+    CREATE (:min_test {val:['a', 'c', 23]})
 $$) as (result agtype);
 ```
 
@@ -132,7 +132,7 @@ $$) as (min_val agtype);
 ```
 
 
-The lowest of all the values in the set—in this case, the list ['a', 'c', 23]—is returned, as (i) the two lists are considered to be lower values than the string "d", and (ii) the string "a" is considered tobe a lower value than the numerical value 1.
+The lowest of all the values in the set—in this case, the list ['a', 'b', 23]—is returned, as (i) the two lists are considered to be lower values than the string "d", and (ii) the string "a" is considered tobe a lower value than the numerical value 1.
 
 Result:
 

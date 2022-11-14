@@ -37,7 +37,7 @@ RETURN v
 $$) as (v agtype);
 ```
 
-If there exists a vertex with the label 'Critic' the vertex will be returns. If the vertex will be created and returned.
+If there exists a vertex with the label 'Critic' the vertex will be searched and returned. If not, then the vertex will be created and returned.
 
 <table>
   <tr>
@@ -68,7 +68,7 @@ RETURN charlie
 $$) as (v agtype);
 ```
 
-If there exists a vertex with the label 'Critic' the vertex will be returns. If the vertex will be created and returned.
+The age property is not matched so the MERGE will find vertex with name: 'Charlie Sheen' and append a new property age to it and the updated vertex will be returned.
 
 <table>
   <tr>
@@ -113,6 +113,6 @@ $$) as (Name agtype, BornIn agtype);
    <td>"New Jersey"</td>
   </tr>
   <tr>
-   <td>1 row(s) returned</td>
+   <td colspan="2">1 row(s) returned</td>
   </tr>
 </table>
