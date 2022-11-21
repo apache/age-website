@@ -46,7 +46,7 @@ Considerations
 
 Example:
 
-```
+```postgresql
 SELECT * FROM ag_catalog.create_graph('graph_name');
 ```
 
@@ -99,7 +99,7 @@ Considerations:
 
 Example:
 
-```
+```postgresql
 SELECT * FROM ag_catalog.drop_graph('graph_name', true);
 ```
 

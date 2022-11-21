@@ -18,7 +18,7 @@ An agtype float.
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN e()
@@ -63,7 +63,7 @@ An agtype float.
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN sqrt(144)
@@ -133,7 +133,7 @@ Considerations:
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN e(2)
@@ -206,7 +206,7 @@ Considerations:
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN log(27)
@@ -279,7 +279,7 @@ Considerations:
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN log(27)

@@ -4,7 +4,7 @@
 
 ### Data Setup
 
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$
 CREATE (:Person {name: 'John'}),
        (:Person {name: 'Jeff'}),
@@ -17,7 +17,7 @@ $$) AS (result agtype);
 
 Performs case-sensitive prefix searching on strings.
 
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$
 	MATCH (v:Person)
 	WHERE v.name STARTS WITH "J"
@@ -50,7 +50,7 @@ Results
 
 Performs case-sensitive inclusion searching in strings.
 
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$
 	MATCH (v:Person)
 	WHERE v.name CONTAINS "o"
@@ -81,7 +81,7 @@ Results
 
 Performs case-sensitive suffix searching on strings.
 
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$
 	MATCH (v:Person)
 	WHERE v.name ENDS WITH "n"
@@ -116,7 +116,7 @@ AGE supports the use of [POSIX regular expressions](https://www.postgresql.org/d
 
 The =~ operator when no special characters are give, act like the = operator.
 
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$
 	MATCH (v:Person)
 	WHERE v.name =~ 'John'
@@ -141,9 +141,9 @@ Results
 
 #### Case insensitive search
 
-Adding (?i) at the beginning of the striong will make the comparison case insensitive
+Adding (?i) at the beginning of the string will make the comparison case insensitive
 
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$
 	MATCH (v:Person)
 	WHERE v.name =~ '(?i)JoHn'
@@ -170,7 +170,7 @@ $$) AS (names agtype);
 
 The . operator acts as a wildcard to match any single character.
 
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$
 	MATCH (v:Person)
 	WHERE v.name =~ 'Jo.n'
@@ -199,7 +199,7 @@ $$) AS (names agtype);
 
 The * wildcard after a character will match to 0 or more of the previous character
 
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$
 	MATCH (v:Person)
 	WHERE v.name =~ 'Johz*n'
@@ -226,7 +226,7 @@ $$) AS (names agtype);
 
 The + operator matches to 1 or more the previous character.
 
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$
 	MATCH (v:Person)
 	WHERE v.name =~ 'Bil+'
@@ -253,7 +253,7 @@ Results
 
 You can use the . and * wildcards together to represent the rest of a string.
 
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$
 	MATCH (v:Person)
 	WHERE v.name =~ 'J.*'

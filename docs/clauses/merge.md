@@ -11,7 +11,7 @@ As with MATCH, MERGE can match multiple occurrences of a pattern. If there are m
 
 ## Data Setup
 
-```
+```postgresql
 SELECT * from cypher('graph_name', $$
 CREATE (A:Person {name: "Charlie Sheen", bornIn: "New York"}),
     (B:Person {name: "Michael Douglas", bornIn: "New Jersey"}),
@@ -30,7 +30,7 @@ By just specifying a pattern with a single vertex and no labels, all vertices in
 
 Query
 
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$
 MERGE (v:Critic)
 RETURN v
@@ -61,7 +61,7 @@ Merging a vertex node with properties where not all properties match any existin
 
 Query
 
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$
 MERGE (charlie {name: 'Charlie Sheen', age: 10})
 RETURN charlie
@@ -94,7 +94,7 @@ Merging a vertex where both label and property constraints match an existing ver
 
 Query
 
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$
 MERGE (michael:Person {name: 'Michael Douglas'})
 RETURN michael.name, michael.bornIn

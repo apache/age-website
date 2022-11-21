@@ -18,7 +18,7 @@ By just specifying a pattern with a single vertex and no labels, all vertices in
 
 Query
 
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$
 MATCH (v)
 RETURN v
@@ -77,7 +77,7 @@ Getting all vertices with a label on them is done with a single node pattern whe
 Query
 
 
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$
 MATCH (movie:Movie)
 RETURN movie.title
@@ -116,7 +116,7 @@ The symbol -[]- means related to, without regard to type or direction of the edg
 Query
 
 
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$
 MATCH (director {name: 'Oliver Stone'})-[]-(movie)
 RETURN movie.title
@@ -151,7 +151,7 @@ To constrain your pattern with labels on vertices, you add it to your vertex in 
 Query
 
 
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$
 MATCH (:Person {name: 'Oliver Stone'})-[]-(movie:Movie)
 RETURN movie.title
@@ -189,7 +189,7 @@ When the direction of an edge is of interest, it is shown by using -> or &lt;-.
 Query
 
 
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$
 MATCH (:Person {name: 'Oliver Stone'})-[]->(movie)
 RETURN movie.title
@@ -224,7 +224,7 @@ If a variable is required, either for filtering on properties of the edge, or to
 Query
 
 
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$
 MATCH (:Person {name: 'Oliver Stone'})-[r]->(movie)
 RETURN type(r)
@@ -259,7 +259,7 @@ When you know the edge type you want to match on, you can specify it by using a 
 Query
 
 
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$
 MATCH (:Movie {title: 'Wall Street'})<-[:ACTED_IN]-(actor)
 RETURN actor.name
@@ -302,7 +302,7 @@ If you both want to introduce a variable to hold the edge, and specify the edge 
 Query
 
 
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$
 MATCH ({title: 'Wall Street'})<-[r:ACTED_IN]-(actor)
 RETURN r.role
@@ -345,7 +345,7 @@ Edges can be expressed by using multiple statements in the form of ()-[]-(), or 
 Query
 
 
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$
     MATCH (charlie {name: 'Charlie Sheen'})-[:ACTED_IN]->(movie)<-[:DIRECTED]-(director)
     RETURN movie.title, director.name
@@ -437,7 +437,7 @@ Returns all paths between u and v
 Query
 
 
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$
     MATCH p = (actor {name: 'Willam Defoe'})-[:ACTED_IN*2]-(co_actor)
     RETURN relationships(p)

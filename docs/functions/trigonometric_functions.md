@@ -43,7 +43,7 @@ Considerations:
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN degrees(3.14159)
@@ -115,7 +115,7 @@ Considerations:
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN radians(180)
@@ -162,7 +162,7 @@ An agtype float.
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN pi()
@@ -234,7 +234,7 @@ Considerations:
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN sin(0.5)
@@ -306,7 +306,7 @@ Considerations:
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN cosin(0.5)
@@ -378,7 +378,7 @@ Considerations:
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN tan(0.5)
@@ -451,7 +451,7 @@ Considerations:
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN asin(0.5)
@@ -524,7 +524,7 @@ Considerations:
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN acos(0.5)
@@ -596,7 +596,7 @@ Considerations:
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN atan(0.5)
@@ -674,7 +674,7 @@ Considerations:
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN atan2(0.5, 0.6)

@@ -9,7 +9,7 @@ In a regular aggregation (i.e. of the form aggr(expr)), the list of aggregated v
 
 ## Data Setup
 
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$
 	CREATE (a:Person {name: 'A', age: 13}),
 	(b:Person {name: 'B', age: 33, eyes: "blue"}),
@@ -32,7 +32,7 @@ Aggregating functions take a  set of values and calculate An aggregated value ov
 Aggregation can be computed over all the matching subgraphs, or it can be further divided by introducing grouping keys. These are non-aggregate expressions, that are used to group the valuesgoing into the aggregate functions.
 
 Assume we have the following return statement:
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$
 	MATCH (v:Person)
 	RETURN v.name, count(*)
@@ -72,7 +72,7 @@ We have two return expressions: grouping_key, and count(*). The first, grouping_
 
 To use aggregations to sort the result set, the aggregation must be included in the RETURN to be used in the ORDER BY.
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
 	MATCH (me:Person)-[]->(friend:Person)
@@ -87,7 +87,7 @@ In a distinct aggregation (i.e. of the form aggr(DISTINCT expr)), the list of ag
 
 The DISTINCT operator works in conjunction with aggregation. It is used to make all values unique before running them  through an aggregate function.
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
 	MATCH (v:Person)
@@ -114,7 +114,7 @@ $$) as (distinct_eyes agtype, eyes agtype);
 This feature of not requiring the user to specifiy their grouping keys for a query allows for ambiguity on what Cypher should qualify as their grouping keys. For more details [click here.](https://opencypher.org/articles/2017/07/27/ocig1-aggregations-article/)
 
 Data Setup 
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$
 CREATE (:L {a: 1, b: 2, c: 3}),
        (:L {a: 2, b: 3, c: 1}),
@@ -128,7 +128,7 @@ AGE's solution to this problem is to not allow a WITH or RETURN column to combin
 
 
 Query:
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$
 	MATCH (x:L)
 	RETURN x.a + count(*) + x.b + count(*) + x.c
@@ -136,7 +136,7 @@ $$) as (a agtype);
 ```
 
 Result:
-```
+```postgresql
 ERROR:  "x" must be either part of an explicitly listed key or used inside an aggregate function
 LINE 3: RETURN x.a + count(*) + x.b + count(*) + x.c
 ```
@@ -148,7 +148,7 @@ Columns that do not include an aggregate function in AGE are considered to be th
 For the above query, the user could rewrite the query is several ways that will return results
 
 Query:
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$
 	MATCH (x:L)
 	RETURN (x.a + x.b + x.c) + count(*) + count(*), x.a + x.b + x.c
@@ -175,7 +175,7 @@ Results
 
 
 Query
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$
 	MATCH (x:L)
 	RETURN x.a + count(*) + x.b + count(*) + x.c, x.a, x.b, x.c
@@ -222,7 +222,7 @@ Results:
 
 Alternatively, the grouping key can be a vertex or edge, and then any properties of the vertex or edge can be specified without being explicitly stated in a WITH or RETURN column.
 
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$
 	MATCH (x:L)
 	RETURN count(*) + count(*) + x.a + x.b + x.c, x
@@ -261,7 +261,7 @@ Results
 
 If the grouping key is considered unecessary for the query output, the aggregation can be done in a WITH clause then passing information to the RETURN clause.
 
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$
 	MATCH (x:L)
 	WITH count(*) + count(*) + x.a + x.b + x.c as column, x

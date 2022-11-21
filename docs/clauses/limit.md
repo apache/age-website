@@ -14,7 +14,7 @@ To return a subset of the result, starting from the top, use this syntax:
 Query
 
 
-```
+```postgresql
 SELECT * 
 FROM cypher('graph_name', $$
 	MATCH (n)RETURN n.name
@@ -59,7 +59,7 @@ Limit accepts any expression that evaluates to a positive integer as long as it 
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
 	MATCH (n)

@@ -13,7 +13,7 @@ To return a subset of the result, starting from the top, use this syntax:
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
 	MATCH (n)
@@ -55,7 +55,7 @@ To return a subset of the result, starting from somewhere in the middle, use thi
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
 	MATCH (n)
@@ -97,7 +97,7 @@ Using an expression with SKIP to return a subset of the rows
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
 	MATCH (n)

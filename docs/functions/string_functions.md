@@ -63,7 +63,7 @@ Considerations:
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
 	RETURN replace('hello', 'l', 'w')
@@ -139,7 +139,7 @@ Considerations:
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN split('one,two', ',')
@@ -218,7 +218,7 @@ Considerations:
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
 	RETURN left('Hello', 3)
@@ -297,7 +297,7 @@ Considerations:
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN right('hello', 3)
@@ -384,7 +384,7 @@ Considerations:
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN substring('hello', 1, 3), substring('hello', 2)
@@ -458,7 +458,7 @@ Considerations:
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN rTrim(' hello ')
@@ -528,7 +528,7 @@ Considerations:
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN lTrim(' hello ')
@@ -598,7 +598,7 @@ Considerations:
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN trim(' hello ')
@@ -668,7 +668,7 @@ Considerations:
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN toLower('HELLO')
@@ -738,7 +738,7 @@ Considerations:
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN toUpper('hello')
@@ -808,7 +808,7 @@ Considerations:
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN reverse("hello")
@@ -879,7 +879,7 @@ Considerations:
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN toString(11.5),toString('a string'), toString(true)

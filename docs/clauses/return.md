@@ -10,7 +10,7 @@ To return a node, list it in the RETURN statement.
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     MATCH (n {name: 'B'})
@@ -48,7 +48,7 @@ To return n edge, just include it in the RETURN list.
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     MATCH (n)-[r:KNOWS]->()
@@ -85,7 +85,7 @@ To return a property, use the dot separator, like this:
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     MATCH (n {name: 'A'})
@@ -121,7 +121,7 @@ When you want to return all vertices, edges and paths found in a query, you can 
 
 Query
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
 	MATCH (a {name: 'A'})-[r]->(b)
@@ -175,7 +175,7 @@ To introduce a placeholder that is made up of characters that are not contained 
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     MATCH (`This isn\'t a common variable`)
@@ -214,7 +214,7 @@ If the name of the field should be different from the expression used, you can r
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     MATCH (n {name: 'A'})
@@ -252,7 +252,7 @@ If a property might or might not be there, you can still select it as usual. It 
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     MATCH (n)
@@ -294,7 +294,7 @@ Any expression can be used as a return item—literals, predicates, properties, 
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     MATCH (a)
@@ -340,7 +340,7 @@ DISTINCT retrieves only unique records depending on the fields that have been se
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
 MATCH (a {name: 'A'})-[]->(b)

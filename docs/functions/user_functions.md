@@ -7,7 +7,7 @@ Syntax: `namespace_name.function_name`
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
 RETURN pg_catalog.sqrt(25)

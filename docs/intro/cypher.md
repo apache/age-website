@@ -55,7 +55,7 @@ Considerations:
 Query:
 
 
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$ 
 /* Cypher Query Here */ 
 $$) AS (result1 agtype, result2 agtype);
@@ -73,7 +73,7 @@ Calling Cypher in the SELECT clause as an independent column is not allowed. How
 Not Allowed:
 
 
-```
+```postgresql
 SELECT 
     cypher('graph_name', $$
          MATCH (v:Person)

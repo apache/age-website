@@ -15,7 +15,7 @@ Input/Output Format
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN NULL
@@ -60,7 +60,7 @@ Input/Output Format
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN 1
@@ -127,7 +127,7 @@ To use a float, denote a decimal value.
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN 1.0
@@ -193,7 +193,7 @@ When creating a numeric data type, the ‘::numeric’ data annotation is requir
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN 1.0::numeric
@@ -234,7 +234,7 @@ Input/Output Format
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN TRUE
@@ -340,7 +340,7 @@ Use single (‘) quotes to identify a string. The output will use double (“) q
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN 'This is a string'
@@ -383,7 +383,7 @@ A literal list is created by using brackets and separating the elements in the l
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     WITH [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as lst
@@ -419,7 +419,7 @@ A list can hold the value null, unlike when a null is an independent value, it w
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     WITH [null] as lst
@@ -455,7 +455,7 @@ To access individual elements in the list, we use the square brackets again. Thi
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     WITH [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as lst
@@ -489,7 +489,7 @@ Result:
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
    WITH [0, {key: 'key_value'}, 2, 3, 4, 5, 6, 7, 8, 9, 10] as lst
@@ -523,7 +523,7 @@ Result:
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
    WITH [0, {key: 'key_value'}, 2, 3, 4, 5, 6, 7, 8, 9, 10] as lst
@@ -559,7 +559,7 @@ You can also use negative numbers, to start from the end of the list instead.
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     WITH [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as lst
@@ -595,7 +595,7 @@ Finally, you can use ranges inside the brackets to return ranges of the list.
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     WITH [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as lst
@@ -629,7 +629,7 @@ Result:
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     WITH [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as lst
@@ -663,7 +663,7 @@ Result:
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     WITH [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as lst
@@ -697,7 +697,7 @@ Result:
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     WITH [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as lst
@@ -730,7 +730,7 @@ Out-of-bound slices are simply truncated, but out-of-bound single elements retur
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     WITH [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as lst
@@ -761,7 +761,7 @@ Result:
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     WITH [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as lst
@@ -802,7 +802,7 @@ You can construct a simple map with simple agtypes
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     WITH {int_key: 1, float_key: 1.0, numeric_key: 1::numeric, bool_key: true, string_key: 'Value'} as m
@@ -838,7 +838,7 @@ A map can also contain Composite Data Types, i.e. lists and other maps.
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     WITH {listKey: [{inner: 'Map1'}, {inner: 'Map2'}], mapKey: {i: 0}} as m
@@ -872,7 +872,7 @@ Result:
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     WITH {int_key: 1, float_key: 1.0, numeric_key: 1::numeric, bool_key: true, string_key: 'Value'} as m
@@ -906,7 +906,7 @@ Result:
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     WITH {listKey: [{inner: 'Map1'}, {inner: 'Map2'}], mapKey: {i: 0}} as m
@@ -1016,7 +1016,7 @@ Data Format:
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
 	WITH {id: 0, label: "label_name", properties: {i: 0}}::vertex as v
@@ -1106,7 +1106,7 @@ Output:
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
 	WITH {id: 2, start_id: 0, end_id: 1, label: "label_name", properties: {i: 0}}::edge as e
@@ -1147,7 +1147,7 @@ A path is a series of alternating vertices and edges. A path must start with a v
 
 Query
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
 	WITH [{id: 0, label: "label_name_1", properties: {i: 0}}::vertex,
