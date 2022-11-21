@@ -63,7 +63,7 @@ $$) AS (result1 agtype, result2 agtype);
 
 ## Cypher in an Expression
 
-Cypher may not be used as part of an expression, use a subquery instead. See [Advanced Cypher Queries](../advanced/advanced.html#cypher-in-sql-expressions) for information about how to use Cypher queries with Expressions
+Cypher may not be used as part of an expression, use a subquery instead. See [Advanced Cypher Queries](../advanced/advanced.md#cypher-in-sql-expressions) for information about how to use Cypher queries with Expressions
 
 
 ## SELECT Clause

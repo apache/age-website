@@ -1,6 +1,6 @@
 # Prepared Statements
 
-Cypher can run a read query within a Prepared Statement. When using parameters with stored procedures, An SQL Parameter must be placed in the cypher function call. See The [AGE Query Format](#the-age-cypher-query-format) for details.
+Cypher can run a read query within a Prepared Statement. When using parameters with stored procedures, An SQL Parameter must be placed in the cypher function call. See The [AGE Query Format](../intro/cypher.md#the-age-cypher-query-format) for details.
 
 ## Cypher Parameter Format
 

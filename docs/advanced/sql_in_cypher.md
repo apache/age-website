@@ -1,6 +1,6 @@
 # SQL In Cypher
 
-AGE does not support SQL being directly written in Cypher. However with [user defined functions](../functions/user_functions#) you can write sql queries and call them in a cypher command.
+AGE does not support SQL being directly written in Cypher. However with [user defined functions](../functions/user_functions.md) you can write sql queries and call them in a cypher command.
 
 
 ```

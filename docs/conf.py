@@ -48,6 +48,14 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 pygments_style = 'sphinx'
 
 
+# -- Options for MYST configuration -------------------------------------------------
+
+# This option tells myst_parser to generate labels for heading anchors
+# for h1, h2, and h3 level headings (corresponding to #, ##, and ### in
+# markdown)
+myst_heading_anchors = 3
+
+
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for

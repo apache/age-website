@@ -373,15 +373,7 @@ Result:
 
 ### List
 
-All examples will use the 
-
-<p id="gdcalert1" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: undefined internal link (link text: "WITH"). Did you generate a TOC? </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert2">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-[WITH](#heading=h.61g87t1b908v) clause and 
-
-<p id="gdcalert2" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: undefined internal link (link text: "RETURN"). Did you generate a TOC? </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-[RETURN](#heading=h.a8dh3jonzaxn) clause.
+All examples will use the [WITH](../clauses/with.md) clause and [RETURN](../clauses/return.md) clause.
 
 
 #### Lists in general
@@ -964,11 +956,7 @@ A label is an identifier that classifies vertices and edges into certain categor
 * Edges are required to have a label, but vertices do not. 
 * The names of labels between vertices and edges cannot overlap. 
 
-See 
-
-<p id="gdcalert3" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: undefined internal link (link text: "CREATE"). Did you generate a TOC? </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert4">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-[CREATE](#heading=h.vo9azwq6syoh) clause for information about how to make entities with labels.
+See [CREATE](../clauses/create.md) clause for information about how to make entities with labels.
 
 
 ### Properties

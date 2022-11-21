@@ -3,7 +3,7 @@
 
 ## Introduction 
 
-Generally an aggregation aggr(expr) processes all matching rows for each aggregation key found in an incoming record (keys are compared using [equivalence](../intro/comparability.html#)).
+Generally an aggregation aggr(expr) processes all matching rows for each aggregation key found in an incoming record (keys are compared using [equivalence](../intro/comparability.md)).
 
 In a regular aggregation (i.e. of the form aggr(expr)), the list of aggregated values is the list of candidate values with all null values removed from it.
 
@@ -27,7 +27,7 @@ $$) as (a agtype);
 ## Auto Group By
 To calculate aggregated data, Cypher offers aggregation, analogous to SQL’s GROUP BY.
 
-Aggregating functions take a  set of values and calculate An aggregated value over them. Examples are [avg()](../functions/aggregate_functions.html#avg) that calculates the average of multiple numeric values, or [min()](../functions/aggregate_functions.html#min) that finds the smallest numeric or string value in a set of values. When we say below that an aggregating function operates on a set of values, we mean these to be the result of the application of the inner expression(such as n.age) to all the records within the same aggregation group.
+Aggregating functions take a  set of values and calculate An aggregated value over them. Examples are [avg()](../functions/aggregate_functions.md#avg) that calculates the average of multiple numeric values, or [min()](../functions/aggregate_functions.md#min) that finds the smallest numeric or string value in a set of values. When we say below that an aggregating function operates on a set of values, we mean these to be the result of the application of the inner expression(such as n.age) to all the records within the same aggregation group.
 
 Aggregation can be computed over all the matching subgraphs, or it can be further divided by introducing grouping keys. These are non-aggregate expressions, that are used to group the valuesgoing into the aggregate functions.
 

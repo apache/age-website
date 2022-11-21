@@ -1,6 +1,6 @@
 # Aggregation Functions
 
-Functions that activate [auto aggregation](../intro/aggregation#).
+Functions that activate [auto aggregation](../intro/aggregation.md).
 
 ## Data Setup
 ```
