@@ -9,7 +9,5 @@ bannerContents: >-
   </h1>
 
 
-  <a class="bannerLink bnLk1" href="/overview">Learn More</a>
-
-  <a class="bannerLink bnLk2" target="_blank" href="https://www.reddit.com/r/apacheage/">Ask Forum</a>
-
+  <a class="bannerLink bnLk1" href="https://github.com/apache/age" target="_blank">Apache AGE GitHub</a>
+  
