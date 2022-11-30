@@ -227,8 +227,6 @@ AGE provides the standard Cypher type boolean. The boolean type can have several
 
 Boolean constants can be represented in Cypher queries by the keywords TRUE, FALSE, and NULL.
 
-Note that the parser automatically understands that TRUE and FALSE are of type boolean, but this is not so for NULL because that can have any type. So in some contexts you might have to cast NULL to boolean explicitly, for example NULL::boolean. Conversely, the cast can be omitted from a string-literal Boolean value in contexts where the parser can deduce that the literal must be of type boolean.
-
 Input/Output Format
 
 Query
