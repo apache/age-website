@@ -137,6 +137,18 @@ const Navbar = () => {
                 </a>
               </Menu.Item>
             </Menu.SubMenu>
+            <Menu.SubMenu title="Apache AGE GitHub">
+              <Menu.Item>
+                <a href="https://github.com/apache/age" target="_blank">                  
+                  AGE
+                </a>        
+              </Menu.Item>
+              <Menu.Item>
+                <a href="https://github.com/apache/age-viewer" target="_blank">                  
+                  AGE Viewer
+                </a>        
+              </Menu.Item>
+            </Menu.SubMenu>
           </Menu>
         </div>
         <div className={styles.HamburgerMenu}>
@@ -260,6 +272,18 @@ const Navbar = () => {
                 <a href="https://age.apache.org/age-manual/master/contributing/run_tests.html" target="_blank" className="navbar-item">
                   Contributing
                 </a>
+              </Menu.Item>
+            </Menu.SubMenu>
+            <Menu.SubMenu title="Apache AGE GitHub">
+              <Menu.Item>
+                <a href="https://github.com/apache/age" target="_blank">                  
+                  AGE
+                </a>        
+              </Menu.Item>
+              <Menu.Item>
+                <a href="https://github.com/apache/age-viewer" target="_blank">                  
+                  AGE Viewer
+                </a>        
               </Menu.Item>
             </Menu.SubMenu>
           </Menu>

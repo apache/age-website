@@ -19,6 +19,16 @@ const Ageinfos = () => {
       }
     });
   }, []);
+
+  // 1000 to 1k
+  const numberFormatter = (num) => {
+    if (num >= 1000) {
+      return (num / 1000).toFixed(1) + 'k';
+    } else {
+      return num;
+    }
+  };
+
   return (
     <div className={styles.root}>
       <div  className={styles.Stars}>
@@ -31,7 +41,7 @@ const Ageinfos = () => {
               href="https://github.com/apache/age/stargazers"
               className={styles.Count}
             >
-              {ageInfo.startCount}
+              {numberFormatter(ageInfo.startCount)}
             </a>
             <span className={styles.Label}>AGE</span>
           </div>
@@ -41,7 +51,7 @@ const Ageinfos = () => {
               href="https://github.com/apache/age-viewer/stargazers"
               className={styles.Count}
             >
-              {ageViewerInfo.startCount}
+              {numberFormatter(ageViewerInfo.startCount)}
             </a>
             <span className={styles.Label}>AGE Viewer</span>
           </div>
