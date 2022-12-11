@@ -168,7 +168,7 @@ Query
 ```
 SELECT * 
 FROM cypher('graph_name', $$
-    CREATE (a {name: 'Andres')
+    CREATE (a {name: 'Andres'})
     RETURN a
 $$) as (a agtype);
 ```
