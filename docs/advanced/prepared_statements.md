@@ -29,8 +29,9 @@ AS (v agtype);
 
 When executing the prepared statement, place an agtype map with the parameter values where the Postgres Parameter in the Cypher function call is. The value must be an agtype map or an error will be thrown. Exclude the '$' for parameter names.
 
+The name of the prepared statement in the EXECUTE must be the same as the one in the PREPARE command.
 
 ```
-EXECUTE cypher_prepared_statement('{"name": "Tobias"}');
+EXECUTE cypher_stored_procedure('{"name": "Tobias"}');
 ```
 
