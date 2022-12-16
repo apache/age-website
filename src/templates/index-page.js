@@ -8,6 +8,7 @@ import Ageinfos from '../components/AgeInfos';
 import AgeProjectList from '../components/AgeProjectList';
 import AgeViewerProjectList from '../components/AgeViewerProjectList';
 import RedditRss from '../components/RedditRss';
+import AgeContributors from '../components/AgeContributors';
 // style
 import * as styles from './styles/index.module.scss';
 // img 
@@ -164,6 +165,12 @@ export const IndexPageTemplate = ({
             If you are looking for an opportunity to grow and experience progressive insights, this is the place for you!
           </p>
           <Ageinfos />
+          <hr style={{ border: 'solid 1px #9F1A61', margin: '2rem 0', opacity: '0.2' }} />
+          <div className={styles.content}>
+            <h2>Top Contributors for the Past 7 Days</h2>
+            <p></p>
+            <AgeContributors />
+          </div>
         </div>
       </section>
       <section style={{ backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat' }}>
