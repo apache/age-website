@@ -45,6 +45,7 @@ const TemplateWrapper = ({ children }) => {
             <meta name="description" content={description} />
             {/* Global site tag (gtag.js) - Google Analytics */}
             <script async src="https://www.googletagmanager.com/gtag/js?id=G-VPCE2QF63F" />
+            <meta name="google-site-verification" content="Sg7FXSIvwNURx7kORurPzTfO1rfixwHzONk0f-_K_Wc"></meta>
             <script>
                 {injectGA()}
             </script>
