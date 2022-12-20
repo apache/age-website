@@ -41,7 +41,7 @@ subcon: >-
 
 Below is a brief overview of the AGE architecture, similar to the PostgreSQL architecture and backend. Every component runs on the PostgreSQL transaction cache layer and storage layer.
 
-\* Support for PostgreSQL 12 and 13 will be implemented in Q3. Support for PostgreSQL 14 will be added in Q4 2022.
+\* Support for PostgreSQL 13 will be implemented in Q1 2023. Support for PostgreSQL 14 & 15 will be added by the end of Q1 2023.
 
 **Apache AGE®** will be compatible with all relational databases in the future development, starting with MySQL and MariaDB.
 
