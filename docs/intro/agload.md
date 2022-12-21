@@ -37,7 +37,7 @@ Function `load_edges_from_file` can be used to load properties from the CSV file
 Note: make sure that ids in the edge file are identical to ones that are in vertices files. 
 
 ```postgresql
-oad_edges_from_file('<graph name>',
+load_edges_from_file('<graph name>',
                     '<label name>',
                     '<file path>');
 ```
