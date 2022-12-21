@@ -55,7 +55,7 @@ Considerations:
 Query:
 
 
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$ 
 /* Cypher Query Here */ 
 $$) AS (result1 agtype, result2 agtype);
@@ -63,7 +63,7 @@ $$) AS (result1 agtype, result2 agtype);
 
 ## Cypher in an Expression
 
-Cypher may not be used as part of an expression, use a subquery instead. See [Advanced Cypher Queries](../advanced/advanced.html#cypher-in-sql-expressions) for information about how to use Cypher queries with Expressions
+Cypher may not be used as part of an expression, use a subquery instead. See [Advanced Cypher Queries](../advanced/advanced.md#cypher-in-sql-expressions) for information about how to use Cypher queries with Expressions
 
 
 ## SELECT Clause
@@ -73,7 +73,7 @@ Calling Cypher in the SELECT clause as an independent column is not allowed. How
 Not Allowed:
 
 
-```
+```postgresql
 SELECT 
     cypher('graph_name', $$
          MATCH (v:Person)

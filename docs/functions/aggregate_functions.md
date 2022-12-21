@@ -1,9 +1,9 @@
 # Aggregation Functions
 
-Functions that activate [auto aggregation](../intro/aggregation#).
+Functions that activate [auto aggregation](../intro/aggregation.md).
 
 ## Data Setup
-```
+```postgresql
 LOAD 'age';
 SET search_path TO ag_catalog;
 
@@ -69,7 +69,7 @@ Considerations:
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     MATCH (v:Person)
@@ -105,7 +105,7 @@ Data Setup:
 To clarify the following example, assume the next three commands are run first:
 
 
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$ 
     CREATE (:min_test {val:'d'})
 $$) as (result agtype);
@@ -123,7 +123,7 @@ $$) as (result agtype);
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     MATCH (v:min_test)
@@ -199,7 +199,7 @@ Considerations:
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     MATCH (n:Person)
@@ -273,7 +273,7 @@ Considerations:
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
    MATCH (n:Person)
@@ -347,7 +347,7 @@ Considerations:
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     MATCH (n:Person)
@@ -427,7 +427,7 @@ Considerations:
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     MATCH (n:Person)
@@ -507,7 +507,7 @@ Considerations:
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     MATCH (n:Person)
@@ -585,7 +585,7 @@ Considerations:
 
 
 Query
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     MATCH (n {name: 'A'})-[]->(x)
@@ -619,7 +619,7 @@ Result:
 Using count(*) to group and count relationship typescount(*) can be used to group relationship types and return the number.
 
 Query
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     MATCH (n {name: 'A'})-[r]->()
@@ -661,7 +661,7 @@ Instead of simply returning the number of records with count(*), it may be more 
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     MATCH (n {name: 'A'})-[]->(x)
@@ -699,7 +699,7 @@ count(expression) can be used to return the number of non-null values returned b
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     MATCH (n:Person)
@@ -736,7 +736,7 @@ In this example we are trying to find all our friends of friends, and count them
 * The second aggregate function, count(friend_of_friend), will consider the same friend_of_friend multiple times.
 
 Query
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
 	MATCH (me:Person)-[]->(friend:Person)-[]->(friend_of_friend:Person)
@@ -811,7 +811,7 @@ Considerations:
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
 MATCH (n:Person)
@@ -885,7 +885,7 @@ Considerations:
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
 MATCH (n:Person)

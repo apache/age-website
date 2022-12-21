@@ -7,7 +7,7 @@ There are no restrictions to using Cypher with CTEs ([Common Table Expressions](
 Query:
 
 
-```
+```postgresql
 WITH graph_query as (
     SELECT *
         FROM cypher('graph_name', $$
@@ -69,7 +69,7 @@ Cypher queries using the CREATE, SET, REMOVE clauses cannot be used in sql queri
 Query:
 
 
-```
+```postgresql
 SELECT id, 
     graph_query.name = t.name as names_match,
     graph_query.age = t.age as ages_match
@@ -135,7 +135,7 @@ Cypher cannot be used in an expression, the query must exists in the FROM clause
 When writing a cypher query that is known to return 1 column and 1 row, the '=' comparison operator may be used.
 
 
-```
+```postgresql
 SELECT t.name FROM schema_name.sql_person AS t
 where t.name = (
     SELECT a
@@ -179,7 +179,7 @@ When writing a cypher query that is known to return 1 column, but may have multi
 Query:
 
 
-```
+```postgresql
 SELECT t.name, t.age FROM schema_name.sql_person as t 
 where t.name in (
     SELECT *
@@ -233,7 +233,7 @@ When writing a cypher query that may have more than 1 column and row returned. T
 Query:
 
 
-```
+```postgresql
 SELECT t.name, t.age
 FROM schema_name.sql_person as t
 WHERE EXISTS (
@@ -282,7 +282,7 @@ Results:
 There is no restriction to the number of graphs an SQL statement can query. Allowing users to query more than one graph at the same time.
 
 
-```
+```postgresql
 SELECT graph_1.name, graph_1.age, graph_2.license_number
 FROM cypher('graph_1', $$
     MATCH (v:Person)

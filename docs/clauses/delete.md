@@ -21,7 +21,7 @@ To delete a vertex, use the DELETE clause.
 Query
 
 
-```
+```postgresql
 SELECT * 
 FROM cypher('graph_name', $$
 	MATCH (v:Useless)
@@ -51,7 +51,7 @@ Running a Match clause will collect all nodes, use the DETACH option to first de
 Query
 
 
-```
+```postgresql
 SELECT * 
 FROM cypher('graph_name', $$
 	MATCH (v:Useless)
@@ -79,7 +79,7 @@ Nothing is returned from this query.
 To delete an edge, use the match clause to find your edges, then add the variable to the DELETE.
 
 Query
-```
+```postgresql
 SELECT * 
 FROM cypher('graph_name', $$
 	MATCH (n {name: 'Andres'})-[r:KNOWS]->()
@@ -107,7 +107,7 @@ Nothing is returned from this query.
 In AGE, you can return vertices that have been deleted.
 
 Query
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
 	MATCH (n {name: 'A'})

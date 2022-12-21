@@ -15,7 +15,7 @@ To set a property on a node or relationship, use SET.
 Query
 
 
-```
+```postgresql
 SELECT * 
 FROM cypher('graph_name', $$
    MATCH (v {name: 'Andres'})
@@ -49,7 +49,7 @@ Creating a single vertex is done by issuing the following query.
 Query
 
 
-```
+```postgresql
 SELECT * 
 FROM cypher('graph_name', $$
     MATCH (v {name: 'Andres'})
@@ -88,7 +88,7 @@ Normally you remove a property by using REMOVE, but it’s sometimes handy to do
 Query
 
 
-```
+```postgresql
 SELECT * 
 FROM cypher('graph_name', $$
     MATCH (v {name: 'Andres'})
@@ -126,7 +126,7 @@ If you want to set multiple properties in one go, simply separate them with a co
 Query
 
 
-```
+```postgresql
 SELECT * 
 FROM cypher('graph_name', $$
 MATCH (v {name: 'Andres'})

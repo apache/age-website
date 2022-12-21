@@ -17,7 +17,7 @@ Following are the details about the functions to create vertices and edges from 
 
 function `load_labels_from_file` is used to load vertices from the CSV files. 
 
-```sql
+```postgresql
 load_labels_from_file('<graph name>', 
                       '<label name>',
                       '<file path>')
@@ -25,7 +25,7 @@ load_labels_from_file('<graph name>',
 
 By adding the fourth parameter user can exclude the id field. *** Use this when there is no id field in the file***
 
-```sql
+```postgresql
 load_labels_from_file('<graph name>', 
                       '<label name>',
                       '<file path>', 
@@ -36,7 +36,7 @@ Function `load_edges_from_file` can be used to load properties from the CSV file
 
 Note: make sure that ids in the edge file are identical to ones that are in vertices files. 
 
-```sql
+```postgresql
 oad_edges_from_file('<graph name>',
                     '<label name>',
                     '<file path>');
@@ -67,7 +67,7 @@ example files can be viewed at `regress/age_load/data`
 ## Example SQL script 
 
 - Load and create graph 
-```sql
+```postgresql
 LOAD 'age';
 
 SET search_path TO ag_catalog;
@@ -76,7 +76,7 @@ SELECT create_graph('agload_test_graph');
 
 - Create label `country` and load vertices from csv file. *** Note this CSV file has id field ***
 
-```sql
+```postgresql
 SELECT create_vlabel('agload_test_graph','Country');
 SELECT load_labels_from_file('agload_test_graph',
                              'Country',
@@ -85,7 +85,7 @@ SELECT load_labels_from_file('agload_test_graph',
 
 - Create label `City` and load vertices from csv file. *** Note this CSV file has id field ***
 
-```sql
+```postgresql
 SELECT create_vlabel('agload_test_graph','City');
 SELECT load_labels_from_file('agload_test_graph',
                              'City', 
@@ -94,7 +94,7 @@ SELECT load_labels_from_file('agload_test_graph',
 
 - Create label `has_city` and load edges from csv file.
 
-```sql
+```postgresql
 SELECT create_elabel('agload_test_graph','has_city');
 SELECT load_edges_from_file('agload_test_graph', 'has_city',
      'age_load/edges.csv');
@@ -102,7 +102,7 @@ SELECT load_edges_from_file('agload_test_graph', 'has_city',
 
 - check if the graph has been loaded properly
 
-```sql
+```postgresql
 SELECT table_catalog, table_schema, table_name, table_type
 FROM information_schema.tables
 WHERE table_schema = 'agload_test_graph';
@@ -119,7 +119,7 @@ SELECT COUNT(*) FROM cypher('agload_test_graph', $$MATCH (a)-[e]->(b) RETURN e$$
 
 - Create label `country` and load vertices from csv file. *** Note this CSV file has no id field ***
 
-```sql
+```postgresql
 SELECT create_vlabel('agload_test_graph','Country2');
 SELECT load_labels_from_file('agload_test_graph',
                              'Country2',
@@ -128,7 +128,7 @@ SELECT load_labels_from_file('agload_test_graph',
 ```
 
 - Create label `City` and load vertices from csv file. *** Note this CSV file has id field ***
-```sql
+```postgresql
 SELECT create_vlabel('agload_test_graph','City2');
 SELECT load_labels_from_file('agload_test_graph',
                              'City2',
@@ -139,7 +139,7 @@ SELECT load_labels_from_file('agload_test_graph',
 
 - labels `country` and `city` were created with id field in the file
 - labels `country2` and `city2` were created with no id field in the file. 
-```sql
+```postgresql
 SELECT COUNT(*) FROM agload_test_graph."Country2";
 SELECT COUNT(*) FROM agload_test_graph."City2";
 

@@ -35,7 +35,7 @@ Arguments:
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
      MATCH (n)
@@ -78,7 +78,7 @@ Results:
 
 EXISTS(path) returns true if for the given path, there already exists the given path.
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
      MATCH (n)

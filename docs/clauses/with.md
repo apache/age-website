@@ -14,7 +14,7 @@ WITH is also used to separate the reading of the graph from updating of the grap
 Aggregated results have to pass through a WITH clause to be able to filter on.
 
 Query
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
 	MATCH (david {name: 'David'})-[]-(otherPerson)-[]->()
@@ -54,7 +54,7 @@ Result
 You can sort your results before passing them to collect, thus sorting the resulting list.
 
 Query
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
 	MATCH (n)WITH n
@@ -92,7 +92,7 @@ You can match paths, limit to a certain number, and then match again using those
 
 Query
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
 	MATCH (n {name: 'Anders'})-[]-(m)WITH m

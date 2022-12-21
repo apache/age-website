@@ -1,6 +1,6 @@
 # SQL In Cypher
 
-AGE does not support SQL being directly written in Cypher. However with [user defined functions](../functions/user_functions#) you can write sql queries and call them in a cypher command.
+AGE does not support SQL being directly written in Cypher. However with [user defined functions](../functions/user_functions.md) you can write sql queries and call them in a cypher command.
 
 
 ```
@@ -11,7 +11,7 @@ Void and Scalar-Value functions only. Set returning functions are not currently 
 
 
 ## Create Function
-```
+```postgresql
 CREATE OR REPLACE FUNCTION public.get_event_year(name agtype) RETURNS agtype AS $$
 	SELECT year::agtype
 	FROM history AS h
@@ -21,7 +21,7 @@ $$ LANGUAGE sql;
 ```
 
 ## Query
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$
 	MATCH (e:event)
 	WHERE e.year < public.get_event_year(e.name)

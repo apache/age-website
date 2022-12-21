@@ -15,7 +15,7 @@ Cypher doesn’t allow storing null in properties. Instead, if no value exists, 
 Query
 
 
-```
+```postgresql
 SELECT * 
 FROM cypher('graph_name', $$
     MATCH (andres {name: 'Andres'})

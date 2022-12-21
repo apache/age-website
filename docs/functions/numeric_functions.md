@@ -18,7 +18,7 @@ A Float.
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN rand()
@@ -91,7 +91,7 @@ Considerations:
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     MATCH (a), (e) WHERE a.name = 'Alice' AND e.name = 'Eskil'
@@ -172,7 +172,7 @@ Considerations:
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN ceil(0.1)
@@ -246,7 +246,7 @@ Considerations:
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN floor(0.1)
@@ -320,7 +320,7 @@ Considerations:
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN round(3.141592)
@@ -388,7 +388,7 @@ Considerations:
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN sign(-17), sign(0.1), sign(0)

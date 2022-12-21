@@ -15,7 +15,7 @@ Input/Output Format
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN NULL
@@ -60,7 +60,7 @@ Input/Output Format
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN 1
@@ -127,7 +127,7 @@ To use a float, denote a decimal value.
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN 1.0
@@ -193,7 +193,7 @@ When creating a numeric data type, the ‘::numeric’ data annotation is requir
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN 1.0::numeric
@@ -232,7 +232,7 @@ Input/Output Format
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN TRUE
@@ -338,7 +338,7 @@ Use single (‘) quotes to identify a string. The output will use double (“) q
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN 'This is a string'
@@ -371,15 +371,7 @@ Result:
 
 ### List
 
-All examples will use the 
-
-<p id="gdcalert1" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: undefined internal link (link text: "WITH"). Did you generate a TOC? </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert2">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-[WITH](#heading=h.61g87t1b908v) clause and 
-
-<p id="gdcalert2" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: undefined internal link (link text: "RETURN"). Did you generate a TOC? </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-[RETURN](#heading=h.a8dh3jonzaxn) clause.
+All examples will use the [WITH](../clauses/with.md) clause and [RETURN](../clauses/return.md) clause.
 
 
 #### Lists in general
@@ -389,7 +381,7 @@ A literal list is created by using brackets and separating the elements in the l
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     WITH [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as lst
@@ -425,7 +417,7 @@ A list can hold the value null, unlike when a null is an independent value, it w
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     WITH [null] as lst
@@ -461,7 +453,7 @@ To access individual elements in the list, we use the square brackets again. Thi
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     WITH [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as lst
@@ -495,7 +487,7 @@ Result:
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
    WITH [0, {key: 'key_value'}, 2, 3, 4, 5, 6, 7, 8, 9, 10] as lst
@@ -529,7 +521,7 @@ Result:
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
    WITH [0, {key: 'key_value'}, 2, 3, 4, 5, 6, 7, 8, 9, 10] as lst
@@ -565,7 +557,7 @@ You can also use negative numbers, to start from the end of the list instead.
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     WITH [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as lst
@@ -601,7 +593,7 @@ Finally, you can use ranges inside the brackets to return ranges of the list.
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     WITH [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as lst
@@ -635,7 +627,7 @@ Result:
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     WITH [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as lst
@@ -669,7 +661,7 @@ Result:
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     WITH [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as lst
@@ -703,7 +695,7 @@ Result:
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     WITH [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as lst
@@ -736,7 +728,7 @@ Out-of-bound slices are simply truncated, but out-of-bound single elements retur
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     WITH [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as lst
@@ -767,7 +759,7 @@ Result:
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     WITH [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as lst
@@ -808,7 +800,7 @@ You can construct a simple map with simple agtypes
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     WITH {int_key: 1, float_key: 1.0, numeric_key: 1::numeric, bool_key: true, string_key: 'Value'} as m
@@ -844,7 +836,7 @@ A map can also contain Composite Data Types, i.e. lists and other maps.
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     WITH {listKey: [{inner: 'Map1'}, {inner: 'Map2'}], mapKey: {i: 0}} as m
@@ -878,7 +870,7 @@ Result:
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     WITH {int_key: 1, float_key: 1.0, numeric_key: 1::numeric, bool_key: true, string_key: 'Value'} as m
@@ -912,7 +904,7 @@ Result:
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     WITH {listKey: [{inner: 'Map1'}, {inner: 'Map2'}], mapKey: {i: 0}} as m
@@ -962,11 +954,7 @@ A label is an identifier that classifies vertices and edges into certain categor
 * Edges are required to have a label, but vertices do not. 
 * The names of labels between vertices and edges cannot overlap. 
 
-See 
-
-<p id="gdcalert3" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: undefined internal link (link text: "CREATE"). Did you generate a TOC? </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert4">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-[CREATE](#heading=h.vo9azwq6syoh) clause for information about how to make entities with labels.
+See [CREATE](../clauses/create.md) clause for information about how to make entities with labels.
 
 
 ### Properties
@@ -1026,7 +1014,7 @@ Data Format:
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
 	WITH {id: 0, label: "label_name", properties: {i: 0}}::vertex as v
@@ -1116,7 +1104,7 @@ Output:
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
 	WITH {id: 2, start_id: 0, end_id: 1, label: "label_name", properties: {i: 0}}::edge as e
@@ -1157,7 +1145,7 @@ A path is a series of alternating vertices and edges. A path must start with a v
 
 Query
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
 	WITH [{id: 0, label: "label_name_1", properties: {i: 0}}::vertex,

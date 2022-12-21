@@ -2,7 +2,7 @@
 
 ## Data Setup
 
-```
+```postgresql
 SELECT * from cypher('graph_name', $$
 CREATE (A:Person {name: 'Alice', age: 38, eyes: 'brown'}),
 	(B:Person {name: 'Bob', age: 25, eyes: 'blue'}),
@@ -48,7 +48,7 @@ Considerations:
 * keys(null) returns null.
 
 Query:
-```
+```postgresql
 SELECT * from cypher('graph_name', $$
 	MATCH (a)
 	WHERE a.name = 'Alice'
@@ -115,7 +115,7 @@ Arguments:
 </table>
 
 Query:
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
 	RETURN range(0, 10), range(2, 18, 3)
@@ -173,7 +173,7 @@ Considerations:
 * labels(null) returns null.
 
 Query:
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
 	MATCH (a)
@@ -231,7 +231,7 @@ Considerations:
 * relationships(null) returns null.
 
 Query:
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
 	MATCH p = (a)-[]->(b)-[]->(c)

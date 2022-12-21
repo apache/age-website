@@ -10,7 +10,7 @@ A create clause that is not followed by another clause is called a terminal clau
 Query
 
 
-```
+```postgresql
 SELECT * 
 FROM cypher('graph_name', $$
     CREATE /* Create clause here, no following clause */
@@ -37,7 +37,7 @@ Creating a single vertex is done by issuing the following query.
 Query
 
 
-```
+```postgresql
 SELECT * 
 FROM cypher('graph_name', $$
     CREATE (n)
@@ -68,7 +68,7 @@ Creating multiple vertices is done by separating them with a comma.
 Query
 
 
-```
+```postgresql
 SELECT * 
 FROM cypher('graph_name', $$
     CREATE (n), (m)
@@ -99,7 +99,7 @@ To add a label when creating a vertex, use the syntax below.
 Query
 
 
-```
+```postgresql
 SELECT * 
 FROM cypher('graph_name', $$
     CREATE (:Person)
@@ -132,7 +132,7 @@ When creating a new vertex with labels, you can add properties at the same time.
 Query
 
 
-```
+```postgresql
 SELECT * 
 FROM cypher('graph_name', $$
     CREATE (:Person {name: 'Andres', title: 'Developer')
@@ -165,7 +165,7 @@ Creating a single node is done by issuing the following query.
 Query
 
 
-```
+```postgresql
 SELECT * 
 FROM cypher('graph_name', $$
     CREATE (a {name: 'Andres')
@@ -201,7 +201,7 @@ To create an edge between two vertices, we first get the two vertices. Once the 
 Query
 
 
-```
+```postgresql
 SELECT * 
 FROM cypher('graph_name', $$
     MATCH (a:Person), (b:Person)
@@ -241,7 +241,7 @@ Setting properties on edges is done in a similar manner to how it’s done when 
 Query
 
 
-```
+```postgresql
 SELECT * 
 FROM cypher('graph_name', $$
     MATCH (a:Person), (b:Person)
@@ -281,7 +281,7 @@ When you use CREATE and a pattern, all parts of the pattern that are not already
 Query
 
 
-```
+```postgresql
 SELECT * 
 FROM cypher('graph_name', $$
     CREATE p = (andres {name:'Andres'})-[:WORKS_AT]->(neo)<-[:WORKS_AT]-(michael {name:'Michael'})

@@ -39,7 +39,7 @@ Considerations:
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     MATCH (a)
@@ -118,7 +118,7 @@ Considerations:
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     MATCH ()-[e]->()
@@ -195,7 +195,7 @@ Arguments:
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     MATCH ()-[e]->()
@@ -274,7 +274,7 @@ Considerations:
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     MATCH ()-[e]->()
@@ -345,7 +345,7 @@ Considerations:
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     CREATE (p:Person {name: 'Stefan', city: 'Berlin'})
@@ -417,7 +417,7 @@ Considerations:
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
    MATCH (a)
@@ -496,7 +496,7 @@ Considerations:
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
 MATCH (a)
@@ -570,7 +570,7 @@ Considerations:length(null) returns null.
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
    MATCH p = (a)-[]->(b)-[]->(c)
@@ -652,7 +652,7 @@ Considerations:
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN size(['Alice', 'Bob'])
@@ -724,7 +724,7 @@ Considerations:
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     MATCH (x:Developer)-[r]-()
@@ -799,7 +799,7 @@ Considerations:
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     MATCH (x:Developer)-[r]-()
@@ -855,7 +855,7 @@ Considerations:
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN timestamp()
@@ -929,7 +929,7 @@ Considerations:
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN toBoolean('TRUE'), toBoolean('not a boolean')
@@ -997,7 +997,7 @@ Considerations:
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN toFloat('11.5'), toFloat('not a number')
@@ -1073,7 +1073,7 @@ Considerations:
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
      RETURN toInteger('42'), toInteger('not a number')
@@ -1147,7 +1147,7 @@ Considerations:
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
 MATCH (a)

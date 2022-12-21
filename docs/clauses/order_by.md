@@ -18,7 +18,7 @@ ORDER BY is used to sort the output.
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     MATCH (n)
@@ -74,7 +74,7 @@ You can order by multiple properties by stating each variable in the ORDER BY cl
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     MATCH (n)
@@ -130,7 +130,7 @@ By adding DESC[ENDING] after the variable to sort on, the sort will be done in r
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     MATCH (n)
@@ -186,7 +186,7 @@ When sorting the result set, null will always come at the end of the result set 
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     MATCH (n)
