@@ -167,7 +167,7 @@ export const IndexPageTemplate = ({
           <Ageinfos />
           <hr style={{ border: 'solid 1px #9F1A61', margin: '2rem 0', opacity: '0.2' }} />
           <div className={styles.content}>
-            <h2>Top Contributors for the Past 7 Days</h2>
+            <h2>Top GitHub Contributors</h2>
             <p></p>
             <AgeContributors />
           </div>

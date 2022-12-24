@@ -13,7 +13,7 @@
   opacity: 1;
   .Contributors {
     width: 100%;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.8rem;
     border: 0.25rem solid $thirdColor;
     border-radius: 1.625rem;
     box-shadow: 0rem 0rem 1.5rem #cf0e5330;
@@ -45,8 +45,14 @@
         justify-content: center;
         >p {
             margin: 0;
+            width: 40px;
+            height: 40px;
         }
-
+        >img {
+          width: 40px;
+          height: 35px;
+          object-fit: contain;
+        }
         .Avatar {
             border-radius: 50%;
             object-fit: contain;
@@ -65,6 +71,15 @@
             text-overflow: ellipsis;
             overflow: hidden;
         }
+    }
+  }
+  .Weeks {
+    text-align: center;
+    padding: 1rem;
+    >p {
+      font-size: 1.88rem;
+      font-weight: bold;
+      margin: 0;
     }
   }
 }

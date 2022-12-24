@@ -1,6 +1,22 @@
+const getDates = (isLast) => {
+  let dates = [];
+  const currentDate = new Date();
 
-async function getViewerPullRequestStateSetter(setPullRequestInfo) {
-    const response =  await fetch('https://api.github.com/repos/apache/age-viewer/pulls?state=open',
+  for(let i=0; i<7; i++) {
+    const lastWeek = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() + (i - (currentDate.getDay() - 1)) - isLast);
+    const year = lastWeek.getFullYear();
+    const month = Number(lastWeek.getMonth()) + 1;
+    const day = lastWeek.getDate();
+
+    month = String(month).length === 1 ? '0' + month : month;
+    day = String(day).length === 1 ? '0' + day : day;
+    dates.push(year + '-' + month + '-' + day);
+  }
+  return dates;
+}
+
+async function getPullRequestStateSetter(setPullRequestInfo,repo,state) {
+    const response =  await fetch(`https://api.github.com/repos/apache/${repo}/pulls?state=${state}`,
     {
       method: 'GET',
       headers: {
@@ -9,13 +25,17 @@ async function getViewerPullRequestStateSetter(setPullRequestInfo) {
       },
     }) 
     if(response.ok) {
-      const res = await response.json();   
-      const requestors = [];
-      const currentDate = new Date();
+      const res = await response.json();
+      const status = state === 'open' ? 'created_at' : 'merged_at'  
+      let requestors = [];
+      let lastWeeks = getDates(7);
+      let thisWeeks = getDates(0);
       res.map((info) => {
-        const createdDate = new Date(info.created_at);
-        const diffDate = currentDate.getTime() - createdDate.getTime();
-        if(Math.abs(diffDate / (1000*60*60*24)) < 8) requestors.push({login:info.user.login, avatar: info.user.avatar_url, html: info.user.html_url});
+        if (info[status] && lastWeeks.includes(info[status].split('T')[0])) {
+          requestors.push({login:info.user.login, avatar: info.user.avatar_url, html: info.user.html_url, isLast: true});
+         } else if (info[status] && thisWeeks.includes(info[status].split('T')[0])) {
+          requestors.push({login:info.user.login, avatar: info.user.avatar_url, html: info.user.html_url, isLast: false});
+         }
       });
 
       setPullRequestInfo(requestors);
@@ -23,83 +43,8 @@ async function getViewerPullRequestStateSetter(setPullRequestInfo) {
       
     }
 }
-
-async function getAgePullRequestStateSetter(setPullRequestInfo) {
-    const response =  await fetch('https://api.github.com/repos/apache/age/pulls?state=open',
-    {
-      method: 'GET',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-    }) 
-    if(response.ok) {
-      const res = await response.json();   
-      const requestors = [];
-      const currentDate = new Date();
-      res.map((info) => {
-        const createdDate = new Date(info.created_at);
-        const diffDate = currentDate.getTime() - createdDate.getTime();
-        if(Math.abs(diffDate / (1000*60*60*24)) < 8) requestors.push({login:info.user.login, avatar: info.user.avatar_url, html: info.user.html_url});
-      });
-
-      setPullRequestInfo(requestors);
-      return true;
-      
-    }
-}
-
-async function getViewerClosedPullRequestStateSetter(setPullRequestInfo) {
-    const response =  await fetch('https://api.github.com/repos/apache/age-viewer/pulls?state=closed',
-    {
-      method: 'GET',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-    }) 
-    if(response.ok) {
-      const res = await response.json();   
-      const requestors = [];
-      const currentDate = new Date();
-      res.map((info) => {
-        const closedDate = new Date(info.closed_at);
-        const diffDate = currentDate.getTime() - closedDate.getTime();
-        if(info.merged_at && Math.abs(diffDate / (1000*60*60*24)) < 8) requestors.push({login:info.user.login, avatar: info.user.avatar_url, html: info.user.html_url});
-      });
-      setPullRequestInfo(requestors);
-      return true;
-    }
-}
-
-async function getAgeClosedPullRequestStateSetter(setPullRequestInfo) {
-    const response =  await fetch('https://api.github.com/repos/apache/age/pulls?state=closed',
-    {
-      method: 'GET',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-    }) 
-    if(response.ok) {
-      const res = await response.json();   
-      const requestors = [];
-      const currentDate = new Date();
-      res.map((info) => {
-        const closedDate = new Date(info.closed_at);
-        const diffDate = currentDate.getTime() - closedDate.getTime();
-        if(info.merged_at && Math.abs(diffDate / (1000*60*60*24)) < 8) requestors.push({login:info.user.login, avatar: info.user.avatar_url, html: info.user.html_url});
-      });
-      setPullRequestInfo(requestors);
-      return true;
-    }
-}
-
 const manager = {
-    getViewerPullRequestStateSetter,
-    getAgePullRequestStateSetter,
-    getViewerClosedPullRequestStateSetter,
-    getAgeClosedPullRequestStateSetter,
+    getPullRequestStateSetter,
 };
 
 export default manager;
