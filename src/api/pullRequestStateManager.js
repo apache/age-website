@@ -16,7 +16,7 @@ const getDates = (isLast) => {
 }
 
 async function getPullRequestStateSetter(setPullRequestInfo,repo,state) {
-    const response =  await fetch(`https://api.github.com/repos/apache/${repo}/pulls?state=${state}`,
+    const response =  await fetch(`https://api.github.com/repos/apache/${repo}/pulls?state=${state}&per_page=1000`,
     {
       method: 'GET',
       headers: {
