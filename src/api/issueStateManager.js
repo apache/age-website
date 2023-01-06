@@ -16,7 +16,7 @@ const getDates = (isLast) => {
 }
 
 async function getIssuesStateSetter(setIssueInfo,repo,state) {
-  const response =  await fetch(`https://api.github.com/repos/apache/${repo}/issues?state=${state}`,
+  const response =  await fetch(`https://api.github.com/repos/apache/${repo}/issues?state=${state}&per_page=1000`,
   {
     method: 'GET',
     headers: {
