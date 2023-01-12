@@ -409,7 +409,7 @@ Which is equivalent to:
 (u)-[]->()-[]->()-[]->()-[]->()-[]->(v)
 ```
 
-The previous example provided gave the edge both an lower and upper bound for the number of edges (and vertices) between u and v. Either one or both of these binding values can be excluded
+The previous example provided gave the edge both lower and upper bounds for the number of edges (and vertices) between u and v. Either one or both of these binding values can be excluded
 
 
 ```
