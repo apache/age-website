@@ -22,7 +22,7 @@ Query:
 SELECT *
 FROM cypher('graph_name', $$
     RETURN rand()
-$$) as (r agtype);
+$$) as (random agtype);
 ```
 
 
