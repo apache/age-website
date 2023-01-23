@@ -190,7 +190,7 @@ const Contributors = () => {
                                     <ContributorsList index={index} user={user} avatar={ageAvatar[user]?.avatar} html={ageAvatar[user]?.html} last={false} icon={false}/>
                                 ))}
                                 {isAgeE && ageThisRestTPC.map((user,index) => (
-                                    <ContributorsList index={index+1} user={user} avatar={ageAvatar[user]?.avatar} html={ageAvatar[user]?.html} last={true} icon={false}/>
+                                    <ContributorsList index={index+5} user={user} avatar={ageAvatar[user]?.avatar} html={ageAvatar[user]?.html} last={true} icon={false}/>
                                 ))}
                             </div>  
                         </div>
@@ -212,7 +212,7 @@ const Contributors = () => {
                                     <ContributorsList index={index} user={user} avatar={viewerAvatar[user]?.avatar} html={viewerAvatar[user]?.html} last={false} icon={false} />
                                 ))}
                                 {isViewerE && viewerThisRestTPC.map((user,index) => (
-                                    <ContributorsList index={index+1} user={user} avatar={viewerAvatar[user]?.avatar} html={viewerAvatar[user]?.html} last={true} icon={false}/>
+                                    <ContributorsList index={index+5} user={user} avatar={viewerAvatar[user]?.avatar} html={viewerAvatar[user]?.html} last={true} icon={false}/>
                                 ))}
                             </div>
                         </div>
