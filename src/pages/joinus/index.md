@@ -19,9 +19,9 @@ title: Join AGE Community!
 
 <div>
 
-## Generate a discussion & Fix a bug
+## Generate a Discussion
 
-Ask your AGE-related questions, open various types of discussions, and share your ideas in <a href="https://discord.com/invite/NMsBs9X8Ss/">AGE Discord</a>, <a href="https://www.reddit.com/r/apacheage/">Reddit</a>, <a href="https://github.com/apache/age">GitHub</a>, and/or <a href="https://stackoverflow.com">StackOverflow</a> using the [apache-age] tag.
+Ask your AGE-related questions, open various types of discussions, and share your ideas in <a href="https://discord.com/invite/NMsBs9X8Ss/">AGE Discord</a>, <a href="https://www.reddit.com/r/apacheage/">Reddit</a>, <a href="https://github.com/apache/age">GitHub</a>, and/or <a href="https://stackoverflow.com/questions/tagged/apache-age">StackOverflow</a> using the [apache-age] tag.
 
 </div>
 
@@ -64,18 +64,6 @@ Join the official Apache AGE user and developer mailing lists. You can get user 
 ## Twitter account
 
 Follow <a href="https://twitter.com/apache_age?s=20&t=7Hu8Txk4vjvuEp-ryakacg">@apache_age</a> on Twitter for the most recent news on the project and community!
-
-</div>
-
-<div>
-<img src="/img/icon-Large-linkedin.png"/>
-</div>
-
-<div>
-
-## LinkedIn
-
-Follow the <a href="https://www.linkedin.com/showcase/apache-age/?viewAsMember=true">Apache AGE</a> account for the newest information or events on the project and community.
 
 </div>
 
