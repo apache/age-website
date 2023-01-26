@@ -48,7 +48,7 @@ Result:
 
 #### Agtype NULL vs Postgres NULL
 
-The concept of NULL in Agtype and Postgres is same as it is in Cypher.
+The concept of NULL in Agtype and Postgres is the same as it is in Cypher.
 
 ### Integer
 
