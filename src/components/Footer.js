@@ -145,13 +145,6 @@ const Footer = class extends React.Component {
                 style={{ width: '2.5em', height: '2.5em' }}
               />
             </a>
-            <a title="LinkedIn" href="https://www.linkedin.com/showcase/71336827/admin/" target={'_blank'}>
-              <img
-                src={icoLinkedinLd}
-                alt="LinkedIn"
-                style={{ width: '2.5em', height: '2.5em' }}
-              />
-            </a>
             <a title="Youtube" href="https://youtu.be/qC_3F4Gaipk" target={'_blank'}>
               <img
                 src={icoYoutubeLd}
