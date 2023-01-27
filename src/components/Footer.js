@@ -1,14 +1,8 @@
 import * as React from 'react';
 // import { Link } from 'gatsby';
 // images
-import icoGithub from '../img/social/icon-Pagegithub.png';
-import icoTwitter from '../img/social/icon-Pagetwitter.png';
-import icoLinkedin from '../img/social/icon-Pagelinkedin.png';
-import icoYoutube from '../img/social/icon-Pageyoutube.png';
-
 import icoGithubLd from '../../static/img/icon-github.png';
 import icoTwitterLd from '../../static/img/icon-twitter.png';
-import icoLinkedinLd from '../../static/img/icon-linkedin.png';
 import icoYoutubeLd from '../../static/img/icon-youtube.png';
 import icoDiscordLd from '../../static/img/icon-discord.png';
 
@@ -27,8 +21,8 @@ const Footer = class extends React.Component {
         const links = document.getElementsByClassName('FooterLinks')[0].children;
         links[0].children[0].src = icoGithubLd;
         links[1].children[0].src = icoTwitterLd;
-        links[2].children[0].src = icoLinkedinLd;
-        links[3].children[0].src = icoYoutubeLd;
+        links[2].children[0].src = icoYoutubeLd;
+        links[3].children[0].src = icoDiscordLd;
       }
     }
   }
