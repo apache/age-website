@@ -22,7 +22,7 @@ Query:
 SELECT *
 FROM cypher('graph_name', $$
     RETURN rand()
-$$) as (r agtype);
+$$) as (random_number agtype);
 ```
 
 
@@ -33,7 +33,7 @@ Result:
 
 <table>
   <tr>
-   <td>r
+   <td>random_number
    </td>
   </tr>
   <tr>
@@ -176,7 +176,7 @@ Query:
 SELECT *
 FROM cypher('graph_name', $$
     RETURN ceil(0.1)
-$$) as (cil agtype);
+$$) as (ceil_value agtype);
 ```
 
 
@@ -187,7 +187,7 @@ Result:
 
 <table>
   <tr>
-   <td> cil
+   <td> ceil_value
    </td>
   </tr>
   <tr>
