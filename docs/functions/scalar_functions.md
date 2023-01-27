@@ -614,7 +614,7 @@ Results:
 
 size() returns the length of a list.
 
-Syntax:`size(path)`
+Syntax:`size(list)`
 
 Returns:
 
