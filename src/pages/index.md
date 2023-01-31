@@ -5,6 +5,6 @@ bannerImg: /img/landing-banner.jpg
 bannerContents: >-
   <h1 class="bannerHeader"><span>Apache AGE  :</span> <br/>
   Graph Processing & Analytics 
-  <br>for RDBs
+  <br>for Relational Databases
   </h1>
   
