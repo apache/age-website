@@ -35,7 +35,7 @@ Through Apache AGE, PostgreSQL users will gain access to graph query modeling wi
 
 Users can read and write graph data in nodes and edges. They can also use various algorithms such as variable length and edge traversal when analyzing data.</description>
     <mailing-list rdf:resource="https://lists.apache.org/list.html?dev@age.apache.org" />
-    <download-page rdf:resource="https://age.apache.org/?l=versions#" />
+    <download-page rdf:resource="https://age.apache.org/download?" />
     <programming-language>C</programming-language>
     <category rdf:resource="https://projects.apache.org/category/database" />
     <maintainer>
