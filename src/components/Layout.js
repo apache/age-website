@@ -35,20 +35,25 @@ const TemplateWrapper = ({ children }) => {
   };
 
   const titleNameMapper = () => {
-    const pathName = window.location.pathname;
-    const urlToTitle = {
-      '/overview' : 'Overview | Apache AGE',
-      '/team' : 'Team | Apache AGE',
-      '/release-notes' : 'Release Notes | Apache AGE',
-      '/joinus' : 'Community | Apache AGE',
-      '/contribution/how' : 'Contribution | Apache AGE',
-      '/contribution/guide' : 'Code Convention | Apache AGE',
-      '/contribution/volunteers' : 'Volunteer Guideline | Apache AGE',
-      '/contribution/requirements' : 'Committer Requirements | Apache AGE',
-      '/contribution/process' : 'Release Process | Apache AGE',
-      '/download' : 'Download | Apache AGE',
-    }
-    return urlToTitle[pathName] ?? 'Apache AGE';    
+    const isBrowser = typeof window !== 'undefined';
+    if (isBrowser) {
+      const pathName = window.location.pathname;
+      const urlToTitle = {
+        '/overview' : 'Overview | Apache AGE',
+        '/team' : 'Team | Apache AGE',
+        '/release-notes' : 'Release Notes | Apache AGE',
+        '/joinus' : 'Community | Apache AGE',
+        '/contribution/how' : 'Contribution | Apache AGE',
+        '/contribution/guide' : 'Code Convention | Apache AGE',
+        '/contribution/volunteers' : 'Volunteer Guideline | Apache AGE',
+        '/contribution/requirements' : 'Committer Requirements | Apache AGE',
+        '/contribution/process' : 'Release Process | Apache AGE',
+        '/download' : 'Download | Apache AGE',
+      }
+      return urlToTitle[pathName] ?? 'Apache AGE';    
+    } else {
+      return 'Apache AGE';
+    }    
   }
 
   return (
