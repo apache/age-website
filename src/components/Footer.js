@@ -50,12 +50,18 @@ const Footer = class extends React.Component {
               <a href="/joinus">Join AGE Community</a>
             </li>
             <li>
+              <a href="https://discord.com/invite/NMsBs9X8Ss" target='_blank'>AGE Discord</a>
+            </li>
+            <li>
               <a href="https://www.reddit.com/r/apacheage/" target='_blank'>
                 AGE Forum
               </a>
             </li>
             <li>
               <a href="https://github.com/apache/age/projects" target='_blank'>AGE Project</a>
+            </li>
+            <li>
+              <a href="https://github.com/apache/age-viewer/projects" target='_blank'>AGE Viewer Project</a>
             </li>
           </ul>
           <ul className={`${styles.Item} Item`}>

@@ -3,6 +3,14 @@ templateKey: docs-template
 path: /download
 title: Downloads
 ---
+<div style="text-align: center; margin-bottom: 5rem;">
+
+## Download AGE release for PostgreSQL 11.
+ 
+## The current stable version and the latest release of the graph extension is 1.1.0. 
+
+</div>
+
 | Apache AGE Release | CheckSum & Signature |
 | ------------------ | -------------------- |
 | [Download Apache AGE 1.1.0 ➚](https://dlcdn.apache.org/age/1.1.0/apache-age-1.1.0-src.tar.gz) | [CheckSum ➚](https://dlcdn.apache.org/age/1.1.0/apache-age-1.1.0-src.tar.gz.sha512) & [Signature ➚](https://dlcdn.apache.org/age/1.1.0/apache-age-1.1.0-src.tar.gz.asc) |

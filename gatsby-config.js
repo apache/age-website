@@ -1,8 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: "Apache AGE Community",
-    description:
-      "This repo contains an example business website that is built with Gatsby, and Netlify CMS.It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution.",
+    title: "Apache AGE",
+    description: "AGE was under development since 2019 by a team of engineers at Bitnine Global Inc. The project, originally born out of AgensGraph, a multi-model graph database fork of PostgreSQL, was donated to the Apache Software Foundation and entered incubation in April 2020.",
   },
   pathPrefix: "/",
   plugins: [

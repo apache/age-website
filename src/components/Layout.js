@@ -34,13 +34,30 @@ const TemplateWrapper = ({ children }) => {
     gtag('config', 'G-VPCE2QF63F');
   };
 
+  const titleNameMapper = () => {
+    const pathName = window.location.pathname;
+    const urlToTitle = {
+      '/overview' : 'Overview | Apache AGE',
+      '/team' : 'Team | Apache AGE',
+      '/release-notes' : 'Release Notes | Apache AGE',
+      '/joinus' : 'Community | Apache AGE',
+      '/contribution/how' : 'Contribution | Apache AGE',
+      '/contribution/guide' : 'Code Convention | Apache AGE',
+      '/contribution/volunteers' : 'Volunteer Guideline | Apache AGE',
+      '/contribution/requirements' : 'Committer Requirements | Apache AGE',
+      '/contribution/process' : 'Release Process | Apache AGE',
+      '/download' : 'Download | Apache AGE',
+    }
+    return urlToTitle[pathName] ?? 'Apache AGE';    
+  }
+
   return (
     <MainContext.Consumer>
       {(mainContex) => (
         <>
           <Helmet>
             <html lang="en" />
-            <title>{title}</title>
+            <title>{titleNameMapper()}</title>
             <link rel="icon" href={favicon} />
             <meta name="description" content={description} />
             {/* Global site tag (gtag.js) - Google Analytics */}

@@ -18,6 +18,7 @@ export const OverviewTemplate = ({
   bannerImg,
   bannerContents,
   title,
+  description,
   content,
   subcontent,
   contentComponent,
@@ -39,6 +40,7 @@ export const OverviewTemplate = ({
         />
       </div>
       <section className={styles.root}>
+        <p className={styles.description}>{description}</p>
         <h1>{title}</h1>
         <PageContent className="Overview" content={content} />
         <HowToAge />
@@ -79,6 +81,7 @@ export const OverviewTemplate = ({
 OverviewTemplate.propTypes = {
   bannerImg: PropTypes.string,
   title: PropTypes.string.isRequired,
+  description: PropTypes.string,
   content: PropTypes.string,
   subcontent: PropTypes.string,
   contentComponent: PropTypes.func,
@@ -93,6 +96,7 @@ const OverView = ({ data }) => {
         bannerImg={post.frontmatter.bannerImg}
         bannerContents={post.frontmatter.bannerContents}
         title={post.frontmatter.title}
+        description={post.frontmatter.description}
         content={post.html}
         subcontent={post.frontmatter.subcon}
         contentComponent={HTMLContent}
@@ -119,6 +123,7 @@ export const aboutPageQuery = graphql`
         }
         bannerContents
         title
+        description
         subcon
       }
     }

@@ -1,8 +1,15 @@
 ---
 templateKey: overview-page
 path: /about
+description: >-
+  AGE was under development since 2019 by a team of engineers at Bitnine Global Inc. The project, originally born out
+  of AgensGraph, a multi-model graph database fork of PostgreSQL, was donated to the Apache Software Foundation and entered
+  incubation in April 2020.
 bannerImg: /img/banner-overview.jpg
-bannerContents: '# AGE (A Graph Extension)'
+bannerContents: >-
+  # Introduction of AGE
+  
+  # (A Graph Extension)
 title: What is Apache AGE®?
 subcon: >-
   <br /><br />
@@ -41,9 +48,7 @@ subcon: >-
 
 Below is a brief overview of the AGE architecture, similar to the PostgreSQL architecture and backend. Every component runs on the PostgreSQL transaction cache layer and storage layer.
 
-\* Support for PostgreSQL 13 will be implemented in Q1 2023. Support for PostgreSQL 14 & 15 will be added by the end of Q1 2023.
-
-**Apache AGE®** will be compatible with all relational databases in the future development, starting with MySQL and MariaDB.
+**Apache AGE®** will be compatible with all relational databases in the future development, starting with MariaDB and MySQL.
 
 <br /><br /><br />
 

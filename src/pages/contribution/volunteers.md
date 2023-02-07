@@ -51,7 +51,7 @@ title: Volunteer Guidelines
     <li>
       <p>Notify the mentor of any health and safety issues or potentially
         hazardous situations that may pose a risk to you or others and report
-        any accidents or incidents relating to Apache AGE community members
+        any accidents or incidents relating to Apache AGE members
         including mentors, supervisors and other volunteers</p>
     </li>
     <li>
@@ -186,7 +186,7 @@ title: Volunteer Guidelines
   <p>For more detailed information, please visit Apache AGE website at <a
       href="https://age.apache.org/">https://age.apache.org/</a>.</p>
   <p>To show your support for Apache AGE and AGE Viewer, please subscribe
-    to the Apache AGE mailing lists and join the Apache AGE community
+    to the Apache AGE mailing lists and join the Apache AGE
     discussion forum at <a href="https://www.reddit.com/r/apacheage/">https://www.reddit.com/r/apacheage/</a></p>
   <br /><br />
   <p><strong>Volunteer benefits and feedbacks</strong></p>

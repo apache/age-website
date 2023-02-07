@@ -1,6 +1,12 @@
 @import '../../common/variable.scss';
 
-.root {   
+.root {  
+  // description for seo
+  .description {
+    font: $h6;
+    color: $textColor;
+  }
+
   // 제목
   h1 {
     font: $h1;
@@ -39,7 +45,13 @@
   padding: 1rem;
   .bannerContent {
     h1 {
+      text-align: center;
+      margin: 0;
       font: $landing;
+      color: $primayrColor;
+    }
+    h1:nth-child(2) {
+      font-size: 3rem;
       color: $primayrColor;
     }
   }
