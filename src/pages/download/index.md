@@ -13,7 +13,7 @@ title: Downloads
 
 | Apache AGE Release | CheckSum & Signature |
 | ------------------ | -------------------- |
-| [Download Apache AGE 1.1.1 ➚](https://downloads.apache.org/age/PG12/1.1.1/) | [CheckSum ➚](https://downloads.apache.org/age/PG12/1.1.1/apache-age-1.1.1-src.tar.gz.sha512) & [Signature ➚](https://downloads.apache.org/age/PG12/1.1.1/apache-age-1.1.1-src.tar.gz.asc) |
+| [Download Apache AGE 1.1.1 ➚](https://downloads.apache.org/age/PG12/1.1.1/apache-age-1.1.1-src.tar.gz) | [CheckSum ➚](https://downloads.apache.org/age/PG12/1.1.1/apache-age-1.1.1-src.tar.gz.sha512) & [Signature ➚](https://downloads.apache.org/age/PG12/1.1.1/apache-age-1.1.1-src.tar.gz.asc) |
 
 
 <br/><br/>
@@ -42,4 +42,4 @@ title: Downloads
 
 | Apache AGE Viewer Release | CheckSum & Signature             |
 | ------------------------- | -------------------------------- |
-| [Download Apache AGE 1.0.0 ➚](https://github.com/apache/age-viewer/archive/refs/tags/v1.0.0-rc2.tar.gz) | [CheckSum ➚](https://downloads.apache.org/incubator/age/viewer/1.0.0/apache-age-viewer-1.0.0-incubating-src.tar.gz.sha512)& [Signature ➚](https://downloads.apache.org/incubator/age/viewer/1.0.0/apache-age-viewer-1.0.0-incubating-src.tar.gz.asc) & [Key Files ➚](https://downloads.apache.org/age/KEYS) |
+| [Download Apache Viewer AGE 1.0.0 ➚](https://github.com/apache/age-viewer/archive/refs/tags/v1.0.0-rc2.tar.gz) | [CheckSum ➚](https://downloads.apache.org/incubator/age/viewer/1.0.0/apache-age-viewer-1.0.0-incubating-src.tar.gz.sha512)& [Signature ➚](https://downloads.apache.org/incubator/age/viewer/1.0.0/apache-age-viewer-1.0.0-incubating-src.tar.gz.asc) & [Key Files ➚](https://downloads.apache.org/age/KEYS) |
