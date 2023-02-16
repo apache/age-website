@@ -7085,6 +7085,13 @@ gatsby-parcel-config@0.10.1:
     "@parcel/transformer-raw" "2.6.2"
     "@parcel/transformer-react-refresh-wrap" "2.6.2"
 
+gatsby-plugin-copy-files@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-copy-files/-/gatsby-plugin-copy-files-1.1.0.tgz#ec6870ae656326945b8ce0afe881cae8073c8492"
+  integrity sha512-yjrlw3r+7skfZYSH9fdcdeKVIFTrah3zdoVblGLN0npEWQc/TZGsWVVMj8bOD+6MhBzDu0/UmBdosemVN2izqg==
+  dependencies:
+    fs-extra "^4.0.0"
+
 gatsby-plugin-image@^2.0.0:
   version "2.19.0"
   resolved "https://registry.npmjs.org/gatsby-plugin-image/-/gatsby-plugin-image-2.19.0.tgz"
