@@ -103,6 +103,60 @@ Example:
 SELECT * FROM ag_catalog.drop_graph('graph_name', true);
 ```
 
+
+## List all Graphs
+
+To list all existing graphs, use ag_graph, located in the ag_catalog namespace.
+
+
+### ag_graph
+
+Syntax: `ag_graph;`
+
+Returns:
+
+
+<table>
+  <tr>
+   <td>Name
+   </td>
+   <td>Namespace
+   </td>
+  </tr>
+  <tr>
+   <td>graph_name
+   </td>
+   <td>graph_name
+   </td>
+  </tr>
+  <tr>
+    <td colspan="2">(2 rows)</td>
+  </tr>
+</table>
+
+Arguments:
+
+
+```
+Not Required
+```
+
+
+Considerations
+
+
+
+* This will return the list of names of graphs which are already exisiting.
+
+
+Example:
+
+```postgresql
+SELECT * FROM ag_catalog.ag_graph;
+```
+
+
+
 ## A Cypher Graph vs A Postgres Namespace
 
 Cypher uses a Postgres namespace for every individual graph. It is recommended that no DML or DDL commands are executed in the namespace that is reserved for the graph. 
