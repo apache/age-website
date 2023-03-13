@@ -19,7 +19,7 @@ SELECT *
 FROM cypher('graph_name', $$
 	MATCH (david {name: 'David'})-[]-(otherPerson)-[]->()
 	WITH otherPerson, count(*) AS foaf
-	WHERE foaf > 1RETURN otherPerson.name
+	WHERE foaf > 1
 	RETURN otherPerson.name
 $$) as (name agtype);
 ```
