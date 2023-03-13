@@ -10,6 +10,12 @@
 
 * Install requirements (the latex and dvisvgm commands are required to display math)
 
+- **MacOS**
+```shell
+brew install python3 virtualenv texlive
+```
+
+- **Ubuntu**
 ```shell
 sudo apt install python3 virtualenv texlive-latex-base texlive-latex-extra texlive-extra-utils
 ```

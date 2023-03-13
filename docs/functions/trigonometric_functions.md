@@ -309,7 +309,7 @@ Query:
 ```postgresql
 SELECT *
 FROM cypher('graph_name', $$
-    RETURN cosin(0.5)
+    RETURN cos(0.5)
 $$) as (c agtype);
 ```
 
