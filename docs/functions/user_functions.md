@@ -11,7 +11,7 @@ Query
 SELECT *
 FROM cypher('graph_name', $$
 RETURN pg_catalog.sqrt(25)
-$$ as (result agtype);
+$$) as (result agtype);
 ```
 
 
