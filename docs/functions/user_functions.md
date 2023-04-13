@@ -10,7 +10,7 @@ Query
 ```postgresql
 SELECT *
 FROM cypher('graph_name', $$
-RETURN pg_catalog.sqrt(25)
+RETURN sqrt(25)
 $$) as (result agtype);
 ```
 
