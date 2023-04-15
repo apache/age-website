@@ -87,7 +87,7 @@ Result:
    </td>
   </tr>
   <tr>
-   <td>2123e1af756543542064ae0d07792be90176b311be
+   <td>13
    </td>
   </tr>
   <tr>
@@ -352,7 +352,7 @@ SELECT *
 FROM cypher('graph_name', $$
     MATCH (n:Person)
     RETURN stDevP(n.age)
-$$ as (stdevp_age agtype);
+$$) as (stdevp_age agtype);
 ```
 
 
@@ -432,7 +432,7 @@ SELECT *
 FROM cypher('graph_name', $$
     MATCH (n:Person)
     RETURN percentileCont(n.age, 0.4)
-$$ as (percentile_cont_age agtype);
+$$) as (percentile_cont_age agtype);
 ```
 
 
@@ -512,7 +512,7 @@ SELECT *
 FROM cypher('graph_name', $$
     MATCH (n:Person)
     RETURN percentileDisc(n.age, 0.5)
-$$ as (percentile_disc_age agtype);
+$$) as (percentile_disc_age agtype);
 ```
 
 
@@ -590,7 +590,7 @@ SELECT *
 FROM cypher('graph_name', $$
     MATCH (n {name: 'A'})-[]->(x)
     RETURN n.age, count(*)
-$$ as (age agtype, number_of_people agtype);
+$$) as (age agtype, number_of_people agtype);
 ```
 
 The labels and age property of the start node n and the number of nodes related to n are returned.
@@ -624,7 +624,7 @@ SELECT *
 FROM cypher('graph_name', $$
     MATCH (n {name: 'A'})-[r]->()
     RETURN type(r), count(*)
-$$ as (label agtype, count agtype);
+$$) as (label agtype, count agtype);
 ```
 
 
@@ -890,7 +890,7 @@ SELECT *
 FROM cypher('graph_name', $$
 MATCH (n:Person)
 RETURN sum(n.age)
-$$ as (total_age agtype);
+$$) as (total_age agtype);
 ```
 
 
