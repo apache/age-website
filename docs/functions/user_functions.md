@@ -10,8 +10,8 @@ Query
 ```postgresql
 SELECT *
 FROM cypher('graph_name', $$
-RETURN pg_catalog.sqrt(25)
-$$ as (result agtype);
+RETURN pg_catalog.sqrt(25::pg_bigint)
+$$) as (result agtype);
 ```
 
 
@@ -24,7 +24,7 @@ Result:
    </td>
   </tr>
   <tr>
-   <td>25
+   <td>5
    </td>
   </tr>
   <tr>
