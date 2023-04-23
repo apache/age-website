@@ -74,7 +74,7 @@ SET search_path TO ag_catalog;
 SELECT create_graph('agload_test_graph');
 ```
 
-- Create label `country` and load vertices from csv file. *** Note this CSV file has id field ***
+- Create label `Country` and load vertices from csv file. *** Note this CSV file has id field ***
 
 ```postgresql
 SELECT create_vlabel('agload_test_graph','Country');
@@ -117,7 +117,7 @@ SELECT COUNT(*) FROM cypher('agload_test_graph', $$MATCH (a)-[e]->(b) RETURN e$$
 
 ### Creating vertices without id field in the file. 
 
-- Create label `country` and load vertices from csv file. *** Note this CSV file has no id field ***
+- Create label `Country2` and load vertices from csv file. *** Note this CSV file has no id field ***
 
 ```postgresql
 SELECT create_vlabel('agload_test_graph','Country2');
@@ -127,7 +127,7 @@ SELECT load_labels_from_file('agload_test_graph',
                              false);
 ```
 
-- Create label `City` and load vertices from csv file. *** Note this CSV file has id field ***
+- Create label `City2` and load vertices from csv file. *** Note this CSV file has id field ***
 ```postgresql
 SELECT create_vlabel('agload_test_graph','City2');
 SELECT load_labels_from_file('agload_test_graph',
@@ -137,8 +137,8 @@ SELECT load_labels_from_file('agload_test_graph',
 ```
 - check if the graph has been loaded properly and perform difference analysis between ids created automatically and picked from the files.
 
-- labels `country` and `city` were created with id field in the file
-- labels `country2` and `city2` were created with no id field in the file. 
+- labels `Country` and `City` were created with id field in the file
+- labels `Country2` and `City2` were created with no id field in the file. 
 ```postgresql
 SELECT COUNT(*) FROM agload_test_graph."Country2";
 SELECT COUNT(*) FROM agload_test_graph."City2";
