@@ -7,7 +7,7 @@ You can use the following instructions to create a graph from the files. This do
 
 
 User can load graph in two steps 
-- Load Vetices in the first step
+- Load Vertices in the first step
 - Load Edges in the second step
 
 **User must create graph and labels before loading data from files**
@@ -37,7 +37,7 @@ Function `load_edges_from_file` can be used to load properties from the CSV file
 Note: make sure that ids in the edge file are identical to ones that are in vertices files. 
 
 ```postgresql
-oad_edges_from_file('<graph name>',
+load_edges_from_file('<graph name>',
                     '<label name>',
                     '<file path>');
 ```
