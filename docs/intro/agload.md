@@ -80,7 +80,7 @@ SELECT create_graph('agload_test_graph');
 SELECT create_vlabel('agload_test_graph','Country');
 SELECT load_labels_from_file('agload_test_graph',
                              'Country',
-                             'age_load/countries.csv');
+                             'age_load/data/countries.csv');
 ```
 
 - Create label `City` and load vertices from csv file. *** Note this CSV file has id field ***
@@ -89,7 +89,7 @@ SELECT load_labels_from_file('agload_test_graph',
 SELECT create_vlabel('agload_test_graph','City');
 SELECT load_labels_from_file('agload_test_graph',
                              'City', 
-                             'age_load/cities.csv');
+                             'age_load/data/cities.csv');
 ```
 
 - Create label `has_city` and load edges from csv file.
@@ -97,7 +97,7 @@ SELECT load_labels_from_file('agload_test_graph',
 ```postgresql
 SELECT create_elabel('agload_test_graph','has_city');
 SELECT load_edges_from_file('agload_test_graph', 'has_city',
-     'age_load/edges.csv');
+     'age_load/data/edges.csv');
 ```
 
 - check if the graph has been loaded properly
@@ -123,7 +123,7 @@ SELECT COUNT(*) FROM cypher('agload_test_graph', $$MATCH (a)-[e]->(b) RETURN e$$
 SELECT create_vlabel('agload_test_graph','Country2');
 SELECT load_labels_from_file('agload_test_graph',
                              'Country2',
-                             'age_load/countries.csv', 
+                             'age_load/data/countries.csv', 
                              false);
 ```
 
@@ -132,7 +132,7 @@ SELECT load_labels_from_file('agload_test_graph',
 SELECT create_vlabel('agload_test_graph','City2');
 SELECT load_labels_from_file('agload_test_graph',
                              'City2',
-                             'age_load/cities.csv', 
+                             'age_load/data/cities.csv', 
                              false);
 ```
 - check if the graph has been loaded properly and perform difference analysis between ids created automatically and picked from the files.
