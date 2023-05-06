@@ -62,7 +62,7 @@ Considerations:
 
 
 * Any null values are excluded from the calculation.
-* In a mixed set, any string value is always considered to be lower than any numeric value, and anylist is always considered to be lower than any string.
+* In a mixed set, any string value is always considered to be lower than any numeric value, and any list is always considered to be lower than any string.
 * Lists are compared in dictionary order, i.e. list elements are compared pairwise in ascending order from the start of the list to the end.
 * min(null) returns null.
 
@@ -76,7 +76,7 @@ FROM cypher('graph_name', $$
     RETURN min(v.age)
 $$) as (min_age agtype);
 ```
-
+The lowest of all the values in the property age is returned.
 
 Result:
 
@@ -115,7 +115,7 @@ SELECT * FROM cypher('graph_name', $$
 $$) as (result agtype);
 
 SELECT * FROM cypher('graph_name', $$ 
-    CREATE (:min_test {val:['a', 'b', 23]})
+    CREATE (:min_test {val:[1, 'b', 23]})
 $$) as (result agtype);
 ```
 
@@ -132,7 +132,7 @@ $$) as (min_val agtype);
 ```
 
 
-The lowest of all the values in the set—in this case, the list ['a', 'c', 23]—is returned, as (i) the two lists are considered to be lower values than the string "d", and (ii) the string "a" is considered tobe a lower value than the numerical value 1.
+The lowest of all the values in the set—in this case, the list ['a', 'b', 23]—is returned, as (i) the two lists are considered to be lower values than the string "d", and (ii) the string "a" is considered to be a lower value than the numerical value 1.
 
 Result:
 
@@ -192,7 +192,7 @@ Considerations:
 
 
 * Any null values are excluded from the calculation.
-* In a mixed set, any numeric value is always considered to be higher than any string value, and anystring value is always considered to be higher than any list.
+* In a mixed set, any numeric value is always considered to be higher than any string value, and any string value is always considered to be higher than any list.
 * Lists are compared in dictionary order, i.e. list elements are compared pairwise in ascending order from the start of the list to the end.
 * max(null) returns null.
 
@@ -232,7 +232,7 @@ Result:
 
 ## stDev
 
-stDev() returns the standard deviation for the given value over a group. It uses a standard two-pass method, with N - 1 as the denominator, and should be used when taking a sample of the population for an unbiased estimate. When the standard variation of the entire population is being calculated, stdDevP should be used.
+stDev() returns the standard deviation for the given value over a group. It uses a standard two-pass method, with N - 1 as the denominator, and should be used when taking a sample of the population for an unbiased estimate. When the standard deviation of the entire population is being calculated, stDevP should be used.
 
 Syntax: `stDev(expression)`
 
@@ -268,7 +268,7 @@ Considerations:
 
 
 * Any null values are excluded from the calculation.
-* stDev(null) returns 0.
+* stDev(null) returns 0.0 (zero).
 
 Query
 
@@ -306,7 +306,7 @@ Result:
 
 ## stDevP
 
-stDevP() returns the standard deviation for the given value over a group. It uses a standard two-pass method, with N as the denominator, and should be used when calculating the standard deviation for an entire population. When the standard variation of only a sample of the population is being calculated, stDev should be used.
+stDevP() returns the standard deviation for the given value over a group. It uses a standard two-pass method, with N as the denominator, and should be used when calculating the standard deviation for an entire population. When the standard deviation of only a sample of the population is being calculated, stDev should be used.
 
 Syntax: `stDevP(expression)`
 
@@ -342,7 +342,7 @@ Considerations:
 
 
 * Any null values are excluded from the calculation.
-* stDevP(null) returns 0.
+* stDevP(null) returns 0.0 (zero).
 
 Query
 
@@ -460,7 +460,7 @@ Result:
 
 ## percentileDisc
 
-percentileDisc() returns the percentile of the given value over a group, with a percentile from 0.0to 1.0. It uses a rounding method and calculates the nearest value to the percentile. For interpolated values, see percentileCont.
+percentileDisc() returns the percentile of the given value over a group, with a percentile from 0.0 to 1.0. It uses a rounding method and calculates the nearest value to the percentile. For interpolated values, see percentileCont.
 
 Syntax: `percentileDisc(expression, percentile)`
 
@@ -579,8 +579,7 @@ Arguments:
 Considerations:
 * count(*) includes records returning null.
 * count(expr) ignores null values.
-* count(null) returns 0.
-* Using count(*) to return the number of nodes
+* count(null) returns 0 (zero).
 * count(*) can be used to return the number of nodes; for example, the number of nodes connected to some node n.
 
 
@@ -593,7 +592,7 @@ FROM cypher('graph_name', $$
 $$) as (age agtype, number_of_people agtype);
 ```
 
-The labels and age property of the start node n and the number of nodes related to n are returned.
+The age property of the start node n (with a name value of 'A') and the number of nodes related to n are returned.
 
 Result:
 <table>
@@ -616,7 +615,7 @@ Result:
 </table>
 
 
-Using count(*) to group and count relationship typescount(*) can be used to group relationship types and return the number.
+Using count(*) can be used to group and count relationship types, returning the number of relationships of each type.
 
 Query
 ```postgresql
@@ -628,7 +627,7 @@ $$) as (label agtype, count agtype);
 ```
 
 
-The relationship types and their group count are returned.
+The relationship type and the number of relationships with that type are returned.
 
 Result:
 
@@ -670,7 +669,7 @@ $$) as (count agtype);
 ```
 
 
-The number of nodes connected to the start node is returned.
+The number of nodes connected to the start node n is returned.
 
 Result:
 
@@ -708,7 +707,7 @@ $$) as (count agtype);
 ```
 
 
-The number of :Person nodes having an age property is returned.
+The number of nodes with the label Person that have a non-null value for the age property is returned.
 
 Result:
 
@@ -745,7 +744,7 @@ FROM cypher('graph_name', $$
 $$) as (friend_of_friends_distinct agtype, friend_of_friends agtype);
 ```
 
-Both B and C know D and thus D will get counted twice when not using DISTINCT
+Both B and C know D and thus D will get counted twice when not using DISTINCT.
 
 Result:
 <table>
@@ -880,7 +879,7 @@ Considerations:
 
 
 * Any null values are excluded from the calculation.
-* sum(null) returns 0.
+* sum(null) returns null.
 
 Query
 
