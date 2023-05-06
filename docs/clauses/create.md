@@ -5,7 +5,7 @@ The CREATE clause is used to create graph vertices and edges.
 
 ## Terminal CREATE clauses
 
-A create clause that is not followed by another clause is called a terminal clause. When a cypher query ends with a terminal clause, no results will be returned from the cypher function call. However, the cypher function call still requires a column list definition. When cypher ends with a terminal node, define a single value in the column list definition: no data will be returned in this variable.
+A create clause that is not followed by another clause is called a terminal clause. When a cypher query ends with a terminal clause, no results will be returned from the cypher function call. However, the cypher function call still requires a column list definition. When cypher ends with a terminal clause, define a single value in the column list definition: no data will be returned in this variable. However, the node will be created.
 
 Query
 
@@ -13,7 +13,7 @@ Query
 ```postgresql
 SELECT * 
 FROM cypher('graph_name', $$
-    CREATE /* Create clause here, no following clause */
+    CREATE ()/* Create clause here, no following clause */
 $$) as (a agtype);
 ```
 
@@ -135,7 +135,7 @@ Query
 ```postgresql
 SELECT * 
 FROM cypher('graph_name', $$
-    CREATE (:Person {name: 'Andres', title: 'Developer')
+    CREATE (:Person {name: 'Andres', title: 'Developer'})
 $$) as (n agtype);
 ```
 
@@ -160,7 +160,7 @@ Result
 
 ## Return created node
 
-Creating a single node is done by issuing the following query.
+Creating and returning a single node is done by issuing the following query.
 
 Query
 
@@ -275,7 +275,7 @@ Result
 
 
 ## Create a full path
-v1
+
 When you use CREATE and a pattern, all parts of the pattern that are not already in scope at this time will be created.
 
 Query
