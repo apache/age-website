@@ -82,7 +82,7 @@ EXISTS(path) returns true if for the given path, there already exists the given 
 SELECT *
 FROM cypher('graph_name', $$
      MATCH (n)
-     WHERE exists(n)-[]-(name: 'Willem Defoe')
+     WHERE exists((n)-[]-({name: 'Willem Defoe'}))
      RETURN n.full_name
 $$) as (full_name agtype);
 ```
