@@ -228,7 +228,7 @@ Query
 SELECT * FROM cypher('graph_name', $$
 MATCH (:Person {name: 'Oliver Stone'})-[r]->(movie)
 RETURN type(r)
-$$) as (type agtype);
+$$) as (title agtype);
 ```
 
 
