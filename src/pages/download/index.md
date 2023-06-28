@@ -4,29 +4,42 @@ path: /download
 title: Downloads
 ---
 <div style="text-align: center; margin-bottom: 5rem;">
+
+
+
+## Download AGE release for PG13.
  
- 
-## Download AGE release for PG12.
- 
-## The current stable version and the latest release of the graph extension is 1.1.1. 
+## The current stable version and the latest release of the graph extension is 1.3.0. 
 <br/>
 
 | Apache AGE Release | CheckSum & Signature |
 | ------------------ | -------------------- |
-| [Download Apache AGE 1.1.1 ➚](https://downloads.apache.org/age/PG12/1.1.1/apache-age-1.1.1-src.tar.gz) | [CheckSum ➚](https://downloads.apache.org/age/PG12/1.1.1/apache-age-1.1.1-src.tar.gz.sha512) & [Signature ➚](https://downloads.apache.org/age/PG12/1.1.1/apache-age-1.1.1-src.tar.gz.asc) |
+| [Download Apache AGE 1.3.0 ➚](https://downloads.apache.org/age/PG13/1.3.0/apache-age-1.3.0-src.tar.gz) | [CheckSum ➚](https://downloads.apache.org/age/PG13/1.3.0/apache-age-1.3.0-src.tar.gz.sha512) & [Signature ➚](https://downloads.apache.org/age/PG13/1.3.0/apache-age-1.3.0-src.tar.gz.asc) |
+
+
+<br/><br/>
+ 
+ 
+## Download AGE release for PG12.
+ 
+## The current stable version and the latest release of the graph extension is 1.3.0. 
+<br/>
+
+| Apache AGE Release | CheckSum & Signature |
+| ------------------ | -------------------- |
+| [Download Apache AGE 1.3.0 ➚](https://downloads.apache.org/age/PG12/1.3.0/apache-age-1.3.0-src.tar.gz) | [CheckSum ➚](https://downloads.apache.org/age/PG12/1.3.0/apache-age-1.3.0-src.tar.gz.sha512) & [Signature ➚](https://downloads.apache.org/age/PG12/1.3.0/apache-age-1.3.0-src.tar.gz.asc) |
 
 
 <br/><br/>
 
 ## Download AGE release for PG11.
  
-## The current stable version and the latest release of the graph extension is 1.1.0. 
+## The current stable version and the latest release of the graph extension is 1.3.0. 
 <br />
 
 | Apache AGE Release | CheckSum & Signature |
 | ------------------ | -------------------- |
-| [Download Apache AGE 1.1.0 ➚](https://dlcdn.apache.org/age/1.1.0/apache-age-1.1.0-src.tar.gz) | [CheckSum ➚](https://dlcdn.apache.org/age/1.1.0/apache-age-1.1.0-src.tar.gz.sha512) & [Signature ➚](https://dlcdn.apache.org/age/1.1.0/apache-age-1.1.0-src.tar.gz.asc) |
-| [Download Apache AGE 1.0.0 ➚](https://archive.apache.org/dist/incubator/age/1.0.0/apache-age-1.0.0-incubating-src.tar.gz) | [CheckSum ➚](https://archive.apache.org/dist/incubator/age/1.0.0/apache-age-1.0.0-incubating-src.tar.gz.sha512) & [Signature ➚](https://archive.apache.org/dist/incubator/age/1.0.0/apache-age-1.0.0-incubating-src.tar.gz.asc) |
+| [Download Apache AGE 1.3.0 ➚](https://downloads.apache.org/age/PG11/1.3.0/apache-age-1.3.0-src.tar.gz) | [CheckSum ➚](https://downloads.apache.org/age/PG11/1.3.0/apache-age-1.3.0-src.tar.gz.sha512) & [Signature ➚](https://downloads.apache.org/age/PG11/1.3.0/apache-age-1.3.0-src.tar.gz.asc) 
 
 
 
