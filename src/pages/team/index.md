@@ -52,7 +52,11 @@ pmc:
   - name: 'Von Gosling'
     avatar: /img/vongosling.jpg
     githubName: 'Von gosling'
-    githubLink: 'https://github.com/vongosling' 
+    githubLink: 'https://github.com/vongosling'
+  - name: 'Muhammad Shoaib'
+    avatar: /img/Shoaib.jpg
+    githubName: 'muhammadshoaib'
+    githubLink: 'https://github.com/muhammadshoaib' 
 nonpmc:
   - name: 'Kokou Afidegnon'
     avatar: /img/KOKOUAFIDEGNON.png
@@ -65,11 +69,7 @@ nonpmc:
   - name: 'David Shin'
     avatar: /img/HanbyeolShin.jpg
     githubName: 'shinhanbyeol'
-    githubLink: 'https://github.com/shinhanbyeol'
-  - name: 'Muhammad Shoaib'
-    avatar: /img/Shoaib.jpg
-    githubName: 'muhammadshoaib'
-    githubLink: 'https://github.com/muhammadshoaib'    
+    githubLink: 'https://github.com/shinhanbyeol'   
   - name: 'Vuong Quoc Viet'
     avatar: /img/QuocVietVuong.jpg
     githubName: 'quocvietvuong'
