@@ -102,16 +102,15 @@ p1 < p2
 
 The ordering of different Agtype, when using &lt;, &lt;=, >, >= from smallest value to largest value is: 
 
-1. Edge
-2. Path
-3. Map
-4. Vertex
-5. Edge
-6. Array
-7. String
-8. Bool
-9. Numeric, Integer, Float
-10. NULL
+1. Path
+2. Edge
+3. Vertex
+4. Object
+5. Array
+6. String
+7. Bool
+8. Numeric, Integer, Float
+9. NULL
 
 Note: This is subject to change in future releases.
 
