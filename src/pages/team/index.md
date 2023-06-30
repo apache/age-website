@@ -56,8 +56,16 @@ pmc:
   - name: 'Muhammad Shoaib'
     avatar: /img/Shoaib.jpg
     githubName: 'muhammadshoaib'
-    githubLink: 'https://github.com/muhammadshoaib' 
+    githubLink: 'https://github.com/muhammadshoaib'
 nonpmc:
+  - name: 'Rafsun Masud'
+    avatar: /img/rafsun.png
+    githubName: 'rafsun42'
+    githubLink: 'https://github.com/rafsun42'
+  - name: 'Muhammad Taha Naveed'
+    avatar: /img/Taha.png
+    githubName: 'MuhammadTahaNaveed'
+    githubLink: 'https://github.com/MuhammadTahaNaveed'
   - name: 'Kokou Afidegnon'
     avatar: /img/KOKOUAFIDEGNON.png
     githubName: 'afidegnum'
