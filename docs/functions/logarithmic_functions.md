@@ -95,7 +95,7 @@ Results
 
 exp() returns e^n, where e is the base of the natural logarithm, and n is the value of the argument expression.
 
-Syntax: `e(expression)`
+Syntax: `exp(expression)`
 
 Returns:
 
