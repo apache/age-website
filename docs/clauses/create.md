@@ -275,7 +275,6 @@ Result
 
 
 ## Create a full path
-v1
 When you use CREATE and a pattern, all parts of the pattern that are not already in scope at this time will be created.
 
 Query
