@@ -77,13 +77,13 @@ Result:
 
 ## range
 
-range() returns a list comprising all integer values within a range bounded by a start value start and end value end, where the difference step between any two consecutive values is constant; i.e. an arithmetic progression. The range is  inclusive, and the arithmetic progression will therefore always contain start and—depending on the values of start, step and end—end.
+range() returns a list comprising all integer values within a range bounded by a start value **start** and end value **end**, where the difference **step** between any two consecutive values is constant; i.e. an arithmetic progression. The range is  inclusive, and the arithmetic progression will therefore always contain **start** and—depending on the values of **start**, **step** and **end**—**end**.
 
 Syntax:`range(start, end [, step])`
 
 Returns:
 ```
-An Agtype list containing edge entities
+An Agtype list containing integer elements
 ```
 
 Arguments:
@@ -109,7 +109,7 @@ Arguments:
   <tr>
    <td>step
    </td>
-   <td>A numeric expression defining the differencebetween any two consecutive values, with adefault of 1.
+   <td>A numeric expression defining the difference between any two consecutive values, with a default of 1.
    </td>
   </tr>
 </table>
