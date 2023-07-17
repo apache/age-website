@@ -200,6 +200,64 @@ Result:
   </tr>
 </table>
 
+## nodes
+
+nodes returns a list containing all the vertices in a path.
+
+Syntax:`nodes(path)`
+
+Returns:
+```
+An Agtype list containing vertex entities
+```
+
+Arguments:
+<table>
+  <tr>
+   <td>Name
+   </td>
+   <td>Description
+   </td>
+  </tr>
+  <tr>
+   <td>path
+   </td>
+   <td>An expression that returns an Agtype path.
+   </td>
+  </tr>
+</table>
+
+Considerations:
+* nodes(null) returns null.
+
+Query:
+```postgresql
+SELECT *
+FROM cypher('graph_name', $$
+	MATCH p = (a)-[]->(b)-[]->(c)
+	WHERE a.name = 'Alice' AND c.name = 'Eskil'
+	RETURN nodes(a)
+$$) as (vertices agtype);
+```
+
+A list containing all the vertices in the path p is returned.
+
+Result:
+<table>
+  <tr>
+   <td>vertices
+   </td>
+  </tr>
+  <tr>
+   <td> [{"id": 844424930131969, "label": "Person", "properties": {"age": 38, "eyes": "brown", "name": "Alice"}}::vertex, {"id": 844424930131970, "label": "Person", "properties": {"age": 25, "eyes": "blue", "name": "Bob"}}::vertex, {"id": 844424930131973, "label": "Person", "properties": {"age": 41, "eyes": "blue", "name": "Eskil", "array": ["one", "two", "three"]}}::vertex]
+   </td>
+  </tr>
+  <tr>
+   <td colspan="3" >1 row
+   </td>
+  </tr>
+</table>
+
 ## relationships
 
 relationships() returns a list containing all the relationships in a path.
