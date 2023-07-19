@@ -26,7 +26,7 @@
     <license rdf:resource="https://spdx.org/licenses/Apache-2.0" />
     <name>Apache AGE</name>
     <homepage rdf:resource="https://age.apache.org/" />
-    <asfext:pmc rdf:resource="https://comdev.apache.org" />
+    <asfext:pmc rdf:resource="https://age.apache.org" />
     <shortdesc>Apache AGE® is a PostgreSQL extension that provides graph database functionality.
 </shortdesc>
     <description>The goal of Apache AGE® is to provide graph data processing and analytics capability to all relational databases.
