@@ -135,7 +135,7 @@ Query
 ```postgresql
 SELECT * 
 FROM cypher('graph_name', $$
-    CREATE (:Person {name: 'Andres', title: 'Developer')
+    CREATE (:Person {name: 'Andres', title: 'Developer'})
 $$) as (n agtype);
 ```
 
