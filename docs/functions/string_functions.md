@@ -496,7 +496,7 @@ Returns:
 
 
 ```
-A String.
+An agtype String.
 ```
 
 
