@@ -15,7 +15,7 @@ User can load graph in two steps
 ## Load Graph functions 
 Following are the details about the functions to create vertices and edges from the file. 
 
-function `load_labels_from_file` is used to load vertices from the CSV files. 
+Function `load_labels_from_file` is used to load vertices from the CSV files. 
 
 ```postgresql
 load_labels_from_file('<graph name>', 
@@ -62,7 +62,7 @@ Following is the explanation about the structure for CSV files for vertices and 
 | end_vertex_type   | Class of the node                                            |
 | properties        | properties of the edge. the header shall contain the property name |
 
-example files can be viewed at `regress/age_load/data`
+Example files can be viewed at `regress/age_load/data`
 
 ## Example SQL script 
 
@@ -100,7 +100,7 @@ SELECT load_edges_from_file('agload_test_graph', 'has_city',
      'age_load/data/edges.csv');
 ```
 
-- check if the graph has been loaded properly
+- Check if the graph has been loaded properly
 
 ```postgresql
 SELECT table_catalog, table_schema, table_name, table_type
@@ -135,10 +135,10 @@ SELECT load_labels_from_file('agload_test_graph',
                              'age_load/data/cities.csv', 
                              false);
 ```
-- check if the graph has been loaded properly and perform difference analysis between ids created automatically and picked from the files.
+- Check if the graph has been loaded properly and perform difference analysis between ids created automatically and picked from the files.
 
-- labels `Country` and `City` were created with id field in the file
-- labels `Country2` and `City2` were created with no id field in the file. 
+- Labels `Country` and `City` were created with id field in the file
+- Labels `Country2` and `City2` were created with no id field in the file. 
 ```postgresql
 SELECT COUNT(*) FROM agload_test_graph."Country2";
 SELECT COUNT(*) FROM agload_test_graph."City2";
