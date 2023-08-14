@@ -462,7 +462,7 @@ Query:
 SELECT *
 FROM cypher('graph_name', $$
     RETURN rTrim(' hello ')
-$$) as (trimmed_str agtype);
+$$) as (right_trimmed_str agtype);
 ```
 
 
@@ -471,7 +471,7 @@ Result:
 
 <table>
   <tr>
-   <td>trimmed_str
+   <td>right_trimmed_str
    </td>
   </tr>
   <tr>
@@ -488,7 +488,7 @@ Result:
 
 ## lTrim
 
-lTrim() returns the original string with trailing whitespace removed.
+lTrim() returns the original string with leading whitespace removed.
 
 Syntax: `lTrim(original)`
 
@@ -532,7 +532,7 @@ Query:
 SELECT *
 FROM cypher('graph_name', $$
     RETURN lTrim(' hello ')
-$$) as (trimmed_str agtype);
+$$) as (left_trimmed_str agtype);
 ```
 
 
@@ -698,7 +698,7 @@ Result:
 
 ## toUpper
 
-toUpper() returns the original string in lowercase.
+toUpper() returns the original string in uppercase.
 
 Syntax: `toUpper(original)`
 
@@ -812,7 +812,7 @@ Query:
 SELECT *
 FROM cypher('graph_name', $$
     RETURN reverse("hello")
-$$) as (upper_str agtype);
+$$) as (reverse_str agtype);
 ```
 
 
@@ -821,7 +821,7 @@ Result:
 
 <table>
   <tr>
-   <td>upper_str
+   <td>reverse_str
    </td>
   </tr>
   <tr>
@@ -840,7 +840,7 @@ Result:
 
 toString() converts an integer, float or boolean value to a string.
 
-Syntax:`toString(expression)`
+Syntax: `toString(expression)`
 
 Returns:
 
