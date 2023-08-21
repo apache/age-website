@@ -408,6 +408,78 @@ Results:
 
 
 
+## Cot
+
+cot() returns the cotangent of a number.
+
+Syntax: `cot(expression)`
+
+Returns:
+
+
+```
+A Float.
+```
+
+
+Arguments:
+
+
+<table>
+  <tr>
+   <td>Name
+   </td>
+   <td>Description
+   </td>
+  </tr>
+  <tr>
+   <td>expression
+   </td>
+   <td>An agtype number expression that represents the angle in radians.
+   </td>
+  </tr>
+</table>
+
+
+Considerations:
+
+
+
+* cot(null) returns null.
+
+Query:
+
+
+```postgresql
+SELECT *
+FROM cypher('graph_name', $$
+    RETURN cot(0.5)
+$$) as (t agtype);
+```
+
+
+The cotangent of 0.5 is returned.
+
+Results:
+
+
+<table>
+  <tr>
+   <td>t
+   </td>
+  </tr>
+  <tr>
+   <td>1.830487721712452
+   </td>
+  </tr>
+  <tr>
+   <td>1 row(s) returned
+   </td>
+  </tr>
+</table>
+
+
+
 ## asin
 
 asin() returns the arcsine of a number.
