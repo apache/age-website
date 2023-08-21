@@ -95,7 +95,7 @@ Results
 
 exp() returns e^n, where e is the base of the natural logarithm, and n is the value of the argument expression.
 
-Syntax: `e(expression)`
+Syntax: `exp(expression)`
 
 Returns:
 
@@ -136,7 +136,7 @@ Query:
 ```postgresql
 SELECT *
 FROM cypher('graph_name', $$
-    RETURN e(2)
+    RETURN exp(2)
 $$) as (e agtype);
 ```
 
@@ -282,8 +282,8 @@ Query:
 ```postgresql
 SELECT *
 FROM cypher('graph_name', $$
-    RETURN log(27)
-$$) as (natural_logarithm agtype);
+    RETURN log10(27)
+$$) as (common_logarithm agtype);
 ```
 
 
@@ -294,7 +294,7 @@ Result:
 
 <table>
   <tr>
-   <td>natural_logarithm
+   <td>common_logarithm
    </td>
   </tr>
   <tr>

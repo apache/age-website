@@ -37,7 +37,7 @@ sudo apt-get install build-essential libreadline-dev zlib1g-dev flex bison
 
 ### Install Postgres
 
-You will need to install a AGE compatible version of Postgres, for now AGE only supports Postgres 11 and 12.
+You will need to install a AGE compatible version of Postgres, for now AGE only supports Postgres 11, 12 and 13.
 
 #### Install From Source Code
 
@@ -45,19 +45,24 @@ You can <a href='https://www.postgresql.org/download/'>download the Postgres sou
 
 #### Install From a Package Manager
 
-You can use a package management that your OS provides to download AGE.
+You can use a package management that your OS provides to download Postgres.
 
 #### Ubuntu
 
 ##### Postgres 11
 
 ```
-sudo apt install postgresql-server-dev-11
+sudo apt install postgresql-11 postgresql-server-dev-11
 ```
 
 ##### Postgres 12
 ```
-sudo apt install postgresql-12
+sudo apt install postgresql-12 postgresql-server-dev-12
+```
+
+##### Postgres 13
+```
+sudo apt install postgresql-13 postgresql-server-dev-13
 ```
 
 ### Installation

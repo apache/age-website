@@ -135,7 +135,7 @@ Query
 ```postgresql
 SELECT * 
 FROM cypher('graph_name', $$
-    CREATE (:Person {name: 'Andres', title: 'Developer')
+    CREATE (:Person {name: 'Andres', title: 'Developer'})
 $$) as (n agtype);
 ```
 
@@ -275,7 +275,6 @@ Result
 
 
 ## Create a full path
-v1
 When you use CREATE and a pattern, all parts of the pattern that are not already in scope at this time will be created.
 
 Query

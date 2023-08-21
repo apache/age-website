@@ -114,7 +114,7 @@ AGE supports the use of [POSIX regular expressions](https://www.postgresql.org/d
 
 #### Basic String Matching
 
-The =~ operator when no special characters are give, act like the = operator.
+The =~ operator when no special characters are given, act like the = operator.
 
 ```postgresql
 SELECT * FROM cypher('graph_name', $$
