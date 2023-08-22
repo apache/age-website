@@ -170,7 +170,7 @@ Result
 
 ## Variable with uncommon characters
 
-To introduce a placeholder that is made up of characters that are not contained in the English alphabet, you can use the ` to enclose the variable, like this:
+To introduce a placeholder that is made up of characters that are not contained in the English alphabet, you can use the `` to enclose the variable, like this:
 
 Query
 
