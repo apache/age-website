@@ -315,3 +315,42 @@ Result:
    </td>
   </tr>
 </table>
+
+## toBooleanList
+toBooleanList() converts a list of values and returns a list of boolean values. If any values are not convertible to boolean they will be null in the list returned.
+
+Syntax: `toBooleanList(list)`
+
+Returns:
+```
+An agtype list containing the converted elements; depending on the input value a converted value is either a boolean value or null.
+```
+
+Considerations:
+* Any null element in list is preserved.
+* Any boolean value in list is preserved.
+* If the list is null, null will be returned.
+* If the list is not a list, an error will be returned.
+
+Query:
+```sql
+SELECT * FROM cypher('expr', $$
+    RETURN toBooleanList(["true", "false", "true"])
+$$) AS (toBooleanList agtype);
+```
+
+Result:
+<table>
+  <tr>
+   <td>tobooleanlist
+   </td>
+  </tr>
+  <tr>
+   <td> [true, false, true]
+   </td>
+  </tr>
+  <tr>
+   <td colspan="3" >1 row
+   </td>
+  </tr>
+</table>
