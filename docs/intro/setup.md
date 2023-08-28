@@ -37,11 +37,11 @@ sudo apt-get install build-essential libreadline-dev zlib1g-dev flex bison
 
 ### Install Postgres
 
-You will need to install a AGE compatible version of Postgres, for now AGE only supports Postgres 11, 12 and 13.
+You will need to install a AGE compatible version of Postgres. AGE supports Postgres 11, 12, 13, 14 and 15.
 
 #### Install From Source Code
 
-You can <a href='https://www.postgresql.org/download/'>download the Postgres source code</a> and install your own instance of Postgres. You can read instructions on how to install from <a href='https://www.postgresql.org/docs/11/installation.html'>source code on the offical Postgres Website</a>
+You can <a href='https://www.postgresql.org/download/'>download the Postgres source code</a> and install your own instance of Postgres. You can read instructions on how to install from <a href='https://www.postgresql.org/docs/15/installation.html'>source code on the offical Postgres Website</a>
 
 #### Install From a Package Manager
 
@@ -49,30 +49,22 @@ You can use a package management that your OS provides to download Postgres.
 
 #### Ubuntu
 
-##### Postgres 11
+##### Postgres 15
 
 ```
-sudo apt install postgresql-11 postgresql-server-dev-11
+sudo apt install postgresql-15 postgresql-server-dev-all
 ```
 
-##### Postgres 12
+##### Postgres xx
 ```
-sudo apt install postgresql-12 postgresql-server-dev-12
-```
-
-##### Postgres 13
-```
-sudo apt install postgresql-13 postgresql-server-dev-13
+sudo apt install postgresql-xx postgresql-server-dev-all
 ```
 
 ### Installation
 
 Clone the <a href='https://github.com/apache/age'>github repository</a> or <a href='https://github.com/apache/age/releases'>download an official release</a>
 
-Run the pg_config utility and check the version of PostgreSQL, currently only PostgreSQL versions 11 & 12 are supported. If you have any other version of postgres, you will need to install PostgreSQL version 11 & 12. Follow Setting up multiple versions of PostgreSQL
-```console
-pg_config
-```
+Run the pg_config utility and check the version of PostgreSQL. Apache AGE supports all the stable versions of postgresql(11, 12, 13, 14 and 15).
 
 The build process will attempt to use the first path in the PATH environment variable when installing AGE. If the pg_config path is located there, run the following command in the source code directory of Apache AGE to build and install the extension.
 
@@ -89,7 +81,7 @@ make PG_CONFIG=/path/to/postgres/bin/pg_config install
 ### Post Installation AGE Setup
 
 
-After the installation, open a connection to a running instance of your database and run the CREATE EXTENSION command to have AGE be installed on the server.
+After the installation, open a connection to a running instance of your database and run the CREATE EXTENSION command to have AGE installed on the server.
 
 ```postgresql
 CREATE EXTENSION age;
@@ -142,10 +134,10 @@ SET search_path = ag_catalog, "$user", public;
 
 ### Allow non-superusers to use Apache AGE
 
-* Non-superusers can only apply LOAD to library files located in `$libdir/plugins/` (see <https://www.postgresql.org/docs/11/sql-load.html>). A symlink can be created to allow non-superusers to LOAD the Apache AGE library:
+* Non-superusers can only apply LOAD to library files located in `$libdir/plugins/` (see <https://www.postgresql.org/docs/15/sql-load.html>). A symlink can be created to allow non-superusers to LOAD the Apache AGE library:
 
 ```console
-sudo ln -s /usr/lib/postgresql/11/lib/age.so /usr/lib/postgresql/11/lib/plugins/age.so
+sudo ln -s /usr/lib/postgresql/15/lib/age.so /usr/lib/postgresql/15/lib/plugins/age.so
 ```
 
 * In order to use Apache AGE, users need `USAGE` privileges on the `ag_catalog` schema (example for user `db_user`):
