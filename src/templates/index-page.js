@@ -4,11 +4,6 @@ import { graphql } from 'gatsby';
 // component
 import Layout from '../components/Layout';
 import Content, { HTMLContent } from '../components/Content';
-import Ageinfos from '../components/AgeInfos';
-import AgeProjectList from '../components/AgeProjectList';
-import AgeViewerProjectList from '../components/AgeViewerProjectList';
-import RedditRss from '../components/RedditRss';
-import AgeContributors from '../components/AgeContributors';
 // style
 import * as styles from './styles/index.module.scss';
 // img 
@@ -124,24 +119,6 @@ export const IndexPageTemplate = ({
           </div>
         </div>
       </section>
-      <section style={{ backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat' }}>
-        <div className={styles.content}>
-          <h2>AGE Projects</h2>
-          <p>
-            Everyone is welcome to join and contribute to Apache AGE Project,
-            not only with code contributions. <br />
-            You can learn more about
-            Apache AGE by working with other developers.  <br />
-          </p>
-          <AgeProjectList />
-        </div>
-        <hr style={{ border: 'solid 1px #ffffff', margin: '2rem 0' }} />
-        <div className={styles.content}>
-          <h2>AGE Viewer Projects</h2>
-          <p></p>
-          <AgeViewerProjectList />
-        </div>
-      </section>
       {/* <section style={{ backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat' }} hidden > */}
         {/* <div className={styles.content}>
           <h2>Message From AGE Team</h2>
@@ -156,23 +133,7 @@ export const IndexPageTemplate = ({
           </div>
         </div> */}
       {/* </section> */}
-      <section style={{ backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat' }}>
-        <div className={styles.content}>
-          <h2>Welcome to the AGE Community</h2>
-          <p>
-            Apache AGE is a continuously developing solution thanks to a progressive community.<br />
-            We are always looking for aspiring contributors who are willing to learn and grow with us.<br />
-            If you are looking for an opportunity to grow and experience progressive insights, this is the place for you!
-          </p>
-          <Ageinfos />
-          <hr style={{ border: 'solid 1px #9F1A61', margin: '2rem 0', opacity: '0.2' }} />
-          <div className={styles.content}>
-            <h2>Top GitHub Contributors</h2>
-            <p></p>
-            <AgeContributors />
-          </div>
-        </div>
-      </section>
+
       <section style={{ backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat' }}>
         <div className={styles.content}>
           <h2>Join AGE Discord</h2>
