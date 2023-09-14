@@ -2,7 +2,7 @@
 
 ## Overview
 
-Postgres has a default struct that it uses for throughout most of its query processing engine, <a href='https://github.com/postgres/postgres/blob/master/src/include/nodes/nodes.h#L105'>Node</a>. The Node struct is defined as follows:
+Postgres has a default struct that it uses for throughout most of its query processing engine, <a href='https://github.com/postgres/postgres/blob/7ef5f5fb324096c7822c922ad59fd7fdd76f57b1/src/include/nodes/nodes.h#L128'>Node</a>. The Node struct is defined as follows:
 
 ```c
 typedef struct Node
@@ -94,7 +94,7 @@ Postgres has designed a way to use the power of void pointers, but with certain 
 
 ## How Postgres Uses Structs and Pointers
 
-Void pointers assume nothing about what the pointer is referencing. The Node struct on the other hand know about one field the <a href='https://github.com/postgres/postgres/blob/REL_11_17/src/include/nodes/nodes.h#L26'>enum NodeType</a>. Nearly all the postgres data structures used in the query processing engine start with this field.
+Void pointers assume nothing about what the pointer is referencing. The Node struct on the other hand know about one field the <a href='https://github.com/postgres/postgres/blob/REL_11_17/src/include/nodes/nodes.h#L26'>enum NodeTag</a>. Nearly all the postgres data structures used in the query processing engine start with this field.
 
 For example, here is the data structure that represents a function call in the parser phase:
 
