@@ -1,11 +1,11 @@
 # CREATE
 
-The CREATE clause is used to create graph vertices and edges. 
+The `CREATE` clause is used to create graph vertices and edges. 
 
 
 ## Terminal CREATE clauses
 
-A create clause that is not followed by another clause is called a terminal clause. When a cypher query ends with a terminal clause, no results will be returned from the cypher function call. However, the cypher function call still requires a column list definition. When cypher ends with a terminal node, define a single value in the column list definition: no data will be returned in this variable.
+A `CREATE` clause that is not followed by another clause is called a terminal clause. When a cypher query ends with a terminal clause, no results will be returned from the cypher function call. However, the cypher function call still requires a column list definition. When cypher ends with a terminal node, define a single value in the column list definition: no data will be returned in this variable.
 
 Query
 
@@ -275,7 +275,7 @@ Result
 
 
 ## Create a full path
-When you use CREATE and a pattern, all parts of the pattern that are not already in scope at this time will be created.
+When you use `CREATE` and a pattern, all parts of the pattern that are not already in scope at this time will be created.
 
 Query
 

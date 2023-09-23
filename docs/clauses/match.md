@@ -1,12 +1,12 @@
 # MATCH
 
-The MATCH clause allows you to specify the patterns Cypher will search for in the database. This is the primary way of getting data into the current set of bindings. It is worth reading up more on the specification of the patterns themselves in Patterns.
+The `MATCH` clause allows you to specify the patterns Cypher will search for in the database. This is the primary way of getting data into the current set of bindings. It is worth reading up more on the specification of the patterns themselves in Patterns.
 
-MATCH is often coupled to a WHERE part which adds restrictions, or predicates, to the MATCH patterns, making them more specific. The predicates are part of the pattern description, and should not be considered a filter applied only after the matching is done. This means that WHERE should always be put together with the MATCH clause it belongs to.
+`MATCH` is often coupled to a `WHERE` part which adds restrictions, or predicates, to the `MATCH` patterns, making them more specific. The predicates are part of the pattern description, and should not be considered a filter applied only after the matching is done. This means that `WHERE` should always be put together with the `MATCH` clause it belongs to.
 
-MATCH can occur at the beginning of the query or later, possibly after a WITH. If it is the first clause, nothing will have been bound yet, and Cypher will design a search to find the results matching the clause and any associated predicates specified in any WHERE part. Vertices and edges found by this search are available as bound pattern elements, and can be used for pattern matching of sub-graphs. They can also be used in any future clauses, where Cypher will use the known elements, and from there find further unknown elements.
+MATCH can occur at the beginning of the query or later, possibly after a `WITH`. If it is the first clause, nothing will have been bound yet, and Cypher will design a search to find the results matching the clause and any associated predicates specified in any `WHERE` part. Vertices and edges found by this search are available as bound pattern elements, and can be used for pattern matching of sub-graphs. They can also be used in any future clauses, where Cypher will use the known elements, and from there find further unknown elements.
 
-Cypher is declarative, and so usually the query itself does not specify the algorithm to use to perform the search. Predicates in WHERE parts can be evaluated before pattern matching, during pattern matching, or after finding matches.
+Cypher is declarative, and so usually the query itself does not specify the algorithm to use to perform the search. Predicates in `WHERE` parts can be evaluated before pattern matching, during pattern matching, or after finding matches.
 
 
 ## Basic vertex finding
@@ -111,7 +111,7 @@ Returns all the movies in the database.
 
 ### Related Vertices
 
-The symbol -[]- means related to, without regard to type or direction of the edge.
+The symbol `-[]-` means related to, without regard to type or direction of the edge.
 
 Query
 
@@ -124,7 +124,7 @@ $$) as (title agtype);
 ```
 
 
-Returns all the movies directed by 'Oliver Stone'
+Returns all the movies directed by 'Oliver Stone'.
 
 
 <table>
@@ -159,7 +159,7 @@ $$) as (title agtype);
 ```
 
 
-Returns any vertices connected with the Person 'Oliver' that are labeled Movie.
+Returns any vertices connected with the `Person` 'Oliver' that are labeled `Movie`.
 
 
 <table>
@@ -184,7 +184,7 @@ Returns any vertices connected with the Person 'Oliver' that are labeled Movie.
 
 ### Outgoing Edges
 
-When the direction of an edge is of interest, it is shown by using -> or &lt;-.
+When the direction of an edge is of interest, it is shown by using `->` or `<-`.
 
 Query
 
@@ -197,7 +197,7 @@ $$) as (title agtype);
 ```
 
 
-Returns any vertices connected with the Person'Oliver' by an outgoing edge.
+Returns any vertices connected with the `Person` 'Oliver' by an outgoing edge.
 
 
 <table>
@@ -267,7 +267,7 @@ $$) as (actors_name agtype);
 ```
 
 
-Returns all actors that ACTED_IN'Wall Street'.
+Returns all actors that `ACTED_IN` 'Wall Street'.
 
 
 <table>
@@ -310,7 +310,7 @@ $$) as (role agtype);
 ```
 
 
-Returns ACTED_IN roles for 'Wall Street'.
+Returns `ACTED_IN` roles for 'Wall Street'.
 
 
 <table>
@@ -340,7 +340,7 @@ Returns ACTED_IN roles for 'Wall Street'.
 
 ### Multiple Edges
 
-Edges can be expressed by using multiple statements in the form of ()-[]-(), or they can be strung together.
+Edges can be expressed by using multiple statements in the form of `()-[]-()`, or they can be strung together.
 
 Query
 
@@ -394,7 +394,7 @@ Which describes a right directed path of three vertices and two edges can be rew
 (u)-[]->()-[]->(v)
 ```
 
-A range lengths can also be given:
+A range length can also be given:
 
 
 ```
@@ -409,26 +409,26 @@ Which is equivalent to:
 (u)-[]->()-[]->()-[]->()-[]->()-[]->(v)
 ```
 
-The previous example provided gave the edge both an lower and upper bound for the number of edges (and vertices) between u and v. Either one or both of these binding values can be excluded
+The previous example provided gave the edge both an lower and upper bound for the number of edges (and vertices) between `u` and `v`. Either one or both of these binding values can be excluded.
 
 
 ```
 (u)-[*3..]->(v)
 ```
 
-Returns all paths between u and v that have three or more edges included.
+Returns all paths between `u` and `v` that have three or more edges included.
 
 ```
 (u)-[*..5]->(v)
 ```
 
-Returns all paths between u and v that have 5 or fewer edges included.
+Returns all paths between `u` and `v` that have 5 or fewer edges included.
 
 ```
 (u)-[*]->(v)
 ```
 
-Returns all paths between u and v
+Returns all paths between `u` and `v`.
 
 
 ### Example
@@ -439,13 +439,13 @@ Query
 
 ```postgresql
 SELECT * FROM cypher('graph_name', $$
-    MATCH p = (actor {name: 'Willam Defoe'})-[:ACTED_IN*2]-(co_actor)
+    MATCH p = (actor {name: 'Willam Dafoe'})-[:ACTED_IN*2]-(co_actor)
     RETURN relationships(p)
 $$) as (r agtype);
 ```
 
 
-Returns the list of edges, including the one that Willam Defoe acted in and the two spidermens he worked with.
+Returns the list of edges, including the one that Willam Dafoe acted in and the two Spiderman actors he worked with.
 
 
 <table>

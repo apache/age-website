@@ -1,11 +1,11 @@
 # RETURN  
 
-In the RETURN part of your query, you define which parts of the pattern you are interested in. It can be nodes, relationships, or properties on these.
+In the `RETURN` part of your query, you define which parts of the pattern you are interested in. It can be nodes, relationships, or properties on these.
 
 
 ## Return nodes
 
-To return a node, list it in the RETURN statement.
+To return a node, list it in the `RETURN` statement.
 
 Query
 
@@ -43,7 +43,7 @@ Result
 
 ## Return edges
 
-To return n edge, just include it in the RETURN list.
+To return `n`'s edges, just include it in the `RETURN` list.
 
 Query
 
@@ -117,7 +117,7 @@ Result
 
 ## Return all elements
 
-When you want to return all vertices, edges and paths found in a query, you can use the * symbol.
+When you want to return all vertices, edges and paths found in a query, you can use the `*` symbol.
 
 Query
 
@@ -163,7 +163,7 @@ Result
    </td>
   </tr>
   <tbody>
-   <td>(2 rows)
+   <td colspan="3">(2 rows)
    </td>
   </tr>
 </table>
@@ -335,7 +335,7 @@ Result
 
 ## Unique results
 
-DISTINCT retrieves only unique records depending on the fields that have been selected to output.
+`DISTINCT` retrieves only unique records depending on the fields that have been selected to output.
 
 Query
 
