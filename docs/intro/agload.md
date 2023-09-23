@@ -16,6 +16,7 @@ User can load a graph in two steps
 Following are the details about the functions to create vertices and edges from the file. 
 
 Function `load_labels_from_file` is used to load vertices from the CSV files. 
+Function `load_labels_from_file` is used to load vertices from the CSV files. 
 
 ```postgresql
 load_labels_from_file('<graph name>', 
