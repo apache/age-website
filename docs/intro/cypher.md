@@ -1,6 +1,6 @@
 # The AGE Cypher Query Format
 
-Cypher queries are constructed using a function called cypher in ag_catalog which returns a Postgres SETOF [records](https://www.postgresql.org/docs/11/xfunc-sql.html#XFUNC-SQL-FUNCTIONS-RETURNING-SET).
+Cypher queries are constructed using a function called cypher in `ag_catalog` which returns a Postgres `SETOF` [records](https://www.postgresql.org/docs/11/xfunc-sql.html#XFUNC-SQL-FUNCTIONS-RETURNING-SET).
 
 
 ## Cypher()
@@ -68,7 +68,7 @@ Cypher may not be used as part of an expression, use a subquery instead. See [Ad
 
 ## SELECT Clause
 
-Calling Cypher in the SELECT clause as an independent column is not allowed. However Cypher may be used when it belongs as a conditional. 
+Calling Cypher in the `SELECT` clause as an independent column is not allowed. However Cypher may be used when it belongs as a conditional. 
 
 Not Allowed:
 

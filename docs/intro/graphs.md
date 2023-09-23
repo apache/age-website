@@ -5,7 +5,7 @@ A graph consists of a set of vertices and edges, where each individual node and 
 
 ## Create a Graph
 
-To create a graph, use the create_graph function, located in the ag_catalog namespace.
+To create a graph, use the `create_graph` function, located in the `ag_catalog` namespace.
 
 
 ### create_graph()
@@ -52,7 +52,7 @@ SELECT * FROM ag_catalog.create_graph('graph_name');
 
 ## Delete a Graph
 
-To delete a graph, use the drop_graph function, located in the ag_catalog namespace.
+To delete a graph, use the `drop_graph` function, located in the `ag_catalog` namespace.
 
 
 ### drop_graph()
