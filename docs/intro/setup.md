@@ -64,7 +64,7 @@ sudo apt install postgresql-xx postgresql-server-dev-all
 
 Clone the <a href='https://github.com/apache/age'>github repository</a> or <a href='https://github.com/apache/age/releases'>download an official release</a>
 
-Run the pg_config utility and check the version of PostgreSQL. Apache AGE supports all the stable versions of postgresql(11, 12, 13, 14 and 15).
+Run the pg_config utility and check the version of PostgreSQL. Apache AGE supports all the stable versions of PostgreSQL (11, 12, 13, 14 and 15).
 
 The build process will attempt to use the first path in the PATH environment variable when installing AGE. If the pg_config path is located there, run the following command in the source code directory of Apache AGE to build and install the extension.
 
