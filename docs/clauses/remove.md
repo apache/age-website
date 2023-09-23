@@ -1,16 +1,16 @@
 # REMOVE
 
-The REMOVE clause is used to remove properties from vertex and edges.
+The `REMOVE` clause is used to remove properties from vertex and edges.
 
 
 ## Terminal REMOVE clauses
 
-A remove clause that is not followed by another clause is called a terminal clause. When a cypher query ends with a terminal clause, no results will be returned from the cypher function call. However, the cypher function call still requires a column list definition. When cypher ends with a terminal node, define a single value in the column list definition: no data will be returned in this variable.
+A `REMOVE` clause that is not followed by another clause is called a terminal clause. When a cypher query ends with a terminal clause, no results will be returned from the cypher function call. However, the cypher function call still requires a column list definition. When cypher ends with a terminal node, define a single value in the column list definition: no data will be returned in this variable.
 
 
 ## Remove a property
 
-Cypher doesn’t allow storing null in properties. Instead, if no value exists, the property is just not there. So, to remove a property value on a node or a relationship, is also done with REMOVE.113
+Cypher doesn’t allow storing `null` in properties. Instead, if no value exists, the property is just not there. So, removing a property value on a node or a relationship is also done with `REMOVE`.
 
 Query
 
