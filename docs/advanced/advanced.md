@@ -57,7 +57,7 @@ Results:
 
 # Using Cypher in a Join expression
 
-A Cypher query can be part of a JOIN clause.
+A Cypher query can be part of a `JOIN` clause.
 
 
 ```
@@ -127,7 +127,7 @@ Results:
 
 # Cypher in SQL expressions
 
-Cypher cannot be used in an expression, the query must exists in the FROM clause of a query. However, if the cypher query is placed in a Subquery, it will behave as any SQL style query.
+Cypher cannot be used in an expression, the query must exists in the `FROM` clause of a query. However, if the cypher query is placed in a subquery, it will behave as any SQL style query.
 
 
 ## Using Cypher with '='
@@ -174,7 +174,7 @@ Results:
 
 ## Working with Postgres's IN Clause
 
-When writing a cypher query that is known to return 1 column, but may have multiple rows. The IN operator may be used.
+When writing a cypher query that is known to return 1 column, but may have multiple rows. The `IN` operator may be used.
 
 Query:
 
@@ -228,7 +228,7 @@ Results:
 
 ## Working with Postgres EXISTS Clause
 
-When writing a cypher query that may have more than 1 column and row returned. The EXISTS operator may be used.
+When writing a cypher query that may have more than 1 column and row returned. The `EXISTS` operator may be used.
 
 Query:
 
