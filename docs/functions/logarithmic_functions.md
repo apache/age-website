@@ -3,9 +3,9 @@
 
 ## e
 
-e() returns the base of the natural logarithm, e.
+`e()` returns the base of the natural logarithm, e.
 
-Syntax:e()
+Syntax: `e()`
 
 Returns:
 
@@ -48,9 +48,9 @@ Results
 
 ## sqrt
 
-sqrt() returns the square root of a number.
+`sqrt()` returns the square root of a number.
 
-Syntax:sqrt(expression)
+Syntax: `sqrt(expression)`
 
 Returns:
 
@@ -93,7 +93,7 @@ Results
 
 ## exp
 
-exp() returns e^n, where e is the base of the natural logarithm, and n is the value of the argument expression.
+`exp()` returns e^n, where e is the base of the natural logarithm, and n is the value of the argument expression.
 
 Syntax: `exp(expression)`
 
@@ -101,7 +101,7 @@ Returns:
 
 
 ```
-An agtype Float.
+An agtype float.
 ```
 
 
@@ -128,7 +128,7 @@ Considerations:
 
 
 
-* exp(null) returns null.
+* `exp(null)` returns null.
 
 Query:
 
@@ -165,15 +165,15 @@ Result:
 
 ## log
 
-log() returns the natural logarithm of a number.
+`log()` returns the natural logarithm of a number.
 
-Syntax:`log(expression)`
+Syntax: `log(expression)`
 
 Returns:
 
 
 ```
-An agtype Float.
+An agtype float.
 ```
 
 
@@ -200,8 +200,8 @@ Considerations:
 
 
 
-* log(null) returns null.
-* log(0) returns null.
+* `log(null)` returns null.
+* `log(0)` returns null.
 
 Query:
 
@@ -238,15 +238,15 @@ Result:
 
 ## log10
 
-log10() returns the common logarithm (base 10) of a number.
+`log10()` returns the common logarithm (base 10) of a number.
 
-Syntax:`log10(expression)`
+Syntax: `log10(expression)`
 
 Returns:
 
 
 ```
-An agtype Float.
+An agtype float.
 ```
 
 
@@ -273,8 +273,8 @@ Considerations:
 
 
 
-* log10(null) returns null.
-* log10(0) returns null.
+* `log10(null)` returns null.
+* `log10(0)` returns null.
 
 Query:
 
