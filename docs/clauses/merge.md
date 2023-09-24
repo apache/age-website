@@ -101,7 +101,7 @@ RETURN michael.name, michael.bornIn
 $$) as (Name agtype, BornIn agtype);
 ```
 
-'Michael Douglas' will match the existing vertex and the vertex's name and bornIn properties returned.
+'Michael Douglas' will match the existing vertex and the vertex's name and BornIn properties are returned.
 
 <table>
   <tr>
