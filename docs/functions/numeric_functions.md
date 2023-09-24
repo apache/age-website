@@ -3,7 +3,7 @@
 
 ## rand
 
-rand() returns a random floating point number in the range from 0 (inclusive) to 1 (exclusive); i.e.[0,1). The numbers returned follow an approximate uniform distribution.
+`rand()` returns a random floating point number in the range from 0 (inclusive) to 1 (exclusive); i.e.[0,1). The numbers returned follow an approximate uniform distribution.
 
 Syntax: `rand()`
 
@@ -11,7 +11,7 @@ Returns:
 
 
 ```
-A Float.
+A float.
 ```
 
 
@@ -50,7 +50,7 @@ Result:
 
 ## abs
 
-abs() returns the absolute value of the given number.
+`abs()` returns the absolute value of the given number.
 
 Syntax: `abs(expression)`
 
@@ -85,7 +85,7 @@ Considerations:
 
 
 
-* abs(null) returns null.
+* `abs(null)` returns null.
 * If expression is negative, -(expression) (i.e. the negation of expression) is returned.
 
 Query:
@@ -132,7 +132,7 @@ Result:
 
 ## ceil
 
-ceil() returns the smallest floating point number that is greater than or equal to the given number and equal to a mathematical integer.
+`ceil()` returns the smallest floating point number that is greater than or equal to the given number and equal to a mathematical integer.
 
 Syntax: `ceil(expression)`
 
@@ -140,7 +140,7 @@ Returns:
 
 
 ```
-A Float.
+A float.
 ```
 
 
@@ -167,7 +167,7 @@ Considerations:
 
 
 
-* ceil(null) returns null.
+* `ceil(null)` returns null.
 
 Query:
 
@@ -204,7 +204,7 @@ Result:
 
 ## floor
 
-floor() returns the greatest floating point number that is less than or equal to the given number and equal to a mathematical integer.
+`floor()` returns the greatest floating point number that is less than or equal to the given number and equal to a mathematical integer.
 
 Syntax: `floor(expression)`
 
@@ -212,7 +212,7 @@ Returns:
 
 
 ```
-A Float.
+A float.
 ```
 
 
@@ -241,7 +241,7 @@ Considerations:
 
 
 
-* floor(null) returns null.
+* `floor(null)` returns null.
 
 Query:
 
@@ -278,7 +278,7 @@ Result:
 
 ## round
 
-round() returns the value of the given number rounded to the nearest integer.
+`round()` returns the value of the given number rounded to the nearest integer.
 
 Syntax: `round(expression)`
 
@@ -286,7 +286,7 @@ Returns:
 
 
 ```
-A Float.
+A float.
 ```
 
 
@@ -309,13 +309,11 @@ Arguments:
 </table>
 
 
-`
-
 Considerations:
 
 
 
-* round(null) returns null.
+* `round(null)` returns null.
 
 Query:
 
@@ -352,13 +350,13 @@ Result:
 
 ## sign
 
-sign() returns the signum of the given number: 0 if the number is 0, -1 for any negative number, and 1 for any positive number
+`sign()` returns the signum of the given number: 0 if the number is 0, -1 for any negative number, and 1 for any positive number
 
-Syntax:sign(expression)
+Syntax: `sign(expression)`
 
 Returns:
 
-An Integer.
+An integer.
 
 Arguments:
 
@@ -383,7 +381,7 @@ Considerations:
 
 
 
-* sign(null) returns null.
+* `sign(null)` returns null.
 
 Query:
 
