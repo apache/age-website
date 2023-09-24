@@ -111,7 +111,7 @@ Returns all the movies in the database.
 
 ### Related Vertices
 
-The symbol -[]- means related to, without regard to type or direction of the edge.
+The symbol `-[]-` means related to, without regard to type or direction of the edge.
 
 Query
 
@@ -184,7 +184,7 @@ Returns any vertices connected with the Person 'Oliver' that are labeled Movie.
 
 ### Outgoing Edges
 
-When the direction of an edge is of interest, it is shown by using -> or &lt;-.
+When the direction of an edge is of interest, it is shown by using `->` or &lt;-.
 
 Query
 
@@ -340,7 +340,7 @@ Returns ACTED_IN roles for 'Wall Street'.
 
 ### Multiple Edges
 
-Edges can be expressed by using multiple statements in the form of ()-[]-(), or they can be strung together.
+Edges can be expressed by using multiple statements in the form of `()-[]-()`, or they can be strung together.
 
 Query
 
