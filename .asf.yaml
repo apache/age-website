@@ -1,0 +1,6 @@
+github:
+  homepage: https://age.apache.org
+  enabled_merge_buttons:
+    squash:  true
+    merge:   false
+    rebase:  true
