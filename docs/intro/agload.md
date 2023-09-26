@@ -49,14 +49,14 @@ Following is the explanation about the structure for CSV files for vertices and 
 
 | field name | Field description                                            |
 | ---------- | ------------------------------------------------------------ |
-| id         | it shall be the first column of the file and all values shall be a positive integer. This is an optional field when `id_field_exists` is ***false***. However, it should be present when `id_field_exists` is ***not*** set to false.  |
-| Properties | all other columns contains the properties for the nodes. Header row shall contain the name of property |
+| id         | it shall be the first column of the file and all values shall be a positive integer. <br>This is an optional field when `id_field_exists` is ***false***. <br>However, it should be present when `id_field_exists` is ***not*** set to false.  |
+| Properties | all other columns contains the properties for the nodes. <br>Header row shall contain the name of property |
 
 - Similarly, a CSV file for edges shall be formatted as follows 
 
 | field name        | Field description                                            |
 | ----------------- | ------------------------------------------------------------ |
-| start_id          | node id of the node from where the edge is stated. This id shall be present in nodes.csv file. |
+| start_id          | node id of the node from where the edge is stated. <br>This id shall be present in nodes.csv file. |
 | start_vertex_type | class of the node                                            |
 | end_id            | end id of the node at which the edge shall be terminated    |
 | end_vertex_type   | Class of the node                                            |
