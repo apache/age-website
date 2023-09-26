@@ -34,7 +34,7 @@ sudo apt-get install build-essential libreadline-dev zlib1g-dev flex bison
 
 ### Install Postgres
 
-You will need to install a AGE compatible version of Postgres, for now AGE only supports Postgres 11 and 12.
+You will need to install a AGE compatible version of Postgres, for now AGE supports Postgres 11, 12, 13, 14 and 15.
 
 #### Install From Source Code
 
@@ -61,7 +61,7 @@ sudo apt install postgresql-12
 
 Clone the <a href='https://github.com/apache/age'>github repository</a>
 
-Run the pg_config utility and check the version of PostgreSQL, currently only PostgreSQL versions 11 & 12 are supported. If you have any other version of postgres, you will need to install PostgreSQL version 11 & 12. Follow Setting up multiple versions of PostgreSQL
+Run the pg_config utility and check the version of PostgreSQL, currently, PostgreSQL versions from 11 up to 15 are supported. If you have any other version of postgres, you will need to install a PostgreSQL version from 11 to 15. Follow Setting up multiple versions of PostgreSQL
 ```console
 pg_config
 ```
@@ -80,7 +80,7 @@ make PG_CONFIG=/path/to/postgres/bin/pg_config install
 
 #### Setting up multiple versions of PostgreSQL
 
-Install the intended version of PostgreSQL (11 or 12).
+Install the intended version of PostgreSQL (11, 12, 13, 14 or 15).
 
 Use the pg_config to check if it points to the intended version of PostgreSQL, if it does we will have to PGBINROOT. Open /usr/bin/pg_config in write mode (might require root previllages) and edit the PGBINROOT value
 
@@ -141,6 +141,8 @@ SET search_path = ag_catalog, "$user", public;
 ```console
 sudo ln -s /usr/lib/postgresql/11/lib/age.so /usr/lib/postgresql/11/lib/plugins/age.so
 ```
+
+> Replace `11` with whatever version of postgres you are working on.
 
 * In order to use Apache AGE, users need `USAGE` privileges on the `ag_catalog` schema (example for user `db_user`):
 
