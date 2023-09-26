@@ -64,9 +64,9 @@ sudo apt install postgresql-xx postgresql-server-dev-all
 
 Clone the <a href='https://github.com/apache/age'>github repository</a> or <a href='https://github.com/apache/age/releases'>download an official release</a>
 
-Run the pg_config utility and check the version of PostgreSQL. Apache AGE supports all the stable versions of postgresql(11, 12, 13, 14 and 15).
+Run the pg_config utility and check the version of PostgreSQL. Apache AGE supports all the stable versions of PostgreSQL (11, 12, 13, 14 and 15).
 
-The build process will attempt to use the first path in the PATH environment variable when installing AGE. If the pg_config path is located there, run the following command in the source code directory of Apache AGE to build and install the extension.
+The build process will attempt to use the first path in the PATH environment variable when installing AGE. If the `PG_CONFIG` path is located there, run the following command in the source code directory of Apache AGE to build and install the extension.
 
 ```console
 make install
@@ -81,7 +81,7 @@ make PG_CONFIG=/path/to/postgres/bin/pg_config install
 ### Post Installation AGE Setup
 
 
-After the installation, open a connection to a running instance of your database and run the CREATE EXTENSION command to have AGE installed on the server.
+After the installation, open a connection to a running instance of your database and run the `CREATE EXTENSION` command to have AGE installed on the server.
 
 ```postgresql
 CREATE EXTENSION age;
@@ -126,7 +126,7 @@ For every connection of AGE you start you will need to load the AGE extension.
 LOAD 'age';
 ```
 
-We recommend adding ag_catalog to your search_path to simplify your queries. The rest of this document will assume you have done so. If you do not, remember to add 'ag_catalog' to your cypher query function calls.
+We recommend adding `ag_catalog` to your search_path to simplify your queries. The rest of this document will assume you have done so. If you do not, remember to add `ag_catalog` to your cypher query function calls.
 
 ```postgresql
 SET search_path = ag_catalog, "$user", public;
@@ -134,7 +134,7 @@ SET search_path = ag_catalog, "$user", public;
 
 ### Allow non-superusers to use Apache AGE
 
-* Non-superusers can only apply LOAD to library files located in `$libdir/plugins/` (see <https://www.postgresql.org/docs/15/sql-load.html>). A symlink can be created to allow non-superusers to LOAD the Apache AGE library:
+* Non-superusers can only apply `LOAD` to library files located in `$libdir/plugins/` (see <https://www.postgresql.org/docs/15/sql-load.html>). A symlink can be created to allow non-superusers to `LOAD` the Apache AGE library:
 
 ```console
 sudo ln -s /usr/lib/postgresql/15/lib/age.so /usr/lib/postgresql/15/lib/plugins/age.so

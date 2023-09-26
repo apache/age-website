@@ -1,6 +1,6 @@
 # Data Types - An Introduction to agtype
 
-AGE uses a custom data type called agtype, which is the only data type returned by AGE. Agtype is a superset of Json and a custom implementation of JsonB.
+AGE uses a custom data type called `agtype`, which is the only data type returned by AGE. `agtype` is a superset of Json and a custom implementation of JsonB.
 
 
 ## Simple Data Types
@@ -8,7 +8,7 @@ AGE uses a custom data type called agtype, which is the only data type returned 
 
 ### Null
 
-In Cypher, null is used to represent missing or undefined values. Conceptually, null means 'a missing unknown value' and it is treated somewhat differently from other values. For example getting a property from a vertex that does not have said property produces null. Most expressions that take null as input will produce null. This includes boolean expressions that are used as predicates in the WHERE clause. In this case, anything that is not true is interpreted as being false. null is not equal to null. Not knowing two values does not imply that they are the same value. So the expression null = null yields null and not true.
+In Cypher, `null` is used to represent missing or undefined values. Conceptually, `null` means 'a missing unknown value', and it is treated somewhat differently from other values. For example getting a property from a vertex that does not have said property produces `null`. Most expressions that take `null` as input will produce `null`. This includes boolean expressions that are used as predicates in the `WHERE` clause. In this case, anything that is not true is interpreted as being false. `null` is not equal to `null`. Not knowing two values does not imply that they are the same value. So the expression `null = null` yields `null` and not `true`.
 
 Input/Output Format
 
@@ -23,7 +23,7 @@ $$) AS (null_result agtype);
 ```
 
 
-A null will appear as an empty space.
+A `null` will appear as an empty space.
 
 Result:
 
@@ -48,7 +48,7 @@ Result:
 
 #### Agtype NULL vs Postgres NULL
 
-The concept of NULL in Agtype and Postgres is the same as it is in Cypher.
+The concept of `NULL` in `agtype` and Postgres is the same as it is in Cypher.
 
 ### Integer
 
@@ -106,9 +106,9 @@ Inexact means that some values cannot be converted exactly to the internal forma
 Values that are too large or too small will cause an error. Rounding might take place if the precision of an input number is too high. Numbers too close to zero that are not representable as distinct from zero will cause an underflow error.
 
 In addition to ordinary numeric values, the floating-point types have several special values:
-* Infinity
-* -Infinity
-* NaN
+* `Infinity`
+* `-Infinity`
+* `NaN`
 
 These represent the IEEE 754 special values “infinity”, “negative infinity”, and “not-a-number”, respectively. When writing these values as constants in a Cypher command, you must put quotes around them and typecast them, for example 
 ```
@@ -173,9 +173,9 @@ The maximum allowed precision when explicitly specified in the type declaration 
 
 If the scale of a value to be stored is greater than the declared scale of the column, the system will round the value to the specified number of fractional digits. Then, if the number of digits to the left of the decimal point exceeds the declared precision minus the declared scale, an error is raised.
 
-Numeric values are physically stored without any extra leading or trailing zeroes. Thus, the declared precision and scale of a column are maximums, not fixed allocations. (In this sense the numeric type is more akin to varchar(_n_) than to char(_n_).) The actual storage requirement is two bytes for each group of four decimal digits, plus three to eight bytes overhead.
+Numeric values are physically stored without any extra leading or trailing zeroes. Thus, the declared precision and scale of a column are maximums, not fixed allocations. (In this sense the numeric type is more akin to `varchar(n)` than to `char(n)`.) The actual storage requirement is two bytes for each group of four decimal digits, plus three to eight bytes overhead.
 
-In addition to ordinary numeric values, the numeric type allows the special value NaN, meaning “not-a-number”. Any operation on NaN yields another NaN. When writing this value as a constant in an SQL command, you must put quotes around it, for example UPDATE table SET x = 'NaN'. 
+In addition to ordinary numeric values, the numeric type allows the special value `NaN`, meaning “not-a-number”. Any operation on `NaN` yields another `NaN`. When writing this value as a constant in an SQL command, you must put quotes around it, for example `UPDATE table SET x = 'NaN'`. 
 
 
 
@@ -189,7 +189,7 @@ When rounding values, the numeric type rounds ties away from zero, while (on mos
 
 Input/Output Format:
 
-When creating a numeric data type, the ‘::numeric’ data annotation is required.
+When creating a numeric data type, the `::numeric` data annotation is required.
 
 Query
 
@@ -224,9 +224,9 @@ Result:
 
 #### Bool 
 
-AGE provides the standard Cypher type boolean. The boolean type can have several states: “true”, “false”, and a third state, “unknown”, which is represented by the Agtype null value.
+AGE provides the standard Cypher type `boolean`. The `boolean` type can have several states: “true”, “false”, and a third state, “unknown”, which is represented by the Agtype `null` value.
 
-Boolean constants can be represented in Cypher queries by the keywords TRUE, FALSE, and NULL.
+Boolean constants can be represented in Cypher queries by the keywords `TRUE`, `FALSE`, and `NULL`.
 
 Input/Output Format
 
@@ -241,7 +241,7 @@ $$) AS (boolean_result agtype);
 ```
 
 
-Unlike Postgres, AGE’s boolean outputs as the full word, ie. true and false as opposed to t and f.
+Unlike Postgres, AGE’s boolean outputs as the full word, ie. `true` and `false` as opposed to `t` and `f`.
 
 Result:
 
@@ -372,7 +372,7 @@ Result:
 
 ### List
 
-All examples will use the [WITH](../clauses/with.md) clause and [RETURN](../clauses/return.md) clause.
+All examples will use the [`WITH`](../clauses/with.md) clause and [`RETURN`](../clauses/return.md) clause.
 
 
 #### Lists in general
@@ -413,7 +413,7 @@ Result:
 
 #### NULL in a List
 
-A list can hold the value null, unlike when a null is an independent value, it will appear as the word ‘null’ in a list
+A list can hold the value `null`, and unlike when a null is an independent value, it will appear as the word ‘null’ in a list
 
 Query
 
@@ -724,7 +724,7 @@ Result:
 </table>
 
 
-Out-of-bound slices are simply truncated, but out-of-bound single elements return null.
+Out-of-bound slices are simply truncated, but out-of-bound single elements return `null`.
 
 Query
 
@@ -955,7 +955,7 @@ A label is an identifier that classifies vertices and edges into certain categor
 * Edges are required to have a label, but vertices do not. 
 * The names of labels between vertices and edges cannot overlap. 
 
-See [CREATE](../clauses/create.md) clause for information about how to make entities with labels.
+See [`CREATE`](../clauses/create.md) clause for information about how to make entities with labels.
 
 
 ### Properties
