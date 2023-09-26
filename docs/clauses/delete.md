@@ -14,9 +14,9 @@ For removing properties, see REMOVE.
 You cannot delete a node without also deleting edges that start or end on said vertex. Either explicitly delete the vertices,or use DETACH DELETE.
 
 
-## Delete single vertex
+## Delete isolated vertices
 
-To delete a vertex, use the DELETE clause.
+To delete vertices with no edges associated with them, use the DELETE clause only.
 
 Query
 
@@ -30,7 +30,7 @@ $$) as (v agtype);
 ```
 
 
-Nothing is returned from this query.
+This will delete the vertices (with label Useless) that have no edges. Nothing is returned from this query.
 
 
 <table>
@@ -44,9 +44,9 @@ Nothing is returned from this query.
   </tr>
 </table>
 
-## Delete all vertices and edges
+## Delete all vertices and edges associated with them
 
-Running a Match clause will collect all nodes, use the DETACH option to first delete a vertice's edges then delete the vertex itself.
+To delete all vertices (with label Useless) and the edges associated with them, use the DETACH option to first delete the vertice's edges then delete the vertex itself.
 
 Query
 

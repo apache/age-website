@@ -15,7 +15,7 @@ User can load graph in two steps
 ## Load Graph functions 
 Following are the details about the functions to create vertices and edges from the file. 
 
-function `load_labels_from_file` is used to load vertices from the CSV files. 
+Function `load_labels_from_file` is used to load vertices from the CSV files. 
 
 ```postgresql
 load_labels_from_file('<graph name>', 
@@ -49,20 +49,20 @@ Following is the explanation about the structure for CSV files for vertices and 
 
 | field name | Field description                                            |
 | ---------- | ------------------------------------------------------------ |
-| id         | it shall be the first column of the file and all values shall be a positive integer. This is an optional field when `id_field_exists` is ***false***. However, it should be present when `id_field_exists` is ***not*** set to false.  |
-| Properties | all other columns contains the properties for the nodes. Header row shall contain the name of property |
+| id         | it shall be the first column of the file and all values shall be a positive integer. <br>This is an optional field when `id_field_exists` is ***false***. <br>However, it should be present when `id_field_exists` is ***not*** set to false.  |
+| Properties | all other columns contains the properties for the nodes. <br>Header row shall contain the name of property |
 
 - Similarly, a CSV file for edges shall be formatted as follows 
 
 | field name        | Field description                                            |
 | ----------------- | ------------------------------------------------------------ |
-| start_id          | node id of the node from where the edge is stated. This id shall be present in nodes.csv file. |
+| start_id          | node id of the node from where the edge is stated. <br>This id shall be present in nodes.csv file. |
 | start_vertex_type | class of the node                                            |
 | end_id            | end id of the node at which the edge shall be terminated    |
 | end_vertex_type   | Class of the node                                            |
 | properties        | properties of the edge. the header shall contain the property name |
 
-example files can be viewed at `regress/age_load/data`
+Example files can be viewed at `regress/age_load/data`
 
 ## Example SQL script 
 
@@ -100,7 +100,7 @@ SELECT load_edges_from_file('agload_test_graph', 'has_city',
      'age_load/data/edges.csv');
 ```
 
-- check if the graph has been loaded properly
+- Check if the graph has been loaded properly
 
 ```postgresql
 SELECT table_catalog, table_schema, table_name, table_type
@@ -135,10 +135,10 @@ SELECT load_labels_from_file('agload_test_graph',
                              'age_load/data/cities.csv', 
                              false);
 ```
-- check if the graph has been loaded properly and perform difference analysis between ids created automatically and picked from the files.
+- Check if the graph has been loaded properly and perform difference analysis between ids created automatically and picked from the files.
 
-- labels `Country` and `City` were created with id field in the file
-- labels `Country2` and `City2` were created with no id field in the file. 
+- Labels `Country` and `City` were created with id field in the file
+- Labels `Country2` and `City2` were created with no id field in the file. 
 ```postgresql
 SELECT COUNT(*) FROM agload_test_graph."Country2";
 SELECT COUNT(*) FROM agload_test_graph."City2";

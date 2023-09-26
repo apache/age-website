@@ -11,7 +11,7 @@ Returns:
 
 
 ```
-A Float.
+An agtype Float.
 ```
 
 
@@ -75,7 +75,7 @@ Results:
 
 ## radians
 
-radians() converts radians to degrees.
+radians() converts degrees to radians.
 
 Syntax:`radians(expression)`
 
@@ -83,7 +83,7 @@ Returns:
 
 
 ```
-A Float.
+An agtype Float.
 ```
 
 
@@ -177,7 +177,7 @@ Result:
 
 <table>
   <tr>
-   <td>p
+   <td>pi
    </td>
   </tr>
   <tr>
@@ -202,7 +202,7 @@ Returns:
 
 
 ```
-A Float.
+An agtype Float.
 ```
 
 
@@ -274,7 +274,7 @@ Returns:
 
 
 ```
-A Float.
+An agtype Float.
 ```
 
 
@@ -346,7 +346,7 @@ Returns:
 
 
 ```
-A Float.
+An agtype Float.
 ```
 
 
@@ -418,7 +418,7 @@ Returns:
 
 
 ```
-A Float.
+An agtype Float.
 ```
 
 
@@ -455,7 +455,7 @@ Query:
 SELECT *
 FROM cypher('graph_name', $$
     RETURN asin(0.5)
-$$) as (s agtype);
+$$) as (arc_s agtype);
 ```
 
 
@@ -466,7 +466,7 @@ Results:
 
 <table>
   <tr>
-   <td>s
+   <td>arc_s
    </td>
   </tr>
   <tr>
@@ -491,7 +491,7 @@ Returns:
 
 
 ```
-A Float.
+An agtype Float.
 ```
 
 
@@ -564,7 +564,7 @@ Returns:
 
 
 ```
-A Float.
+An agtype Float.
 ```
 
 
@@ -604,7 +604,7 @@ $$) as (arc_t agtype);
 ```
 
 
-The arccosine of 0.5 is returned.
+The arctangent of 0.5 is returned.
 
 Results:
 
@@ -636,7 +636,7 @@ Returns:
 
 
 ```
-A Float.
+An agtype Float.
 ```
 
 
