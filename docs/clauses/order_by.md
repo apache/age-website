@@ -181,7 +181,7 @@ Result
 
 ## Ordering null
 
-When sorting the result set, null will always come at the end of the result set for ascending sorting,and first when doing descending sort.
+When sorting the result set, null will always come at the end of the result set for ascending sorting, and first when doing descending sort.
 
 Query
 
