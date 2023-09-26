@@ -180,27 +180,27 @@ else
 }
 ```
 
-If all the bodies of if/else statement contain a single line, omit braces. See below.
+Braces should be used consistenly for if/else statements, regardless of the number of lines in their bodies. See below.
 
 ```
 
 if (x is true)
-    we do a
-
-if (y is true)
-    we do b
-else
-    we do c
-
-```
-
-One exception is do statement. See the following example.
-
-```
-do
 {
-    body of do-loop
-} while (condition);
+    we do a
+    if (y is true)
+    {
+        we do b
+    }
+    else
+    {
+        we do c
+    }
+    /* Here's an example using do-while */
+    do
+    {
+        body of do-loop
+    } while (condition);
+}
 ```
 
 ### Naming
@@ -213,8 +213,7 @@ Use typedef only for struct and enum. It must not be used for pointer types.
 
 ### Commenting
 
-For multi-line comments, use C style multi-line comments.
-For single-line comments, use C++ style single-line comments.
+For multi and single-line comments, both `//` and `/**/` can be used. 
 See below.
 
 ```
@@ -226,13 +225,14 @@ void f(void)
 {
     // This is to check...
     if (y is true)
+    {
         we do b
-
-    /*
-     * We need to do this here
-     * because of ...
-     */
+    }
+    /* We need to do this here because of ... */
     for (;;)
+    {
+        /* More code here... */
+    }
 }
 
 ```
