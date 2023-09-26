@@ -11,7 +11,7 @@ Returns:
 
 
 ```
-A Float.
+An agtype Float.
 ```
 
 
@@ -75,7 +75,7 @@ Results:
 
 ## radians
 
-radians() converts radians to degrees.
+radians() converts degrees to radians.
 
 Syntax:`radians(expression)`
 
@@ -83,7 +83,7 @@ Returns:
 
 
 ```
-A Float.
+An agtype Float.
 ```
 
 

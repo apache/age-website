@@ -358,7 +358,11 @@ Syntax:sign(expression)
 
 Returns:
 
-An Integer.
+```
+An integer.
+```
+
+
 
 Arguments:
 
