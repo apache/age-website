@@ -1067,13 +1067,13 @@ Data Format
   <tr>
    <td>startid
    </td>
-   <td>graphid for the incoming edge
+   <td>graphid for the source node
    </td>
   </tr>
   <tr>
    <td>endid
    </td>
-   <td>graphid for the outgoing edge
+   <td>graphid for the target node
    </td>
   </tr>
   <tr>
