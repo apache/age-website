@@ -167,28 +167,32 @@ we do c
 we do d
 }
 </code></p></pre><p></p>
-<p>If all the bodies of if/else statement contain a single line, omit braces. See below.</p>
+<p>Braces should be used consistenly for if/else statements, regardless of the number of lines in their bodies. See below.</p>
 <pre><code>
 if (x is true)
-    we do a
-<p>if (y is true)
-we do b
-else
-we do c</p>
-</code><p><code></code></p></pre><p></p>
-<p>One exception is do statement. See the following example.</p>
-<pre><code>do
 {
-    body of do-loop
-} while (condition);
+    we do a
+    if (y is true)
+    {
+        we do b
+    }
+    else
+    {
+        we do c
+    }
+    /* Here&#x27;s an example using do-while */
+    do
+    {
+        body of do-loop
+    } while (condition);
+}
 </code></pre>
 <h3>Naming</h3>
 <p>Use the underscore name convention for all variables, functions, structs, enums and define macros.</p>
 <h3>Typedefs</h3>
 <p>Use typedef only for struct and enum. It must not be used for pointer types.</p>
 <h3>Commenting</h3>
-<p>For multi-line comments, use C style multi-line comments.
-For single-line comments, use C++ style single-line comments.
+<p>For multi and single-line comments, both <code>//</code> and <code>/**/</code> can be used.
 See below.</p>
 <pre><code>/*
  * This function
@@ -198,14 +202,15 @@ void f(void)
 {
     // This is to check...
     if (y is true)
+    {
         we do b
-<pre><code>/*
- * We need to do this here
- * because of ...
- */
-for (;;)
-</code></pre>
-<p>}</p>
+    }
+    /* We need to do this here because of ... */
+    for (;;)
+    {
+        /* More code here... */
+    }
+}
 </code><p><code></code></p></pre><p></p>
 <h3>Macros, Enums, and RTL</h3>
 <p>Don&#x27;t align bodies of macros.</p>
