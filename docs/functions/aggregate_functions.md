@@ -62,7 +62,7 @@ Considerations:
 
 
 * Any null values are excluded from the calculation.
-* In a mixed set, any string value is always considered to be lower than any numeric value, and anylist is always considered to be lower than any string.
+* In a mixed set, any string value is always considered to be lower than any numeric value, and any list is always considered to be lower than any string.
 * Lists are compared in dictionary order, i.e. list elements are compared pairwise in ascending order from the start of the list to the end.
 * min(null) returns null.
 
