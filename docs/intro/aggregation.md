@@ -29,7 +29,7 @@ To calculate aggregated data, Cypher offers aggregation, analogous to SQL’s GR
 
 Aggregating functions take a  set of values and calculate An aggregated value over them. Examples are [avg()](../functions/aggregate_functions.md#avg) that calculates the average of multiple numeric values, or [min()](../functions/aggregate_functions.md#min) that finds the smallest numeric or string value in a set of values. When we say below that an aggregating function operates on a set of values, we mean these to be the result of the application of the inner expression(such as n.age) to all the records within the same aggregation group.
 
-Aggregation can be computed over all the matching subgraphs, or it can be further divided by introducing grouping keys. These are non-aggregate expressions, that are used to group the valuesgoing into the aggregate functions.
+Aggregation can be computed over all the matching subgraphs, or it can be further divided by introducing grouping keys. These are non-aggregate expressions, that are used to group the values going into the aggregate functions.
 
 Assume we have the following return statement:
 ```postgresql
@@ -111,7 +111,7 @@ $$) as (distinct_eyes agtype, eyes agtype);
 
 ## Ambiguous Grouping Statements
 
-This feature of not requiring the user to specifiy their grouping keys for a query allows for ambiguity on what Cypher should qualify as their grouping keys. For more details [click here.](https://opencypher.org/articles/2017/07/27/ocig1-aggregations-article/)
+This feature of not requiring the user to specify their grouping keys for a query allows for ambiguity on what Cypher should qualify as their grouping keys. For more details [click here.](https://opencypher.org/articles/2017/07/27/ocig1-aggregations-article/)
 
 Data Setup 
 ```postgresql
