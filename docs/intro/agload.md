@@ -33,7 +33,7 @@ load_labels_from_file('<graph name>',
                       false)
 ```
 
-Function `load_edges_from_file` can be used to load properties from the CSV file. Please see the file structure in the following. 
+Function `load_edges_from_file` can be used to load edges from the CSV file. Please see the file structure in the following. 
 
 Note: make sure that ids in the edge file are identical to ones that are in vertices files. 
 
@@ -81,7 +81,7 @@ SELECT create_graph('agload_test_graph');
 SELECT create_vlabel('agload_test_graph','Country');
 SELECT load_labels_from_file('agload_test_graph',
                              'Country',
-                             'age_load/data/countries.csv');
+                             'age/regress/age_load/data/countries.csv');
 ```
 
 - Create label `City` and load vertices from csv file. ***Note this CSV file has id field.***
@@ -90,7 +90,7 @@ SELECT load_labels_from_file('agload_test_graph',
 SELECT create_vlabel('agload_test_graph','City');
 SELECT load_labels_from_file('agload_test_graph',
                              'City', 
-                             'age_load/data/cities.csv');
+                             'age/regress/age_load/data/cities.csv');
 ```
 
 - Create label `has_city` and load edges from CSV file.
@@ -98,7 +98,7 @@ SELECT load_labels_from_file('agload_test_graph',
 ```postgresql
 SELECT create_elabel('agload_test_graph','has_city');
 SELECT load_edges_from_file('agload_test_graph', 'has_city',
-     'age_load/data/edges.csv');
+     'age/regress/age_load/data/edges.csv');
 ```
 
 - Check if the graph has been loaded properly.
@@ -124,17 +124,17 @@ SELECT COUNT(*) FROM cypher('agload_test_graph', $$MATCH (a)-[e]->(b) RETURN e$$
 SELECT create_vlabel('agload_test_graph','Country2');
 SELECT load_labels_from_file('agload_test_graph',
                              'Country2',
-                             'age_load/data/countries.csv', 
+                             'age/regress/age_load/data/countries.csv', 
                              false);
 ```
 
-- Create label `City2` and load vertices from CSV file. ***Note this CSV file has id field.***
+- Create label `City2` and load vertices from CSV file. ***Note this CSV file has no id field.***
 
 ```postgresql
 SELECT create_vlabel('agload_test_graph','City2');
 SELECT load_labels_from_file('agload_test_graph',
                              'City2',
-                             'age_load/data/cities.csv', 
+                             'age/regress/age_load/data/cities.csv', 
                              false);
 ```
 
