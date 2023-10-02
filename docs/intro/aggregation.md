@@ -111,7 +111,7 @@ $$) as (distinct_eyes agtype, eyes agtype);
 
 ## Ambiguous Grouping Statements
 
-This feature of not requiring the user to specifiy their grouping keys for a query allows for ambiguity on what Cypher should qualify as their grouping keys. For more details [click here.](https://opencypher.org/articles/2017/07/27/ocig1-aggregations-article/)
+This feature of not requiring the user to specify their grouping keys for a query allows for ambiguity on what Cypher should qualify as their grouping keys. For more details [click here.](https://opencypher.org/articles/2017/07/27/ocig1-aggregations-article/)
 
 Data Setup 
 ```postgresql
