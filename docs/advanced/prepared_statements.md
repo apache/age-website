@@ -6,12 +6,12 @@ Cypher can run a read query within a Prepared Statement. When using parameters w
 
 A cypher parameter is in the format of a '$' followed by an identifier. Unlike Postgres parameters, Cypher parameters start with a letter, followed by an alphanumeric string of arbitrary length.
 
-Example: <code>$<strong>parameter_name</strong></code>
+Example: `$parameter_name`
 
 
 ## Prepared Statements Preparation
 
-Preparing Prepared Statements in cypher is an extension of Postgres' stored procedure system. Use the PREPARE clause to create a query with the Cypher Function call in it. Do not place Postgres style parameters in the cypher query call, instead place Cypher parameters in the query and place a Postgres parameter as the third argument in the Cypher function call.
+Preparing Prepared Statements in cypher is an extension of Postgres' stored procedure system. Use the `PREPARE` clause to create a query with the Cypher Function call in it. Do not place Postgres style parameters in the cypher query call, instead place Cypher parameters in the query and place a Postgres parameter as the third argument in the Cypher function call.
 
 
 ```postgresql
