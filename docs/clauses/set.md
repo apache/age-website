@@ -1,16 +1,16 @@
 # SET
 
-The SET clause is used to update labels on nodes and properties on vertices and edges
+The `SET` clause is used to update labels on nodes and properties on vertices and edges
 
 
 ## Terminal SET clauses
 
-A set clause that is not followed by another clause is called a terminal clause. When a cypher query ends with a terminal clause, no results will be returned from the cypher function call. However, the cypher function call still requires a column list definition. When cypher ends with a terminal node, define a single value in the column list definition: no data will be returned in this variable.
+A `SET` clause that is not followed by another clause is called a terminal clause. When a cypher query ends with a terminal clause, no results will be returned from the cypher function call. However, the cypher function call still requires a column list definition. When cypher ends with a terminal node, define a single value in the column list definition: no data will be returned in this variable.
 
 
 ## Set a property
 
-To set a property on a node or relationship, use SET.
+To set a property on a node or relationship, use `SET`.
 
 Query
 
@@ -83,7 +83,7 @@ Result
 
 ## Remove a property
 
-Normally you remove a property by using REMOVE, but it’s sometimes handy to do it using the SET command. One example is if the property comes from a parameter.
+Normally you remove a property by using `REMOVE`, but it’s sometimes handy to do it using the `SET` command. One example is if the property comes from a parameter.
 
 Query
 

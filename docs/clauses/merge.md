@@ -1,13 +1,13 @@
 # MERGE
 
-The MERGE clause ensures that a pattern exists in the graph. Either the pattern already exists, or it needs to be created.
+The `MERGE` clause ensures that a pattern exists in the graph. Either the pattern already exists, or it needs to be created.
 
 
-MERGE either matches existing nodes, or creates new data. It’s a combination of MATCH and CREATE.
+`MERGE` either matches existing nodes, or creates new data. It’s a combination of `MATCH` and `CREATE`.
 
-For example, you can specify that the graph must contain a node for a user with a certain name. If there isn’t a node with the correct name, a new node will be created and its name property set. When using MERGE on full patterns, the behavior is that either the whole pattern matches, or the whole pattern is created. MERGE will not partially use existing patterns. If partial matches are needed, this can be accomplished by splitting a pattern up into multiple MERGE clauses.
+For example, you can specify that the graph must contain a node for a user with a certain name. If there isn’t a node with the correct name, a new node will be created and its name property set. When using `MERGE` on full patterns, the behavior is that either the whole pattern matches, or the whole pattern is created. `MERGE` will not partially use existing patterns. If partial matches are needed, this can be accomplished by splitting a pattern up into multiple `MERGE` clauses.
 
-As with MATCH, MERGE can match multiple occurrences of a pattern. If there are multiple matches, they will all be passed on to later stages of the query.
+As with `MATCH`, `MERGE` can match multiple occurrences of a pattern. If there are multiple matches, they will all be passed on to later stages of the query.
 
 ## Data Setup
 
@@ -101,7 +101,7 @@ RETURN michael.name, michael.bornIn
 $$) as (Name agtype, BornIn agtype);
 ```
 
-'Michael Douglas' will match the existing vertex and the vertex's name and BornIn properties are returned.
+'Michael Douglas' will match the existing vertex and the vertex's `name` and `bornIn` properties returned.
 
 <table>
   <tr>

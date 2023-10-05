@@ -1,10 +1,10 @@
 # LIMIT
 
-LIMIT constrains the number of records in the output.
+`LIMIT` constrains the number of records in the output.
 
 ## Introduction
 
-LIMIT accepts any expression that evaluates to a positive integer.
+`LIMIT` accepts any expression that evaluates to a positive integer.
 
 
 ## Return a subset of the rows
@@ -54,7 +54,7 @@ Result
 
 ## Using an expression with LIMIT to return a subset of the rows
 
-Limit accepts any expression that evaluates to a positive integer as long as it is not referring to any external variables:
+`LIMIT` accepts any expression that evaluates to a positive integer as long as it is not referring to any external variables:
 
 Query
 
