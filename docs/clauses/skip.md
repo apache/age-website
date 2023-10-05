@@ -1,10 +1,10 @@
 # SKIP
 
-SKIP defines from which record to start including the records in the output.
+`SKIP` defines from which record to start including the records in the output.
 
 ## Introduction
 
-By using SKIP, the result set will get trimmed from the top. Please note that no guarantees are made on the order of the result unless the query specifies the ORDER BY clause. SKIP accepts any expression that evaluates to a positive  integer.
+By using `SKIP`, the result set will get trimmed from the top. Please note that no guarantees are made on the order of the result unless the query specifies the `ORDER BY` clause. `SKIP` accepts any expression that evaluates to a positive  integer.
 
 ## Skip first three rows
 
@@ -92,7 +92,7 @@ Result
 
 ## Using an expression with SKIP to return a subset of the rows
 
-Using an expression with SKIP to return a subset of the rows
+Using an expression with `SKIP` to return a subset of the rows
 
 Query
 
