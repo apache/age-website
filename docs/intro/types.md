@@ -8,7 +8,7 @@ AGE uses a custom data type called agtype, which is the only data type returned 
 
 ### Null
 
-In Cypher, null is used to represent missing or undefined values. Conceptually, null means 'a missing unknown value' and it is treated somewhat differently from other values. For example getting a property from a vertex that does not have said property produces null. Most expressions that take null as input will produce null. This includes boolean expressions that are used as predicates in the WHERE clause. In this case, anything that is not true is interpreted as being false. null is not equal to null. Not knowing two values does not imply that they are the same value. So the expression null = null yields null and not true.
+In Cypher, `null` is used to represent missing or undefined values. Conceptually, `null` means 'a missing unknown value' and it is treated somewhat differently from other values. For example getting a property from a vertex that does not have said property produces `null`. Most expressions that take `null` as input will produce `null`. This includes boolean expressions that are used as predicates in the `WHERE` clause. In this case, anything that is not true is interpreted as being false. `null` is not equal to `null`. Not knowing two values does not imply that they are the same value. So the expression `null = null` yields `null` and not true.
 
 Input/Output Format
 
@@ -48,13 +48,13 @@ Result:
 
 #### Agtype NULL vs Postgres NULL
 
-The concept of NULL in Agtype and Postgres is the same as it is in Cypher.
+The concept of `NULL` in Agtype and Postgres is the same as it is in Cypher.
 
 ### Integer
 
 The integer type stores whole numbers, i.e. numbers without fractional components. Integer data type is a 64-bit field that stores values from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807. Attempts to store values outside this range will result in an error.
 
-The type integer is the common choice, as it offers the best balance between range, storage size, and performance. The smallint type is generally used only if disk space is at a premium. The bigint type is designed to be used when the range of the integer type is insufficient.
+The type integer is the common choice, as it offers the best balance between range, storage size, and performance. The `smallint` type is generally used only if disk space is at a premium. The `bigint` type is designed to be used when the range of the integer type is insufficient.
 
 Input/Output Format
 
@@ -91,7 +91,7 @@ Result:
 
 ### Float
 
-The data type float is an inexact, variable-precision numeric type, conforming to the IEEE-754 Standard. 
+The data type `float` is an inexact, variable-precision numeric type, conforming to the IEEE-754 Standard. 
 
 Inexact means that some values cannot be converted exactly to the internal format and are stored as approximations, so that storing and retrieving a value might show slight discrepancies. Managing these errors and how they propagate through calculations is the subject of an entire branch of mathematics and computer science and will not be discussed here, except for the following points:
 
@@ -158,7 +158,7 @@ Result:
 
 ### Numeric 
 
-The type numeric can store numbers with a very large number of digits. It is especially recommended for storing monetary amounts and other quantities where exactness is required. Calculations with numeric values yield exact results where possible, e.g., addition, subtraction, multiplication. However, calculations on numeric values are very slow compared to the integer types, or to the floating-point type.
+The type `numeric` can store numbers with a very large number of digits. It is especially recommended for storing monetary amounts and other quantities where exactness is required. Calculations with numeric values yield exact results where possible, e.g., addition, subtraction, multiplication. However, calculations on numeric values are very slow compared to the integer types, or to the floating-point type.
 
 We use the following terms below: The _precision_ of a numeric is the total count of significant digits in the whole number, that is, the number of digits to both sides of the decimal point. The _scale_ of a numeric is the count of decimal digits in the fractional part, to the right of the decimal point. So the number 23.5141 has a precision of 6 and a scale of 4. Integers can be considered to have a scale of zero.
 
@@ -173,7 +173,7 @@ The maximum allowed precision when explicitly specified in the type declaration 
 
 If the scale of a value to be stored is greater than the declared scale of the column, the system will round the value to the specified number of fractional digits. Then, if the number of digits to the left of the decimal point exceeds the declared precision minus the declared scale, an error is raised.
 
-Numeric values are physically stored without any extra leading or trailing zeroes. Thus, the declared precision and scale of a column are maximums, not fixed allocations. (In this sense the numeric type is more akin to varchar(_n_) than to char(_n_).) The actual storage requirement is two bytes for each group of four decimal digits, plus three to eight bytes overhead.
+Numeric values are physically stored without any extra leading or trailing zeroes. Thus, the declared precision and scale of a column are maximums, not fixed allocations. (In this sense the numeric type is more akin to `varchar(n)` than to `char(n)`.) The actual storage requirement is two bytes for each group of four decimal digits, plus three to eight bytes overhead.
 
 In addition to ordinary numeric values, the numeric type allows the special value NaN, meaning “not-a-number”. Any operation on NaN yields another NaN. When writing this value as a constant in an SQL command, you must put quotes around it, for example UPDATE table SET x = 'NaN'. 
 
@@ -189,7 +189,7 @@ When rounding values, the numeric type rounds ties away from zero, while (on mos
 
 Input/Output Format:
 
-When creating a numeric data type, the ‘::numeric’ data annotation is required.
+When creating a numeric data type, the `::numeric` data annotation is required.
 
 Query
 
@@ -226,7 +226,7 @@ Result:
 
 AGE provides the standard Cypher type boolean. The boolean type can have several states: “true”, “false”, and a third state, “unknown”, which is represented by the Agtype null value.
 
-Boolean constants can be represented in Cypher queries by the keywords TRUE, FALSE, and NULL.
+Boolean constants can be represented in Cypher queries by the keywords `TRUE`, `FALSE`, and `NULL`.
 
 Input/Output Format
 
@@ -372,7 +372,7 @@ Result:
 
 ### List
 
-All examples will use the [WITH](../clauses/with.md) clause and [RETURN](../clauses/return.md) clause.
+All examples will use the [`WITH`](../clauses/with.md) clause and [`RETURN`](../clauses/return.md) clause.
 
 
 #### Lists in general
@@ -413,7 +413,7 @@ Result:
 
 #### NULL in a List
 
-A list can hold the value null, unlike when a null is an independent value, it will appear as the word ‘null’ in a list
+A list can hold the value `null`, unlike when a `null` is an independent value, it will appear as the word ‘null’ in a list
 
 Query
 
