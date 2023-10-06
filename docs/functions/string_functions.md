@@ -3,9 +3,9 @@
 
 ## replace
 
-replace() returns a string in which all occurrences of a specified string in the original string have been replaced by another (specified) string.
+`replace()` returns a string in which all occurrences of a specified string in the original string have been replaced by another (specified) string.
 
-Syntax: **<code>replace(original, search, replace)</code></strong>
+Syntax: <code>replace(original, search, replace)</code></strong>
 
 Returns:
 
@@ -50,8 +50,8 @@ Considerations:
 
 
 
-* If any argument is null, null will be returned.
-* If search is not found in original, original will be returned.
+* If any argument is `null`, `null` will be returned.
+* If search is not found in `original`, `original` will be returned.
 
 <table>
   <tr>
@@ -93,7 +93,7 @@ Result:
 
 ## split
 
-split() returns a list of strings resulting from the splitting of the original string around matches of the given delimiter.
+`split()` returns a list of strings resulting from the splitting of the original string around matches of the given delimiter.
 
 Syntax: `split(original, split_delimiter)`
 
@@ -134,7 +134,7 @@ Considerations:
 
 
 
-* split(null, splitDelimiter) and split(original, null) both return null
+* `split(null, splitDelimiter)` and `split(original, null)` both return `null`
 
 Query:
 
@@ -169,7 +169,7 @@ Result:
 
 ## left
 
-left() returns a string containing the specified number of leftmost characters of the original string.
+`left()` returns a string containing the specified number of leftmost characters of the original string.
 
 Syntax: `left(original, length)`
 
@@ -210,10 +210,10 @@ Considerations:
 
 
 
-* left(null, length) and left(null, null) both return null
-* left(original, null) will raise an error.
-* If length is not a positive integer, an error is raised.
-* If length exceeds the size of original, original is returned.
+* `left(null, length)` and `left(null, null)` both return `null`
+* `left(original, null)` will raise an error.
+* If `length` is not a positive integer, an error is raised.
+* If `length` exceeds the size of `original`, `original` is returned.
 
 Query:
 
@@ -248,7 +248,7 @@ Result:
 
 ## right
 
-right() returns a string containing the specified number of rightmost characters of the original string.
+`right()` returns a string containing the specified number of rightmost characters of the original string.
 
 Syntax: `right(original, length)`
 
@@ -289,10 +289,10 @@ Considerations:
 
 
 
-* right(null, length) and right(null, null) both return null
-* right(original, null) will raise an error.
-* If length is not a positive integer, an error is raised.
-* If length exceeds the size of original, original is returned.
+* `right(null, length)` and `right(null, null)` both return `null`
+* `right(original, null)` will raise an error.
+* If `length` is not a positive integer, an error is raised.
+* If `length` exceeds the size of `original`, `original` is returned.
 
 Query:
 
@@ -327,7 +327,7 @@ Result:
 
 ## substring
 
-substring() returns a substring of the original string, beginning with a 0-based index start and length.
+`substring()` returns a substring of the original string, beginning with a 0-based index start and length.
 
 Syntax: <code>substring(original, <strong>start</strong> [, <strong>length</strong>])</code>
 
@@ -374,12 +374,12 @@ Considerations:
 
 
 
-* start uses a zero-based index.
-* If length is omitted, the function returns the substring starting at the position given by start and extending to the end of original.
-* If original is null, null is returned.
-* If either start or length is null or a negative integer, an error is raised.
-* If start is 0, the substring will start at the beginning of original.
-* If length is 0, the empty string will be returned.
+* `start` uses a zero-based index.
+* If `length` is omitted, the function returns the substring starting at the position given by `start` and extending to the end of `original`.
+* If `original` is `null`, `null` is returned.
+* If either `start` or `length` is `null` or a negative integer, an error is raised.
+* If `start` is 0, the substring will start at the beginning of `original`.
+* If `length` is 0, the empty string will be returned.
 
 Query:
 
@@ -418,9 +418,9 @@ Result:
 
 ## rTrim
 
-rTrim() returns the original string with trailing whitespace removed.
+`rTrim()` returns the original string with trailing whitespace removed.
 
-Syntax: rTrim(original)
+Syntax: `rTrim(original)`
 
 Returns:
 
@@ -453,7 +453,7 @@ Considerations:
 
 
 
-* rTrim(null) returns null
+* `rTrim(null)` returns `null`
 
 Query:
 
@@ -488,7 +488,7 @@ Result:
 
 ## lTrim
 
-lTrim() returns the original string with leading whitespace removed.
+`lTrim()` returns the original string with leading whitespace removed.
 
 Syntax: `lTrim(original)`
 
@@ -523,7 +523,7 @@ Considerations:
 
 
 
-* lTrim(null) returns null
+* `lTrim(null)` returns `null`
 
 Query:
 
@@ -558,7 +558,7 @@ Result:
 
 ## trim
 
-trim() returns the original string with leading and trailing whitespace removed.
+`trim()` returns the original string with leading and trailing whitespace removed.
 
 Syntax: `trim(original)`
 
@@ -593,7 +593,7 @@ Considerations:
 
 
 
-* trim(null) returns null
+* `trim(null)` returns `null`
 
 Query:
 
@@ -628,7 +628,7 @@ Result:
 
 ## toLower
 
-toLower() returns the original string in lowercase.
+`toLower()` returns the original string in lowercase.
 
 Syntax: `toLower(original)`
 
@@ -663,7 +663,7 @@ Considerations:
 
 
 
-* toLower(null) returns null
+* `toLower(null)` returns `null`
 
 Query:
 
@@ -698,7 +698,7 @@ Result:
 
 ## toUpper
 
-toUpper() returns the original string in uppercase.
+`toUpper() `returns the original string in uppercase.
 
 Syntax: `toUpper(original)`
 
@@ -733,7 +733,7 @@ Considerations:
 
 
 
-* toUpper(null) returns null
+* `toUpper(null)` returns `null`
 
 Query:
 
@@ -768,7 +768,7 @@ Result:
 
 ## reverse
 
-reverse() returns a string in which the order of all characters in the original string have been reversed.
+`reverse()` returns a string in which the order of all characters in the original string have been reversed.
 
 Syntax: `reverse(original)`
 
@@ -803,7 +803,7 @@ Considerations:
 
 
 
-* reverse(null) returns null.
+* `reverse(null)` returns `null`.
 
 Query:
 
@@ -838,7 +838,7 @@ Result:
 
 ## toString
 
-toString() converts an integer, float or boolean value to a string.
+`toString()` converts an integer, float or boolean value to a string.
 
 Syntax: `toString(expression)`
 
@@ -873,7 +873,7 @@ Considerations:
 
 
 
-* toString(null) returns null
+* `toString(null)` returns `null`
 * If expression is a string, it will be returned unchanged.
 
 Query:
