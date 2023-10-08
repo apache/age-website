@@ -1,6 +1,6 @@
 # The AGE Cypher Query Format
 
-Cypher queries are constructed using a function called cypher in ag_catalog which returns a Postgres SETOF [records](https://www.postgresql.org/docs/11/xfunc-sql.html#XFUNC-SQL-FUNCTIONS-RETURNING-SET).
+Cypher queries are constructed using a function called cypher in `ag_catalog` which returns a Postgres SETOF [records](https://www.postgresql.org/docs/11/xfunc-sql.html#XFUNC-SQL-FUNCTIONS-RETURNING-SET).
 
 
 ## Cypher()
