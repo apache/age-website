@@ -7,7 +7,7 @@ Predicates are boolean functions that return true or false for a given set of in
 
 exists() returns true if the specified property exists in the node, relationship or map. This is different from the EXISTS clause.
 
-Syntax:exists(property)
+Syntax: `exists(property)`
 
 Returns:
 
