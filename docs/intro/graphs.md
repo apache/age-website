@@ -37,7 +37,7 @@ Arguments:
 </table>
 
 
-Considerations
+Considerations:
 
 
 
