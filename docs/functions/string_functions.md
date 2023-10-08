@@ -329,7 +329,7 @@ Result:
 
 substring() returns a substring of the original string, beginning with a 0-based index start and length.
 
-Syntax: <code>substring(original, <strong>start</strong> [, <strong>length</strong>])</code>
+Syntax: `substring(original, <strong>start</strong> [, <strong>length</strong>])`
 
 Returns:
 
@@ -420,7 +420,7 @@ Result:
 
 rTrim() returns the original string with trailing whitespace removed.
 
-Syntax: rTrim(original)
+Syntax: `rTrim(original)`
 
 Returns:
 
