@@ -5,7 +5,7 @@
 
 replace() returns a string in which all occurrences of a specified string in the original string have been replaced by another (specified) string.
 
-Syntax: **<code>replace(original, search, replace)</code></strong>
+Syntax: `replace(original, search, replace)`
 
 Returns:
 
