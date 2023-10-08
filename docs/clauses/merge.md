@@ -18,7 +18,6 @@ CREATE (A:Person {name: "Charlie Sheen", bornIn: "New York"}),
     (C:Person {name: "Rob Reiner", bornIn: "New York"}),
     (D:Person {name: "Oliver Stone", bornIn: "New York"}),
     (E:Person {name: "Martin Sheen", bornIn: "Ohio"})
-
 $$) as (result agtype);
 ```
 
