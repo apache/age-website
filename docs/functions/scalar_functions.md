@@ -3,9 +3,9 @@
 
 ## id
 
-id() returns the id of a vertex or edge.
+`id()` returns the id of a vertex or edge.
 
-Syntax:`id(expression)`
+Syntax: `id(expression)`
 
 Returns:
 
@@ -82,7 +82,7 @@ Results
 
 ## start_id
 
-start_id() returns the id of the vertex that is the starting vertex for the edge.
+`start_id()` returns the id of the vertex that is the starting vertex for the edge.
 
 Syntax: `start_id(expression)`
 
@@ -161,7 +161,7 @@ Results
 
 ## end_id
 
-end_id() returns the id of the vertex that is the ending vertex for the edge.
+`end_id()` returns the id of the vertex that is the ending vertex for the edge.
 
 Syntax: `end_id(expression)`
 
@@ -238,7 +238,7 @@ Results
 
 ## type
 
-type() returns the string representation of the edge type
+`type()` returns the string representation of the edge type.
 
 Syntax: `type(edge)`
 
@@ -340,7 +340,7 @@ Arguments:
 
 Considerations: 
 
-* properties(null) returns null.
+* `properties(null)` returns `null`.
 
 Query:
 
@@ -411,8 +411,8 @@ Considerations:
 
 
 
-* head(null) returns null.
-* If the first element in the list is null, head(list) will return null.
+* `head(null)` returns `null`.
+* If the first element in the list is `null`, `head(list)` will return `null`.
 
 Query
 
@@ -457,7 +457,7 @@ Result:
 
 returns the last element in an agtype list.
 
-Syntax:`last(list)`
+Syntax: `last(list)`
 
 Returns:
 
@@ -490,8 +490,8 @@ Considerations:
 
 
 
-* tail(null) returns null.
-* If the last element in the list is null, last(list) will return null.
+* `tail(null)` returns `null`.
+* If the last element in the list is `null`, `last(list)` will return `null`.
 
 Query
 
@@ -534,7 +534,7 @@ Result:
 
 ## length
 
-length() returns the length of a path.
+`length()` returns the length of a path.
 
 Syntax: `length(path)`
 
@@ -565,7 +565,7 @@ Arguments:
 </table>
 
 
-Considerations:length(null) returns null.
+Considerations: `length(null)` returns `null`.
 
 Query
 
@@ -580,7 +580,7 @@ $$) as (length_of_path agtype);
 ```
 
 
-The length of the path p is returned.
+The length of the path `p` is returned.
 
 Results:
 
@@ -612,9 +612,9 @@ Results:
 
 ## size
 
-size() returns the length of a list.
+`size()` returns the length of a list.
 
-Syntax:`size(list)`
+Syntax: `size(list)`
 
 Returns:
 
@@ -647,7 +647,7 @@ Considerations:
 
 
 
-* size(null) returns null.
+* `size(null)` returns `null`.
 
 Query
 
@@ -660,7 +660,7 @@ $$) as (size_of_list agtype);
 ```
 
 
-The length of the path p is returned.
+The length of the path `p` is returned.
 
 Results:
 
@@ -684,9 +684,9 @@ Results:
 
 ## startNode
 
-startNode() returns the start node of an edge.
+`startNode()` returns the start node of an edge.
 
-Syntax:`startNode(edge)`
+Syntax: `startNode(edge)`
 
 Returns:
 
@@ -719,7 +719,7 @@ Considerations:
 
 
 
-* startNode(null) returns null.
+* `startNode(null)` returns `null`.
 
 Query
 
@@ -759,7 +759,7 @@ Result
 
 ## endNode
 
-endNode() returns the start node of an edge.
+`endNode()` returns the start node of an edge.
 
 Syntax: `endNode(edge)`
 
@@ -794,7 +794,7 @@ Considerations:
 
 
 
-* endNode(null) returns null.
+* `endNode(null)` returns `null`.
 
 Query
 
@@ -834,9 +834,9 @@ Result
 
 ## timestamp
 
-timestamp() returns the difference, measured in milliseconds, between the current time and midnight, January 1, 1970 UTC.
+`timestamp()` returns the difference, measured in milliseconds, between the current time and midnight, January 1, 1970 UTC.
 
-Syntax:`timestamp()`
+Syntax: `timestamp()`
 
 Returns:
 
@@ -850,7 +850,7 @@ Considerations:
 
 
 
-* timestamp() will return the same value during one entire query, even for long-running queries.
+* `timestamp()` will return the same value during one entire query, even for long-running queries.
 
 Query
 
@@ -887,7 +887,7 @@ Results:
 
 ## toBoolean
 
-toBoolean() converts a string value to a boolean value.
+`toBoolean()` converts a string value to a boolean value.
 
 Syntax: `toBoolean(expression)`
 
@@ -922,9 +922,9 @@ Considerations:
 
 
 
-* toBoolean(null) returns null.
+* `toBoolean(null)` returns `null`.
 * If expression is a boolean value, it will be returned unchanged.
-* If the parsing fails, null will be returned.
+* If the parsing fails, `null` will be returned.
 
 Query
 
@@ -963,9 +963,9 @@ Result:
 
 ## toFloat
 
-toFloat() converts an integer or string value to a floating point number.
+`toFloat()` converts an integer or string value to a floating point number.
 
-Syntax:toFloat(expression)
+Syntax: `toFloat(expression)`
 
 Returns:A Float.
 
@@ -990,9 +990,9 @@ Considerations:
 
 
 
-* toFloat(null) returns null.
+* `toFloat(null)` returns `null`.
 * If expression is a floating point number, it will be returned unchanged.
-* If the parsing fails, null will be returned.
+* If the parsing fails, `null` will be returned.
 
 Query
 
@@ -1031,9 +1031,9 @@ Result:
 
 ## toInteger
 
-toInteger() converts a floating point or string value to an integer value.
+`toInteger()` converts a floating point or string value to an integer value.
 
-Syntax:`toInteger(expression)`
+Syntax: `toInteger(expression)`
 
 Returns:
 
@@ -1066,9 +1066,9 @@ Considerations:
 
 
 
-* toInteger(null) returns null.
+* `toInteger(null)` returns `null`.
 * If expression is an integer value, it will be returned unchanged.
-* If the parsing fails, null will be returned.
+* If the parsing fails, `null` will be returned.
 
 Query
 
@@ -1107,7 +1107,7 @@ Result:
 
 ## coalesce
 
-coalesce() returns the first non-null value in the given list of expressions.
+`coalesce()` returns the first non-null value in the given list of expressions.
 
 Syntax:`coalesce(expression [, expression]*)`
 
@@ -1142,7 +1142,7 @@ Considerations:
 
 
 
-* null will be returned if all the arguments are null.
+* `null` will be returned if all the arguments are null.
 
 Query
 

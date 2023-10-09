@@ -3,9 +3,9 @@
 
 ## degrees
 
-degrees() converts radians to degrees.
+`degrees()` converts radians to degrees.
 
-Syntax:`degrees(expression)`
+Syntax: `degrees(expression)`
 
 Returns:
 
@@ -38,7 +38,7 @@ Considerations:
 
 
 
-* degrees(null) returns null.
+* `degrees(null)` returns `null`.
 
 Query:
 
@@ -75,9 +75,9 @@ Results:
 
 ## radians
 
-radians() converts degrees to radians.
+`radians()` converts degrees to radians.
 
-Syntax:`radians(expression)`
+Syntax: `radians(expression)`
 
 Returns:
 
@@ -110,7 +110,7 @@ Considerations:
 
 
 
-* radians(null) returns null.
+* `radians(null)` returns `null`.
 
 Query:
 
@@ -147,7 +147,7 @@ Results:
 
 ## pi
 
-pi() returns the mathematical constant pi.
+`pi()` returns the mathematical constant pi.
 
 Syntax: `pi()`
 
@@ -194,9 +194,9 @@ Result:
 
 ## sin
 
-sin() returns the sine of a number.
+`sin()` returns the sine of a number.
 
-Syntax:`sin(expression)`
+Syntax: `sin(expression)`
 
 Returns:
 
@@ -229,7 +229,7 @@ Considerations:
 
 
 
-* sin(null) returns null.
+* `sin(null)` returns `null`.
 
 Query:
 
@@ -266,7 +266,7 @@ Results:
 
 ## cos
 
-cos() returns the cosine of a number.
+`cos()` returns the cosine of a number.
 
 Syntax: `cos(expression)`
 
@@ -301,7 +301,7 @@ Considerations:
 
 
 
-* cos(null) returns null.
+* `cos(null)` returns `null`.
 
 Query:
 
@@ -338,7 +338,7 @@ Results:
 
 ## tan
 
-tan() returns the tangent of a number.
+`tan()` returns the tangent of a number.
 
 Syntax: `tan(expression)`
 
@@ -373,7 +373,7 @@ Considerations:
 
 
 
-* tan(null) returns null.
+* `tan(null)` returns `null`.
 
 Query:
 
@@ -410,7 +410,7 @@ Results:
 
 ## Cot
 
-cot() returns the cotangent of a number.
+`cot()` returns the cotangent of a number.
 
 Syntax: `cot(expression)`
 
@@ -445,7 +445,7 @@ Considerations:
 
 
 
-* cot(null) returns null.
+* `cot(null)` returns `null`.
 
 Query:
 
@@ -482,9 +482,9 @@ Results:
 
 ## asin
 
-asin() returns the arcsine of a number.
+`asin()` returns the arcsine of a number.
 
-Syntax:`asin(expression)`
+Syntax: `asin(expression)`
 
 Returns:
 
@@ -517,8 +517,8 @@ Considerations:
 
 
 
-* asin(null) returns null.
-* If (expression &lt; -1) or (expression > 1), then (asin(expression)) returns null.
+* `asin(null)` returns `null`.
+* If (expression &lt; -1) or (expression > 1), then `asin(expression)` returns `null`.
 
 Query:
 
@@ -555,9 +555,9 @@ Results:
 
 ## acos
 
-acos() returns the arccosine of a number.
+`acos()` returns the arccosine of a number.
 
-Syntax:`acos(expression)`
+Syntax: `acos(expression)`
 
 Returns:
 
@@ -590,8 +590,8 @@ Considerations:
 
 
 
-* acos(null) returns null.
-* If (expression &lt; -1) or (expression > 1), then (acos(expression)) returns null.
+* `acos(null)` returns `null`.
+* If (expression &lt; -1) or (expression > 1), then `acos(expression)` returns `null`.
 
 Query:
 
@@ -628,7 +628,7 @@ Results:
 
 ## atan
 
-atan() returns the arctangent of a number.
+`atan()` returns the arctangent of a number.
 
 Syntax:`atan(expression)`
 
@@ -663,7 +663,7 @@ Considerations:
 
 
 
-* atan(null) returns null.
+* `atan(null)` returns `null`.
 
 Query:
 
@@ -700,7 +700,7 @@ Results:
 
 ## atan2
 
-atan2() returns the arctangent2 of a set of coordinates in radians.
+`atan2()` returns the arctangent2 of a set of coordinates in radians.
 
 Syntax: `atan2(expression1, expression2)`
 
@@ -741,7 +741,7 @@ Considerations:
 
 
 
-* atan2(null, null), atan2(null, expression2) and atan(expression1, null) all return null.
+* `atan2(null, null)`, `atan2(null, expression2)` and `atan(expression1, null)` all return null.
 
 Query:
 

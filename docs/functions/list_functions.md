@@ -21,7 +21,7 @@ $$) as (result agtype);
 
 keys returns a list containing the string representations for all the property names of a vertex, edge, or map.
 
-Syntax:`keys(expression)`
+Syntax: `keys(expression)`
 
 Returns:
 ```
@@ -45,7 +45,7 @@ Arguments:
 </table>
 
 Considerations:
-* keys(null) returns null.
+* `keys(null)` returns null.
 
 Query:
 ```postgresql
@@ -56,7 +56,7 @@ SELECT * from cypher('graph_name', $$
 $$) as (result agtype);
 ```
 
-A list containing the names of all the properties on the vertex bound to a is returned.
+A list containing the names of all the properties on the vertex bound to `a` is returned.
 
 Result:
 
@@ -77,9 +77,9 @@ Result:
 
 ## range
 
-range() returns a list comprising all integer values within a range bounded by a start value **start** and end value **end**, where the difference **step** between any two consecutive values is constant; i.e. an arithmetic progression. The range is  inclusive, and the arithmetic progression will therefore always contain **start** and—depending on the values of **start**, **step** and **end**—**end**.
+`range()` returns a list comprising all integer values within a range bounded by a start value **start** and end value **end**, where the difference **step** between any two consecutive values is constant; i.e. an arithmetic progression. The range is  inclusive, and the arithmetic progression will therefore always contain **start** and—depending on the values of **start**, **step** and **end**—**end**.
 
-Syntax:`range(start, end [, step])`
+Syntax: `range(start, end [, step])`
 
 Returns:
 ```
@@ -144,9 +144,9 @@ Result:
 
 ## labels
 
-labels returns a list containing the string representations for all the labels of a node.
+`labels` returns a list containing the string representations for all the labels of a node.
 
-Syntax:`labels(vertex)`
+Syntax: `labels(vertex)`
 
 Returns:
 ```
@@ -170,7 +170,7 @@ Arguments:
 </table>
 
 Considerations:
-* labels(null) returns null.
+* `labels(null)` returns `null`.
 
 Query:
 ```postgresql
@@ -182,7 +182,7 @@ FROM cypher('graph_name', $$
 $$) as (edges agtype);
 ```
 
-A list containing all the labels of the node bound to a is returned.
+A list containing all the labels of the node bound to `a` is returned.
 
 Result:
 <table>
@@ -202,9 +202,9 @@ Result:
 
 ## nodes
 
-nodes returns a list containing all the vertices in a path.
+`nodes` returns a list containing all the vertices in a path.
 
-Syntax:`nodes(path)`
+Syntax: `nodes(path)`
 
 Returns:
 ```
@@ -228,7 +228,7 @@ Arguments:
 </table>
 
 Considerations:
-* nodes(null) returns null.
+* `nodes(null)` returns `null`.
 
 Query:
 ```postgresql
@@ -240,7 +240,7 @@ FROM cypher('graph_name', $$
 $$) as (vertices agtype);
 ```
 
-A list containing all the vertices in the path p is returned.
+A list containing all the vertices in the path `p` is returned.
 
 Result:
 <table>
@@ -260,9 +260,9 @@ Result:
 
 ## relationships
 
-relationships() returns a list containing all the relationships in a path.
+`relationships()` returns a list containing all the relationships in a path.
 
-Syntax:`relationships(path)`
+Syntax: `relationships(path)`
 
 Returns:
 ```
@@ -286,7 +286,7 @@ Arguments:
 </table>
 
 Considerations:
-* relationships(null) returns null.
+* `relationships(null)` returns `null`.
 
 Query:
 ```postgresql
@@ -298,7 +298,7 @@ FROM cypher('graph_name', $$
 $$) as (edges agtype);
 ```
 
-A list containing all the edges in the path p is returned.
+A list containing all the edges in the path `p` is returned.
 
 Result:
 <table>
@@ -317,7 +317,7 @@ Result:
 </table>
 
 ## toBooleanList
-toBooleanList() converts a list of values and returns a list of boolean values. If any values are not convertible to boolean they will be null in the list returned.
+`toBooleanList()` converts a list of values and returns a list of boolean values. If any values are not convertible to boolean they will be null in the list returned.
 
 Syntax: `toBooleanList(list)`
 
@@ -333,7 +333,7 @@ Considerations:
 * If the list is not a list, an error will be returned.
 
 Query:
-```sql
+```postgresql
 SELECT * FROM cypher('expr', $$
     RETURN toBooleanList(["true", "false", "true"])
 $$) AS (toBooleanList agtype);
