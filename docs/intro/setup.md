@@ -126,7 +126,7 @@ For every connection of AGE you start you will need to load the AGE extension.
 LOAD 'age';
 ```
 
-We recommend adding ag_catalog to your search_path to simplify your queries. The rest of this document will assume you have done so. If you do not, remember to add 'ag_catalog' to your cypher query function calls.
+We recommend adding `ag_catalog` to your `search_path` to simplify your queries. The rest of this document will assume you have done so. If you do not, remember to add 'ag_catalog' to your cypher query function calls.
 
 ```postgresql
 SET search_path = ag_catalog, "$user", public;
@@ -134,7 +134,7 @@ SET search_path = ag_catalog, "$user", public;
 
 ### Allow non-superusers to use Apache AGE
 
-* Non-superusers can only apply LOAD to library files located in `$libdir/plugins/` (see <https://www.postgresql.org/docs/15/sql-load.html>). A symlink can be created to allow non-superusers to LOAD the Apache AGE library:
+* Non-superusers can only apply `LOAD` to library files located in `$libdir/plugins/` (see <https://www.postgresql.org/docs/15/sql-load.html>). A symlink can be created to allow non-superusers to `LOAD` the Apache AGE library:
 
 ```console
 sudo ln -s /usr/lib/postgresql/15/lib/age.so /usr/lib/postgresql/15/lib/plugins/age.so
