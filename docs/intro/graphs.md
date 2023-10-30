@@ -84,7 +84,7 @@ Arguments:
   <tr>
    <td>cascade
    </td>
-   <td>A boolean that will will delete labels and data that depend on the graph.
+   <td>A boolean that will delete labels and data that depend on the graph.
    </td>
   </tr>
 </table>
