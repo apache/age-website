@@ -1,4 +1,4 @@
-# User defined functions
+# User Defined Functions
 
 Users may add custom functions to the AGE. When using the Cypher function, all function calls with a Cypher query use the default namespace of: `ag_catalog`. However if a user want to use a function outside this namespace, they may do so by adding the namespace before the function name.
 
