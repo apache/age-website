@@ -109,12 +109,12 @@ Results
 
 ### Regular Expressions
 
-AGE supports the use of [POSIX regular expressions](https://www.postgresql.org/docs/11/functions-matching.html#FUNCTIONS-POSIX-REGEXP) using the =~ operator. By default =~ is case sensitve.
+AGE supports the use of [POSIX regular expressions](https://www.postgresql.org/docs/11/functions-matching.html#FUNCTIONS-POSIX-REGEXP) using the `=~` operator. By default `=~` is case sensitve.
 
 
 #### Basic String Matching
 
-The =~ operator when no special characters are give, act like the = operator.
+The `=~` operator when no special characters are given, act like the `=` operator.
 
 ```postgresql
 SELECT * FROM cypher('graph_name', $$
@@ -141,7 +141,7 @@ Results
 
 #### Case insensitive search
 
-Adding (?i) at the beginning of the string will make the comparison case insensitive
+Adding `(?i)` at the beginning of the string will make the comparison case insensitive
 
 ```postgresql
 SELECT * FROM cypher('graph_name', $$

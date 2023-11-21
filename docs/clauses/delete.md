@@ -1,22 +1,22 @@
 # DELETE
 
-The DELETE clause is used to delete graph elements—nodes, relationships orpaths.
+The `DELETE` clause is used to delete graph elements—nodes, relationships orpaths.
 
 ## Terminal DELETE clauses
 
-A delete clause that is not followed by another clause is called a terminal clause. When a cypher query ends with a terminal clause, no results will be returned from the cypher function call. However, the cypher function call still requires a column list definition. When cypher ends with a terminal node, define a single value in the column list definition: no data will be returned in this variable.
+A `DELETE` clause that is not followed by another clause is called a terminal clause. When a cypher query ends with a terminal clause, no results will be returned from the cypher function call. However, the cypher function call still requires a column list definition. When cypher ends with a terminal node, define a single value in the column list definition: no data will be returned in this variable.
 
 
 ## Introduction
 
-For removing properties, see REMOVE.
+For removing properties, see `REMOVE`.
 
-You cannot delete a node without also deleting edges that start or end on said vertex. Either explicitly delete the vertices,or use DETACH DELETE.
+You cannot delete a node without also deleting edges that start or end on said vertex. Either explicitly delete the vertices,or use `DETACH DELETE`.
 
 
-## Delete single vertex
+## Delete isolated vertices
 
-To delete a vertex, use the DELETE clause.
+To delete a vertex, use the `DELETE` clause.
 
 Query
 
@@ -30,7 +30,7 @@ $$) as (v agtype);
 ```
 
 
-Nothing is returned from this query.
+This will delete the vertices (with label Useless) that have no edges. Nothing is returned from this query.
 
 
 <table>
@@ -44,9 +44,9 @@ Nothing is returned from this query.
   </tr>
 </table>
 
-## Delete all vertices and edges
+## Delete all vertices and edges associated with them
 
-Running a Match clause will collect all nodes, use the DETACH option to first delete a vertice's edges then delete the vertex itself.
+Running a Match clause will collect all nodes, use the `DETACH` option to first delete a vertice's edges then delete the vertex itself.
 
 Query
 
@@ -76,7 +76,7 @@ Nothing is returned from this query.
 
 ## Delete edges only
 
-To delete an edge, use the match clause to find your edges, then add the variable to the DELETE.
+To delete an edge, use the match clause to find your edges, then add the variable to the `DELETE`.
 
 Query
 ```postgresql

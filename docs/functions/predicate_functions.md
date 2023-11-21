@@ -5,9 +5,9 @@ Predicates are boolean functions that return true or false for a given set of in
 
 ## Exists(Property)
 
-exists() returns true if the specified property exists in the node, relationship or map. This is different from the EXISTS clause.
+`exists()` returns `true` if the specified property exists in the node, relationship or map. This is different from the `EXISTS` clause.
 
-Syntax:exists(property)
+Syntax: `exists(property)`
 
 Returns:
 
@@ -76,13 +76,13 @@ Results:
 
 ## Exists(Path)
 
-EXISTS(path) returns true if for the given path, there already exists the given path.
+`EXISTS(path)` returns `true` if for the given path, there already exists the given path.
 
 ```postgresql
 SELECT *
 FROM cypher('graph_name', $$
      MATCH (n)
-     WHERE exists(n)-[]-(name: 'Willem Defoe')
+     WHERE exists((n)-[]-({name: 'Willem Defoe'}))
      RETURN n.full_name
 $$) as (full_name agtype);
 ```

@@ -1,19 +1,19 @@
 # ORDER BY
 
-ORDER BY is a sub-clause following WITH, and it specifies that the output should be sorted and how. 
+`ORDER BY` is a sub-clause following `WITH`, and it specifies that the output should be sorted and how. 
 
 ## Introduction
 
-Note that you cannot sort on nodes or relationships, just on properties on these. ORDER BY relies on comparisons to sort the output, see Ordering and comparison of values.
+Note that you cannot sort on nodes or relationships, just on properties on these. `ORDER BY` relies on comparisons to sort the output, see Ordering and comparison of values.
 
-In terms of scope of variables, ORDER BY follows special rules, depending on if the projecting RETURN or WITH clause is either aggregating or DISTINCT. If it is an aggregating or DISTINCT projection, only the variables available in the projection are available. If the projection does not alter the output cardinality (which aggregation and DISTINCT do), variables available from before the projecting clause are also available. When the projection clause shadows already existing variables, only the new variables are available.
+In terms of scope of variables, `ORDER BY` follows special rules, depending on if the projecting `RETURN` or `WITH` clause is either aggregating or `DISTINCT`. If it is an aggregating or `DISTINCT` projection, only the variables available in the projection are available. If the projection does not alter the output cardinality (which aggregation and `DISTINCT` do), variables available from before the projecting clause are also available. When the projection clause shadows already existing variables, only the new variables are available.
 
-Lastly, it is not allowed to use aggregating expressions in the ORDER BY sub-clause if they are not also listed in the projecting clause. This last rule is to make sure that ORDER BY does not change the results, only the order of them.
+Lastly, it is not allowed to use aggregating expressions in the `ORDER BY` sub-clause if they are not also listed in the projecting clause. This last rule is to make sure that `ORDER BY` does not change the results, only the order of them.
 
 
 ## Order nodes by property
 
-ORDER BY is used to sort the output.
+`ORDER BY` is used to sort the output.
 
 Query
 
@@ -69,7 +69,7 @@ Result
 
 ## Order nodes by multiple properties
 
-You can order by multiple properties by stating each variable in the ORDER BY clause. Cypher will sort the result by the first variable listed, and for equal values, go to the next property in the ORDER BY clause, and so on.
+You can order by multiple properties by stating each variable in the `ORDER BY` clause. Cypher will sort the result by the first variable listed, and for equal values, go to the next property in the `ORDER BY` clause, and so on.
 
 Query
 
@@ -125,7 +125,7 @@ Result
 
 ## Order nodes in descending order
 
-By adding DESC[ENDING] after the variable to sort on, the sort will be done in reverse order.
+By adding `DESC[ENDING]` after the variable to sort on, the sort will be done in reverse order.
 
 Query
 
@@ -181,7 +181,7 @@ Result
 
 ## Ordering null
 
-When sorting the result set, null will always come at the end of the result set for ascending sorting,and first when doing descending sort.
+When sorting the result set, `null` will always come at the end of the result set for ascending sorting, and first when doing descending sort.
 
 Query
 
