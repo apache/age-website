@@ -81,7 +81,7 @@ make PG_CONFIG=/path/to/postgres/bin/pg_config install
 ### Post Installation AGE Setup
 
 
-After the installation, open a connection to a running instance of your database and run the CREATE EXTENSION command to have AGE installed on the server.
+After the installation, open a connection to a running instance of your database and run the `CREATE EXTENSION` command to have AGE installed on the server.
 
 ```postgresql
 CREATE EXTENSION age;
