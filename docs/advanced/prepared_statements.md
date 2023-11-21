@@ -4,7 +4,7 @@ Cypher can run a read query within a Prepared Statement. When using parameters w
 
 ## Cypher Parameter Format
 
-A cypher parameter is in the format of a '$' followed by an identifier. Unlike Postgres parameters, Cypher parameters start with a letter, followed by an alphanumeric string of arbitrary length.
+A cypher parameter is in the format of a `'$'` followed by an identifier. Unlike Postgres parameters, Cypher parameters start with a letter, followed by an alphanumeric string of arbitrary length.
 
 Example: `$parameter_name`
 
@@ -27,7 +27,7 @@ AS (v agtype);
 
 ## Prepared Statements Execution
 
-When executing the prepared statement, place an agtype map with the parameter values where the Postgres Parameter in the Cypher function call is. The value must be an agtype map or an error will be thrown. Exclude the '$' for parameter names.
+When executing the prepared statement, place an agtype map with the parameter values where the Postgres Parameter in the Cypher function call is. The value must be an agtype map or an error will be thrown. Exclude the `'$'` for parameter names.
 
 
 ```postgresql
