@@ -13,9 +13,9 @@
   Cache-Control: public, max-age=31536000, immutable
 /component---src-templates-index-page-js-a31a3d8fdcc56d6a7d25.js
   Cache-Control: public, max-age=31536000, immutable
-/component---src-templates-blog-post-js-a10e19584ba51e7ca038.js
-  Cache-Control: public, max-age=31536000, immutable
 /component---src-templates-docs-template-js-2dc19316bb962d10e74a.js
+  Cache-Control: public, max-age=31536000, immutable
+/component---src-templates-blog-post-js-a10e19584ba51e7ca038.js
   Cache-Control: public, max-age=31536000, immutable
 /component---src-templates-overview-page-js-dcc7836c0438a581d50b.js
   Cache-Control: public, max-age=31536000, immutable
