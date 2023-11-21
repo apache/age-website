@@ -38,4 +38,4 @@ sphinxcontrib-serializinghtml==1.1.5
 typer==0.6.1
 types-docutils==0.18.3
 typing_extensions==4.3.0
-urllib3==1.26.17
+urllib3==1.26.18
