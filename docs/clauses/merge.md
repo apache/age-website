@@ -67,7 +67,7 @@ RETURN charlie
 $$) as (v agtype);
 ```
 
-If there exists a vertex with the label 'Critic', that vertex will be returned. Otherwise the vertex will be created and returned.
+If there exists a vertex with the label 'Critic', that vertex will be returned. Otherwise, the vertex will be created and returned.
 
 <table>
   <tr>
@@ -84,7 +84,7 @@ If there exists a vertex with the label 'Critic', that vertex will be returned. 
   </tr>
 </table>
 
-If there exists a vertex with all properties, that vertex will be returned. Otherwise a new vertex with the name 'Charlie Sheen' will be created and returned.
+If there exists a vertex with all properties, that vertex will be returned. Otherwise, a new vertex with the name 'Charlie Sheen' will be created and returned.
 
 
 ### Merge a Single Vertex Specifying Both Label and Property
