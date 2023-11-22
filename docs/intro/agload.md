@@ -1,4 +1,4 @@
-# Importing graph from files 
+# Importing Graph from Files 
 You can use the following instructions to create a graph from the files. This document explains 
 - information about the current branch that includes the functions to load graphs from files
 - explanation of the functions that enable the creation of graphs from files 
