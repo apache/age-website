@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PL/pgSQL Functions &mdash; Apache AGE master documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="SQL In Cypher" href="sql_in_cypher.html" />
+    <link rel="prev" title="Prepared Statements" href="prepared_statements.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Apache AGE
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/setup.html">Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/graphs.html">Graphs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/cypher.html">The AGE Cypher Query Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/types.html">Data Types - An Introduction to agtype</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/comparability.html">Comparability, Equality, Orderability and Equivalence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/operators.html">Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/aggregation.html">Aggregation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/agload.html">Importing Graph from Files</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Clauses</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/match.html">MATCH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/with.html">WITH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/return.html">RETURN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/order_by.html">ORDER BY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/skip.html">SKIP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/limit.html">LIMIT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/create.html">CREATE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/delete.html">DELETE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/set.html">SET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/remove.html">REMOVE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/merge.html">MERGE</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Functions</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../functions/predicate_functions.html">Predicate Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/scalar_functions.html">Scalar Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/list_functions.html">List Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/numeric_functions.html">Numeric Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/logarithmic_functions.html">Logarithmic Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/trigonometric_functions.html">Trigonometric Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/string_functions.html">String Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/aggregate_functions.html">Aggregation Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/user_functions.html">User Defined Functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">AGE Beyond Cypher</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="advanced_overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">Using Cypher in a CTE Expression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html#using-cypher-in-a-join-expression">Using Cypher in a Join expression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html#cypher-in-sql-expressions">Cypher in SQL expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prepared_statements.html">Prepared Statements</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">PL/pgSQL Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#dynamic-cypher">Dynamic Cypher</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sql_in_cypher.html">SQL In Cypher</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/run_tests.html">Run the test suite</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Apache AGE</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>PL/pgSQL Functions</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/apache/age-website/blob/master/docs/advanced/plpgsql.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="pl-pgsql-functions">
+<h1>PL/pgSQL Functions<a class="headerlink" href="#pl-pgsql-functions" title="Permalink to this heading"></a></h1>
+<p>Cypher commands can be run in <a class="reference external" href="https://www.postgresql.org/docs/11/plpgsql-overview.html">PL/pgSQL</a> functions without restriction.</p>
+<p>Data Setup</p>
+<div class="highlight-postgresql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">cypher</span><span class="p">(</span><span class="s1">&#39;imdb&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">$$</span>
+<span class="s">	CREATE (toby:actor {name: &#39;Toby Maguire&#39;}),</span>
+<span class="s">		(tom:actor {name: &#39;Tom Holland&#39;}),</span>
+<span class="s">		(willam:actor {name: &#39;Willam Dafoe&#39;}),</span>
+<span class="s">		(robert:actor {name: &#39;Robert Downey Jr&#39;}),</span>
+<span class="s">		(spiderman:movie {title: &#39;Spiderman&#39;}),</span>
+<span class="s">		(no_way_home:movie {title: &#39;Spiderman: No Way Home&#39;}),</span>
+<span class="s">		(homecoming:movie {title: &#39;Spiderman: Homecoming&#39;}),</span>
+<span class="s">		(ironman:movie {title: &#39;Ironman&#39;}),</span>
+<span class="s">		(tropic_thunder:movie {title: &#39;Tropic Thunder&#39;}),</span>
+<span class="s">		(toby)-[:acted_in {role: &#39;Peter Parker&#39;, alter_ego: &#39;Spiderman&#39;}]-&gt;(spiderman),</span>
+<span class="s">		(willam)-[:acted_in {role: &#39;Norman Osborn&#39;, alter_ego: &#39;Green Goblin&#39;}]-&gt;(spiderman),</span>
+<span class="s">		(toby)-[:acted_in {role: &#39;Toby Maguire&#39;}]-&gt;(tropic_thunder),</span>
+<span class="s">		(robert)-[:acted_in {role: &#39;Kirk Lazarus&#39;}]-&gt;(tropic_thunder),</span>
+<span class="s">		(robert)-[:acted_in {role: &#39;Tony Stark&#39;, alter_ego: &#39;Ironman&#39;}]-&gt;(homecoming),</span>
+<span class="s">		(tom)-[:acted_in {role: &#39;Peter Parker&#39;, alter_ego: &#39;Spiderman&#39;}]-&gt;(homecoming),</span>
+<span class="s">		(tom)-[:acted_in {role: &#39;Peter Parker&#39;, alter_ego: &#39;Spiderman&#39;}]-&gt;(no_way_home),</span>
+<span class="s">		(toby)-[:acted_in {role: &#39;Peter Parker&#39;, alter_ego: &#39;Spiderman&#39;}]-&gt;(no_way_home),</span>
+<span class="s">		(willam)-[:acted_in {role: &#39;Norman Osborn&#39;, alter_ego: &#39;Green Goblin&#39;}]-&gt;(no_way_home)</span>
+<span class="s">$$</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="n">agtype</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Function Creation</p>
+<div class="highlight-postgresql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="k">REPLACE</span><span class="w"> </span><span class="k">FUNCTION</span><span class="w"> </span><span class="n">get_all_actor_names</span><span class="p">()</span>
+<span class="k">RETURNS</span><span class="w"> </span><span class="k">TABLE</span><span class="p">(</span><span class="n">actor</span><span class="w"> </span><span class="n">agtype</span><span class="p">)</span>
+<span class="k">LANGUAGE</span><span class="w"> </span><span class="n">plpgsql</span>
+<span class="k">AS</span><span class="w"> </span><span class="s">$</span><span class="dl">BODY</span><span class="s">$</span>
+<span class="k">BEGIN</span>
+<span class="w">    </span><span class="k">LOAD</span><span class="w"> </span><span class="s1">&#39;age&#39;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">SET</span><span class="w"> </span><span class="n">search_path</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">ag_catalog</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">RETURN</span><span class="w"> </span><span class="k">QUERY</span><span class="w"> </span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">ag_catalog</span><span class="mf">.</span><span class="n">cypher</span><span class="p">(</span><span class="s1">&#39;imdb&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">$$</span>
+<span class="s">        MATCH (v:actor)</span>
+<span class="s">        RETURN v.name</span>
+<span class="s">    $$</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="n">agtype</span><span class="p">);</span>
+<span class="k">END</span>
+<span class="s">$</span><span class="dl">BODY</span><span class="s">$</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Query:</p>
+<div class="highlight-postgresql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">get_all_actor_names</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>Results</p>
+<table>
+  <tr>
+   <td><strong>actor</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>"Toby Maguire"</td>
+  </tr>
+  <tr>
+   <td>"Tom Holland"</td>
+  </tr>
+  <tr>
+   <td>"Willam Dafoe"</td>
+  </tr>
+  <tr>
+   <td>"Robert Downey Jr"</td>
+  </tr>
+  <tr>
+   <td>4 row(s) returned
+   </td>
+  </tr>
+</table>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Developer</span><span class="s1">&#39;s Note:</span>
+
+<span class="n">It</span><span class="s1">&#39;s recommended that the LOAD &#39;</span><span class="n">age</span><span class="s1">&#39; command and setting the search_path in the function declaration, to ensure the CREATE FUNCTION command works consistently.</span>
+</pre></div>
+</div>
+<section id="dynamic-cypher">
+<h2>Dynamic Cypher<a class="headerlink" href="#dynamic-cypher" title="Permalink to this heading"></a></h2>
+<div class="highlight-postgresql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="k">REPLACE</span><span class="w"> </span><span class="k">FUNCTION</span><span class="w"> </span><span class="n">get_actors_who_played_role</span><span class="p">(</span><span class="k">role</span><span class="w"> </span><span class="n">agtype</span><span class="p">)</span>
+<span class="k">RETURNS</span><span class="w"> </span><span class="k">TABLE</span><span class="p">(</span><span class="n">actor</span><span class="w"> </span><span class="n">agtype</span><span class="p">,</span><span class="w"> </span><span class="n">movie</span><span class="w"> </span><span class="n">agtype</span><span class="p">)</span>
+<span class="k">LANGUAGE</span><span class="w"> </span><span class="n">plpgsql</span>
+<span class="k">AS</span><span class="w"> </span><span class="s">$</span><span class="dl">function</span><span class="s">$</span>
+<span class="k">DECLARE</span><span class="w"> </span><span class="k">sql</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">;</span>
+<span class="k">BEGIN</span>
+<span class="w">        </span><span class="k">load</span><span class="w"> </span><span class="s1">&#39;age&#39;</span><span class="p">;</span>
+<span class="w">        </span><span class="k">SET</span><span class="w"> </span><span class="n">search_path</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">ag_catalog</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">sql</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;</span>
+<span class="s1">		SELECT *</span>
+<span class="s1">		FROM cypher(&#39;&#39;imdb&#39;&#39;, $$</span>
+<span class="s1">			MATCH (actor)-[:acted_in {role: %s}]-&gt;(movie:movie)</span>
+<span class="s1">			RETURN actor.name, movie.title</span>
+<span class="s1">		$$) AS (actor agtype, movie agtype);</span>
+<span class="s1">	&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">role</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">RETURN</span><span class="w"> </span><span class="k">QUERY</span><span class="w"> </span><span class="k">EXECUTE</span><span class="w"> </span><span class="k">sql</span><span class="p">;</span>
+
+<span class="k">END</span>
+<span class="s">$</span><span class="dl">function</span><span class="s">$</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="highlight-postgresql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">get_actors_who_played_role</span><span class="p">(</span><span class="s1">&#39;&quot;Peter Parker&quot;&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Results</p>
+<table>
+  <tr>
+   <td><strong>actor</strong></td>
+   <td><strong>movie</strong></td>
+  </tr>
+  <tr>
+   <td>"Toby Maguire"</td>
+   <td>"Spiderman"</td>
+  </tr>
+  <tr>
+   <td>"Toby Maguire"</td>
+   <td>"Spiderman: No Way Home"</td>
+  </tr>
+  <tr>
+   <td>"Tom Holland"</td>
+   <td>"Spiderman: No Way Home"</td>
+  </tr>
+  <tr>
+   <td>"Tom Holland"</td>
+   <td>"Spiderman: Homecoming"</td>
+  </tr>
+  <tr>
+   <td>4 row(s) returned
+   </td>
+  </tr>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="prepared_statements.html" class="btn btn-neutral float-left" title="Prepared Statements" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="sql_in_cypher.html" class="btn btn-neutral float-right" title="SQL In Cypher" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Apache AGE.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: master
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      <dd><a href="plpgsql.html">master</a></dd>
+      <dd><a href="../../v0.6.0/index.html">v0.6.0</a></dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
