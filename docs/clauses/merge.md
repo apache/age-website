@@ -36,7 +36,7 @@ RETURN v
 $$) as (v agtype);
 ```
 
-If there exists a vertex with the label 'Critic' the vertex will be returns. Otherwise, the vertex will be created and returned.
+If there exists a vertex with the label 'Critic', that vertex will be returned. Otherwise, the vertex will be created and returned.
 
 <table>
   <tr>
@@ -67,6 +67,8 @@ RETURN charlie
 $$) as (v agtype);
 ```
 
+If there exists a vertex with the label 'Critic', that vertex will be returned. Otherwise, the vertex will be created and returned.
+
 <table>
   <tr>
    <td><strong>v</strong>
@@ -82,7 +84,7 @@ $$) as (v agtype);
   </tr>
 </table>
 
-If a vertex with all the properties exists, it will be returned. Otherwise, a new vertex with the name 'Charlie Sheen' will be created and returned.
+If there exists a vertex with all properties, that vertex will be returned. Otherwise, a new vertex with the name 'Charlie Sheen' will be created and returned.
 
 
 ### Merge a Single Vertex Specifying Both Label and Property
@@ -98,7 +100,7 @@ RETURN michael.name, michael.bornIn
 $$) as (Name agtype, BornIn agtype);
 ```
 
-'Michael Douglas' will match the existing vertex and the vertex's `name` and `bornIn` properties returned.
+'Michael Douglas' will match the existing vertex and the vertex's `name` and `bornIn` properties will be returned.
 
 <table>
   <tr>
