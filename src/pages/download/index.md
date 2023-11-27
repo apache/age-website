@@ -5,16 +5,36 @@ title: Downloads
 ---
 <div style="text-align: center; margin-bottom: 5rem;">
 
-
-
-## Download AGE release for PG13.
+## Download AGE release for PG15.
  
-## The current stable version and the latest release of the graph extension is 1.3.0. 
+## The current stable version and the latest release of the graph extension is 1.4.0. 
 <br/>
 
 | Apache AGE Release | CheckSum & Signature |
 | ------------------ | -------------------- |
-| [Download Apache AGE 1.3.0 ➚](https://downloads.apache.org/age/PG13/1.3.0/apache-age-1.3.0-src.tar.gz) | [CheckSum ➚](https://downloads.apache.org/age/PG13/1.3.0/apache-age-1.3.0-src.tar.gz.sha512) & [Signature ➚](https://downloads.apache.org/age/PG13/1.3.0/apache-age-1.3.0-src.tar.gz.asc) |
+| [Download Apache AGE 1.4.0 ➚](https://downloads.apache.org/age/PG15/1.4.0/apache-age-1.4.0-src.tar.gz) | [CheckSum ➚](https://downloads.apache.org/age/PG15/1.4.0/apache-age-1.4.0-src.tar.gz.sha512) & [Signature ➚](https://downloads.apache.org/age/PG15/1.4.0/apache-age-1.4.0-src.tar.gz.asc) |
+
+<br/><br/>
+
+## Download AGE release for PG14.
+ 
+## The current stable version and the latest release of the graph extension is 1.4.0. 
+<br/>
+
+| Apache AGE Release | CheckSum & Signature |
+| ------------------ | -------------------- |
+| [Download Apache AGE 1.4.0 ➚](https://downloads.apache.org/age/PG14/1.4.0/apache-age-1.4.0-src.tar.gz) | [CheckSum ➚](https://downloads.apache.org/age/PG14/1.4.0/apache-age-1.4.0-src.tar.gz.sha512) & [Signature ➚](https://downloads.apache.org/age/PG14/1.4.0/apache-age-1.4.0-src.tar.gz.asc) |
+
+<br/><br/>
+
+## Download AGE release for PG13.
+ 
+## The current stable version and the latest release of the graph extension is 1.4.0. 
+<br/>
+
+| Apache AGE Release | CheckSum & Signature |
+| ------------------ | -------------------- |
+| [Download Apache AGE 1.4.0 ➚](https://downloads.apache.org/age/PG13/1.4.0/apache-age-1.4.0-src.tar.gz) | [CheckSum ➚](https://downloads.apache.org/age/PG13/1.4.0/apache-age-1.4.0-src.tar.gz.sha512) & [Signature ➚](https://downloads.apache.org/age/PG13/1.4.0/apache-age-1.4.0-src.tar.gz.asc) |
 
 
 <br/><br/>
@@ -22,24 +42,24 @@ title: Downloads
  
 ## Download AGE release for PG12.
  
-## The current stable version and the latest release of the graph extension is 1.3.0. 
+## The current stable version and the latest release of the graph extension is 1.4.0. 
 <br/>
 
 | Apache AGE Release | CheckSum & Signature |
 | ------------------ | -------------------- |
-| [Download Apache AGE 1.3.0 ➚](https://downloads.apache.org/age/PG12/1.3.0/apache-age-1.3.0-src.tar.gz) | [CheckSum ➚](https://downloads.apache.org/age/PG12/1.3.0/apache-age-1.3.0-src.tar.gz.sha512) & [Signature ➚](https://downloads.apache.org/age/PG12/1.3.0/apache-age-1.3.0-src.tar.gz.asc) |
+| [Download Apache AGE 1.4.0 ➚](https://downloads.apache.org/age/PG12/1.4.0/apache-age-1.4.0-src.tar.gz) | [CheckSum ➚](https://downloads.apache.org/age/PG12/1.4.0/apache-age-1.4.0-src.tar.gz.sha512) & [Signature ➚](https://downloads.apache.org/age/PG12/1.4.0/apache-age-1.4.0-src.tar.gz.asc) |
 
 
 <br/><br/>
 
 ## Download AGE release for PG11.
  
-## The current stable version and the latest release of the graph extension is 1.3.0. 
+## The current stable version and the latest release of the graph extension is 1.4.0. 
 <br />
 
 | Apache AGE Release | CheckSum & Signature |
 | ------------------ | -------------------- |
-| [Download Apache AGE 1.3.0 ➚](https://downloads.apache.org/age/PG11/1.3.0/apache-age-1.3.0-src.tar.gz) | [CheckSum ➚](https://downloads.apache.org/age/PG11/1.3.0/apache-age-1.3.0-src.tar.gz.sha512) & [Signature ➚](https://downloads.apache.org/age/PG11/1.3.0/apache-age-1.3.0-src.tar.gz.asc) 
+| [Download Apache AGE 1.4.0 ➚](https://downloads.apache.org/age/PG11/1.4.0/apache-age-1.4.0-src.tar.gz) | [CheckSum ➚](https://downloads.apache.org/age/PG11/1.4.0/apache-age-1.4.0-src.tar.gz.sha512) & [Signature ➚](https://downloads.apache.org/age/PG11/1.4.0/apache-age-1.4.0-src.tar.gz.asc) 
 
 
 
