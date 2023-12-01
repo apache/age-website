@@ -25,7 +25,7 @@ $$ LANGUAGE sql;
 SELECT * FROM cypher('graph_name', $$
 	MATCH (e:event)
 	WHERE e.year < public.get_event_year(e.name)
-	RETURN n.name
+	RETURN e.name
 $$) as (n agtype);
 
 ```
