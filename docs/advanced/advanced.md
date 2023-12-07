@@ -62,7 +62,7 @@ A Cypher query can be part of a `JOIN` clause.
 
 ```
 Developers Note
-Cypher queries using the CREATE, SET, REMOVE clauses cannot be used in sql queries with Joins, as they affect the Postgres transaction system. One possible solution is to protect the query with CTEs. See the subsection Using CTEs with CREATE, REMOVE, and SET for a solution to this problem.
+Cypher queries using the CREATE, SET, REMOVE clauses cannot be used in sql queries with JOINs, as they affect the Postgres transaction system. One possible solution is to protect the query with CTEs. See the subsection Using CTEs with CREATE, REMOVE, and SET for more details.
 ```
 
 
@@ -127,12 +127,12 @@ Results:
 
 # Cypher in SQL expressions
 
-Cypher cannot be used in an expression, the query must exists in the `FROM` clause of a query. However, if the cypher query is placed in a subquery, it will behave as any SQL style query.
+Cypher cannot be used in an expression— the query must exist in the `FROM` clause of a query. However, if the cypher query is placed in a subquery, it will behave as any SQL style query.
 
 
 ## Using Cypher with '='
 
-When writing a cypher query that is known to return 1 column and 1 row, the '=' comparison operator may be used.
+When writing a cypher query that is known to return one column and one row, the '=' comparison operator may be used.
 
 
 ```postgresql
@@ -174,7 +174,7 @@ Results:
 
 ## Working with Postgres's IN Clause
 
-When writing a cypher query that is known to return 1 column, but may have multiple rows. The `IN` operator may be used.
+When writing a cypher query that is known to return one column, but may have multiple rows. The `IN` operator may be used.
 
 Query:
 
@@ -226,9 +226,9 @@ Results:
 
 
 
-## Working with Postgres EXISTS Clause
+## Working with the Postgres EXISTS Clause
 
-When writing a cypher query that may have more than 1 column and row returned. The `EXISTS` operator may be used.
+When writing a cypher query that may have more than one column and row returned. The `EXISTS` operator may be used.
 
 Query:
 
@@ -279,7 +279,7 @@ Results:
 
 ## Querying Multiple Graphs
 
-There is no restriction to the number of graphs an SQL statement can query. Allowing users to query more than one graph at the same time.
+There is no restriction to the number of graphs an SQL statement can query. Users may query multiple graphs simultaneously.
 
 
 ```postgresql
