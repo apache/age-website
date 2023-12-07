@@ -79,7 +79,7 @@ Results
 ```
 Developer's Note:
 
-It's recommended that the LOAD 'age' command and setting the search_path in the function declaration, to ensure the CREATE FUNCTION command works consistently.
+It's recommended that users use the LOAD 'age' command and set the search_path in the function declaration, to ensure the CREATE FUNCTION command works consistently.
 ```
 
 ## Dynamic Cypher
