@@ -1,12 +1,12 @@
 # MATCH
 
-The `MATCH` clause allows you to specify the patterns Cypher will search for in the database. This is the primary way of getting data into the current set of bindings. It is worth reading up more on the specification of the patterns themselves in Patterns.
+The `MATCH` clause allows you to specify the patterns a query will search for in the database. This is the primary way of retrieving data for use in a query.
 
-`MATCH` is often coupled to a `WHERE` part which adds restrictions, or predicates, to the `MATCH` patterns, making them more specific. The predicates are part of the pattern description, and should not be considered a filter applied only after the matching is done. This means that `WHERE` should always be put together with the `MATCH` clause it belongs to.
+ A `WHERE` clause often follows a `MATCH` clause to add user-defined restrictions to the matched patterns to manipulate the set of data returned. The predicates are part of the pattern description, and should not be considered a filter applied only after the matching is done. This means that `WHERE` should always be put together with the `MATCH` clause it belongs to.
 
-MATCH can occur at the beginning of the query or later, possibly after a `WITH`. If it is the first clause, nothing will have been bound yet, and Cypher will design a search to find the results matching the clause and any associated predicates specified in any `WHERE` part. Vertices and edges found by this search are available as bound pattern elements, and can be used for pattern matching of sub-graphs. They can also be used in any future clauses, where Cypher will use the known elements, and from there find further unknown elements.
+MATCH can occur at the beginning of the query or later, possibly after a `WITH`. If it is the first clause, nothing will have been bound yet, and Cypher will design a search to find the results matching the clause and any associated predicates specified in any `WHERE` clause. Vertices and edges found by this search are available as bound pattern elements, and can be used for pattern matching of sub-graphs. They can also be used in any future clauses, where Cypher will use the known elements, and from there find further unknown elements.
 
-Cypher is declarative, and so usually the query itself does not specify the algorithm to use to perform the search. Predicates in `WHERE` parts can be evaluated before pattern matching, during pattern matching, or after finding matches.
+Cypher is a declarative language, and so typically the query itself does not specify the algorithm to use to perform the search. Predicates in `WHERE` parts can be evaluated before pattern matching, during pattern matching, or after the match is found.
 
 
 ## Basic vertex finding
@@ -14,7 +14,7 @@ Cypher is declarative, and so usually the query itself does not specify the algo
 
 ### Get all Vertices
 
-By just specifying a pattern with a single vertex and no labels, all vertices in the graph will be returned.
+By specifying a pattern with a single vertex and no labels, all vertices in the graph will be returned.
 
 Query
 
@@ -26,7 +26,7 @@ $$) as (v agtype);
 ```
 
 
-Returns all the vertices in the database.
+Returns all vertices in the database.
 
 
 <table>
@@ -72,7 +72,7 @@ Returns all the vertices in the database.
 
 ### Get all vertices with a label
 
-Getting all vertices with a label on them is done with a single node pattern where the vertex has a label on it.
+Getting all vertices with a label is done with a single node pattern where the vertex has the label specified as follows:
 
 Query
 
@@ -111,7 +111,7 @@ Returns all the movies in the database.
 
 ### Related Vertices
 
-The symbol `-[]-` means related to, without regard to type or direction of the edge.
+The symbol `-[]-` specifies an edge, without specifying the type or direction of the edge.
 
 Query
 
@@ -146,7 +146,7 @@ Returns all the movies directed by 'Oliver Stone'.
 
 ### Match with labels
 
-To constrain your pattern with labels on vertices, you add it to your vertex in the pattern, using the label syntax.
+To constrain your pattern with labels on vertices, add it to the vertex in the pattern, using the label syntax.
 
 Query
 
@@ -184,7 +184,7 @@ Returns any vertices connected with the `Person` 'Oliver' that are labeled `Movi
 
 ### Outgoing Edges
 
-When the direction of an edge is of interest, it is shown by using `->` or `<-`.
+To return directed edges, you may use `->` or `<-` to specify the direction of which the edge points.
 
 Query
 
@@ -218,8 +218,8 @@ Returns any vertices connected with the `Person` 'Oliver' by an outgoing edge.
 
 
 ### Directed Edges and variable
-
-If a variable is required, either for filtering on properties of the edge, or to return the edge, this is how you introduce the variable.
+ 
+If a variable is required, either for filtering on properties of the edge, or to return the edge, specify the variable within the edge or vertex you wish to use.
 
 Query
 
@@ -252,9 +252,9 @@ Returns the type of each outgoing edge from 'Oliver'.
 
 
 
-### Match on edge type
+### Match on edge label
 
-When you know the edge type you want to match on, you can specify it by using a colon together with the edge type.
+When you know the edge label you want to match on, you can specify it by using a colon together with the edge label.
 
 Query
 
@@ -295,9 +295,9 @@ Returns all actors that `ACTED_IN` 'Wall Street'.
 
 
 
-### Match on edge type and use a variable
+### Match on edge label with a variable
 
-If you both want to introduce a variable to hold the edge, and specify the edge type you want, just add them both.
+If you want to use a variable to hold the edge, and specify the edge label you want, you can do so by specifying them both.
 
 Query
 
@@ -340,7 +340,7 @@ Returns `ACTED_IN` roles for 'Wall Street'.
 
 ### Multiple Edges
 
-Edges can be expressed by using multiple statements in the form of `()-[]-()`, or they can be strung together.
+Edges can be strung together to match an infinite number of edges. As long as the base pattern `()-[]-()` is followed, users can chain together edges and vertices to match specific patterns.
 
 Query
 

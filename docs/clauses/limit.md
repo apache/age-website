@@ -9,7 +9,7 @@
 
 ## Return a subset of the rows
 
-To return a subset of the result, starting from the top, use this syntax:
+To return a subset of the result, starting from the top, use the following syntax:
 
 Query
 
@@ -17,14 +17,14 @@ Query
 ```postgresql
 SELECT * 
 FROM cypher('graph_name', $$
-	MATCH (n)RETURN n.name
+	MATCH (n) RETURN n.name
 	ORDER BY n.name
 	LIMIT 3
 $$) as (names agtype);
 ```
 
 
-The node is returned, and no property age exists on it.
+The name property of the matched node `n` is returned, with a limit of 3.
 
 Result
 

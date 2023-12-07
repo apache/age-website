@@ -46,7 +46,7 @@ This will delete the vertices (with label Useless) that have no edges. Nothing i
 
 ## Delete all vertices and edges associated with them
 
-Running a Match clause will collect all nodes, use the `DETACH` option to first delete a vertice's edges then delete the vertex itself.
+Running a `MATCH` clause will collect all nodes— use the `DETACH` option to first delete a vertice's edges, then delete the vertex itself.
 
 Query
 
@@ -76,7 +76,7 @@ Nothing is returned from this query.
 
 ## Delete edges only
 
-To delete an edge, use the match clause to find your edges, then add the variable to the `DELETE`.
+To delete an edge, use the `MATCH` clause to find your edges, then add the variable to the `DELETE` clause.
 
 Query
 ```postgresql
@@ -104,7 +104,7 @@ Nothing is returned from this query.
 
 ## Return a deleted vertex
 
-In AGE, you can return vertices that have been deleted.
+You can return vertices that have been deleted with a `RETURN` clause.
 
 Query
 ```postgresql

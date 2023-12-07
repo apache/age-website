@@ -1,6 +1,6 @@
 # RETURN  
 
-In the `RETURN` part of your query, you define which parts of the pattern you are interested in. It can be nodes, relationships, or properties on these.
+In the `RETURN` part of your query, you define which parts of the pattern you want to output. Output can include agtype values, nodes, relationships, or properties.
 
 
 ## Return nodes
@@ -80,7 +80,7 @@ The relationship is returned by the example.
 
 ## Return property
 
-To return a property, use the dot separator, like this:
+To return a property, use the dot separator, as follows:
 
 Query
 
@@ -247,7 +247,7 @@ Result
 
 ## Optional properties
 
-If a property might or might not be there, you can still select it as usual. It will be treated as null if it is missing.
+If a property might or might not be there, it will be treated as null if it is missing.
 
 Query
 
@@ -261,7 +261,7 @@ $$) as (age agtype);
 ```
 
 
-This example returns the age when the node has that property, or null if the property is not there.
+This query returns the property if it exists, or null if the property does not exist.
 
 Result
 
