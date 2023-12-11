@@ -11,7 +11,7 @@ Returns:
 
 
 ```
-An agtype Float.
+An agtype float.
 ```
 
 
@@ -83,7 +83,7 @@ Returns:
 
 
 ```
-An agtype Float.
+An agtype float.
 ```
 
 
@@ -202,7 +202,7 @@ Returns:
 
 
 ```
-An agtype Float.
+An agtype float.
 ```
 
 
@@ -274,7 +274,7 @@ Returns:
 
 
 ```
-An agtype Float.
+An agtype float.
 ```
 
 
@@ -346,7 +346,7 @@ Returns:
 
 
 ```
-An agtype Float.
+An agtype float.
 ```
 
 
@@ -418,7 +418,7 @@ Returns:
 
 
 ```
-A Float.
+A float.
 ```
 
 
@@ -490,7 +490,7 @@ Returns:
 
 
 ```
-An agtype Float.
+An agtype float.
 ```
 
 
@@ -563,7 +563,7 @@ Returns:
 
 
 ```
-An agtype Float.
+An agtype float.
 ```
 
 
@@ -636,7 +636,7 @@ Returns:
 
 
 ```
-An agtype Float.
+An agtype float.
 ```
 
 
@@ -708,7 +708,7 @@ Returns:
 
 
 ```
-An agtype Float.
+An agtype float.
 ```
 
 

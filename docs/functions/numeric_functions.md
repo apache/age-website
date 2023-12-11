@@ -11,7 +11,7 @@ Returns:
 
 
 ```
-A Float.
+A float.
 ```
 
 
@@ -140,7 +140,7 @@ Returns:
 
 
 ```
-A Float.
+A float.
 ```
 
 
@@ -212,7 +212,7 @@ Returns:
 
 
 ```
-A Float.
+A float.
 ```
 
 
@@ -286,7 +286,7 @@ Returns:
 
 
 ```
-A Float.
+A float.
 ```
 
 

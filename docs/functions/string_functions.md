@@ -11,7 +11,7 @@ Returns:
 
 
 ```
-An agtype String.
+An agtype string.
 ```
 
 
@@ -177,7 +177,7 @@ Returns:
 
 
 ```
-An agtype String.
+An agtype string.
 ```
 
 
@@ -256,7 +256,7 @@ Returns:
 
 
 ```
-An agtype String.
+An agtype string.
 ```
 
 
@@ -335,7 +335,7 @@ Returns:
 
 
 ```
-An agtype String.
+An agtype string.
 ```
 
 
@@ -426,7 +426,7 @@ Returns:
 
 
 ```
-An agtype String.
+An agtype string.
 ```
 
 
@@ -496,7 +496,7 @@ Returns:
 
 
 ```
-An agtype String.
+An agtype string.
 ```
 
 
@@ -566,7 +566,7 @@ Returns:
 
 
 ```
-An agtype String.
+An agtype string.
 ```
 
 
@@ -636,7 +636,7 @@ Returns:
 
 
 ```
-An agtype String.
+An agtype string.
 ```
 
 
@@ -706,7 +706,7 @@ Returns:
 
 
 ```
-An agtype String.
+An agtype string.
 ```
 
 
@@ -776,7 +776,7 @@ Returns:
 
 
 ```
-An agtype String.
+An agtype string.
 ```
 
 
@@ -846,7 +846,7 @@ Returns:
 
 
 ```
-A String.
+A string.
 ```
 
 

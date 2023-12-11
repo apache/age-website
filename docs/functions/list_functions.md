@@ -19,13 +19,13 @@ $$) as (result agtype);
 
 ## keys
 
-keys returns a list containing the string representations for all the property names of a vertex, edge, or map.
+`keys()` returns a list containing the string representations for all the property names of a vertex, edge, or map.
 
 Syntax: `keys(expression)`
 
 Returns:
 ```
-An Agtype list containing string agtype elements
+An agtype list containing string agtype elements
 ```
 
 Arguments:
@@ -83,7 +83,7 @@ Syntax: `range(start, end [, step])`
 
 Returns:
 ```
-An Agtype list containing integer elements
+An agtype list containing integer elements
 ```
 
 Arguments:
@@ -150,7 +150,7 @@ Syntax: `labels(vertex)`
 
 Returns:
 ```
-An Agtype list containing String elements
+An agtype list containing string elements
 ```
 
 Arguments:
@@ -208,7 +208,7 @@ Syntax: `nodes(path)`
 
 Returns:
 ```
-An Agtype list containing vertex entities
+An agtype list containing vertex entities
 ```
 
 Arguments:
@@ -222,7 +222,7 @@ Arguments:
   <tr>
    <td>path
    </td>
-   <td>An expression that returns an Agtype path.
+   <td>An expression that returns an agtype path.
    </td>
   </tr>
 </table>
@@ -266,7 +266,7 @@ Syntax: `relationships(path)`
 
 Returns:
 ```
-An Agtype list containing edge entities
+An agtype list containing edge entities
 ```
 
 Arguments:
@@ -280,7 +280,7 @@ Arguments:
   <tr>
    <td>path
    </td>
-   <td>An expression that returns an Agtype path.
+   <td>An expression that returns an agtype path.
    </td>
   </tr>
 </table>
