@@ -101,7 +101,7 @@ Returns:
 
 
 ```
-An agtype Float.
+An agtype float.
 ```
 
 
@@ -173,7 +173,7 @@ Returns:
 
 
 ```
-An agtype Float.
+An agtype float.
 ```
 
 
@@ -246,7 +246,7 @@ Returns:
 
 
 ```
-An agtype Float.
+An agtype float.
 ```
 
 

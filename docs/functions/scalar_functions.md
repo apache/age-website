@@ -317,7 +317,7 @@ Returns:
 
 
 ```
-An agtype Map.
+An agtype map.
 ```
 
 
@@ -542,7 +542,7 @@ Returns:
 
 
 ```
-An agtype Integer.
+An agtype integer.
 ```
 
 
@@ -620,7 +620,7 @@ Returns:
 
 
 ```
-An agtype Integer.
+An agtype integer.
 ```
 
 
@@ -842,7 +842,7 @@ Returns:
 
 
 ```
-An Agtype Integer.
+An agtype integer.
 ```
 
 
@@ -895,7 +895,7 @@ Returns:
 
 
 ```
-An agtype Boolean.
+An agtype boolean.
 ```
 
 
@@ -967,7 +967,12 @@ Result:
 
 Syntax: `toFloat(expression)`
 
-Returns:A Float.
+Returns:
+
+
+```
+A float.
+```
 
 
 <table>
@@ -1039,7 +1044,7 @@ Returns:
 
 
 ```
-An agtype Integer.
+An agtype integer.
 ```
 
 

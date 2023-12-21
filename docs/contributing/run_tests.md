@@ -1,6 +1,6 @@
 # Run the test suite
 
-The configuration for running the tests is included in `Makefile`. Only running the tests against an existing installation is supported:
+The configuration for running the tests is included in `Makefile`. The tests will be run against an existing installation:
 
 ```console
 make -j$(nproc)

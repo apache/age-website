@@ -1,6 +1,6 @@
 # Map Functions
 
-In AGE, a map is a data structure that allows you to store a collection of key-value pairs. Each key within a map is unique, and it is associated with a corresponding value. 
+In AGE, a map is a data structure that allows you to store a collection of key-value pairs. Each key within a map is unique, and is associated with a corresponding value.
 This data structure is similar to dictionaries in Python or objects in JavaScript, providing an efficient way to organize and retrieve data based on keys.
 This section focuses on explaining various functions that allow you to generate and manipulate maps effectively.
 
