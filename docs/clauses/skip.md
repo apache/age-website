@@ -4,7 +4,7 @@
 
 ## Introduction
 
-By using `SKIP`, the result set will get trimmed from the top. Please note that no guarantees are made on the order of the result unless the query specifies the `ORDER BY` clause. `SKIP` accepts any expression that evaluates to a positive  integer.
+By using `SKIP`, the result set will get trimmed from the top. Please note that no guarantees are made on the order of the returned results unless specified by the `ORDER BY` clause. `SKIP` accepts any expression that evaluates to a positive  integer.
 
 ## Skip first three rows
 

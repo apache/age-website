@@ -6,7 +6,7 @@ Using `WITH`, you can manipulate the output before it is passed on to the follow
 
 `WITH` can also, like `RETURN`, alias expressions that are introduced into the results using the aliases as the binding name.
 
-`WITH` is also used to separate the reading of the graph from updating of the graph. Every part of a query must be either read-only or write-only. When going from a writing part to a reading part, the switch can be done with an optional `WITH` clause.
+`WITH` is also used to separate the reading of the graph from updating of the graph. Every part of a query must be either read-only or write-only. When going from a writing clause to a reading clause, an optional `WITH` can be used to do so.
 
 
 ## Filter on aggregate function results
@@ -51,7 +51,7 @@ Result
 
 ## Sort results before using collect on them
 
-You can sort your results before passing them to collect, thus sorting the resulting list.
+You can sort results before passing them to collect, thus sorting the resulting list.
 
 Query
 ```postgresql

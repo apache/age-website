@@ -1,10 +1,10 @@
 # ORDER BY
 
-`ORDER BY` is a sub-clause following `WITH`, and it specifies that the output should be sorted and how. 
+`ORDER BY` is a sub-clause following `WITH`. ORDER BY specifies that the output should be sorted and how it will be sorted. 
 
 ## Introduction
 
-Note that you cannot sort on nodes or relationships, just on properties on these. `ORDER BY` relies on comparisons to sort the output, see Ordering and comparison of values.
+Note that you cannot sort on nodes or relationships, sorting must be done on properties. `ORDER BY` relies on comparisons to sort the output. See Ordering and comparison of values.
 
 In terms of scope of variables, `ORDER BY` follows special rules, depending on if the projecting `RETURN` or `WITH` clause is either aggregating or `DISTINCT`. If it is an aggregating or `DISTINCT` projection, only the variables available in the projection are available. If the projection does not alter the output cardinality (which aggregation and `DISTINCT` do), variables available from before the projecting clause are also available. When the projection clause shadows already existing variables, only the new variables are available.
 
@@ -181,7 +181,7 @@ Result
 
 ## Ordering null
 
-When sorting the result set, `null` will always come at the end of the result set for ascending sorting, and first when doing descending sort.
+When sorting the result set, `null` will always come at the end of the result set for ascending sorting, and first for descending sorting.
 
 Query
 
