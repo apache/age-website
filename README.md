@@ -29,7 +29,7 @@
 
 <h2><img height="30" src="https://age.apache.org/age-manual/master/_static/logo.png">&nbsp;&nbsp;Apache AGE website</h2>
 
-## Introduction
+<h2><img height="30" src="/img/tick.svg">&nbsp;&nbsp;Introduction</h2>
 
 * The `master` branch contains the source code of the latest version of the documentation.
 * `vX.Y.Z` Branches contain the source code of the documentation of releases.
