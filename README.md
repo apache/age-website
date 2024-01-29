@@ -35,7 +35,9 @@
 * `vX.Y.Z` Branches contain the source code of the documentation of releases.
 * The `asf-site` branch contains the static webpage code, as well as the build static version of the documenation (in the `docs` folder). The `docs` folder should not be manually updated.
 
-## Build the documentation locally (first time)
+
+<h2><img height="30" src="https://github.com/apache/age/raw/master/img/installation.svg">&nbsp;&nbsp;Build the documentation locally (first time)</h2>
+
 
 * Install requirements (the latex and dvisvgm commands are required to display math)
 
@@ -86,7 +88,7 @@ pip install -r requirements.txt
 
     The documentation for the current local branch should now be in the `build/html/current` folder (no subfolders).
 
-## Build documentation locally (after initial setup)
+<h2><img height="30" src="https://github.com/apache/age/raw/master/img/installation.svg">&nbsp;&nbsp;Build documentation locally (after initial setup)</h2>
 
 * Navigate to the root of the repository
 
