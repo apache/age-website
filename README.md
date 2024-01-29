@@ -27,8 +27,7 @@
 
 
 
-
-# Apache AGE website
+<h2><img height="30" src="https://age.apache.org/age-manual/master/_static/logo.png">&nbsp;&nbsp;Apache AGE website</h2>
 
 ## Introduction
 
