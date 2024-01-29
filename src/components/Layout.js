@@ -32,6 +32,7 @@ const TemplateWrapper = ({ children }) => {
     gtag('js', new Date());
   
     gtag('config', 'G-VPCE2QF63F');
+    gtag('confif', 'G-XFVE1KJW91')
   };
 
   const titleNameMapper = () => {
@@ -67,6 +68,7 @@ const TemplateWrapper = ({ children }) => {
             <meta name="description" content={description} />
             {/* Global site tag (gtag.js) - Google Analytics */}
             <script async src="https://www.googletagmanager.com/gtag/js?id=G-VPCE2QF63F" />
+            <scrip async src="https://www.googletagmanager.com/gtag/js?id=G-XFVE1KJW91"/>
             <meta name="google-site-verification" content="yl8xrMjtcZXVEZ0JqZ_H0s3YJ4hb8XwKMkCOdKoC3Jk" />
             <script>
                 {injectGA()}
