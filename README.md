@@ -25,8 +25,8 @@
 </br>
 
 * This repository provides the source for the main website of The Apache AGE.
-* <a href="https://github.com/apache/age" target="_blank">
-
+* [Apache AGE](https://github.com/apache/age){:target="_blank"}
+* [Apache AGE Viewer](https://github.com/apache/age-viewer){:target="_blank"}
 
 
 
