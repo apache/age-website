@@ -24,7 +24,9 @@
 
 </br>
 
-This repository provides the source for the main [website of The Apache AGE](https://age.apache.org/).
+This repository provides the source for the main [website of The Apache AGE](https://age.apache.org/).<br/>
+<br/>
+The link below contains the following Apache AGE project:
 * [The Apache AGE Project](https://github.com/apache/age)
 * [The Apache AGE Viewer Project](https://github.com/apache/age-viewer)
 
