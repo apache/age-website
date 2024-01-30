@@ -1,3 +1,5 @@
+<h2><img height="30" src="https://age.apache.org/age-manual/master/_static/logo.png">&nbsp;&nbsp;Apache AGE website</h2>
+
 <br>
 
 <p align="center">
@@ -27,7 +29,7 @@
 
 
 
-<h2><img height="30" src="https://age.apache.org/age-manual/master/_static/logo.png">&nbsp;&nbsp;Apache AGE website</h2>
+
 
 <h2><img height="30" src="https://github.com/apache/age/raw/master/img/tick.svg">&nbsp;&nbsp;Introduction</h2>
 
