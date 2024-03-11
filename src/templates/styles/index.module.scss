@@ -278,7 +278,18 @@
       }
       font: $landing;
       color: #fff;
+      line-height: 1.1; /* 줄 간격을 설정합니다. 값을 조정하여 원하는 간격을 찾으세요. */
     }
+    h2 {
+      span {
+        font-size: 20px;
+        font-weight: bold;
+      }
+      font: $landing;
+      color: #fff;
+      line-height: 0.2; /* 줄 간격을 설정합니다. 값을 조정하여 원하는 간격을 찾으세요. */
+    }
+
     div {
       margin-top: 0.875rem;
       margin-bottom: 8rem;
