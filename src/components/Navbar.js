@@ -295,7 +295,7 @@ const Navbar = () => {
 
         <div className={styles.Right}>
           <Link className={styles.Download} to="/download">
-            Download
+            Downloads
           </Link>
         </div>
         <div className={styles.MenuToggle}>
