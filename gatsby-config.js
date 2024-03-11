@@ -3,7 +3,7 @@ module.exports = {
     title: "Apache AGE",
     description: "AGE was under development since 2019 by a team of engineers at Bitnine Global Inc. The project, originally born out of AgensGraph, a multi-model graph database fork of PostgreSQL, was donated to the Apache Software Foundation and entered incubation in April 2020.",
   },
-  pathPrefix: "/age-website-for-test",
+  pathPrefix: "/",
   plugins: [
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sass",
