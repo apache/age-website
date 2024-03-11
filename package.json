@@ -62,7 +62,7 @@
     "start": "yarn run develop",
     "build": "yarn run clean && gatsby build",
     "develop": "yarn run clean && gatsby develop",
-    "deploy": "yarn run clean && gatsby build --prefix-paths && cp .asf.yaml ./public  && gh-pages -d public -b asf-staging",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "serve": "gatsby serve -p 80",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
     "test": "echo \"Error: no test specified\" && exit 1"
