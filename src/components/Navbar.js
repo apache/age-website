@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import { Menu } from 'antd';
 import { MenuOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
+
 // img
 import logoImage from '../../static/img/logo.png';
 
@@ -46,7 +47,7 @@ const Navbar = () => {
                   Join AGE Community
                 </Link>
               </Menu.Item>
-              <Menu.Item>
+              {/*<Menu.Item>
                 <Link
                   className="navbar-item"
                   target="_blank"
@@ -54,7 +55,7 @@ const Navbar = () => {
                 >
                   AGE Discord
                 </Link>
-              </Menu.Item>
+              </Menu.Item>*/}
               <Menu.Item>
                 <Link
                   className="navbar-item"
@@ -73,20 +74,12 @@ const Navbar = () => {
                   AGE Project
                 </Link>
               </Menu.Item>
-              <Menu.Item>
-                <Link
-                  className="navbar-item"
-                  target="_blank"
-                  to="https://github.com/apache/age-viewer/projects"
-                >
-                  AGE Viewer Project
-                </Link>
-              </Menu.Item>
+
             </Menu.SubMenu>
             <Menu.SubMenu title="Contribution">
               <Menu.Item>
                 <Link className="navbar-item" to="/contribution/how">
-                  Ways to contribute
+                  How to contribute
                 </Link>
               </Menu.Item>
               <Menu.Item>
@@ -137,7 +130,17 @@ const Navbar = () => {
                 </a>
               </Menu.Item>
             </Menu.SubMenu>
-            <Menu.SubMenu title="Apache AGE GitHub">
+
+            <Menu.Item key="Blog">
+              <a className="navbar-item" href="https://apache-age.medium.com/" target="_blank" rel="noopener noreferrer">
+                Blog
+              </a>
+            </Menu.Item>
+
+
+            {/* 상단 메뉴 변경: Apache AGE GitHub 
+            <Menu.SubMenu title={<a href="https://github.com/apache/age" target="_blank" rel="noopener noreferrer">Apache AGE GitHub</a>}>
+            {/* GitHub 메뉴
               <Menu.Item>
                 <a href="https://github.com/apache/age" target="_blank">                  
                   AGE
@@ -148,9 +151,10 @@ const Navbar = () => {
                   AGE Viewer
                 </a>        
               </Menu.Item>
-            </Menu.SubMenu>
+            </Menu.SubMenu> */}
           </Menu>
         </div>
+
         <div className={styles.HamburgerMenu}>
           <Menu
             className={styles.InlineMenu}
@@ -288,10 +292,34 @@ const Navbar = () => {
             </Menu.SubMenu>
           </Menu>
         </div>
+
         <div className={styles.Right}>
           <Link className={styles.Download} to="/download">
-            Download AGE
+            Download
           </Link>
+        </div>
+        <div className={styles.MenuToggle}>
+          <button
+            className={`${styles.Toggle} ${menuToggle === 'toggled' ? styles.Toggled : ''
+              }`}
+            onClick={() => {
+              const state = menuToggle === 'toggled' ? 'untogle' : 'toggled';
+              setMenuToggle(state);
+            }}
+          >
+            {menuToggle === 'toggled' ? (
+              <MenuUnfoldOutlined />
+            ) : (
+              <MenuOutlined />
+            )}
+          </button>
+        </div>
+        
+        <div className={styles.Right}>
+        <a className={styles.Link} href="https://github.com/apache/age" target="_blank" rel="noopener noreferrer">
+          <img src="/img/icon-github.png" alt="GitHub" style={{ marginRight: '8px' }} />
+            Apache AGE GitHub
+          </a>
         </div>
         <div className={styles.MenuToggle}>
           <button

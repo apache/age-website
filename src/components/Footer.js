@@ -79,12 +79,13 @@ const Footer = class extends React.Component {
               <a href="/contribution/process">Release Process</a>
             </li>
           </ul>
+
           <ul className={`${styles.Item} Item`}>
             <li>
               <a href="/download">Download AGE</a>
             </li>
-            <li></li>
           </ul>
+
           <ul className={`${styles.Item} Item`}>
             <li>Apache</li>
             <li>

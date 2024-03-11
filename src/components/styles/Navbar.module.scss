@@ -108,11 +108,32 @@
       background: $primayrColor;
       border-radius: 16px;
       border: 1px solid $primayrColor;
+      margin-right: 0rem; /* 오른쪽 버튼에 간격을 추가 */
     }
     .Download:hover {
       color: white;
       transform: scale(1.1);
     }
+    .Link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      padding: 0.625rem;
+      font: $h5;
+      height: 2.5rem;
+      /* UI Properties */
+      background: $primayrColor;
+      border-radius: 16px;
+      border: 1px solid $primayrColor;
+      margin-left: 1rem; /* 왼쪽 버튼에 간격을 추가 */
+    }
+    .Link:hover {
+      color: white;
+      transform: scale(1.1);
+    }
+
+  
   }
 }
 

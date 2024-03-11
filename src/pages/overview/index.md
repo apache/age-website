@@ -17,28 +17,6 @@ subcon: >-
 
   <br /><br />
 
-
-  # What is Apache AGE® Viewer?
-
-
-  **Apache AGE® Viewer** is a web user interface for Apache AGE that provides data visualization and exploration.
-
-
-  Users can enter complex graph queries and explore the results expressed in graph and table data.
-
-
-  **Apache AGE® Viewer** handles large graph data. Users will be able to discover meaningful insights with the help of various graph algorithms.
-
-
-  **Apache AGE® Viewer** will serve as a central graph data management & development platform for Apache AGE, a graph extension which will support all relational databases in the future.
-
-
-  <div class="OverviewLink">
-    <a href="https://github.com/apache/age-viewer" target="_blank">View Code</a> 
-    <a href="https://github.com/apache/age-viewer/releases" target="_blank">Download</a>
-  </div>
-
-
   # Key Features
 ---
 

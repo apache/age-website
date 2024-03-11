@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react'; // React와 필요한 훅을 한 번에 import
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 // component
@@ -19,6 +19,8 @@ import keyFeaturesImg01 from '../../static/img/keyfeature01.png';
 import keyFeaturesImg02 from '../../static/img/keyfeature02.png';
 import keyFeaturesImg03 from '../../static/img/keyfeature03.png';
 import keyFeaturesImg04 from '../../static/img/keyfeature04.png';
+
+
 
 
 
@@ -74,6 +76,8 @@ export const IndexPageTemplate = ({
               </div>
             </div>
           </div>
+
+          {/* 메인화면: 유튜브 영상
           <section className={styles.videos}>
             <div className={styles.content}>
               <h2>Installation Guide</h2>
@@ -88,6 +92,8 @@ export const IndexPageTemplate = ({
               </div>
             </div>
           </section>
+          */ }
+
           <div className={styles.keyFeatures}>
             <h2>Key Features</h2>
             <div className={styles.keyFeaturesImgContainer}>
@@ -134,6 +140,8 @@ export const IndexPageTemplate = ({
         </div> */}
       {/* </section> */}
 
+
+      {/* 메인화면: 디스코드
       <section style={{ backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat' }}>
         <div className={styles.content}>
           <h2>Join AGE Discord</h2>
@@ -145,6 +153,7 @@ export const IndexPageTemplate = ({
           <h3>Got any questions about the project? Join us in Discord and let's chat!</h3>
         </div>
       </section>
+      */}
       <section hidden></section>
       <section>
         <div className={styles.content}>
@@ -240,3 +249,4 @@ export const pageQuery = graphql`
     }
   }
 `;
+
