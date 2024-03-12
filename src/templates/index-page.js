@@ -92,6 +92,13 @@ export const IndexPageTemplate = ({
             </div>
           </div>
 
+          <div><br></br></div>
+          <div><br></br></div>
+          <div><br></br></div>
+          <div><br></br></div>
+          <div><br></br></div>
+          <div><br></br></div>
+
           {/* 메인화면: 유튜브 영상
           <section className={styles.videos}>
             <div className={styles.content}>
@@ -108,6 +115,52 @@ export const IndexPageTemplate = ({
             </div>
           </section>
           */ }
+
+            <section>
+            <div className={styles.card}>
+
+              <div className={styles.content}>
+                <h2>Comparison of Apache AGE, PostGraphile, and Hasura</h2><br></br><br></br>
+                <p>
+                <h3><b>◾ Apache AGE: Graph Database Extension for PostgreSQL</b></h3>
+                Apache AGE extends PostgreSQL, transforming it into a graph database.
+                This enables handling complex data relationships and graph structures, supplemented by the power of Cypher queries for graph-specific operations.<br></br><br></br>
+                
+                <ul><b>Key Features:</b></ul>
+                  <li>Graph & SQL Queries</li>
+                  <li>Integration deeply with existing PostgreSQL features,
+                  making it a robust and scalable solution for graph data management without the need for external graph databases.</li>
+                  <li>Ideal for applications that require complex data relationship analysis,such as social networks, recommendation systems, and knowledge graphs.</li>
+                  <br></br><hr></hr><br></br>
+
+                <h3><b>◾ PostGraphile: GraphQL API from PostgreSQL Schema</b></h3>
+                PostGraphile is a tool for building a GraphQL API on top of an existing PostgreSQL schema.<br></br>
+                It's designed for efficiency in web development, allowing real-time data access and manipulation through GraphQL interface.<br></br><br></br>
+
+                <ul><b>Key Features:</b></ul>
+                  <li>Automates the creation of GraphQL APIs from existing PostgreSQL.</li>
+                  <li>Offers subscriptions for real-time data updates.</li>
+                  <li>Best suited for projects requiring quick development of web or mobile backends with real-time data needs, but without complex graph data management requirements.</li><br></br><hr></hr><br></br>
+
+                <h3><b>◾ Hasura: Real-Time GraphQL Engine for PostgreSQL</b></h3>
+                Hasura is a GraphQL server engine that dynamically generates real-time GraphQL APIs from a PostgreSQL database.<br></br>
+                It emphasizes performance and developer productivity, with an easy setup process and tools for managing access and queries.<br></br><br></br>
+
+                <ul><b>Key Features:</b></ul>
+                  <li>Provides a user-friendly interface for setting up and managing GraphQL endpoints.</li>
+                  <li>Optimized for performance, supporting high-volume traffic.</li>
+                  <li>Ideal for developers needing a fast, scalable GraphQL layer over their PostgreSQL databases.</li>
+                  <br></br><hr></hr><br></br>
+
+                <h3><b>◾ Conclusion</b></h3>
+                Apache AGE is ideal for sophisticated graph data tasks within PostgreSQL.<br></br>
+                PostGraphile and Hasura excel in quick GraphQL API deployment for example for web and mobile, complementing AGE's rich graph features.<br></br>
+                </p>
+
+
+                </div>
+              </div>
+            </section>
 
           <div className={styles.keyFeatures}>
             <h2>Key Features</h2>
