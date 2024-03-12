@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+    <style>
+      .published {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+      .avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+      .info {
+        display: flex;
+        flex-direction: column;
+      }
+      @media only screen and (max-width: 600px) {
+        .combating-heading {
+          font-size: 25px !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div>
+        <div class="text-center">
+          <img src="/img/bi-13.webp" alt="hero-img" style="border-radius: 25px" class="img-fluid" />
+        </div>
+        <h2 class="mt-5 text-center combating-heading" style="color: #150136; font-size: 36px; font-weight: 800">
+          Can Graph Databases Be the Future for R&D <br />Productivity?
+        </h2>
+
+        <div class="mx-auto" style="width: 80%">
+          <div class="published mt-5">
+            <img src="../../img/AndrewKo.png" alt="" class="avatar" />
+            <div class="info">
+              <span class="org" style="font-weight: 600">ApacheAGE</span>
+              <div>
+                <p>Published in ApacheAge, 3 min read, Jan 24</p>
+                <!-- <span class="pub_in">Published in ApacheAge,</span>
+                <span class="blog_time">3 min read,</span>
+                <span class="blog_month">Jan 24</span> -->
+              </div>
+            </div>
+          </div>
+
+          <div class="detail-section mt-5">
+            <p>
+              In the rapidly evolving landscape of compound development for manufacturing companies, the quest for efficiency, cost-effectiveness, and
+              innovation is relentless. Manufacturers are constantly seeking innovative approaches to optimize their processes and maintain a
+              competitive edge in the industry.
+            </p>
+
+            <h3>Case Study</h3>
+            <p>
+              Let's take a look at manufacturer A's experience showcasing how a new graph technology can revolutionize not only data management but
+              also the very essence of product innovation. Manufacturer A produces insulated cables that can be used in various applications like
+              electric power, railways, navy vessels, automobiles, airports, and urban communication. The manufacturer conducted numerous tests and
+              experiments to meet the requirements of their end-users. To cut down on both development costs and time while enhancing the Design of
+              Experiment (DoE) success rate, they aimed to find a system that could effectively oversee and recommend formulation recipes based on the
+              extensive material combination data they had gathered.
+            </p>
+
+            <h3>Challenges</h3>
+            <p>The manufacturer faced three major challenges when adopting the insulation prescription system.</p>
+            <p>
+              <strong>The work advancement heavily relied on the researchers' expertise.</strong>
+              In the absence of a data storage and management system, the researchers would have to depend on their intuition, which had been
+              developed through numerous tests. If one of these researchers were to retire, it would result in the loss of the valuable knowledge they
+              had accumulated over the years.
+            </p>
+            <p>
+              <strong> Competition from other cable manufacturing companies</strong>
+              As a result of the high competition, the manufacturer had to reduce the overall cost during the compound development process. In certain
+              situations where a required material became unavailable or was no longer in production, researchers had to seek alternative,
+              cost-effective materials as substitutes.
+            </p>
+            <p>
+              <strong> Lack of standards in the data generated from various experiments</strong>
+              Manufacturers had to undertake numerous manual processes, often resulting in a comparable number of errors due to inefficient data
+              management. Arranging a lengthy compilation of compound data into tables proves to be an inefficient approach when analyzing the
+              correlations between materials and the resulting outcomes.
+            </p>
+            <h3>Challenges</h3>
+            <p>As a result, the manufacturer found a graph database that was optimized for storing relationship-driven data.</p>
+            <p>
+              The Insulation Prescription System model comprises two key components: a graph database and machine learning. The manufacturer opted for
+              a graph database to expedite data processing and enhance the automation of the analytical model.
+            </p>
+            <p>
+              Apache AGE, a graph database management extension on a relational database system, serves as the chosen platform for integrating all the
+              manufacturer's collected and tested data. This transition to a graph database is seamless, thanks to its adaptable schema, which
+              facilitates the addition and storage of relational models. It plays a crucial role in visualizing the analyzed data.
+            </p>
+            <p>
+              After the data ingestion phase, the subsequent step involves extracting codes from the stored data using the graph database's
+              algorithms. These codes are then processed using analysis tools like Python to visualize ingredient data and characteristic features.
+              The machine learning model aggregates all this data and predicts a Design of Experiment (DoE) with a high probability of producing
+              insulation material with specific attributes.
+            </p>
+            <p>
+              Manufacturer A showcases the potential of graph databases in improving the R&D efficiency and innovation in manufacturing. The fusion of
+              advanced technology and data-driven insights opens doors to unprecedented efficiencies and competitiveness.
+            </p>
+            <p>
+              If you are interested in learning more about the R&D innovation derived with a graph database extension technology, we have a perfect
+              opportunity!
+            </p>
+            <p>
+              Head to the link below to register for our webinar, taking place this Thursday, September 14th from 10AM PDT. This is your opportunity
+              to discover how this transformative technology can reshape your industry!
+            </p>
+            <div class="text-center mt-5 mb-5">
+              <span class="badge bg-secondary p-2 rounded-pill">graph technology</span>
+              <span class="badge bg-secondary p-2 rounded-pill">use cases</span>
+              <span class="badge bg-secondary p-2 rounded-pill">project management </span>
+              <span class="badge bg-secondary p-2 rounded-pill">hybrid queries</span>
+              <span class="badge bg-secondary p-2 rounded-pill">machine learning </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
