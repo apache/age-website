@@ -58,7 +58,7 @@ Join the official Apache AGE user and developer mailing lists. You can get user 
 </div>
 
 <div>
-  <img src="/img/x_logo_twitter_new_brand_icon.png"/>
+  <img src="/img/icon_x.png"/>
 </div>
 
 <div>
