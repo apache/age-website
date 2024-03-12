@@ -64,15 +64,30 @@ export const IndexPageTemplate = ({
             <div className={styles.verticalLine}>
             </div>
             <div className={styles.cardRight}>
-              What Is Apache AGE® Viewer ?
+              News & Events
               <div className={styles.cardContent}>
-                <b>Apache AGE® Viewer</b> is a web user interface for Apache AGE that provides data visualization and exploration.
-                <br></br><br></br>
-                Users can enter complex graph queries and explore the results expressed in graph and table data.
-                <br></br><br></br>
-                <b>Apache AGE® Viewer</b> handles large graph data. Users will be able to discover meaningful insights with the help of various graph algorithms.
-                <br></br><br></br>
-                <b>Apache AGE® Viewer</b> will serve as a central graph data management & development platform for Apache AGE, a graph extension which will support all relational databases in the future.
+                <div><b>Apache AGE supporting latest PostgreSQL(ver16)</b></div>
+                  <div>
+                    <a href="https://news.ycombinator.com/item?id=39674765" target="_blank">Read more</a>
+                  </div>
+
+                <br></br>
+                <div><b>Easy and Smooth Start to Graph Databases</b></div>
+                <div>
+                  <a href="https://dev.to/markgomer/easy-and-smooth-start-to-graph-databases-5epk" target="_blank">Read more</a>
+                </div>
+
+                <br></br>
+                <div><b>Apache AGE - PostgreSQL Graph Extension</b></div>
+                  <div>
+                    <a href="https://www.reddit.com/r/PostgreSQL/comments/1avqzu3/apache_age_postgresql_graph_extension/" target="_blank">Read more</a>
+                  </div>
+
+                <br></br>
+                <div><b>Apache AGE, PostGraphile, and Hasura</b></div>
+                <div>
+                  <a href="https://www.reddit.com/r/PostgreSQL/comments/1bcdo9z/apache_age_postgraphile_and_hasura/" target="_blank">Read more</a>
+                </div>
               </div>
             </div>
           </div>

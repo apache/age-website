@@ -2,9 +2,9 @@ import * as React from 'react';
 // import { Link } from 'gatsby';
 // images
 import icoGithubLd from '../../static/img/icon-github.png';
-import icoTwitterLd from '../../static/img/icon-twitter.png';
+import icoTwitterLd from '../../static/img/icon-x.png';
 import icoYoutubeLd from '../../static/img/icon-youtube.png';
-import icoDiscordLd from '../../static/img/icon-discord.png';
+// import icoDiscordLd from '../../static/img/icon-discord.png';
 
 
 // styles
@@ -22,7 +22,7 @@ const Footer = class extends React.Component {
         links[0].children[0].src = icoGithubLd;
         links[1].children[0].src = icoTwitterLd;
         links[2].children[0].src = icoYoutubeLd;
-        links[3].children[0].src = icoDiscordLd;
+        // links[3].children[0].src = icoDiscordLd;
       }
     }
   }
@@ -50,18 +50,12 @@ const Footer = class extends React.Component {
               <a href="/joinus">Join AGE Community</a>
             </li>
             <li>
-              <a href="https://discord.com/invite/NMsBs9X8Ss" target='_blank'>AGE Discord</a>
-            </li>
-            <li>
               <a href="https://www.reddit.com/r/apacheage/" target='_blank'>
                 AGE Forum
               </a>
             </li>
             <li>
               <a href="https://github.com/apache/age/projects" target='_blank'>AGE Project</a>
-            </li>
-            <li>
-              <a href="https://github.com/apache/age-viewer/projects" target='_blank'>AGE Viewer Project</a>
             </li>
           </ul>
           <ul className={`${styles.Item} Item`}>
@@ -82,10 +76,13 @@ const Footer = class extends React.Component {
 
           <ul className={`${styles.Item} Item`}>
             <li>
+              <a href="https://apache-age.medium.com/" target='_blank'>Blog</a>
+            </li>
+            <li>
               <a href="/download">Download AGE</a>
             </li>
           </ul>
-
+          
           <ul className={`${styles.Item} Item`}>
             <li>Apache</li>
             <li>
@@ -126,6 +123,7 @@ const Footer = class extends React.Component {
             </li>
           </ul>
         </div>
+
         <div
           style={{ maxWidth: '100vw' }}
           className={`${styles.Social} Social`}
@@ -153,6 +151,7 @@ const Footer = class extends React.Component {
                 style={{ width: '2.5em', height: '2.5em' }}
               />
             </a>
+            {/* 
             <a title="Discord" href="https://discord.com/invite/NMsBs9X8Ss" target={'_blank'}>
               <img
                 src={icoDiscordLd}
@@ -160,12 +159,16 @@ const Footer = class extends React.Component {
                 style={{ width: '2.5em', height: '2.5em' }}
               />
             </a>
+            */}
           </div>
+          
           <p>
             Copyright © 2024 The Apache Software Foundation.<br></br>
             The Apache Software Foundation Apache AGE, AGE, Apache, the Apache feather, 
             and the Apache AGE project logo are either registered trademarks or trademarks of the Apache Software Foundation.
           </p>
+
+
         </div>
       </footer>
     );
