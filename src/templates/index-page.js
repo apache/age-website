@@ -66,30 +66,25 @@ export const IndexPageTemplate = ({
             <div className={styles.cardRight}>
               News & Events
               <div className={styles.cardContent}>
-                <div><b>Apache AGE on Microsoft Azure PostgreSQL</b></div>
-                <div>Support the integration of Microsoft Azure PostgreSQL with Apache AGE by casting your vote!</div>
+                <div><b>Apache AGE supporting latest PostgreSQL(ver16)</b></div>
                   <div>
-                    <a href="https://feedback.azure.com/d365community/idea/4ba45e52-63b9-ee11-92bc-6045bd7aea25" target="_blank">Read more</a>
+                    <a href="https://news.ycombinator.com/item?id=39674765" target="_blank">Read more</a>
                   </div>
 
                 <br></br>
                 <div><b>Easy and Smooth Start to Graph Databases</b></div>
-                <div>Get to know the newest tool that makes using Apache AGE easy as pie</div>
                 <div>
                   <a href="https://dev.to/markgomer/easy-and-smooth-start-to-graph-databases-5epk" target="_blank">Read more</a>
                 </div>
 
                 <br></br>
-                <div><b>Apache AGE is now compatible with PostgreSQL 16!</b></div>
-                <div>Check the changelog for the latest version</div>
+                <div><b>Apache AGE - PostgreSQL Graph Extension</b></div>
                   <div>
-                  <a href="https://news.ycombinator.com/item?id=39674765" target="_blank">Read more</a>
-
+                    <a href="https://www.reddit.com/r/PostgreSQL/comments/1avqzu3/apache_age_postgresql_graph_extension/" target="_blank">Read more</a>
                   </div>
 
                 <br></br>
                 <div><b>Apache AGE, PostGraphile, and Hasura</b></div>
-                <div>Join the comparison discussion on Reddit</div>
                 <div>
                   <a href="https://www.reddit.com/r/PostgreSQL/comments/1bcdo9z/apache_age_postgraphile_and_hasura/" target="_blank">Read more</a>
                 </div>
