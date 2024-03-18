@@ -149,6 +149,7 @@
         }
       }
 
+
       // youtube
       .Youtube {
         max-width: 73.75rem;
@@ -169,6 +170,7 @@
         display: block;
         content: '';
       }
+
       // invite discord
       .inviteDiscord {
         display: flex;
@@ -330,4 +332,155 @@
       color: #fff;
     }
   }
+}
+
+// 랜딩페이지 Blog 섹션
+.card1 {
+  display: flex; 
+  align-content: center; 
+  justify-content: space-around; 
+  align-items: flex-start;
+  position: relative;
+  flex-direction: row;
+  border: 0.0625rem solid white;
+  background-color: white;
+  height: max-content;
+  border-radius: 10px;
+  width: 100%;
+  flex-wrap: wrap;
+  text-align: left;
+  padding: 2rem;
+  position: relative;
+  margin-top: -8rem;
+  box-shadow: 0rem 0.75rem 1.5rem #00000029;
+
+  .cardContent1 {
+    padding: 3rem 3rem 2rem 0;
+    color: black;
+    font: normal normal normal 1.25rem/1.875rem Mark Pro;
+
+  }
+  .cardLeft1 {
+    font: normal normal 500 1.875rem/3.6875rem Mark Pro;
+    color: $primayrColor;
+    text-transform: none;
+    flex: 1 1 40%;
+    padding: 0 0 0 3rem;
+    text-align: center;
+
+  }
+
+  .cardRight1 {
+    font: normal normal 500 1.875rem/3.6875rem Mark Pro;
+    color: $primayrColor;
+    text-transform: none;
+    flex: 1 1 40%;
+    padding: 0 0 0 3rem;
+    text-align: center;
+  }
+}
+
+    .content1 {
+      width: 100%;
+      max-width: $landingConWidth;
+      margin: 0 auto;
+      > h2 {
+        font: $h1;
+        color: $primayrColor;
+        text-align: center;
+      }
+      > h3 {
+        font: $h4;
+        color: $primayrColor;
+        text-align: center;
+      }
+      > p {
+        text-align: center;
+        font-size: 1.25rem;
+        text-align: center;
+        color: $textColor;
+        margin-bottom: 1.75rem;
+        > a {
+          color: white;
+          text-decoration: underline;
+        }
+      }
+    }
+
+      // Subscribe mail image
+      .Subscribe1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+          width: 15.375rem;
+          height: 17.375rem;
+        }
+      }
+
+    .SubscribeLink1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-row-gap: 1rem;
+      justify-items: center;
+      margin: 0 auto;
+      width: auto;
+      grid-template-columns: repeat(auto-fill, minmax(33%, auto));
+      padding: 0px 10%;
+      @media screen and (max-width: 48rem) {
+        grid-template-columns: repeat(auto-fill, minmax(100%, auto));
+      }
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 12.5rem;
+        height: 2.5rem;
+        font: normal normal 500 1.125rem Mark Pro;
+        border: solid 2px #fff;
+        border-radius: 40px;
+        margin-bottom: 1rem;
+        color: $primayrColor;
+      }
+
+
+      a:nth-child(odd) {
+        background-color: white;
+        border: 1px solid $primayrColor;
+      }
+      a:nth-child(odd):hover {
+        background-color: $secondColor;
+        color: white;
+      }
+      a:nth-child(even) {
+        background-color: $primayrColor;
+        border: 1px solid $primayrColor;
+        color: white;
+      }
+      a:nth-child(even):hover {
+        background-color: $secondColor;
+        color: white;
+      }
+    }
+
+/* 버튼에 대한 CSS 스타일 */
+.button {
+  display: inline-block; /* 인라인 블록 요소로 표시하여 다른 요소와 옆으로 나란히 배치되도록 함 */
+  font-size: 16px; /* 버튼의 글꼴 크기 설정 */
+  text-align: center; /* 버튼 내부 텍스트의 정렬 설정 */
+  border: none; /* 테두리 없앰 */
+  width: 12.5rem;
+  height: 2.5rem;
+  border-radius: 40px;
+  cursor: pointer; /* 마우스 커서를 포인터로 변경하여 클릭 가능한 요소임을 나타냄 */
+  background : #b8145a;; /* 버튼의 배경 이미지 설정 */
+  background-size: cover; /* 배경 이미지가 버튼에 꽉 차도록 설정 */
+  color: #ffffff; /* 버튼 텍스트 색상 설정 */
+  line-height: 2.5rem; /* 버튼의 높이와 같은 값으로 설정하여 텍스트를 수직으로 가운데 정렬함 */
+}
+
+/* 마우스를 올렸을 때의 버튼 스타일 */
+.button:hover {
+  opacity: 0.8; /* 마우스를 올렸을 때 버튼의 투명도를 줄여 약간 어둡게 만듦 */
 }

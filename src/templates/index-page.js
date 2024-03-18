@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'; // React와 필요한 훅을 한 번에 import
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
+
 // component
 import Layout from '../components/Layout';
 import Content, { HTMLContent } from '../components/Content';
@@ -14,6 +15,8 @@ import bg04 from '../../static/img/IMG-BG04.jpg';
 import bg05 from '../../static/img/IMG-BG05.jpg';
 import bg06 from '../../static/img/IMG-BG06.jpg';
 import ageLogo from '../../static/img/logo.png';
+
+import blogimg01 from '../../static/img/blogimg01.png';
 
 import keyFeaturesImg01 from '../../static/img/keyfeature01.png';
 import keyFeaturesImg02 from '../../static/img/keyfeature02.png';
@@ -67,32 +70,32 @@ export const IndexPageTemplate = ({
               News & Events
               <div className={styles.cardContent}>
                 <div><b>Apache AGE on Microsoft Azure PostgreSQL</b></div>
-                <div>Support the integration of Microsoft Azure PostgreSQL with Apache AGE by casting your vote!</div>
+
+                <div>Support the integration of Microsoft Azure PostgreSQL with Apache AGE by casting your vote and feedback!</div>
                   <div>
-                    <a href="https://feedback.azure.com/d365community/idea/4ba45e52-63b9-ee11-92bc-6045bd7aea25" target="_blank">Read more</a>
+                    <a href="https://github.com/apache/age/issues/1524" target="_blank">Read more</a>
                   </div>
 
                 <br></br>
-                <div><b>Easy and Smooth Start to Graph Databases</b></div>
-                <div>Get to know the newest tool that makes using Apache AGE easy as pie</div>
+                <div><b>PostgresPro adapted Apache AGE</b></div>
+                <div>Apache_AGE is a Postgres Pro extension that provides graph database functionality. The goal of the project is to create single storage that can handle both relational and graph model data so that users can use standard ANSI SQL along with openCypher.</div>
                 <div>
-                  <a href="https://dev.to/markgomer/easy-and-smooth-start-to-graph-databases-5epk" target="_blank">Read more</a>
+                  <a href="https://postgrespro.com/docs/enterprise/15/apache-age" target="_blank">Read more</a>
+
                 </div>
 
                 <br></br>
                 <div><b>Apache AGE is now compatible with PostgreSQL 16!</b></div>
                 <div>Check the changelog for the latest version</div>
                   <div>
-                  <a href="https://news.ycombinator.com/item?id=39674765" target="_blank">Read more</a>
+
+                  <a href="https://github.com/apache/age/releases/tag/PG16%2Fv1.5.0-rc0" target="_blank">Read more</a>
+
 
                   </div>
 
                 <br></br>
-                <div><b>Apache AGE, PostGraphile, and Hasura</b></div>
-                <div>Join the comparison discussion on Reddit</div>
-                <div>
-                  <a href="https://www.reddit.com/r/PostgreSQL/comments/1bcdo9z/apache_age_postgraphile_and_hasura/" target="_blank">Read more</a>
-                </div>
+
               </div>
             </div>
           </div>
@@ -162,41 +165,26 @@ export const IndexPageTemplate = ({
                 PostGraphile and Hasura excel in quick GraphQL API deployment for example for web and mobile, complementing AGE's rich graph features.<br></br>
                 </p>
 
-
                 </div>
               </div>
             </section>
 
-          <div className={styles.keyFeatures}>
-            <h2>Key Features</h2>
-            <div className={styles.keyFeaturesImgContainer}>
-              <div>
-                <img src={keyFeaturesImg01}></img>
-                <div>Graph Database Plugin<br></br> for PostgreSQL</div>
-                <div>
-                  Gain access to query and visualize graph data in a PostgreSQL compatible relational databases
-                </div>
-              </div>
-              <div>
-                <img src={keyFeaturesImg02}></img>
-                <div>Hybrid Queries<br></br> (OpenCypher And SQL)</div>
-                <div>Hybrid query technology simultaneously performs the queries for relational data and graph data</div>
-              </div>
-              <div>
-                <img src={keyFeaturesImg03}></img>
-                <div>Fast Graph Query <br></br>Processing</div>
-                <div>Achieve both fast indexing and efficient query processing.</div>
-              </div>
-              <div>
-                <img src={keyFeaturesImg04}></img>
-                <div>Graph Visualization <br></br> and Analytics</div>
-                <div>
-                  Provides visualization of graph and relational data for clearer understanding of data
-                </div>
-              </div>
-            </div>
+          <div><br></br></div>
+          <div><br></br></div>
+          <div><br></br></div>
+          <div><br></br></div>
+          <div><br></br></div>
+          <div><br></br></div>
+
+            <div className={styles.card1}>
+            <div className={styles.content}>
+              <h2><b>This week article by community</b></h2><hr></hr>
+              <iframe src="./img/blog1.html" style={{ border: 'none' }} width="100%" height="600" title="Embedded Page"></iframe>
+
           </div>
         </div>
+      </div>
+
       </section>
       {/* <section style={{ backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat' }} hidden > */}
         {/* <div className={styles.content}>
@@ -228,9 +216,10 @@ export const IndexPageTemplate = ({
       </section>
       */}
       <section hidden></section>
+      
       <section>
-        <div className={styles.content}>
-          <div className={styles.Subscribe}>
+        <div className={styles.content1}>
+          <div className={styles.Subscribe1}>
             <img src={landingMailImg} alt="mail-image"></img>
           </div>
           <h2>Subscribe Mailing List</h2>
@@ -238,7 +227,7 @@ export const IndexPageTemplate = ({
             Get help using Apache AGE or contribute to the project on our
             mailing lists!
           </p>
-          <div className={styles.SubscribeLink}>
+          <div className={styles.SubscribeLink1}>
             <div>
               <a
                 target="_blank"
@@ -266,7 +255,6 @@ export const IndexPageTemplate = ({
               </a>
               <a href="mailto:commits-subscribe@age.apache.org">Subscribe</a>
             </div>
-
           </div>
         </div>
       </section>
