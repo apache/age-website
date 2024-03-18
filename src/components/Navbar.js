@@ -87,11 +87,12 @@ const Navbar = () => {
                   Code Convention
                 </Link>
               </Menu.Item>
+              {/* 더 이상 운영 안함
               <Menu.Item>
                 <Link className="navbar-item" to="/contribution/volunteers">
                   Volunteer Guideline
                 </Link>
-              </Menu.Item>
+              </Menu.Item>*/}
               <Menu.Item>
                 <Link className="navbar-item" to="/contribution/requirements">
                   Committer Requirements
