@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+    <style>
+      .published {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+      .avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+      .info {
+        display: flex;
+        flex-direction: column;
+      }
+      @media only screen and (max-width: 600px) {
+        .combating-heading {
+          font-size: 25px !important;
+        }
+      }
+
+      /* 스크롤바 및 트랙 스타일 */
+      ::-webkit-scrollbar {
+        width: 12px; /* 스크롤바 너비 */
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1; /* 스크롤바 트랙 배경색 */
+        border-radius: 10px; /* 트랙 모서리 둥글게 */
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #888; /* 스크롤바 썸(슬라이더) 색상 */
+        border-radius: 10px; /* 썸 모서리 둥글게 */
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555; /* 썸에 마우스 호버 시 색상 */
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div>
+        <div class="text-center">
+          <img src="../../img/image2.png" alt="hero-img" style="border-radius: 25px" width="20%" class="img-fluid" />
+        </div>
+        <h2 class="mt-5 text-center combating-heading" style="color: #150136; font-size: 36px; font-weight: 800">
+          Easy and Smooth Start to Graph Databases
+        </h2>
+
+        <div class="mx-auto" style="width: 80%">
+          <div class="published mt-5">
+            <div class="info">
+              <span class="org" style="font-weight: 600">ApacheAGE</span>
+              <div>
+                <p>Published in ApacheAge, 3 min read, Jan 24</p>
+                <!-- <span class="pub_in">Published in ApacheAge,</span>
+                <span class="blog_time">3 min read,</span>
+                <span class="blog_month">Jan 24</span> -->
+              </div>
+            </div>
+          </div>
+
+          <div class="detail-section mt-5">
+            <p>
+              Graph databases are like digital maps that show how different pieces of information are connected. Apache AGE makes these maps using the
+              popular relational database called PostgreSQL, making it smarter. Graphizer is a tool developed by Bitnine for Apache AGE to make
+              creating and understanding these maps easier for everyone.
+            </p>
+
+            <h5 class="mt-5">The Need for Simplicity in Graph Databases></h5>
+            <p>
+              Starting with graph databases can be tough, like learning a new language. It's hard to see how information connects and to ask the right
+              questions. Tools like Graphizer are important because they make this learning journey smoother, letting more people use these smart
+              databases without getting lost.
+            </p>
+
+            <div class="text-center mt-5 mb-4">
+              <img src="../../img/image4.png" alt="img" class="img-fluid" />
+            </div>
+
+            <div style="display: flex; justify-content: center">
+              <p style="text-align: center; width: 80%">Image: Graphizer</p>
+            </div>
+
+            <p class="mt-5">
+              One of the standout features of Graphizer is its ability to create graph models and data without needing to learn or use openCypher. For
+              many who are used to traditional relational databases, the jump to graph databases can be scary, primarily due to the need to understand
+              new querying languages like openCypher. Graphizer simplifies this transition. It offers intuitive tools that allow users to build and
+              explore graph data with visual interfaces, bypassing the complexity of coding queries. This means you can focus on what your data tells
+              you, not on memorizing syntax and commands, making the move to graph databases smoother and more approachable for relational database
+              users.
+            </p>
+
+            <p class="mt-5">Take for example the following openCypher query:</p>
+
+            <p class="mt-5">MATCH (m:Movie)<-[:Act_in]-(p:Person)-[:Produced]->(m), <br />RETURN p, m</p>
+
+            <p class="mt-5">
+              Which looks for a pattern within the graph database where a person has acted in one movie and also produced it. With Graphizer you can
+              just enter a “Visual Query” like in the following image, having the same result as the openCypher query we used. Simply like that, you
+              are in the world of graph databases.
+            </p>
+
+            <div class="text-center mt-5 mb-4">
+              <img src="../../img/image1.png" alt="img" class="img-fluid" />
+            </div>
+
+            <div style="display: flex; justify-content: center">
+              <p style="text-align: center; width: 80%">Image: Visual Query in Graphizer</p>
+            </div>
+
+            <h5 class="mt-5">Graph Data Viewing Feature</h5>
+
+            <p>
+              Graphizer lets you see the connections between points of information (nodes) and the lines that connect them (edges) easily. Imagine
+              looking at a family tree; Graphizer helps you see who is related to whom at a glance, without having to dig through lots of details.
+            </p>
+
+            <div class="text-center mt-5 mb-4">
+              <img src="../../img/image6.png" alt="img" class="img-fluid" />
+            </div>
+
+            <h5 class="mt-5">Data Loading Feature</h5>
+            <p>
+              Graphizer is great at taking lists of information, like those in table data files (CSV and RDB files), and turning them into a graph.
+              This is like turning a flat picture into a 3D model, showing how everything is connected in a way that’s easy to understand.
+            </p>
+
+            <div class="text-center mt-5 mb-4">
+              <img src="../../img/image7.png" alt="img" class="img-fluid" />
+            </div>
+
+            <div class="text-center mt-5 mb-4">
+              <img src="../../img/image5.png" alt="img" class="img-fluid" />
+            </div>
+
+            <h5 class="mt-5">Exploring Feature</h5>
+
+            <p>
+              With Graphizer, you can dive into your data like a detective, using tools to find out how things are related. It's like having a
+              magnifying glass to see the clues in your data, helping you make sense of it through pictures, patterns and filters.
+            </p>
+
+            <div class="text-center mt-5 mb-4">
+              <img src="../../img/image3.png" alt="img" class="img-fluid" />
+            </div>
+
+            <h5 class="mt-5">Integrating Graphizer with Apache AGE</h5>
+            <p>
+              Graphizer and Apache AGE are packaged together and work along seamlessly. It's like having a guide while exploring a new city, making it
+              easier to navigate and discover connections within your data. This teamwork makes starting with graph databases as easy as starting a
+              car.
+            </p>
+
+            <h5 class="mt-5">Practical Applications</h5>
+
+            <p>
+              Graphizer and Apache AGE can be used in cool ways, like figuring out who knows whom on
+              <span style="color: #ce697d">ocial media, spotting fraudsters, or recommending what book you should read next</span>. They turn complex
+              info into easy-to-understand maps, making solving problems or finding opportunities easier.
+            </p>
+
+            <h5 style="text-align: center">* * *</h5>
+
+            <p class="mt-5">
+              Graphizer, along with Apache AGE, is like a pair of glasses that brings the world of graph databases into clear focus. Whether you're
+              new to this world or have been exploring it for a while, these tools make the journey easier and more enjoyable.
+            </p>
+
+            <h5 class="mt-5">Call to Action</h5>
+
+            <p class="mt-5">
+              Give Graphizer and Apache AGE a try! They're here to help you navigate the complex world of graph databases with ease. Whether you're
+              looking for guides, tutorials, or a community to join, there's plenty of support to get you started on your adventure. Visit Apache
+              AGE’s GitHub page, you can contribute or send your question through the <span style="color: #ce697d">issues:</span>
+            </p>
+
+            <p class="mt-5">Apache AGE’s website: <a href="https://age.apache.org/">https://age.apache.org/</a></p>
+            <p>Apache AGE’s GitHub repository: <a href="https://github.com/apache/age">https://github.com/apache/age</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
