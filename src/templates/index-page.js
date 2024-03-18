@@ -70,32 +70,27 @@ export const IndexPageTemplate = ({
               News & Events
               <div className={styles.cardContent}>
                 <div><b>Apache AGE on Microsoft Azure PostgreSQL</b></div>
-                <div>Support the integration of Microsoft Azure PostgreSQL with Apache AGE by casting your vote!</div>
+                <div>Support the integration of Microsoft Azure PostgreSQL with Apache AGE by casting your vote and feedback!</div>
                   <div>
-                    <a href="https://feedback.azure.com/d365community/idea/4ba45e52-63b9-ee11-92bc-6045bd7aea25" target="_blank">Read more</a>
+                    <a href="https://github.com/apache/age/issues/1524" target="_blank">Read more</a>
                   </div>
 
                 <br></br>
-                <div><b>Easy and Smooth Start to Graph Databases</b></div>
-                <div>Get to know the newest tool that makes using Apache AGE easy as pie</div>
+                <div><b>PostgresPro adapted Apache AGE</b></div>
+                <div>Apache_AGE is a Postgres Pro extension that provides graph database functionality. The goal of the project is to create single storage that can handle both relational and graph model data so that users can use standard ANSI SQL along with openCypher.</div>
                 <div>
-                  <a href="https://dev.to/markgomer/easy-and-smooth-start-to-graph-databases-5epk" target="_blank">Read more</a>
+                  <a href="https://postgrespro.com/docs/enterprise/15/apache-age" target="_blank">Read more</a>
                 </div>
 
                 <br></br>
                 <div><b>Apache AGE is now compatible with PostgreSQL 16!</b></div>
                 <div>Check the changelog for the latest version</div>
                   <div>
-                  <a href="https://news.ycombinator.com/item?id=39674765" target="_blank">Read more</a>
+                  <a href="https://github.com/apache/age/releases/tag/PG16%2Fv1.5.0-rc0" target="_blank">Read more</a>
 
                   </div>
 
                 <br></br>
-                <div><b>Apache AGE, PostGraphile, and Hasura</b></div>
-                <div>Join the comparison discussion on Reddit</div>
-                <div>
-                  <a href="https://www.reddit.com/r/PostgreSQL/comments/1bcdo9z/apache_age_postgraphile_and_hasura/" target="_blank">Read more</a>
-                </div>
               </div>
             </div>
           </div>
@@ -178,23 +173,13 @@ export const IndexPageTemplate = ({
           <div><br></br></div>
 
             <div className={styles.card1}>
-            <div className={styles.cardLeft1}>
-              <b>Blog</b><hr></hr>
-              Easy and Smooth Start to Graph Databases.<br></br>
-              <div className={styles.cardContent1}>
-              <p>Graph databases are like digital maps that show how different pieces of information are connected. Apache AGE makes these maps using the popular relational database called PostgreSQL, making it smarter. Graphizer is a tool developed by Bitnine for Apache AGE to make creating and understanding these maps easier for everyone.</p>
-              </div>
-                <a href="./contribution/how" rel="noopener noreferrer">
-                  <button className={styles.button}>View all blogs</button>
-                </a>
-            </div>
-            <div className={styles.cardRight1}>
-              <div className={styles.cardContent1}>
-                <img src={blogimg01} width="400" height="100"></img>
-              </div>
-            </div>
+            <div className={styles.content}>
+              <h2><b>This week article by community</b></h2><hr></hr>
+              <iframe src="./img/blog1.html" style={{ border: 'none' }} width="100%" height="600" title="Embedded Page"></iframe>
+
           </div>
-          </div>
+        </div>
+      </div>
 
       </section>
       {/* <section style={{ backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat' }} hidden > */}
