@@ -70,6 +70,7 @@ export const IndexPageTemplate = ({
               News & Events
               <div className={styles.cardContent}>
                 <div><b>Apache AGE on Microsoft Azure PostgreSQL</b></div>
+
                 <div>Support the integration of Microsoft Azure PostgreSQL with Apache AGE by casting your vote and feedback!</div>
                   <div>
                     <a href="https://github.com/apache/age/issues/1524" target="_blank">Read more</a>
@@ -80,17 +81,21 @@ export const IndexPageTemplate = ({
                 <div>Apache_AGE is a Postgres Pro extension that provides graph database functionality. The goal of the project is to create single storage that can handle both relational and graph model data so that users can use standard ANSI SQL along with openCypher.</div>
                 <div>
                   <a href="https://postgrespro.com/docs/enterprise/15/apache-age" target="_blank">Read more</a>
+
                 </div>
 
                 <br></br>
                 <div><b>Apache AGE is now compatible with PostgreSQL 16!</b></div>
                 <div>Check the changelog for the latest version</div>
                   <div>
+
                   <a href="https://github.com/apache/age/releases/tag/PG16%2Fv1.5.0-rc0" target="_blank">Read more</a>
+
 
                   </div>
 
                 <br></br>
+
               </div>
             </div>
           </div>
@@ -159,7 +164,6 @@ export const IndexPageTemplate = ({
                 Apache AGE is ideal for sophisticated graph data tasks within PostgreSQL.<br></br>
                 PostGraphile and Hasura excel in quick GraphQL API deployment for example for web and mobile, complementing AGE's rich graph features.<br></br>
                 </p>
-
 
                 </div>
               </div>
