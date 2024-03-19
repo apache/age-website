@@ -32,7 +32,7 @@ const TemplateWrapper = ({ children }) => {
     gtag('js', new Date());
   
     gtag('config', 'G-VPCE2QF63F');
-    gtag('confif', 'G-XFVE1KJW91')
+    gtag('config', 'G-XFVE1KJW91')
   };
 
   const titleNameMapper = () => {
@@ -50,6 +50,7 @@ const TemplateWrapper = ({ children }) => {
         '/contribution/requirements' : 'Committer Requirements | Apache AGE',
         '/contribution/process' : 'Release Process | Apache AGE',
         '/download' : 'Download | Apache AGE',
+        'https://github.com/apache/age' : 'Apache AGE Github | Apache AGE',
       }
       return urlToTitle[pathName] ?? 'Apache AGE';    
     } else {
@@ -68,7 +69,7 @@ const TemplateWrapper = ({ children }) => {
             <meta name="description" content={description} />
             {/* Global site tag (gtag.js) - Google Analytics */}
             <script async src="https://www.googletagmanager.com/gtag/js?id=G-VPCE2QF63F" />
-            <scrip async src="https://www.googletagmanager.com/gtag/js?id=G-XFVE1KJW91"/>
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-XFVE1KJW91"/>
             <meta name="google-site-verification" content="yl8xrMjtcZXVEZ0JqZ_H0s3YJ4hb8XwKMkCOdKoC3Jk" />
             <script>
                 {injectGA()}

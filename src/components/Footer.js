@@ -76,9 +76,6 @@ const Footer = class extends React.Component {
 
           <ul className={`${styles.Item} Item`}>
             <li>
-              <a href="https://apache-age.medium.com/" target='_blank'>Blog</a>
-            </li>
-            <li>
               <a href="/download">Download AGE</a>
             </li>
           </ul>
