@@ -1,0 +1,59 @@
+@import '../../common/variable.scss';
+
+.accordion-header {
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px;
+  margin: 5px 0;
+  background-color: #c5c5c5;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: background-color 0.2s ease;
+  margin-bottom: 0px; // 원하는 간격으로 조절하세요.
+}
+
+.accordion-header:hover {
+  background-color: #cecece;
+}
+
+.accordion-content {
+  padding: 0 15px;
+  margin: 5px 0;
+  padding-top: 0 20px;
+  padding-right: 0 30px;
+  padding-bottom: 0 20px;
+  padding-left: 0 30px;
+  background-color: rgb(255, 213, 213);
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  margin-bottom: 20px; // 원하는 간격으로 조절하세요.
+}
+
+/* 상태에 따라 클래스를 토글하여 애니메이션을 적용할 수 있습니다. */
+.accordion-content.open {
+  max-height: 2500px; /* 답변의 내용에 따라 적절하게 조절하세요. */
+}
+
+.accordion-content.closed {
+  max-height: 0;
+}
+
+.content {
+  padding-left: 15%;  // 왼쪽에 공백을 추가합니다.
+  padding-right: 15%; // 오른쪽에 공백을 추가합니다.
+
+  @media (max-width: 768px) {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
+.faq-item {
+  margin-bottom: 20px; // 마지막 아이템을 제외한 각 항목 하단에 간격을 추가합니다.
+}
+
+.faq-item:last-child {
+  margin-bottom: 40px; // 마지막 항목의 마진을 제거합니다.
+}

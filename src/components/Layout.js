@@ -43,6 +43,7 @@ const TemplateWrapper = ({ children }) => {
         '/overview' : 'Overview | Apache AGE',
         '/team' : 'Team | Apache AGE',
         '/release-notes' : 'Release Notes | Apache AGE',
+        '/faq' : 'FAQ | Apache AGE',
         '/joinus' : 'Community | Apache AGE',
         '/contribution/how' : 'Contribution | Apache AGE',
         '/contribution/guide' : 'Code Convention | Apache AGE',

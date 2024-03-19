@@ -40,6 +40,11 @@ const Navbar = () => {
                   Release Notes
                 </Link>
               </Menu.Item>
+              <Menu.Item>
+                <Link className="navbar-item" to="/faq">
+                  F A Q
+                </Link>
+              </Menu.Item>
             </Menu.SubMenu>
             <Menu.SubMenu title="Community">
               <Menu.Item>
@@ -182,6 +187,11 @@ const Navbar = () => {
               <Menu.Item>
                 <Link className="navbar-item" to="/release-notes">
                   Release Notes
+                </Link>
+              </Menu.Item>
+              <Menu.Item>
+                <Link className="navbar-item" to="/faq">
+                  F A Q
                 </Link>
               </Menu.Item>
             </Menu.SubMenu>
