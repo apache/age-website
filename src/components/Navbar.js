@@ -335,22 +335,6 @@ const Navbar = () => {
             Apache AGE GitHub
           </a>
         </div>
-        <div className={styles.MenuToggle}>
-          <button
-            className={`${styles.Toggle} ${menuToggle === 'toggled' ? styles.Toggled : ''
-              }`}
-            onClick={() => {
-              const state = menuToggle === 'toggled' ? 'untogle' : 'toggled';
-              setMenuToggle(state);
-            }}
-          >
-            {menuToggle === 'toggled' ? (
-              <MenuUnfoldOutlined />
-            ) : (
-              <MenuOutlined />
-            )}
-          </button>
-        </div>
       </div>
     </nav>
   );
