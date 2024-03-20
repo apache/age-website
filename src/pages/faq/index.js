@@ -18,44 +18,133 @@ class FAQ extends React.Component {
   render() {
 
     const faqData = [
-      { id: 1, question: 'What is the graph database, and how is it different from the relational database?'
-      , answer: 'A graph database is a specialized type of database designed for storing, managing, and querying highly interconnected data more efficiently than traditional databases. Unlike relational databases that store data in tables with rows and columns, graph databases use graph structures comprising nodes (entities), edges (relationships), and properties (attributes) to represent and store data. The main differences between graph databases and relational databases include: Data Structure: Graph databases utilize nodes and edges to represent entities and their relationships, facilitating direct storage of relationship data. Relational databases use tables, where relationships are inferred through joins. Query Performance: Graph databases excel in scenarios requiring extensive traversal of relationships, making them ideal for complex networks like social networks, recommendation engines, and more. Relational databases can struggle with performance as the complexity and volume of relationships increase. Schema Flexibility: Graph databases often offer more flexibility with schema-less designs, allowing easier modification of the data model. Relational databases typically require a predefined schema, making alterations more challenging. Apache AGE extends PostgreSQL, enabling it to function as a graph database. This allows users to leverage graph database capabilities within a familiar relational database environment, offering the best of both worlds: the robustness and ACID compliance of PostgreSQL with the flexibility and relationship-handling prowess of graph databases.' },
+      { id: 1, question: 'Q 1 : What is the graph database, and how is it different from the relational database?', 
+      answer: () => (
+        <>
+          <p>A graph database is a specialized type of database designed for storing, managing, and querying highly interconnected data more efficiently than traditional databases. Unlike relational databases that store data in tables with rows and columns, graph databases use graph structures comprising nodes (entities), edges (relationships), and properties (attributes) to represent and store data.</p>
+          <p>The main differences between graph databases and relational databases include:</p>
+          <p><strong>Data Structure:</strong> Graph databases utilize nodes and edges to represent entities and their relationships, facilitating direct storage of relationship data. Relational databases use tables, where relationships are inferred through joins.</p>
+          <p><strong>Query Performance:</strong> Graph databases excel in scenarios requiring extensive traversal of relationships, making them ideal for complex networks like social networks, recommendation engines, and more. Relational databases can struggle with performance as the complexity and volume of relationships increase.</p>
+          <p><strong>Schema Flexibility:</strong> Graph databases often offer more flexibility with schema-less designs, allowing easier modification of the data model. Relational databases typically require a predefined schema, making alterations more challenging.</p>
+          <p>Apache AGE extends PostgreSQL, enabling it to function as a graph database. This allows users to leverage graph database capabilities within a familiar relational database environment, offering the best of both worlds: the robustness and ACID compliance of PostgreSQL with the flexibility and relationship-handling prowess of graph databases.</p>
+        </>
+      ),
+    }
+    ,
 
-      { id: 2, question: 'What is the best way for someone to get started with Apache AGE? Are there any recommended resources or tutorials which you could recommend for a comprehensive introduction?'
-      , answer: 'The best way to start with Apache AGE is by exploring the official documentation on the Apache AGE website. For a comprehensive introduction, visit the Apache AGE documentation and the GitHub repository for in-depth guides, examples, and community resources.' },
+      { id: 2, question: 'Q 2 : What is the best way for someone to get started with Apache AGE? Are there any recommended resources or tutorials which you could recommend for a comprehensive introduction?', 
+      answer: () => (
+        <>
+          <p>The best way to start with Apache AGE is by exploring the official documentation on the Apache AGE website.</p>
+          <p>For a comprehensive introduction, visit the Apache AGE documentation and the GitHub repository for in-depth guides, examples, and community resources.</p>
+        </>
+      ),
+    },
 
-      { id: 3, question: 'How does the integration of Apache AGE with PostgreSQL benefit developers and organizations?'
-      , answer: 'The integration of Apache AGE with PostgreSQL offers developers and organizations the ability to manage both graph and relational data within a single, powerful database system, facilitating complex data analyses and relationships with the efficiency and reliability of PostgreSQL.' },
+      { id: 3, question: 'Q 3 : How does the integration of Apache AGE with PostgreSQL benefit developers and organizations?',
+      answer: () => (
+        <>
+          <p>The integration of Apache AGE with PostgreSQL offers developers and organizations the ability to manage both graph and relational data within a single, powerful database system.</p>
+          <p>This facilitates complex data analyses and relationships with the efficiency and reliability of PostgreSQL.</p>
+        </>
+      ),
+    },
+    
+      { id: 4, question: 'Q 4 : Is Apache AGE compatible with all PostgreSQL versions?',
+      answer: () => (
+        <>
+          Apache AGE is compatible with PostgreSQL versions up to 16. Please check 
+          <a href="https://github.com/apache/age/releases" target="_blank" rel="noopener noreferrer"> the releases on GitHub</a>.
+        </>
+      ),
+    },
 
-      { id: 4, question: 'Is Apache AGE compatible with all PostgreSQL versions?'
-      , answer: 'Apache AGE is compatible with PostgreSQL versions up to 16. Please check https://github.com/apache/age/releases.' },
+      { id: 5, question: 'Q 5 : What is the reason for people to use Apache AGE when there are other graph databases?', 
+      answer: () => (
+        <>
+          <p>People use Apache AGE for its seamless integration with PostgreSQL, allowing them to leverage graph database capabilities alongside relational data within a familiar SQL environment, without the need to adopt a separate graph database system.</p>
+        </>
+      ),
+    },
 
-      { id: 5, question: 'What is the reason for people to use Apache AGE when there are other graph databases?'
-      , answer: 'People use Apache AGE for its seamless integration with PostgreSQL, allowing them to leverage graph database capabilities alongside relational data within a familiar SQL environment, without the need to adopt a separate graph database system.' },
+      { id: 6, question: 'Q 6 : What query language does Apache AGE use for graph operations?', 
+      answer: () => (
+        <>
+        openCypher
+        </>
+      ),
+    },
 
-      { id: 6, question: 'What query language does Apache AGE use for graph operations?'
-      , answer: 'openCypher' },
+      { id: 7, question: 'Q 7 : Do I need to pay to use Apache AGE?', 
+      answer: () => (
+        <>
+          <p>Apache AGE is an open source project and free to use.</p>
+          <p>But there are some vendors providing commercial support such as AGEDB in Canada.</p>
+        </>
+      ),
+    },
 
-      { id: 7, question: 'Do I need to pay to use Apache AGE?'
-      , answer: 'Apache AGE is an open source project and free to use. But there are some vendors providing commercial support such as AGEDB in Canada.' },
+    { id: 8, question: 'Q 8 : How can I install Apache AGE?',
+      answer: () => (
+        <>
+          Source codes and binaries are available at 
+          <a href="https://github.com/apache/age/releases" target="_blank" rel="noopener noreferrer">GitHub</a>. 
+          <a href="https://hub.docker.com/r/apache/age" target="_blank" rel="noopener noreferrer">Docker Hub</a>. 
+          Please refer to 
+          <a href="https://age.apache.org/age-manual/master/intro/overview.html" target="_blank" rel="noopener noreferrer">the official AGE manual</a> for more details.
+        </>
+      ),
+    },
+    
 
-      { id: 8, question: 'How can I install Apache AGE?'
-      , answer: 'Source codes and binaries are available at https://github.com/apache/age/releases.https://hub.docker.com/r/apache/age.Please refer to https://age.apache.org/age-manual/master/intro/overview.html' },
+      { id: 9, question: 'Q 9 : How does Apache AGE stand out compared to other similar tools?', 
+      answer: () => (
+        <>
+        <p>Apache AGE stands out by integrating graph database capabilities directly into PostgreSQL, allowing users to manage graph and relational data within the same database system. </p>
+        <p>This unique approach offers the robustness, scalability, and familiarity of PostgreSQL while enabling complex graph queries and analyses without the need for separate graph database solutions.</p>
+        </>
+      ),
+    },
+    
 
-      { id: 9, question: 'How does Apache AGE stand out compared to other similar tools?'
-      , answer: 'Apache AGE stands out by integrating graph database capabilities directly into PostgreSQL, allowing users to manage graph and relational data within the same database system. This unique approach offers the robustness, scalability, and familiarity of PostgreSQL while enabling complex graph queries and analyses without the need for separate graph database solutions.' },
+      { id: 10, question: 'Q 10 : Could you provide instances of industries wherein Apache AGE could be utilized?', 
+      answer: () => (
+        <>
+          <p>pache AGE is beneficial in industries like social networking, for analyzing relationships; finance, for fraud detection and customer insights; healthcare, for patient data and relationships; telecommunications, for network infrastructure management; and logistics, for route optimization and supply chain analysis.</p>
+          </>
+      ),
+    },
 
-      { id: 10, question: 'Could you provide instances of industries wherein Apache AGE could be utilized?'
-      , answer: 'Apache AGE is beneficial in industries like social networking, for analyzing relationships; finance, for fraud detection and customer insights; healthcare, for patient data and relationships; telecommunications, for network infrastructure management; and logistics, for route optimization and supply chain analysis.' },
+      { id: 11, question: 'Q 11 : How often is Apache AGE updated, and how can I stay informed about new releases?'
+      ,answer: () => (
+        <>
+          <p>Apache AGE updates vary based on development progress and community contributions.</p>
+          <p>To stay informed about new releases, follow the Apache AGE project on GitHub, subscribe to their mailing list, or join their community forums.</p>
+        </>
+      ),
+    },
 
-      { id: 11, question: 'How often is Apache AGE updated, and how can I stay informed about new releases?'
-      , answer: 'Apache AGE updates vary based on development progress and community contributions. To stay informed about new releases, follow the Apache AGE project on GitHub, subscribe to their mailing list, or join their community forums.' },
+      { id: 12, question: 'Q 12 : Is there a community or support forum for Apache AGE?', 
+      answer: () => (
+        <>
+          <p>Apache AGE GitHub</p>
+          <p><a href="https://github.com/apache/age/discussions">Discussions</a></p>
+          <p><a href="https://github.com/apache/age/issues">Issues</a></p>
+          <p>mailing lists:</p> 
+          <p><a href="mailto:dev@age.apache.org">dev@age.apache.org</a></p>
+          <p><a href="mailto:users@age.apache.org">users@age.apache.org</a></p>
+        </>
+      ),
+    },
 
-      { id: 12, question: 'Is there a community or support forum for Apache AGE?'
-      , answer: 'GitHub dicussion and Issues, mailing lists: dev@age.apache.org, users@age.apache.org' },
-
-      { id: 13, question: 'How can I contribute to the development of Apache AGE?'
-      , answer: 'Please refer to https://age.apache.org/contribution/how' },
+      { id: 13, question: 'Q 13 : How can I contribute to the development of Apache AGE?',
+      answer: () => (
+        <>
+          Please refer to <a href="https://age.apache.org/contribution/how" target="_blank" rel="noopener noreferrer">the contribution guidelines</a>.
+        </>
+      ),
+    }
+    
 
       // 여기에 추가 질문과 답변을 넣을 수 있습니다.
     ];
@@ -75,7 +164,7 @@ class FAQ extends React.Component {
               <div
                 className={`accordion-content ${openItemId === id ? 'open' : 'closed'}`}
               >
-                {answer}
+                {typeof answer === 'function' ? answer() : answer}
               </div>
             </div>
           ))}
@@ -111,7 +200,7 @@ export default class FAQIndexPage extends React.Component {
         </div>
         <section className="section">
           <div className="container">
-            <div className="content">
+            <div className="faq-content-page">
             <br></br>
             <h2>Thank you for visiting our FAQ page. If you can't find the question you're looking for, please leave your comments or questions in the 
                 <strong><a href="https://github.com/apache/age/issues" target="_blank"> issues</a></strong> or 

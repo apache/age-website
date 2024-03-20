@@ -116,6 +116,11 @@ const Navbar = () => {
                 </a>
               </Menu.Item>
               <Menu.Item>
+                <a href="https://age.apache.org/age-manual/master/intro/setup.html" target="_blank" className="navbar-item">
+                  Setup
+                </a>
+              </Menu.Item>
+              <Menu.Item>
                 <a href="https://age.apache.org/age-manual/master/clauses/match.html" target="_blank" className="navbar-item">
                   Clauses
                 </a>
