@@ -40,6 +40,11 @@ const Navbar = () => {
                   Release Notes
                 </Link>
               </Menu.Item>
+              <Menu.Item>
+                <Link className="navbar-item" to="/faq">
+                  F A Q
+                </Link>
+              </Menu.Item>
             </Menu.SubMenu>
             <Menu.SubMenu title="Community">
               <Menu.Item>
@@ -184,6 +189,11 @@ const Navbar = () => {
                   Release Notes
                 </Link>
               </Menu.Item>
+              <Menu.Item>
+                <Link className="navbar-item" to="/faq">
+                  F A Q
+                </Link>
+              </Menu.Item>
             </Menu.SubMenu>
             <Menu.SubMenu title="Community">
               <Menu.Item>
@@ -324,22 +334,6 @@ const Navbar = () => {
           <img src="/img/icon-github.png" alt="GitHub" style={{ marginRight: '8px' }} />
             Apache AGE GitHub
           </a>
-        </div>
-        <div className={styles.MenuToggle}>
-          <button
-            className={`${styles.Toggle} ${menuToggle === 'toggled' ? styles.Toggled : ''
-              }`}
-            onClick={() => {
-              const state = menuToggle === 'toggled' ? 'untogle' : 'toggled';
-              setMenuToggle(state);
-            }}
-          >
-            {menuToggle === 'toggled' ? (
-              <MenuUnfoldOutlined />
-            ) : (
-              <MenuOutlined />
-            )}
-          </button>
         </div>
       </div>
     </nav>
