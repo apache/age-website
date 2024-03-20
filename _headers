@@ -5,13 +5,13 @@
   X-XSS-Protection: 1; mode=block
   X-Content-Type-Options: nosniff
   Referrer-Policy: same-origin
-/styles.0979f096fbc122f08974.css
+/styles.6d8d7e5af291c3a07237.css
   Cache-Control: public, max-age=31536000, immutable
-/commons-04c9850fd5b66e7bc8f6.js
+/commons-4218aa3267e61d1b3642.js
   Cache-Control: public, max-age=31536000, immutable
 /f79fcea1f20156ce5956c4763aa2c2be2059f70b-ad29c885817aea695b8a.js
   Cache-Control: public, max-age=31536000, immutable
-/component---src-templates-index-page-js-0bf8ec0540b9f19a547c.js
+/component---src-templates-index-page-js-3171756a3007f4992290.js
   Cache-Control: public, max-age=31536000, immutable
 /component---src-templates-docs-template-js-98dcb14e1ebd7ba77b83.js
   Cache-Control: public, max-age=31536000, immutable
@@ -27,15 +27,17 @@
   Cache-Control: public, max-age=31536000, immutable
 /component---src-pages-blog-index-js-0f92904385a4f6841fca.js
   Cache-Control: public, max-age=31536000, immutable
+/component---src-pages-faq-index-js-1e4937850d080457b366.js
+  Cache-Control: public, max-age=31536000, immutable
 /component---src-pages-tags-index-js-2691e7e2239463f334d0.js
   Cache-Control: public, max-age=31536000, immutable
-/webpack-runtime-b6e471cb4b97004ca550.js
+/webpack-runtime-ae7a7caf115612f030c8.js
   Cache-Control: public, max-age=31536000, immutable
 /framework-2a6352309b95b7c5a70e.js
   Cache-Control: public, max-age=31536000, immutable
 /532a2f07-0b5be618c375b4a5a9ab.js
   Cache-Control: public, max-age=31536000, immutable
-/app-e205af89be889c39a0db.js
+/app-2b09fbee99918618c71a.js
   Cache-Control: public, max-age=31536000, immutable
 /static/*
   Cache-Control: public, max-age=31536000, immutable
