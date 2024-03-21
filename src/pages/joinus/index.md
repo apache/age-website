@@ -58,6 +58,22 @@ Join the official Apache AGE user and developer mailing lists. You can get user 
 </div>
 
 <div>
+  <img src="/img/videocall_icon.png"/>
+</div>
+
+<div>
+
+## Office-hour
+
+Our technical office hours sessions are your gateway to one-on-one engagements with the Developer Advocacy team, focusing on the revolutionary capabilities of Apache AGE within PostgreSQL. 
+Delve into the world of graph databases, address your complex data connectivity issues, and receive personalized advice tailored to your database requirements. During these sessions, you'll have the opportunity to share your thoughts, get answers to your questions, and explore the features, use cases, and implementation strategies of Apache AGE. Book your session now to gain the insights needed to fully harness the power of graph databases.
+
+  <ul>
+    <li>Marco Souza (Brazil) <a href="https://apacheage.setmore.com/marco-souza">Book a time with Marco Souza </a></li>
+  </ul>
+</div>
+
+<div>
   <img src="/img/icon_x.png"/>
 </div>
 

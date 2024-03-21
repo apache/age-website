@@ -11,7 +11,9 @@
   outline: none;
   font-size: 15px;
   transition: background-color 0.2s ease;
-  margin-bottom: 0px; // 원하는 간격으로 조절하세요.
+  border-radius: 10px; // 모서리를 둥글게
+  margin-bottom: 10px; // 원하는 간격으로 조절하세요.
+  font-size: 16px; // 폰트 사이즈 설정
 }
 
 .accordion-header:hover {
@@ -19,16 +21,19 @@
 }
 
 .accordion-content {
+  line-height: 2.5; /* 글자 크기의 1.5배로 줄 간격을 설정 */
   padding: 0 15px;
   margin: 5px 0;
   padding-top: 0 20px;
   padding-right: 0 30px;
   padding-bottom: 0 20px;
   padding-left: 0 30px;
-  background-color: rgb(255, 213, 213);
+  background-color: #F5F5DC;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
+  border-radius: 10px; // 모서리를 둥글게
   margin-bottom: 20px; // 원하는 간격으로 조절하세요.
+  font-size: 16px; // 폰트 사이즈 설정
 }
 
 /* 상태에 따라 클래스를 토글하여 애니메이션을 적용할 수 있습니다. */
@@ -40,9 +45,9 @@
   max-height: 0;
 }
 
-.content {
-  padding-left: 15%;  // 왼쪽에 공백을 추가합니다.
-  padding-right: 15%; // 오른쪽에 공백을 추가합니다.
+.faq-content-page {
+  padding-left: 10%;  // 왼쪽에 공백을 추가합니다.
+  padding-right: 10%; // 오른쪽에 공백을 추가합니다.
 
   @media (max-width: 768px) {
     padding-left: 5%;
