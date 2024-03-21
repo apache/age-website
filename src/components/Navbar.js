@@ -24,6 +24,14 @@ const Navbar = () => {
             mode="horizontal"
             style={{ width: '100%', justifyContent: 'center' }}
           >
+            <Menu.SubMenu title="Get Started">
+              <Menu.Item>
+                  <Link className="navbar-item" to="/getstarted/quickstart">
+                    Quickstart
+                  </Link>
+                </Menu.Item>
+            </Menu.SubMenu>
+
             <Menu.SubMenu title="Apache AGE">
               <Menu.Item>
                 <Link className="navbar-item" to="/overview">
@@ -35,11 +43,11 @@ const Navbar = () => {
                   Team
                 </Link>
               </Menu.Item>
-              <Menu.Item>
+              {/*<Menu.Item> 릴리스 노트 
                 <Link className="navbar-item" to="/release-notes">
                   Release Notes
                 </Link>
-              </Menu.Item>
+              </Menu.Item>*/}
               <Menu.Item>
                 <Link className="navbar-item" to="/faq">
                   F A Q
@@ -109,7 +117,7 @@ const Navbar = () => {
                 </Link>
               </Menu.Item>
             </Menu.SubMenu>
-            <Menu.SubMenu title="Documentation">
+            <Menu.SubMenu title="Doc">
               <Menu.Item>
                 <a href="https://age.apache.org/age-manual/master/intro/overview.html" target="_blank" className="navbar-item">
                   Introduction
