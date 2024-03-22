@@ -2,11 +2,12 @@
 templateKey: docs-template
 path: /Get Started/Quickstart
 title: Quick Start
----
+
 
 <div class="DeveloperGuidelines">
 
 ## Run using Windows Installer
+
 The Windows installer is an installation file that packages PostgreSQL 15, Apache AGE 1.4.0, and Graphizer 1.1 
 
 Graphizer is a powerful Graph Database software that simplifies loading table data like Relational Database and CSV files into Graph Database for advanced data analysis and exploration.
@@ -14,6 +15,7 @@ Graphizer is a powerful Graph Database software that simplifies loading table da
 | Windows Installer         |
 | --------------------- |
 | [Download Windows Installer ➚](https://agedb.io/downloads/ageplus-pg15-1.4.0-1-windows-x64.exe) |
+
 
 ## Run using Docker
 - Get the docker image
