@@ -27,7 +27,7 @@ const Navbar = () => {
             <Menu.SubMenu title="Get Started">
               <Menu.Item>
                   <Link className="navbar-item" to="/getstarted/quickstart">
-                    Quickstart
+                    Quick Start
                   </Link>
                 </Menu.Item>
             </Menu.SubMenu>
@@ -141,11 +141,6 @@ const Navbar = () => {
               <Menu.Item>
                 <a href="https://age.apache.org/age-manual/master/advanced/advanced_overview.html" target="_blank" className="navbar-item">
                   AGE Beyond Cypher
-                </a>
-              </Menu.Item>
-              <Menu.Item>
-                <a href="https://age.apache.org/age-manual/master/contributing/run_tests.html" target="_blank" className="navbar-item">
-                  Contributing
                 </a>
               </Menu.Item>
             </Menu.SubMenu>

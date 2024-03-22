@@ -69,6 +69,16 @@ export const IndexPageTemplate = ({
             <div className={styles.cardRight}>
               News & Events
               <div className={styles.cardContent}>
+                <div><b>Apache AGE Release Windows Installer!</b></div>
+                  <div>Check out our Windows Installer and give us User feedback in our GitHub</div>
+                    <div>
+
+                    <a href="/getstarted/quickstart" >Read more</a>
+
+                    </div>
+
+                  <br></br>
+
                 <div><b>Apache AGE on Microsoft Azure PostgreSQL</b></div>
 
                 <div>Support the integration of Microsoft Azure PostgreSQL with Apache AGE by casting your vote and feedback!</div>
@@ -90,7 +100,6 @@ export const IndexPageTemplate = ({
                   <div>
 
                   <a href="https://github.com/apache/age/releases/tag/PG16%2Fv1.5.0-rc0" target="_blank">Read more</a>
-
 
                   </div>
 
