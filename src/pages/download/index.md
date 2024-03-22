@@ -62,7 +62,14 @@ title: Downloads
 | [Download Apache AGE 1.4.0 ➚](https://downloads.apache.org/age/PG11/1.4.0/apache-age-1.4.0-src.tar.gz) | [CheckSum ➚](https://downloads.apache.org/age/PG11/1.4.0/apache-age-1.4.0-src.tar.gz.sha512) & [Signature ➚](https://downloads.apache.org/age/PG11/1.4.0/apache-age-1.4.0-src.tar.gz.asc) 
 
 
+<br/><br/>
 
+## Windows Installer
+The Windows installer is an installation file that packages PostgreSQL version 15, Apache AGE version 1.4.0, and Graphizer (graph visualization tool).
+
+| Windows Installer         |
+| --------------------- |
+| [Download Windows Installer ➚](https://agedb.io/downloads/ageplus-pg15-1.4.0-1-windows-x64.exe) |
 
 
 <br/><br/>
