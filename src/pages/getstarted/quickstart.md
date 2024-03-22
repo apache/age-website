@@ -2,7 +2,7 @@
 templateKey: docs-template
 path: /Get Started/Quickstart
 title: Quick Start
-
+---
 
 <div class="DeveloperGuidelines">
 
