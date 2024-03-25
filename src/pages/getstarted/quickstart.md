@@ -8,14 +8,24 @@ title: Quick Start
 
 ## Run using Windows Installer
 
-The Windows installer is an installation file that packages PostgreSQL 15, Apache AGE 1.4.0, and Graphizer 1.1 
+The Windows installer is an installation file that contains PostgreSQL 15, Apache AGE 1.4.0, and Graphizer 1.1 
 
-Graphizer is a powerful Graph Database software that simplifies loading table data like Relational Database and CSV files into Graph Database for advanced data analysis and exploration.
+Graphizer is a data modeling tool that allows generating  openCypher graph data with table data in relational databases and CSV files for advanced data analysis and exploration.
 
 | Windows Installer         |
 | --------------------- |
-| [Download Windows Installer ➚](https://agedb.io/downloads/ageplus-pg15-1.4.0-1-windows-x64.exe) |
+<a href="https://agedb.io/downloads/ageplus-pg15-1.4.0-1-windows-x64.zip" onclick="gtag('event', 'click', {'event_category': 'Category', 'event_label': '윈도우인스톨러다운수'});">Download Windows Installer ➚</a>
 
+## Introduce Apache AGE & Graphizer
+| Apache AGE         |
+| --------------------- |
+<iframe width="600" height="300" src="https://www.youtube.com/embed/CgPPX_PIE9U?si=hLuu5GKdYVcAj44N" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+| Graphizer         |
+| --------------------- |
+<iframe width="600" height="300" src="https://www.youtube.com/embed/asgzHSiKR9U?si=-314Oc461OHYjGHm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+※ The Graphizer video is a Korean. If you need another language, please click the subtitle button on the video to watch.
 
 ## Run using Docker
 - Get the docker image
