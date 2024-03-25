@@ -40,16 +40,22 @@ const TemplateWrapper = ({ children }) => {
     if (isBrowser) {
       const pathName = window.location.pathname;
       const urlToTitle = {
+        '/getstarted/quickstart' : 'Quickstart | Apache AGE',
         '/overview' : 'Overview | Apache AGE',
         '/team' : 'Team | Apache AGE',
-        '/release-notes' : 'Release Notes | Apache AGE',
+        // '/release-notes' : 'Release Notes | Apache AGE',
         '/faq' : 'FAQ | Apache AGE',
         '/joinus' : 'Community | Apache AGE',
         '/contribution/how' : 'Contribution | Apache AGE',
         '/contribution/guide' : 'Code Convention | Apache AGE',
-        '/contribution/volunteers' : 'Volunteer Guideline | Apache AGE',
+        // '/contribution/volunteers' : 'Volunteer Guideline | Apache AGE',
         '/contribution/requirements' : 'Committer Requirements | Apache AGE',
         '/contribution/process' : 'Release Process | Apache AGE',
+        'https://age.apache.org/age-manual/master/intro/overview.html' : 'Doc | Apache AGE',
+        'https://age.apache.org/age-manual/master/intro/setup.html' : 'Doc | Apache AGE',
+        'https://age.apache.org/age-manual/master/clauses/match.html' : 'Doc | Apache AGE',
+        'https://age.apache.org/age-manual/master/functions/predicate_functions.html' : 'Doc | Apache AGE',
+        'https://age.apache.org/age-manual/master/advanced/advanced_overview.html' : 'Doc | Apache AGE',
         '/download' : 'Download | Apache AGE',
         'https://github.com/apache/age' : 'Apache AGE Github | Apache AGE',
       }

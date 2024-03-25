@@ -31,7 +31,6 @@ const Navbar = () => {
                   </Link>
                 </Menu.Item>
             </Menu.SubMenu>
-
             <Menu.SubMenu title="Apache AGE">
               <Menu.Item>
                 <Link className="navbar-item" to="/overview">
@@ -181,6 +180,13 @@ const Navbar = () => {
             }}
             mode="inline"
           >
+           <Menu.SubMenu title="Get Started">
+              <Menu.Item>
+                  <Link className="navbar-item" to="/getstarted/quickstart">
+                    Quick Start
+                  </Link>
+                </Menu.Item>
+            </Menu.SubMenu>
             <Menu.SubMenu title="Apache AGE">
               <Menu.Item>
                 <Link className="navbar-item" to="/overview">
@@ -192,11 +198,11 @@ const Navbar = () => {
                   Team
                 </Link>
               </Menu.Item>
-              <Menu.Item>
+              {/*<Menu.Item> 릴리스 노트 
                 <Link className="navbar-item" to="/release-notes">
                   Release Notes
                 </Link>
-              </Menu.Item>
+              </Menu.Item>*/}
               <Menu.Item>
                 <Link className="navbar-item" to="/faq">
                   F A Q
@@ -209,7 +215,7 @@ const Navbar = () => {
                   Join AGE Community
                 </Link>
               </Menu.Item>
-              <Menu.Item>
+              {/*<Menu.Item>
                 <Link
                   className="navbar-item"
                   target="_blank"
@@ -217,7 +223,7 @@ const Navbar = () => {
                 >
                   AGE Discord
                 </Link>
-              </Menu.Item>
+              </Menu.Item>*/}
               <Menu.Item>
                 <Link
                   className="navbar-item"
@@ -236,20 +242,12 @@ const Navbar = () => {
                   AGE Project
                 </Link>
               </Menu.Item>
-              <Menu.Item>
-                <Link
-                  className="navbar-item"
-                  target="_blank"
-                  to="https://github.com/apache/age-viewer/projects"
-                >
-                  AGE Viewer Project
-                </Link>
-              </Menu.Item>
+
             </Menu.SubMenu>
             <Menu.SubMenu title="Contribution">
               <Menu.Item>
                 <Link className="navbar-item" to="/contribution/how">
-                  Ways to contribute
+                  How to contribute
                 </Link>
               </Menu.Item>
               <Menu.Item>
@@ -257,11 +255,12 @@ const Navbar = () => {
                   Code Convention
                 </Link>
               </Menu.Item>
+              {/* 더 이상 운영 안함
               <Menu.Item>
                 <Link className="navbar-item" to="/contribution/volunteers">
                   Volunteer Guideline
                 </Link>
-              </Menu.Item>
+              </Menu.Item>*/}
               <Menu.Item>
                 <Link className="navbar-item" to="/contribution/requirements">
                   Committer Requirements
@@ -273,10 +272,15 @@ const Navbar = () => {
                 </Link>
               </Menu.Item>
             </Menu.SubMenu>
-            <Menu.SubMenu title="Documentation">
+            <Menu.SubMenu title="Doc">
               <Menu.Item>
                 <a href="https://age.apache.org/age-manual/master/intro/overview.html" target="_blank" className="navbar-item">
                   Introduction
+                </a>
+              </Menu.Item>
+              <Menu.Item>
+                <a href="https://age.apache.org/age-manual/master/intro/setup.html" target="_blank" className="navbar-item">
+                  Setup
                 </a>
               </Menu.Item>
               <Menu.Item>
@@ -294,24 +298,25 @@ const Navbar = () => {
                   AGE Beyond Cypher
                 </a>
               </Menu.Item>
-              <Menu.Item>
-                <a href="https://age.apache.org/age-manual/master/contributing/run_tests.html" target="_blank" className="navbar-item">
-                  Contributing
-                </a>
-              </Menu.Item>
             </Menu.SubMenu>
-            <Menu.SubMenu title="Apache AGE GitHub">
-              <Menu.Item>
-                <a href="https://github.com/apache/age" target="_blank">                  
-                  AGE
-                </a>        
+            <Menu.Item>
+                <Link
+                  className="navbar-item"
+                  target="_blank"
+                  to="/download"
+                >
+                  Downloads
+                </Link>
               </Menu.Item>
               <Menu.Item>
-                <a href="https://github.com/apache/age-viewer" target="_blank">                  
-                  AGE Viewer
-                </a>        
+                <Link
+                  className="navbar-item"
+                  target="_blank"
+                  to="https://github.com/apache/age"
+                >
+                  Apache AGE GitHub
+                </Link>
               </Menu.Item>
-            </Menu.SubMenu>
           </Menu>
         </div>
 
