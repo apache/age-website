@@ -19,11 +19,12 @@ Graphizer is a data modeling tool that allows generating  openCypher graph data 
 ## Introduce Apache AGE & Graphizer
 | Apache AGE         |
 | --------------------- |
-<iframe width="600" height="300" src="https://www.youtube.com/embed/CgPPX_PIE9U?si=hLuu5GKdYVcAj44N" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe id="ytplayer" type="text/html" width="720" height="405" src="https://www.youtube.com/embed/CgPPX_PIE9U" frameborder="0" allowfullscreen></iframe>
 
 | Graphizer         |
 | --------------------- |
-<iframe width="600" height="300" src="https://www.youtube.com/embed/asgzHSiKR9U?si=-314Oc461OHYjGHm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe id="ytplayer" type="text/html" width="720" height="405" src="https://www.youtube.com/embed/asgzHSiKR9U" frameborder="0" allowfullscreen></iframe>
+
 
 ※ The Graphizer video is a Korean. If you need another language, please click the subtitle button on the video to watch.
 
