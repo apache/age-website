@@ -16,18 +16,6 @@ Graphizer is a data modeling tool that allows generating  openCypher graph data 
 | --------------------- |
 <a href="https://agedb.io/downloads/ageplus-pg15-1.4.0-1-windows-x64.zip" onclick="gtag('event', 'click', {'event_category': 'Category', 'event_label': '윈도우인스톨러다운수'});">Download Windows Installer ➚</a>
 
-## Introduce Apache AGE & Graphizer
-| Apache AGE         |
-| --------------------- |
-<iframe id="ytplayer" type="text/html" width="720" height="405" src="https://www.youtube.com/embed/CgPPX_PIE9U" frameborder="0" allowfullscreen></iframe>
-
-| Graphizer         |
-| --------------------- |
-<iframe id="ytplayer" type="text/html" width="720" height="405" src="https://www.youtube.com/embed/asgzHSiKR9U" frameborder="0" allowfullscreen></iframe>
-
-
-※ The Graphizer video is a Korean. If you need another language, please click the subtitle button on the video to watch.
-
 ## Run using Docker
 - Get the docker image
 ```

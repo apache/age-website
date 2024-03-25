@@ -69,14 +69,11 @@ export const IndexPageTemplate = ({
             <div className={styles.cardRight}>
               News & Events
               <div className={styles.cardContent}>
-                <div><b>Apache AGE Release Windows Installer!</b></div>
-                  <div>Check out our Windows Installer and give us User feedback in our GitHub</div>
+                <div><b>Windows Installer (containing PostgreSQL + AGE + Graphizer)</b></div>
+                  <div>Check out the Windows Installer and give feedback at the GitHub Discussion (<a href="https://github.com/apache/age/discussions/1712" target="_blank">#1712</a>)</div>
                     <div>
-
                     <a href="/getstarted/quickstart" >Read more</a>
-
                     </div>
-
                   <br></br>
 
                 <div><b>Apache AGE on Microsoft Azure PostgreSQL</b></div>
