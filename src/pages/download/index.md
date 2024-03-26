@@ -7,7 +7,7 @@ title: Downloads
 
 
 
-## Download AGE release for PG16.
+## Download AGE release for PostgreSQL 16.
  
 ## The current stable version and the latest release of the graph extension is 1.5.0. 
 <br/>
@@ -21,7 +21,7 @@ title: Downloads
 <br/><br/>
 
 
-## Download AGE release for PG15.
+## Download AGE release for PostgreSQL 15.
  
 ## The current stable version and the latest release of the graph extension is 1.5.0. 
 <br/>
@@ -34,7 +34,7 @@ title: Downloads
 
 <br/><br/>
 
-## Download AGE release for PG14.
+## Download AGE release for PostgreSQL 14.
  
 ## The current stable version and the latest release of the graph extension is 1.5.0. 
 <br/>
@@ -47,7 +47,7 @@ title: Downloads
 
 <br/><br/>
 
-## Download AGE release for PG13.
+## Download AGE release for PostgreSQL 13.
  
 ## The current stable version and the latest release of the graph extension is 1.5.0. 
 <br/>
@@ -61,7 +61,7 @@ title: Downloads
 <br/><br/>
  
  
-## Download AGE release for PG12.
+## Download AGE release for PostgreSQL 12.
  
 ## The current stable version and the latest release of the graph extension is 1.5.0. 
 <br/>
@@ -74,7 +74,7 @@ title: Downloads
 
 <br/><br/>
 
-## Download AGE release for PG11.
+## Download AGE release for PostgreSQL 11.
  
 ## The current stable version and the latest release of the graph extension is 1.4.0. 
 <br />
