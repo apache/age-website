@@ -67,8 +67,12 @@ export const IndexPageTemplate = ({
             <div className={styles.verticalLine}>
             </div>
             <div className={styles.cardRight}>
-              News & Events
+              Key Updates
               <div className={styles.cardContent}>
+                <div><b>Why do you use Apache AGE? </b></div>
+                    <div>Give feedback at the GitHub (<a href="https://github.com/apache/age/issues/1705" target="_blank">#1705</a>)</div>
+                    <br></br>
+
                 <div><b>Windows Installer (containing PostgreSQL + AGE + Graphizer)</b></div>
                   <div>Check out the Windows Installer and give feedback at the GitHub Discussion (<a href="https://github.com/apache/age/discussions/1712" target="_blank">#1712</a>)</div>
                     <div>
