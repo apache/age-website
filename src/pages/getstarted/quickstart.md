@@ -16,6 +16,11 @@ Graphizer is a data modeling tool that allows generating  openCypher graph data 
 | --------------------- |
 <a href="https://agedb.io/downloads/ageplus-pg15-1.4.0-1-windows-x64.zip" onclick="gtag('event', 'click', {'event_category': 'Category', 'event_label': '윈도우인스톨러다운수'});">Download Windows Installer ➚</a>
 
+<br>
+
+✅ Please give feedback about the installer at the [**GitHub Discussion #1712**](https://github.com/apache/age/discussions/1712).
+
+
 ## Run using Docker
 - Get the docker image
 ```
