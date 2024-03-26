@@ -65,7 +65,7 @@ title: Downloads
 <br/><br/>
 
 ## Windows Installer
-The Windows installer is an installation file that packages PostgreSQL version 15, Apache AGE version 1.4.0, and Graphizer (graph visualization tool).
+The Windows installer is an installation file that contains PostgreSQL 15, Apache AGE 1.4.0, and Graphizer 1.1 
 
 | Windows Installer         |
 | --------------------- |
@@ -76,10 +76,21 @@ The Windows installer is an installation file that packages PostgreSQL version 1
 
 | Docker Images         |
 | --------------------- |
-| [Apache AGE Docker Hub ➚](https://hub.docker.com/r/apache/age) |
+<a href="https://hub.docker.com/r/apache/age" target="_blank">Apache AGE Docker Hub ➚</a>
+
+
 
 <br/><br/>
 
 | Apache AGE Viewer Release | CheckSum & Signature             |
 | ------------------------- | -------------------------------- |
 | [Download Apache AGE Viewer 1.0.0 ➚](https://github.com/apache/age-viewer/archive/refs/tags/v1.0.0-rc2.tar.gz) | [CheckSum ➚](https://downloads.apache.org/incubator/age/viewer/1.0.0/apache-age-viewer-1.0.0-incubating-src.tar.gz.sha512)& [Signature ➚](https://downloads.apache.org/incubator/age/viewer/1.0.0/apache-age-viewer-1.0.0-incubating-src.tar.gz.asc) & [Key Files ➚](https://downloads.apache.org/age/KEYS) |
+
+<br/><br/>
+
+## Past versions
+
+Archives for all past versions of AGEs are available at the Apache archives
+| Apache archives         |
+| --------------------- |
+<a href="https://archive.apache.org/dist/age/" target="_blank">Apache archives ➚</a>
