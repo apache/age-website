@@ -7,6 +7,42 @@ title: Release Notes
 
 <section>
 
+## Apache AGE v1.5.0 ✅ 
+
+Release Date\
+10 Jan 2024\
+Release Notes
+
+</section>
+
+<section>
+
+### PG 16: <https://github.com/apache/age/releases/tag/PG16%2Fv1.5.0-rc0>
+### PG 15: <https://github.com/apache/age/releases/tag/PG15%2Fv1.5.0-rc0>
+### PG 14: <https://github.com/apache/age/releases/tag/PG14%2Fv1.5.0-rc0>
+### PG 13: <https://github.com/apache/age/releases/tag/PG13%2Fv1.5.0-rc0>
+### PG 12: <https://github.com/apache/age/releases/tag/PG12%2Fv1.5.0-rc0>
+### PG 11: <https://github.com/apache/age/releases/tag/PG11%2Fv1.5.0-rc0>
+
+
+</section>
+
+<section>
+
+Key Improvement(s)
+- Additional index support and performance improvements
+- Docker and Python driver updates
+- Support for chained expressions in CASE statements
+- Multiple bug fixes
+
+</section>
+
+</div>
+
+<div class="ReleaseBox">
+
+<section>
+
 ## Apache AGE v1.4.0 ✅
 
 Pre-release Date\
