@@ -83,7 +83,7 @@ nonpmc:
     githubName: 'quocvietvuong'
     githubLink: 'https://github.com/quocvietvuong'    
   - name: 'Zainab Saad'
-    avatar: /img/Zainab.jpg
+    avatar: /img/Zainab.png
     githubName: 'zainabsaad'
     githubLink: 'https://github.com/Zainab-Saad' 
 ---
