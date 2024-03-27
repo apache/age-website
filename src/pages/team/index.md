@@ -57,11 +57,11 @@ pmc:
     avatar: /img/Shoaib.jpg
     githubName: 'muhammadshoaib'
     githubLink: 'https://github.com/muhammadshoaib'
-nonpmc:
   - name: 'Rafsun Masud'
     avatar: /img/rafsun.jpg
     githubName: 'rafsun42'
     githubLink: 'https://github.com/rafsun42'
+nonpmc:
   - name: 'Muhammad Taha Naveed'
     avatar: /img/Taha.jpg
     githubName: 'MuhammadTahaNaveed'
@@ -82,4 +82,8 @@ nonpmc:
     avatar: /img/QuocVietVuong.jpg
     githubName: 'quocvietvuong'
     githubLink: 'https://github.com/quocvietvuong'    
+  - name: 'Zainab Saad'
+    avatar: /img/Zainab.jpg
+    githubName: 'zainabsaad'
+    githubLink: 'https://github.com/Zainab-Saad' 
 ---

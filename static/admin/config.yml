@@ -182,6 +182,7 @@ collections:
           - { label: "Title", name: "title", widget: "string" }  
           - { label: "Body", name: "body", widget: "markdown" }
 
+    # Blog test
   - name: "blog"
     label: "Blog"
     folder: "src/pages/blog"

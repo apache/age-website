@@ -42,11 +42,11 @@ const Navbar = () => {
                   Team
                 </Link>
               </Menu.Item>
-              {/*<Menu.Item> 릴리스 노트 
+              <Menu.Item>
                 <Link className="navbar-item" to="/release-notes">
                   Release Notes
                 </Link>
-              </Menu.Item>*/}
+              </Menu.Item>
               <Menu.Item>
                 <Link className="navbar-item" to="/faq">
                   F A Q
@@ -198,11 +198,11 @@ const Navbar = () => {
                   Team
                 </Link>
               </Menu.Item>
-              {/*<Menu.Item> 릴리스 노트 
+              <Menu.Item> 
                 <Link className="navbar-item" to="/release-notes">
                   Release Notes
                 </Link>
-              </Menu.Item>*/}
+              </Menu.Item>
               <Menu.Item>
                 <Link className="navbar-item" to="/faq">
                   F A Q

@@ -33,7 +33,14 @@ const Footer = class extends React.Component {
       <footer className={`${styles.root} ${landingYn ? styles.Landing : ''}`}>
         <div className={`${styles.Sitemap} Sitemap`}>
           <ul className={`${styles.Item} Item`}>
-            <li>AGE</li>
+            <li>Get Started</li>
+              <li>
+                <a href="/getstarted/quickstart">Quick Start</a>
+              </li>
+            </ul>
+
+          <ul className={`${styles.Item} Item`}>
+            <li>Apache AGE</li>
             <li>
               <a href="/overview">Overview</a>
             </li>
@@ -43,7 +50,11 @@ const Footer = class extends React.Component {
             <li>
               <a href="/release-notes">Release Note</a>
             </li>
+            <li>
+              <a href="/faq">F A Q</a>
+            </li>
           </ul>
+          
           <ul className={`${styles.Item} Item`}>
             <li>Community</li>
             <li>
@@ -58,6 +69,7 @@ const Footer = class extends React.Component {
               <a href="https://github.com/apache/age/projects" target='_blank'>AGE Project</a>
             </li>
           </ul>
+
           <ul className={`${styles.Item} Item`}>
             <li>Contribution</li>
             <li>
@@ -75,56 +87,55 @@ const Footer = class extends React.Component {
           </ul>
 
           <ul className={`${styles.Item} Item`}>
+            <li>Downloads</li>
             <li>
               <a href="/download">Download AGE</a>
+            </li>
+          </ul>
+
+          <ul className={`${styles.Item} Item`}>
+            <li>Doc</li>
+            <li>
+              <a href="https://age.apache.org/age-manual/master/intro/overview.html" target={'_blank'}>Overview</a>
+            </li>
+            <li>
+              <a href="https://age.apache.org/age-manual/master/intro/setup.html" target={'_blank'}>Setup</a>
+            </li>
+            <li>
+              <a href="https://age.apache.org/age-manual/master/clauses/match.html" target={'_blank'}>Match</a>
+            </li>
+            <li>
+              <a href="https://age.apache.org/age-manual/master/functions/predicate_functions.html" target={'_blank'}>Functions</a>
+            </li>
+            <li>
+              <a href="https://age.apache.org/age-manual/master/advanced/advanced_overview.html" target={'_blank'}>AGE Beyond Cypher</a>
             </li>
           </ul>
           
           <ul className={`${styles.Item} Item`}>
             <li>Apache</li>
             <li>
-              <a href="https://www.apache.org/foundation/" target={'_blank'}>
-                Foundation
-              </a>
+              <a href="https://www.apache.org/foundation/" target={'_blank'}>Foundation</a>
             </li>
             <li>
-              <a href="https://www.apache.org/" target={'_blank'}>
-                How Apache works
-              </a>
+              <a href="https://www.apache.org/" target={'_blank'}>How Apache works</a>
             </li>
             <li>
-              <a
-                href="https://www.apache.org/foundation/sponsorship.html"
-                target={'_blank'}
-              >
-                Sponsorship
-              </a>
+              <a href="https://www.apache.org/foundation/sponsorship.html" target={'_blank'}>Sponsorship</a>
             </li>
             <li>
-              <a href="https://www.apache.org/security/" target={'_blank'}>
-                Security
-              </a>
+              <a href="https://www.apache.org/security/" target={'_blank'}>Security</a>
             </li>
             <li>
-              <a href="https://www.apache.org/licenses/" target={'_blank'}>
-                License
-              </a>
+              <a href="https://www.apache.org/licenses/" target={'_blank'}>License</a>
             </li>
             <li>
-              <a
-                href="https://apachecon.com/?ref=age.apache.org"
-                target={'_blank'}
-              >
-                Events
-              </a>
+              <a href="https://apachecon.com/?ref=age.apache.org" target={'_blank'}>Events</a>
             </li>
           </ul>
         </div>
 
-        <div
-          style={{ maxWidth: '100vw' }}
-          className={`${styles.Social} Social`}
-        >
+        <div style={{ maxWidth: '100vw' }} className={`${styles.Social} Social`}>
           <div className={`${styles.Links} FooterLinks`}>
             <a title="Github" href="https://github.com/apache/age" target={'_blank'}>
               <img
@@ -148,23 +159,13 @@ const Footer = class extends React.Component {
                 style={{ width: '2.5em', height: '2.5em' }}
               />
             </a>
-            {/* 
-            <a title="Discord" href="https://discord.com/invite/NMsBs9X8Ss" target={'_blank'}>
-              <img
-                src={icoDiscordLd}
-                alt="Discord"
-                style={{ width: '2.5em', height: '2.5em' }}
-              />
-            </a>
-            */}
           </div>
-          
-          <p>
-            Copyright © 2024 The Apache Software Foundation.<br></br>
-            The Apache Software Foundation Apache AGE, AGE, Apache, the Apache feather, 
-            and the Apache AGE project logo are either registered trademarks or trademarks of the Apache Software Foundation.
-          </p>
 
+          <p>
+          Copyright © 2024 The Apache Software Foundation.<br></br>
+          The Apache Software Foundation Apache AGE, AGE, Apache, the Apache feather,
+          and the Apache AGE project logo are either registered trademarks or trademarks of the Apache Software Foundation.
+          </p>
 
         </div>
       </footer>
