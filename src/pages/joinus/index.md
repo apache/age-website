@@ -12,7 +12,6 @@ title: Join AGE Community!
 <div class="JoinUsAGE">
 
 <div>
-  <a href="https://discord.com/invite/NMsBs9X8Ss/" target="_blank">
     <img src="/img/icon-Large-raddit.png" style="max-height: 232px; max-width: 232px"/>
   </a>
 </div>
