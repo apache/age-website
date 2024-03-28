@@ -76,12 +76,12 @@ title: Downloads
 
 ## Download AGE release for PostgreSQL 11.
  
-## The current stable version and the latest release of the graph extension is 1.4.0. 
+## The current stable version and the latest release of the graph extension is 1.5.0. 
 <br />
 
 | Apache AGE Release | CheckSum & Signature |
 | ------------------ | -------------------- |
-| [Download Apache AGE 1.4.0 ➚](https://dlcdn.apache.org/age/PG11/1.5.0/apache-age-1.5.0-src.tar.gz) | [CheckSum ➚](https://downloads.apache.org/age/PG11/1.4.0/apache-age-1.4.0-src.tar.gz.sha512) & [Signature ➚](https://downloads.apache.org/age/PG11/1.4.0/apache-age-1.4.0-src.tar.gz.asc)  & [KEY Files ➚](https://downloads.apache.org/age/KEYS)
+| [Download Apache AGE 1.5.0 ➚](https://dlcdn.apache.org/age/PG11/1.5.0/apache-age-1.5.0-src.tar.gz) | [CheckSum ➚](https://downloads.apache.org/age/PG11/1.5.0/apache-age-1.5.0-src.tar.gz.sha512) & [Signature ➚](https://downloads.apache.org/age/PG11/1.5.0/apache-age-1.5.0-src.tar.gz.asc)  & [KEY Files ➚](https://downloads.apache.org/age/KEYS)
 
 [Verify Signituare ➚](https://www.apache.org/info/verification.html) 
 
