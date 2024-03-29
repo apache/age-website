@@ -43,7 +43,7 @@ const TemplateWrapper = ({ children }) => {
         '/getstarted/quickstart' : 'Quickstart | Apache AGE',
         '/overview' : 'Overview | Apache AGE',
         '/team' : 'Team | Apache AGE',
-        // '/release-notes' : 'Release Notes | Apache AGE',
+        '/release-notes' : 'Release Notes | Apache AGE',
         '/faq' : 'FAQ | Apache AGE',
         '/joinus' : 'Community | Apache AGE',
         '/contribution/how' : 'Contribution | Apache AGE',
