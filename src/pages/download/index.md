@@ -81,11 +81,7 @@ title: Downloads
 
 | Apache AGE Release | CheckSum & Signature |
 | ------------------ | -------------------- |
-<<<<<<< HEAD
-| [Download Apache AGE 1.5.0 ➚](https://dlcdn.apache.org/age/PG11/1.5.0/apache-age-1.5.0-src.tar.gz) | [CheckSum ➚](https://downloads.apache.org/age/PG11/1.5.0/apache-age-1.5.0-src.tar.gz.sha512) & [Signature ➚](https://downloads.apache.org/age/PG11/1.5.0/apache-age-1.5.0-src.tar.gz.asc)  & [KEY Files ➚](https://downloads.apache.org/age/KEYS)
-=======
 | [Download Apache AGE 1.5.0 ➚](https://www.apache.org/dyn/closer.lua/age/PG11/1.5.0) | [CheckSum ➚](https://downloads.apache.org/age/PG11/1.5.0/apache-age-1.5.0-src.tar.gz.sha512) & [Signature ➚](https://downloads.apache.org/age/PG11/1.5.0/apache-age-1.5.0-src.tar.gz.asc)  & [KEYS File ➚](https://downloads.apache.org/age/KEYS)
->>>>>>> 1e1929d824e1d79d13fdec6e223115aa989d9642
 
 [Verify Signature ➚](https://www.apache.org/info/verification.html) 
 
