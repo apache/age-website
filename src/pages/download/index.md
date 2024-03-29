@@ -5,6 +5,14 @@ title: Downloads
 ---
 <div style="text-align: center; margin-bottom: 5rem;">
 
+## Windows Installer
+The Windows installer is an installation file that contains PostgreSQL 15, Apache AGE 1.4.0, and Graphizer 1.1 
+
+| Windows Installer         |
+| --------------------- |
+| [Download Windows Installer ➚](https://agedb.io/downloads/ageplus-pg15-1.4.0-2-windows-x64.zip) |
+
+<br/><br/>
 
 
 ## Download AGE release for PostgreSQL 16.
@@ -85,16 +93,10 @@ title: Downloads
 
 [Verify Signature ➚](https://www.apache.org/info/verification.html) 
 
-<br/><br/>
-
-## Windows Installer
-The Windows installer is an installation file that contains PostgreSQL 15, Apache AGE 1.4.0, and Graphizer 1.1 
-
-| Windows Installer         |
-| --------------------- |
-| [Download Windows Installer ➚](https://agedb.io/downloads/ageplus-pg15-1.4.0-2-windows-x64.zip) |
 
 <br/><br/>
+
+## Docker
 
 | Docker Images         |
 | --------------------- |
@@ -103,6 +105,8 @@ The Windows installer is an installation file that contains PostgreSQL 15, Apach
 
 
 <br/><br/>
+
+## AGE Viewer
 
 | Apache AGE Viewer Release | CheckSum & Signature            |
 | ------------------------- | -------------------------------- |
