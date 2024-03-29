@@ -96,7 +96,7 @@ The Windows installer is an installation file that contains PostgreSQL 15, Apach
 
 | Windows Installer         |
 | --------------------- |
-| [Download Windows Installer ➚](https://agedb.io/downloads/ageplus-pg15-1.4.0-1-windows-x64.zip) |
+| [Download Windows Installer ➚](https://agedb.io/downloads/ageplus-pg15-1.4.0-2-windows-x64.zip) |
 
 <br/><br/>
 
