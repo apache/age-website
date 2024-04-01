@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: (your-github)/age-website
+  repo: /dpdjvhxm/age-website-for-test/tree/new-web
   branch: new-web
   commit_messages:
     create: "Create {{collection}} “{{slug}}”"
