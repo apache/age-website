@@ -7,15 +7,15 @@
   Referrer-Policy: same-origin
 /styles.2ed83a2d32535bedab83.css
   Cache-Control: public, max-age=31536000, immutable
-/commons-97ffbe5c8d646f31de1d.js
+/commons-ef07251fdeb940d48276.js
   Cache-Control: public, max-age=31536000, immutable
 /f79fcea1f20156ce5956c4763aa2c2be2059f70b-ad29c885817aea695b8a.js
+  Cache-Control: public, max-age=31536000, immutable
+/component---src-templates-index-page-js-63269b49c7868cca46af.js
   Cache-Control: public, max-age=31536000, immutable
 /component---src-templates-blog-post-js-a850bc580a819956e1bb.js
   Cache-Control: public, max-age=31536000, immutable
 /component---src-templates-docs-template-js-98dcb14e1ebd7ba77b83.js
-  Cache-Control: public, max-age=31536000, immutable
-/component---src-templates-index-page-js-63269b49c7868cca46af.js
   Cache-Control: public, max-age=31536000, immutable
 /component---src-templates-overview-page-js-4add4a7404a43da29d0c.js
   Cache-Control: public, max-age=31536000, immutable
@@ -25,7 +25,7 @@
   Cache-Control: public, max-age=31536000, immutable
 /component---src-pages-404-js-af1d22040e85f5ab587f.js
   Cache-Control: public, max-age=31536000, immutable
-/component---src-pages-blog-index-js-0f92904385a4f6841fca.js
+/component---src-pages-blog-index-js-6f6b360bc07f428419df.js
   Cache-Control: public, max-age=31536000, immutable
 /component---src-pages-faq-index-js-c0c6533bc757d6171dff.js
   Cache-Control: public, max-age=31536000, immutable
@@ -33,7 +33,7 @@
   Cache-Control: public, max-age=31536000, immutable
 /component---src-pages-tags-index-js-2691e7e2239463f334d0.js
   Cache-Control: public, max-age=31536000, immutable
-/webpack-runtime-203ce854a79b7a25495f.js
+/webpack-runtime-98b01d9bd6dd92486424.js
   Cache-Control: public, max-age=31536000, immutable
 /framework-2a6352309b95b7c5a70e.js
   Cache-Control: public, max-age=31536000, immutable
