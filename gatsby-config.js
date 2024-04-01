@@ -1,6 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: "Apache AGE",
+
+    title: "Apache AGE, Graph database optimized for fast analysis and real-time data processing. It is provided as an extension to PostgreSQL.",
+
     description: "Since May 2022, Apache AGE® is a Top-Level Project at the Apache Software Foundation, born from AgensGraph and developed by Bitnine Global Inc. since 2019. Donated to Apache in April 2020, it enhances graph database capabilities under the Apache License 2.0, promoting open access.",
   },
   pathPrefix: "/",
