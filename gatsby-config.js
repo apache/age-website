@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: "Apache AGE",
-    description: "AGE was under development since 2019 by a team of engineers at Bitnine Global Inc. The project, originally born out of AgensGraph, a multi-model graph database fork of PostgreSQL, was donated to the Apache Software Foundation and entered incubation in April 2020.",
+    description: "Since May 2022, Apache AGE® is a Top-Level Project at the Apache Software Foundation, born from AgensGraph and developed by Bitnine Global Inc. since 2019. Donated to Apache in April 2020, it enhances graph database capabilities under the Apache License 2.0, promoting open access.",
   },
   pathPrefix: "/",
   plugins: [
