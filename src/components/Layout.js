@@ -77,6 +77,7 @@ const TemplateWrapper = ({ children }) => {
             {/* Global site tag (gtag.js) - Google Analytics */}
             <script async src="https://www.googletagmanager.com/gtag/js?id=G-VPCE2QF63F" />
             <script async src="https://www.googletagmanager.com/gtag/js?id=G-XFVE1KJW91"/>
+
             {/* Search Console New */}
             <meta name="google-site-verification" content="C4CIVL2dGO5hQM50NyalduCnsGIL9cRgtP8ilWhKWko" />
             <script>
