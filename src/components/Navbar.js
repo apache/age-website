@@ -52,11 +52,6 @@ const Navbar = () => {
                   F A Q
                 </Link>
               </Menu.Item>
-              <Menu.Item>
-                <Link className="navbar-item" to="/blog">
-                  Blog
-                </Link>
-              </Menu.Item>
             </Menu.SubMenu>
             <Menu.SubMenu title="Community">
               <Menu.Item>
@@ -211,11 +206,6 @@ const Navbar = () => {
               <Menu.Item>
                 <Link className="navbar-item" to="/faq">
                   F A Q
-                </Link>
-              </Menu.Item>
-              <Menu.Item>
-                <Link className="navbar-item" to="/blog">
-                  Blog
                 </Link>
               </Menu.Item>
             </Menu.SubMenu>
