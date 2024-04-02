@@ -5,16 +5,6 @@ title: Downloads
 ---
 <div style="text-align: center; margin-bottom: 5rem;">
 
-## Windows Installer
-The Windows installer is an installation file that contains PostgreSQL 15, Apache AGE 1.4.0, and Graphizer 1.1 
-
-| Windows Installer         |
-| --------------------- |
-| [Download Windows Installer ➚](https://agedb.io/downloads/ageplus-pg15-1.4.0-2-windows-x64.zip) |
-
-<br/><br/>
-
-
 ## Download AGE release for PostgreSQL 16.
  
 ## The current stable version and the latest release of the graph extension is 1.5.0. 
