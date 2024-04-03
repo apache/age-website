@@ -100,7 +100,7 @@ title: Downloads
 
 | Apache AGE Viewer Release | CheckSum & Signature            |
 | ------------------------- | -------------------------------- |
-| [Download Apache AGE Viewer 1.0.0 ➚](https://www.apache.org/dyn/closer.lua/age/age-viewer/apache-age-viewer-1.0.0-rc2-incubating-src.tar.gz) | [CheckSum ➚](apache-age-viewer-1.0.0-rc2-incubating-src.tar.gz.sha512)& [Signature ➚](apache-age-viewer-1.0.0-rc2-incubating-src.tar.gz.asc) & [Key Files ➚](https://downloads.apache.org/age/KEYS) |
+| [Download Apache AGE Viewer 1.0.0 ➚](https://www.apache.org/dyn/closer.lua/age/age-viewer/apache-age-viewer-1.0.0-rc2-incubating-src.tar.gz) | [CheckSum ➚](https://downloads.apache.org/age/age-viewer/apache-age-viewer-1.0.0-rc2-incubating-src.tar.gz.sha512)& [Signature ➚](https://downloads.apache.org/age/age-viewer/apache-age-viewer-1.0.0-rc2-incubating-src.tar.gz.asc) & [Key Files ➚](https://downloads.apache.org/age/KEYS) |
 
 [Verify Signature ➚](https://www.apache.org/info/verification.html) 
 
