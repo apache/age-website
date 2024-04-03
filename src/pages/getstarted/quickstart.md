@@ -6,21 +6,6 @@ title: Quick Start
 
 <div class="DeveloperGuidelines">
 
-## Run using Windows Installer
-
-The Windows installer is an installation file that contains PostgreSQL 15, Apache AGE 1.4.0, and Graphizer 1.1 
-
-Graphizer is a data modeling tool that allows generating  openCypher graph data with table data in relational databases and CSV files for advanced data analysis and exploration.
-
-| Windows Installer         |
-| --------------------- |
-<a href="https://agedb.io/downloads/ageplus-pg15-1.4.0-2-windows-x64.zip" onclick="gtag('event', 'click', {'event_category': 'Category', 'event_label': '윈도우인스톨러다운수'});">Download Windows Installer ➚</a>
-
-<br>
-
-✅ Please give feedback about the installer at the [**GitHub Discussion #1712**](https://github.com/apache/age/discussions/1712).
-
-
 ## Run using Docker
 - Get the docker image
 ```
