@@ -73,13 +73,6 @@ export const IndexPageTemplate = ({
                     <div>Give feedback at the GitHub (<a href="https://github.com/apache/age/issues/1705" target="_blank">#1705</a>)</div>
                     <br></br>
 
-                <div><b>Windows Installer (containing PostgreSQL + AGE + Graphizer)</b></div>
-                  <div>Check out the Windows Installer and give feedback at the GitHub Discussion (<a href="https://github.com/apache/age/discussions/1712" target="_blank">#1712</a>)</div>
-                    <div>
-                    <a href="/getstarted/quickstart" >Read more</a>
-                    </div>
-                  <br></br>
-
                 <div><b>Apache AGE on Microsoft Azure PostgreSQL</b></div>
 
                 <div>Support the integration of Microsoft Azure PostgreSQL with Apache AGE by casting your vote and feedback!</div>
