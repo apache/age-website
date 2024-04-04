@@ -160,6 +160,23 @@ class FAQ extends React.Component {
         </>
       ),
     },  
+     
+      { id: 16, question: 'Q 16 : Are there any limitations to the size or scale of graphs that Apache AGE can handle?',
+      answer: () => (
+        <>
+          Yes. The capacity for both vertices and edges is 281474976710655. This limitation only applies to one particular graph. AGE allows creating multiple graphs.</p>
+        </>
+      ),
+    },  
+     
+        { id: 17, question: 'Q 17 : How does Apache AGE handle indexing and optimization for graph queries?',
+      answer: () => (
+        <>
+          AGE uses PostrgreSQL's indexes. It stores properties of elements (vertices and edges) as a custom type called "agtype". The structure of properties is comparable to JSON objects. Therefore, properties can be indexed in a similar way a "JSONB" column is indexed. For example, BTree, Hash and GIN etc. indexes are supported.</p>
+        </>
+      ),
+    },  
+        
         // 여기에 추가 질문과 답변을 넣을 수 있습니다.
     ];
     const { openItemId } = this.state;
