@@ -145,8 +145,22 @@ class FAQ extends React.Component {
       ),
     }
     
+      { id: 14, question: 'Q 14 : Is there any ongoing research or development related to features or capabilities of Apache AGE?',
+      answer: () => (
+        <>
+          Yes, being an open-source project, Apache AGE benefits from a vibrant community of dedicated developers who are passionate about using their skills to improve its features and capabilities. This collaborative environment fosters continuous research and development efforts focused on enhancing the functionality of Apache AGE and addressing emerging needs in the GDB field. With contributors from various backgrounds using their expertise to innovate and improve the platform, Apache AGE continuously evolves itself, granting users access to cutting-edge innovations and expanded functionalities for graph-based data management and analysis.</p>
+        </>
+      ),
+    },  
 
-      // 여기에 추가 질문과 답변을 넣을 수 있습니다.
+      { id: 15, question: 'Q 15 : Does Apache AGE support ACID(Atomicity, Consistency, Isolation, and Durability) transactions?',
+      answer: () => (
+        <>
+          Yes, Apache AGE supports ACID transactions for Graph, Relational and JSON Document.</p>
+        </>
+      ),
+    },  
+        // 여기에 추가 질문과 답변을 넣을 수 있습니다.
     ];
     const { openItemId } = this.state;
 
