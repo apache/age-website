@@ -5,10 +5,17 @@ on: pull_request
 jobs:
   merge_conflict_job:
     runs-on: ubuntu-latest
-    name: Find merge conflicts
     steps:
-      # Checkout the source code so there are some files to look at.
       - uses: actions/checkout@v3
-      # Run the actual merge conflict finder
-      - name: Merge Conflict finder
-        uses: olivernybroe/action-conflict-finder@v4.0
+      - name: Check for merge conflicts
+        run: |
+          # Find files with merge conflict markers
+          conflicted_files=$(git grep --quiet -e "<<<<<<<" -e ">>>>>>>" ":(exclude).github/" && echo "true" || echo "false")
+          # If there are conflicts, print the filenames
+          if [ "$conflicted_files" = "true" ]; then
+            echo "Unresolved merge conflicts found in the following files:"
+            git grep -e "<<<<<<<" -e ">>>>>>>" ":(exclude).github/"
+            exit 1
+          else
+            echo "No unresolved merge conflicts found."
+          fi
