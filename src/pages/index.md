@@ -1,7 +1,7 @@
 ---
 templateKey: index-page
 title: Apache AGE
-bannerImg: /img/landing-banner.jpg
+bannerImg: /img/landing-banner.png
 bannerContents: >-
   <h1 class="bannerHeader"><span>Apache AGE</span></br>
   Graph Database Extension</br> 

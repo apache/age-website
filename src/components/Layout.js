@@ -15,7 +15,7 @@ import '../components/styles/font/font.css';
 import './styles/media.scss';
 // styles
 import * as styles from './styles/Layout.module.scss';
-import favicon from '../../static/img/agedb-favicon.png';
+import favicon from '../../static/img/favicon.png';
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();
