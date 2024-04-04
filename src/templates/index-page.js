@@ -70,21 +70,21 @@ export const IndexPageTemplate = ({
               Key Updates
               <div className={styles.cardContent}>
                 <div><b>Why do you use Apache AGE? </b></div>
-                    <div>Give feedback at the GitHub (<a href="https://github.com/apache/age/issues/1705" target="_blank">#1705</a>)</div>
+                    <div>Give feedback at the GitHub (<a href="https://github.com/apache/age/issues/1705" target="_blank" rel="noopener noreferrer">#1705</a>)</div>
                     <br></br>
 
                 <div><b>Apache AGE on Microsoft Azure PostgreSQL</b></div>
 
                 <div>Support the integration of Microsoft Azure PostgreSQL with Apache AGE by casting your vote and feedback!</div>
                   <div>
-                    <a href="https://github.com/apache/age/issues/1524" target="_blank">Read more</a>
+                    <a href="https://github.com/apache/age/issues/1524" target="_blank" rel="noopener noreferrer">Read more</a>
                   </div>
 
                 <br></br>
                 <div><b>PostgresPro adapted Apache AGE</b></div>
                 <div>Apache_AGE is a Postgres Pro extension that provides graph database functionality. The goal of the project is to create single storage that can handle both relational and graph model data so that users can use standard ANSI SQL along with openCypher.</div>
                 <div>
-                  <a href="https://postgrespro.com/docs/enterprise/15/apache-age" target="_blank">Read more</a>
+                  <a href="https://postgrespro.com/docs/enterprise/15/apache-age" target="_blank" rel="noopener noreferrer">Read more</a>
 
                 </div>
 
@@ -93,7 +93,7 @@ export const IndexPageTemplate = ({
                 <div>Check the changelog for the latest version</div>
                   <div>
 
-                  <a href="https://github.com/apache/age/releases/tag/PG16%2Fv1.5.0-rc0" target="_blank">Read more</a>
+                  <a href="https://github.com/apache/age/releases/tag/PG16%2Fv1.5.0-rc0" target="_blank" rel="noopener noreferrer">Read more</a>
 
                   </div>
 
@@ -224,9 +224,9 @@ export const IndexPageTemplate = ({
       
       <section>
         <div className={styles.content1}>
-          <div className={styles.Subscribe1}>
+          {/*<div className={styles.Subscribe1}>
             <img src={landingMailImg} alt="mail-image"></img>
-          </div>
+          </div>*/}
           <h2>Subscribe Mailing List</h2>
           <p>
             Get help using Apache AGE or contribute to the project on our
@@ -234,28 +234,19 @@ export const IndexPageTemplate = ({
           </p>
           <div className={styles.SubscribeLink1}>
             <div>
-              <a
-                target="_blank"
-                href="https://lists.apache.org/list.html?users@age.apache.org"
-              >
+              <a target="_blank" href="https://lists.apache.org/list.html?users@age.apache.org" rel="noopener noreferrer">
                 User
               </a>
               <a href="mailto:users-subscribe@age.apache.org">Subscribe</a>
             </div>
             <div>
-              <a
-                target="_blank"
-                href="https://lists.apache.org/list.html?dev@age.apache.org"
-              >
+              <a target="_blank" href="https://lists.apache.org/list.html?dev@age.apache.org" rel="noopener noreferrer">
                 Developer
               </a>
               <a href="mailto:dev-subscribe@age.apache.org">Subscribe</a>
             </div>
             <div>
-              <a
-                target="_blank"
-                href="https://lists.apache.org/list.html?commits@age.apache.org"
-              >
+              <a target="_blank" href="https://lists.apache.org/list.html?commits@age.apache.org" rel="noopener noreferrer">
                 Commits
               </a>
               <a href="mailto:commits-subscribe@age.apache.org">Subscribe</a>

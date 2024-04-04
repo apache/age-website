@@ -115,36 +115,36 @@ const Footer = class extends React.Component {
           <ul className={`${styles.Item} Item`}>
             <li>Apache</li>
             <li>
-              <a href="https://www.apache.org/foundation/" target={'_blank'}>Foundation</a>
+              <a href="https://www.apache.org/foundation/" target={'_blank'} rel="noopener noreferrer">Foundation</a>
             </li>
             <li>
-              <a href="https://www.apache.org/" target={'_blank'}>How Apache works</a>
+              <a href="https://www.apache.org/" target={'_blank'} rel="noopener noreferrer">How Apache works</a>
             </li>
             <li>
-              <a href="https://www.apache.org/foundation/sponsorship.html" target={'_blank'}>Sponsorship</a>
+              <a href="https://www.apache.org/foundation/sponsorship.html" target={'_blank'} rel="noopener noreferrer">Sponsorship</a>
             </li>
             <li>
-              <a href="https://www.apache.org/security/" target={'_blank'}>Security</a>
+              <a href="https://www.apache.org/security/" target={'_blank'} rel="noopener noreferrer">Security</a>
             </li>
             <li>
-              <a href="https://www.apache.org/licenses/" target={'_blank'}>License</a>
+              <a href="https://www.apache.org/licenses/" target={'_blank'} rel="noopener noreferrer">License</a>
             </li>
             <li>
-              <a href="https://apachecon.com/?ref=age.apache.org" target={'_blank'}>Events</a>
+              <a href="https://apachecon.com/?ref=age.apache.org" target={'_blank'} rel="noopener noreferrer">Events</a>
             </li>
           </ul>
         </div>
 
         <div style={{ maxWidth: '100vw' }} className={`${styles.Social} Social`}>
           <div className={`${styles.Links} FooterLinks`}>
-            <a title="Github" href="https://github.com/apache/age" target={'_blank'}>
+            <a title="Github" href="https://github.com/apache/age" target={'_blank'} rel="noopener noreferrer">
               <img
                 src={icoGithubLd}
                 alt="Facebook"
                 style={{ width: '2.5em', height: '2.5em' }}
               />
             </a>
-            <a title="twitter" href="https://twitter.com/apache_age?lang=en" target={'_blank'}>
+            <a title="twitter" href="https://twitter.com/apache_age?lang=en" target={'_blank'} rel="noopener noreferrer">
               <img
                 className="fas fa-lg"
                 src={icoTwitterLd}

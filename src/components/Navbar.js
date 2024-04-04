@@ -73,6 +73,7 @@ const Navbar = () => {
                   className="navbar-item"
                   target="_blank"
                   to="https://www.reddit.com/r/apacheage/"
+                  rel="noopener noreferrer"
                 >
                   AGE Forum
                 </Link>
@@ -229,6 +230,7 @@ const Navbar = () => {
                   className="navbar-item"
                   target="_blank"
                   to="https://www.reddit.com/r/apacheage/"
+                  rel="noopener noreferrer"
                 >
                   AGE Forum
                 </Link>
@@ -313,6 +315,7 @@ const Navbar = () => {
                   className="navbar-item"
                   target="_blank"
                   to="https://github.com/apache/age"
+                  rel="noopener noreferrer"
                 >
                   Apache AGE GitHub
                 </Link>
