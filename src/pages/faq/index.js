@@ -143,8 +143,40 @@ class FAQ extends React.Component {
           Please refer to <a href="https://age.apache.org/contribution/how" target="_blank" rel="noopener noreferrer">the contribution guidelines</a>.
         </>
       ),
-    }
+    },
     
+      { id: 14, question: 'Q 14 : Is there any ongoing research or development related to features or capabilities of Apache AGE?',
+      answer: () => (
+        <>
+          <p>Yes, being an open-source project, Apache AGE benefits from a vibrant community of dedicated developers who are passionate about using their skills to improve its features and capabilities. This collaborative environment fosters continuous research and development efforts focused on enhancing the functionality of Apache AGE and addressing emerging needs in the GDB field. With contributors from various backgrounds using their expertise to innovate and improve the platform, Apache AGE continuously evolves itself, granting users access to cutting-edge innovations and expanded functionalities for graph-based data management and analysis.</p>
+        </>
+      ),
+    },  
+
+      { id: 15, question: 'Q 15 : Does Apache AGE support ACID(Atomicity, Consistency, Isolation, and Durability) transactions?',
+      answer: () => (
+        <>
+          <p>Yes, Apache AGE supports ACID transactions for Graph, Relational and JSON Document.</p>
+        </>
+      ),
+    },  
+
+      { id: 16, question: 'Q 16 : Are there any limitations to the size or scale of graphs that Apache AGE can handle?',
+      answer: () => (
+        <>
+          <p>Yes. The capacity for both vertices and edges is 281474976710655. This limitation only applies to one particular graph. AGE allows creating multiple graphs.</p>
+        </>
+      ),
+    },  
+
+        { id: 17, question: 'Q 17 : How does Apache AGE handle indexing and optimization for graph queries?',
+      answer: () => (
+        <>
+          <p>AGE uses PostrgreSQL's indexes. It stores properties of elements (vertices and edges) as a custom type called "agtype". The structure of properties is comparable to JSON objects. Therefore, properties can be indexed in a similar way a "JSONB" column is indexed. For example, BTree, Hash and GIN etc. indexes are supported.</p>
+        </>
+      ),
+    },  
+
 
       // 여기에 추가 질문과 답변을 넣을 수 있습니다.
     ];
