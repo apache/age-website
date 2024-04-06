@@ -1,6 +1,6 @@
 ---
 templateKey: index-page
-title: Apache AGE
+title: Apache AGE | Graph Database Extension for PostgreSQL
 bannerImg: /img/landing-banner.png
 bannerContents: >-
   <h1 class="bannerHeader"><span>Apache AGE</span></br>

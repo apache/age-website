@@ -3,8 +3,6 @@ import * as React from 'react';
 // images
 import icoGithubLd from '../../static/img/icon-github.png';
 import icoTwitterLd from '../../static/img/icon-x.png';
-import icoYoutubeLd from '../../static/img/icon-youtube.png';
-// import icoDiscordLd from '../../static/img/icon-discord.png';
 
 
 // styles
@@ -21,8 +19,7 @@ const Footer = class extends React.Component {
         const links = document.getElementsByClassName('FooterLinks')[0].children;
         links[0].children[0].src = icoGithubLd;
         links[1].children[0].src = icoTwitterLd;
-        links[2].children[0].src = icoYoutubeLd;
-        // links[3].children[0].src = icoDiscordLd;
+
       }
     }
   }
@@ -61,12 +58,12 @@ const Footer = class extends React.Component {
               <a href="/joinus">Join AGE Community</a>
             </li>
             <li>
-              <a href="https://www.reddit.com/r/apacheage/" target='_blank'>
+              <a href="https://www.reddit.com/r/apacheage/" target='_blank' rel="noopener noreferrer">
                 AGE Forum
               </a>
             </li>
             <li>
-              <a href="https://github.com/apache/age/projects" target='_blank'>AGE Project</a>
+              <a href="https://github.com/apache/age/projects" target='_blank' rel="noopener noreferrer">AGE Project</a>
             </li>
           </ul>
 
@@ -149,13 +146,6 @@ const Footer = class extends React.Component {
                 className="fas fa-lg"
                 src={icoTwitterLd}
                 alt="Twitter"
-                style={{ width: '2.5em', height: '2.5em' }}
-              />
-            </a>
-            <a title="Youtube" href="https://youtu.be/qC_3F4Gaipk" target={'_blank'}>
-              <img
-                src={icoYoutubeLd}
-                alt="Youtube"
                 style={{ width: '2.5em', height: '2.5em' }}
               />
             </a>
