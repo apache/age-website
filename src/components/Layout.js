@@ -59,7 +59,7 @@ const TemplateWrapper = ({ children }) => {
         '/download' : 'Download | Apache AGE',
         'https://github.com/apache/age' : 'Apache AGE Github | Apache AGE',
       }
-      return urlToTitle[pathName] ?? 'Apache AGE';    
+      return urlToTitle[pathName] ?? 'Apache AGE | Graph Database Extension for PostgreSQL';    
     } else {
       return 'Apache AGE';
     }    
@@ -72,6 +72,7 @@ const TemplateWrapper = ({ children }) => {
           <Helmet>
             <html lang="en" />
             <title>{titleNameMapper()}</title>
+            <meta charset="UTF-8" /> {/* 문자 집합 선언 추가 */}
             <link rel="icon" href={favicon} />
             <meta name="description" content={description} />
             {/* Global site tag (gtag.js) - Google Analytics */}
