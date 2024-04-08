@@ -54,7 +54,7 @@ export const IndexPageTemplate = ({
         <div className={styles.topContent}>
           <div className={styles.card}>
             <div className={styles.cardLeft}>
-              Apache AGE®, Graph database extention <br></br>
+              Apache AGE®, Graph database extension <br></br>
               <div className={styles.cardContent}>
                 <b>Apache AGE®</b> is a PostgreSQL extension that provides graph database functionality. <br></br><br></br>
                 The goal of <b>Apache AGE®</b> is to provide graph data processing and analytics capability to all relational databases.
