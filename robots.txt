@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /login/
+Sitemap: https://age.apache.org/sitemap.xml
