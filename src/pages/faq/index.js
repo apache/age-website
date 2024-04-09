@@ -177,7 +177,30 @@ class FAQ extends React.Component {
       ),
     },  
 
+        { id: 18, question: 'Q 18 : Can Apache AGE be used alongside other PostgreSQL extensions?',
+      answer: () => (
+        <>
+          <p>Yes. AGE uses its own namespace for tables, functions, and other database objects to avoid potential conflicts. Cypher queries are invoked by the "cypher()" function which returns a set of rows. The column values of those rows are usually in "agtype". AGE provides the functionality to cast "agtype" to a PostgreSQL type in most cases. So, AGE can be used together with other extensions.</p>
+        </>
+      ),
+    },  
 
+        { id: 19, question: 'Q 19 : Does Apache AGE provide support for data replication and synchronization in distributed environments?',
+      answer: () => (
+        <>
+          <p>Apache AGE has been tested with Citus. Due to inherited tables not being supported by Citus, Apache AGE tables cannot be distributed with Citus yet. However, it may be supported in future.</p>
+        </>
+      ),
+    },  
+
+        { id: 20, question: 'Q 20 : Are there any known interoperability issues between Apache AGE and other PostgreSQL extensions or tools?',
+      answer: () => (
+        <>
+          <p>No interoperability issue has been reported so far.</p>
+        </>
+      ),
+    },  
+        
       // 여기에 추가 질문과 답변을 넣을 수 있습니다.
     ];
     const { openItemId } = this.state;
