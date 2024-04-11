@@ -7,7 +7,9 @@ bannerContents: >-
   Graph Database for PostgreSQL</h1>
 
   <h2 class="bannercontnet"><span>
+
   Apache AGE is a PostgreSQL Graph database compatible with PostgreSQL's distributed assets and leverages graph data structures to analyze and use relationships and patterns in data.
+
   </span> <br/>
   <br>
 
