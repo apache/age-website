@@ -54,9 +54,9 @@ export const IndexPageTemplate = ({
         <div className={styles.topContent}>
           <div className={styles.card}>
             <div className={styles.cardLeft}>
-              Apache AGE®, Graph database extension <br></br>
+              Apache AGE®, Graph database <br></br>
               <div className={styles.cardContent}>
-                <b>Apache AGE®</b> is a PostgreSQL extension that provides graph database functionality. <br></br><br></br>
+                <b>Apache AGE®</b> is a PostgreSQL that provides graph database functionality. <br></br><br></br>
                 The goal of <b>Apache AGE®</b> is to provide graph data processing and analytics capability to all relational databases.
                 <br></br><br></br>
                 Through Apache AGE, PostgreSQL users will gain access to graph query modeling within the existing relational database.
@@ -158,7 +158,7 @@ export const IndexPageTemplate = ({
               <div className={styles.content}>
                 <h2>Comparison of Apache AGE, PostGraphile, and Hasura</h2><br></br><br></br>
                 <p>
-                <h3><b>◾ Apache AGE: Graph Database Extension for PostgreSQL</b></h3>
+                <h3><b>◾ Apache AGE: Graph Database for PostgreSQL</b></h3>
                 Apache AGE extends PostgreSQL, transforming it into a graph database.
                 This enables handling complex data relationships and graph structures, supplemented by the power of Cypher queries for graph-specific operations.<br></br><br></br>
                 
