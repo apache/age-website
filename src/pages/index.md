@@ -1,11 +1,10 @@
 ---
 templateKey: index-page
 title: Apache AGE | Graph Database Extension for PostgreSQL
-bannerImg: /img/landing-banner.png
+bannerImg: /img/landing-banner.webp
 bannerContents: >-
   <h1 class="bannerHeader"><span>Apache AGE</span></br>
-  Graph Database Extension</br> 
-  for PostgreSQL</h1>
+  Graph Database for PostgreSQL</h1>
 
   <h2 class="bannercontnet"><span>
   Apache AGE is PostgreSQL Graph database extension compatible with PostgreSQL's distributed assets and leverages graph data structures to analyze and use relationships and patterns in data.
