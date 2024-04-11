@@ -126,10 +126,23 @@ export const IndexPageTemplate = ({
           </section>
           */ }
           
-            <section>
+
+          <section>
               <div className={styles.card1}>
                 <div className={styles.content}>
                   <h2><b>This week's article by community</b></h2><hr></hr>
+                    <iframe src="./img/blog2.html" style={{ border: 'none' }} width="100%" height="600" title="Embedded Page"></iframe>
+                  </div>
+              </div>
+            </section>
+
+          <div><br></br></div>
+          <div><br></br></div>
+
+          <section>
+              <div className={styles.card1}>
+                <div className={styles.content}>
+                  <h2><b>Last week's article by community</b></h2><hr></hr>
                     <iframe src="./img/blog1.html" style={{ border: 'none' }} width="100%" height="600" title="Embedded Page"></iframe>
                   </div>
               </div>
