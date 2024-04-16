@@ -45,6 +45,7 @@ const TemplateWrapper = ({ children }) => {
         '/team' : 'Team | Apache AGE',
         '/release-notes' : 'Release Notes | Apache AGE',
         '/faq' : 'FAQ | Apache AGE',
+        '/blog' : 'Blog | Apache AGE',
         '/joinus' : 'Community | Apache AGE',
         '/contribution/how' : 'Contribution | Apache AGE',
         '/contribution/guide' : 'Code Convention | Apache AGE',
@@ -73,7 +74,7 @@ const TemplateWrapper = ({ children }) => {
             <html lang="en" />
             <title>{titleNameMapper()}</title>
             <meta charset="UTF-8" /> {/* 문자 집합 선언 추가 */}
-            <link rel="icon" href={favicon} />
+            <link rel="icon" href={withPrefix('/img/favicon.png')} />
             <meta name="description" content={description} />
             {/* Global site tag (gtag.js) - Google Analytics */}
             <script async src="https://www.googletagmanager.com/gtag/js?id=G-VPCE2QF63F" />
