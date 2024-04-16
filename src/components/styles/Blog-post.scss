@@ -1,0 +1,74 @@
+@import '../../common/variable.scss';
+
+
+// Base styles for the blog post
+.blog-post {
+  font-family: 'Arial', sans-serif;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+// Title styles
+.blog-post h1 {
+  color: #ff0000;
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+// Featured image styles
+.blog-post img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+// Text content styles
+.blog-post p {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+// Tag styles
+.blog-post .tags {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.blog-post .tags li {
+  display: inline;
+  margin: 0 10px;
+}
+
+.blog-post .tags li:before {
+  content: '#';
+  color: #007bff;
+}
+
+// Visual query image styles
+.blog-post .visual-query {
+  border: 2px solid #007bff;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+// Call to Action styles
+.blog-post .call-to-action {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 4px;
+  display: block;
+  margin-top: 30px;
+  text-decoration: none;
+}
