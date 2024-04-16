@@ -200,6 +200,30 @@ class FAQ extends React.Component {
         </>
       ),
     },  
+
+        { id: 21, question: 'Q 21 : How does Apache AGE handle schema-less data or semi-structured data?',
+      answer: () => (
+        <>
+          <p>Apache AGE follows labeled-property graph model. Each vertex\edge stores its properties in a JSON-like object. As long as, your data can be prepresented in JSON object, Apache AGE can handle it.</p>
+        </>
+      ),
+    },          
+
+        { id: 22, question: 'Q 22 : Does Apache AGE support data encryption at rest and in transit?',
+      answer: () => (
+        <>
+          <p>Since Apache AGE is a PostgreSQL extension, a network connection to AGE and its internal storage is entirely based on PostgreSQL. Therefore, Postgres' encryption mechanism applies to AGE.</p>
+        </>
+      ),
+    },          
+
+        { id: 23, question: 'Q 23 : Are there any known limitations or trade-offs when using Apache AGE compared to other graph databases?',
+      answer: () => (
+        <>
+          <p>Apache AGE uses relational models under the hood. Some limitations of relation model applies to AGE, for example large amount of table joins. Though, in some cases, AGE implements custom table scan node to gain performance.</p>
+        </>
+      ),
+    },          
         
       // 여기에 추가 질문과 답변을 넣을 수 있습니다.
     ];
