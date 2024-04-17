@@ -39,6 +39,7 @@ The link below contains the following Apache AGE project:
 * The `master` branch contains the source code of the latest version of the documentation.
 * `vX.Y.Z` Branches contain the source code of the documentation of releases.
 * The `asf-site` branch contains the static webpage code, as well as the build static version of the documenation (in the `docs` folder). The `docs` folder should not be manually updated.
+* `new-web` branch is where website development work is done.
 
 
 <h2><img height="30" src="https://github.com/apache/age/raw/master/img/installation.svg">&nbsp;&nbsp;Build the documentation locally (first time)</h2>
