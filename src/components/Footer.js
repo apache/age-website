@@ -34,6 +34,9 @@ const Footer = class extends React.Component {
               <li>
                 <a href="/getstarted/quickstart">Quick Start</a>
               </li>
+              <li>
+              <a href="/faq">F A Q</a>
+            </li>
             </ul>
 
           <ul className={`${styles.Item} Item`}>
@@ -46,9 +49,6 @@ const Footer = class extends React.Component {
             </li>
             <li>
               <a href="/release-notes">Release Note</a>
-            </li>
-            <li>
-              <a href="/faq">F A Q</a>
             </li>
           </ul>
           
