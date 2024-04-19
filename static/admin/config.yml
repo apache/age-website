@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: (test)
+  repo: ( )
   branch: new-web
   commit_messages:
     create: "Create {{collection}} “{{slug}}”"

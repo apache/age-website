@@ -89,6 +89,13 @@ module.exports = {
         destination: "/",
       }
     },
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://age.apache.org`,
+        stripQueryString: true,
+      },
+    },
     "gatsby-plugin-netlify", // make sure to keep it last in the array
   ],
 };
