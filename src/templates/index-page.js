@@ -62,6 +62,7 @@ export const IndexPageTemplate = ({
                 Through Apache AGE, PostgreSQL users will gain access to graph query modeling within the existing relational database.
                 <br></br><br></br>
                 Users can read and write graph data in nodes and edges. They can also use various algorithms such as variable length and edge traversal when analyzing data.
+                <img src="/img/AGE-Architecture.webp" alt="img"></img>
               </div>
             </div>
             <div className={styles.verticalLine}>
@@ -79,18 +80,18 @@ export const IndexPageTemplate = ({
                     <div>Give feedback at the GitHub (<a href="https://github.com/apache/age/issues/1705" target="_blank" rel="noopener noreferrer">#1705</a>)</div>
                     <br></br>
 
-                <div><b>Apache AGE on Microsoft Azure PostgreSQL</b></div>
+                <div><b>Add graph store implementation for Apache AGE in langchain github</b></div>
 
-                <div>Support the integration of Microsoft Azure PostgreSQL with Apache AGE by casting your vote and feedback!</div>
+                <div>Check out the pull request for the implementation of the GraphStore class for the Apache Age graph database in the LangChain repository.</div>
                   <div>
-                    <a href="https://github.com/apache/age/issues/1524" target="_blank" rel="noopener noreferrer">Read more</a>
+                    <a href="https://github.com/langchain-ai/langchain/pull/20582" target="_blank" rel="noopener noreferrer">Read more</a>
                   </div>
 
                 <br></br>
-                <div><b>PostgresPro adapted Apache AGE</b></div>
-                <div>Apache_AGE is a Postgres Pro extension that provides graph database functionality. The goal of the project is to create single storage that can handle both relational and graph model data so that users can use standard ANSI SQL along with openCypher.</div>
+                <div><b>Proposal: Vector handling with extension(pgvector)</b></div>
+                <div>A proposal for applying PGvector to Apache AGE has been posted on GitHub. Please read and leave a comment or opinion if you are interested.</div>
                 <div>
-                  <a href="https://postgrespro.com/docs/enterprise/15/apache-age" target="_blank" rel="noopener noreferrer">Read more</a>
+                  <a href="https://github.com/apache/age/issues/1121" target="_blank" rel="noopener noreferrer">Read more</a>
 
                 </div>
 

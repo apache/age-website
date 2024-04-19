@@ -39,9 +39,6 @@
 		<loc>https://age.apache.org/overview</loc>
 	</url>
 	<url>
-		<loc>https://age.apache.org/download/apache-age-viewer-1.0.0-rc2-incubating-src.tar.gz.sha512</loc>
-	</url>
-	<url>
 		<loc>https://age.apache.org/age-manual/v0.6.0/functions/scalar_functions.html</loc>
 	</url>
 	<url>
@@ -55,9 +52,6 @@
 	</url>
 	<url>
 		<loc>https://age.apache.org/age-manual/v0.6.0/clauses/order_by.html</loc>
-	</url>
-	<url>
-		<loc>https://age.apache.org/download/apache-age-viewer-1.0.0-rc2-incubating-src.tar.gz.asc</loc>
 	</url>
 	<url>
 		<loc>https://age.apache.org/age-manual/v0.6.0/clauses/skip.html</loc>
