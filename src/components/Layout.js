@@ -60,7 +60,7 @@ const TemplateWrapper = ({ children }) => {
         '/download' : 'Download | Apache AGE',
         'https://github.com/apache/age' : 'Apache AGE Github | Apache AGE',
       }
-      return urlToTitle[pathName] ?? 'Apache AGE | Graph Database Extension for PostgreSQL';    
+      return urlToTitle[pathName] ?? 'Graph Database Apache AGE';    
     } else {
       return 'Apache AGE';
     }    
