@@ -6,7 +6,7 @@ description: How to Integrate LangChain with Apache AGE for Graph Database Appli
 featuredpost: true
 featuredimage: /img/ASF_Logo.png
 tags:
-  - LangChain
+  - LangChain.ApacheAGE
 ---
 <!--StartFragment-->
 
