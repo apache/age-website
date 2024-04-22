@@ -114,6 +114,7 @@ export const IndexPageTemplate = ({
                       <br></br>
 
                     <div><h2><b>Add graph store implementation for Apache AGE in langchain github</b></h2></div>
+
                       <div>Check out the pull request for the implementation of the GraphStore class for the Apache Age graph database in the LangChain repository.</div>
                       <div><a href="https://github.com/langchain-ai/langchain/pull/20582" target="_blank" rel="noopener noreferrer">Read more</a></div>
                       <br></br>
