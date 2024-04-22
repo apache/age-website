@@ -1,74 +1,37 @@
 @import '../../common/variable.scss';
 
+.button-back {
+  // 기본 스타일 설정
+  padding: 0.5em 1em; // 패딩
+  border: none; // 테두리 없음
+  background-color: #4CAF50; // 배경색
+  color: white; // 텍스트 색상
+  text-align: center; // 텍스트 중앙 정렬
+  text-decoration: none; // 텍스트 밑줄 없음
+  display: inline-block; // 인라인 블록 표시
+  font-size: 16px; // 폰트 크기
+  border-radius: 8px; // 모서리 둥글게
+  cursor: pointer; // 커서 포인터 모양으로 변경
 
-// Base styles for the blog post
-.blog-post {
-  font-family: 'Arial', sans-serif;
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 20px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  // 마우스 오버 시 스타일 변경
+  &:hover {
+    background-color: #45a049; // 호버 상태의 배경색
+  }
+
+  // 포커스 시 스타일 변경
+  &:focus {
+    outline: none; // 포커스 아웃라인 제거
+    box-shadow: 0 0 8px rgba(0,0,0,0.6); // 박스 그림자 추가
+  }
+
+  // 활성화(클릭) 상태 스타일
+  &:active {
+    background-color: #3e8e41; // 클릭 상태의 배경색
+    box-shadow: 0 5px #666; // 그림자 효과
+    transform: translateY(4px); // 클릭 시 살짝 아래로 이동
+  }
 }
 
-// Title styles
-.blog-post h1 {
-  color: #ff0000;
-  font-size: 28px;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-// Featured image styles
-.blog-post img {
-  width: 100%;
-  height: auto;
-  margin-bottom: 20px;
-  border-radius: 4px;
-}
-
-// Text content styles
-.blog-post p {
-  color: #666;
-  font-size: 16px;
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-// Tag styles
-.blog-post .tags {
-  list-style: none;
-  padding: 0;
-  text-align: center;
-}
-
-.blog-post .tags li {
-  display: inline;
-  margin: 0 10px;
-}
-
-.blog-post .tags li:before {
-  content: '#';
-  color: #007bff;
-}
-
-// Visual query image styles
-.blog-post .visual-query {
-  border: 2px solid #007bff;
-  padding: 10px;
-  margin-top: 20px;
-}
-
-// Call to Action styles
-.blog-post .call-to-action {
-  background-color: #007bff;
-  color: #fff;
-  padding: 10px 20px;
-  text-align: center;
-  font-weight: bold;
-  border-radius: 4px;
-  display: block;
-  margin-top: 30px;
-  text-decoration: none;
+.section {
+  padding: 5% 10%; // 상하 패딩은 0, 좌우 패딩은 10%
 }

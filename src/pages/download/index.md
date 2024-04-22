@@ -5,6 +5,11 @@ title: Downloads
 ---
 <div style="text-align: center; margin-bottom: 5rem;">
 
+<div class="subTitle" style="text-align:center;">
+Welcome to our download page! <br/>
+Find the latest version of our software below.
+</div>
+
 ## Download AGE release for PostgreSQL 16.
  
 ## The current stable version and the latest release of the graph extension is 1.5.0. 

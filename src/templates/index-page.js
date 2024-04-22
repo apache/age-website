@@ -109,21 +109,21 @@ export const IndexPageTemplate = ({
                       <div><a href="https://news.apache.org/foundation/entry/asf-project-spotlight-apache-age" target="_blank" rel="noopener noreferrer">Read More</a></div>
                       <br></br>
 
-                    <div><b>Why do you use Apache AGE? </b></div>
+                    <div><h2><b>Why do you use Apache AGE? </b></h2></div>
                       <div>Give feedback at the GitHub (<a href="https://github.com/apache/age/issues/1705" target="_blank" rel="noopener noreferrer">#1705</a>)</div>
                       <br></br>
 
-                    <div><b>Add graph store implementation for Apache AGE in langchain github</b></div>
+                    <div><h2><b>Add graph store implementation for Apache AGE in langchain github</b></h2></div>
                       <div>Check out the pull request for the implementation of the GraphStore class for the Apache Age graph database in the LangChain repository.</div>
                       <div><a href="https://github.com/langchain-ai/langchain/pull/20582" target="_blank" rel="noopener noreferrer">Read more</a></div>
                       <br></br>
 
-                    <div><b>Proposal: Vector handling with extension(pgvector)</b></div>
+                    <div><h2><b>Proposal: Vector handling with extension(pgvector)</b></h2></div>
                       <div>A proposal for applying PGvector to Apache AGE has been posted on GitHub. Please read and leave a comment or opinion if you are interested.</div>
                       <div><a href="https://github.com/apache/age/issues/1121" target="_blank" rel="noopener noreferrer">Read more</a></div>
                       <br></br>
 
-                    <div><b>Apache AGE is now compatible with PostgreSQL 16!</b></div>
+                    <div><h2><b>Apache AGE is now compatible with PostgreSQL 16!</b></h2></div>
                       <div>Check the changelog for the latest version</div>
                       <div><a href="https://github.com/apache/age/releases/tag/PG16%2Fv1.5.0-rc0" target="_blank" rel="noopener noreferrer">Read more</a></div>
                       <br></br>
