@@ -5,6 +5,11 @@ title: Downloads
 ---
 <div style="text-align: center; margin-bottom: 5rem;">
 
+<div class="subTitle" style="text-align:center;">
+Welcome to our download page! <br/>
+Find the latest version of our software below.
+</div>
+
 ## Download AGE release for PostgreSQL 16.
  
 ## The current stable version and the latest release of the graph extension is 1.5.0. 
@@ -132,11 +137,7 @@ Archives for all past versions of AGEs are available at the Apache archives
 ## Language Specific Drivers
 
 Starting with Apache AGE is very simple. You can easily select your platform and incorporate the relevant SDK into your code.
-<br/><br/>
 
-<img src="../img/age-02.png" width="50%" style="border-radius: 20px;">
-
-<br/><br/>
 
 | Built-in         |
 | --------------------- |

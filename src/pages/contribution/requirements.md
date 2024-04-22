@@ -8,6 +8,12 @@ title:
 
 # Committer Requirements
 
+Contribution to our project requires compliance with certain guidelines and standards. Please review the requirements below before making a commitment. </br>
+In addition, active participation in project discussions, constructive feedback provision, and driving the project's progress are highly encouraged. </br>
+
+___
+</br>
+
 ## 1-Continuous contributions to AGE:
 
 Committers should have a decent amount, of continuous engagement and contributions (fixing bugs, writing documentation, answering community questions) to AGE either by contributing on GitHub Repos, documentation and mailing list, etc.

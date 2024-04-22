@@ -155,7 +155,7 @@ const Footer = class extends React.Component {
           </div>
 
           <p>
-          Copyright © 2024 The Apache Software Foundation.<br></br>
+          Copyright © 2024 The Apache Software Foundation. All rights reserved.<br></br>
           The Apache Software Foundation Apache AGE, AGE, Apache, the Apache feather,
           and the Apache AGE project logo are either registered trademarks or trademarks of the Apache Software Foundation.
           </p>

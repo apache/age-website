@@ -1,0 +1,19 @@
+.articles {
+    article {
+        display: flex;
+        flex-direction: row;
+        background-color: rgb(255, 255, 255);
+        border-radius: 16px;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        header {
+            display: flex;
+
+            max-width: 500px;
+            min-width: 500px;
+        }
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+}
+
