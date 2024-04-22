@@ -27,8 +27,6 @@
   // 활성화(클릭) 상태 스타일
   &:active {
     background-color: #3e8e41; // 클릭 상태의 배경색
-    box-shadow: 0 5px #666; // 그림자 효과
-    transform: translateY(4px); // 클릭 시 살짝 아래로 이동
   }
 }
 
