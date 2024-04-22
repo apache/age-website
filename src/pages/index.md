@@ -6,7 +6,7 @@ bannerContents: >-
   <h1 class="bannerHeader"><span>Apache AGE</span></br>
   Graph Database for PostgreSQL</h1>
 
-  <h2 class="bannercontnet"><span>
+  <h2 class="bannercontent"><span>
 
   Apache AGE is a PostgreSQL Graph database compatible with PostgreSQL's distributed assets and leverages graph data structures to analyze and use relationships and patterns in data.
 
