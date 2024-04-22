@@ -62,48 +62,14 @@ export const IndexPageTemplate = ({
                 Through Apache AGE, PostgreSQL users will gain access to graph query modeling within the existing relational database.
                 <br></br><br></br>
                 Users can read and write graph data in nodes and edges. They can also use various algorithms such as variable length and edge traversal when analyzing data.
-                <img src="/img/AGE-Architecture.webp" alt="img"></img>
+
               </div>
             </div>
             <div className={styles.verticalLine}>
             </div>
             <div className={styles.cardRight}>
-              Key Updates
               <div className={styles.cardContent}>
-                <div><b>ASF PROJECT SPOTLIGHT: APACHE AGE </b></div>
-                  <div>Read the full blog post now and be a part of shaping the future of graph database technology. </div>
-                    <div>
-                    <a href="https://news.apache.org/foundation/entry/asf-project-spotlight-apache-age" target="_blank" rel="noopener noreferrer">Read More</a></div>
-                  <br></br>
-
-                <div><b>Why do you use Apache AGE? </b></div>
-                    <div>Give feedback at the GitHub (<a href="https://github.com/apache/age/issues/1705" target="_blank" rel="noopener noreferrer">#1705</a>)</div>
-                    <br></br>
-
-                <div><b>Add graph store implementation for Apache AGE in langchain github</b></div>
-
-                <div>Check out the pull request for the implementation of the GraphStore class for the Apache Age graph database in the LangChain repository.</div>
-                  <div>
-                    <a href="https://github.com/langchain-ai/langchain/pull/20582" target="_blank" rel="noopener noreferrer">Read more</a>
-                  </div>
-
-                <br></br>
-                <div><b>Proposal: Vector handling with extension(pgvector)</b></div>
-                <div>A proposal for applying PGvector to Apache AGE has been posted on GitHub. Please read and leave a comment or opinion if you are interested.</div>
-                <div>
-                  <a href="https://github.com/apache/age/issues/1121" target="_blank" rel="noopener noreferrer">Read more</a>
-
-                </div>
-
-                <br></br>
-                <div><b>Apache AGE is now compatible with PostgreSQL 16!</b></div>
-                <div>Check the changelog for the latest version</div>
-                  <div>
-
-                  <a href="https://github.com/apache/age/releases/tag/PG16%2Fv1.5.0-rc0" target="_blank" rel="noopener noreferrer">Read more</a>
-
-                  </div>
-
+                  <img src="/img/AGE-Architecture.webp" alt="img"></img>
                 <br></br>
 
               </div>
@@ -133,6 +99,42 @@ export const IndexPageTemplate = ({
           </section>
           */ }
           
+          <section>
+              <div className={styles.card1}>
+                <div className={styles.content}>
+                  <h2><b>Key Updates</b></h2><hr></hr>
+                  <div className={styles.cardContent}>
+                    <div><h2><b>ASF PROJECT SPOTLIGHT: APACHE AGE </b></h2></div>
+                      <div>Read the full blog post now and be a part of shaping the future of graph database technology. </div>
+                      <div><a href="https://news.apache.org/foundation/entry/asf-project-spotlight-apache-age" target="_blank" rel="noopener noreferrer">Read More</a></div>
+                      <br></br>
+
+                    <div><b>Why do you use Apache AGE? </b></div>
+                      <div>Give feedback at the GitHub (<a href="https://github.com/apache/age/issues/1705" target="_blank" rel="noopener noreferrer">#1705</a>)</div>
+                      <br></br>
+
+                    <div><b>Add graph store implementation for Apache AGE in langchain github</b></div>
+                      <div>Check out the pull request for the implementation of the GraphStore class for the Apache Age graph database in the LangChain repository.</div>
+                      <div><a href="https://github.com/langchain-ai/langchain/pull/20582" target="_blank" rel="noopener noreferrer">Read more</a></div>
+                      <br></br>
+
+                    <div><b>Proposal: Vector handling with extension(pgvector)</b></div>
+                      <div>A proposal for applying PGvector to Apache AGE has been posted on GitHub. Please read and leave a comment or opinion if you are interested.</div>
+                      <div><a href="https://github.com/apache/age/issues/1121" target="_blank" rel="noopener noreferrer">Read more</a></div>
+                      <br></br>
+
+                    <div><b>Apache AGE is now compatible with PostgreSQL 16!</b></div>
+                      <div>Check the changelog for the latest version</div>
+                      <div><a href="https://github.com/apache/age/releases/tag/PG16%2Fv1.5.0-rc0" target="_blank" rel="noopener noreferrer">Read more</a></div>
+                      <br></br>
+                
+                  </div>
+                </div>
+              </div>
+            </section>
+
+          <div><br></br></div>
+          <div><br></br></div>
 
           <section>
               <div className={styles.card1}>
@@ -140,31 +142,24 @@ export const IndexPageTemplate = ({
                   <h3><b>This week's article by community</b></h3><hr></hr>
 
                   <h2>Graph Database in PostgreSQL: Apache AGE</h2>
-
-              <p>
-                Graph database have gained popularity in recent years due to their ability to handle complex relationships between data. Unlike traditional relational database, which store data in tables, graph database represent data as nodes, edges, and properties. Nodes represent entities, edges represent the relationships between those entities, and properties represent the attributes of both.
-              </p>
-
-              <p>
-                PostgreSQL, a popular relational database, can also function as a graph database through the use of an extension called Apache AGE. With Apache AGE, users can leverage the flexibility and scalability of graph database while still utilizing PostgreSQL's advanced SQL querying capabilities and transaction support.
-              </p>
-
-              <p>
-                To use Apache AGE, users must first install it as an extension and then model their data as nodes and edges. Apache AGE comes with its own set of SQL extensions, similar to Cypher, that allows users to query their graph database. However, users can also still use SQL to query their graph database if desired.
-              </p>
-
-              <p>
-                For those new to graph database, Apache AGE comes with a tutorial to help them get started. Additionally, you may use the #apache-age tag for questions on Stack Overflow, join the project's Discord channel, or open an issue on GitHub, the Apache AGE community is readily available to provide support and answer questions.
-              </p>
-
-              <p>
-                Overall, graph database offer a new way of thinking about how to store and query complex relationships between data. With Apache AGE, users can easily transform their PostgreSQL database into a graph database and take advantage of the benefits that come with this type of database.
-              </p>
-
-
+                    <p>
+                      Graph database have gained popularity in recent years due to their ability to handle complex relationships between data. Unlike traditional relational database, which store data in tables, graph database represent data as nodes, edges, and properties. Nodes represent entities, edges represent the relationships between those entities, and properties represent the attributes of both.
+                    </p>
+                    <p>
+                      PostgreSQL, a popular relational database, can also function as a graph database through the use of an extension called Apache AGE. With Apache AGE, users can leverage the flexibility and scalability of graph database while still utilizing PostgreSQL's advanced SQL querying capabilities and transaction support.
+                    </p>
+                    <p>
+                      To use Apache AGE, users must first install it as an extension and then model their data as nodes and edges. Apache AGE comes with its own set of SQL extensions, similar to Cypher, that allows users to query their graph database. However, users can also still use SQL to query their graph database if desired.
+                    </p>
+                    <p>
+                      For those new to graph database, Apache AGE comes with a tutorial to help them get started. Additionally, you may use the #apache-age tag for questions on Stack Overflow, join the project's Discord channel, or open an issue on GitHub, the Apache AGE community is readily available to provide support and answer questions.
+                    </p>
+                    <p>
+                      Overall, graph database offer a new way of thinking about how to store and query complex relationships between data. With Apache AGE, users can easily transform their PostgreSQL database into a graph database and take advantage of the benefits that come with this type of database.
+                    </p>
                   </div>
               </div>
-            </section>
+          </section>
 
           <div><br></br></div>
           <div><br></br></div>
@@ -176,14 +171,15 @@ export const IndexPageTemplate = ({
                     <iframe src="./img/blog1.html" style={{ border: 'none' }} width="100%" height="600" title="Embedded Page"></iframe>
                   </div>
               </div>
-            </section>
+          </section>
 
           <div><br></br></div>
           <div><br></br></div>
           <div><br></br></div>
           <div><br></br></div>
 
-            <div className={styles.card}>
+          <section>
+            <div className={styles.card1}>
 
               <div className={styles.content}>
                 <h2>Comparison of Apache AGE, PostGraphile, and Hasura</h2><br></br><br></br>
@@ -225,6 +221,7 @@ export const IndexPageTemplate = ({
 
                 </div>
               </div>
+            </section>
 
           <div><br></br></div>
           <div><br></br></div>

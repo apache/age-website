@@ -50,6 +50,9 @@ const Footer = class extends React.Component {
             <li>
               <a href="/release-notes">Release Note</a>
             </li>
+            <li>
+              <a href="/blog">Blog</a>
+            </li>
           </ul>
           
           <ul className={`${styles.Item} Item`}>
