@@ -4,7 +4,7 @@ title: How to Integrate LangChain with Apache AGE for Graph Database Application
 date: 2024-04-21T23:25:01.575Z
 description: How to Integrate LangChain with Apache AGE for Graph Database Applications
 featuredpost: true
-featuredimage: /img/ASF_Logo.svg
+featuredimage: 
 tags:
   - LangChain
 ---
