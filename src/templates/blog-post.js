@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet";
 import { graphql, Link, navigate } from "gatsby"; // 'navigate'를 임포트합니다.
 import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
-import style from "../components/styles/blog-post.scss"
+import style from "../components/styles/Blog-post.scss"
 
 // eslint-disable-next-line
 export const BlogPostTemplate = ({
