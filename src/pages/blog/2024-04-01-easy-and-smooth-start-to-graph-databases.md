@@ -4,7 +4,7 @@ title: Easy and Smooth Start to Graph Databases
 date: 2024-04-01T17:00:00Z
 description:
 featuredpost: true
-featuredimage: '/img/blogimg01.png'
+featuredimage: 
 tags: 
   - Apache AGE
   - Graph Database

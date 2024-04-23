@@ -4,7 +4,7 @@
   // 기본 스타일 설정
   padding: 0.5em 1em; // 패딩
   border: none; // 테두리 없음
-  background-color: #4CAF50; // 배경색
+  background-color: #B8145A; // 배경색
   color: white; // 텍스트 색상
   text-align: center; // 텍스트 중앙 정렬
   text-decoration: none; // 텍스트 밑줄 없음
@@ -15,7 +15,7 @@
 
   // 마우스 오버 시 스타일 변경
   &:hover {
-    background-color: #45a049; // 호버 상태의 배경색
+    background-color: #B8145A; // 호버 상태의 배경색
   }
 
   // 포커스 시 스타일 변경
@@ -26,10 +26,10 @@
 
   // 활성화(클릭) 상태 스타일
   &:active {
-    background-color: #3e8e41; // 클릭 상태의 배경색
+    background-color: #B8145A; // 클릭 상태의 배경색
   }
 }
 
 .section {
-  padding: 5% 10%; // 상하 패딩은 0, 좌우 패딩은 10%
+  padding: 1% 10%; // 상하 패딩은 0, 좌우 패딩은 10%
 }

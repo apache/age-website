@@ -6,7 +6,8 @@ description: |-
   Combating cyber attack with Apache AGE's link
   analysis.
 featuredpost: true
-featuredimage: /img/logo.png
+featuredimage: 
+
 ---
 <!--StartFragment-->
 

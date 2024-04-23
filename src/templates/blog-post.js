@@ -7,6 +7,9 @@ import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
 import style from "../components/styles/Blog-post.scss"
 
+// 블로그 글 게시하는 곳에 대한 내용
+
+
 // eslint-disable-next-line
 export const BlogPostTemplate = ({
   content,

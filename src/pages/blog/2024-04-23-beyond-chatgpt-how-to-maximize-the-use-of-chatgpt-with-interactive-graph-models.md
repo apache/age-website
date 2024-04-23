@@ -6,7 +6,8 @@ date: 2024-04-23T01:18:22.687Z
 description: "Beyond ChatGPT: How to Maximize the Use of ChatGPT with
   Interactive Graph Models."
 featuredpost: true
-featuredimage: /img/logo.png
+featuredimage: 
+
 ---
 <!--StartFragment-->
 
