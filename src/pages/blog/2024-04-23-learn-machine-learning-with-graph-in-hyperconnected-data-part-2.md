@@ -4,7 +4,7 @@ title: Learn Machine Learning with Graph in Hyperconnected Data (Part 2.)
 date: 2024-04-23T02:13:19.760Z
 description: Learn Machine Learning with Graph in Hyperconnected Data (Part 2.)
 featuredpost: true
-featuredimage: /img/logo.png
+featuredimage: 
 ---
 <!--StartFragment-->
 

@@ -3,10 +3,9 @@ templateKey: blog-post
 title: "From Data to Connections: Leveraging Hyperconnectivity in E-commerce
   Data (Part 1.)"
 date: 2024-04-23T02:11:47.653Z
-description: "From Data to Connections: Leveraging Hyperconnectivity in
-  E-commerce Data (Part 1.)"
+description: "From Data to Connections: Leveraging Hyperconnectivity in E-commerce Data (Part 1.)"
 featuredpost: true
-featuredimage: /img/logo.png
+featuredimage: 
 ---
 
 

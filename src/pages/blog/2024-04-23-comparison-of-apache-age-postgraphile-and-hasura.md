@@ -4,7 +4,7 @@ title: Comparison of Apache AGE, PostGraphile, and Hasura
 date: 2024-04-23T02:17:02.242Z
 description: Comparison of Apache AGE, PostGraphile, and Hasura
 featuredpost: true
-featuredimage: /img/logo.png
+featuredimage: 
 ---
 <!--StartFragment-->
 
