@@ -9,7 +9,7 @@ description: >
 
   This article will explore how to set up Amazon Web Services (AWS), deploy the Apache AGE Docker image, and query the PostgreSQL database running in the Docker container on Amazon Web Services (AWS).
 featuredpost: true
-featuredimage: /img/logo.png
+featuredimage:
 ---
 <!--StartFragment-->
 

@@ -11,7 +11,7 @@ description: >
   relational data (tables) and graph data, which is a key strength setting it
   apart from Neo4j.
 featuredpost: true
-featuredimage: /img/logo.png
+featuredimage:
 ---
 <!--StartFragment-->
 
