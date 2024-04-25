@@ -1,10 +1,9 @@
 ---
 templateKey: index-page
-title: Apache AGE | Graph Database for PostgreSQL
+title: Apache AGE | Apache AGE Graph Database for PostgreSQL
 bannerImg: /img/background.webp
 bannerContents: >-
-  <h1 class="bannerHeader"><span>Apache AGE</span></br>
-  Graph Database for PostgreSQL</h1>
+  <h1 class="bannerHeader"><span>Apache AGE</span></br> Graph Database for PostgreSQL</h1>
 
   <h2 class="bannercontent"><span>
 
