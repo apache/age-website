@@ -5,9 +5,10 @@ date: 2024-05-01T08:26:14.983Z
 description: |
   Understanding the World of Graph Databases
 featuredpost: true
-featuredimage: /img/logo.png
+featuredimage: 
 tags:
   - Apache AGE
+  - Graph Database
 ---
 <!--StartFragment-->
 
