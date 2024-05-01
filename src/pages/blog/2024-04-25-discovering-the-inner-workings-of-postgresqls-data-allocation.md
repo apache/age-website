@@ -10,7 +10,7 @@ description: PostgreSQL is a true gem among open-source relational database
   allocation process to reveal its inner workings and discover how it ensures
   optimal performance and reliability.
 featuredpost: true
-featuredimage: 
+featuredimage: /img/logo.png
 ---
 <!--StartFragment-->
 
