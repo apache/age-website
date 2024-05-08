@@ -3,7 +3,7 @@ templateKey: blog-post
 title: How to Deploy Apache AGE Docker Image on AWS
 date: 2024-04-25T08:37:04.997Z
 description: >
-  Apache AGE is a PostgreSQL extension that provides graph database
+  Apache AGE™ is a PostgreSQL extension that provides graph database
   functionality. Apache AGE provides graph data processing and analytics
   capability to all relational databases. 
 
@@ -13,7 +13,7 @@ featuredimage:
 ---
 <!--StartFragment-->
 
-Apache AGE is a PostgreSQL extension that provides graph database functionality. Apache AGE provides graph data processing and analytics capability to all relational databases. 
+Apache AGE™ is a PostgreSQL extension that provides graph database functionality. Apache AGE provides graph data processing and analytics capability to all relational databases. 
 
 This article will explore how to set up Amazon Web Services (AWS), deploy the Apache AGE Docker image, and query the PostgreSQL database running in the Docker container on Amazon Web Services (AWS).
 
