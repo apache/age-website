@@ -27,9 +27,9 @@
     <name>Apache AGE</name>
     <homepage rdf:resource="https://age.apache.org/" />
     <asfext:pmc rdf:resource="https://age.apache.org" />
-    <shortdesc>Apache AGE® is a PostgreSQL extension that provides graph database functionality.
+    <shortdesc>Apache AGE is a PostgreSQL extension that provides graph database functionality.
 </shortdesc>
-    <description>The goal of Apache AGE® is to provide graph data processing and analytics capability to all relational databases.
+    <description>The goal of Apache AGE is to provide graph data processing and analytics capability to all relational databases.
 
 Through Apache AGE, PostgreSQL users will gain access to graph query modeling within the existing relational database.
 </description>
