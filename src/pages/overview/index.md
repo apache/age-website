@@ -10,7 +10,7 @@ bannerContents: >-
   # Introduction of AGE
   
   # (A Graph Extension)
-title: What is Apache AGE®?
+title: What is Apache AGE?
 subcon: >-
   <br /><br />
 
@@ -20,13 +20,13 @@ subcon: >-
   # Key Features
 ---
 
-**Apache AGE®** is a PostgreSQL extension that provides graph database functionality. The goal of Apache AGE is to enable Postgres users to gain access to graph query modeling in Postgres’ existing relational model.
+**Apache AGE** is a PostgreSQL extension that provides graph database functionality. The goal of Apache AGE is to enable Postgres users to gain access to graph query modeling in Postgres’ existing relational model.
 
-**Apache AGE®** is a Top-Level Project of the Apache Software Foundation since May 2022. It is licensed under the Apache License 2.0.
+**Apache AGE** is a Top-Level Project of the Apache Software Foundation since May 2022. It is licensed under the Apache License 2.0.
 
 Below is a brief overview of the AGE architecture, similar to the PostgreSQL architecture and backend. Every component runs on the PostgreSQL transaction cache layer and storage layer.
 
-**Apache AGE®** will be compatible with all relational databases in the future development, starting with MariaDB and MySQL.
+**Apache AGE** will be compatible with all relational databases in the future development, starting with MariaDB and MySQL.
 
 <br /><br /><br />
 
