@@ -224,6 +224,22 @@ class FAQ extends React.Component {
         </>
       ),
     },          
+
+        { id: 24, question: 'Q 24 : Can Apache AGE be deployed in a cloud environment, and if so, are there any specific considerations or best practices?',
+      answer: () => (
+        <>
+          <p>Apache AGE can be deployed in a compute engine like EC2 instance.</p>
+        </>
+      ),
+    },       
+
+        { id: 25, question: 'Q 25 : Are there any restrictions or limitations on the types of data that can be stored in Apache AGE?',
+      answer: () => (
+        <>
+          <p>Generally, no. Anything that can be stored in a JSON object can be stored in Apache AGE.</p>
+        </>
+      ),
+    },      
         
       // 여기에 추가 질문과 답변을 넣을 수 있습니다.
     ];
