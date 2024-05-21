@@ -1,7 +1,9 @@
 .mainContent {
     padding: 2rem;
-    max-width: 1800px;
+    max-width: 1920px;
     margin: 0 auto;
+    padding-left: 10%;  // 왼쪽에 공백을 추가합니다.
+    padding-right: 10%; // 오른쪽에 공백을 추가합니다.
   }
   
   .article {
