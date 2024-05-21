@@ -4,7 +4,7 @@ title: "Basic Understanding: What is a Container?"
 date: 2024-05-21T01:58:05.801Z
 description: "Basic Understanding: What is a Container?"
 featuredpost: true
-featuredimage: /img/banner-landing.jpg
+featuredimage: 
 tags:
   - Docker
 ---

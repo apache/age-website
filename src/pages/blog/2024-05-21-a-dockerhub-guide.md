@@ -4,7 +4,7 @@ title: A DockerHub Guide
 date: 2024-05-21T01:55:07.192Z
 description: A DockerHub Guide
 featuredpost: false
-featuredimage: /img/banner-landing.jpg
+featuredimage: 
 ---
 <!--StartFragment-->
 

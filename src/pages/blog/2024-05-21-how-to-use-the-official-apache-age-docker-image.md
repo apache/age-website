@@ -4,7 +4,7 @@ title: How to use the official Apache AGE docker image
 date: 2024-05-21T02:02:13.071Z
 description: How to use the official Apache AGE docker image
 featuredpost: true
-featuredimage: /img/banner-landing.jpg
+featuredimage: 
 ---
 <!--StartFragment-->
 

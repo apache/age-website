@@ -4,7 +4,7 @@ title: A Beginner's Guide to Downloading Docker
 date: 2024-05-21T01:56:54.293Z
 description: A Beginner's Guide to Downloading Docker
 featuredpost: true
-featuredimage: /img/banner-landing.jpg
+featuredimage: 
 ---
 <!--StartFragment-->
 

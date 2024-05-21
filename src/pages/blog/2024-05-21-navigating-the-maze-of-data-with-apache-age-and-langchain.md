@@ -4,7 +4,7 @@ title: Navigating the Maze of Data with Apache AGE and LangChain
 date: 2024-05-21T01:59:40.664Z
 description: Navigating the Maze of Data with Apache AGE and LangChain
 featuredpost: true
-featuredimage: /img/banner-landing.jpg
+featuredimage: 
 ---
 <!--StartFragment-->
 
