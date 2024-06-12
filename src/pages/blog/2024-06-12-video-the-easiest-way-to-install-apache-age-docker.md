@@ -8,11 +8,12 @@ featuredimage:
 ---
 <!--StartFragment-->
 
-
-<video width="1280" height="720" controls autoplay>
-  <source src="../../../static/img/The Easiest Way to Install Apache AGE Docker.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+<div style="display: flex; justify-content: center; align-items: center; height: 80vh;">
+  <video width="1280" height="720" controls autoplay>
+    <source src="../../../static/img/The Easiest Way to Install Apache AGE Docker.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
 
 
 <!--EndFragment-->
