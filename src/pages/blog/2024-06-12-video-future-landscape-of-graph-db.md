@@ -1,9 +1,9 @@
 ---
 templateKey: blog-post
-title: "[ Video ] Future Landscape of Graph DB"
+title: "[ Video ] Community Support"
 date: 2024-06-12T01:49:43.224Z
-description: Future Landscape of Graph DB
+description: Community Support
 featuredpost: true
 featuredimage: /img/to-be-continued...png
 ---
-Future Landscape of Graph DB
+Community Support
