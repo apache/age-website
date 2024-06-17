@@ -4,7 +4,7 @@ title: Integrating Apache AGE with Python
 date: 2024-06-17T07:00:30.672Z
 description: Integrating Apache AGE with Python
 featuredpost: true
-featuredimage: /img/to-be-continued...png
+featuredimage: 
 ---
 <!--StartFragment-->
 
