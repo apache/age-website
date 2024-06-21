@@ -14,7 +14,11 @@ featuredimage:
 </div>
 </br>
 
+<<<<<<< HEAD
 ***1 st : Introduction:***
+=======
+**1 st : Introduction:**</br>
+>>>>>>> dda9f157e38945d1fac4e72faafcf28d9b92eb47
 Introduction. The rise of graph databases. Data is everywhere. It&#39;s the lifeblood of our digital age,
 but data alone is not enough. We need to understand the relationships within data to unlock its
 true potential. This is where graph databases come into play. Unlike traditional databases, graph
@@ -29,13 +33,21 @@ complex queries with remarkable speed.
 
 <div style="display: flex; justify-content: center; align-items: center; ">
   <video width="960" height="540" controls>
+<<<<<<< HEAD
     <source src="../../../static/img/f_2" type="video/mp4">
+=======
+    <source src="../../../static/img/f_2.mp4" type="video/mp4">
+>>>>>>> dda9f157e38945d1fac4e72faafcf28d9b92eb47
     Your browser does not support the video tag.
   </video>
 </div>
 </br>
 
+<<<<<<< HEAD
 2 nd : Understanding the essence of graph structures
+=======
+**2 nd : Understanding the essence of graph structures**</br>
+>>>>>>> dda9f157e38945d1fac4e72faafcf28d9b92eb47
 Understanding the essence of graph structures. At the heart of every graph database lie three
 fundamental concepts. Nodes, edges and properties. These elements work together to represent
 and organize data in a way that mirrors the interconnected nature of information in the real
@@ -70,14 +82,23 @@ needed to enhance your data analysis within PostgreSQL.
 
 <div style="display: flex; justify-content: center; align-items: center; ">
   <video width="960" height="540" controls>
+<<<<<<< HEAD
     <source src="../../../static/img/f_3" type="video/mp4">
+=======
+    <source src="../../../static/img/f_3.mp4" type="video/mp4">
+>>>>>>> dda9f157e38945d1fac4e72faafcf28d9b92eb47
     Your browser does not support the video tag.
   </video>
 </div>
 </br>
 
+<<<<<<< HEAD
 3 rd : PostgreSQL with Apache Age, a powerful combination. While graph databases offer a
 compelling approach to managing relationships, many organizations have existing investments in
+=======
+**3 rd : PostgreSQL with Apache Age, a powerful combination.**</br> 
+While graph databases offer a compelling approach to managing relationships, many organizations have existing investments in
+>>>>>>> dda9f157e38945d1fac4e72faafcf28d9b92eb47
 relational databases like PostgreSQL. Fortunately, Apache Age brings the power of
 graph databases directly into the familiar realm of PostgreSQL, offering a seamless way to
 integrate graph capabilities into existing SQL-based workflows. Apache Edge extends
@@ -94,4 +115,10 @@ intuitive. Apache Edge allows you to use Open Cypher queries directly within you
 environment.
 This powerful combination enables you to perform complex graph traversals, pattern matching
 This powerful combination enables you to perform complex graph traversals, pattern matching
+<<<<<<< HEAD
 and analysis, all while leveraging the robustness and familiarity of PostgreSQL.
+=======
+and analysis, all while leveraging the robustness and familiarity of PostgreSQL.
+
+</br>
+>>>>>>> dda9f157e38945d1fac4e72faafcf28d9b92eb47
