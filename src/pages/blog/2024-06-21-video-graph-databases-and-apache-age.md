@@ -2,18 +2,19 @@
 templateKey: blog-post
 title: "[ Video ] Graph databases and Apache AGE"
 date: 2024-06-21T01:17:22.666Z
-description: Graph databases and Apache AGE
+description: 
 featuredpost: true
-featuredimage: /img/to-be-continued...png
+featuredimage: 
 ---
 <div style="display: flex; justify-content: center; align-items: center; ">
-  <video width="960" height="540" controls autoplay>
+  <video width="960" height="540" controls>
     <source src="../../../static/img/Future Landscape of Graph DB.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </div>
+</br>
 
-**1 st : Introduction:**
+***1 st : Introduction:***
 Introduction. The rise of graph databases. Data is everywhere. It&#39;s the lifeblood of our digital age,
 but data alone is not enough. We need to understand the relationships within data to unlock its
 true potential. This is where graph databases come into play. Unlike traditional databases, graph
@@ -23,14 +24,16 @@ engines, and fraud detection. Each user is an entity, and their connections are 
 Each user is an entity, and their connections are the relationships. Graph databases can answer
 complex queries with remarkable speed.
 
-
+---
+</br>
 
 <div style="display: flex; justify-content: center; align-items: center; ">
-  <video width="960" height="540" controls autoplay>
+  <video width="960" height="540" controls>
     <source src="../../../static/img/Future Landscape of Graph DB.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </div>
+</br>
 
 2 nd : Understanding the essence of graph structures
 Understanding the essence of graph structures. At the heart of every graph database lie three
@@ -62,14 +65,16 @@ insights and patterns. making it easier to uncover insights and patterns. Whethe
 on social networks, recommendation systems, or fraud detection, Apache Age provides the tools
 needed to enhance your data analysis within PostgreSQL.
 
-
+---
+</br>
 
 <div style="display: flex; justify-content: center; align-items: center; ">
-  <video width="960" height="540" controls autoplay>
+  <video width="960" height="540" controls>
     <source src="../../../static/img/Future Landscape of Graph DB.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </div>
+</br>
 
 3 rd : PostgreSQL with Apache Age, a powerful combination. While graph databases offer a
 compelling approach to managing relationships, many organizations have existing investments in
