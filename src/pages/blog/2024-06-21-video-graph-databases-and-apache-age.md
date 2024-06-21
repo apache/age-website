@@ -8,7 +8,7 @@ featuredimage:
 ---
 <div style="display: flex; justify-content: center; align-items: center; ">
   <video width="960" height="540" controls>
-    <source src="../../../static/img/Future Landscape of Graph DB.mp4" type="video/mp4">
+    <source src="../../../static/img/f_1.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </div>
@@ -29,7 +29,7 @@ complex queries with remarkable speed.
 
 <div style="display: flex; justify-content: center; align-items: center; ">
   <video width="960" height="540" controls>
-    <source src="../../../static/img/Future Landscape of Graph DB.mp4" type="video/mp4">
+    <source src="../../../static/img/f_2" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </div>
@@ -70,7 +70,7 @@ needed to enhance your data analysis within PostgreSQL.
 
 <div style="display: flex; justify-content: center; align-items: center; ">
   <video width="960" height="540" controls>
-    <source src="../../../static/img/Future Landscape of Graph DB.mp4" type="video/mp4">
+    <source src="../../../static/img/f_3" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </div>
