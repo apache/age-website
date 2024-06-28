@@ -9,457 +9,562 @@
 
 <url>
   <loc>https://age.apache.org/</loc>
-  <lastmod>2024-04-23T01:40:00+00:00</lastmod>
+  <lastmod>2024-06-12T20:32:34+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://age.apache.org/download/</loc>
-  <lastmod>2024-04-23T01:40:00+00:00</lastmod>
+  <lastmod>2024-06-12T20:32:34+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://age.apache.org/getstarted/quickstart/</loc>
-  <lastmod>2024-04-23T01:40:00+00:00</lastmod>
+  <lastmod>2024-06-12T20:32:34+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://age.apache.org/faq/</loc>
-  <lastmod>2024-04-23T01:40:00+00:00</lastmod>
+  <lastmod>2024-06-12T20:32:34+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://age.apache.org/overview/</loc>
-  <lastmod>2024-04-23T01:40:00+00:00</lastmod>
+  <lastmod>2024-06-12T20:32:34+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://age.apache.org/team/</loc>
-  <lastmod>2024-04-23T01:40:00+00:00</lastmod>
+  <lastmod>2024-06-12T20:32:34+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://age.apache.org/release-notes/</loc>
-  <lastmod>2024-04-23T01:40:00+00:00</lastmod>
+  <lastmod>2024-06-12T20:32:34+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://age.apache.org/blog/</loc>
-  <lastmod>2024-04-23T01:40:00+00:00</lastmod>
+  <lastmod>2024-06-21T14:32:49+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://age.apache.org/joinus/</loc>
-  <lastmod>2024-04-23T01:40:00+00:00</lastmod>
+  <lastmod>2024-06-12T20:32:34+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://age.apache.org/contribution/how/</loc>
-  <lastmod>2024-04-23T01:40:00+00:00</lastmod>
+  <lastmod>2024-06-12T20:32:34+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://age.apache.org/contribution/guide/</loc>
-  <lastmod>2024-04-23T01:40:00+00:00</lastmod>
+  <lastmod>2024-06-12T20:32:34+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://age.apache.org/contribution/requirements/</loc>
-  <lastmod>2024-04-23T01:40:00+00:00</lastmod>
+  <lastmod>2024-06-12T20:32:34+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://age.apache.org/contribution/process/</loc>
-  <lastmod>2024-04-23T01:40:00+00:00</lastmod>
+  <lastmod>2024-06-12T20:32:34+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/master/intro/overview.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/master/intro/setup.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/master/clauses/match.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/master/functions/predicate_functions.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/master/advanced/advanced_overview.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://age.apache.org/img/blog1.html</loc>
-  <lastmod>2024-04-11T05:48:59+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>https://age.apache.org/blog/2024-06-21-video-graph-databases-and-apache-age/</loc>
+  <lastmod>2024-06-21T14:32:49+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://age.apache.org/blog/2024-06-17-integrating-apache-age-with-python/</loc>
+  <lastmod>2024-06-21T14:32:49+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://age.apache.org/blog/2024-06-12-video-future-landscape-of-graph-db/</loc>
+  <lastmod>2024-06-12T20:32:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://age.apache.org/blog/2024-06-12-video-community-support/</loc>
+  <lastmod>2024-06-12T20:32:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://age.apache.org/blog/2024-06-12-video-beginners-guide/</loc>
+  <lastmod>2024-06-12T20:32:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://age.apache.org/blog/2024-06-12-video-the-easiest-way-to-install-apache-age-docker/</loc>
+  <lastmod>2024-06-12T20:32:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://age.apache.org/blog/2024-06-12-integrating-apache-age-docker-image-and-pgadmin-4-a-step-by-step-guide/</loc>
+  <lastmod>2024-06-12T20:32:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://age.apache.org/blog/2024-05-21-how-to-use-the-official-apache-age-docker-image/</loc>
+  <lastmod>2024-06-12T20:32:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://age.apache.org/blog/2024-05-21-navigating-the-maze-of-data-with-apache-age-and-langchain/</loc>
+  <lastmod>2024-06-12T20:32:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://age.apache.org/blog/2024-05-21-basic-understanding-what-is-a-container/</loc>
+  <lastmod>2024-06-12T20:32:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://age.apache.org/blog/2024-05-21-a-beginners-guide-to-downloading-docker/</loc>
+  <lastmod>2024-06-12T20:32:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://age.apache.org/blog/2024-05-21-a-dockerhub-guide/</loc>
+  <lastmod>2024-06-12T20:32:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://age.apache.org/blog/2024-05-01-what-is-a-graph-database/</loc>
+  <lastmod>2024-06-12T20:32:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://age.apache.org/blog/2024-04-25-how-to-deploy-apache-age-docker-image-on-aws/</loc>
+  <lastmod>2024-06-12T20:32:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://age.apache.org/blog/2024-04-25-seamless-data-migration-migrating-apache-age-data-between-different-versions-of-postgresql/</loc>
+  <lastmod>2024-06-12T20:32:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://age.apache.org/blog/2024-04-25-discovering-the-inner-workings-of-postgresqls-data-allocation/</loc>
+  <lastmod>2024-06-12T20:32:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://age.apache.org/blog/2024-04-23-comparison-of-apache-age-postgraphile-and-hasura/</loc>
+  <lastmod>2024-06-12T20:32:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://age.apache.org/blog/2024-04-23-graph-database-in-postgresql-apache-age/</loc>
+  <lastmod>2024-06-12T20:32:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://age.apache.org/blog/2024-04-23-learn-machine-learning-with-graph-in-hyperconnected-data-part-2/</loc>
+  <lastmod>2024-06-12T20:32:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://age.apache.org/blog/2024-04-23-from-data-to-connections-leveraging-hyperconnectivity-in-e-commerce-data-part-1/</loc>
+  <lastmod>2024-06-12T20:32:34+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>https://age.apache.org/blog/2024-04-23-combating-cyber-attack-with-apache-ages-link-analysis/</loc>
-  <lastmod>2024-04-23T01:40:00+00:00</lastmod>
+  <lastmod>2024-06-12T20:32:34+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://age.apache.org/blog/2024-04-23-beyond-chatgpt-how-to-maximize-the-use-of-chatgpt-with-interactive-graph-models/</loc>
-  <lastmod>2024-04-23T01:40:00+00:00</lastmod>
+  <lastmod>2024-06-12T20:32:34+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://age.apache.org/blog/2024-04-21-how-to-integrate-langchain-with-apache-age-for-graph-database-applications/</loc>
-  <lastmod>2024-04-23T01:40:00+00:00</lastmod>
+  <lastmod>2024-06-12T20:32:34+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://age.apache.org/blog/blog_240401/</loc>
-  <lastmod>2024-04-23T01:40:00+00:00</lastmod>
+  <loc>https://age.apache.org/blog/2024-04-01-easy-and-smooth-start-to-graph-databases/</loc>
+  <lastmod>2024-06-12T20:32:34+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/master/index.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/master/intro/graphs.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/master/intro/cypher.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/master/intro/types.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/master/intro/comparability.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/master/intro/operators.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/master/intro/aggregation.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/master/intro/agload.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/master/clauses/with.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/master/clauses/return.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/master/clauses/order_by.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/master/clauses/skip.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/master/clauses/limit.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/master/clauses/create.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/master/clauses/delete.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/master/clauses/set.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/master/clauses/remove.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/master/clauses/merge.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/master/functions/scalar_functions.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/master/functions/list_functions.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/master/functions/numeric_functions.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/master/functions/logarithmic_functions.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/master/functions/trigonometric_functions.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/master/functions/string_functions.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/master/functions/aggregate_functions.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/master/functions/user_functions.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/master/advanced/advanced.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/master/advanced/prepared_statements.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/master/advanced/plpgsql.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/master/advanced/sql_in_cypher.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/master/contributing/run_tests.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/v0.6.0/index.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://age.apache.org/tags/lang-chain-apache-age/</loc>
-  <lastmod>2024-04-23T01:40:00+00:00</lastmod>
+  <loc>https://age.apache.org/tags/docker/</loc>
+  <lastmod>2024-06-12T20:32:34+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://age.apache.org/tags/apache-age/</loc>
-  <lastmod>2024-04-23T01:40:00+00:00</lastmod>
+  <lastmod>2024-06-12T20:32:34+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://age.apache.org/tags/graph-database/</loc>
-  <lastmod>2024-04-23T01:40:00+00:00</lastmod>
+  <lastmod>2024-06-12T20:32:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://age.apache.org/tags/postgre-sql/</loc>
+  <lastmod>2024-06-12T20:32:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://age.apache.org/tags/lang-chain-apache-age/</loc>
+  <lastmod>2024-06-12T20:32:34+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/v0.6.0/intro/overview.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/v0.6.0/intro/setup.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/v0.6.0/intro/graphs.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/v0.6.0/intro/cypher.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/v0.6.0/intro/types.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/v0.6.0/intro/comparability.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/v0.6.0/intro/operators.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/v0.6.0/intro/aggregation.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/v0.6.0/clauses/match.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/v0.6.0/clauses/with.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/v0.6.0/clauses/return.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/v0.6.0/clauses/order_by.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/v0.6.0/clauses/skip.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/v0.6.0/clauses/limit.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/v0.6.0/clauses/create.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/v0.6.0/clauses/set.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/v0.6.0/clauses/remove.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/v0.6.0/clauses/delete.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/v0.6.0/functions/predicate_functions.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/v0.6.0/functions/scalar_functions.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/v0.6.0/functions/list_functions.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/v0.6.0/functions/numeric_functions.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/v0.6.0/functions/logarithmic_functions.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/v0.6.0/functions/trigonometric_functions.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/v0.6.0/functions/string_functions.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/v0.6.0/functions/aggregate_functions.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/v0.6.0/functions/user_functions.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/v0.6.0/advanced/advanced_overview.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/v0.6.0/advanced/advanced.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/v0.6.0/advanced/prepared_statements.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/v0.6.0/advanced/plpgsql.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://age.apache.org/age-manual/v0.6.0/advanced/sql_in_cypher.html</loc>
-  <lastmod>2024-04-23T01:40:26+00:00</lastmod>
+  <lastmod>2024-06-21T14:33:20+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://age.apache.org/tags/</loc>
-  <lastmod>2024-04-23T01:40:00+00:00</lastmod>
+  <lastmod>2024-06-12T20:32:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 
