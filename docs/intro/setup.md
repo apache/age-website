@@ -58,6 +58,25 @@ Replace `15` with the desired PostgreSQL version if different.
 
 Clone the [Apache AGE GitHub repository](https://github.com/apache/age) or [download an official release](https://github.com/apache/age/releases).
 
+Make sure the source code version is compatible with your PostgreSQL version.
+For example, if your PostgreSQL version is `16`, checkout the appropriate version (at the time of writing it is the tag `PG16/v1.5.0-rc0` or branch `PG16`).
+
+Check postgreSQL version with:
+```bash
+pg_config --version
+```
+
+You can versions by listing the branches (or tags):
+```bash
+git branch -a
+git tag
+```
+
+Checkout the right version by issuing this command in Apache AGE source code directory:
+```bash
+git checkout PG16
+```
+
 Navigate to the source code directory of Apache AGE and run the following command to build and install the extension:
 
 ```bash
@@ -119,7 +138,7 @@ SET search_path = ag_catalog, "$user", public;
 To allow non-superusers to use Apache AGE:
 
 1. Create a symlink to allow non-superusers to load the Apache AGE library:
-   
+
    ```bash
    sudo ln -s /usr/lib/postgresql/15/lib/age.so /usr/lib/postgresql/15/lib/plugins/age.so
    ```
