@@ -74,7 +74,7 @@ git tag
 
 Checkout the right version by issuing this command in Apache AGE source code directory:
 ```bash
-git checkout PG16
+git checkout release/PG16/1.5.0
 ```
 
 Navigate to the source code directory of Apache AGE and run the following command to build and install the extension:
