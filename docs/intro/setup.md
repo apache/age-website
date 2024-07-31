@@ -89,6 +89,14 @@ If the path to your PostgreSQL installation is not in the PATH variable, specify
 make PG_CONFIG=/path/to/postgres/bin/pg_config install
 ```
 
+### Installation tests
+
+You can run Apache Age installation checks with the following command:
+
+```bash
+make PG_CONFIG=/path/to/postgres/bin/pg_config installcheck
+```
+
 ## Installing via Docker Image
 
 ### Get the Docker Image
