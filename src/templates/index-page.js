@@ -56,7 +56,7 @@ export const IndexPageTemplate = ({
             <div className={styles.cardLeft}>
               Apache AGE™, Graph database <br></br>
               <div className={styles.cardContent}>
-                <b>Apache AGE™</b> is a PostgreSQL that provides graph database functionality. <br></br><br></br>
+                <b>Apache AGE™</b> is a PostgreSQL extension that provides graph database functionality. <br></br><br></br>
                 The goal of <b>Apache AGE™</b> is to provide graph data processing and analytics capability to all relational databases.
                 <br></br><br></br>
                 Through Apache AGE, PostgreSQL users will gain access to graph query modeling within the existing relational database.
