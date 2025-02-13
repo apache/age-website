@@ -63,8 +63,8 @@ Apache AGE finds its utility in various domains, reflecting the versatility and 
 
 
 * Social Networking: By managing vast networks of users and their interactions, Apache AGE can drive complex social graphs to deliver personalized content, suggest connections, and analyze trends.
-* Fraud Detection: In financial services, Apache AGE can help map transaction patterns to detect and prevent fraud more effectively by spotting anomalies in densely connected data. Learn more about it here: <https://agedb.io/the-role-of-graph-modeling-in-fraud-detection-systems.jsp>
-* Recommendation Engines: Retail and entertainment sectors use Apache AGE to analyze customer preferences and social interactions to recommend products or content. You can learn more about it in this blog article: <https://agedb.io/principle-of-a-recommendation-system-using-raph-database.jsp>
+* Fraud Detection: In financial services, Apache AGE can help map transaction patterns to detect and prevent fraud more effectively by spotting anomalies in densely connected data. 
+* Recommendation Engines: Retail and entertainment sectors use Apache AGE to analyze customer preferences and social interactions to recommend products or content. 
 * Network and IT Operations: Apache AGE can be used to monitor networks and manage IT infrastructure by providing insights into the relationships and dependencies among various IT components.
 
 
