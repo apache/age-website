@@ -79,7 +79,6 @@ class FAQ extends React.Component {
       answer: () => (
         <>
           <p>Apache AGE is an open source project and free to use.</p>
-          <p>But there are some vendors providing commercial support such as AGEDB in Canada.</p>
         </>
       ),
     },

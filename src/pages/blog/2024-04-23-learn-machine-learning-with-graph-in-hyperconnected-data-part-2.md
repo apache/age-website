@@ -66,6 +66,6 @@ Figure 6. Example of Link Prediction in Apache AGE (Source: Missing Link Predict
 
 This article explored the concept of graph hyper-connection, the connection of table data from a relational database to a graph structure. By harnessing the power of hyperconnectivity between relational and graph databases, data can be managed flexibly, leading to the creation of new value through not only simple queries but also advanced analytics.
 
-To efficiently model and manage different types of data, an enterprise DBMS like AGEDB is an ideal solution. It enables the identification and management of relationships between data in tables, facilitating the extension of knowledge associations and enabling comprehensive analysis through graph-based approaches.
+To efficiently model and manage different types of data, an enterprise DBMS like PostgreSQL with Apache AGE is an ideal solution. It enables the identification and management of relationships between data in tables, facilitating the extension of knowledge associations and enabling comprehensive analysis through graph-based approaches.
 
 <!--EndFragment-->

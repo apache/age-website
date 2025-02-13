@@ -20,21 +20,6 @@ import favicon from '../../static/img/favicon.png';
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();
 
-  const injectGA = () => {
-
-    if (typeof window == 'undefined') {
-      return;
-    }
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      window.dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-  
-    gtag('config', 'G-VPCE2QF63F');
-    gtag('config', 'G-XFVE1KJW91')
-  };
-
   const titleNameMapper = () => {
     const isBrowser = typeof window !== 'undefined';
     if (isBrowser) {
@@ -76,15 +61,9 @@ const TemplateWrapper = ({ children }) => {
             <meta charset="UTF-8" /> {/* 문자 집합 선언 추가 */}
             <link rel="icon" href={withPrefix('/img/favicon.png')} />
             <meta name="description" content={description} />
-            {/* Global site tag (gtag.js) - Google Analytics */}
-            <script async src="https://www.googletagmanager.com/gtag/js?id=G-VPCE2QF63F" />
-            <script async src="https://www.googletagmanager.com/gtag/js?id=G-XFVE1KJW91"/>
-
             {/* Search Console New */}
             <meta name="google-site-verification" content="C4CIVL2dGO5hQM50NyalduCnsGIL9cRgtP8ilWhKWko" />
-            <script>
-                {injectGA()}
-            </script>
+            
             <link
               rel="apple-touch-icon"
               sizes="180x180"

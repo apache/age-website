@@ -57,6 +57,5 @@ In the MATCH clause, you can search the path you want to extract. In the {"(a: c
 
 As seen above, graph database queries exhibit hyperconnectivity implementation much more efficiently. Notably, Apache AGE stands out as a database with its hybrid query capability, enabling many including non-experts in graph queries and derive results using SQL. Being a PostgreSQL extension, Apache AGE offers the flexibility to leverage extensions tailored to specific situations and domains, enhancing its practicality and adaptability.
 
-Are you interested in learning more about Apache AGE? [Learn More Now](http://agedb.io/From-Data-to-Connections-Leveraging-Hyperconnectivity-in-E-commerce-Data.jsp#).
 
 <!--EndFragment-->

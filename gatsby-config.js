@@ -3,7 +3,7 @@ module.exports = {
 
     title: "Apache AGE, Graph database optimized for fast analysis and real-time data processing. It is provided as an extension to PostgreSQL.",
 
-    description: "Apache AGE has been registered as an Apache Top level project since May 2022, and was inspired by AgensGraph developed by Bitnine, optimizing the graph database for fast analysis and real-time processing.",
+    description: "Apache AGE is a PostgreSQL extension that has been registered as an Apache Top level project since May 2022.",
   },
   pathPrefix: "/",
   plugins: [

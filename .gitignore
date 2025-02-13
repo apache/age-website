@@ -10,3 +10,5 @@ yarn-error.log
 docs/*
 venv/*
 static/age-manual/*
+.yarn
+.yarnrc.yml
