@@ -13,6 +13,7 @@ Apache AGE's documentation
    intro/types
    intro/comparability
    intro/operators
+   intro/precedence
    intro/aggregation
    intro/agload
 
@@ -31,6 +32,7 @@ Apache AGE's documentation
    clauses/set
    clauses/remove
    clauses/merge
+   clauses/unwind
 
 .. toctree::
    :caption: Functions
@@ -44,6 +46,7 @@ Apache AGE's documentation
    functions/trigonometric_functions
    functions/string_functions
    functions/aggregate_functions
+   functions/map_functions
    functions/user_functions
 
 .. toctree::

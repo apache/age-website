@@ -1,2 +1,6 @@
 build/html
 venv
+.cache
+.yarn
+public
+node_modules
