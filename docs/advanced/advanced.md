@@ -289,7 +289,7 @@ SELECT graph_1.name, graph_1.age, graph_2.license_number
 FROM cypher('graph_1', $$
     MATCH (v:Person)
     RETURN v.name, v.age
-$$) AS graph_1(col_1 agtype, col_2 agtype, col_3 agtype)
+$$) AS graph_1(name agtype, age agtype)
 JOIN cypher('graph_2', $$
     MATCH (v:Doctor)
     RETURN v.name, v.license_number
