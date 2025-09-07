@@ -1,106 +1,86 @@
 # Setup
 
-## Getting AGE
+## Getting Apache AGE
 
 ### Releases
 
-The releases and release notes can be found at <https://github.com/apache/age/releases>
+The releases and release notes can be found at [Apache AGE Releases](https://github.com/apache/age/releases).
 
-### Source code
+### Source Code
 
-The source code can be found at <https://github.com/apache/age>
+The source code can be found at [Apache AGE GitHub Repository](https://github.com/apache/age).
 
 ## Installing From Source Code
 
 ### Pre-Installation
 
-Install the following essential libraries according to each OS.
-Building AGE from source depends on the following Linux libraries (Ubuntu package names shown below):
+Before building Apache AGE from source, ensure that the following essential libraries are installed based on your operating system:
 
 #### CentOS
 
-```console
+```bash
 yum install gcc glibc glib-common readline readline-devel zlib zlib-devel flex bison
 ```
 
 #### Fedora
 
-```console
+```bash
 dnf install gcc glibc bison flex readline readline-devel zlib zlib-devel
 ```
 
 #### Ubuntu
 
-```console
+```bash
 sudo apt-get install build-essential libreadline-dev zlib1g-dev flex bison
 ```
 
-### Install Postgres
+### Install PostgreSQL
 
-You will need to install a AGE compatible version of Postgres, for now AGE only supports Postgres 11 and 12.
+You will need to install a PostgreSQL version compatible with Apache AGE. Apache AGE supports PostgreSQL versions 11, 12, 13, 14, and 15.
 
 #### Install From Source Code
 
-You can <a href='https://www.postgresql.org/download/'>download the Postgres source code</a> and install your own instance of Postgres. You can read instructions on how to install from <a href='https://www.postgresql.org/docs/11/installation.html'>source code on the offical Postgres Website</a>
+You can download the PostgreSQL source code from [PostgreSQL Downloads](https://www.postgresql.org/download/) and install your own instance of PostgreSQL. Refer to the [official PostgreSQL installation guide](https://www.postgresql.org/docs/15/installation.html) for instructions on installing from source code.
 
 #### Install From a Package Manager
 
-You can use a package management that your OS provides to download AGE.
+You can use a package manager provided by your operating system to download and install PostgreSQL.
 
-#### Ubuntu
+##### Ubuntu
 
-##### Postgres 11
-
-```
-sudo apt install postgresql-server-dev-11
+```bash
+sudo apt install postgresql-15 postgresql-server-dev-all
 ```
 
-##### Postgres 12
-```
-sudo apt install postgresql-12
-```
+Replace `15` with the desired PostgreSQL version if different.
 
 ### Installation
 
-Clone the <a href='https://github.com/apache/age'>github repository</a> or <a href='https://github.com/apache/age/releases'>download an official release</a>
+Clone the [Apache AGE GitHub repository](https://github.com/apache/age) or [download an official release](https://github.com/apache/age/releases).
 
-Run the pg_config utility and check the version of PostgreSQL, currently only PostgreSQL versions 11 & 12 are supported. If you have any other version of postgres, you will need to install PostgreSQL version 11 & 12. Follow Setting up multiple versions of PostgreSQL
-```console
-pg_config
-```
+Navigate to the source code directory of Apache AGE and run the following command to build and install the extension:
 
-The build process will attempt to use the first path in the PATH environment variable when installing AGE. If the pg_config path is located there, run the following command in the source code directory of Apache AGE to build and install the extension.
-
-```console
+```bash
 make install
 ```
 
-If the path to your Postgres installation is not in the PATH variable, add the path in the arguments:
+If the path to your PostgreSQL installation is not in the PATH variable, specify the path to `pg_config` using the `PG_CONFIG` argument:
 
-```console
+```bash
 make PG_CONFIG=/path/to/postgres/bin/pg_config install
 ```
 
-### Post Installation AGE Setup
+## Installing via Docker Image
 
+### Get the Docker Image
 
-After the installation, open a connection to a running instance of your database and run the CREATE EXTENSION command to have AGE be installed on the server.
-
-```postgresql
-CREATE EXTENSION age;
-```
-
-## Installing via docker image
-
-### Get the docker image
-
-```shell
+```bash
 docker pull apache/age
 ```
 
-### On the terminal
+### Run Apache AGE Container
 
-```shell
+```bash
 docker run \
     --name myPostgresDb  \
     -p 5455:5432 \
@@ -111,40 +91,43 @@ docker run \
     apache/age
 ```
 
-| Docker variables | Description                                        |
+| Docker Variables | Description                                        |
 | ---------------- | -------------------------------------------------- |
 | `--name `        | Assign a name to the container                     |
-| `-p`             | Publish a container's port(s) to the host          |
+| `-p`             | Publish container's port(s) to the host            |
 | `-e`             | Set environment variables                          |
 | `-d`             | Run container in background and print container ID |
 
-
-## Post Installation
+## Post-Installation Setup
 
 ### Per Session Instructions
 
-For every connection of AGE you start you will need to load the AGE extension.
+For every connection to Apache AGE, load the AGE extension:
 
-```postgresql
+```sql
 LOAD 'age';
 ```
 
-We recommend adding ag_catalog to your search_path to simplify your queries. The rest of this document will assume you have done so. If you do not, remember to add 'ag_catalog' to your cypher query function calls.
+Add `ag_catalog` to the `search_path` to simplify queries:
 
-```postgresql
+```sql
 SET search_path = ag_catalog, "$user", public;
 ```
 
-### Allow non-superusers to use Apache AGE
+### Allow Non-Superusers to Use Apache AGE
 
-* Non-superusers can only apply LOAD to library files located in `$libdir/plugins/` (see <https://www.postgresql.org/docs/11/sql-load.html>). A symlink can be created to allow non-superusers to LOAD the Apache AGE library:
+To allow non-superusers to use Apache AGE:
 
-```console
-sudo ln -s /usr/lib/postgresql/11/lib/age.so /usr/lib/postgresql/11/lib/plugins/age.so
-```
+1. Create a symlink to allow non-superusers to load the Apache AGE library:
+   
+   ```bash
+   sudo ln -s /usr/lib/postgresql/15/lib/age.so /usr/lib/postgresql/15/lib/plugins/age.so
+   ```
 
-* In order to use Apache AGE, users need `USAGE` privileges on the `ag_catalog` schema (example for user `db_user`):
+   Replace `/usr/lib/postgresql/15/lib/` with the appropriate path to the PostgreSQL library directory.
 
-```postgresql
-GRANT USAGE ON SCHEMA ag_catalog TO db_user;
-```
+2. Grant `USAGE` privileges on the `ag_catalog` schema to the desired user (e.g., `db_user`):
+
+   ```sql
+   GRANT USAGE ON SCHEMA ag_catalog TO db_user;
+   ```

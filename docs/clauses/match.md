@@ -1,12 +1,12 @@
 # MATCH
 
-The MATCH clause allows you to specify the patterns Cypher will search for in the database. This is the primary way of getting data into the current set of bindings. It is worth reading up more on the specification of the patterns themselves in Patterns.
+The `MATCH` clause allows you to specify the patterns a query will search for in the database. This is the primary way of retrieving data for use in a query.
 
-MATCH is often coupled to a WHERE part which adds restrictions, or predicates, to the MATCH patterns, making them more specific. The predicates are part of the pattern description, and should not be considered a filter applied only after the matching is done. This means that WHERE should always be put together with the MATCH clause it belongs to.
+ A `WHERE` clause often follows a `MATCH` clause to add user-defined restrictions to the matched patterns to manipulate the set of data returned. The predicates are part of the pattern description, and should not be considered a filter applied only after the matching is done. This means that `WHERE` should always be put together with the `MATCH` clause it belongs to.
 
-MATCH can occur at the beginning of the query or later, possibly after a WITH. If it is the first clause, nothing will have been bound yet, and Cypher will design a search to find the results matching the clause and any associated predicates specified in any WHERE part. Vertices and edges found by this search are available as bound pattern elements, and can be used for pattern matching of sub-graphs. They can also be used in any future clauses, where Cypher will use the known elements, and from there find further unknown elements.
+MATCH can occur at the beginning of the query or later, possibly after a `WITH`. If it is the first clause, nothing will have been bound yet, and Cypher will design a search to find the results matching the clause and any associated predicates specified in any `WHERE` clause. Vertices and edges found by this search are available as bound pattern elements, and can be used for pattern matching of sub-graphs. They can also be used in any future clauses, where Cypher will use the known elements, and from there find further unknown elements.
 
-Cypher is declarative, and so usually the query itself does not specify the algorithm to use to perform the search. Predicates in WHERE parts can be evaluated before pattern matching, during pattern matching, or after finding matches.
+Cypher is a declarative language, and so typically the query itself does not specify the algorithm to use to perform the search. Predicates in `WHERE` parts can be evaluated before pattern matching, during pattern matching, or after the match is found.
 
 
 ## Basic vertex finding
@@ -14,11 +14,11 @@ Cypher is declarative, and so usually the query itself does not specify the algo
 
 ### Get all Vertices
 
-By just specifying a pattern with a single vertex and no labels, all vertices in the graph will be returned.
+By specifying a pattern with a single vertex and no labels, all vertices in the graph will be returned.
 
 Query
 
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$
 MATCH (v)
 RETURN v
@@ -26,7 +26,7 @@ $$) as (v agtype);
 ```
 
 
-Returns all the vertices in the database.
+Returns all vertices in the database.
 
 
 <table>
@@ -72,12 +72,12 @@ Returns all the vertices in the database.
 
 ### Get all vertices with a label
 
-Getting all vertices with a label on them is done with a single node pattern where the vertex has a label on it.
+Getting all vertices with a label is done with a single node pattern where the vertex has the label specified as follows:
 
 Query
 
 
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$
 MATCH (movie:Movie)
 RETURN movie.title
@@ -111,12 +111,12 @@ Returns all the movies in the database.
 
 ### Related Vertices
 
-The symbol -[]- means related to, without regard to type or direction of the edge.
+The symbol `-[]-` specifies an edge, without specifying the type or direction of the edge.
 
 Query
 
 
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$
 MATCH (director {name: 'Oliver Stone'})-[]-(movie)
 RETURN movie.title
@@ -124,7 +124,7 @@ $$) as (title agtype);
 ```
 
 
-Returns all the movies directed by 'Oliver Stone'
+Returns all the movies directed by 'Oliver Stone'.
 
 
 <table>
@@ -146,12 +146,12 @@ Returns all the movies directed by 'Oliver Stone'
 
 ### Match with labels
 
-To constrain your pattern with labels on vertices, you add it to your vertex in the pattern, using the label syntax.
+To constrain your pattern with labels on vertices, add it to the vertex in the pattern, using the label syntax.
 
 Query
 
 
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$
 MATCH (:Person {name: 'Oliver Stone'})-[]-(movie:Movie)
 RETURN movie.title
@@ -159,7 +159,7 @@ $$) as (title agtype);
 ```
 
 
-Returns any vertices connected with the Person 'Oliver' that are labeled Movie.
+Returns any vertices connected with the `Person` 'Oliver' that are labeled `Movie`.
 
 
 <table>
@@ -184,12 +184,12 @@ Returns any vertices connected with the Person 'Oliver' that are labeled Movie.
 
 ### Outgoing Edges
 
-When the direction of an edge is of interest, it is shown by using -> or &lt;-.
+To return directed edges, you may use `->` or `<-` to specify the direction of which the edge points.
 
 Query
 
 
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$
 MATCH (:Person {name: 'Oliver Stone'})-[]->(movie)
 RETURN movie.title
@@ -197,7 +197,7 @@ $$) as (title agtype);
 ```
 
 
-Returns any vertices connected with the Person'Oliver' by an outgoing edge.
+Returns any vertices connected with the `Person` 'Oliver' by an outgoing edge.
 
 
 <table>
@@ -218,17 +218,17 @@ Returns any vertices connected with the Person'Oliver' by an outgoing edge.
 
 
 ### Directed Edges and variable
-
-If a variable is required, either for filtering on properties of the edge, or to return the edge, this is how you introduce the variable.
+ 
+If a variable is required, either for filtering on properties of the edge, or to return the edge, specify the variable within the edge or vertex you wish to use.
 
 Query
 
 
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$
 MATCH (:Person {name: 'Oliver Stone'})-[r]->(movie)
 RETURN type(r)
-$$) as (type agtype);
+$$) as (title agtype);
 ```
 
 
@@ -252,14 +252,14 @@ Returns the type of each outgoing edge from 'Oliver'.
 
 
 
-### Match on edge type
+### Match on edge label
 
-When you know the edge type you want to match on, you can specify it by using a colon together with the edge type.
+When you know the edge label you want to match on, you can specify it by using a colon together with the edge label.
 
 Query
 
 
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$
 MATCH (:Movie {title: 'Wall Street'})<-[:ACTED_IN]-(actor)
 RETURN actor.name
@@ -267,7 +267,7 @@ $$) as (actors_name agtype);
 ```
 
 
-Returns all actors that ACTED_IN'Wall Street'.
+Returns all actors that `ACTED_IN` 'Wall Street'.
 
 
 <table>
@@ -295,14 +295,14 @@ Returns all actors that ACTED_IN'Wall Street'.
 
 
 
-### Match on edge type and use a variable
+### Match on edge label with a variable
 
-If you both want to introduce a variable to hold the edge, and specify the edge type you want, just add them both.
+If you want to use a variable to hold the edge, and specify the edge label you want, you can do so by specifying them both.
 
 Query
 
 
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$
 MATCH ({title: 'Wall Street'})<-[r:ACTED_IN]-(actor)
 RETURN r.role
@@ -310,7 +310,7 @@ $$) as (role agtype);
 ```
 
 
-Returns ACTED_IN roles for 'Wall Street'.
+Returns `ACTED_IN` roles for 'Wall Street'.
 
 
 <table>
@@ -340,12 +340,12 @@ Returns ACTED_IN roles for 'Wall Street'.
 
 ### Multiple Edges
 
-Edges can be expressed by using multiple statements in the form of ()-[]-(), or they can be strung together.
+Edges can be strung together to match an infinite number of edges. As long as the base pattern `()-[]-()` is followed, users can chain together edges and vertices to match specific patterns.
 
 Query
 
 
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$
     MATCH (charlie {name: 'Charlie Sheen'})-[:ACTED_IN]->(movie)<-[:DIRECTED]-(director)
     RETURN movie.title, director.name
@@ -394,7 +394,7 @@ Which describes a right directed path of three vertices and two edges can be rew
 (u)-[]->()-[]->(v)
 ```
 
-A range lengths can also be given:
+A range length can also be given:
 
 
 ```
@@ -409,26 +409,26 @@ Which is equivalent to:
 (u)-[]->()-[]->()-[]->()-[]->()-[]->(v)
 ```
 
-The previous example provided gave the edge both an lower and upper bound for the number of edges (and vertices) between u and v. Either one or both of these binding values can be excluded
+The previous example provided gave the edge both an lower and upper bound for the number of edges (and vertices) between `u` and `v`. Either one or both of these binding values can be excluded.
 
 
 ```
 (u)-[*3..]->(v)
 ```
 
-Returns all paths between u and v that have three or more edges included.
+Returns all paths between `u` and `v` that have three or more edges included.
 
 ```
 (u)-[*..5]->(v)
 ```
 
-Returns all paths between u and v that have 5 or fewer edges included.
+Returns all paths between `u` and `v` that have 5 or fewer edges included.
 
 ```
 (u)-[*]->(v)
 ```
 
-Returns all paths between u and v
+Returns all paths between `u` and `v`.
 
 
 ### Example
@@ -437,15 +437,15 @@ Returns all paths between u and v
 Query
 
 
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$
-    MATCH p = (actor {name: 'Willam Defoe'})-[:ACTED_IN*2]-(co_actor)
+    MATCH p = (actor {name: 'Willam Dafoe'})-[:ACTED_IN*2]-(co_actor)
     RETURN relationships(p)
 $$) as (r agtype);
 ```
 
 
-Returns the list of edges, including the one that Willam Defoe acted in and the two spidermens he worked with.
+Returns the list of edges, including the one that Willam Dafoe acted in and the two Spiderman actors he worked with.
 
 
 <table>

@@ -3,7 +3,7 @@
 Cypher commands can be run in [PL/pgSQL](https://www.postgresql.org/docs/11/plpgsql-overview.html) functions without restriction.
 
 Data Setup
-```
+```postgresql
 SELECT *
 FROM cypher('imdb', $$
 	CREATE (toby:actor {name: 'Toby Maguire'}),
@@ -28,7 +28,7 @@ $$) AS (a agtype);
 ```
 
 Function Creation
-```
+```postgresql
 CREATE OR REPLACE FUNCTION get_all_actor_names()
 RETURNS TABLE(actor agtype)
 LANGUAGE plpgsql
@@ -48,7 +48,7 @@ $BODY$;
 ```
 
 Query:
-```
+```postgresql
 SELECT * FROM get_all_actor_names();
 ```
 
@@ -79,13 +79,13 @@ Results
 ```
 Developer's Note:
 
-It's recommended that the LOAD 'age' command and setting the search_path in the function declaration, to ensure the CREATE FUNCTION command works consistently.
+It's recommended that users use the LOAD 'age' command and set the search_path in the function declaration, to ensure the CREATE FUNCTION command works consistently.
 ```
 
 ## Dynamic Cypher
 
 
-```
+```postgresql
 CREATE OR REPLACE FUNCTION get_actors_who_played_role(role agtype)
 RETURNS TABLE(actor agtype, movie agtype)
 LANGUAGE plpgsql
@@ -109,7 +109,7 @@ END
 $function$;
 ```
 
-```
+```postgresql
 SELECT * FROM get_actors_who_played_role('"Peter Parker"');
 ```
 

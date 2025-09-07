@@ -1,21 +1,21 @@
 # SET
 
-The SET clause is used to update labels on nodes and properties on vertices and edges
+The `SET` clause is used to update labels and properties on vertices and edges
 
 
 ## Terminal SET clauses
 
-A set clause that is not followed by another clause is called a terminal clause. When a cypher query ends with a terminal clause, no results will be returned from the cypher function call. However, the cypher function call still requires a column list definition. When cypher ends with a terminal node, define a single value in the column list definition: no data will be returned in this variable.
+A `SET` clause that is not followed by another clause is a terminal clause. When a cypher query ends with a terminal clause, no results will be returned from the cypher function call. However, the cypher function call still requires a column list definition. When cypher ends with a terminal node, define a single value in the column list definition: no data will be returned in this variable.
 
 
 ## Set a property
 
-To set a property on a node or relationship, use SET.
+To set a property on a node or relationship, use `SET`.
 
 Query
 
 
-```
+```postgresql
 SELECT * 
 FROM cypher('graph_name', $$
    MATCH (v {name: 'Andres'})
@@ -44,12 +44,12 @@ Result
 
 ## Return created vertex
 
-Creating a single vertex is done by issuing the following query.
+Creating a single vertex is done with the following query:
 
 Query
 
 
-```
+```postgresql
 SELECT * 
 FROM cypher('graph_name', $$
     MATCH (v {name: 'Andres'})
@@ -83,12 +83,12 @@ Result
 
 ## Remove a property
 
-Normally you remove a property by using REMOVE, but it’s sometimes handy to do it using the SET command. One example is if the property comes from a parameter.
+Normally a property can be removed by using `REMOVE`, but users can also remove properties using the `SET` command. One example is if the property comes from a parameter.
 
 Query
 
 
-```
+```postgresql
 SELECT * 
 FROM cypher('graph_name', $$
     MATCH (v {name: 'Andres'})
@@ -121,12 +121,12 @@ Result
 
 ## Set multiple properties using one SET clause
 
-If you want to set multiple properties in one go, simply separate them with a comma.
+If you want to set multiple properties in one query, you can separate them with a comma.
 
 Query
 
 
-```
+```postgresql
 SELECT * 
 FROM cypher('graph_name', $$
 MATCH (v {name: 'Andres'})

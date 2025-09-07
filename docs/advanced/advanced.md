@@ -7,13 +7,13 @@ There are no restrictions to using Cypher with CTEs ([Common Table Expressions](
 Query:
 
 
-```
-WITH graph_query as (
+```postgresql
+WITH graph_query AS (
     SELECT *
         FROM cypher('graph_name', $$
         MATCH (n)
         RETURN n.name, n.age
-    $$) as (name agtype, age agtype)
+    $$) AS (name agtype, age agtype)
 )
 SELECT * FROM graph_query;
 ```
@@ -57,27 +57,27 @@ Results:
 
 # Using Cypher in a Join expression
 
-A Cypher query can be part of a JOIN clause.
+A Cypher query can be part of a `JOIN` clause.
 
 
 ```
 Developers Note
-Cypher queries using the CREATE, SET, REMOVE clauses cannot be used in sql queries with Joins, as they affect the Postgres transaction system. One possible solution is to protect the query with CTEs. See the subsection Using CTEs with CREATE, REMOVE, and SET for a solution to this problem.
+Cypher queries using the CREATE, SET, REMOVE clauses cannot be used in sql queries with JOINs, as they affect the Postgres transaction system. One possible solution is to protect the query with CTEs. See the subsection Using CTEs with CREATE, REMOVE, and SET for more details.
 ```
 
 
 Query:
 
 
-```
+```postgresql
 SELECT id, 
-    graph_query.name = t.name as names_match,
-    graph_query.age = t.age as ages_match
+    graph_query.name = t.name AS names_match,
+    graph_query.age = t.age AS ages_match
 FROM schema_name.sql_person AS t
 JOIN cypher('graph_name', $$
         MATCH (n:Person)
         RETURN n.name, n.age, id(n)
-$$) as graph_query(name agtype, age agtype, id agtype)
+$$) AS graph_query(name agtype, age agtype, id agtype)
 ON t.person_id = graph_query.id
 ```
 
@@ -127,22 +127,23 @@ Results:
 
 # Cypher in SQL expressions
 
-Cypher cannot be used in an expression, the query must exists in the FROM clause of a query. However, if the cypher query is placed in a Subquery, it will behave as any SQL style query.
+Cypher cannot be used in an expression— the query must exist in the `FROM` clause of a query. However, if the cypher query is placed in a subquery, it will behave as any SQL style query.
 
 
 ## Using Cypher with '='
 
-When writing a cypher query that is known to return 1 column and 1 row, the '=' comparison operator may be used.
+When writing a cypher query that is known to return one column and one row, the '=' comparison operator may be used.
 
 
-```
-SELECT t.name FROM schema_name.sql_person AS t
-where t.name = (
+```postgresql
+SELECT t.name, t.age
+FROM schema_name.sql_person AS t
+WHERE t.name = (
     SELECT a
     FROM cypher('graph_name', $$
-    	  MATCH (v)
+    	MATCH (v)
         RETURN v.name
-    $$) as (name varchar(50))
+    $$) AS (name varchar(50))
     ORDER BY name
     LIMIT 1);
 ```
@@ -174,19 +175,20 @@ Results:
 
 ## Working with Postgres's IN Clause
 
-When writing a cypher query that is known to return 1 column, but may have multiple rows. The IN operator may be used.
+When writing a cypher query that is known to return one column, but may have multiple rows. The `IN` operator may be used.
 
 Query:
 
 
-```
-SELECT t.name, t.age FROM schema_name.sql_person as t 
-where t.name in (
+```postgresql
+SELECT t.name, t.age
+FROM schema_name.sql_person AS t 
+WHERE t.name IN (
     SELECT *
     FROM cypher('graph_name', $$
         MATCH (v:Person)
         RETURN v.name 
-    $$) as (a agtype));
+    $$) AS (a agtype));
 ```
 
 
@@ -226,22 +228,22 @@ Results:
 
 
 
-## Working with Postgres EXISTS Clause
+## Working with the Postgres EXISTS Clause
 
-When writing a cypher query that may have more than 1 column and row returned. The EXISTS operator may be used.
+When writing a cypher query that may have more than one column and row returned. The `EXISTS` operator may be used.
 
 Query:
 
 
-```
+```postgresql
 SELECT t.name, t.age
-FROM schema_name.sql_person as t
+FROM schema_name.sql_person AS t
 WHERE EXISTS (
     SELECT *
     FROM cypher('graph_name', $$
-	  MATCH (v:Person)
+        MATCH (v:Person)
         RETURN v.name, v.age
-    $$) as (name agtype, age agtype)
+    $$) AS (name agtype, age agtype)
     WHERE name = t.name AND age = t.age
 );
 ```
@@ -279,19 +281,19 @@ Results:
 
 ## Querying Multiple Graphs
 
-There is no restriction to the number of graphs an SQL statement can query. Allowing users to query more than one graph at the same time.
+There is no restriction to the number of graphs an SQL statement can query. Users may query multiple graphs simultaneously.
 
 
-```
+```postgresql
 SELECT graph_1.name, graph_1.age, graph_2.license_number
 FROM cypher('graph_1', $$
     MATCH (v:Person)
     RETURN v.name, v.age
-$$) as graph_1(col_1 agtype, col_2 agtype, col_3 agtype)
+$$) AS graph_1(col_1 agtype, col_2 agtype, col_3 agtype)
 JOIN cypher('graph_2', $$
     MATCH (v:Doctor)
     RETURN v.name, v.license_number
-$$) as graph_2(name agtype, license_number agtype)
+$$) AS graph_2(name agtype, license_number agtype)
 ON graph_1.name = graph_2.name
 ```
 

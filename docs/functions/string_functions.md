@@ -3,15 +3,15 @@
 
 ## replace
 
-replace() returns a string in which all occurrences of a specified string in the original string have been replaced by another (specified) string.
+`replace()` returns a string in which all occurrences of a specified string in the original string have been replaced by another (specified) string.
 
-Syntax: **<code>replace(original, search, replace)</code></strong>
+Syntax: <code>replace(original, search, replace)</code></strong>
 
 Returns:
 
 
 ```
-An agtype String.
+An agtype string.
 ```
 
 
@@ -50,8 +50,8 @@ Considerations:
 
 
 
-* If any argument is null, null will be returned.
-* If search is not found in original, original will be returned.
+* If any argument is `null`, `null` will be returned.
+* If search is not found in `original`, `original` will be returned.
 
 <table>
   <tr>
@@ -63,7 +63,7 @@ Considerations:
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
 	RETURN replace('hello', 'l', 'w')
@@ -93,7 +93,7 @@ Result:
 
 ## split
 
-split() returns a list of strings resulting from the splitting of the original string around matches of the given delimiter.
+`split()` returns a list of strings resulting from the splitting of the original string around matches of the given delimiter.
 
 Syntax: `split(original, split_delimiter)`
 
@@ -134,12 +134,12 @@ Considerations:
 
 
 
-* split(null, splitDelimiter) and split(original, null) both return null
+* `split(null, splitDelimiter)` and `split(original, null)` both return `null`
 
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN split('one,two', ',')
@@ -169,7 +169,7 @@ Result:
 
 ## left
 
-left() returns a string containing the specified number of leftmost characters of the original string.
+`left()` returns a string containing the specified number of leftmost characters of the original string.
 
 Syntax: `left(original, length)`
 
@@ -177,7 +177,7 @@ Returns:
 
 
 ```
-An agtype String.
+An agtype string.
 ```
 
 
@@ -210,15 +210,15 @@ Considerations:
 
 
 
-* left(null, length) and left(null, null) both return null
-* left(original, null) will raise an error.
-* If length is not a positive integer, an error is raised.
-* If length exceeds the size of original, original is returned.
+* `left(null, length)` and `left(null, null)` both return `null`
+* `left(original, null)` will raise an error.
+* If `length` is not a positive integer, an error is raised.
+* If `length` exceeds the size of `original`, `original` is returned.
 
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
 	RETURN left('Hello', 3)
@@ -248,7 +248,7 @@ Result:
 
 ## right
 
-right() returns a string containing the specified number of rightmost characters of the original string.
+`right()` returns a string containing the specified number of rightmost characters of the original string.
 
 Syntax: `right(original, length)`
 
@@ -256,7 +256,7 @@ Returns:
 
 
 ```
-An agtype String.
+An agtype string.
 ```
 
 
@@ -289,15 +289,15 @@ Considerations:
 
 
 
-* right(null, length) and right(null, null) both return null
-* right(original, null) will raise an error.
-* If length is not a positive integer, an error is raised.
-* If length exceeds the size of original, original is returned.
+* `right(null, length)` and `right(null, null)` both return `null`
+* `right(original, null)` will raise an error.
+* If `length` is not a positive integer, an error is raised.
+* If `length` exceeds the size of `original`, `original` is returned.
 
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN right('hello', 3)
@@ -327,7 +327,7 @@ Result:
 
 ## substring
 
-substring() returns a substring of the original string, beginning with a 0-based index start and length.
+`substring()` returns a substring of the original string, beginning with a 0-based index start and length.
 
 Syntax: <code>substring(original, <strong>start</strong> [, <strong>length</strong>])</code>
 
@@ -335,7 +335,7 @@ Returns:
 
 
 ```
-An agtype String.
+An agtype string.
 ```
 
 
@@ -374,17 +374,17 @@ Considerations:
 
 
 
-* start uses a zero-based index.
-* If length is omitted, the function returns the substring starting at the position given by start and extending to the end of original.
-* If original is null, null is returned.
-* If either start or length is null or a negative integer, an error is raised.
-* If start is 0, the substring will start at the beginning of original.
-* If length is 0, the empty string will be returned.
+* `start` uses a zero-based index.
+* If `length` is omitted, the function returns the substring starting at the position given by `start` and extending to the end of `original`.
+* If `original` is `null`, `null` is returned.
+* If either `start` or `length` is `null` or a negative integer, an error is raised.
+* If `start` is 0, the substring will start at the beginning of `original`.
+* If `length` is 0, the empty string will be returned.
 
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN substring('hello', 1, 3), substring('hello', 2)
@@ -418,15 +418,15 @@ Result:
 
 ## rTrim
 
-rTrim() returns the original string with trailing whitespace removed.
+`rTrim()` returns the original string with trailing whitespace removed.
 
-Syntax: rTrim(original)
+Syntax: `rTrim(original)`
 
 Returns:
 
 
 ```
-An agtype String.
+An agtype string.
 ```
 
 
@@ -453,16 +453,16 @@ Considerations:
 
 
 
-* rTrim(null) returns null
+* `rTrim(null)` returns `null`
 
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN rTrim(' hello ')
-$$) as (trimmed_str agtype);
+$$) as (right_trimmed_str agtype);
 ```
 
 
@@ -471,7 +471,7 @@ Result:
 
 <table>
   <tr>
-   <td>trimmed_str
+   <td>right_trimmed_str
    </td>
   </tr>
   <tr>
@@ -488,7 +488,7 @@ Result:
 
 ## lTrim
 
-lTrim() returns the original string with trailing whitespace removed.
+`lTrim()` returns the original string with leading whitespace removed.
 
 Syntax: `lTrim(original)`
 
@@ -496,7 +496,7 @@ Returns:
 
 
 ```
-A String.
+An agtype string.
 ```
 
 
@@ -523,16 +523,16 @@ Considerations:
 
 
 
-* lTrim(null) returns null
+* `lTrim(null)` returns `null`
 
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN lTrim(' hello ')
-$$) as (trimmed_str agtype);
+$$) as (left_trimmed_str agtype);
 ```
 
 
@@ -558,7 +558,7 @@ Result:
 
 ## trim
 
-trim() returns the original string with leading and trailing whitespace removed.
+`trim()` returns the original string with leading and trailing whitespace removed.
 
 Syntax: `trim(original)`
 
@@ -566,7 +566,7 @@ Returns:
 
 
 ```
-An agtype String.
+An agtype string.
 ```
 
 
@@ -593,12 +593,12 @@ Considerations:
 
 
 
-* trim(null) returns null
+* `trim(null)` returns `null`
 
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN trim(' hello ')
@@ -628,7 +628,7 @@ Result:
 
 ## toLower
 
-toLower() returns the original string in lowercase.
+`toLower()` returns the original string in lowercase.
 
 Syntax: `toLower(original)`
 
@@ -636,7 +636,7 @@ Returns:
 
 
 ```
-An agtype String.
+An agtype string.
 ```
 
 
@@ -663,12 +663,12 @@ Considerations:
 
 
 
-* toLower(null) returns null
+* `toLower(null)` returns `null`
 
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN toLower('HELLO')
@@ -698,7 +698,7 @@ Result:
 
 ## toUpper
 
-toUpper() returns the original string in lowercase.
+`toUpper() `returns the original string in uppercase.
 
 Syntax: `toUpper(original)`
 
@@ -706,7 +706,7 @@ Returns:
 
 
 ```
-An agtype String.
+An agtype string.
 ```
 
 
@@ -733,12 +733,12 @@ Considerations:
 
 
 
-* toUpper(null) returns null
+* `toUpper(null)` returns `null`
 
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN toUpper('hello')
@@ -768,7 +768,7 @@ Result:
 
 ## reverse
 
-reverse() returns a string in which the order of all characters in the original string have been reversed.
+`reverse()` returns a string in which the order of all characters in the original string have been reversed.
 
 Syntax: `reverse(original)`
 
@@ -776,7 +776,7 @@ Returns:
 
 
 ```
-An agtype String.
+An agtype string.
 ```
 
 
@@ -803,16 +803,16 @@ Considerations:
 
 
 
-* reverse(null) returns null.
+* `reverse(null)` returns `null`.
 
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN reverse("hello")
-$$) as (upper_str agtype);
+$$) as (reverse_str agtype);
 ```
 
 
@@ -821,7 +821,7 @@ Result:
 
 <table>
   <tr>
-   <td>upper_str
+   <td>reverse_str
    </td>
   </tr>
   <tr>
@@ -838,15 +838,15 @@ Result:
 
 ## toString
 
-toString() converts an integer, float or boolean value to a string.
+`toString()` converts an integer, float or boolean value to a string.
 
-Syntax:`toString(expression)`
+Syntax: `toString(expression)`
 
 Returns:
 
 
 ```
-A String.
+A string.
 ```
 
 
@@ -873,13 +873,13 @@ Considerations:
 
 
 
-* toString(null) returns null
+* `toString(null)` returns `null`
 * If expression is a string, it will be returned unchanged.
 
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN toString(11.5),toString('a string'), toString(true)

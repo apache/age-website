@@ -1,0 +1,14 @@
+github:
+  homepage: https://age.apache.org
+  enabled_merge_buttons:
+    squash:  true
+    merge:   false
+    rebase:  true
+  protected_branches:
+    master:
+      required_pull_request_reviews:
+        required_approving_review_count: 1
+ 
+    new-web:
+      required_pull_request_reviews:
+        required_approving_review_count: 1

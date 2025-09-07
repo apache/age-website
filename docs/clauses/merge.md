@@ -1,24 +1,23 @@
 # MERGE
 
-The MERGE clause ensures that a pattern exists in the graph. Either the pattern already exists, or it needs to be created.
+The `MERGE` clause ensures that a pattern exists in the graph. Either the pattern already exists, or it needs to be created.
 
 
-MERGE either matches existing nodes, or creates new data. It’s a combination of MATCH and CREATE.
+`MERGE` either matches existing nodes, or creates new data. It’s a combination of `MATCH` and `CREATE`.
 
-For example, you can specify that the graph must contain a node for a user with a certain name. If there isn’t a node with the correct name, a new node will be created and its name property set. When using MERGE on full patterns, the behavior is that either the whole pattern matches, or the whole pattern is created. MERGE will not partially use existing patterns. If partial matches are needed, this can be accomplished by splitting a pattern up into multiple MERGE clauses.
+For example, you can specify that the graph must contain a node for a user with a certain name. If there isn’t a node with the correct name, a new node will be created and its name property set. When using `MERGE` on full patterns, the behavior is that either the whole pattern matches, or the whole pattern is created. `MERGE` will not partially use existing patterns. If partial matches are needed, this can be accomplished by splitting a pattern up into multiple `MERGE` clauses.
 
-As with MATCH, MERGE can match multiple occurrences of a pattern. If there are multiple matches, they will all be passed on to later stages of the query.
+As with `MATCH`, `MERGE` can match multiple occurrences of a pattern. If there are multiple matches, they will all be passed on to later stages of the query.
 
 ## Data Setup
 
-```
+```postgresql
 SELECT * from cypher('graph_name', $$
 CREATE (A:Person {name: "Charlie Sheen", bornIn: "New York"}),
     (B:Person {name: "Michael Douglas", bornIn: "New Jersey"}),
     (C:Person {name: "Rob Reiner", bornIn: "New York"}),
     (D:Person {name: "Oliver Stone", bornIn: "New York"}),
     (E:Person {name: "Martin Sheen", bornIn: "Ohio"})
-
 $$) as (result agtype);
 ```
 
@@ -30,14 +29,14 @@ By just specifying a pattern with a single vertex and no labels, all vertices in
 
 Query
 
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$
 MERGE (v:Critic)
 RETURN v
 $$) as (v agtype);
 ```
 
-If there exists a vertex with the label 'Critic' the vertex will be returns. If the vertex will be created and returned.
+If there exists a vertex with the label 'Critic', that vertex will be returned. Otherwise, the vertex will be created and returned.
 
 <table>
   <tr>
@@ -61,14 +60,14 @@ Merging a vertex node with properties where not all properties match any existin
 
 Query
 
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$
 MERGE (charlie {name: 'Charlie Sheen', age: 10})
 RETURN charlie
 $$) as (v agtype);
 ```
 
-If there exists a vertex with the label 'Critic' the vertex will be returns. If the vertex will be created and returned.
+If there exists a vertex with the label 'Critic', that vertex will be returned. Otherwise, the vertex will be created and returned.
 
 <table>
   <tr>
@@ -85,7 +84,7 @@ If there exists a vertex with the label 'Critic' the vertex will be returns. If 
   </tr>
 </table>
 
-A new vertex with the name 'Charlie Sheen' will be created if not all properties exist with a single vertex. If a vertex does exist that will be returned instead.
+If there exists a vertex with all properties, that vertex will be returned. Otherwise, a new vertex with the name 'Charlie Sheen' will be created and returned.
 
 
 ### Merge a Single Vertex Specifying Both Label and Property
@@ -94,14 +93,14 @@ Merging a vertex where both label and property constraints match an existing ver
 
 Query
 
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$
 MERGE (michael:Person {name: 'Michael Douglas'})
 RETURN michael.name, michael.bornIn
 $$) as (Name agtype, BornIn agtype);
 ```
 
-'Michael Douglas' will match the existing vertex and the vertex's name and bornIn properties returned.
+'Michael Douglas' will match the existing vertex and the vertex's `name` and `bornIn` properties will be returned.
 
 <table>
   <tr>

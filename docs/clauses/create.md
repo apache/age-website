@@ -1,16 +1,16 @@
 # CREATE
 
-The CREATE clause is used to create graph vertices and edges. 
+The `CREATE` clause is used to create graph vertices and edges. 
 
 
 ## Terminal CREATE clauses
 
-A create clause that is not followed by another clause is called a terminal clause. When a cypher query ends with a terminal clause, no results will be returned from the cypher function call. However, the cypher function call still requires a column list definition. When cypher ends with a terminal node, define a single value in the column list definition: no data will be returned in this variable.
+A `CREATE` clause that is not followed by another clause is called a terminal clause. When a cypher query ends with a terminal clause, no results will be returned from the cypher function call. However, the cypher function call still requires a column list definition. When cypher ends with a terminal node, define a single value in the column list definition: no data will be returned in this variable.
 
 Query
 
 
-```
+```postgresql
 SELECT * 
 FROM cypher('graph_name', $$
     CREATE /* Create clause here, no following clause */
@@ -37,7 +37,7 @@ Creating a single vertex is done by issuing the following query.
 Query
 
 
-```
+```postgresql
 SELECT * 
 FROM cypher('graph_name', $$
     CREATE (n)
@@ -68,7 +68,7 @@ Creating multiple vertices is done by separating them with a comma.
 Query
 
 
-```
+```postgresql
 SELECT * 
 FROM cypher('graph_name', $$
     CREATE (n), (m)
@@ -94,12 +94,12 @@ Result
 
 ## Create a vertex with a label
 
-To add a label when creating a vertex, use the syntax below.
+To add a label when creating a vertex, use the following syntax:
 
 Query
 
 
-```
+```postgresql
 SELECT * 
 FROM cypher('graph_name', $$
     CREATE (:Person)
@@ -125,17 +125,17 @@ Result
 
 
 
-## Create vertex and add labels and properties
+## Create a vertex with labels and properties
 
-When creating a new vertex with labels, you can add properties at the same time.
+You can create a vertex with labels and properties at the same time.
 
 Query
 
 
-```
+```postgresql
 SELECT * 
 FROM cypher('graph_name', $$
-    CREATE (:Person {name: 'Andres', title: 'Developer')
+    CREATE (:Person {name: 'Andres', title: 'Developer'})
 $$) as (n agtype);
 ```
 
@@ -160,15 +160,15 @@ Result
 
 ## Return created node
 
-Creating a single node is done by issuing the following query.
+You can create and return a node within the same query as follows:
 
 Query
 
 
-```
+```postgresql
 SELECT * 
 FROM cypher('graph_name', $$
-    CREATE (a {name: 'Andres')
+    CREATE (a {name: 'Andres'})
     RETURN a
 $$) as (a agtype);
 ```
@@ -196,12 +196,12 @@ Result
 
 ## Create an edge between two nodes
 
-To create an edge between two vertices, we first get the two vertices. Once the nodes are loaded, we simply create an edge between them.
+To create an edge between two vertices, we first `MATCH` the two vertices. Once the nodes are matched, we create an edge between them.
 
 Query
 
 
-```
+```postgresql
 SELECT * 
 FROM cypher('graph_name', $$
     MATCH (a:Person), (b:Person)
@@ -236,12 +236,12 @@ Result
 
 ## Create an edge and set properties
 
-Setting properties on edges is done in a similar manner to how it’s done when creating vertices. Note that the values can be any expression.
+Setting properties on edges is done in a similar manner to setting properties when creating vertices. Note that the values can be any expression.
 
 Query
 
 
-```
+```postgresql
 SELECT * 
 FROM cypher('graph_name', $$
     MATCH (a:Person), (b:Person)
@@ -275,13 +275,12 @@ Result
 
 
 ## Create a full path
-v1
-When you use CREATE and a pattern, all parts of the pattern that are not already in scope at this time will be created.
+When you use `CREATE` and a pattern, all parts of the patterns that are not already in scope at this time will be created.
 
 Query
 
 
-```
+```postgresql
 SELECT * 
 FROM cypher('graph_name', $$
     CREATE p = (andres {name:'Andres'})-[:WORKS_AT]->(neo)<-[:WORKS_AT]-(michael {name:'Michael'})
@@ -290,7 +289,7 @@ $$) as (p agtype);
 ```
 
 
-This query creates three nodes and two relationships in one go, assigns it to a path variable, and returns it.
+This query creates three nodes and two relationships simultaneously, assigns the pattern to a path variable, and returns said pattern.
 
 Result
 <table>

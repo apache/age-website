@@ -3,15 +3,15 @@
 
 ## degrees
 
-degrees() converts radians to degrees.
+`degrees()` converts radians to degrees.
 
-Syntax:`degrees(expression)`
+Syntax: `degrees(expression)`
 
 Returns:
 
 
 ```
-A Float.
+An agtype float.
 ```
 
 
@@ -38,12 +38,12 @@ Considerations:
 
 
 
-* degrees(null) returns null.
+* `degrees(null)` returns `null`.
 
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN degrees(3.14159)
@@ -75,15 +75,15 @@ Results:
 
 ## radians
 
-radians() converts radians to degrees.
+`radians()` converts degrees to radians.
 
-Syntax:`radians(expression)`
+Syntax: `radians(expression)`
 
 Returns:
 
 
 ```
-A Float.
+An agtype float.
 ```
 
 
@@ -110,12 +110,12 @@ Considerations:
 
 
 
-* radians(null) returns null.
+* `radians(null)` returns `null`.
 
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN radians(180)
@@ -147,7 +147,7 @@ Results:
 
 ## pi
 
-pi() returns the mathematical constant pi.
+`pi()` returns the mathematical constant pi.
 
 Syntax: `pi()`
 
@@ -162,7 +162,7 @@ An agtype float.
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN pi()
@@ -177,7 +177,7 @@ Result:
 
 <table>
   <tr>
-   <td>p
+   <td>pi
    </td>
   </tr>
   <tr>
@@ -194,15 +194,15 @@ Result:
 
 ## sin
 
-sin() returns the sine of a number.
+`sin()` returns the sine of a number.
 
-Syntax:`sin(expression)`
+Syntax: `sin(expression)`
 
 Returns:
 
 
 ```
-A Float.
+An agtype float.
 ```
 
 
@@ -229,12 +229,12 @@ Considerations:
 
 
 
-* sin(null) returns null.
+* `sin(null)` returns `null`.
 
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN sin(0.5)
@@ -266,7 +266,7 @@ Results:
 
 ## cos
 
-cos() returns the cosine of a number.
+`cos()` returns the cosine of a number.
 
 Syntax: `cos(expression)`
 
@@ -274,7 +274,7 @@ Returns:
 
 
 ```
-A Float.
+An agtype float.
 ```
 
 
@@ -301,15 +301,15 @@ Considerations:
 
 
 
-* cos(null) returns null.
+* `cos(null)` returns `null`.
 
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
-    RETURN cosin(0.5)
+    RETURN cos(0.5)
 $$) as (c agtype);
 ```
 
@@ -338,7 +338,7 @@ Results:
 
 ## tan
 
-tan() returns the tangent of a number.
+`tan()` returns the tangent of a number.
 
 Syntax: `tan(expression)`
 
@@ -346,7 +346,7 @@ Returns:
 
 
 ```
-A Float.
+An agtype float.
 ```
 
 
@@ -373,12 +373,12 @@ Considerations:
 
 
 
-* tan(null) returns null.
+* `tan(null)` returns `null`.
 
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN tan(0.5)
@@ -408,17 +408,17 @@ Results:
 
 
 
-## asin
+## Cot
 
-asin() returns the arcsine of a number.
+`cot()` returns the cotangent of a number.
 
-Syntax:`asin(expression)`
+Syntax: `cot(expression)`
 
 Returns:
 
 
 ```
-A Float.
+A float.
 ```
 
 
@@ -445,17 +445,89 @@ Considerations:
 
 
 
-* asin(null) returns null.
-* If (expression &lt; -1) or (expression > 1), then (asin(expression)) returns null.
+* `cot(null)` returns `null`.
 
 Query:
 
 
+```postgresql
+SELECT *
+FROM cypher('graph_name', $$
+    RETURN cot(0.5)
+$$) as (t agtype);
 ```
+
+
+The cotangent of 0.5 is returned.
+
+Results:
+
+
+<table>
+  <tr>
+   <td>t
+   </td>
+  </tr>
+  <tr>
+   <td>1.830487721712452
+   </td>
+  </tr>
+  <tr>
+   <td>1 row(s) returned
+   </td>
+  </tr>
+</table>
+
+
+
+## asin
+
+`asin()` returns the arcsine of a number.
+
+Syntax: `asin(expression)`
+
+Returns:
+
+
+```
+An agtype float.
+```
+
+
+Arguments:
+
+
+<table>
+  <tr>
+   <td>Name
+   </td>
+   <td>Description
+   </td>
+  </tr>
+  <tr>
+   <td>expression
+   </td>
+   <td>An agtype number expression that represents the angle in radians.
+   </td>
+  </tr>
+</table>
+
+
+Considerations:
+
+
+
+* `asin(null)` returns `null`.
+* If (expression &lt; -1) or (expression > 1), then `asin(expression)` returns `null`.
+
+Query:
+
+
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN asin(0.5)
-$$) as (s agtype);
+$$) as (arc_s agtype);
 ```
 
 
@@ -466,7 +538,7 @@ Results:
 
 <table>
   <tr>
-   <td>s
+   <td>arc_s
    </td>
   </tr>
   <tr>
@@ -483,15 +555,15 @@ Results:
 
 ## acos
 
-acos() returns the arccosine of a number.
+`acos()` returns the arccosine of a number.
 
-Syntax:`acos(expression)`
+Syntax: `acos(expression)`
 
 Returns:
 
 
 ```
-A Float.
+An agtype float.
 ```
 
 
@@ -518,13 +590,13 @@ Considerations:
 
 
 
-* acos(null) returns null.
-* If (expression &lt; -1) or (expression > 1), then (acos(expression)) returns null.
+* `acos(null)` returns `null`.
+* If (expression &lt; -1) or (expression > 1), then `acos(expression)` returns `null`.
 
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN acos(0.5)
@@ -556,7 +628,7 @@ Results:
 
 ## atan
 
-atan() returns the arctangent of a number.
+`atan()` returns the arctangent of a number.
 
 Syntax:`atan(expression)`
 
@@ -564,7 +636,7 @@ Returns:
 
 
 ```
-A Float.
+An agtype float.
 ```
 
 
@@ -591,12 +663,12 @@ Considerations:
 
 
 
-* atan(null) returns null.
+* `atan(null)` returns `null`.
 
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN atan(0.5)
@@ -604,7 +676,7 @@ $$) as (arc_t agtype);
 ```
 
 
-The arccosine of 0.5 is returned.
+The arctangent of 0.5 is returned.
 
 Results:
 
@@ -628,7 +700,7 @@ Results:
 
 ## atan2
 
-atan2() returns the arctangent2 of a set of coordinates in radians.
+`atan2()` returns the arctangent2 of a set of coordinates in radians.
 
 Syntax: `atan2(expression1, expression2)`
 
@@ -636,7 +708,7 @@ Returns:
 
 
 ```
-A Float.
+An agtype float.
 ```
 
 
@@ -669,12 +741,12 @@ Considerations:
 
 
 
-* atan2(null, null), atan2(null, expression2) and atan(expression1, null) all return null.
+* `atan2(null, null)`, `atan2(null, expression2)` and `atan(expression1, null)` all return null.
 
 Query:
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     RETURN atan2(0.5, 0.6)

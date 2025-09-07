@@ -5,7 +5,7 @@ Cypher queries are constructed using a function called cypher in ag_catalog whic
 
 ## Cypher()
 
-Cypher() executes the cypher query passed as an argument.
+`cypher()` executes the cypher query passed as an argument.
 
 Syntax `cypher(graph_name, query_string, parameters)`
 
@@ -55,7 +55,7 @@ Considerations:
 Query:
 
 
-```
+```postgresql
 SELECT * FROM cypher('graph_name', $$ 
 /* Cypher Query Here */ 
 $$) AS (result1 agtype, result2 agtype);
@@ -63,17 +63,17 @@ $$) AS (result1 agtype, result2 agtype);
 
 ## Cypher in an Expression
 
-Cypher may not be used as part of an expression, use a subquery instead. See [Advanced Cypher Queries](../advanced/advanced.html#cypher-in-sql-expressions) for information about how to use Cypher queries with Expressions
+Cypher may not be used as part of an expression, use a subquery instead. See [Advanced Cypher Queries](../advanced/advanced.md#cypher-in-sql-expressions) for information about how to use Cypher queries with Expressions
 
 
 ## SELECT Clause
 
-Calling Cypher in the SELECT clause as an independent column is not allowed. However Cypher may be used when it belongs as a conditional. 
+Calling Cypher in the `SELECT` clause as an independent column is not allowed. However Cypher may be used when it belongs as a conditional. 
 
 Not Allowed:
 
 
-```
+```postgresql
 SELECT 
     cypher('graph_name', $$
          MATCH (v:Person)

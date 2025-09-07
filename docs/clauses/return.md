@@ -1,16 +1,16 @@
 # RETURN  
 
-In the RETURN part of your query, you define which parts of the pattern you are interested in. It can be nodes, relationships, or properties on these.
+In the `RETURN` part of your query, you define which parts of the pattern you want to output. Output can include agtype values, nodes, relationships, or properties.
 
 
 ## Return nodes
 
-To return a node, list it in the RETURN statement.
+To return a node, list it in the `RETURN` statement.
 
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     MATCH (n {name: 'B'})
@@ -43,12 +43,12 @@ Result
 
 ## Return edges
 
-To return n edge, just include it in the RETURN list.
+To return `n`'s edges, just include it in the `RETURN` list.
 
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     MATCH (n)-[r:KNOWS]->()
@@ -80,12 +80,12 @@ The relationship is returned by the example.
 
 ## Return property
 
-To return a property, use the dot separator, like this:
+To return a property, use the dot separator, as follows:
 
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     MATCH (n {name: 'A'})
@@ -117,11 +117,11 @@ Result
 
 ## Return all elements
 
-When you want to return all vertices, edges and paths found in a query, you can use the * symbol.
+When you want to return all vertices, edges and paths found in a query, you can use the `*` symbol.
 
 Query
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
 	MATCH (a {name: 'A'})-[r]->(b)
@@ -163,7 +163,7 @@ Result
    </td>
   </tr>
   <tbody>
-   <td>(2 rows)
+   <td colspan="3">(2 rows)
    </td>
   </tr>
 </table>
@@ -175,7 +175,7 @@ To introduce a placeholder that is made up of characters that are not contained 
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     MATCH (`This isn\'t a common variable`)
@@ -214,7 +214,7 @@ If the name of the field should be different from the expression used, you can r
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     MATCH (n {name: 'A'})
@@ -247,12 +247,12 @@ Result
 
 ## Optional properties
 
-If a property might or might not be there, you can still select it as usual. It will be treated as null if it is missing.
+If a property might or might not be there, it will be treated as null if it is missing.
 
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     MATCH (n)
@@ -261,7 +261,7 @@ $$) as (age agtype);
 ```
 
 
-This example returns the age when the node has that property, or null if the property is not there.
+This query returns the property if it exists, or null if the property does not exist.
 
 Result
 
@@ -294,7 +294,7 @@ Any expression can be used as a return item—literals, predicates, properties, 
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
     MATCH (a)
@@ -335,12 +335,12 @@ Result
 
 ## Unique results
 
-DISTINCT retrieves only unique records depending on the fields that have been selected to output.
+`DISTINCT` retrieves only unique records depending on the fields that have been selected to output.
 
 Query
 
 
-```
+```postgresql
 SELECT *
 FROM cypher('graph_name', $$
 MATCH (a {name: 'A'})-[]->(b)
