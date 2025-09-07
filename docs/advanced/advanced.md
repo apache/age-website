@@ -8,12 +8,12 @@ Query:
 
 
 ```postgresql
-WITH graph_query as (
+WITH graph_query AS (
     SELECT *
         FROM cypher('graph_name', $$
         MATCH (n)
         RETURN n.name, n.age
-    $$) as (name agtype, age agtype)
+    $$) AS (name agtype, age agtype)
 )
 SELECT * FROM graph_query;
 ```
@@ -71,13 +71,13 @@ Query:
 
 ```postgresql
 SELECT id, 
-    graph_query.name = t.name as names_match,
-    graph_query.age = t.age as ages_match
+    graph_query.name = t.name AS names_match,
+    graph_query.age = t.age AS ages_match
 FROM schema_name.sql_person AS t
 JOIN cypher('graph_name', $$
         MATCH (n:Person)
         RETURN n.name, n.age, id(n)
-$$) as graph_query(name agtype, age agtype, id agtype)
+$$) AS graph_query(name agtype, age agtype, id agtype)
 ON t.person_id = graph_query.id
 ```
 
@@ -136,13 +136,14 @@ When writing a cypher query that is known to return one column and one row, the 
 
 
 ```postgresql
-SELECT t.name FROM schema_name.sql_person AS t
-where t.name = (
+SELECT t.name, t.age
+FROM schema_name.sql_person AS t
+WHERE t.name = (
     SELECT a
     FROM cypher('graph_name', $$
-    	  MATCH (v)
+    	MATCH (v)
         RETURN v.name
-    $$) as (name varchar(50))
+    $$) AS (name varchar(50))
     ORDER BY name
     LIMIT 1);
 ```
@@ -180,13 +181,14 @@ Query:
 
 
 ```postgresql
-SELECT t.name, t.age FROM schema_name.sql_person as t 
-where t.name in (
+SELECT t.name, t.age
+FROM schema_name.sql_person AS t 
+WHERE t.name IN (
     SELECT *
     FROM cypher('graph_name', $$
         MATCH (v:Person)
         RETURN v.name 
-    $$) as (a agtype));
+    $$) AS (a agtype));
 ```
 
 
@@ -235,13 +237,13 @@ Query:
 
 ```postgresql
 SELECT t.name, t.age
-FROM schema_name.sql_person as t
+FROM schema_name.sql_person AS t
 WHERE EXISTS (
     SELECT *
     FROM cypher('graph_name', $$
-	  MATCH (v:Person)
+        MATCH (v:Person)
         RETURN v.name, v.age
-    $$) as (name agtype, age agtype)
+    $$) AS (name agtype, age agtype)
     WHERE name = t.name AND age = t.age
 );
 ```
@@ -287,11 +289,11 @@ SELECT graph_1.name, graph_1.age, graph_2.license_number
 FROM cypher('graph_1', $$
     MATCH (v:Person)
     RETURN v.name, v.age
-$$) as graph_1(name agtype, age agtype)
+$$) AS graph_1(name agtype, age agtype)
 JOIN cypher('graph_2', $$
     MATCH (v:Doctor)
     RETURN v.name, v.license_number
-$$) as graph_2(name agtype, license_number agtype)
+$$) AS graph_2(name agtype, license_number agtype)
 ON graph_1.name = graph_2.name
 ```
 
