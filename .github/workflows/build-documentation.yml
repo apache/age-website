@@ -16,11 +16,11 @@ jobs:
 
     steps:
     - name: Checkout new-web branch
-      uses: actions/checkout@v3
+      uses: actions/checkout@v5
       with:
           ref: new-web
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v5
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'yarn'
@@ -29,7 +29,7 @@ jobs:
     - run: cp .asf.yaml ./public
 
     - name: Deploy web
-      uses: peaceiris/actions-gh-pages@v3
+      uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_branch: asf-site
@@ -37,7 +37,7 @@ jobs:
         destination_dir: ./
 
     - name: Checkout master branch
-      uses: actions/checkout@v3
+      uses: actions/checkout@v5
       with:
           ref: master
 
@@ -45,7 +45,7 @@ jobs:
       run: git fetch --all
 
     - name: Setup Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v6
       with:
         python-version: '3.10'
 
@@ -58,12 +58,13 @@ jobs:
       run: echo "::set-output name=dir::$(pip cache dir)"
 
     - name: Cache dependencies
-      uses: actions/cache@v2
+      uses: actions/cache@v4
       with:
         path: ${{ steps.pip-cache.outputs.dir }}
         key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
         restore-keys: |
           ${{ runner.os }}-pip-
+    
     - name: Install dependencies
       run: python3 -m pip install -r ./requirements.txt
 
@@ -72,7 +73,7 @@ jobs:
     - run: cp ./index.html ./build/html
 
     - name: Deploy documentation
-      uses: peaceiris/actions-gh-pages@v3
+      uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_branch: asf-site
