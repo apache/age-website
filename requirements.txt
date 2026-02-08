@@ -19,7 +19,7 @@ pydantic==1.10.13
 Pygments==2.15.0
 pyparsing==3.0.9
 pytz==2022.4
-PyYAML==6.0
+PyYAML==6.0.3
 requests==2.32.0
 rich==12.6.0
 rstcheck==6.1.0
