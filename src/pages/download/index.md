@@ -82,7 +82,7 @@ Find the latest version of our software below.
 
 | Apache AGE Release          | CheckSum & Signature  & Verification                                                                                                                                                                                                                                                                                      |
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Download Apache AGE 1.6.0 ➚] (https://dlcdn.apache.org/age/PG14/1.6.0/apache-age-1.6.0-src.tar.gz)| [CheckSum ➚](https://archive.apache.org/dist/age/PG14/1.6.0/apache-age-1.6.0-src.tar.gz.sha512) & [Signature ➚](https://downloads.apache.org/age/PG14/1.6.0/apache-age-1.6.0-src.tar.gz.asc) & [KEYS File ➚](https://downloads.apache.org/age/KEYS) & [Verify Signature ➚](https://www.apache.org/info/verification.html) |
+| [Download Apache AGE 1.6.0 ➚] (https://dlcdn.apache.org/age/PG14/1.6.0/apache-age-1.6.0-src.tar.gz)| [CheckSum ➚](https://downloads.apache.org/age/PG14/1.6.0/apache-age-1.6.0-src.tar.gz.sha512) & [Signature ➚](https://downloads.apache.org/age/PG14/1.6.0/apache-age-1.6.0-src.tar.gz.asc) & [KEYS File ➚](https://downloads.apache.org/age/KEYS) & [Verify Signature ➚](https://www.apache.org/info/verification.html) |
 
 <br/>
 
