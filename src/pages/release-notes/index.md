@@ -17,7 +17,7 @@ Release Notes
 
 <section>
 
-### PG 18: <https://github.com/apache/age/releases/tag/PG18%2Fv1.7.0-rc0>[](https://github.com/apache/age/releases/tag/PG16%2Fv1.5.0-rc0)
+### PG 18: <https://github.com/apache/age/releases/tag/PG18%2Fv1.7.0-rc0>
 
 </section>
 
@@ -47,13 +47,13 @@ Release Notes
 
 <section>
 
-### PG 17: <https://github.com/apache/age/releases/tag/PG17%2Fv1.6.0-rc0>[](https://github.com/apache/age/releases/tag/PG16%2Fv1.5.0-rc0)
+### PG 17: <https://github.com/apache/age/releases/tag/PG17%2Fv1.6.0-rc0>
 
-### PG 16: <https://github.com/apache/age/releases/tag/PG16%2Fv1.6.0-rc0>[](https://github.com/apache/age/releases/tag/PG15%2Fv1.5.0-rc0)
+### PG 16: <https://github.com/apache/age/releases/tag/PG16%2Fv1.6.0-rc0>
 
-### PG 15: [](https://github.com/apache/age/releases/tag/PG14%2Fv1.5.0-rc0)<https://github.com/apache/age/releases/tag/PG15%2Fv1.6.0-rc0>
+### PG 15: <https://github.com/apache/age/releases/tag/PG15%2Fv1.5.0-rc0>
 
-### PG 14: [](https://github.com/apache/age/releases/tag/PG13%2Fv1.5.0-rc0)<https://github.com/apache/age/releases/tag/PG14%2Fv1.6.0-rc0>
+### PG 14: <https://github.com/apache/age/releases/tag/PG14%2Fv1.5.0-rc0>
 
 </section>
 
