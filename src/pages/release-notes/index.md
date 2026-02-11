@@ -7,7 +7,74 @@ title: Release Notes
 
 <section>
 
-## Apache AGE v1.5.0 ✅ 
+## Apache AGE v1.7.0 ✅
+
+Release Date\
+21 Jan 2026\
+Release Notes
+
+</section>
+
+<section>
+
+### PG 18: <https://github.com/apache/age/releases/tag/PG18%2Fv1.7.0-rc0>
+
+</section>
+
+<section>
+
+Key Improvement(s)
+
+* Add Row Level Security support
+* Add index on id columns 
+* Multiple bug fixes
+
+</section>
+
+</div>
+
+<div class="ReleaseBox">
+
+<section>
+
+## Apache AGE v1.6.0 ✅
+
+Release Date\
+22 Sep 2025\
+Release Notes
+
+</section>
+
+<section>
+
+### PG 17: <https://github.com/apache/age/releases/tag/PG17%2Fv1.6.0-rc0>
+
+### PG 16: <https://github.com/apache/age/releases/tag/PG16%2Fv1.6.0-rc0>
+
+### PG 15: <https://github.com/apache/age/releases/tag/PG15%2Fv1.5.0-rc0>
+
+### PG 14: <https://github.com/apache/age/releases/tag/PG14%2Fv1.5.0-rc0>
+
+</section>
+
+<section>
+
+Key Improvement(s)
+
+* Add support for operators in cypher query
+* Add support for external extensions
+* Added Networkx Support in python driver
+* Multiple bug fixes
+
+</section>
+
+</div>
+
+<div class="ReleaseBox">
+
+<section>
+
+## Apache AGE v1.5.0 ✅
 
 Release Date\
 10 Jan 2024\
@@ -18,22 +85,27 @@ Release Notes
 <section>
 
 ### PG 16: <https://github.com/apache/age/releases/tag/PG16%2Fv1.5.0-rc0>
-### PG 15: <https://github.com/apache/age/releases/tag/PG15%2Fv1.5.0-rc0>
-### PG 14: <https://github.com/apache/age/releases/tag/PG14%2Fv1.5.0-rc0>
-### PG 13: <https://github.com/apache/age/releases/tag/PG13%2Fv1.5.0-rc0>
-### PG 12: <https://github.com/apache/age/releases/tag/PG12%2Fv1.5.0-rc0>
-### PG 11: <https://github.com/apache/age/releases/tag/PG11%2Fv1.5.0-rc0>
 
+### PG 15: <https://github.com/apache/age/releases/tag/PG15%2Fv1.5.0-rc0>
+
+### PG 14: <https://github.com/apache/age/releases/tag/PG14%2Fv1.5.0-rc0>
+
+### PG 13: <https://github.com/apache/age/releases/tag/PG13%2Fv1.5.0-rc0>
+
+### PG 12: <https://github.com/apache/age/releases/tag/PG12%2Fv1.5.0-rc0>
+
+### PG 11: <https://github.com/apache/age/releases/tag/PG11%2Fv1.5.0-rc0>
 
 </section>
 
 <section>
 
 Key Improvement(s)
-- Additional index support and performance improvements
-- Docker and Python driver updates
-- Support for chained expressions in CASE statements
-- Multiple bug fixes
+
+* Additional index support and performance improvements
+* Docker and Python driver updates
+* Support for chained expressions in CASE statements
+* Multiple bug fixes
 
 </section>
 
@@ -54,9 +126,13 @@ Release Notes
 <section>
 
 ### PG 15: <https://github.com/apache/age/releases/tag/PG15%2Fv1.4.0-rc0>
+
 ### PG 14: <https://github.com/apache/age/releases/tag/PG14%2Fv1.4.0-rc0>
+
 ### PG 13: <https://github.com/apache/age/releases/tag/PG13%2Fv1.4.0-rc0>
+
 ### PG 12: <https://github.com/apache/age/releases/tag/PG12%2Fv1.4.0-rc0>
+
 ### PG 11: <https://github.com/apache/age/releases/tag/PG11%2Fv1.4.0-rc0>
 
 </section>
@@ -64,9 +140,10 @@ Release Notes
 <section>
 
 Key Improvement(s)
-- First release for postgreSQL 14 and 15
-- Several issues with the clauses resolved
-- Added multiple openCypher functions
+
+* First release for postgreSQL 14 and 15
+* Several issues with the clauses resolved
+* Added multiple openCypher functions
 
 </section>
 
@@ -87,7 +164,9 @@ Release Notes
 <section>
 
 ### PG 13: <https://github.com/apache/age/releases/tag/PG13%2Fv1.3.0-rc0>
+
 ### PG 12: <https://github.com/apache/age/releases/tag/PG12%2Fv1.3.0-rc1>
+
 ### PG 11: <https://github.com/apache/age/releases/tag/PG11%2Fv1.3.0-rc0>
 
 </section>
@@ -95,8 +174,9 @@ Release Notes
 <section>
 
 Key Improvement(s)
-- First release for postgreSQL 13
-- Improved stability and performance of queries
+
+* First release for postgreSQL 13
+* Improved stability and performance of queries
 
 </section>
 
@@ -123,8 +203,9 @@ Release Notes
 <section>
 
 Key Improvement(s)
-- Graph naming convention now aligns with Cypher spec
-- Improved graph data querying stability and performance
+
+* Graph naming convention now aligns with Cypher spec
+* Improved graph data querying stability and performance
 
 </section>
 
@@ -151,7 +232,8 @@ Release Notes
 <section>
 
 Key Improvement(s)
-- Greatly Improved graph data querying performance
+
+* Greatly Improved graph data querying performance
 
 </section>
 
@@ -178,8 +260,9 @@ Release Notes
 <section>
 
 Key Improvement(s)
-- Improved performance and stability
-- Enhanced usability tools
+
+* Improved performance and stability
+* Enhanced usability tools
 
 </section>
 
