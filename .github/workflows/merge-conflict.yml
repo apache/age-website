@@ -6,7 +6,7 @@ jobs:
   merge_conflict_job:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v5
       - name: Check for merge conflicts
         run: |
           # Find files with merge conflict markers
