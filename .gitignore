@@ -4,3 +4,4 @@ venv
 .yarn
 public
 node_modules
+.docker.buildhash

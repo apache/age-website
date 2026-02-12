@@ -1,3 +1,13 @@
+#!/usr/bin/env bash
+# Targets macOS and Linux. Run with: ./docker.sh or bash docker.sh
+
+set -euo pipefail
+if [ -z "${BASH_VERSINFO+x}" ]; then
+  echo "This script requires bash. Run with: bash $0" >&2
+  exit 1
+fi
+trap 'echo "Error: $0 failed at line $LINENO. Command: $BASH_COMMAND" >&2; exit 1' ERR
+
 IMAGE=age-doc
 HASH_FILE=".docker.buildhash"
 
