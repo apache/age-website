@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Graphs &mdash; Apache AGE master documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="The AGE Cypher Query Format" href="cypher.html" />
+    <link rel="prev" title="Setup" href="setup.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Apache AGE
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">Setup</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Graphs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#create-a-graph">Create a Graph</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#create-graph">create_graph()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#delete-a-graph">Delete a Graph</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#drop-graph">drop_graph()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#how-graphs-are-stored-in-postgres">How Graphs Are Stored In Postgres</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cypher.html">The AGE Cypher Query Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types.html">Data Types - An Introduction to agtype</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comparability.html">Comparability, Equality, Orderability and Equivalence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operators.html">Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="precedence.html">Operator Precedence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregation.html">Aggregation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agload.html">Importing Graph from Files</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Clauses</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/match.html">MATCH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/with.html">WITH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/return.html">RETURN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/order_by.html">ORDER BY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/skip.html">SKIP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/limit.html">LIMIT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/create.html">CREATE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/delete.html">DELETE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/set.html">SET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/remove.html">REMOVE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/merge.html">MERGE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/unwind.html">UNWIND</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Functions</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../functions/predicate_functions.html">Predicate Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/scalar_functions.html">Scalar Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/list_functions.html">List Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/numeric_functions.html">Numeric Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/logarithmic_functions.html">Logarithmic Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/trigonometric_functions.html">Trigonometric Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/string_functions.html">String Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/aggregate_functions.html">Aggregation Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/map_functions.html">Map Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/user_functions.html">User Defined Functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">AGE Beyond Cypher</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/advanced_overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/advanced.html">Using Cypher in a CTE Expression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/advanced.html#using-cypher-in-a-join-expression">Using Cypher in a Join expression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/advanced.html#cypher-in-sql-expressions">Cypher in SQL expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/prepared_statements.html">Prepared Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/plpgsql.html">PL/pgSQL Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/sql_in_cypher.html">SQL In Cypher</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/run_tests.html">Run the test suite</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Apache AGE</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Graphs</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/apache/age-website/blob/master/docs/intro/graphs.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="graphs">
+<h1>Graphs<a class="headerlink" href="#graphs" title="Permalink to this heading"></a></h1>
+<p>A graph consists of a set of vertices and edges, where each individual node and edge possesses a map of properties. A vertex is the basic object of a graph, that can exist independently of everything else in the graph. An edge creates a directed connection between two vertices.</p>
+<section id="create-a-graph">
+<h2>Create a Graph<a class="headerlink" href="#create-a-graph" title="Permalink to this heading"></a></h2>
+<p>To create a graph, use the <code class="docutils literal notranslate"><span class="pre">create_graph</span></code> function, located in the <code class="docutils literal notranslate"><span class="pre">ag_catalog</span></code> namespace.</p>
+<section id="create-graph">
+<h3>create_graph()<a class="headerlink" href="#create-graph" title="Permalink to this heading"></a></h3>
+<p>Syntax: <code class="docutils literal notranslate"><span class="pre">create_graph(graph_name);</span></code></p>
+<p>Returns:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span>
+</pre></div>
+</div>
+<p>Arguments:</p>
+<table>
+  <tr>
+   <td>Name
+   </td>
+   <td>Description
+   </td>
+  </tr>
+  <tr>
+   <td>graph_name
+   </td>
+   <td>Name of the graph to be created
+   </td>
+  </tr>
+</table>
+<p>Considerations</p>
+<ul class="simple">
+<li><p>This function will not return any results. The graph is created if there is no error message.</p></li>
+<li><p>Tables needed to set up the graph are automatically created.</p></li>
+</ul>
+<p>Example:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">ag_catalog</span><span class="p">.</span><span class="n">create_graph</span><span class="p">(</span><span class="s1">&#39;graph_name&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="delete-a-graph">
+<h2>Delete a Graph<a class="headerlink" href="#delete-a-graph" title="Permalink to this heading"></a></h2>
+<p>To delete a graph, use the <code class="docutils literal notranslate"><span class="pre">drop_graph</span></code> function, located in the <code class="docutils literal notranslate"><span class="pre">ag_catalog</span></code> namespace.</p>
+<section id="drop-graph">
+<h3>drop_graph()<a class="headerlink" href="#drop-graph" title="Permalink to this heading"></a></h3>
+<p>Syntax: <code class="docutils literal notranslate"><span class="pre">drop_graph(graph_name,</span> <span class="pre">cascade);</span></code></p>
+<p>Returns:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span>
+</pre></div>
+</div>
+<p>Arguments:</p>
+<table>
+  <tr>
+   <td>Name
+   </td>
+   <td>Description
+   </td>
+  </tr>
+  <tr>
+   <td>graph_name
+   </td>
+   <td>Name of the graph to be deleted
+   </td>
+  </tr>
+  <tr>
+   <td>cascade
+   </td>
+   <td>A boolean that will will delete labels and data that depend on the graph.
+   </td>
+  </tr>
+</table>
+<p>Considerations:</p>
+<ul class="simple">
+<li><p>This function will not return any results. If there is no error message the graph has been deleted.</p></li>
+<li><p>It is recommended to set the cascade option to true, otherwise everything in the graph must be manually dropped with SQL DDL commands.</p></li>
+</ul>
+<p>Example:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">ag_catalog</span><span class="p">.</span><span class="n">drop_graph</span><span class="p">(</span><span class="s1">&#39;graph_name&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">true</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="how-graphs-are-stored-in-postgres">
+<h2>How Graphs Are Stored In Postgres<a class="headerlink" href="#how-graphs-are-stored-in-postgres" title="Permalink to this heading"></a></h2>
+<p>When creating graphs with AGE, a Postgres namespace will be generated for every individual graph.
+The name and namespace of the created graphs can be seen within the <code class="docutils literal notranslate"><span class="pre">ag_graph</span></code> table from the <code class="docutils literal notranslate"><span class="pre">ag_catalog</span></code> namespace:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">create_graph</span><span class="p">(</span><span class="s1">&#39;new_graph&#39;</span><span class="p">);</span>
+
+<span class="n">NOTICE</span><span class="p">:</span><span class="w">  </span><span class="n">graph</span><span class="w"> </span><span class="ss">&quot;new_graph&quot;</span><span class="w"> </span><span class="n">has</span><span class="w"> </span><span class="n">been</span><span class="w"> </span><span class="n">created</span>
+<span class="w"> </span><span class="n">create_graph</span><span class="w"> </span>
+<span class="c1">--------------</span>
+
+<span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="k">row</span><span class="p">)</span>
+
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">ag_catalog</span><span class="p">.</span><span class="n">ag_graph</span><span class="p">;</span>
+
+<span class="w">   </span><span class="n">name</span><span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="n">namespace</span><span class="w"> </span>
+<span class="c1">-----------+-----------</span>
+<span class="w"> </span><span class="n">new_graph</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">new_graph</span>
+<span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="k">row</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>After creating the graph, two tables are going to be created under the graph’s namespace to store vertices and edges: <code class="docutils literal notranslate"><span class="pre">_ag_label_vertex</span></code> and <code class="docutils literal notranslate"><span class="pre">_ag_label_edge</span></code>.
+These will be the parent tables of any new vertex or edge label. The query below shows how to retrieve the edge and vertex labels for all the graphs in the database.</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Before creating a new vertex label.</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">ag_catalog</span><span class="p">.</span><span class="n">ag_label</span><span class="p">;</span>
+
+<span class="w">       </span><span class="n">name</span><span class="w">       </span><span class="o">|</span><span class="w"> </span><span class="n">graph</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">kind</span><span class="w"> </span><span class="o">|</span><span class="w">          </span><span class="n">relation</span><span class="w">          </span><span class="o">|</span><span class="w">        </span><span class="n">seq_name</span><span class="w">         </span>
+<span class="c1">------------------+-------+----+------+----------------------------+-------------------------</span>
+<span class="w"> </span><span class="n">_ag_label_vertex</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">68484</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">v</span><span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="n">new_graph</span><span class="p">.</span><span class="n">_ag_label_vertex</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">_ag_label_vertex_id_seq</span>
+<span class="w"> </span><span class="n">_ag_label_edge</span><span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="mi">68484</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="mi">2</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">e</span><span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="n">new_graph</span><span class="p">.</span><span class="n">_ag_label_edge</span><span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="n">_ag_label_edge_id_seq</span>
+<span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="k">rows</span><span class="p">)</span>
+
+<span class="c1">-- Creating a new vertex label.</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">create_vlabel</span><span class="p">(</span><span class="s1">&#39;new_graph&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Person&#39;</span><span class="p">);</span>
+<span class="n">NOTICE</span><span class="p">:</span><span class="w">  </span><span class="n">VLabel</span><span class="w"> </span><span class="ss">&quot;Person&quot;</span><span class="w"> </span><span class="n">has</span><span class="w"> </span><span class="n">been</span><span class="w"> </span><span class="n">created</span>
+<span class="w"> </span><span class="n">create_vlabel</span><span class="w"> </span>
+<span class="c1">---------------</span>
+<span class="w"> </span>
+<span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="k">row</span><span class="p">)</span>
+
+<span class="c1">-- After creating a new vertex label.</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">ag_catalog</span><span class="p">.</span><span class="n">ag_label</span><span class="p">;</span>
+<span class="w">       </span><span class="n">name</span><span class="w">       </span><span class="o">|</span><span class="w"> </span><span class="n">graph</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">kind</span><span class="w"> </span><span class="o">|</span><span class="w">          </span><span class="n">relation</span><span class="w">          </span><span class="o">|</span><span class="w">        </span><span class="n">seq_name</span><span class="w">         </span>
+<span class="c1">------------------+-------+----+------+----------------------------+-------------------------</span>
+<span class="w"> </span><span class="n">_ag_label_vertex</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">68484</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">v</span><span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="n">new_graph</span><span class="p">.</span><span class="n">_ag_label_vertex</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">_ag_label_vertex_id_seq</span>
+<span class="w"> </span><span class="n">_ag_label_edge</span><span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="mi">68484</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="mi">2</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">e</span><span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="n">new_graph</span><span class="p">.</span><span class="n">_ag_label_edge</span><span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="n">_ag_label_edge_id_seq</span>
+<span class="w"> </span><span class="n">Person</span><span class="w">           </span><span class="o">|</span><span class="w"> </span><span class="mi">68484</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="mi">3</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">v</span><span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="n">new_graph</span><span class="p">.</span><span class="ss">&quot;Person&quot;</span><span class="w">         </span><span class="o">|</span><span class="w"> </span><span class="n">Person_id_seq</span>
+<span class="p">(</span><span class="mi">3</span><span class="w"> </span><span class="k">rows</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Whenever a vertex label is created with the <code class="docutils literal notranslate"><span class="pre">create_vlabel()</span></code> function, a new table is generated within the <code class="docutils literal notranslate"><span class="pre">new_graph</span></code>’s namespace: <code class="docutils literal notranslate"><span class="pre">new_graph.&quot;&lt;label&gt;&quot;</span></code>.
+The same works for the <code class="docutils literal notranslate"><span class="pre">create_elabel()</span></code> function for the creation of edge labels. Creating vertices and edges with Cypher will automatically make these tables.</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span>-- Creating two vertices and one edge.
+SELECT * FROM cypher(&#39;new_graph&#39;, $$
+CREATE (:Person {name: &#39;Daedalus&#39;})-[:FATHER_OF]-&gt;(:Person {name: &#39;Icarus&#39;})
+$$) AS (a agtype);
+ a 
+---
+(0 rows)
+
+-- Showing the newly created tables.
+SELECT * FROM ag_catalog.ag_label;
+       name       | graph | id | kind |          relation          |        seq_name         
+------------------+-------+----+------+----------------------------+-------------------------
+ _ag_label_vertex | 68484 |  1 | v    | new_graph._ag_label_vertex | _ag_label_vertex_id_seq
+ _ag_label_edge   | 68484 |  2 | e    | new_graph._ag_label_edge   | _ag_label_edge_id_seq
+ Person           | 68484 |  3 | v    | new_graph.&quot;Person&quot;         | Person_id_seq
+ FATHER_OF        | 68484 |  4 | e    | new_graph.&quot;FATHER_OF&quot;      | FATHER_OF_id_seq
+(4 rows)
+</pre></div>
+</div>
+<p><em>Note: It is recommended that no DML or DDL commands are executed in the namespace that is reserved for the graph.</em></p>
+<!-- Needs clarification. Since search path is set as ag_catalog first in the searh path, all DML and DDL will happen in the ag_catalog namespace. Also should we say schema rather than namespace? 
+-->
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="setup.html" class="btn btn-neutral float-left" title="Setup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="cypher.html" class="btn btn-neutral float-right" title="The AGE Cypher Query Format" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Apache AGE.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: master
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      <dd><a href="graphs.html">master</a></dd>
+      <dd><a href="../../v0.6.0/index.html">v0.6.0</a></dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

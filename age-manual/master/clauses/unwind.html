@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UNWIND &mdash; Apache AGE master documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Predicate Functions" href="../functions/predicate_functions.html" />
+    <link rel="prev" title="MERGE" href="merge.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Apache AGE
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/setup.html">Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/graphs.html">Graphs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/cypher.html">The AGE Cypher Query Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/types.html">Data Types - An Introduction to agtype</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/comparability.html">Comparability, Equality, Orderability and Equivalence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/operators.html">Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/precedence.html">Operator Precedence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/aggregation.html">Aggregation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/agload.html">Importing Graph from Files</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Clauses</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="match.html">MATCH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="with.html">WITH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="return.html">RETURN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order_by.html">ORDER BY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skip.html">SKIP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limit.html">LIMIT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="create.html">CREATE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="delete.html">DELETE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="set.html">SET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="remove.html">REMOVE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="merge.html">MERGE</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">UNWIND</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#examples">Examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#data-setup">Data Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#basic-unwind-with-a-list-of-integers">Basic UNWIND with a List of Integers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#sql-query">SQL Query</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#unwind-with-node-properties">UNWIND with Node Properties</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">SQL Query</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Output</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#nested-unwind">Nested UNWIND</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3">SQL Query</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">Output</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#unwind-with-path-functions-nodes">UNWIND with Path Functions: <code class="docutils literal notranslate"><span class="pre">nodes()</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id5">SQL Query</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">Output</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#unwind-with-path-functions-relationships">UNWIND with Path Functions: <code class="docutils literal notranslate"><span class="pre">relationships()</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id7">SQL Query</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">Output</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#unwind-with-path-functions-relationships-and-paths">UNWIND with Path Functions: <code class="docutils literal notranslate"><span class="pre">relationships()</span></code> and <code class="docutils literal notranslate"><span class="pre">paths</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id9">SQL Query</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">Output</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#unwind-in-set-clause">UNWIND in SET Clause</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id11">SQL Query</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id12">Output</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#unwind-with-null">UNWIND with NULL</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id13">SQL Query</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id14">Output</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Functions</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../functions/predicate_functions.html">Predicate Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/scalar_functions.html">Scalar Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/list_functions.html">List Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/numeric_functions.html">Numeric Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/logarithmic_functions.html">Logarithmic Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/trigonometric_functions.html">Trigonometric Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/string_functions.html">String Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/aggregate_functions.html">Aggregation Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/map_functions.html">Map Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/user_functions.html">User Defined Functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">AGE Beyond Cypher</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/advanced_overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/advanced.html">Using Cypher in a CTE Expression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/advanced.html#using-cypher-in-a-join-expression">Using Cypher in a Join expression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/advanced.html#cypher-in-sql-expressions">Cypher in SQL expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/prepared_statements.html">Prepared Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/plpgsql.html">PL/pgSQL Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/sql_in_cypher.html">SQL In Cypher</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/run_tests.html">Run the test suite</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Apache AGE</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>UNWIND</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/apache/age-website/blob/master/docs/clauses/unwind.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="unwind">
+<h1>UNWIND<a class="headerlink" href="#unwind" title="Permalink to this heading"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">UNWIND</span></code> clause in Cypher is used to expand a list into a sequence of individual elements. It transforms a list value into rows. For each element in the list, <code class="docutils literal notranslate"><span class="pre">UNWIND</span></code> creates a new row with the variable bound to that list element. If the expression evaluates to <code class="docutils literal notranslate"><span class="pre">null</span></code>, or an empty list, <code class="docutils literal notranslate"><span class="pre">UNWIND</span></code> will produce a single row with a null value for the variable, or no rows at all, respectively, depending on the specific database implementation. In AGE, <code class="docutils literal notranslate"><span class="pre">UNWIND</span></code> will produce a single row with a null value for the variable when the expression is <code class="docutils literal notranslate"><span class="pre">null</span></code>, and no rows when the list is empty.</p>
+<p><code class="docutils literal notranslate"><span class="pre">UNWIND</span></code> is particularly useful when dealing with list properties of nodes or relationships, or when you need to iterate over a collection of values within your query.</p>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
+<section id="data-setup">
+<h3>Data Setup<a class="headerlink" href="#data-setup" title="Permalink to this heading"></a></h3>
+<p>For some of these examples, we will be using this reference data:</p>
+<div class="highlight-postgresql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">cypher</span><span class="p">(</span><span class="s1">&#39;cypher_unwind&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">$$</span>
+<span class="s">    CREATE (n {name: &#39;node1&#39;, a: [1, 2, 3]}),</span>
+<span class="s">           (m {name: &#39;node2&#39;, a: [4, 5, 6]}),</span>
+<span class="s">           (o {name: &#39;node3&#39;, a: [7, 8, 9]}),</span>
+<span class="s">           (n)-[:KNOWS]-&gt;(m),</span>
+<span class="s">           (m)-[:KNOWS]-&gt;(o)</span>
+<span class="s">$$</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">agtype</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="basic-unwind-with-a-list-of-integers">
+<h3>Basic UNWIND with a List of Integers<a class="headerlink" href="#basic-unwind-with-a-list-of-integers" title="Permalink to this heading"></a></h3>
+<p>This example demonstrates the most basic use of UNWIND, where a literal list of integers is expanded into individual rows.</p>
+<section id="sql-query">
+<h4>SQL Query<a class="headerlink" href="#sql-query" title="Permalink to this heading"></a></h4>
+<div class="highlight-postgresql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">cypher</span><span class="p">(</span><span class="s1">&#39;cypher_unwind&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">$$</span>
+<span class="s">    UNWIND [1, 2, 3] AS i</span>
+<span class="s">    RETURN i</span>
+<span class="s">$$</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">agtype</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="output">
+<h4>Output<a class="headerlink" href="#output" title="Permalink to this heading"></a></h4>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>i
+---
+1
+2
+3
+(3 rows)
+</pre></div>
+</div>
+</section>
+</section>
+<section id="unwind-with-node-properties">
+<h3>UNWIND with Node Properties<a class="headerlink" href="#unwind-with-node-properties" title="Permalink to this heading"></a></h3>
+<p>This example shows how to use UNWIND to process list properties of nodes and uses the reference data.</p>
+<section id="id1">
+<h4>SQL Query<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h4>
+<div class="highlight-postgresql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">cypher</span><span class="p">(</span><span class="s1">&#39;cypher_unwind&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">$$</span>
+<span class="s">    MATCH (n)</span>
+<span class="s">    WITH n.a AS a</span>
+<span class="s">    UNWIND a AS i</span>
+<span class="s">    RETURN *</span>
+<span class="s">$$</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">agtype</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="n">agtype</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h4>Output<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h4>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>i | j
+-----------+---
+[1, 2, 3] | 1
+[1, 2, 3] | 2
+[1, 2, 3] | 3
+[4, 5, 6] | 4
+[4, 5, 6] | 5
+[4, 5, 6] | 6
+[7, 8, 9] | 7
+[7, 8, 9] | 8
+[7, 8, 9] | 9
+(9 rows)
+</pre></div>
+</div>
+</section>
+</section>
+<section id="nested-unwind">
+<h3>Nested UNWIND<a class="headerlink" href="#nested-unwind" title="Permalink to this heading"></a></h3>
+<p>UNWIND can be nested to flatten nested lists.</p>
+<section id="id3">
+<h4>SQL Query<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h4>
+<div class="highlight-postgresql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">cypher</span><span class="p">(</span><span class="s1">&#39;cypher_unwind&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">$$</span>
+<span class="s">    WITH [[1, 2], [3, 4], 5] AS nested</span>
+<span class="s">    UNWIND nested AS x</span>
+<span class="s">    UNWIND x AS y</span>
+<span class="s">    RETURN y</span>
+<span class="s">$$</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">agtype</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h4>Output<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h4>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>i
+---
+1
+2
+3
+4
+5
+(5 rows)
+</pre></div>
+</div>
+</section>
+</section>
+<section id="unwind-with-path-functions-nodes">
+<h3>UNWIND with Path Functions: <code class="docutils literal notranslate"><span class="pre">nodes()</span></code><a class="headerlink" href="#unwind-with-path-functions-nodes" title="Permalink to this heading"></a></h3>
+<p>UNWIND can be used with path functions like <code class="docutils literal notranslate"><span class="pre">nodes()</span></code> to process vertices in a path.</p>
+<section id="id5">
+<h4>SQL Query<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h4>
+<div class="highlight-postgresql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">cypher</span><span class="p">(</span><span class="s1">&#39;cypher_unwind&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">$$</span>
+<span class="s">    MATCH p=(n)-[:KNOWS]-&gt;(m)</span>
+<span class="s">    UNWIND nodes(p) as node</span>
+<span class="s">    RETURN node</span>
+<span class="s">$$</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">agtype</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="id6">
+<h4>Output<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h4>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>i
+-----------------------------------------------------------------------------------------------
+{&quot;id&quot;: 281474976710657, &quot;label&quot;: &quot;&quot;, &quot;properties&quot;: {&quot;a&quot;: [1, 2, 3], &quot;name&quot;: &quot;node1&quot;}}::vertex
+{&quot;id&quot;: 281474976710658, &quot;label&quot;: &quot;&quot;, &quot;properties&quot;: {&quot;a&quot;: [4, 5, 6], &quot;name&quot;: &quot;node2&quot;}}::vertex
+{&quot;id&quot;: 281474976710658, &quot;label&quot;: &quot;&quot;, &quot;properties&quot;: {&quot;a&quot;: [4, 5, 6], &quot;name&quot;: &quot;node2&quot;}}::vertex
+{&quot;id&quot;: 281474976710659, &quot;label&quot;: &quot;&quot;, &quot;properties&quot;: {&quot;a&quot;: [7, 8, 9], &quot;name&quot;: &quot;node3&quot;}}::vertex
+(4 rows)
+</pre></div>
+</div>
+</section>
+</section>
+<section id="unwind-with-path-functions-relationships">
+<h3>UNWIND with Path Functions: <code class="docutils literal notranslate"><span class="pre">relationships()</span></code><a class="headerlink" href="#unwind-with-path-functions-relationships" title="Permalink to this heading"></a></h3>
+<p>Similarly, UNWIND can be used with <code class="docutils literal notranslate"><span class="pre">relationships()</span></code> to process relationships in a path.</p>
+<section id="id7">
+<h4>SQL Query<a class="headerlink" href="#id7" title="Permalink to this heading"></a></h4>
+<div class="highlight-postgresql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">cypher</span><span class="p">(</span><span class="s1">&#39;cypher_unwind&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">$$</span>
+<span class="s">    MATCH p=(n)-[:KNOWS]-&gt;(m)</span>
+<span class="s">    UNWIND relationships(p) as relation</span>
+<span class="s">    RETURN relation</span>
+<span class="s">$$</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">agtype</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="id8">
+<h4>Output<a class="headerlink" href="#id8" title="Permalink to this heading"></a></h4>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>i
+---------------------------------------------------------------------------------------------------------------------------
+{&quot;id&quot;: 844424930131969, &quot;label&quot;: &quot;KNOWS&quot;, &quot;end_id&quot;: 281474976710658, &quot;start_id&quot;: 281474976710657, &quot;properties&quot;: {}}::edge
+{&quot;id&quot;: 844424930131970, &quot;label&quot;: &quot;KNOWS&quot;, &quot;end_id&quot;: 281474976710659, &quot;start_id&quot;: 281474976710658, &quot;properties&quot;: {}}::edge
+(2 rows)
+</pre></div>
+</div>
+</section>
+</section>
+<section id="unwind-with-path-functions-relationships-and-paths">
+<h3>UNWIND with Path Functions: <code class="docutils literal notranslate"><span class="pre">relationships()</span></code> and <code class="docutils literal notranslate"><span class="pre">paths</span></code><a class="headerlink" href="#unwind-with-path-functions-relationships-and-paths" title="Permalink to this heading"></a></h3>
+<p>This example demonstrates unwinding relationships from paths, where the path itself is also unwound.</p>
+<section id="id9">
+<h4>SQL Query<a class="headerlink" href="#id9" title="Permalink to this heading"></a></h4>
+<div class="highlight-postgresql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">cypher</span><span class="p">(</span><span class="s1">&#39;cypher_unwind&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">$$</span>
+<span class="s">    MATCH p=({name:&#39;node1&#39;})-[e:KNOWS*]-&gt;({name:&#39;node3&#39;})</span>
+<span class="s">    UNWIND [p] as path</span>
+<span class="s">    UNWIND relationships(path) as edge</span>
+<span class="s">    RETURN edge</span>
+<span class="s">$$</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">agtype</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="id10">
+<h4>Output<a class="headerlink" href="#id10" title="Permalink to this heading"></a></h4>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>i
+---------------------------------------------------------------------------------------------------------------------------
+ {&quot;id&quot;: 844424930131969, &quot;label&quot;: &quot;KNOWS&quot;, &quot;end_id&quot;: 281474976710658, &quot;start_id&quot;: 281474976710657, &quot;properties&quot;: {}}::edge
+ {&quot;id&quot;: 844424930131970, &quot;label&quot;: &quot;KNOWS&quot;, &quot;end_id&quot;: 281474976710659, &quot;start_id&quot;: 281474976710658, &quot;properties&quot;: {}}::edge
+(2 rows)
+</pre></div>
+</div>
+</section>
+</section>
+<section id="unwind-in-set-clause">
+<h3>UNWIND in SET Clause<a class="headerlink" href="#unwind-in-set-clause" title="Permalink to this heading"></a></h3>
+<p>UNWIND can be combined with the SET clause to update properties based on unwound values.</p>
+<section id="id11">
+<h4>SQL Query<a class="headerlink" href="#id11" title="Permalink to this heading"></a></h4>
+<div class="highlight-postgresql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">cypher</span><span class="p">(</span><span class="s1">&#39;cypher_unwind&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">$$</span>
+<span class="s">    MATCH p=(n)-[:KNOWS]-&gt;(m)</span>
+<span class="s">    UNWIND nodes(p) as node</span>
+<span class="s">    SET node.type = &#39;vertex&#39;</span>
+<span class="s">$$</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">agtype</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="id12">
+<h4>Output<a class="headerlink" href="#id12" title="Permalink to this heading"></a></h4>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>i
+---
+(0 rows)
+</pre></div>
+</div>
+</section>
+</section>
+<section id="unwind-with-null">
+<h3>UNWIND with NULL<a class="headerlink" href="#unwind-with-null" title="Permalink to this heading"></a></h3>
+<p>This example shows how UNWIND handles a NULL value. This behavior is important to understand when dealing with optional list properties or situations where the expression might evaluate to NULL.</p>
+<section id="id13">
+<h4>SQL Query<a class="headerlink" href="#id13" title="Permalink to this heading"></a></h4>
+<div class="highlight-postgresql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">cypher</span><span class="p">(</span><span class="s1">&#39;cypher_unwind&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">$$</span>
+<span class="s">    UNWIND NULL as i</span>
+<span class="s">    RETURN i</span>
+<span class="s">$$</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">agtype</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="id14">
+<h4>Output<a class="headerlink" href="#id14" title="Permalink to this heading"></a></h4>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>i
+---
+
+(1 row)
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="merge.html" class="btn btn-neutral float-left" title="MERGE" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../functions/predicate_functions.html" class="btn btn-neutral float-right" title="Predicate Functions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Apache AGE.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: master
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      <dd><a href="unwind.html">master</a></dd>
+      <dd><a href="../../v0.6.0/index.html">v0.6.0</a></dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

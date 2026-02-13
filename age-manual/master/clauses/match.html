@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MATCH &mdash; Apache AGE master documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="WITH" href="with.html" />
+    <link rel="prev" title="Importing Graph from Files" href="../intro/agload.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Apache AGE
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/setup.html">Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/graphs.html">Graphs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/cypher.html">The AGE Cypher Query Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/types.html">Data Types - An Introduction to agtype</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/comparability.html">Comparability, Equality, Orderability and Equivalence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/operators.html">Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/precedence.html">Operator Precedence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/aggregation.html">Aggregation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/agload.html">Importing Graph from Files</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Clauses</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">MATCH</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#basic-vertex-finding">Basic vertex finding</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#get-all-vertices">Get all Vertices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-all-vertices-with-a-label">Get all vertices with a label</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#related-vertices">Related Vertices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#match-with-labels">Match with labels</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#edge-basics">Edge basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#outgoing-edges">Outgoing Edges</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#directed-edges-and-variable">Directed Edges and variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#match-on-edge-label">Match on edge label</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#match-on-edge-label-with-a-variable">Match on edge label with a variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#multiple-edges">Multiple Edges</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#variable-length-edges">Variable Length Edges</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="with.html">WITH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="return.html">RETURN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order_by.html">ORDER BY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skip.html">SKIP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limit.html">LIMIT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="create.html">CREATE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="delete.html">DELETE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="set.html">SET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="remove.html">REMOVE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="merge.html">MERGE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unwind.html">UNWIND</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Functions</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../functions/predicate_functions.html">Predicate Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/scalar_functions.html">Scalar Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/list_functions.html">List Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/numeric_functions.html">Numeric Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/logarithmic_functions.html">Logarithmic Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/trigonometric_functions.html">Trigonometric Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/string_functions.html">String Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/aggregate_functions.html">Aggregation Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/map_functions.html">Map Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/user_functions.html">User Defined Functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">AGE Beyond Cypher</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/advanced_overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/advanced.html">Using Cypher in a CTE Expression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/advanced.html#using-cypher-in-a-join-expression">Using Cypher in a Join expression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/advanced.html#cypher-in-sql-expressions">Cypher in SQL expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/prepared_statements.html">Prepared Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/plpgsql.html">PL/pgSQL Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/sql_in_cypher.html">SQL In Cypher</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/run_tests.html">Run the test suite</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Apache AGE</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>MATCH</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/apache/age-website/blob/master/docs/clauses/match.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="match">
+<h1>MATCH<a class="headerlink" href="#match" title="Permalink to this heading"></a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">MATCH</span></code> clause allows you to specify the patterns a query will search for in the database. This is the primary way of retrieving data for use in a query.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> clause often follows a <code class="docutils literal notranslate"><span class="pre">MATCH</span></code> clause to add user-defined restrictions to the matched patterns to manipulate the set of data returned. The predicates are part of the pattern description, and should not be considered a filter applied only after the matching is done. This means that <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> should always be put together with the <code class="docutils literal notranslate"><span class="pre">MATCH</span></code> clause it belongs to.</p>
+<p>MATCH can occur at the beginning of the query or later, possibly after a <code class="docutils literal notranslate"><span class="pre">WITH</span></code>. If it is the first clause, nothing will have been bound yet, and Cypher will design a search to find the results matching the clause and any associated predicates specified in any <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> clause. Vertices and edges found by this search are available as bound pattern elements, and can be used for pattern matching of sub-graphs. They can also be used in any future clauses, where Cypher will use the known elements, and from there find further unknown elements.</p>
+<p>Cypher is a declarative language, and so typically the query itself does not specify the algorithm to use to perform the search. Predicates in <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> parts can be evaluated before pattern matching, during pattern matching, or after the match is found.</p>
+<section id="basic-vertex-finding">
+<h2>Basic vertex finding<a class="headerlink" href="#basic-vertex-finding" title="Permalink to this heading"></a></h2>
+<section id="get-all-vertices">
+<h3>Get all Vertices<a class="headerlink" href="#get-all-vertices" title="Permalink to this heading"></a></h3>
+<p>By specifying a pattern with a single vertex and no labels, all vertices in the graph will be returned.</p>
+<p>Query</p>
+<div class="highlight-postgresql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">cypher</span><span class="p">(</span><span class="s1">&#39;graph_name&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">$$</span>
+<span class="s">MATCH (v)</span>
+<span class="s">RETURN v</span>
+<span class="s">$$</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="p">(</span><span class="n">v</span><span class="w"> </span><span class="n">agtype</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Returns all vertices in the database.</p>
+<table>
+  <tr>
+   <td><strong>v</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>{id: 0; label: ‘Person’; properties: {name: ‘Charlie Sheen’}}::vertex
+   </td>
+  </tr>
+  <tr>
+   <td>{id: 1; label: ‘Person’; properties: {name: ‘Martin Sheen’}}::vertex
+   </td>
+  </tr>
+  <tr>
+   <td>{id: 2; label: ‘Person’; properties: {name: ‘Michael  Douglas’}}::vertex
+   </td>
+  </tr>
+  <tr>
+   <td>{id: 3; label: ‘Person’; properties: {name: ‘Oliver Stone’}}::vertex
+   </td>
+  </tr>
+  <tr>
+   <td>{id: 4; label: ‘Person’; properties: {name: ‘Rob Reiner’}}::vertex
+   </td>
+  </tr>
+  <tr>
+   <td>{id: 5; label: ‘Movie’; properties: {name: ‘Wall Street’}}::vertex
+   </td>
+  </tr>
+  <tr>
+   <td>{id: 6; label: ‘Movie’; properties: {title: ‘The American President’}}::vertex
+   </td>
+  </tr>
+  <tr>
+   <td>7 row(s) returned
+   </td>
+  </tr>
+</table>
+</section>
+<section id="get-all-vertices-with-a-label">
+<h3>Get all vertices with a label<a class="headerlink" href="#get-all-vertices-with-a-label" title="Permalink to this heading"></a></h3>
+<p>Getting all vertices with a label is done with a single node pattern where the vertex has the label specified as follows:</p>
+<p>Query</p>
+<div class="highlight-postgresql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">cypher</span><span class="p">(</span><span class="s1">&#39;graph_name&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">$$</span>
+<span class="s">MATCH (movie:Movie)</span>
+<span class="s">RETURN movie.title</span>
+<span class="s">$$</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="p">(</span><span class="n">title</span><span class="w"> </span><span class="n">agtype</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Returns all the movies in the database.</p>
+<table>
+  <tr>
+   <td><strong>title</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>‘Wall Street’
+   </td>
+  </tr>
+  <tr>
+   <td>‘The American President’
+   </td>
+  </tr>
+  <tr>
+   <td>2 row(s) returned
+   </td>
+  </tr>
+</table>
+</section>
+<section id="related-vertices">
+<h3>Related Vertices<a class="headerlink" href="#related-vertices" title="Permalink to this heading"></a></h3>
+<p>The symbol <code class="docutils literal notranslate"><span class="pre">-[]-</span></code> specifies an edge, without specifying the type or direction of the edge.</p>
+<p>Query</p>
+<div class="highlight-postgresql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">cypher</span><span class="p">(</span><span class="s1">&#39;graph_name&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">$$</span>
+<span class="s">MATCH (director {name: &#39;Oliver Stone&#39;})-[]-(movie)</span>
+<span class="s">RETURN movie.title</span>
+<span class="s">$$</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="p">(</span><span class="n">title</span><span class="w"> </span><span class="n">agtype</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Returns all the movies directed by ‘Oliver Stone’.</p>
+<table>
+  <tr>
+   <td><strong>title</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>‘Wall Street’
+   </td>
+  </tr>
+  <tr>
+   <td>1 row(s) returned
+   </td>
+  </tr>
+</table>
+</section>
+<section id="match-with-labels">
+<h3>Match with labels<a class="headerlink" href="#match-with-labels" title="Permalink to this heading"></a></h3>
+<p>To constrain your pattern with labels on vertices, add it to the vertex in the pattern, using the label syntax.</p>
+<p>Query</p>
+<div class="highlight-postgresql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">cypher</span><span class="p">(</span><span class="s1">&#39;graph_name&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">$$</span>
+<span class="s">MATCH (:Person {name: &#39;Oliver Stone&#39;})-[]-(movie:Movie)</span>
+<span class="s">RETURN movie.title</span>
+<span class="s">$$</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="p">(</span><span class="n">title</span><span class="w"> </span><span class="n">agtype</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Returns any vertices connected with the <code class="docutils literal notranslate"><span class="pre">Person</span></code> ‘Oliver’ that are labeled <code class="docutils literal notranslate"><span class="pre">Movie</span></code>.</p>
+<table>
+  <tr>
+   <td><strong>title</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>‘Wall Street’
+   </td>
+  </tr>
+  <tr>
+   <td>1 row(s) returned
+   </td>
+  </tr>
+</table>
+</section>
+</section>
+<section id="edge-basics">
+<h2>Edge basics<a class="headerlink" href="#edge-basics" title="Permalink to this heading"></a></h2>
+<section id="outgoing-edges">
+<h3>Outgoing Edges<a class="headerlink" href="#outgoing-edges" title="Permalink to this heading"></a></h3>
+<p>To return directed edges, you may use <code class="docutils literal notranslate"><span class="pre">-&gt;</span></code> or <code class="docutils literal notranslate"><span class="pre">&lt;-</span></code> to specify the direction of which the edge points.</p>
+<p>Query</p>
+<div class="highlight-postgresql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">cypher</span><span class="p">(</span><span class="s1">&#39;graph_name&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">$$</span>
+<span class="s">MATCH (:Person {name: &#39;Oliver Stone&#39;})-[]-&gt;(movie)</span>
+<span class="s">RETURN movie.title</span>
+<span class="s">$$</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="p">(</span><span class="n">title</span><span class="w"> </span><span class="n">agtype</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Returns any vertices connected with the <code class="docutils literal notranslate"><span class="pre">Person</span></code> ‘Oliver’ by an outgoing edge.</p>
+<table>
+  <tr>
+   <td><strong>title</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>‘Wall Street’
+   </td>
+  </tr>
+  <tr>
+   <td>1 row(s) returned
+   </td>
+  </tr>
+</table>
+</section>
+<section id="directed-edges-and-variable">
+<h3>Directed Edges and variable<a class="headerlink" href="#directed-edges-and-variable" title="Permalink to this heading"></a></h3>
+<p>If a variable is required, either for filtering on properties of the edge, or to return the edge, specify the variable within the edge or vertex you wish to use.</p>
+<p>Query</p>
+<div class="highlight-postgresql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">cypher</span><span class="p">(</span><span class="s1">&#39;graph_name&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">$$</span>
+<span class="s">MATCH (:Person {name: &#39;Oliver Stone&#39;})-[r]-&gt;(movie)</span>
+<span class="s">RETURN type(r)</span>
+<span class="s">$$</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="p">(</span><span class="n">title</span><span class="w"> </span><span class="n">agtype</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Returns the type of each outgoing edge from ‘Oliver’.</p>
+<table>
+  <tr>
+   <td><strong>title</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>‘DIRECTED’
+   </td>
+  </tr>
+  <tr>
+   <td>1 row(s) returned
+   </td>
+  </tr>
+</table>
+</section>
+<section id="match-on-edge-label">
+<h3>Match on edge label<a class="headerlink" href="#match-on-edge-label" title="Permalink to this heading"></a></h3>
+<p>When you know the edge label you want to match on, you can specify it by using a colon together with the edge label.</p>
+<p>Query</p>
+<div class="highlight-postgresql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">cypher</span><span class="p">(</span><span class="s1">&#39;graph_name&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">$$</span>
+<span class="s">MATCH (:Movie {title: &#39;Wall Street&#39;})&lt;-[:ACTED_IN]-(actor)</span>
+<span class="s">RETURN actor.name</span>
+<span class="s">$$</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="p">(</span><span class="n">actors_name</span><span class="w"> </span><span class="n">agtype</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Returns all actors that <code class="docutils literal notranslate"><span class="pre">ACTED_IN</span></code> ‘Wall Street’.</p>
+<table>
+  <tr>
+   <td><strong>actors_name</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>‘Charlie Sheen’
+   </td>
+  </tr>
+  <tr>
+   <td>‘Martin Sheen’
+   </td>
+  </tr>
+  <tr>
+   <td>‘Michael  Douglas’
+   </td>
+  </tr>
+  <tr>
+   <td>3 row(s) returned
+   </td>
+  </tr>
+</table>
+</section>
+<section id="match-on-edge-label-with-a-variable">
+<h3>Match on edge label with a variable<a class="headerlink" href="#match-on-edge-label-with-a-variable" title="Permalink to this heading"></a></h3>
+<p>If you want to use a variable to hold the edge, and specify the edge label you want, you can do so by specifying them both.</p>
+<p>Query</p>
+<div class="highlight-postgresql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">cypher</span><span class="p">(</span><span class="s1">&#39;graph_name&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">$$</span>
+<span class="s">MATCH ({title: &#39;Wall Street&#39;})&lt;-[r:ACTED_IN]-(actor)</span>
+<span class="s">RETURN r.role</span>
+<span class="s">$$</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="p">(</span><span class="k">role</span><span class="w"> </span><span class="n">agtype</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">ACTED_IN</span></code> roles for ‘Wall Street’.</p>
+<table>
+  <tr>
+   <td><strong>role</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>‘Gordon Gekko’
+   </td>
+  </tr>
+  <tr>
+   <td>‘Carl Fox’
+   </td>
+  </tr>
+  <tr>
+   <td>‘Bud Fox’
+   </td>
+  </tr>
+  <tr>
+   <td>3 row(s) returned
+   </td>
+  </tr>
+</table>
+</section>
+<section id="multiple-edges">
+<h3>Multiple Edges<a class="headerlink" href="#multiple-edges" title="Permalink to this heading"></a></h3>
+<p>Edges can be strung together to match an infinite number of edges. As long as the base pattern <code class="docutils literal notranslate"><span class="pre">()-[]-()</span></code> is followed, users can chain together edges and vertices to match specific patterns.</p>
+<p>Query</p>
+<div class="highlight-postgresql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">cypher</span><span class="p">(</span><span class="s1">&#39;graph_name&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">$$</span>
+<span class="s">    MATCH (charlie {name: &#39;Charlie Sheen&#39;})-[:ACTED_IN]-&gt;(movie)&lt;-[:DIRECTED]-(director)</span>
+<span class="s">    RETURN movie.title, director.name</span>
+<span class="s">$$</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="p">(</span><span class="n">title</span><span class="w"> </span><span class="n">agtype</span><span class="p">,</span><span class="w"> </span><span class="k">name</span><span class="w"> </span><span class="n">agtype</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Returns the movie ‘Charlie Sheen’ acted in and its director.</p>
+<table>
+  <tr>
+   <td><strong>title</strong>
+   </td>
+   <td><strong>name</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>‘Wall Street’
+   </td>
+   <td>‘Oliver Stone’
+   </td>
+  </tr>
+  <tr>
+   <td colspan="2" >1 row(s) returned
+   </td>
+  </tr>
+</table>
+</section>
+</section>
+<section id="variable-length-edges">
+<h2>Variable Length Edges<a class="headerlink" href="#variable-length-edges" title="Permalink to this heading"></a></h2>
+<p>When the connection between two vertices is of variable length, the list of edges that form the connection can be returned using the following connection.</p>
+<section id="introduction">
+<h3>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h3>
+<p>Rather than describing a long path using a sequence of many vertex and edge descriptions in a pattern, many edges (and the intermediate vertices) can be described by specifying a length in the edge description of a pattern.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">u</span><span class="p">)</span><span class="o">-</span><span class="p">[</span><span class="o">*</span><span class="mi">2</span><span class="p">]</span><span class="o">-&gt;</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Which describes a right directed path of three vertices and two edges can be rewritten to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">u</span><span class="p">)</span><span class="o">-</span><span class="p">[]</span><span class="o">-&gt;</span><span class="p">()</span><span class="o">-</span><span class="p">[]</span><span class="o">-&gt;</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A range length can also be given:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">u</span><span class="p">)</span><span class="o">-</span><span class="p">[</span><span class="o">*</span><span class="mf">3..5</span><span class="p">]</span><span class="o">-&gt;</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Which is equivalent to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">u</span><span class="p">)</span><span class="o">-</span><span class="p">[]</span><span class="o">-&gt;</span><span class="p">()</span><span class="o">-</span><span class="p">[]</span><span class="o">-&gt;</span><span class="p">()</span><span class="o">-</span><span class="p">[]</span><span class="o">-&gt;</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="ow">and</span>
+<span class="p">(</span><span class="n">u</span><span class="p">)</span><span class="o">-</span><span class="p">[]</span><span class="o">-&gt;</span><span class="p">()</span><span class="o">-</span><span class="p">[]</span><span class="o">-&gt;</span><span class="p">()</span><span class="o">-</span><span class="p">[]</span><span class="o">-&gt;</span><span class="p">()</span><span class="o">-</span><span class="p">[]</span><span class="o">-&gt;</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="ow">and</span>
+<span class="p">(</span><span class="n">u</span><span class="p">)</span><span class="o">-</span><span class="p">[]</span><span class="o">-&gt;</span><span class="p">()</span><span class="o">-</span><span class="p">[]</span><span class="o">-&gt;</span><span class="p">()</span><span class="o">-</span><span class="p">[]</span><span class="o">-&gt;</span><span class="p">()</span><span class="o">-</span><span class="p">[]</span><span class="o">-&gt;</span><span class="p">()</span><span class="o">-</span><span class="p">[]</span><span class="o">-&gt;</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The previous example provided gave the edge both an lower and upper bound for the number of edges (and vertices) between <code class="docutils literal notranslate"><span class="pre">u</span></code> and <code class="docutils literal notranslate"><span class="pre">v</span></code>. Either one or both of these binding values can be excluded.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">u</span><span class="p">)</span><span class="o">-</span><span class="p">[</span><span class="o">*</span><span class="mf">3.</span><span class="o">.</span><span class="p">]</span><span class="o">-&gt;</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Returns all paths between <code class="docutils literal notranslate"><span class="pre">u</span></code> and <code class="docutils literal notranslate"><span class="pre">v</span></code> that have three or more edges included.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">u</span><span class="p">)</span><span class="o">-</span><span class="p">[</span><span class="o">*.</span><span class="mf">.5</span><span class="p">]</span><span class="o">-&gt;</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Returns all paths between <code class="docutils literal notranslate"><span class="pre">u</span></code> and <code class="docutils literal notranslate"><span class="pre">v</span></code> that have 5 or fewer edges included.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">u</span><span class="p">)</span><span class="o">-</span><span class="p">[</span><span class="o">*</span><span class="p">]</span><span class="o">-&gt;</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Returns all paths between <code class="docutils literal notranslate"><span class="pre">u</span></code> and <code class="docutils literal notranslate"><span class="pre">v</span></code>.</p>
+</section>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h3>
+<p>Query</p>
+<div class="highlight-postgresql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">cypher</span><span class="p">(</span><span class="s1">&#39;graph_name&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">$$</span>
+<span class="s">    MATCH p = (actor {name: &#39;Willam Dafoe&#39;})-[:ACTED_IN*2]-(co_actor)</span>
+<span class="s">    RETURN relationships(p)</span>
+<span class="s">$$</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="p">(</span><span class="n">r</span><span class="w"> </span><span class="n">agtype</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Returns the list of edges, including the one that Willam Dafoe acted in and the two Spiderman actors he worked with.</p>
+<table>
+  <tr>
+   <td><strong>r</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>[{id: 0; label:"ACTED_IN"; properties: {role: "Green Goblin"}}::edge, {id: 1; label: "ACTED_IN; properties: {role: "Spiderman", actor: "Toby Maguire}}::edge]
+   </td>
+  </tr>
+  <tr>
+   <td>[{id: 0; label:"ACTED_IN"; properties: {role: "Green Goblin"}}::edge, {id: 2; label: "ACTED_IN; properties: {role: "Spiderman", actor: "Andrew Garfield"}}::edge]
+   </td>
+   </td>
+  </tr>
+  <tr>
+   <td colspan="2" >2 row(s) returned
+   </td>
+  </tr>
+</table>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../intro/agload.html" class="btn btn-neutral float-left" title="Importing Graph from Files" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="with.html" class="btn btn-neutral float-right" title="WITH" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Apache AGE.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: master
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      <dd><a href="match.html">master</a></dd>
+      <dd><a href="../../v0.6.0/index.html">v0.6.0</a></dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
