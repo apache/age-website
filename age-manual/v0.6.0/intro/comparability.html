@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comparability, Equality, Orderability and Equivalence &mdash; Apache AGE master documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Operators" href="operators.html" />
+    <link rel="prev" title="Data Types - An Introduction to agtype" href="types.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Apache AGE
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graphs.html">Graphs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cypher.html">The AGE Cypher Query Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types.html">Data Types - An Introduction to agtype</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Comparability, Equality, Orderability and Equivalence</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#concepts">Concepts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#comparability">Comparability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#equality">Equality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#orderability">Orderability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#equivalence">Equivalence</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#comparability-and-equality">Comparability and equality</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Comparability</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#orderability-between-different-agtypes">Orderability Between different Agtypes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="operators.html">Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregation.html">Aggregation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Clauses</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/match.html">MATCH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/with.html">WITH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/return.html">RETURN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/order_by.html">ORDER BY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/skip.html">SKIP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/limit.html">LIMIT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/create.html">CREATE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/set.html">SET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/remove.html">REMOVE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clauses/delete.html">DELETE</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Functions</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../functions/predicate_functions.html">Predicate Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/scalar_functions.html">Scalar Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/list_functions.html">List Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/numeric_functions.html">Numeric Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/logarithmic_functions.html">Logarithmic Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/trigonometric_functions.html">Trigonometric Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/string_functions.html">String Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/aggregate_functions.html">Aggregation Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/user_functions.html">User defined functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">AGE Beyond Cypher</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/advanced_overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/advanced.html">Using Cypher in a CTE Expression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/advanced.html#using-cypher-in-a-join-expression">Using Cypher in a Join expression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/advanced.html#cypher-in-sql-expressions">Cypher in SQL expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/prepared_statements.html">Prepared Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/plpgsql.html">PL/pgSQL Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/sql_in_cypher.html">SQL In Cypher</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Apache AGE</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Comparability, Equality, Orderability and Equivalence</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/apache/age-website/blob/master/docs/intro/comparability.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="comparability-equality-orderability-and-equivalence">
+<h1>Comparability, Equality, Orderability and Equivalence<a class="headerlink" href="#comparability-equality-orderability-and-equivalence" title="Permalink to this heading"></a></h1>
+<p>AGE already has good semantics for equality within the primitive types (booleans, strings,integers, and floats) and maps. Furthermore, Cypher has good semantics for comparability and orderability for integers, floats, and strings, within each of the types. However, working with values of different types deviates from Postgres’ defined logic and the openCypher specification:</p>
+<ul class="simple">
+<li><p>Comparability between values of different types is defined. This deviation is particularly pronounced when it occurs as part of the evaluation of predicates (in WHERE).</p></li>
+<li><p>ORDER BY will not fail if the values passed to it have different types.</p></li>
+</ul>
+<p>The underlying conceptual model is complex and sometimes inconsistent. This leads to an unclear relationship between comparison operators, equality, grouping, and ORDER BY:</p>
+<ul class="simple">
+<li><p>Comparability and orderability are aligned with each other consistently, as all types can be ordered and compared.</p></li>
+<li><p>The difference between equality and equivalence, as exposed by IN, =, DISTINCT, and grouping, in AGE is limited to testing two instances of the value null to each other</p>
+<ul>
+<li><p>In equality, null = null is null.</p></li>
+<li><p>In equivalence, used by DISTINCT and when grouping values, two null values are always treated as being the same value.</p></li>
+<li><p>However, equality treats null values differently if they are an element of a list or a map value.</p></li>
+</ul>
+</li>
+</ul>
+<section id="concepts">
+<h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this heading"></a></h2>
+<p>The openCypher specification features four distinct concepts related to equality and ordering:</p>
+<section id="comparability">
+<h3>Comparability<a class="headerlink" href="#comparability" title="Permalink to this heading"></a></h3>
+<p>Comparability is used by the inequality operators (&gt;, &lt;, &gt;=, &lt;=), and defines the underlying semantics of how to compare two values.</p>
+</section>
+<section id="equality">
+<h3>Equality<a class="headerlink" href="#equality" title="Permalink to this heading"></a></h3>
+<p>Equality is used by the equality operators (=, &lt;&gt;), and the list membership operator (IN). It defines the underlying semantics to determine if two values are the same in these contexts. Equality is also used implicitly by literal maps in node and relationship patterns, since such literal maps are merely a shorthand notation for equality predicates.</p>
+</section>
+<section id="orderability">
+<h3>Orderability<a class="headerlink" href="#orderability" title="Permalink to this heading"></a></h3>
+<p>Orderability is used by the ORDER BY clause, and defines the underlying semantics of how to order values.</p>
+</section>
+<section id="equivalence">
+<h3>Equivalence<a class="headerlink" href="#equivalence" title="Permalink to this heading"></a></h3>
+<p>Equivalence is used by the DISTINCT modifier and by grouping in projection clauses (WITH,RETURN), and defines the underlying semantics to determine if two values are the same in these contexts.</p>
+</section>
+</section>
+<section id="comparability-and-equality">
+<h2>Comparability and equality<a class="headerlink" href="#comparability-and-equality" title="Permalink to this heading"></a></h2>
+<p>Comparison operators need to function as one would expect comparison operators to function - equality and comparability. But, at the same time, they need to allow the sorting of column data - equivalence and orderability.</p>
+<p>Unfortunately, it may not be possible to implement separate comparison operators for equality and comparison operations, and, equivalence and orderability operations, in PostgreSQL, for the same query. So we prioritize equivalence and orderability over equality and comparability to allow for ordering of output data.</p>
+<section id="id1">
+<h3>Comparability<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
+<p>Comparability is defined between any pair of values, as specified below.</p>
+<ul class="simple">
+<li><p>Numbers</p>
+<ul>
+<li><p>Numbers of different types (excluding NaN values and the Infinities) are compared to each other as if both numbers would have been coerced to arbitrary precision big decimals(currently outside the Cypher type system) before comparing them with each other numerically in ascending order.</p></li>
+<li><p>Comparison to any value that is not also Number follows the rules of orderability.</p></li>
+<li><p>Floats don’t have the required precision to represent all of the whole numbers in the range of agtype integer and agtype numeric. When casting an integer or numeric agtype to a float, unexpected results can occur when casting values in the high and low range</p></li>
+<li><p>Integers</p>
+<ul>
+<li><p>Integers are compared numerically in ascending order.</p></li>
+</ul>
+</li>
+<li><p>Floats</p>
+<ul>
+<li><p>Floats (excluding NaN values and the Infinities) are compared numerically in ascending order.</p></li>
+<li><p>Positive infinity is of type FLOAT, equal to itself and greater than any other number, except NaN values.</p></li>
+<li><p>Negative infinity is of type FLOAT, equal to itself and less than any other number.</p></li>
+<li><p>NaN values are comparable to each and greater than any other float value.</p></li>
+</ul>
+</li>
+<li><p>Numeric</p>
+<ul>
+<li><p>Numerics are compared numerically in ascending order.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Booleans</p>
+<ul>
+<li><p>Booleans are compared such that false is less than true.</p></li>
+<li><p>Comparison to any value that is not also a boolean follows the rules of orderability.</p></li>
+</ul>
+</li>
+<li><p>Strings</p>
+<ul>
+<li><p>Strings are compared in dictionary order, i.e. characters are compared pairwise in ascending order from the start of the string to the end. Characters missing in a shorter string are considered to be less than any other character. For example, ‘a’ &lt; ‘aa’.</p></li>
+<li><p>Comparison to any value that is not also a string follows the rules of orderability.</p></li>
+</ul>
+</li>
+<li><p>Lists</p>
+<ul>
+<li><p>Lists are compared in sequential order, i.e. list elements are compared pairwise in ascending order from the start of the list to the end. Elements missing in a shorter list are considered to be less than any other value (including null values). For example, [1] &lt; [1, 0]but also [1] &lt; [1, null].</p></li>
+<li><p>Comparison to any value that is not also a list follows the rules of orderability.</p></li>
+</ul>
+</li>
+<li><p>Maps</p>
+<ul>
+<li><p>The comparison order for maps is unspecified and left to implementations.</p></li>
+<li><p>The comparison order for maps must align with the equality semantics outlined below. In consequence, any map that contains an entry that maps its key to a null value is incomparable. For example, {a: 1} &lt;= {a: 1, b: null} evaluates to null.</p></li>
+<li><p>Comparison to any value that is not also a regular map follows the rules of orderability.</p></li>
+</ul>
+</li>
+</ul>
+<p>Entities</p>
+<ul class="simple">
+<li><p>Vertices</p>
+<ul>
+<li><p>The comparison order for vertices is based on the assigned graphid.</p></li>
+</ul>
+</li>
+<li><p>Edges</p>
+<ul>
+<li><p>The comparison order for edges is based on the assigned graphid.</p></li>
+</ul>
+</li>
+<li><p>Paths</p>
+<ul>
+<li><p>Paths are compared as if they were a list of alternating nodes and relationships of the path from the start node to the end node. For example, given nodes n1, n2, n3, and relationships r1and r2, and given that n1 &lt; n2 &lt; n3 and r1 &lt; r2, then the path p1 from n1 to n3 via r1 would be less than the path p2 to n1 from n2 via r2.</p></li>
+<li><p>Expressed in terms of lists:</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span> <span class="o">&lt;</span> <span class="n">p2</span>
+<span class="o">&lt;=&gt;</span> <span class="p">[</span><span class="n">n1</span><span class="p">,</span> <span class="n">r1</span><span class="p">,</span> <span class="n">n3</span><span class="p">]</span> <span class="o">&lt;</span> <span class="p">[</span><span class="n">n1</span><span class="p">,</span> <span class="n">r2</span><span class="p">,</span> <span class="n">n2</span><span class="p">]</span>
+<span class="o">&lt;=&gt;</span> <span class="n">n1</span> <span class="o">&lt;</span> <span class="n">n1</span> <span class="o">||</span> <span class="p">(</span><span class="n">n1</span> <span class="o">=</span> <span class="n">n1</span> <span class="o">&amp;&amp;</span> <span class="p">[</span><span class="n">r1</span><span class="p">,</span> <span class="n">n3</span><span class="p">]</span> <span class="o">&lt;</span> <span class="p">[</span><span class="n">r2</span><span class="p">,</span> <span class="n">n2</span><span class="p">])</span>
+<span class="o">&lt;=&gt;</span> <span class="n">false</span> <span class="o">||</span> <span class="p">(</span><span class="n">true</span> <span class="o">&amp;&amp;</span> <span class="p">[</span><span class="n">r1</span><span class="p">,</span> <span class="n">n3</span><span class="p">]</span> <span class="o">&lt;</span> <span class="p">[</span><span class="n">r2</span><span class="p">,</span> <span class="n">n2</span><span class="p">])</span><span class="o">&lt;=&gt;</span> <span class="p">[</span><span class="n">r1</span><span class="p">,</span> <span class="n">n3</span><span class="p">]</span> <span class="o">&lt;</span> <span class="p">[</span><span class="n">r2</span><span class="p">,</span> <span class="n">n2</span><span class="p">]</span>
+<span class="o">&lt;=&gt;</span> <span class="n">r1</span> <span class="o">&lt;</span> <span class="n">r2</span> <span class="o">||</span> <span class="p">(</span><span class="n">r1</span> <span class="o">=</span> <span class="n">r2</span> <span class="o">&amp;&amp;</span> <span class="n">n3</span> <span class="o">&lt;</span> <span class="n">n2</span><span class="p">)</span>
+<span class="o">&lt;=&gt;</span> <span class="n">true</span> <span class="o">||</span> <span class="p">(</span><span class="n">false</span> <span class="o">&amp;&amp;</span> <span class="n">false</span><span class="p">)</span>
+<span class="o">&lt;=&gt;</span> <span class="n">true</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>* Comparison to any value that is not also a path will return false.
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>NULL</p>
+<ul>
+<li><p>null is incomparable with any other value (including other null values.)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="orderability-between-different-agtypes">
+<h2>Orderability Between different Agtypes<a class="headerlink" href="#orderability-between-different-agtypes" title="Permalink to this heading"></a></h2>
+<p>The ordering of different Agtype, when using &lt;, &lt;=, &gt;, &gt;= from smallest value to largest value is:</p>
+<ol class="arabic simple">
+<li><p>Edge</p></li>
+<li><p>Path</p></li>
+<li><p>Map</p></li>
+<li><p>Vertex</p></li>
+<li><p>Edge</p></li>
+<li><p>Array</p></li>
+<li><p>String</p></li>
+<li><p>Bool</p></li>
+<li><p>Numeric, Integer, Float</p></li>
+<li><p>NULL</p></li>
+</ol>
+<p>Note: This is subject to change in future releases.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="types.html" class="btn btn-neutral float-left" title="Data Types - An Introduction to agtype" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="operators.html" class="btn btn-neutral float-right" title="Operators" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Apache AGE.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: v0.6.0
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      <dd><a href="../../master/index.html">master</a></dd>
+      <dd><a href="comparability.html">v0.6.0</a></dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
