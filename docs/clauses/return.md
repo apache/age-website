@@ -333,6 +333,75 @@ Result
 
 
 
+## Pattern expressions in projections
+
+A *pattern expression* is a path pattern, such as `(a)-[:KNOWS]->(:Person)`, used in a position where a value is expected. It evaluates to a boolean that is `true` when at least one matching path exists. In addition to being used as a predicate in a `WHERE` clause, a pattern expression can be returned directly from a `RETURN` (or `WITH`) projection.
+
+Query
+
+
+```postgresql
+SELECT *
+FROM cypher('graph_name', $$
+    MATCH (a:Person)
+    RETURN a.name, (a)-[:KNOWS]->(:Person) AS knows_someone
+    ORDER BY a.name
+$$) as (name agtype, knows_someone agtype);
+```
+
+
+For each person, this returns a boolean indicating whether they have an outgoing `KNOWS` relationship to another `Person`.
+
+Result
+
+
+<table>
+  <tr>
+   <td><strong>name</strong>
+   </td>
+   <td><strong>knows_someone</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>"A"
+   </td>
+   <td>true
+   </td>
+  </tr>
+  <tr>
+   <td>"B"
+   </td>
+   <td>true
+   </td>
+  </tr>
+  <tr>
+   <td>"C"
+   </td>
+   <td>true
+   </td>
+  </tr>
+  <tr>
+   <td>"D"
+   </td>
+   <td>false
+   </td>
+  </tr>
+  <tr>
+   <td>"D"
+   </td>
+   <td>false
+   </td>
+  </tr>
+  <tr>
+   <td colspan="2" >(5 rows)
+   </td>
+  </tr>
+</table>
+
+
+**Performance:** A pattern expression is evaluated as an `EXISTS` subquery. In a projection it is evaluated once for every row produced by the match, so its cost grows with the number of rows returned. Returning several pattern expressions, or returning them over a large result set, can be expensive on large graphs; where possible, narrow the result set with a `WHERE` clause before projecting pattern expressions.
+
+
 ## Unique results
 
 `DISTINCT` retrieves only unique records depending on the fields that have been selected to output.
